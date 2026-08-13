@@ -998,6 +998,35 @@ footer.site-footer {
   color: #9aa3af;
 }
 
+.footer-contact {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #9aa3af;
+}
+
+.footer-contact-item svg {
+  flex: 0 0 auto;
+  color: #00c896;
+}
+
+.footer-contact-item a {
+  color: #9aa3af;
+}
+
+.footer-contact-item a:hover {
+  color: #fff;
+}
+
 .footer-social-row {
   margin-top: 20px;
   display: flex;
