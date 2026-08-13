@@ -4032,3 +4032,162 @@ const VILLES = {
   "Lomé": { icon: "🏙️" },
   "Kara": { icon: "🏘️" }
 };
+
+// ---- Test d'orientation ----
+// Chaque réponse pointe vers un domaine (voir DOMAINS). Le score final classe
+// les 7 domaines selon le nombre de réponses correspondantes.
+const QUIZ_QUESTIONS = [
+  {
+    type: "domain",
+    question: "Qu'est-ce qui t'attire le plus dans la tech ?",
+    options: [
+      { label: "Construire des applications et des sites qui marchent bien", domain: "Développement" },
+      { label: "Comprendre des chiffres, des tendances, entraîner des modèles", domain: "Data & IA" },
+      { label: "Protéger des systèmes contre les attaques", domain: "Sécurité" },
+      { label: "Créer des interfaces belles et faciles à utiliser", domain: "Produit & Design" },
+      { label: "Faire tourner des serveurs et des infrastructures fiables", domain: "Infrastructure & DevOps" },
+      { label: "Faire connaître un produit ou une marque en ligne", domain: "Marketing digital" },
+      { label: "Organiser, planifier, piloter des équipes et des projets", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Dans un jeu vidéo, tu préfères plutôt...",
+    options: [
+      { label: "Créer des mods ou du contenu personnalisé", domain: "Développement" },
+      { label: "Optimiser ta stratégie à partir de statistiques", domain: "Data & IA" },
+      { label: "Chercher les failles et les limites du jeu", domain: "Sécurité" },
+      { label: "Personnaliser ton avatar et ton interface", domain: "Produit & Design" },
+      { label: "Monter et administrer un serveur multijoueur", domain: "Infrastructure & DevOps" },
+      { label: "Streamer ou créer du contenu autour du jeu", domain: "Marketing digital" },
+      { label: "Organiser un tournoi entre joueurs", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Face à un problème, ton premier réflexe...",
+    options: [
+      { label: "Écrire du code pour le résoudre", domain: "Développement" },
+      { label: "Analyser des données pour comprendre pourquoi", domain: "Data & IA" },
+      { label: "Chercher comment quelqu'un pourrait en abuser", domain: "Sécurité" },
+      { label: "Repenser l'expérience pour que ça n'arrive plus", domain: "Produit & Design" },
+      { label: "Vérifier si l'infrastructure tient la charge", domain: "Infrastructure & DevOps" },
+      { label: "Communiquer dessus pour rassurer tout le monde", domain: "Marketing digital" },
+      { label: "Réunir les bonnes personnes pour trancher", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Ton environnement de travail idéal...",
+    options: [
+      { label: "Seul·e, concentré·e, à écrire du code", domain: "Développement" },
+      { label: "Entouré·e de tableaux de données et de graphiques", domain: "Data & IA" },
+      { label: "En veille permanente, à surveiller des menaces", domain: "Sécurité" },
+      { label: "Avec des maquettes, des couleurs, du visuel", domain: "Produit & Design" },
+      { label: "En salle serveur ou sur des consoles cloud", domain: "Infrastructure & DevOps" },
+      { label: "Sur les réseaux sociaux, au contact d'une audience", domain: "Marketing digital" },
+      { label: "En réunion, à coordonner plusieurs personnes", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Ce qui te frustre le plus...",
+    options: [
+      { label: "Un code mal écrit qui plante", domain: "Développement" },
+      { label: "Des données mal organisées ou peu fiables", domain: "Data & IA" },
+      { label: "Une faille de sécurité qu'on préfère ignorer", domain: "Sécurité" },
+      { label: "Une interface confuse et pénible à utiliser", domain: "Produit & Design" },
+      { label: "Un serveur qui tombe en panne au mauvais moment", domain: "Infrastructure & DevOps" },
+      { label: "Une campagne qui rate complètement sa cible", domain: "Marketing digital" },
+      { label: "Un projet lancé sans plan clair", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Ce que tu ferais gratuitement, sur ton temps libre...",
+    options: [
+      { label: "Bidouiller un petit projet de code perso", domain: "Développement" },
+      { label: "Explorer un jeu de données qui t'intéresse", domain: "Data & IA" },
+      { label: "Regarder des vidéos sur des CTF ou du piratage éthique", domain: "Sécurité" },
+      { label: "Redessiner l'appli d'une marque que tu utilises", domain: "Produit & Design" },
+      { label: "Monter ton propre serveur ou Raspberry Pi", domain: "Infrastructure & DevOps" },
+      { label: "Créer du contenu et faire grandir une page", domain: "Marketing digital" },
+      { label: "Organiser un événement ou un club", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Une matière scolaire où tu es à l'aise...",
+    options: [
+      { label: "Algorithmique et logique", domain: "Développement" },
+      { label: "Mathématiques et statistiques", domain: "Data & IA" },
+      { label: "Informatique, avec l'envie de comprendre comment ça marche vraiment", domain: "Sécurité" },
+      { label: "Arts plastiques et créativité visuelle", domain: "Produit & Design" },
+      { label: "Sciences physiques et systèmes", domain: "Infrastructure & DevOps" },
+      { label: "Communication et langues", domain: "Marketing digital" },
+      { label: "Économie et gestion", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Dans un projet d'équipe, ton rôle naturel...",
+    options: [
+      { label: "Celui ou celle qui code la solution", domain: "Développement" },
+      { label: "Celui ou celle qui analyse les résultats", domain: "Data & IA" },
+      { label: "Celui ou celle qui teste et cherche les failles", domain: "Sécurité" },
+      { label: "Celui ou celle qui soigne la présentation", domain: "Produit & Design" },
+      { label: "Celui ou celle qui s'assure que tout tourne techniquement", domain: "Infrastructure & DevOps" },
+      { label: "Celui ou celle qui présente et « vend » le projet", domain: "Marketing digital" },
+      { label: "Celui ou celle qui coordonne l'équipe", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "niveau",
+    question: "Une fois ton domaine identifié : quel niveau veux-tu viser pour commencer ?",
+    options: [
+      { label: "Un diplôme court et professionnalisant (BTS, Brevet de Technicien)", value: "court" },
+      { label: "Une Licence classique (Bac+3)", value: "licence" },
+      { label: "Directement un cursus long (Master, Ingénieur)", value: "long" },
+      { label: "Je ne sais pas encore", value: "peu-importe" }
+    ]
+  },
+  {
+    type: "ville",
+    question: "Où peux-tu ou veux-tu étudier ?",
+    options: [
+      { label: "À Lomé", value: "Lomé" },
+      { label: "À Kara", value: "Kara" },
+      { label: "Peu importe, je peux me déplacer", value: "peu-importe" }
+    ]
+  },
+  {
+    type: "statut",
+    question: "Qu'est-ce qui correspond le mieux à ta situation budgétaire ?",
+    options: [
+      { label: "Je dois viser le public, gratuit ou presque", value: "public" },
+      { label: "Je peux payer une école privée, avec un budget serré", value: "prive" },
+      { label: "Le budget n'est pas un frein majeur", value: "peu-importe" }
+    ]
+  },
+  {
+    type: "priorite",
+    question: "Qu'est-ce qui compte le plus pour toi dans une école ?",
+    options: [
+      { label: "Que le diplôme soit officiellement reconnu (agrément d'État, CAMES)", value: "agree" },
+      { label: "Une formation concrète, avec beaucoup de pratique et de stages", value: "pratique" },
+      { label: "Peu importe, je regarderai au cas par cas", value: "peu-importe" }
+    ]
+  }
+];
+
+// Mots-clés utilisés pour relier un domaine (voir DOMAINS) aux filières réelles
+// des écoles (voir SCHOOLS) — recherche insensible à la casse dans les filières.
+const DOMAIN_KEYWORDS = {
+  "Développement": ["développement", "génie logiciel", "logiciel", "programmeur", "application", "web", "mobile"],
+  "Data & IA": ["intelligence artificielle", "data", "science des données", "statistique"],
+  "Sécurité": ["cybersécurité", "sécurité", "cybercriminalité"],
+  "Produit & Design": ["multimédia", "design", "infographie", "webdesign"],
+  "Infrastructure & DevOps": ["réseaux", "systèmes", "administrateur", "maintenance informatique", "télécommunication"],
+  "Marketing digital": ["marketing", "économie numérique", "commerce"],
+  "Gestion & Management": ["gestion", "management"]
+};

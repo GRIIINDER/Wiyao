@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>À propos &amp; méthodologie — Kpataa</title>
-<meta name="description" content="Comment le contenu des roadmaps Kpataa est construit et vérifié : sources togolaises pour les métiers, taxonomie standard de l'industrie pour les compétences.">
+<title>Test d'orientation — Kpataa</title>
+<meta name="description" content="Pas sûr·e de ta voie dans la tech ? Réponds à 12 questions pour découvrir le domaine et les métiers qui te correspondent, puis les écoles togolaises adaptées à ton niveau, ta ville et ton budget.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,35 +25,20 @@
 
 <main>
   <section class="hero">
-    <h1>À propos &amp; <span class="hero-accent">méthodologie</span></h1>
-    <p>Comment le contenu de Kpataa est construit, vérifié et tenu à jour.</p>
+    <h1>Pas sûr·e de ta <span class="hero-accent">voie</span> ?</h1>
+    <p>12 questions pour identifier le domaine tech qui te correspond, puis les écoles togolaises
+       adaptées à ton niveau, ta ville et ton budget — pas juste un métier, un vrai point de départ.</p>
   </section>
 
-  <section class="about-section">
-    <h2>Le projet</h2>
-    <p>Kpataa est un projet communautaire indépendant, inspiré de roadmap.sh et adapté au contexte togolais. Il rassemble des roadmaps de carrière pour les métiers et compétences de la tech, avec les écoles, communautés, hubs et institutions à connaître pour construire une carrière tech au Togo.</p>
+  <section class="roadmap-category" id="quiz-section">
+    <div id="quiz-progress-wrap">
+      <div class="progress-bar large"><div class="progress-fill" id="quiz-progress-fill"></div></div>
+      <p class="progress-label" id="quiz-progress-label"></p>
+    </div>
+    <div id="quiz-question"></div>
   </section>
 
-  <section class="about-section">
-    <h2>Roadmaps par métier</h2>
-    <p>Les 60 roadmaps par métier s'appuient sur une recherche des offres d'emploi et fiches de poste réellement publiées sur des plateformes togolaises telles que <a href="https://emploi.tg" target="_blank" rel="noopener">emploi.tg</a>, <a href="https://novojob.com" target="_blank" rel="noopener">novojob.com</a>, JobRelais, l'Agence Togo Digital et d'autres sites d'offres d'emploi togolais, afin d'identifier les compétences concrètement demandées par les employeurs locaux. Ce contenu est complété par des ressources d'apprentissage reconnues (documentation officielle, cours en ligne francophones et internationaux).</p>
-  </section>
-
-  <section class="about-section">
-    <h2>Roadmaps par compétence</h2>
-    <p>Les 29 roadmaps par compétence suivent une taxonomie standard de l'industrie (langages, frameworks, outils, pratiques), cohérente avec les référentiels internationaux du secteur (dont roadmap.sh), pour rester alignées avec les attentes du marché au-delà du seul contexte togolais.</p>
-  </section>
-
-  <section class="about-section">
-    <h2>Limites et mises à jour</h2>
-    <p>Le marché de l'emploi et l'écosystème tech togolais évoluent vite : certaines informations (contacts, programmes de formation, structures citées dans l'<a href="ecosysteme.html">écosystème togolais</a>) peuvent changer. Vérifie toujours directement auprès des établissements et organismes concernés avant de t'engager.</p>
-    <p>Contenu vérifié pour la dernière fois en juillet 2026 (60 métiers, 29 compétences).</p>
-  </section>
-
-  <section class="about-section">
-    <h2>Contribuer</h2>
-    <p>Kpataa est un projet ouvert et perfectible. Pour signaler une erreur, proposer une roadmap ou compléter l'écosystème togolais, direction le <a href="https://github.com/GRIIINDER/Kpataa" target="_blank" rel="noopener">dépôt GitHub</a>.</p>
-  </section>
+  <section class="roadmap-category" id="quiz-results" hidden></section>
 </main>
 
 <footer class="site-footer">

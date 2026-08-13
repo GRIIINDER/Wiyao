@@ -473,11 +473,220 @@
     });
   }
 
+  // ---- Test d'orientation ----
+  let quizIndex = 0;
+  let quizScores = {};
+  let quizPractical = { niveau: null, ville: null, statut: null, priorite: null };
+
+  function renderQuizQuestion() {
+    const questionEl = document.getElementById("quiz-question");
+    if (!questionEl || typeof QUIZ_QUESTIONS === "undefined") return;
+
+    const progressFill = document.getElementById("quiz-progress-fill");
+    const progressLabel = document.getElementById("quiz-progress-label");
+    const total = QUIZ_QUESTIONS.length;
+    const q = QUIZ_QUESTIONS[quizIndex];
+
+    if (progressFill) progressFill.style.width = Math.round((quizIndex / total) * 100) + "%";
+    if (progressLabel) progressLabel.textContent = `Question ${quizIndex + 1} / ${total}`;
+
+    questionEl.innerHTML = `
+      <h2 class="quiz-question-title">${q.question}</h2>
+      <div class="quiz-options"></div>
+    `;
+    const optionsWrap = questionEl.querySelector(".quiz-options");
+    q.options.forEach((opt) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "quiz-option";
+      btn.textContent = opt.label;
+      btn.addEventListener("click", () => answerQuiz(q.type, opt.domain || opt.value));
+      optionsWrap.appendChild(btn);
+    });
+  }
+
+  function answerQuiz(type, value) {
+    if (type === "domain") {
+      quizScores[value] = (quizScores[value] || 0) + 1;
+    } else {
+      quizPractical[type] = value;
+    }
+    quizIndex += 1;
+    if (quizIndex >= QUIZ_QUESTIONS.length) {
+      showQuizResults();
+    } else {
+      renderQuizQuestion();
+    }
+  }
+
+  // Relie le domaine dominant + les réponses pratiques (niveau, ville, budget,
+  // priorité) aux écoles réelles, avec une checklist transparente par école
+  // plutôt qu'un score caché.
+  function computeSchoolMatches(topDomain) {
+    if (typeof SCHOOLS === "undefined") return [];
+    const keywords = (typeof DOMAIN_KEYWORDS !== "undefined" && DOMAIN_KEYWORDS[topDomain]) || [];
+
+    return Object.keys(SCHOOLS)
+      .map((id) => {
+        const school = SCHOOLS[id];
+        const filieresText = school.filieres.join(" ").toLowerCase();
+        const checks = [];
+
+        checks.push({
+          ok: keywords.some((kw) => filieresText.indexOf(kw) !== -1),
+          label: `Filière liée à ${topDomain}`
+        });
+
+        if (quizPractical.niveau && quizPractical.niveau !== "peu-importe") {
+          const niveauText = school.niveaux.join(" ").toLowerCase();
+          let ok = false;
+          if (quizPractical.niveau === "court") ok = /bts|brevet de technicien/.test(niveauText);
+          if (quizPractical.niveau === "licence") ok = /licence/.test(niveauText);
+          if (quizPractical.niveau === "long") ok = /master|ingénieur/.test(niveauText);
+          checks.push({ ok, label: "Niveau qui correspond" });
+        }
+
+        if (quizPractical.ville && quizPractical.ville !== "peu-importe") {
+          checks.push({ ok: school.ville.indexOf(quizPractical.ville) !== -1, label: `À ${quizPractical.ville}` });
+        }
+
+        if (quizPractical.statut && quizPractical.statut !== "peu-importe") {
+          checks.push({
+            ok: school.statut === quizPractical.statut,
+            label: quizPractical.statut === "public" ? "Statut public" : "Statut privé"
+          });
+        }
+
+        if (quizPractical.priorite && quizPractical.priorite !== "peu-importe") {
+          let ok = false;
+          if (quizPractical.priorite === "agree") ok = school.agree === true;
+          if (quizPractical.priorite === "pratique") ok = /pratique|stage/i.test(school.description);
+          checks.push({
+            ok,
+            label: quizPractical.priorite === "agree" ? "Diplôme agréé par l'État" : "Formation orientée pratique"
+          });
+        }
+
+        const score = checks.filter((c) => c.ok).length;
+        return { id, school, checks, score };
+      })
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5);
+  }
+
+  function buildSchoolMatchCard(match) {
+    const card = buildSchoolCard(match.id, match.school);
+    const checklist = document.createElement("div");
+    checklist.className = "quiz-match-checklist";
+    checklist.innerHTML = match.checks
+      .map((c) => `<span class="${c.ok ? "match-ok" : "match-no"}">${c.ok ? "✓" : "✗"} ${c.label}</span>`)
+      .join("");
+    card.insertBefore(checklist, card.firstChild);
+    return card;
+  }
+
+  function showQuizResults() {
+    const quizSection = document.getElementById("quiz-section");
+    const resultsSection = document.getElementById("quiz-results");
+    if (!resultsSection || typeof DOMAINS === "undefined") return;
+    if (quizSection) quizSection.hidden = true;
+    resultsSection.hidden = false;
+
+    const domains = Object.keys(DOMAINS);
+    const ranked = domains.slice().sort((a, b) => (quizScores[b] || 0) - (quizScores[a] || 0));
+    const top = ranked[0];
+    const second = ranked[1];
+    const totalAnswers = QUIZ_QUESTIONS.length;
+    const topMeta = DOMAINS[top];
+
+    const matchingRoles = typeof ROLES !== "undefined"
+      ? Object.keys(ROLES).filter((id) => ROLES[id].domain === top).slice(0, 3)
+      : [];
+    const schoolMatches = computeSchoolMatches(top);
+
+    let html = `
+      <h2>Ton profil : ${topMeta.icon} ${top}</h2>
+      <p class="category-desc">${topMeta.description}</p>
+    `;
+
+    if (matchingRoles.length) {
+      html += `<div class="grid" id="quiz-role-grid"></div>`;
+    }
+
+    if (second) {
+      const secondMeta = DOMAINS[second];
+      html += `<p class="quiz-secondary">Ce profil te correspond bien aussi : <strong>${secondMeta.icon} ${second}</strong>.</p>`;
+    }
+
+    if (schoolMatches.length) {
+      html += `
+        <h3 class="quiz-scores-title">Écoles recommandées pour toi</h3>
+        <p class="category-desc" style="text-align:center;">D'après ton domaine et tes réponses sur le niveau, la ville et le budget — chaque critère coché est vérifié, pas deviné.</p>
+        <div class="grid" id="quiz-school-grid"></div>
+        <p class="quiz-secondary"><a href="ecoles.html">Voir toutes les écoles →</a></p>
+      `;
+    }
+
+    html += `
+      <h3 class="quiz-scores-title">Répartition de tes réponses</h3>
+      <div class="quiz-scores"></div>
+      <button class="btn" id="quiz-restart" type="button">Refaire le test</button>
+    `;
+
+    resultsSection.innerHTML = html;
+
+    const roleGrid = document.getElementById("quiz-role-grid");
+    if (roleGrid) {
+      matchingRoles.forEach((id) => roleGrid.appendChild(buildCard(id, ROLES[id])));
+    }
+
+    const schoolGrid = document.getElementById("quiz-school-grid");
+    if (schoolGrid) {
+      schoolMatches.forEach((match) => schoolGrid.appendChild(buildSchoolMatchCard(match)));
+    }
+
+    const scoresWrap = resultsSection.querySelector(".quiz-scores");
+    ranked.forEach((domain) => {
+      const score = quizScores[domain] || 0;
+      const pct = Math.round((score / totalAnswers) * 100);
+      const meta = DOMAINS[domain];
+      const row = document.createElement("div");
+      row.className = "quiz-score-row";
+      row.innerHTML = `
+        <span class="quiz-score-label">${meta.icon} ${domain}</span>
+        <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <span class="quiz-score-value">${score}/${totalAnswers}</span>
+      `;
+      scoresWrap.appendChild(row);
+    });
+
+    const restartBtn = document.getElementById("quiz-restart");
+    if (restartBtn) restartBtn.addEventListener("click", restartQuiz);
+  }
+
+  function restartQuiz() {
+    quizIndex = 0;
+    quizScores = {};
+    quizPractical = { niveau: null, ville: null, statut: null, priorite: null };
+    const quizSection = document.getElementById("quiz-section");
+    const resultsSection = document.getElementById("quiz-results");
+    if (resultsSection) resultsSection.hidden = true;
+    if (quizSection) quizSection.hidden = false;
+    renderQuizQuestion();
+  }
+
+  function initQuiz() {
+    const questionEl = document.getElementById("quiz-question");
+    if (!questionEl) return;
+    renderQuizQuestion();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     renderGrid();
     initFilters();
     renderRoadmap();
     renderSchools();
     initSchoolFilters();
+    initQuiz();
   });
 })();
