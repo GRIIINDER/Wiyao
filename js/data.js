@@ -3853,7 +3853,12 @@ const SCHOOLS = {
     duree: "Licence : 3 ans · Master : 2 ans",
     admission: "Concours d'entrée post-BAC (dossier + épreuves) ; Licence en informatique requise pour le Master",
     site: "https://ipnetuniversity.com",
-    description: "Institut privé fondé en 2003, très orienté pratique (80+ partenariats entreprises tech), élu « université la plus innovante du Togo » en 2022."
+    description: "Institut privé fondé en 2003, très orienté pratique (80+ partenariats entreprises tech), élu « université la plus innovante du Togo » en 2022.",
+    datesCles: {
+      mode: "continue",
+      note: "Pas de calendrier fixe publié en ligne : test d'admission et entretien de motivation, sans date annoncée.",
+      contact: "ipnet@ipnetinstitute.com"
+    }
   },
   "iai-togo": {
     name: "Institut Africain d'Informatique (IAI-Togo)",
@@ -3866,7 +3871,17 @@ const SCHOOLS = {
     duree: "Cycle ITI / Licence Pro : 3 ans, avec stage en 2e et 3e années",
     admission: "Concours d'entrée (épreuves d'Anglais, Mathématiques, Français)",
     site: "https://new.iai-togo.tg/officiel",
-    description: "École inter-États d'enseignement supérieur en informatique, présente au Togo depuis 2002, référence historique de la formation informatique dans la sous-région."
+    description: "École inter-États d'enseignement supérieur en informatique, présente au Togo depuis 2002, référence historique de la formation informatique dans la sous-région.",
+    datesCles: {
+      mode: "campagne",
+      note: "Campagne annuelle avec concours écrit (mathématiques, techniques d'expression, anglais).",
+      cloture: "21 août 2026, 17h00",
+      concours: "1er septembre 2026",
+      anneeReference: "2026-2027",
+      urgent: true,
+      urgentNote: "Clôture des candidatures le 21 août 2026 — échéance imminente.",
+      aVerifier: true
+    }
   },
   "esgis": {
     name: "ESGIS Togo (École Supérieure de Gestion, d'Informatique et des Sciences)",
@@ -3878,7 +3893,11 @@ const SCHOOLS = {
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans après la Licence",
     admission: "Ouvert à tous les bacheliers en 1ère année ; dossier + entretien pour une admission directe en cours de cursus",
     site: "https://www.esgis.org/",
-    description: "École privée accréditée CAMES, présente au Togo, au Bénin et au Gabon, plus de 20 000 étudiants formés en 30 ans."
+    description: "École privée accréditée CAMES, présente au Togo, au Bénin et au Gabon, plus de 20 000 étudiants formés en 30 ans.",
+    datesCles: {
+      mode: "continue",
+      note: "Pré-inscriptions conseillées dès la publication des résultats du Bac (juillet-août), places limitées en informatique. Sélection sur dossier et entretien, pas de concours à date fixe."
+    }
   },
   "esig": {
     name: "ESIG Global Success (École Supérieure d'Informatique et de Gestion)",
@@ -3890,7 +3909,12 @@ const SCHOOLS = {
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "Pré-inscription en ligne ; le BTS est accessible directement après le Bac",
     site: "https://esig.tg/",
-    description: "École fondée il y a plus de 15 ans, 92 spécialités du BTS au Master, accréditation Cisco Networking Academy, partenariat avec Sorbonne Paris Nord."
+    description: "École fondée il y a plus de 15 ans, 92 spécialités du BTS au Master, accréditation Cisco Networking Academy, partenariat avec Sorbonne Paris Nord.",
+    datesCles: {
+      mode: "continue",
+      note: "Pré-inscriptions ouvertes en continu, dossier uniquement (pas de concours) : formulaire en ligne puis contact sous 24h.",
+      anneeReference: "2026-2027"
+    }
   },
   "esiba": {
     name: "ESIBA (École Supérieure d'Informatique, de Business et d'Administration)",
@@ -3902,7 +3926,12 @@ const SCHOOLS = {
     duree: "Licence : 3 ans · Master : 2 ans",
     admission: "Dossier d'inscription ; Licence en informatique ou domaine connexe requise pour le Master",
     site: "https://www.esiba.tg/",
-    description: "École agréée par l'État togolais, membre de l'Agence Universitaire de la Francophonie (AUF), plus de 36 ans d'expérience en gestion et technologie."
+    description: "École agréée par l'État togolais, membre de l'Agence Universitaire de la Francophonie (AUF), plus de 36 ans d'expérience en gestion et technologie.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucune date publiée en ligne — dossier PDF à soumettre directement.",
+      contact: "esiba@esiba.tg / +228 90 81 41 78"
+    }
   },
   "formatec": {
     name: "FORMATEC",
@@ -3914,7 +3943,13 @@ const SCHOOLS = {
     duree: "BT et Licence : 3 ans · Master : 2 ans",
     admission: "BEPC pour le BT · Bac ou BT pour la Licence · Licence Pro pour le Master",
     site: "https://formatec.tg/",
-    description: "Institut technique et professionnel fondé en 1996, certifié ISO 9001 depuis 2015."
+    description: "Institut technique et professionnel fondé en 1996, certifié ISO 9001 depuis 2015.",
+    datesCles: {
+      mode: "continue",
+      note: "Inscription continue pour les cycles Licence/BTS ; vagues ponctuelles pour les formations courtes.",
+      rentree: "6 octobre (référence)",
+      anneeReference: "2025-2026"
+    }
   },
   "ucao-uut": {
     name: "UCAO-UUT — Département de Génie Informatique",
@@ -3926,7 +3961,14 @@ const SCHOOLS = {
     duree: "Licence : 3 ans · Ingénierie : 5 ans",
     admission: "Bac scientifique (C, D, E, F) ; bonnes aptitudes en mathématiques et anglais",
     site: "https://ucao-uut.tg/formation-recherche/formations/institut-ecole/dgi/",
-    description: "Université catholique de plus de 15 000 étudiants ; le Département de Génie Informatique relève de l'École Supérieure d'Ingénieurs, encadrée par le CAMES et la Commission des Titres d'Ingénieur."
+    description: "Université catholique de plus de 15 000 étudiants ; le Département de Génie Informatique relève de l'École Supérieure d'Ingénieurs, encadrée par le CAMES et la Commission des Titres d'Ingénieur.",
+    datesCles: {
+      mode: "continue",
+      note: "Pré-inscriptions ouvertes dès juillet, jusqu'à la rentrée — pas de date limite stricte.",
+      ouverture: "15 juillet (référence)",
+      rentree: "23 octobre, rentrée solennelle (référence)",
+      anneeReference: "2025-2026"
+    }
   },
   "lbs": {
     name: "Lomé Business School (LBS)",
@@ -3938,7 +3980,15 @@ const SCHOOLS = {
     duree: null,
     admission: "Inscription en ligne selon le niveau du candidat (Première, Terminale, Bac, Licence, Master)",
     site: "https://lome-bs.com/",
-    description: "Se présente comme la 1ère Business School du Togo, forte orientation professionnalisante (stages dès la 1ère année)."
+    description: "Se présente comme la 1ère Business School du Togo, forte orientation professionnalisante (stages dès la 1ère année).",
+    datesCles: {
+      mode: "campagne",
+      note: "Campagne annuelle avec test écrit (maths, français, culture générale ou logique selon le niveau) et entretien de motivation.",
+      ouverture: "4 août, « semaines du bachelier » (référence)",
+      cloture: "26 septembre (référence)",
+      anneeReference: "2025-2026",
+      aVerifier: true
+    }
   },
   "defitech": {
     name: "Institut Polytechnique DEFITECH",
@@ -3950,7 +4000,14 @@ const SCHOOLS = {
     duree: "Licence : 3 ans (180 crédits) · Master : 2 ans",
     admission: "Bac ou équivalent pour l'entrée en L1 ; admission directe en L3 possible avec un BTS pertinent",
     site: "https://defitech.tg/",
-    description: "« L'école des battants », plus de 20 ans d'expérience, convention avec l'Université de Lomé, forte orientation entrepreneuriat."
+    description: "« L'école des battants », plus de 20 ans d'expérience, convention avec l'Université de Lomé, forte orientation entrepreneuriat.",
+    datesCles: {
+      mode: "continue",
+      note: "Admission sur dossier uniquement, pas de concours.",
+      rentree: "mi-octobre (référence 2024, non reconfirmée depuis)",
+      anneeReference: "2024-2025",
+      aVerifier: true
+    }
   },
   "ecole-des-cadres": {
     name: "École des Cadres",
@@ -3962,7 +4019,14 @@ const SCHOOLS = {
     duree: null,
     admission: "BAC II requis pour le BTS et la Licence informatique",
     site: "https://ecoledescadres.com/",
-    description: "Une des premières écoles professionnelles du Togo (1997), diplômes en partenariat avec l'Université du Littoral Côte d'Opale (France), accréditée CAMES."
+    description: "Une des premières écoles professionnelles du Togo (1997), diplômes en partenariat avec l'Université du Littoral Côte d'Opale (France), accréditée CAMES.",
+    datesCles: {
+      mode: "continue",
+      note: "Inscription continue ; un concours de bourses (réduction de frais, pas un concours d'entrée classique) a lieu chaque année en septembre.",
+      concours: "18 septembre, concours de bourses (référence)",
+      rentree: "29 septembre (référence)",
+      anneeReference: "2025-2026"
+    }
   },
   "universite-kara": {
     name: "Université de Kara",
@@ -3974,7 +4038,15 @@ const SCHOOLS = {
     duree: "Licences en 3 ans, avec stage professionnel et soutenance en fin de cycle",
     admission: "Bac C, D ou E (session récente), sélection sur dossier",
     site: "https://univkara.tg/",
-    description: "2e université publique du Togo ; la Faculté des Sciences et Techniques (FAST) porte plusieurs licences professionnelles tech."
+    description: "2e université publique du Togo ; la Faculté des Sciences et Techniques (FAST) porte plusieurs licences professionnelles tech.",
+    datesCles: {
+      mode: "campagne",
+      note: "Campagne annuelle publiée chaque année en août via le service DAAS (préinscription en ligne, puis dépôt physique du dossier).",
+      ouverture: "18 septembre – 27 octobre, préinscription en ligne (référence 2025-2026)",
+      cloture: "5 janvier, dépôt physique du dossier (référence 2025-2026)",
+      rentree: "14 septembre 2026 (confirmée)",
+      anneeReference: "2025-2026"
+    }
   },
   "esa-togo": {
     name: "ESA Togo (École Supérieure des Affaires)",
@@ -3986,7 +4058,13 @@ const SCHOOLS = {
     duree: null,
     admission: "Inscriptions continues (critères détaillés non publiés en ligne)",
     site: "https://www.esatogo.com/",
-    description: "École pluridisciplinaire fondée en 2010, plus de 33 filières, 1ère école togolaise certifiée ISO 9001."
+    description: "École pluridisciplinaire fondée en 2010, plus de 33 filières, 1ère école togolaise certifiée ISO 9001.",
+    datesCles: {
+      mode: "continue",
+      note: "Admission continue, avis sous 48 à 72h après étude du dossier — pas de date limite.",
+      rentree: "5 octobre 2026, 8h (campus Agoè et Super Taco, confirmé)",
+      anneeReference: "2026-2027"
+    }
   },
   "college-paris-togo": {
     name: "Collège de Paris Togo",
@@ -3999,7 +4077,12 @@ const SCHOOLS = {
     duree: null,
     admission: "Sur dossier (relevés de Bac, diplômes, lettre de motivation, CV)",
     site: "https://togo.collegedeparis.fr/",
-    description: "Campus togolais du réseau français Collège de Paris, agréé par l'État togolais sous le nom « Institut UPSILON Collège de Paris Supérieur »."
+    description: "Campus togolais du réseau français Collège de Paris, agréé par l'État togolais sous le nom « Institut UPSILON Collège de Paris Supérieur ».",
+    datesCles: {
+      mode: "inconnu",
+      note: "Admission continue présumée (formulaire en ligne), aucune date confirmée publiquement.",
+      contact: "+228 93 23 64 28 / +228 70 52 48 60"
+    }
   },
   "epl": {
     name: "École Polytechnique de Lomé (EPL)",
@@ -4011,7 +4094,16 @@ const SCHOOLS = {
     duree: null,
     admission: "Concours d'entrée post-Bac (Bac C, D, E scientifique pour la licence fondamentale)",
     site: "https://univ-lome.tg/",
-    description: "École d'ingénieurs publique, composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul)."
+    description: "École d'ingénieurs publique, composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).",
+    datesCles: {
+      mode: "campagne",
+      note: "Concours écrit annuel réservé aux nouveaux bacheliers, dépôt possible à Lomé, Kara (DAAS) et dans les directions régionales.",
+      ouverture: "17 août – 11 septembre 2026 (annoncé par voie de presse, à recouper avec le PDF officiel univ-lome.tg)",
+      concours: "30 septembre 2026 (annoncé par voie de presse)",
+      resultats: "11 octobre, campagne précédente (référence officielle confirmée)",
+      anneeReference: "2025-2026 (officiel) / 2026-2027 (annoncé, non recoupé)",
+      aVerifier: true
+    }
   },
   "iaec": {
     name: "IAEC (Institut Africain d'Administration et d'Études Commerciales)",
@@ -4024,7 +4116,12 @@ const SCHOOLS = {
     duree: null,
     admission: "Formulaire de demande en ligne",
     site: "https://iaectogo.com/",
-    description: "Un des tout premiers établissements privés d'enseignement supérieur du Togo (1986), membre du Groupe BK-Université."
+    description: "Un des tout premiers établissements privés d'enseignement supérieur du Togo (1986), membre du Groupe BK-Université.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié — confirmation de dossier sous 48h ouvrées après un entretien téléphonique obligatoire.",
+      contact: "+228 93 90 66 66"
+    }
   }
 };
 
@@ -4177,6 +4274,39 @@ const QUIZ_QUESTIONS = [
       { label: "Une formation concrète, avec beaucoup de pratique et de stages", value: "pratique" },
       { label: "Peu importe, je regarderai au cas par cas", value: "peu-importe" }
     ]
+  }
+];
+
+// ---- Calendrier académique togolais (repère général) ----
+// Enchaînement habituel d'une année de candidature au Togo. Les mois sont
+// volontairement donnés comme des périodes indicatives ("généralement") : ils
+// varient d'un établissement à l'autre — voir les dates précises par école
+// dans SCHOOLS[id].datesCles quand elles existent.
+const ACADEMIC_TIMELINE = [
+  {
+    periode: "Juin – Juillet",
+    titre: "Résultats du BAC",
+    description: "Publication des résultats du baccalauréat togolais. C'est le point de départ : la plupart des dossiers de candidature demandent une attestation ou un relevé du BAC."
+  },
+  {
+    periode: "Juillet – Septembre",
+    titre: "Période de candidature",
+    description: "Ouverture des inscriptions dans la majorité des écoles et universités. Beaucoup d'écoles privées togolaises admettent en continu sur cette période, sans date limite stricte."
+  },
+  {
+    periode: "Août – Septembre",
+    titre: "Concours d'entrée",
+    description: "Pour les établissements qui en organisent un (universités publiques, grandes écoles comme l'EPL ou l'IAI-Togo) : épreuves écrites, généralement sur cette fenêtre."
+  },
+  {
+    periode: "Septembre – Octobre",
+    titre: "Résultats d'admission",
+    description: "Publication des listes d'admis pour les établissements à concours ou à sélection sur dossier."
+  },
+  {
+    periode: "Octobre – Novembre",
+    titre: "Rentrée académique",
+    description: "Début des cours dans la plupart des écoles et universités togolaises."
   }
 ];
 

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Écoles &amp; universités — Kpataa</title>
-<meta name="description" content="Compare les écoles et universités togolaises qui forment à l'informatique et au numérique : filières, niveaux, admission et statut (public, privé, agréé par l'État).">
+<title>Calendrier des dates clés — Kpataa</title>
+<meta name="description" content="Les dates clés pour candidater dans une école ou université togolaise d'informatique : périodes d'inscription, concours, résultats et rentrée, école par école.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,49 +22,29 @@
       <a href="ecosysteme.html">Écosystème togolais</a>
     </nav>
   </div>
-  <div class="search-bar-wrap">
-    <div class="search-bar">
-      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-      <input type="search" id="school-search" placeholder="Rechercher une école ou une filière (ex : cybersécurité, Kara...)" aria-label="Rechercher une école">
-    </div>
-  </div>
 </header>
 
 <main>
   <section class="hero">
-    <h1>Trouve l'<span class="hero-accent">école</span> qu'il te faut</h1>
-    <p>15 écoles et universités togolaises qui forment à l'informatique et au numérique, avec leurs filières,
-       niveaux et conditions d'admission.</p>
+    <h1>Ne rate pas ta <span class="hero-accent">date limite</span></h1>
+    <p>Le calendrier type d'une candidature au Togo, puis les dates connues école par école.
+       Rater une inscription fait souvent perdre une année entière — vérifie toujours en direct
+       auprès de l'établissement avant de t'engager.</p>
   </section>
 
   <section class="roadmap-category">
-    <div class="filter-group">
-      <p class="filter-group-label">Ville</p>
-      <div class="domain-filters" id="ville-filters">
-        <button class="domain-chip active" data-ville="all" type="button">Toutes</button>
-        <button class="domain-chip" data-ville="Lomé" type="button">Lomé</button>
-        <button class="domain-chip" data-ville="Kara" type="button">Kara</button>
-      </div>
-    </div>
-    <div class="filter-group">
-      <p class="filter-group-label">Statut</p>
-      <div class="domain-filters" id="statut-filters">
-        <button class="domain-chip active" data-statut="all" type="button">Tous</button>
-        <button class="domain-chip" data-statut="public" type="button">Publique</button>
-        <button class="domain-chip" data-statut="prive" type="button">Privée</button>
-        <button class="domain-chip" data-statut="inter-etats" type="button">Inter-États</button>
-      </div>
-    </div>
+    <h2>Le calendrier type</h2>
+    <p class="category-desc">Un repère général — chaque établissement a son propre calendrier, parfois différent.</p>
+    <div class="timeline" id="timeline-general"></div>
+  </section>
 
-    <div id="school-grid" class="grid"></div>
-    <p class="no-results" id="school-no-results" hidden>Aucune école ne correspond à ta recherche.</p>
-
-    <p class="source-note">Le badge « 🏛️ Agréé État » confirme la présence de l'établissement dans la liste des
-      établissements privés d'enseignement supérieur agréés par le Ministère togolais de l'Enseignement Supérieur
-      et de la Recherche (arrêté du 4 novembre 2022). Les établissements publics (universités, École Polytechnique
-      de Lomé) et l'IAI-Togo (institut inter-États) ne figurent pas sur cette liste pour des raisons de statut, pas
-      de qualité. Vérifie toujours les informations d'admission directement auprès de l'établissement avant de
-      t'engager.</p>
+  <section class="roadmap-category">
+    <h2>Dates par école</h2>
+    <p class="category-desc">Écoles à campagne fixe d'abord, puis celles en admission continue, puis celles sans date publiée.</p>
+    <div id="school-dates-list"></div>
+    <p class="source-note">Les dates précises changent chaque année et ne sont pas toujours republiées à temps par les
+      établissements eux-mêmes. Celles marquées « dates de référence » viennent d'une campagne passée et donnent une
+      idée du calendrier habituel, pas une garantie pour l'année en cours.</p>
   </section>
 </main>
 

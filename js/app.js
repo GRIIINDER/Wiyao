@@ -681,6 +681,87 @@
     renderQuizQuestion();
   }
 
+  // ---- Calendrier des dates clés ----
+  function renderAcademicTimeline() {
+    const container = document.getElementById("timeline-general");
+    if (!container || typeof ACADEMIC_TIMELINE === "undefined") return;
+    ACADEMIC_TIMELINE.forEach((step) => {
+      const item = document.createElement("div");
+      item.className = "timeline-item";
+      item.innerHTML = `
+        <div class="timeline-period">${step.periode}</div>
+        <div class="timeline-content">
+          <h3>${step.titre}</h3>
+          <p>${step.description}</p>
+        </div>
+      `;
+      container.appendChild(item);
+    });
+  }
+
+  function schoolDatesRank(school) {
+    const dc = school.datesCles;
+    if (dc && dc.urgent) return 0;
+    if (dc && dc.mode === "campagne") return 1;
+    if (dc && dc.mode === "continue") return 2;
+    return 3;
+  }
+
+  function renderSchoolDates() {
+    const container = document.getElementById("school-dates-list");
+    if (!container || typeof SCHOOLS === "undefined") return;
+
+    const ids = Object.keys(SCHOOLS).sort((a, b) => schoolDatesRank(SCHOOLS[a]) - schoolDatesRank(SCHOOLS[b]));
+
+    ids.forEach((id) => {
+      const school = SCHOOLS[id];
+      const dc = school.datesCles;
+      const row = document.createElement("div");
+      row.className = "dates-row" + (dc && dc.urgent ? " dates-row-urgent" : "");
+
+      let bodyHtml = "";
+      if (dc && dc.urgent && dc.urgentNote) {
+        bodyHtml += `<p class="dates-urgent-note">⏰ ${dc.urgentNote}</p>`;
+      }
+      if (dc && dc.note) {
+        bodyHtml += `<p class="dates-note">${dc.note}</p>`;
+      }
+
+      const fields = dc
+        ? [
+            ["Ouverture des candidatures", dc.ouverture],
+            ["Clôture", dc.cloture],
+            ["Concours", dc.concours],
+            ["Résultats", dc.resultats],
+            ["Rentrée", dc.rentree]
+          ].filter(([, value]) => !!value)
+        : [];
+
+      if (fields.length) {
+        bodyHtml += `<ul class="dates-list">` + fields.map(([label, value]) => `<li><strong>${label} :</strong> ${value}</li>`).join("") + `</ul>`;
+      }
+
+      if (dc && dc.anneeReference) {
+        bodyHtml += `<p class="dates-ref-note">Repère de calendrier (${dc.anneeReference})${dc.aVerifier ? " — à reconfirmer directement auprès de l'école" : ""}.</p>`;
+      }
+
+      if (dc && dc.contact) {
+        bodyHtml += `<p class="dates-ref-note">Contact direct : ${dc.contact}</p>`;
+      }
+
+      if (!dc) {
+        bodyHtml = `<p class="dates-note">Dates non publiées en ligne — vérifie directement sur le site de l'école.</p>`;
+      }
+
+      row.innerHTML = `
+        <h3>${school.name}</h3>
+        ${bodyHtml}
+        ${school.site ? `<a class="school-link" href="${school.site}" target="_blank" rel="noopener">Voir le site officiel →</a>` : ""}
+      `;
+      container.appendChild(row);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     renderGrid();
     initFilters();
@@ -688,5 +769,7 @@
     renderSchools();
     initSchoolFilters();
     initQuiz();
+    renderAcademicTimeline();
+    renderSchoolDates();
   });
 })();
