@@ -1,4 +1,4 @@
-// Données des roadmaps - Kpataa
+// Données des roadmaps - Wiyao
 // Deux catégories, comme sur roadmap.sh :
 // - ROLES : roadmaps par métier (le chemin complet pour un rôle donné)
 // - SKILLS : roadmaps par compétence (un sujet précis, indépendant du métier)
@@ -7,6 +7,9 @@
 const ROLES = {
   "web-dev": {
     type: "role",
+    domain: "Développement",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Développeur Web",
     subtitle: "Du HTML au full-stack, avec les ressources disponibles au Togo",
     icon: "🌐",
@@ -87,6 +90,9 @@ const ROLES = {
 
   "backend": {
     type: "role",
+    domain: "Développement",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Développeur Backend",
     subtitle: "Langages, bases de données, architecture et sécurité",
     icon: "🛠️",
@@ -163,6 +169,9 @@ const ROLES = {
 
   "devops": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Avancé",
+    togoVerified: true,
     title: "DevOps & Cloud",
     subtitle: "Infrastructure, automatisation et exploitation",
     icon: "☁️",
@@ -231,6 +240,9 @@ const ROLES = {
 
   "cyber": {
     type: "role",
+    domain: "Sécurité",
+    level: "Avancé",
+    togoVerified: true,
     title: "Cybersécurité & Réseaux",
     subtitle: "Sécurité offensive, défensive et gouvernance",
     icon: "🔐",
@@ -304,6 +316,9 @@ const ROLES = {
 
   "data-ia": {
     type: "role",
+    domain: "Data & IA",
+    level: "Avancé",
+    togoVerified: true,
     title: "Data & Intelligence Artificielle",
     subtitle: "Des statistiques au machine learning appliqué",
     icon: "📊",
@@ -365,6 +380,9 @@ const ROLES = {
 
   "mobile": {
     type: "role",
+    domain: "Développement",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Développement Mobile",
     subtitle: "Natif ou cross-platform, de l'idée au Play Store",
     icon: "📱",
@@ -427,6 +445,9 @@ const ROLES = {
 
   "product-manager": {
     type: "role",
+    domain: "Produit & Design",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Product Manager",
     subtitle: "Piloter un produit numérique, de l'idée à la mise en marché",
     icon: "🧭",
@@ -486,6 +507,9 @@ const ROLES = {
 
   "ux-ui": {
     type: "role",
+    domain: "Produit & Design",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "UX/UI Designer",
     subtitle: "Concevoir des interfaces utiles, claires et agréables à utiliser",
     icon: "🎨",
@@ -544,6 +568,9 @@ const ROLES = {
 
   "data-analyst": {
     type: "role",
+    domain: "Data & IA",
+    level: "Débutant",
+    togoVerified: true,
     title: "Data Analyst",
     subtitle: "Transformer des données brutes en décisions",
     icon: "📈",
@@ -597,6 +624,9 @@ const ROLES = {
 
   "support-it": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Débutant",
+    togoVerified: true,
     title: "Support IT / Helpdesk",
     subtitle: "Assister les utilisateurs et maintenir le parc informatique",
     icon: "🖥️",
@@ -652,6 +682,9 @@ const ROLES = {
 
   "project-manager": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Chef de Projet IT",
     subtitle: "Planifier, coordonner et livrer des projets informatiques",
     icon: "📋",
@@ -702,6 +735,9 @@ const ROLES = {
 
   "qa-testeur": {
     type: "role",
+    domain: "Développement",
+    level: "Débutant",
+    togoVerified: true,
     title: "QA / Testeur Logiciel",
     subtitle: "Garantir la qualité et la fiabilité des logiciels avant leur mise en production",
     icon: "🐞",
@@ -750,6 +786,9 @@ const ROLES = {
 
   "sysadmin": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Administrateur Systèmes et Réseaux",
     subtitle: "Maintenir et sécuriser l'infrastructure informatique d'une organisation",
     icon: "🖧",
@@ -802,6 +841,9 @@ const ROLES = {
 
   "reseaux-telecoms": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Ingénieur Réseaux et Télécommunications",
     subtitle: "Concevoir et exploiter les infrastructures de télécommunication",
     icon: "📡",
@@ -850,6 +892,9 @@ const ROLES = {
 
   "architecte-logiciel": {
     type: "role",
+    domain: "Développement",
+    level: "Avancé",
+    togoVerified: true,
     title: "Architecte Logiciel",
     subtitle: "Concevoir la structure technique de systèmes complexes",
     icon: "🏗️",
@@ -897,6 +942,9 @@ const ROLES = {
 
   "erp-crm": {
     type: "role",
+    domain: "Développement",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Développeur ERP/CRM",
     subtitle: "Paramétrer et développer des solutions de gestion d'entreprise",
     icon: "🧩",
@@ -937,6 +985,9 @@ const ROLES = {
 
   "iot-embarque": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Avancé",
+    togoVerified: true,
     title: "Ingénieur IoT / Systèmes Embarqués",
     subtitle: "Concevoir des objets connectés et des systèmes électroniques intelligents",
     icon: "🔌",
@@ -977,6 +1028,9 @@ const ROLES = {
 
   "blockchain-web3": {
     type: "role",
+    domain: "Développement",
+    level: "Avancé",
+    togoVerified: true,
     title: "Développeur Blockchain / Web3",
     subtitle: "Construire des applications décentralisées et des smart contracts",
     icon: "⛓️",
@@ -1016,6 +1070,9 @@ const ROLES = {
 
   "marketing-digital": {
     type: "role",
+    domain: "Marketing digital",
+    level: "Débutant",
+    togoVerified: true,
     title: "Marketing Digital",
     subtitle: "Développer la présence et l'audience d'une marque en ligne",
     icon: "📣",
@@ -1057,6 +1114,9 @@ const ROLES = {
 
   "community-manager": {
     type: "role",
+    domain: "Marketing digital",
+    level: "Débutant",
+    togoVerified: true,
     title: "Community Manager",
     subtitle: "Animer et développer une communauté de marque sur les réseaux sociaux",
     icon: "💬",
@@ -1096,6 +1156,9 @@ const ROLES = {
 
   "formateur-informatique": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Formateur en Informatique",
     subtitle: "Transmettre des compétences numériques à des apprenants",
     icon: "🎓",
@@ -1135,6 +1198,9 @@ const ROLES = {
 
   "consultant-transfo-digitale": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Avancé",
+    togoVerified: true,
     title: "Consultant en Transformation Digitale",
     subtitle: "Accompagner les organisations dans leur passage au numérique",
     icon: "🧭",
@@ -1174,6 +1240,9 @@ const ROLES = {
 
   "data-engineer": {
     type: "role",
+    domain: "Data & IA",
+    level: "Avancé",
+    togoVerified: true,
     title: "Data Engineer",
     subtitle: "Construire les pipelines qui collectent, transforment et livrent la donnée",
     icon: "🔧",
@@ -1223,6 +1292,9 @@ const ROLES = {
 
   "dba": {
     type: "role",
+    domain: "Data & IA",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Administrateur de Bases de Données (DBA)",
     subtitle: "Garantir la performance, la disponibilité et la sécurité des bases de données",
     icon: "🗃️",
@@ -1272,6 +1344,9 @@ const ROLES = {
 
   "graphiste": {
     type: "role",
+    domain: "Produit & Design",
+    level: "Débutant",
+    togoVerified: true,
     title: "Graphiste / Infographiste",
     subtitle: "Créer les visuels et supports de communication d'une marque",
     icon: "🖌️",
@@ -1314,6 +1389,9 @@ const ROLES = {
 
   "webmaster": {
     type: "role",
+    domain: "Développement",
+    level: "Débutant",
+    togoVerified: true,
     title: "Webmaster",
     subtitle: "Gérer et maintenir un site web au quotidien",
     icon: "🧰",
@@ -1350,6 +1428,9 @@ const ROLES = {
 
   "ecommerce-manager": {
     type: "role",
+    domain: "Marketing digital",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "E-commerce Manager",
     subtitle: "Piloter une boutique en ligne, de la mise en rayon à la vente",
     icon: "🛒",
@@ -1392,6 +1473,9 @@ const ROLES = {
 
   "dsi-responsable-informatique": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Avancé",
+    togoVerified: true,
     title: "Responsable Informatique / DSI",
     subtitle: "Piloter la stratégie et les ressources informatiques d'une organisation",
     icon: "🧑‍💼",
@@ -1434,6 +1518,9 @@ const ROLES = {
 
   "informatique-industrielle": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Ingénieur en Informatique Industrielle",
     subtitle: "Automatiser et superviser les processus industriels",
     icon: "⚙️",
@@ -1475,6 +1562,9 @@ const ROLES = {
 
   "rssi": {
     type: "role",
+    domain: "Sécurité",
+    level: "Avancé",
+    togoVerified: true,
     title: "RSSI / Responsable de la Sécurité des Systèmes d'Information",
     subtitle: "Piloter la stratégie de cybersécurité et la gestion des risques d'une organisation",
     icon: "🛡️",
@@ -1518,6 +1608,9 @@ const ROLES = {
 
   "auditeur-ssi": {
     type: "role",
+    domain: "Sécurité",
+    level: "Avancé",
+    togoVerified: true,
     title: "Auditeur en Sécurité des Systèmes d'Information",
     subtitle: "Évaluer la conformité et les vulnérabilités des systèmes d'une organisation",
     icon: "🔍",
@@ -1559,6 +1652,9 @@ const ROLES = {
 
   "architecte-entreprise": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Avancé",
+    togoVerified: true,
     title: "Architecte d'Entreprise",
     subtitle: "Aligner les systèmes d'information sur la stratégie globale d'une organisation",
     icon: "🏛️",
@@ -1601,6 +1697,9 @@ const ROLES = {
 
   "juriste-it": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Juriste IT / Droit du Numérique",
     subtitle: "Sécuriser juridiquement les projets technologiques et la conformité numérique",
     icon: "⚖️",
@@ -1642,6 +1741,9 @@ const ROLES = {
 
   "scrum-master": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Scrum Master",
     subtitle: "Faciliter l'application des méthodes agiles au sein d'une équipe produit",
     icon: "🔄",
@@ -1689,6 +1791,9 @@ const ROLES = {
 
   "integrateur-systemes": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Intermédiaire",
+    togoVerified: true,
     title: "Intégrateur Systèmes",
     subtitle: "Assembler et faire communiquer différents systèmes et logiciels entre eux",
     icon: "🔗",
@@ -1731,6 +1836,9 @@ const ROLES = {
 
   "ux-writer": {
     type: "role",
+    domain: "Produit & Design",
+    level: "Débutant",
+    togoVerified: true,
     title: "UX Writer / Spécialiste en Microcopy",
     subtitle: "Écrire les textes d'interface qui guident et rassurent l'utilisateur",
     icon: "✍️",
@@ -1772,6 +1880,9 @@ const ROLES = {
 
   "sre": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Avancé",
+    togoVerified: false,
     title: "Site Reliability Engineer (SRE)",
     subtitle: "Garantir la fiabilité, la disponibilité et la performance des systèmes en production",
     icon: "📈",
@@ -1808,6 +1919,9 @@ const ROLES = {
 
   "platform-engineer": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Avancé",
+    togoVerified: false,
     title: "Platform Engineer",
     subtitle: "Construire les plateformes internes qui accélèrent le travail des équipes de développement",
     icon: "🧱",
@@ -1843,6 +1957,9 @@ const ROLES = {
 
   "solutions-engineer": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Solutions Engineer / Ingénieur Avant-Vente",
     subtitle: "Faire le lien technique entre un produit et les besoins d'un client",
     icon: "🤝",
@@ -1878,6 +1995,9 @@ const ROLES = {
 
   "technical-writer": {
     type: "role",
+    domain: "Produit & Design",
+    level: "Débutant",
+    togoVerified: false,
     title: "Rédacteur Technique / Technical Writer",
     subtitle: "Documenter les produits et systèmes pour les rendre compréhensibles",
     icon: "📝",
@@ -1914,6 +2034,9 @@ const ROLES = {
 
   "devrel": {
     type: "role",
+    domain: "Marketing digital",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Developer Advocate / DevRel Engineer",
     subtitle: "Créer le lien entre une entreprise tech et sa communauté de développeurs",
     icon: "📢",
@@ -1949,6 +2072,9 @@ const ROLES = {
 
   "analyste-soc": {
     type: "role",
+    domain: "Sécurité",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Analyste SOC (Security Operations Center)",
     subtitle: "Surveiller, détecter et réagir aux menaces de sécurité en temps réel",
     icon: "🚨",
@@ -1984,6 +2110,9 @@ const ROLES = {
 
   "pentester": {
     type: "role",
+    domain: "Sécurité",
+    level: "Avancé",
+    togoVerified: false,
     title: "Pentester / Ethical Hacker",
     subtitle: "Simuler des attaques pour identifier les failles de sécurité avant les attaquants réels",
     icon: "🕵️",
@@ -2019,6 +2148,9 @@ const ROLES = {
 
   "dpo": {
     type: "role",
+    domain: "Sécurité",
+    level: "Avancé",
+    togoVerified: false,
     title: "Data Protection Officer (DPO)",
     subtitle: "Garantir la conformité d'une organisation en matière de protection des données",
     icon: "🔏",
@@ -2054,6 +2186,9 @@ const ROLES = {
 
   "product-owner": {
     type: "role",
+    domain: "Produit & Design",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Product Owner",
     subtitle: "Porter la vision produit au sein d'une équipe agile et prioriser le backlog",
     icon: "📦",
@@ -2088,6 +2223,9 @@ const ROLES = {
 
   "engineering-manager": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Avancé",
+    togoVerified: false,
     title: "Engineering Manager",
     subtitle: "Encadrer une équipe d'ingénieurs et faire le lien entre technique et organisation",
     icon: "🧑‍🏫",
@@ -2122,6 +2260,9 @@ const ROLES = {
 
   "cto": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Avancé",
+    togoVerified: false,
     title: "CTO / Directeur Technique",
     subtitle: "Définir et porter la vision technologique globale d'une organisation",
     icon: "🧑‍💻",
@@ -2156,6 +2297,9 @@ const ROLES = {
 
   "ux-researcher": {
     type: "role",
+    domain: "Produit & Design",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "UX Researcher",
     subtitle: "Comprendre les utilisateurs en profondeur pour guider les décisions produit",
     icon: "🔬",
@@ -2190,6 +2334,9 @@ const ROLES = {
 
   "technical-program-manager": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Avancé",
+    togoVerified: false,
     title: "Technical Program Manager (TPM)",
     subtitle: "Coordonner des programmes techniques complexes impliquant plusieurs équipes",
     icon: "🗂️",
@@ -2224,6 +2371,9 @@ const ROLES = {
 
   "business-analyst-it": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Business Analyst IT",
     subtitle: "Traduire les besoins métier en exigences fonctionnelles pour les équipes techniques",
     icon: "📋",
@@ -2258,6 +2408,9 @@ const ROLES = {
 
   "game-developer": {
     type: "role",
+    domain: "Développement",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Développeur de Jeux Vidéo",
     subtitle: "Programmer la logique et les mécaniques d'un jeu vidéo",
     icon: "🎮",
@@ -2293,6 +2446,9 @@ const ROLES = {
 
   "game-designer": {
     type: "role",
+    domain: "Produit & Design",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Game Designer",
     subtitle: "Concevoir les règles, la progression et l'expérience d'un jeu",
     icon: "🕹️",
@@ -2327,6 +2483,9 @@ const ROLES = {
 
   "ar-vr-developer": {
     type: "role",
+    domain: "Développement",
+    level: "Avancé",
+    togoVerified: false,
     title: "Développeur AR/VR",
     subtitle: "Créer des expériences immersives en réalité augmentée et virtuelle",
     icon: "🥽",
@@ -2360,6 +2519,9 @@ const ROLES = {
 
   "robotique": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Avancé",
+    togoVerified: false,
     title: "Ingénieur Robotique",
     subtitle: "Concevoir et programmer des systèmes robotiques autonomes",
     icon: "🤖",
@@ -2395,6 +2557,9 @@ const ROLES = {
 
   "salesforce-admin": {
     type: "role",
+    domain: "Infrastructure & DevOps",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Administrateur Salesforce / CRM",
     subtitle: "Paramétrer et faire évoluer une plateforme CRM au service des équipes commerciales",
     icon: "☁️",
@@ -2428,6 +2593,9 @@ const ROLES = {
 
   "sap-consultant": {
     type: "role",
+    domain: "Gestion & Management",
+    level: "Avancé",
+    togoVerified: false,
     title: "Consultant SAP",
     subtitle: "Implémenter et paramétrer les modules SAP dans une organisation",
     icon: "🧮",
@@ -2461,6 +2629,9 @@ const ROLES = {
 
   "quant-developer": {
     type: "role",
+    domain: "Data & IA",
+    level: "Avancé",
+    togoVerified: false,
     title: "Quant Developer / Analyste Quantitatif",
     subtitle: "Développer des modèles mathématiques et des systèmes pour la finance",
     icon: "📐",
@@ -2494,6 +2665,9 @@ const ROLES = {
 
   "growth-hacker": {
     type: "role",
+    domain: "Marketing digital",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Growth Hacker",
     subtitle: "Expérimenter rapidement pour accélérer la croissance d'un produit",
     icon: "🚀",
@@ -2527,6 +2701,9 @@ const ROLES = {
 
   "content-strategist": {
     type: "role",
+    domain: "Marketing digital",
+    level: "Débutant",
+    togoVerified: false,
     title: "Content Strategist",
     subtitle: "Définir la stratégie de contenu d'une marque sur le long terme",
     icon: "📰",
@@ -2561,6 +2738,9 @@ const ROLES = {
 
   "traffic-manager": {
     type: "role",
+    domain: "Marketing digital",
+    level: "Intermédiaire",
+    togoVerified: false,
     title: "Traffic Manager",
     subtitle: "Piloter les campagnes publicitaires payantes pour maximiser le retour sur investissement",
     icon: "🎯",
@@ -2592,6 +2772,16 @@ const ROLES = {
       }
     ]
   }
+};
+
+const DOMAINS = {
+  "Développement": { icon: "💻", description: "Concevoir et construire des logiciels, applications et sites web." },
+  "Data & IA": { icon: "📊", description: "Exploiter, analyser et modéliser la donnée." },
+  "Sécurité": { icon: "🔐", description: "Protéger les systèmes, les données et les organisations." },
+  "Produit & Design": { icon: "🎨", description: "Concevoir des produits et expériences centrées sur l'utilisateur." },
+  "Infrastructure & DevOps": { icon: "☁️", description: "Déployer, exploiter et fiabiliser les systèmes et réseaux." },
+  "Marketing digital": { icon: "📣", description: "Faire connaître, acquérir et fidéliser via le numérique." },
+  "Gestion & Management": { icon: "🧭", description: "Piloter des projets, des équipes et des transformations." }
 };
 
 const SKILLS = {
@@ -3646,3 +3836,488 @@ const SKILLS = {
 
 // Fusion pour la recherche par id, quelle que soit la catégorie
 const ALL_ROADMAPS = Object.assign({}, ROLES, SKILLS);
+
+// ---- Écoles & universités ----
+// Données vérifiées sur les sites officiels de chaque établissement (recherche août 2026).
+// Statut "agree" : présence confirmée dans la liste des établissements privés d'enseignement
+// supérieur agréés par le Ministère togolais de l'Enseignement Supérieur et de la Recherche
+// (arrêté du 4 novembre 2022). null = non applicable (établissement public) ou statut particulier.
+const SCHOOLS = {
+  "ipnet": {
+    name: "IPNET Institute of Technology",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Licence", "Master", "Formations certifiantes"],
+    filieres: ["Intelligence Artificielle", "Science des Données", "Génie Logiciel", "Cybersécurité", "Développement Web & Mobile", "Réseaux, Systèmes & Sécurité"],
+    duree: "Licence : 3 ans · Master : 2 ans",
+    admission: "Concours d'entrée post-BAC (dossier + épreuves) ; Licence en informatique requise pour le Master",
+    site: "https://ipnetuniversity.com",
+    description: "Institut privé fondé en 2003, très orienté pratique (80+ partenariats entreprises tech), élu « université la plus innovante du Togo » en 2022.",
+    datesCles: {
+      mode: "continue",
+      note: "Pas de calendrier fixe publié en ligne : test d'admission et entretien de motivation, sans date annoncée.",
+      contact: "ipnet@ipnetinstitute.com"
+    }
+  },
+  "iai-togo": {
+    name: "Institut Africain d'Informatique (IAI-Togo)",
+    ville: ["Lomé"],
+    statut: "inter-etats",
+    agree: null,
+    agreeNote: "École inter-États d'enseignement supérieur (réseau régional créé en 1971) : statut distinct des établissements privés togolais recensés par le Ministère.",
+    niveaux: ["Licence Professionnelle", "Ingénieur des Travaux Informatiques", "Ingénieur Concepteur"],
+    filieres: ["Génie Logiciel & Systèmes d'Information", "Administration des Systèmes et Réseaux", "Multimédia", "Technologies Web"],
+    duree: "Cycle ITI / Licence Pro : 3 ans, avec stage en 2e et 3e années",
+    admission: "Concours d'entrée (épreuves d'Anglais, Mathématiques, Français)",
+    site: "https://new.iai-togo.tg/officiel",
+    description: "École inter-États d'enseignement supérieur en informatique, présente au Togo depuis 2002, référence historique de la formation informatique dans la sous-région.",
+    datesCles: {
+      mode: "campagne",
+      note: "Campagne annuelle avec concours écrit (mathématiques, techniques d'expression, anglais).",
+      cloture: "21 août 2026, 17h00",
+      concours: "1er septembre 2026",
+      anneeReference: "2026-2027",
+      urgent: true,
+      urgentNote: "Clôture des candidatures le 21 août 2026 — échéance imminente.",
+      aVerifier: true
+    }
+  },
+  "esgis": {
+    name: "ESGIS Togo (École Supérieure de Gestion, d'Informatique et des Sciences)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence", "Master"],
+    filieres: ["Informatique de Gestion", "Développement d'Applications", "Systèmes et Réseaux", "Sécurité Informatique", "Intelligence Artificielle & Big Data"],
+    duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans après la Licence",
+    admission: "Ouvert à tous les bacheliers en 1ère année ; dossier + entretien pour une admission directe en cours de cursus",
+    site: "https://www.esgis.org/",
+    description: "École privée accréditée CAMES, présente au Togo, au Bénin et au Gabon, plus de 20 000 étudiants formés en 30 ans.",
+    datesCles: {
+      mode: "continue",
+      note: "Pré-inscriptions conseillées dès la publication des résultats du Bac (juillet-août), places limitées en informatique. Sélection sur dossier et entretien, pas de concours à date fixe."
+    }
+  },
+  "esig": {
+    name: "ESIG Global Success (École Supérieure d'Informatique et de Gestion)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence", "Master"],
+    filieres: ["Administrateur Réseaux", "Développeur d'Application", "Systèmes Informatiques et Logiciels", "Administration et Sécurité des Réseaux", "Cybersécurité", "Big Data"],
+    duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
+    admission: "Pré-inscription en ligne ; le BTS est accessible directement après le Bac",
+    site: "https://esig.tg/",
+    description: "École fondée il y a plus de 15 ans, 92 spécialités du BTS au Master, accréditation Cisco Networking Academy, partenariat avec Sorbonne Paris Nord.",
+    datesCles: {
+      mode: "continue",
+      note: "Pré-inscriptions ouvertes en continu, dossier uniquement (pas de concours) : formulaire en ligne puis contact sous 24h.",
+      anneeReference: "2026-2027"
+    }
+  },
+  "esiba": {
+    name: "ESIBA (École Supérieure d'Informatique, de Business et d'Administration)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Licence", "Master"],
+    filieres: ["Systèmes Informatiques et Logiciels", "Développement d'Application", "Sécurité des Réseaux et Télécommunications", "Informatique et Réseaux (Master)"],
+    duree: "Licence : 3 ans · Master : 2 ans",
+    admission: "Dossier d'inscription ; Licence en informatique ou domaine connexe requise pour le Master",
+    site: "https://www.esiba.tg/",
+    description: "École agréée par l'État togolais, membre de l'Agence Universitaire de la Francophonie (AUF), plus de 36 ans d'expérience en gestion et technologie.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucune date publiée en ligne — dossier PDF à soumettre directement.",
+      contact: "esiba@esiba.tg / +228 90 81 41 78"
+    }
+  },
+  "formatec": {
+    name: "FORMATEC",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Brevet de Technicien", "Licence Professionnelle", "Master Professionnel"],
+    filieres: ["Maintenance Informatique", "Administration de Réseaux", "Développeur d'Application", "Analyste Programmeur", "Génie Logiciel"],
+    duree: "BT et Licence : 3 ans · Master : 2 ans",
+    admission: "BEPC pour le BT · Bac ou BT pour la Licence · Licence Pro pour le Master",
+    site: "https://formatec.tg/",
+    description: "Institut technique et professionnel fondé en 1996, certifié ISO 9001 depuis 2015.",
+    datesCles: {
+      mode: "continue",
+      note: "Inscription continue pour les cycles Licence/BTS ; vagues ponctuelles pour les formations courtes.",
+      rentree: "6 octobre (référence)",
+      anneeReference: "2025-2026"
+    }
+  },
+  "ucao-uut": {
+    name: "UCAO-UUT — Département de Génie Informatique",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Licence", "Ingénierie (Master)"],
+    filieres: ["Développement d'Applications", "Réseaux Informatiques et Télécommunication", "Cybersécurité", "Big Data", "Intelligence Artificielle", "Génie Logiciel"],
+    duree: "Licence : 3 ans · Ingénierie : 5 ans",
+    admission: "Bac scientifique (C, D, E, F) ; bonnes aptitudes en mathématiques et anglais",
+    site: "https://ucao-uut.tg/formation-recherche/formations/institut-ecole/dgi/",
+    description: "Université catholique de plus de 15 000 étudiants ; le Département de Génie Informatique relève de l'École Supérieure d'Ingénieurs, encadrée par le CAMES et la Commission des Titres d'Ingénieur.",
+    datesCles: {
+      mode: "continue",
+      note: "Pré-inscriptions ouvertes dès juillet, jusqu'à la rentrée — pas de date limite stricte.",
+      ouverture: "15 juillet (référence)",
+      rentree: "23 octobre, rentrée solennelle (référence)",
+      anneeReference: "2025-2026"
+    }
+  },
+  "lbs": {
+    name: "Lomé Business School (LBS)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Bachelor", "Master", "Executive MBA"],
+    filieres: ["Développement Web / Génie Logiciel", "Big Data", "Cloud Computing", "Réseaux et Cybersécurité"],
+    duree: null,
+    admission: "Inscription en ligne selon le niveau du candidat (Première, Terminale, Bac, Licence, Master)",
+    site: "https://lome-bs.com/",
+    description: "Se présente comme la 1ère Business School du Togo, forte orientation professionnalisante (stages dès la 1ère année).",
+    datesCles: {
+      mode: "campagne",
+      note: "Campagne annuelle avec test écrit (maths, français, culture générale ou logique selon le niveau) et entretien de motivation.",
+      ouverture: "4 août, « semaines du bachelier » (référence)",
+      cloture: "26 septembre (référence)",
+      anneeReference: "2025-2026",
+      aVerifier: true
+    }
+  },
+  "defitech": {
+    name: "Institut Polytechnique DEFITECH",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Licence", "Master"],
+    filieres: ["Intelligence Artificielle et Big Data", "Systèmes et Réseaux Informatiques", "Génie Logiciel"],
+    duree: "Licence : 3 ans (180 crédits) · Master : 2 ans",
+    admission: "Bac ou équivalent pour l'entrée en L1 ; admission directe en L3 possible avec un BTS pertinent",
+    site: "https://defitech.tg/",
+    description: "« L'école des battants », plus de 20 ans d'expérience, convention avec l'Université de Lomé, forte orientation entrepreneuriat.",
+    datesCles: {
+      mode: "continue",
+      note: "Admission sur dossier uniquement, pas de concours.",
+      rentree: "mi-octobre (référence 2024, non reconfirmée depuis)",
+      anneeReference: "2024-2025",
+      aVerifier: true
+    }
+  },
+  "ecole-des-cadres": {
+    name: "École des Cadres",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence"],
+    filieres: ["Informatique de Gestion", "Systèmes et Réseaux Informatiques", "Développement d'Application", "Sécurité Informatique"],
+    duree: null,
+    admission: "BAC II requis pour le BTS et la Licence informatique",
+    site: "https://ecoledescadres.com/",
+    description: "Une des premières écoles professionnelles du Togo (1997), diplômes en partenariat avec l'Université du Littoral Côte d'Opale (France), accréditée CAMES.",
+    datesCles: {
+      mode: "continue",
+      note: "Inscription continue ; un concours de bourses (réduction de frais, pas un concours d'entrée classique) a lieu chaque année en septembre.",
+      concours: "18 septembre, concours de bourses (référence)",
+      rentree: "29 septembre (référence)",
+      anneeReference: "2025-2026"
+    }
+  },
+  "universite-kara": {
+    name: "Université de Kara",
+    ville: ["Kara"],
+    statut: "public",
+    agree: null,
+    niveaux: ["Licence", "Licence Professionnelle", "Master"],
+    filieres: ["Mathématiques et Informatique Appliquées", "Sécurité Informatique et Cybersécurité", "Développement Web et Mobile", "Métiers du Multimédia et de l'Internet"],
+    duree: "Licences en 3 ans, avec stage professionnel et soutenance en fin de cycle",
+    admission: "Bac C, D ou E (session récente), sélection sur dossier",
+    site: "https://univkara.tg/",
+    description: "2e université publique du Togo ; la Faculté des Sciences et Techniques (FAST) porte plusieurs licences professionnelles tech.",
+    datesCles: {
+      mode: "campagne",
+      note: "Campagne annuelle publiée chaque année en août via le service DAAS (préinscription en ligne, puis dépôt physique du dossier).",
+      ouverture: "18 septembre – 27 octobre, préinscription en ligne (référence 2025-2026)",
+      cloture: "5 janvier, dépôt physique du dossier (référence 2025-2026)",
+      rentree: "14 septembre 2026 (confirmée)",
+      anneeReference: "2025-2026"
+    }
+  },
+  "esa-togo": {
+    name: "ESA Togo (École Supérieure des Affaires)",
+    ville: ["Lomé", "Kara"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence Professionnelle", "Master Professionnel"],
+    filieres: ["Génie Logiciel", "Réseaux et Télécommunications", "Maintenance Informatique et Réseaux", "Cybersécurité et Cybercriminalité"],
+    duree: null,
+    admission: "Inscriptions continues (critères détaillés non publiés en ligne)",
+    site: "https://www.esatogo.com/",
+    description: "École pluridisciplinaire fondée en 2010, plus de 33 filières, 1ère école togolaise certifiée ISO 9001.",
+    datesCles: {
+      mode: "continue",
+      note: "Admission continue, avis sous 48 à 72h après étude du dossier — pas de date limite.",
+      rentree: "5 octobre 2026, 8h (campus Agoè et Super Taco, confirmé)",
+      anneeReference: "2026-2027"
+    }
+  },
+  "college-paris-togo": {
+    name: "Collège de Paris Togo",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    agreeNote: "Agréé sous le nom officiel « Institut UPSILON Collège de Paris Supérieur ».",
+    niveaux: ["Bachelor", "Master / MS"],
+    filieres: ["Administrateur des Systèmes d'Information", "Intelligence Artificielle & Big Data"],
+    duree: null,
+    admission: "Sur dossier (relevés de Bac, diplômes, lettre de motivation, CV)",
+    site: "https://togo.collegedeparis.fr/",
+    description: "Campus togolais du réseau français Collège de Paris, agréé par l'État togolais sous le nom « Institut UPSILON Collège de Paris Supérieur ».",
+    datesCles: {
+      mode: "inconnu",
+      note: "Admission continue présumée (formulaire en ligne), aucune date confirmée publiquement.",
+      contact: "+228 93 23 64 28 / +228 70 52 48 60"
+    }
+  },
+  "epl": {
+    name: "École Polytechnique de Lomé (EPL)",
+    ville: ["Lomé"],
+    statut: "public",
+    agree: null,
+    niveaux: ["Licence Fondamentale", "Licence Professionnelle", "Master", "Diplôme d'Ingénieur"],
+    filieres: ["Informatique et Systèmes", "Intelligence Artificielle & Big Data", "Génie Logiciel", "Systèmes et Réseaux Informatiques"],
+    duree: null,
+    admission: "Concours d'entrée post-Bac (Bac C, D, E scientifique pour la licence fondamentale)",
+    site: "https://univ-lome.tg/",
+    description: "École d'ingénieurs publique, composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).",
+    datesCles: {
+      mode: "campagne",
+      note: "Concours écrit annuel réservé aux nouveaux bacheliers, dépôt possible à Lomé, Kara (DAAS) et dans les directions régionales.",
+      ouverture: "17 août – 11 septembre 2026 (annoncé par voie de presse, à recouper avec le PDF officiel univ-lome.tg)",
+      concours: "30 septembre 2026 (annoncé par voie de presse)",
+      resultats: "11 octobre, campagne précédente (référence officielle confirmée)",
+      anneeReference: "2025-2026 (officiel) / 2026-2027 (annoncé, non recoupé)",
+      aVerifier: true
+    }
+  },
+  "iaec": {
+    name: "IAEC (Institut Africain d'Administration et d'Études Commerciales)",
+    ville: ["Lomé", "Kara"],
+    statut: "prive",
+    agree: true,
+    agreeNote: "Ne pas confondre avec le domaine iaec-university.tg, distinct et non vérifié — le site officiel de référence est iaectogo.com.",
+    niveaux: ["BTS", "Licence", "Master"],
+    filieres: ["Génie Logiciel", "Génie Informatique", "Réseaux et Télécommunications", "Sciences Informatiques et Télécommunications (Master)"],
+    duree: null,
+    admission: "Formulaire de demande en ligne",
+    site: "https://iaectogo.com/",
+    description: "Un des tout premiers établissements privés d'enseignement supérieur du Togo (1986), membre du Groupe BK-Université.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié — confirmation de dossier sous 48h ouvrées après un entretien téléphonique obligatoire.",
+      contact: "+228 93 90 66 66"
+    }
+  }
+};
+
+const VILLES = {
+  "Lomé": { icon: "🏙️" },
+  "Kara": { icon: "🏘️" }
+};
+
+// ---- Test d'orientation ----
+// Chaque réponse pointe vers un domaine (voir DOMAINS). Le score final classe
+// les 7 domaines selon le nombre de réponses correspondantes.
+const QUIZ_QUESTIONS = [
+  {
+    type: "domain",
+    question: "Qu'est-ce qui t'attire le plus dans la tech ?",
+    options: [
+      { label: "Construire des applications et des sites qui marchent bien", domain: "Développement" },
+      { label: "Comprendre des chiffres, des tendances, entraîner des modèles", domain: "Data & IA" },
+      { label: "Protéger des systèmes contre les attaques", domain: "Sécurité" },
+      { label: "Créer des interfaces belles et faciles à utiliser", domain: "Produit & Design" },
+      { label: "Faire tourner des serveurs et des infrastructures fiables", domain: "Infrastructure & DevOps" },
+      { label: "Faire connaître un produit ou une marque en ligne", domain: "Marketing digital" },
+      { label: "Organiser, planifier, piloter des équipes et des projets", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Dans un jeu vidéo, tu préfères plutôt...",
+    options: [
+      { label: "Créer des mods ou du contenu personnalisé", domain: "Développement" },
+      { label: "Optimiser ta stratégie à partir de statistiques", domain: "Data & IA" },
+      { label: "Chercher les failles et les limites du jeu", domain: "Sécurité" },
+      { label: "Personnaliser ton avatar et ton interface", domain: "Produit & Design" },
+      { label: "Monter et administrer un serveur multijoueur", domain: "Infrastructure & DevOps" },
+      { label: "Streamer ou créer du contenu autour du jeu", domain: "Marketing digital" },
+      { label: "Organiser un tournoi entre joueurs", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Face à un problème, ton premier réflexe...",
+    options: [
+      { label: "Écrire du code pour le résoudre", domain: "Développement" },
+      { label: "Analyser des données pour comprendre pourquoi", domain: "Data & IA" },
+      { label: "Chercher comment quelqu'un pourrait en abuser", domain: "Sécurité" },
+      { label: "Repenser l'expérience pour que ça n'arrive plus", domain: "Produit & Design" },
+      { label: "Vérifier si l'infrastructure tient la charge", domain: "Infrastructure & DevOps" },
+      { label: "Communiquer dessus pour rassurer tout le monde", domain: "Marketing digital" },
+      { label: "Réunir les bonnes personnes pour trancher", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Ton environnement de travail idéal...",
+    options: [
+      { label: "Seul·e, concentré·e, à écrire du code", domain: "Développement" },
+      { label: "Entouré·e de tableaux de données et de graphiques", domain: "Data & IA" },
+      { label: "En veille permanente, à surveiller des menaces", domain: "Sécurité" },
+      { label: "Avec des maquettes, des couleurs, du visuel", domain: "Produit & Design" },
+      { label: "En salle serveur ou sur des consoles cloud", domain: "Infrastructure & DevOps" },
+      { label: "Sur les réseaux sociaux, au contact d'une audience", domain: "Marketing digital" },
+      { label: "En réunion, à coordonner plusieurs personnes", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Ce qui te frustre le plus...",
+    options: [
+      { label: "Un code mal écrit qui plante", domain: "Développement" },
+      { label: "Des données mal organisées ou peu fiables", domain: "Data & IA" },
+      { label: "Une faille de sécurité qu'on préfère ignorer", domain: "Sécurité" },
+      { label: "Une interface confuse et pénible à utiliser", domain: "Produit & Design" },
+      { label: "Un serveur qui tombe en panne au mauvais moment", domain: "Infrastructure & DevOps" },
+      { label: "Une campagne qui rate complètement sa cible", domain: "Marketing digital" },
+      { label: "Un projet lancé sans plan clair", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Ce que tu ferais gratuitement, sur ton temps libre...",
+    options: [
+      { label: "Bidouiller un petit projet de code perso", domain: "Développement" },
+      { label: "Explorer un jeu de données qui t'intéresse", domain: "Data & IA" },
+      { label: "Regarder des vidéos sur des CTF ou du piratage éthique", domain: "Sécurité" },
+      { label: "Redessiner l'appli d'une marque que tu utilises", domain: "Produit & Design" },
+      { label: "Monter ton propre serveur ou Raspberry Pi", domain: "Infrastructure & DevOps" },
+      { label: "Créer du contenu et faire grandir une page", domain: "Marketing digital" },
+      { label: "Organiser un événement ou un club", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Une matière scolaire où tu es à l'aise...",
+    options: [
+      { label: "Algorithmique et logique", domain: "Développement" },
+      { label: "Mathématiques et statistiques", domain: "Data & IA" },
+      { label: "Informatique, avec l'envie de comprendre comment ça marche vraiment", domain: "Sécurité" },
+      { label: "Arts plastiques et créativité visuelle", domain: "Produit & Design" },
+      { label: "Sciences physiques et systèmes", domain: "Infrastructure & DevOps" },
+      { label: "Communication et langues", domain: "Marketing digital" },
+      { label: "Économie et gestion", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "domain",
+    question: "Dans un projet d'équipe, ton rôle naturel...",
+    options: [
+      { label: "Celui ou celle qui code la solution", domain: "Développement" },
+      { label: "Celui ou celle qui analyse les résultats", domain: "Data & IA" },
+      { label: "Celui ou celle qui teste et cherche les failles", domain: "Sécurité" },
+      { label: "Celui ou celle qui soigne la présentation", domain: "Produit & Design" },
+      { label: "Celui ou celle qui s'assure que tout tourne techniquement", domain: "Infrastructure & DevOps" },
+      { label: "Celui ou celle qui présente et « vend » le projet", domain: "Marketing digital" },
+      { label: "Celui ou celle qui coordonne l'équipe", domain: "Gestion & Management" }
+    ]
+  },
+  {
+    type: "niveau",
+    question: "Une fois ton domaine identifié : quel niveau veux-tu viser pour commencer ?",
+    options: [
+      { label: "Un diplôme court et professionnalisant (BTS, Brevet de Technicien)", value: "court" },
+      { label: "Une Licence classique (Bac+3)", value: "licence" },
+      { label: "Directement un cursus long (Master, Ingénieur)", value: "long" },
+      { label: "Je ne sais pas encore", value: "peu-importe" }
+    ]
+  },
+  {
+    type: "ville",
+    question: "Où peux-tu ou veux-tu étudier ?",
+    options: [
+      { label: "À Lomé", value: "Lomé" },
+      { label: "À Kara", value: "Kara" },
+      { label: "Peu importe, je peux me déplacer", value: "peu-importe" }
+    ]
+  },
+  {
+    type: "statut",
+    question: "Qu'est-ce qui correspond le mieux à ta situation budgétaire ?",
+    options: [
+      { label: "Je dois viser le public, gratuit ou presque", value: "public" },
+      { label: "Je peux payer une école privée, avec un budget serré", value: "prive" },
+      { label: "Le budget n'est pas un frein majeur", value: "peu-importe" }
+    ]
+  },
+  {
+    type: "priorite",
+    question: "Qu'est-ce qui compte le plus pour toi dans une école ?",
+    options: [
+      { label: "Que le diplôme soit officiellement reconnu (agrément d'État, CAMES)", value: "agree" },
+      { label: "Une formation concrète, avec beaucoup de pratique et de stages", value: "pratique" },
+      { label: "Peu importe, je regarderai au cas par cas", value: "peu-importe" }
+    ]
+  }
+];
+
+// ---- Calendrier académique togolais (repère général) ----
+// Enchaînement habituel d'une année de candidature au Togo. Les mois sont
+// volontairement donnés comme des périodes indicatives ("généralement") : ils
+// varient d'un établissement à l'autre — voir les dates précises par école
+// dans SCHOOLS[id].datesCles quand elles existent.
+const ACADEMIC_TIMELINE = [
+  {
+    periode: "Juin – Juillet",
+    titre: "Résultats du BAC",
+    description: "Publication des résultats du baccalauréat togolais. C'est le point de départ : la plupart des dossiers de candidature demandent une attestation ou un relevé du BAC."
+  },
+  {
+    periode: "Juillet – Septembre",
+    titre: "Période de candidature",
+    description: "Ouverture des inscriptions dans la majorité des écoles et universités. Beaucoup d'écoles privées togolaises admettent en continu sur cette période, sans date limite stricte."
+  },
+  {
+    periode: "Août – Septembre",
+    titre: "Concours d'entrée",
+    description: "Pour les établissements qui en organisent un (universités publiques, grandes écoles comme l'EPL ou l'IAI-Togo) : épreuves écrites, généralement sur cette fenêtre."
+  },
+  {
+    periode: "Septembre – Octobre",
+    titre: "Résultats d'admission",
+    description: "Publication des listes d'admis pour les établissements à concours ou à sélection sur dossier."
+  },
+  {
+    periode: "Octobre – Novembre",
+    titre: "Rentrée académique",
+    description: "Début des cours dans la plupart des écoles et universités togolaises."
+  }
+];
+
+// Mots-clés utilisés pour relier un domaine (voir DOMAINS) aux filières réelles
+// des écoles (voir SCHOOLS) — recherche insensible à la casse dans les filières.
+const DOMAIN_KEYWORDS = {
+  "Développement": ["développement", "génie logiciel", "logiciel", "programmeur", "application", "web", "mobile"],
+  "Data & IA": ["intelligence artificielle", "data", "science des données", "statistique"],
+  "Sécurité": ["cybersécurité", "sécurité", "cybercriminalité"],
+  "Produit & Design": ["multimédia", "design", "infographie", "webdesign"],
+  "Infrastructure & DevOps": ["réseaux", "systèmes", "administrateur", "maintenance informatique", "télécommunication"],
+  "Marketing digital": ["marketing", "économie numérique", "commerce"],
+  "Gestion & Management": ["gestion", "management"]
+};

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Écoles &amp; universités — Wiyao</title>
+<meta name="description" content="Compare les écoles et universités togolaises qui forment à l'informatique et au numérique : filières, niveaux, admission et statut (public, privé, agréé par l'État).">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-top">
+    <a class="brand" href="index.html">
+        Wiyao
+    </a>
+    <nav class="site-nav">
+      <a href="test-orientation.html">Test d'orientation</a>
+      <a href="index.html">Roadmaps</a>
+      <a href="ecoles.html">Écoles &amp; universités</a>
+      <a href="calendrier.html">Calendrier</a>
+      <a href="stages-emploi.html">Stages &amp; emploi</a>
+      <a href="ecosysteme.html">Écosystème togolais</a>
+    </nav>
+  </div>
+  <div class="search-bar-wrap">
+    <div class="search-bar">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" id="school-search" placeholder="Rechercher une école ou une filière (ex : cybersécurité, Kara...)" aria-label="Rechercher une école">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Trouve l'<span class="hero-accent">école</span> qu'il te faut</h1>
+    <p>15 écoles et universités togolaises qui forment à l'informatique et au numérique, avec leurs filières,
+       niveaux et conditions d'admission.</p>
+  </section>
+
+  <section class="roadmap-category">
+    <div class="filter-group">
+      <p class="filter-group-label">Ville</p>
+      <div class="domain-filters" id="ville-filters">
+        <button class="domain-chip active" data-ville="all" type="button">Toutes</button>
+        <button class="domain-chip" data-ville="Lomé" type="button">Lomé</button>
+        <button class="domain-chip" data-ville="Kara" type="button">Kara</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <p class="filter-group-label">Statut</p>
+      <div class="domain-filters" id="statut-filters">
+        <button class="domain-chip active" data-statut="all" type="button">Tous</button>
+        <button class="domain-chip" data-statut="public" type="button">Publique</button>
+        <button class="domain-chip" data-statut="prive" type="button">Privée</button>
+        <button class="domain-chip" data-statut="inter-etats" type="button">Inter-États</button>
+      </div>
+    </div>
+
+    <div id="school-grid" class="grid"></div>
+    <p class="no-results" id="school-no-results" hidden>Aucune école ne correspond à ta recherche.</p>
+
+    <p class="source-note">Le badge « 🏛️ Agréé État » confirme la présence de l'établissement dans la liste des
+      établissements privés d'enseignement supérieur agréés par le Ministère togolais de l'Enseignement Supérieur
+      et de la Recherche (arrêté du 4 novembre 2022). Les établissements publics (universités, École Polytechnique
+      de Lomé) et l'IAI-Togo (institut inter-États) ne figurent pas sur cette liste pour des raisons de statut, pas
+      de qualité. Vérifie toujours les informations d'admission directement auprès de l'établissement avant de
+      t'engager.</p>
+  </section>
+
+  <section class="eco-section" id="bac">
+    <h2>Quelle série de bac pour quelle filière ?</h2>
+    <p class="category-desc">Un repère, pas une règle stricte : beaucoup d'écoles privées togolaises étudient chaque
+      dossier au cas par cas, quelle que soit la série. Mais certaines filières (concours publics, cursus ingénieur)
+      demandent une série précise.</p>
+    <div class="eco-list">
+      <div class="eco-item">
+        <h4>Séries C et D (Mathématiques, Sciences Physiques / SVT)</h4>
+        <p>Les plus demandées pour l'informatique au sens large : développement, cybersécurité, data, infrastructure. C'est la série la plus « généraliste » pour entrer dans le tech togolais, y compris pour les concours publics (Université de Kara, EPL).</p>
+      </div>
+      <div class="eco-item">
+        <h4>Série E (Mathématiques et Technique)</h4>
+        <p>Très recherchée pour les cursus ingénieur et les filières réseaux/systèmes — profil technique apprécié à l'IAI-Togo, UCAO-UUT et dans les écoles polytechniques.</p>
+      </div>
+      <div class="eco-item">
+        <h4>Séries F1 à F4 (Bac technique : construction, électronique, électrotechnique, génie civil)</h4>
+        <p>Un bon point d'entrée pour l'infrastructure, les réseaux, l'IoT et les systèmes embarqués — les bases en électronique/systèmes se transposent bien vers ces filières.</p>
+      </div>
+      <div class="eco-item">
+        <h4>Série G (Techniques administratives et de gestion)</h4>
+        <p>Adaptée à l'informatique de gestion, à la gestion &amp; management et au marketing digital — moins aux filières très techniques (réseaux, cybersécurité).</p>
+      </div>
+      <div class="eco-item">
+        <h4>Séries A et B (Littéraire, Économique)</h4>
+        <p>Ne ferment pas la porte à la tech : marketing digital, product management, UX writing et community management restent accessibles, parfois avec une remise à niveau en logique/maths selon l'école.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="eco-section" id="lexique">
+    <h2>Lexique</h2>
+    <p class="category-desc">Les sigles qui reviennent sur ce site et sur les sites des écoles togolaises.</p>
+    <div class="eco-list">
+      <div class="eco-item"><h4>BTS</h4><p>Brevet de Technicien Supérieur — diplôme professionnalisant en 2 ans après le Bac.</p></div>
+      <div class="eco-item"><h4>Licence</h4><p>Diplôme en 3 ans après le Bac (Bac+3), académique ou professionnelle selon le parcours.</p></div>
+      <div class="eco-item"><h4>Master</h4><p>Diplôme en 2 ans après la Licence (Bac+5).</p></div>
+      <div class="eco-item"><h4>LMD</h4><p>Licence-Master-Doctorat — système d'organisation des études adopté par la plupart des universités togolaises et africaines francophones.</p></div>
+      <div class="eco-item"><h4>CAMES</h4><p>Conseil Africain et Malgache pour l'Enseignement Supérieur — reconnaît et harmonise la valeur des diplômes entre pays membres.</p></div>
+      <div class="eco-item"><h4>AUF</h4><p>Agence Universitaire de la Francophonie — réseau international d'universités francophones ; en être membre facilite les échanges et la mobilité.</p></div>
+      <div class="eco-item"><h4>Agrément d'État</h4><p>Reconnaissance officielle d'un établissement privé par le Ministère togolais de l'Enseignement Supérieur — condition pour que le diplôme ait une pleine valeur légale.</p></div>
+      <div class="eco-item"><h4>DAAS</h4><p>Direction des Affaires Académiques et de la Scolarité — service qui gère les admissions dans les universités publiques comme l'Université de Kara.</p></div>
+      <div class="eco-item"><h4>VAP</h4><p>Validation des Acquis Professionnels — permet d'intégrer une formation (souvent un Master) sur la base de l'expérience plutôt que du seul diplôme.</p></div>
+      <div class="eco-item"><h4>Cursus ingénieur</h4><p>Formation longue (5 ans), encadrée par la Commission des Titres d'Ingénieur (CTI), menant à un diplôme d'ingénieur reconnu.</p></div>
+      <div class="eco-item"><h4>Concours</h4><p>Épreuve écrite compétitive d'admission, utilisée par les établissements à places limitées (universités publiques, IAI-Togo, certaines grandes écoles).</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-cta">
+    <div class="footer-cta-inner">
+      <h2>Prêt à tracer ton parcours tech ?</h2>
+      <a class="footer-cta-btn" href="index.html">Découvrir les roadmaps</a>
+    </div>
+  </div>
+
+  <div class="footer-lower">
+    <div class="footer-lower-inner">
+      <div class="footer-brand-col">
+        <a class="brand footer-brand" href="index.html">Wiyao</a>
+        <p class="footer-tagline">Roadmaps créées par la communauté, meilleures pratiques, ressources et parcours pour t'aider à choisir ta voie et progresser dans la tech au Togo.</p>
+        <div class="footer-social-row">
+          <a class="footer-social-icon" href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Roadmaps</h5>
+        <a href="test-orientation.html">Test d'orientation</a>
+        <a href="index.html#par-metier">Par métier</a>
+        <a href="index.html#par-competence">Par compétence</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Écoles &amp; universités</h5>
+        <a href="ecoles.html">Comparer les écoles</a>
+        <a href="calendrier.html">Dates clés</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Stages &amp; emploi</h5>
+        <a href="stages-emploi.html#plateformes">Où chercher</a>
+        <a href="stages-emploi.html#guide">Guide pratique</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Stages &amp; emploi</h5>
+        <a href="stages-emploi.html#plateformes">Où chercher</a>
+        <a href="stages-emploi.html#guide">Guide pratique</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Écosystème togolais</h5>
+        <a href="ecosysteme.html#communautes">Communautés</a>
+        <a href="ecosysteme.html#cybersecurite">Cybersécurité</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Projet</h5>
+        <a href="about.html">À propos &amp; méthodologie</a>
+        <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">Code source</a>
+        <a href="https://github.com/GRIIINDER/Wiyao/issues" target="_blank" rel="noopener">Signaler un bug</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Wiyao — projet communautaire indépendant, inspiré de roadmap.sh, adapté au contexte togolais.</p>
+      <p class="footer-updated">Contenu mis à jour en juillet 2026 (60 métiers, 29 compétences).</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roadmap — Wiyao</title>
+<title>Test d'orientation — Wiyao</title>
+<meta name="description" content="Pas sûr·e de ta voie dans la tech ? Réponds à 12 questions pour découvrir le domaine et les métiers qui te correspondent, puis les écoles togolaises adaptées à ton niveau, ta ville et ton budget.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,10 +26,21 @@
 </header>
 
 <main>
-  <div class="roadmap-toolbar">
-    <button id="reset-progress" class="btn" type="button">Réinitialiser la progression</button>
-  </div>
-  <div id="roadmap-detail"></div>
+  <section class="hero">
+    <h1>Pas sûr·e de ta <span class="hero-accent">voie</span> ?</h1>
+    <p>12 questions pour identifier le domaine tech qui te correspond, puis les écoles togolaises
+       adaptées à ton niveau, ta ville et ton budget — pas juste un métier, un vrai point de départ.</p>
+  </section>
+
+  <section class="roadmap-category" id="quiz-section">
+    <div id="quiz-progress-wrap">
+      <div class="progress-bar large"><div class="progress-fill" id="quiz-progress-fill"></div></div>
+      <p class="progress-label" id="quiz-progress-label"></p>
+    </div>
+    <div id="quiz-question"></div>
+  </section>
+
+  <section class="roadmap-category" id="quiz-results" hidden></section>
 </main>
 
 <footer class="site-footer">
@@ -71,12 +83,6 @@
       </div>
 
       <div class="footer-links-col">
-        <h5>Stages &amp; emploi</h5>
-        <a href="stages-emploi.html#plateformes">Où chercher</a>
-        <a href="stages-emploi.html#guide">Guide pratique</a>
-      </div>
-
-      <div class="footer-links-col">
         <h5>Écosystème togolais</h5>
         <a href="ecosysteme.html#communautes">Communautés</a>
         <a href="ecosysteme.html#cybersecurite">Cybersécurité</a>
@@ -89,8 +95,6 @@
         <a href="https://github.com/GRIIINDER/Wiyao/issues" target="_blank" rel="noopener">Signaler un bug</a>
       </div>
     </div>
-
-    <div class="footer-note">Coche les étapes au fur et à mesure. Ta progression est enregistrée localement dans ton navigateur.</div>
 
     <div class="footer-bottom">
       <p>© 2026 Wiyao — projet communautaire indépendant, inspiré de roadmap.sh, adapté au contexte togolais.</p>

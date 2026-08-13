@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roadmap — Wiyao</title>
+<title>Calendrier des dates clés — Wiyao</title>
+<meta name="description" content="Les dates clés pour candidater dans une école ou université togolaise d'informatique : périodes d'inscription, concours, résultats et rentrée, école par école.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,10 +26,27 @@
 </header>
 
 <main>
-  <div class="roadmap-toolbar">
-    <button id="reset-progress" class="btn" type="button">Réinitialiser la progression</button>
-  </div>
-  <div id="roadmap-detail"></div>
+  <section class="hero">
+    <h1>Ne rate pas ta <span class="hero-accent">date limite</span></h1>
+    <p>Le calendrier type d'une candidature au Togo, puis les dates connues école par école.
+       Rater une inscription fait souvent perdre une année entière — vérifie toujours en direct
+       auprès de l'établissement avant de t'engager.</p>
+  </section>
+
+  <section class="roadmap-category">
+    <h2>Le calendrier type</h2>
+    <p class="category-desc">Un repère général — chaque établissement a son propre calendrier, parfois différent.</p>
+    <div class="timeline" id="timeline-general"></div>
+  </section>
+
+  <section class="roadmap-category">
+    <h2>Dates par école</h2>
+    <p class="category-desc">Écoles à campagne fixe d'abord, puis celles en admission continue, puis celles sans date publiée.</p>
+    <div id="school-dates-list"></div>
+    <p class="source-note">Les dates précises changent chaque année et ne sont pas toujours republiées à temps par les
+      établissements eux-mêmes. Celles marquées « dates de référence » viennent d'une campagne passée et donnent une
+      idée du calendrier habituel, pas une garantie pour l'année en cours.</p>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -71,12 +89,6 @@
       </div>
 
       <div class="footer-links-col">
-        <h5>Stages &amp; emploi</h5>
-        <a href="stages-emploi.html#plateformes">Où chercher</a>
-        <a href="stages-emploi.html#guide">Guide pratique</a>
-      </div>
-
-      <div class="footer-links-col">
         <h5>Écosystème togolais</h5>
         <a href="ecosysteme.html#communautes">Communautés</a>
         <a href="ecosysteme.html#cybersecurite">Cybersécurité</a>
@@ -89,8 +101,6 @@
         <a href="https://github.com/GRIIINDER/Wiyao/issues" target="_blank" rel="noopener">Signaler un bug</a>
       </div>
     </div>
-
-    <div class="footer-note">Coche les étapes au fur et à mesure. Ta progression est enregistrée localement dans ton navigateur.</div>
 
     <div class="footer-bottom">
       <p>© 2026 Wiyao — projet communautaire indépendant, inspiré de roadmap.sh, adapté au contexte togolais.</p>
