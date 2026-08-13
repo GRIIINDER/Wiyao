@@ -8,7 +8,7 @@
   --text-muted: #5b6572;
   --border: #e2e5e9;
   --radius: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -966,12 +966,19 @@ footer.site-footer {
 
 .footer-lower {
   background: #0b1526;
-  padding: 48px 24px 32px;
+  padding: 48px 24px;
+}
+
+.footer-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #12213a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  padding: 40px;
 }
 
 .footer-lower-inner {
-  max-width: 1100px;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
@@ -1058,8 +1065,9 @@ footer.site-footer {
 }
 
 .footer-social-icon:hover {
-  color: #f7f1e8;
-  border-color: rgba(255, 255, 255, 0.3);
+  color: #f2622e;
+  border-color: rgba(242, 98, 46, 0.4);
+  background: rgba(242, 98, 46, 0.05);
 }
 
 .footer-links-col h5 {
@@ -1083,18 +1091,16 @@ footer.site-footer {
 }
 
 .footer-note {
-  max-width: 1100px;
-  margin: 24px auto 0;
+  margin: 24px 0 0;
   font-size: 0.8rem;
   line-height: 1.5;
   color: #8da0bc;
 }
 
 .footer-bottom {
-  max-width: 1100px;
-  margin: 20px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 32px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.75rem;
   color: #8da0bc;
   display: flex;
