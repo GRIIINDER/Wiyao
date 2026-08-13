@@ -1,8 +1,8 @@
-// Logique de rendu - Kpataa
+// Logique de rendu - Wiyao
 (function () {
   "use strict";
 
-  const STORAGE_KEY = "kpataa-progress";
+  const STORAGE_KEY = "wiyao-progress";
 
   function loadProgress() {
     try {
@@ -225,7 +225,7 @@
       return;
     }
 
-    document.title = `${rm.title} — Kpataa`;
+    document.title = `${rm.title} — Wiyao`;
 
     const total = countItems(rm);
     let progress = loadProgress();
@@ -239,7 +239,7 @@
     breadcrumb.className = "breadcrumb";
     breadcrumb.setAttribute("aria-label", "Fil d'Ariane");
     breadcrumb.innerHTML = `
-      <a href="index.html">Kpataa</a>
+      <a href="index.html">Wiyao</a>
       <span class="breadcrumb-sep">›</span>
       <a href="${categoryHref}">${categoryLabel}</a>
       <span class="breadcrumb-sep">›</span>
