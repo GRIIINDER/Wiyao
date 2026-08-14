@@ -4007,6 +4007,7 @@ const SCHOOLS = {
     filieres: ["Intelligence Artificielle et Big Data", "Systèmes et Réseaux Informatiques", "Génie Logiciel"],
     duree: "Licence : 3 ans (180 crédits) · Master : 2 ans",
     admission: "Bac ou équivalent pour l'entrée en L1 ; admission directe en L3 possible avec un BTS pertinent",
+    frais: "Licence : 35 000 FCFA d'inscription + 485 000 FCFA/an (460 000 en cours du soir) · Master : 50 000 + 650 000 FCFA/an. Paiement en 3 tranches ou 7 mensualités (source : defitech.tg).",
     site: "https://defitech.tg/",
     description: "« L'école des battants », plus de 20 ans d'expérience, convention avec l'Université de Lomé, forte orientation entrepreneuriat.",
     datesCles: {
@@ -4026,6 +4027,7 @@ const SCHOOLS = {
     filieres: ["Informatique de Gestion", "Systèmes et Réseaux Informatiques", "Développement d'Application", "Sécurité Informatique"],
     duree: null,
     admission: "BAC II requis pour le BTS et la Licence informatique",
+    frais: "Non communiqué publiquement. Un concours de bourses a lieu chaque année en septembre (réduction sur les frais de scolarité, montant non précisé).",
     site: "https://ecoledescadres.com/",
     description: "Une des premières écoles professionnelles du Togo (1997), diplômes en partenariat avec l'Université du Littoral Côte d'Opale (France), accréditée CAMES.",
     datesCles: {
@@ -4045,6 +4047,7 @@ const SCHOOLS = {
     filieres: ["Mathématiques et Informatique Appliquées", "Sécurité Informatique et Cybersécurité", "Développement Web et Mobile", "Métiers du Multimédia et de l'Internet"],
     duree: "Licences en 3 ans, avec stage professionnel et soutenance en fin de cycle",
     admission: "Bac C, D ou E (session récente), sélection sur dossier",
+    frais: "Master : de 176 500 FCFA/an (recherche, étudiants togolais/UEMOA) à plus d'1 000 000 FCFA (professionnel, étranger) — arrêté officiel 2026-2027. Licence non communiquée publiquement. Bourses d'État togolaises et bourses internationales (France, Inde) existantes.",
     site: "https://univkara.tg/",
     description: "2e université publique du Togo ; la Faculté des Sciences et Techniques (FAST) porte plusieurs licences professionnelles tech.",
     datesCles: {
@@ -4065,6 +4068,7 @@ const SCHOOLS = {
     filieres: ["Génie Logiciel", "Réseaux et Télécommunications", "Maintenance Informatique et Réseaux", "Cybersécurité et Cybercriminalité"],
     duree: null,
     admission: "Inscriptions continues (critères détaillés non publiés en ligne)",
+    frais: "449 999 FCFA/an (BTS/Licence 1-2) · 549 999 (Licence 3) · 669 999-799 999 (Master) + 50 000 FCFA d'inscription (source : échéancier officiel 2026-2027). Bourses ponctuelles par tirage au sort à la rentrée, non garanties chaque année.",
     site: "https://www.esatogo.com/",
     description: "École pluridisciplinaire fondée en 2010, plus de 33 filières, 1ère école togolaise certifiée ISO 9001.",
     datesCles: {
@@ -4084,6 +4088,7 @@ const SCHOOLS = {
     filieres: ["Administrateur des Systèmes d'Information", "Intelligence Artificielle & Big Data"],
     duree: null,
     admission: "Sur dossier (relevés de Bac, diplômes, lettre de motivation, CV)",
+    frais: "Non communiqué publiquement — site officiel inaccessible au moment de la recherche, aucune source fiable trouvée.",
     site: "https://togo.collegedeparis.fr/",
     description: "Campus togolais du réseau français Collège de Paris, agréé par l'État togolais sous le nom « Institut UPSILON Collège de Paris Supérieur ».",
     datesCles: {
@@ -4101,6 +4106,7 @@ const SCHOOLS = {
     filieres: ["Informatique et Systèmes", "Intelligence Artificielle & Big Data", "Génie Logiciel", "Systèmes et Réseaux Informatiques"],
     duree: null,
     admission: "Concours d'entrée post-Bac (Bac C, D, E scientifique pour la licence fondamentale)",
+    frais: "404 000 FCFA/an (étudiants togolais, inscription incluse) · 514 000 (salariés) · 754 000 (étrangers). Les 20% premiers au concours d'entrée ne paient que 50 000 FCFA de frais pédagogiques, le reste pris en charge par l'établissement (source : presse togolaise, recoupée sur 3 articles).",
     site: "https://univ-lome.tg/",
     description: "École d'ingénieurs publique, composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).",
     datesCles: {
@@ -4123,6 +4129,7 @@ const SCHOOLS = {
     filieres: ["Génie Logiciel", "Génie Informatique", "Réseaux et Télécommunications", "Sciences Informatiques et Télécommunications (Master)"],
     duree: null,
     admission: "Formulaire de demande en ligne",
+    frais: "BTS : 35 000 FCFA d'inscription + 400 000 FCFA/an · Master : 60 000 + 600 000 FCFA/an. Licence non communiquée publiquement (aucun montant affiché sur le site).",
     site: "https://iaectogo.com/",
     description: "Un des tout premiers établissements privés d'enseignement supérieur du Togo (1986), membre du Groupe BK-Université.",
     datesCles: {
