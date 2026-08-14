@@ -972,6 +972,10 @@ footer.site-footer {
 .footer-card {
   max-width: 1100px;
   margin: 0 auto;
+  background: var(--tk-surface);
+  border: 1px solid var(--tk-border);
+  border-radius: 20px;
+  padding: 40px;
 }
 
 .footer-lower-inner {
@@ -1047,26 +1051,29 @@ footer.site-footer {
 }
 
 .footer-social-icon {
-  color: var(--tk-primary-hover);
+  color: var(--tk-text-muted);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--tk-border);
   border-radius: 50%;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
 }
 
 .footer-social-icon:hover {
   color: var(--tk-primary);
+  border-color: transparent;
   background: var(--tk-primary-soft);
 }
 
 .footer-links-col h5 {
-  color: var(--tk-text);
-  font-size: 0.95rem;
+  color: var(--tk-text-subtle);
+  font-size: 0.78rem;
   font-weight: 700;
-  text-transform: none;
-  letter-spacing: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   margin: 0 0 10px;
 }
 
@@ -1091,11 +1098,11 @@ footer.site-footer {
 
 .footer-bottom {
   margin: 32px 0 0;
-  padding-top: 0;
-  border-top: none;
+  padding-top: 24px;
+  border-top: 1px solid var(--tk-border);
   font-size: 0.8rem;
   color: var(--tk-text-muted);
-  text-align: center;
+  text-align: left;
 }
 
 .footer-bottom p {
