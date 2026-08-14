@@ -3852,6 +3852,7 @@ const SCHOOLS = {
     filieres: ["Intelligence Artificielle", "Science des Données", "Génie Logiciel", "Cybersécurité", "Développement Web & Mobile", "Réseaux, Systèmes & Sécurité"],
     duree: "Licence : 3 ans · Master : 2 ans",
     admission: "Concours d'entrée post-BAC (dossier + épreuves) ; Licence en informatique requise pour le Master",
+    frais: "800 000 FCFA (L1) · 900 000 (L2) · 1 000 000 (L3) — exemple filière Cybersécurité, + inscription (50 000 FCFA puis 30 000 FCFA/an) et frais de dossier. Bourses sociales/mérite et paiement en 3 fois (source : ipnetuniversity.com, 2025).",
     site: "https://ipnetuniversity.com",
     description: "Institut privé fondé en 2003, très orienté pratique (80+ partenariats entreprises tech), élu « université la plus innovante du Togo » en 2022.",
     datesCles: {
@@ -3870,6 +3871,7 @@ const SCHOOLS = {
     filieres: ["Génie Logiciel & Systèmes d'Information", "Administration des Systèmes et Réseaux", "Multimédia", "Technologies Web"],
     duree: "Cycle ITI / Licence Pro : 3 ans, avec stage en 2e et 3e années",
     admission: "Concours d'entrée (épreuves d'Anglais, Mathématiques, Français)",
+    frais: "Non communiqué publiquement — seuls les frais annexes sont connus (concours : 15 000 FCFA/an, assurance : 1 000 FCFA/an). Contacte l'établissement pour le montant de la scolarité.",
     site: "https://new.iai-togo.tg/officiel",
     description: "École inter-États d'enseignement supérieur en informatique, présente au Togo depuis 2002, référence historique de la formation informatique dans la sous-région.",
     datesCles: {
@@ -3892,6 +3894,7 @@ const SCHOOLS = {
     filieres: ["Informatique de Gestion", "Développement d'Applications", "Systèmes et Réseaux", "Sécurité Informatique", "Intelligence Artificielle & Big Data"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans après la Licence",
     admission: "Ouvert à tous les bacheliers en 1ère année ; dossier + entretien pour une admission directe en cours de cursus",
+    frais: "Non communiqué publiquement — l'école renvoie explicitement au secrétariat local pour les tarifs. (Un document non officiel daté de 2021 circule en ligne mais n'est pas fiable pour l'année en cours.)",
     site: "https://www.esgis.org/",
     description: "École privée accréditée CAMES, présente au Togo, au Bénin et au Gabon, plus de 20 000 étudiants formés en 30 ans.",
     datesCles: {
@@ -3908,6 +3911,7 @@ const SCHOOLS = {
     filieres: ["Administrateur Réseaux", "Développeur d'Application", "Systèmes Informatiques et Logiciels", "Administration et Sécurité des Réseaux", "Cybersécurité", "Big Data"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "Pré-inscription en ligne ; le BTS est accessible directement après le Bac",
+    frais: "350 000-450 000 FCFA/an (BTS) · 400 000-550 000 (Licence) · 550 000-750 000 (Master), paiement en 2-3 fois. Bourses FONAP, mobilité (Le Havre/Belgique) et mérite scolaire (source : esig.tg/faq).",
     site: "https://esig.tg/",
     description: "École fondée il y a plus de 15 ans, 92 spécialités du BTS au Master, accréditation Cisco Networking Academy, partenariat avec Sorbonne Paris Nord.",
     datesCles: {
@@ -3925,6 +3929,7 @@ const SCHOOLS = {
     filieres: ["Systèmes Informatiques et Logiciels", "Développement d'Application", "Sécurité des Réseaux et Télécommunications", "Informatique et Réseaux (Master)"],
     duree: "Licence : 3 ans · Master : 2 ans",
     admission: "Dossier d'inscription ; Licence en informatique ou domaine connexe requise pour le Master",
+    frais: "Licence Systèmes Informatiques & Logiciels : 395 000 FCFA/an (L1-L2), 530 000 (L3). Master Informatique & Réseaux : 680 000 FCFA pour les 2 ans + 15 000 de dossier. Concours de bourses togolais (15 à 75 % de réduction).",
     site: "https://www.esiba.tg/",
     description: "École agréée par l'État togolais, membre de l'Agence Universitaire de la Francophonie (AUF), plus de 36 ans d'expérience en gestion et technologie.",
     datesCles: {
@@ -3942,6 +3947,7 @@ const SCHOOLS = {
     filieres: ["Maintenance Informatique", "Administration de Réseaux", "Développeur d'Application", "Analyste Programmeur", "Génie Logiciel"],
     duree: "BT et Licence : 3 ans · Master : 2 ans",
     admission: "BEPC pour le BT · Bac ou BT pour la Licence · Licence Pro pour le Master",
+    frais: "Licence Pro (options informatique) : 385 000 FCFA/an (1re-2e année), 450 000 (3e année) + inscription 50 000 FCFA puis 20 000 FCFA/an (source : fiche officielle 2025-2026).",
     site: "https://formatec.tg/",
     description: "Institut technique et professionnel fondé en 1996, certifié ISO 9001 depuis 2015.",
     datesCles: {
@@ -3960,6 +3966,7 @@ const SCHOOLS = {
     filieres: ["Développement d'Applications", "Réseaux Informatiques et Télécommunication", "Cybersécurité", "Big Data", "Intelligence Artificielle", "Génie Logiciel"],
     duree: "Licence : 3 ans · Ingénierie : 5 ans",
     admission: "Bac scientifique (C, D, E, F) ; bonnes aptitudes en mathématiques et anglais",
+    frais: "595 000 FCFA (L1, tarif jubilé) · 758 000 (L2-L3) · 858 000-958 000 (Master). Bourse « Étoile Scientifique » de 200 000 FCFA/an pour les étudiantes en informatique ; réduction fratrie de 50 000 FCFA/an (source : ucao-uut.tg/admissions).",
     site: "https://ucao-uut.tg/formation-recherche/formations/institut-ecole/dgi/",
     description: "Université catholique de plus de 15 000 étudiants ; le Département de Génie Informatique relève de l'École Supérieure d'Ingénieurs, encadrée par le CAMES et la Commission des Titres d'Ingénieur.",
     datesCles: {
@@ -3979,6 +3986,7 @@ const SCHOOLS = {
     filieres: ["Développement Web / Génie Logiciel", "Big Data", "Cloud Computing", "Réseaux et Cybersécurité"],
     duree: null,
     admission: "Inscription en ligne selon le niveau du candidat (Première, Terminale, Bac, Licence, Master)",
+    frais: "900 000 FCFA/an (Bachelor) · 1 200 000 FCFA/an (Master) — inclut PC portable, kit et accès numérique (source : brochure officielle 2026-2027).",
     site: "https://lome-bs.com/",
     description: "Se présente comme la 1ère Business School du Togo, forte orientation professionnalisante (stages dès la 1ère année).",
     datesCles: {
@@ -4122,12 +4130,52 @@ const SCHOOLS = {
       note: "Aucun calendrier publié — confirmation de dossier sous 48h ouvrées après un entretien téléphonique obligatoire.",
       contact: "+228 93 90 66 66"
     }
+  },
+  "cifop": {
+    name: "Centre Informatique de Formation et d'Orientation Professionnelle (CIFOP)",
+    ville: ["Lomé", "Sokodé", "Bassar"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BT", "BTS", "Licence Professionnelle", "Master"],
+    filieres: ["Développement d'applications", "Informatique de gestion", "Comptabilité & Gestion", "Marketing", "Transport & Logistique"],
+    duree: "BT : 2 ans · BTS : 2 ans · Licence Pro : 3 ans · Master : 2 ans",
+    admission: "Sur dossier et test de niveau selon la filière et le cycle visé",
+    site: "https://www.cifop-togo.org",
+    description: "Centre de formation professionnelle fondé en 1992, seule école de ce comparatif présente hors de Lomé/Kara (campus à Sokodé et Bassar). Revendique 99% d'insertion professionnelle dans les 6 mois suivant le diplôme.",
+    frais: "Non communiqué publiquement — contacte l'établissement directement.",
+    datesCles: {
+      mode: "campagne",
+      rentree: "6 octobre 2026 (Licence & BTS 1) · 15 septembre 2026 (BTS 2, BT) · 2-3 novembre 2026 (Master)",
+      anneeReference: "2026-2027",
+      aVerifier: true,
+      contact: "contact@cifoptogo.org"
+    }
+  },
+  "ifnti": {
+    name: "Institut de Formation aux Normes et Technologies de l'Informatique (IFNTI)",
+    ville: ["Sokodé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Licence"],
+    filieres: ["Informatique"],
+    duree: "Licence LMD : 3 ans",
+    admission: "Bacheliers scientifiques et étudiants en réorientation, concours d'entrée (10 000 FCFA)",
+    site: "https://www.ifnti.com/",
+    description: "Institut associatif fondé en 2009 à Sokodé, entièrement dédié à l'informatique (licence LMD), encadrement par des enseignants de niveau ingénieur, groupes de 24 étudiants maximum.",
+    frais: "590 000 FCFA/an + 30 000 FCFA d'inscription (source : Edunews, 2022 — à reconfirmer, ces tarifs peuvent avoir changé).",
+    datesCles: {
+      mode: "continue",
+      note: "Inscriptions ouvertes chaque année après le Bac, concours d'entrée obligatoire, pas de date fixe publiée en ligne.",
+      contact: "contact@ifnti.com"
+    }
   }
 };
 
 const VILLES = {
   "Lomé": { icon: "🏙️" },
-  "Kara": { icon: "🏘️" }
+  "Kara": { icon: "🏘️" },
+  "Sokodé": { icon: "🏘️" },
+  "Bassar": { icon: "🏘️" }
 };
 
 // ---- Test d'orientation ----
@@ -4254,6 +4302,8 @@ const QUIZ_QUESTIONS = [
     options: [
       { label: "À Lomé", value: "Lomé" },
       { label: "À Kara", value: "Kara" },
+      { label: "À Sokodé", value: "Sokodé" },
+      { label: "À Bassar", value: "Bassar" },
       { label: "Peu importe, je peux me déplacer", value: "peu-importe" }
     ]
   },

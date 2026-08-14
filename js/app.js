@@ -415,6 +415,7 @@
     let metaHtml = `<span><strong>Niveaux :</strong> ${school.niveaux.join(", ")}</span>`;
     if (school.duree) metaHtml += `<span><strong>Durée :</strong> ${school.duree}</span>`;
     if (school.admission) metaHtml += `<span><strong>Admission :</strong> ${school.admission}</span>`;
+    if (school.frais) metaHtml += `<span><strong>Frais :</strong> ${school.frais}</span>`;
     if (school.agreeNote) metaHtml += `<span>ℹ️ ${school.agreeNote}</span>`;
     meta.innerHTML = metaHtml;
     card.appendChild(meta);
