@@ -23,7 +23,7 @@
   --tk-primary: #66c4ff;
   --tk-primary-hover: #3388ff;
   --tk-primary-soft: #082c5e;
-  font-family: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Cabin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
