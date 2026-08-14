@@ -1,23 +1,28 @@
 :root {
+  /* Couleurs du drapeau togolais (logo uniquement) et signalétique sémantique (niveaux, urgence) */
   --green: #006a4e;
   --yellow: #ffce00;
   --red: #d21034;
-  --bg: #f7f8fa;
+  /* Palette de marque inspirée de Codecademy : bleu, noir (navy), blanc */
+  --accent: #1557ff;
+  --accent-soft: #d3f2ff;
+  --accent-wash: #eaf3ff;
+  --bg: #f5fcff;
   --card-bg: #ffffff;
-  --text: #1a1d23;
+  --text: #10162f;
   --text-muted: #5b6572;
-  --border: #e2e5e9;
+  --border: #e0e0e0;
   --radius: 10px;
-  --tk-canvas: #0f1720;
-  --tk-surface: #16212b;
-  --tk-surface-soft: #22313d;
-  --tk-border: #2c3b47;
+  --tk-canvas: #0a0d1c;
+  --tk-surface: #10162f;
+  --tk-surface-soft: #1a244c;
+  --tk-border: #222e63;
   --tk-text: #f3f7f9;
   --tk-text-muted: #b4c0c8;
   --tk-text-subtle: #8b9aa5;
-  --tk-primary: #9ae600;
-  --tk-primary-hover: #86c700;
-  --tk-primary-soft: #263a00;
+  --tk-primary: #66c4ff;
+  --tk-primary-hover: #3388ff;
+  --tk-primary-soft: #082c5e;
   font-family: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -182,13 +187,13 @@ nav.site-nav a.active {
 }
 
 .domain-chip:hover {
-  border-color: var(--green);
-  color: var(--green);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .domain-chip.active {
-  background: var(--green);
-  border-color: var(--green);
+  background: var(--accent);
+  border-color: var(--accent);
   color: #fff;
 }
 
@@ -211,7 +216,7 @@ nav.site-nav a.active {
 }
 
 .breadcrumb a:hover {
-  color: var(--green);
+  color: var(--accent);
 }
 
 .breadcrumb-sep {
@@ -247,7 +252,7 @@ main {
 }
 
 .hero-accent {
-  color: var(--green);
+  color: var(--accent);
 }
 
 .hero-guide {
@@ -344,8 +349,8 @@ main {
 
 .togo-badge {
   margin-left: 0;
-  background: #e6f4ef;
-  color: var(--green);
+  background: var(--accent-soft);
+  color: var(--accent);
   font-weight: 700;
 }
 
@@ -376,7 +381,7 @@ main {
 }
 
 .progress-fill {
-  background: linear-gradient(90deg, var(--green), #00875f);
+  background: linear-gradient(90deg, var(--accent), #1d2340);
   height: 100%;
   width: 0;
   transition: width 0.3s ease;
@@ -403,8 +408,8 @@ main {
 }
 
 .type-badge {
-  background: #e6f4ef;
-  color: var(--green);
+  background: var(--accent-soft);
+  color: var(--accent);
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -465,7 +470,7 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px 24px;
-  border-left: 4px solid var(--green);
+  border-left: 4px solid var(--accent);
 }
 
 .section h2 {
@@ -514,8 +519,8 @@ main {
 }
 
 .item.done .check {
-  background: var(--green);
-  border-color: var(--green);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .item.done .item-label {
@@ -551,7 +556,7 @@ main {
 .item-resource {
   display: block;
   font-size: 0.82rem;
-  color: var(--green);
+  color: var(--accent);
   font-weight: 600;
   margin-top: 4px;
 }
@@ -579,7 +584,7 @@ main {
 }
 
 .about-section a {
-  color: var(--green);
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -598,8 +603,8 @@ main {
 }
 
 .badge.status-public {
-  background: #e6f4ef;
-  color: var(--green);
+  background: var(--accent-soft);
+  color: var(--accent);
   font-weight: 700;
 }
 
@@ -667,7 +672,7 @@ main {
   display: inline-block;
   margin-top: 10px;
   font-size: 0.85rem;
-  color: var(--green);
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -734,8 +739,8 @@ main {
 }
 
 .quiz-option:hover {
-  border-color: var(--green);
-  background: #f2f9f6;
+  border-color: var(--accent);
+  background: var(--accent-wash);
 }
 
 .quiz-secondary {
@@ -795,8 +800,8 @@ main {
 }
 
 .quiz-match-checklist .match-ok {
-  background: #e6f4ef;
-  color: var(--green);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .quiz-match-checklist .match-no {
@@ -832,7 +837,7 @@ main {
 .timeline-period {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--green);
+  color: var(--accent);
   text-align: right;
   padding-top: 2px;
 }
@@ -956,7 +961,7 @@ main {
   display: inline-block;
   margin-top: 8px;
   font-size: 0.82rem;
-  color: var(--green);
+  color: var(--accent);
   font-weight: 600;
 }
 
