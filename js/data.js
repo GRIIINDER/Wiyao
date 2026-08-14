@@ -1,4 +1,4 @@
-// Données des roadmaps - Wiyao
+// Données des roadmaps - WIYAO
 // Deux catégories, comme sur roadmap.sh :
 // - ROLES : roadmaps par métier (le chemin complet pour un rôle donné)
 // - SKILLS : roadmaps par compétence (un sujet précis, indépendant du métier)

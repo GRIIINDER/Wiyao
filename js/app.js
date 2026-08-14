@@ -1,4 +1,4 @@
-// Logique de rendu - Wiyao
+// Logique de rendu - WIYAO
 (function () {
   "use strict";
 
@@ -225,7 +225,7 @@
       return;
     }
 
-    document.title = `${rm.title} — Wiyao`;
+    document.title = `${rm.title} — WIYAO`;
 
     const total = countItems(rm);
     let progress = loadProgress();
@@ -239,7 +239,7 @@
     breadcrumb.className = "breadcrumb";
     breadcrumb.setAttribute("aria-label", "Fil d'Ariane");
     breadcrumb.innerHTML = `
-      <a href="index.html">Wiyao</a>
+      <a href="index.html">WIYAO</a>
       <span class="breadcrumb-sep">›</span>
       <a href="${categoryHref}">${categoryLabel}</a>
       <span class="breadcrumb-sep">›</span>
