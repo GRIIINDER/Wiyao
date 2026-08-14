@@ -18,13 +18,13 @@
 <meta name="apple-mobile-web-app-title" content="WIYAO">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
 
 <header class="site-header">
   <div class="site-header-top">
-    <a class="brand" href="index.html">
-        WIYAO
-    </a>
-    <nav class="site-nav">
+    <a class="brand" href="index.html">WIYAO</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu"></button>
+    <nav class="site-nav" id="site-nav">
       <a href="test-orientation.html">Test d'orientation</a>
       <a href="index.html">Roadmaps</a>
       <a href="ecoles.html">Écoles &amp; universités</a>
@@ -35,7 +35,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <section class="hero">
     <h1>À propos &amp; <span class="hero-accent">méthodologie</span></h1>
     <p>Comment le contenu de WIYAO est construit, vérifié et tenu à jour.</p>
@@ -128,5 +128,6 @@
 
 <script src="js/data.js"></script>
 <script src="js/app.js?v=2"></script>
+<script src="js/nav.js"></script>
 </body>
 </html>

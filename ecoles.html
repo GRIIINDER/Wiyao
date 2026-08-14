@@ -18,16 +18,16 @@
 <meta name="apple-mobile-web-app-title" content="WIYAO">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
 
 <header class="site-header">
   <div class="site-header-top">
-    <a class="brand" href="index.html">
-        WIYAO
-    </a>
-    <nav class="site-nav">
+    <a class="brand" href="index.html">WIYAO</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu"></button>
+    <nav class="site-nav" id="site-nav">
       <a href="test-orientation.html">Test d'orientation</a>
       <a href="index.html">Roadmaps</a>
-      <a href="ecoles.html" class="active">Écoles &amp; universités</a>
+      <a href="ecoles.html" class="active" aria-current="page">Écoles &amp; universités</a>
       <a href="calendrier.html">Calendrier</a>
       <a href="stages-emploi.html">Stages &amp; emploi</a>
       <a href="ecosysteme.html">Écosystème togolais</a>
@@ -41,7 +41,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <section class="hero">
     <h1>Trouve l'<span class="hero-accent">école</span> qu'il te faut</h1>
     <p>15 écoles et universités togolaises qui forment à l'informatique et au numérique, avec leurs filières,
@@ -186,5 +186,6 @@
 
 <script src="js/data.js"></script>
 <script src="js/app.js?v=2"></script>
+<script src="js/nav.js"></script>
 </body>
 </html>
