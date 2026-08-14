@@ -4175,6 +4175,231 @@ const SCHOOLS = {
       note: "Inscriptions ouvertes chaque année après le Bac, concours d'entrée obligatoire, pas de date fixe publiée en ligne.",
       contact: "contact@ifnti.com"
     }
+  },
+  "isac": {
+    name: "Institut Supérieur Agata Carelli (ISAC)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence Professionnelle", "Master"],
+    filieres: ["Génie Logiciel", "Maintenance et Réseau Informatique"],
+    duree: null,
+    admission: "Cours du jour et du soir, ouverts aux bacheliers",
+    frais: "Non communiqué publiquement — le site les qualifie d'« abordables » sans montant précis.",
+    site: "https://www.isactg.net/",
+    description: "Institut catholique fondé par les Sœurs Canossiennes en 1999 (Agoè-Légbassito), reconnu par décret en 2015 et jugé « établissement de bonne qualité » par le Ministère en 2016.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement."
+    }
+  },
+  "ism-adonai": {
+    name: "Institut Supérieur de Management Adonaï (ISM ADONAI)",
+    ville: ["Lomé", "Atakpamé", "Kara"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Licence", "Master"],
+    filieres: ["Systèmes Informatiques et Logiciels", "Réseaux Informatiques et Télécommunication", "Cybersécurité", "Maintenance et Réseaux Informatiques", "Génie Logiciel", "Développement d'Application"],
+    duree: null,
+    admission: "Sur dossier (relevé de notes du Bac certifié, acte de naissance, photo, fiche d'inscription)",
+    frais: "Tarif promotionnel constaté pour 2025-2026 : 350 000 FCFA (L1) · 450 000 (L2) · 600 000 (L3) · 700 000 (M1) · 800 000 (M2) — lié à une opération portes ouvertes, à reconfirmer pour les tarifs standards (source : synergieplus.net).",
+    site: "https://www.ismadonai.net/fr/nos-formations/",
+    description: "École privée multi-pays certifiée ISO 9001:2015, fondée en 2005, présente aussi au Bénin et en Côte d'Ivoire, forte orientation professionnalisante.",
+    datesCles: {
+      mode: "continue",
+      note: "Rentrée en septembre, calendrier précis non publié.",
+      aVerifier: true
+    }
+  },
+  "istm": {
+    name: "Institut Supérieur de Technologies et de Management (ISTM)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence Professionnelle", "Master Professionnel"],
+    filieres: ["Développeur d'Applications", "Administrateur de Réseaux Locaux d'Entreprises", "Maintenance Informatique", "Télécommunication"],
+    duree: "BTS : 2 ans (référence)",
+    admission: "Non précisée publiquement — à confirmer directement",
+    frais: "Non communiqué publiquement.",
+    site: "https://istm.tg/",
+    description: "Institut privé créé en 2010 (Agoè Assiyéyé), plus de 2000 diplômés, offre diversifiée du BTS au Master en gestion, droit, logistique, informatique et télécoms, stages garantis.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement."
+    }
+  },
+  "issec-kouvahey": {
+    name: "Institut Supérieur des Sciences Économiques et Commerciales Kouvahey (ISSEC-KOUVAHEY)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BT", "BTS"],
+    filieres: ["Informatique de Gestion (option Développeur d'Applications)"],
+    duree: "BT : 3 ans · BTS : 2 ans",
+    admission: "Bac série C, D, G2, G3, ou BT Comptabilité/Commerce",
+    frais: "Non communiqué publiquement.",
+    site: "https://www.isseck.com",
+    description: "École privée en sciences économiques et commerciales fondée en 2006, convention avec IPAC-France (Bachelor/MBA), cours du jour et du soir.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement."
+    }
+  },
+  "jumau-ita": {
+    name: "Institut Supérieur des Technologies Avancées Jumau (JUMAU-ITA)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Licence", "Master", "Doctorat"],
+    filieres: ["Génie Logiciel", "Maintenance et Réseaux", "Télécommunications", "Intelligence Artificielle"],
+    duree: null,
+    admission: "Non précisée publiquement — à confirmer directement",
+    frais: "Non communiqué publiquement.",
+    site: "https://jumau-ita.com/",
+    description: "Institut fondé en 2010, membre de l'International Association of Universities (IAU/UNESCO), a lancé des programmes en intelligence artificielle en 2025.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement."
+    }
+  },
+  "imast": {
+    name: "Institut de Mathématiques, des Sciences et Technologies (IMaST)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence Professionnelle"],
+    filieres: ["Mathématiques-Informatique", "Sécurité Informatique", "Systèmes et Réseaux Informatiques", "Développement d'Applications"],
+    duree: null,
+    admission: "Bac requis, dossier — cours du jour et du soir disponibles",
+    frais: "Non communiqué publiquement.",
+    site: "https://imast.tg/",
+    description: "Institut privé à Agoè-Nyivé, propose aussi BTS Télécommunications, classe prépa et licence Actuariat.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement."
+    }
+  },
+  "ecole-de-finance": {
+    name: "École de Finance de Lomé (EFL, ex American Institute of Africa)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence"],
+    filieres: ["Génie Logiciel", "Systèmes & Réseau"],
+    duree: null,
+    admission: "Non précisée publiquement — à confirmer directement",
+    frais: "Non communiqué publiquement.",
+    site: "https://aua-universities.org/",
+    description: "École reconnue par arrêté n°2019/037/MESR/SG/DES, propose surtout des filières gestion/finance/économie ; informatique disponible en BTS et Licence seulement (pas de Master informatique identifié).",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement."
+    }
+  },
+  "global-wealth": {
+    name: "Global Wealth University (Institut Universitaire Global Wealth, ex-IITM)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Bachelor", "Master"],
+    filieres: ["Information Technology Management", "Computer and Software Engineering", "Artificial Intelligence & Robotics", "Computer Science", "Social Media & Digital Technology Management", "Telecommunication & Broadcasting Management"],
+    duree: null,
+    admission: "Diplôme secondaire pour le Bachelor ; diplôme Bachelor pour le Master (prérequis variables selon spécialité)",
+    frais: "250 000-300 000 FCFA/session (Bachelor) · 300 000-350 000 FCFA/session (Master) selon la filière, + frais de candidature (10 000), d'acceptation (10 000), d'examen (35 000/matière/semestre) et de pratique (25 000/semestre) (source : cugw.tg).",
+    site: "https://cugw.tg/",
+    description: "Fondée en 2012, propose des filières en anglais (Faculty of ICT et Faculty of Sciences), programmes IA/robotique et informatique.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement."
+    }
+  },
+  "hest": {
+    name: "École des Hautes Études de Sciences et Technologies (HEST)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence", "Master"],
+    filieres: ["Systèmes et Réseaux Informatiques", "Développement d'Application", "Maintenance Informatique", "Informatique Industrielle", "Robotique et Intelligence Artificielle", "Cybersécurité", "UX/UI Design", "Génie Logiciel", "Ingénierie Informatique Mobile et Web"],
+    duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
+    admission: "BTS : Bac toutes séries · Licence : Bac série scientifique ou équivalent · Master : Licence en sciences et technologies ou équivalent",
+    frais: "Non communiqué publiquement — bourses disponibles de 50 000 à 250 000 FCFA (Licence/Master).",
+    site: "https://www.hest-edu.net/",
+    description: "Une des offres informatique les plus complètes du comparatif (BTS à Master), à Tokoin Wuiti, propose aussi économie/gestion et sciences de l'information et de la communication.",
+    datesCles: {
+      mode: "continue",
+      note: "Rentrée BTS/Licence début octobre, Master mi-novembre (référence 2024-2025, à reconfirmer).",
+      anneeReference: "2024-2025",
+      aVerifier: true
+    }
+  },
+  "escen": {
+    name: "École Supérieure de Commerce et de l'Économie Numérique (ESCEN)",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Licence Professionnelle", "Master Professionnel"],
+    filieres: ["Intelligence Artificielle & Génie Logiciel"],
+    duree: null,
+    admission: "Non précisée publiquement — à confirmer directement",
+    frais: "850 000 FCFA (Licence 1) · 1 300 000 FCFA (Master 1) — trouvé par recherche web, non recoupé sur une page officielle, à vérifier.",
+    site: "https://escen.university/",
+    description: "Se présente comme la 1ère école supérieure d'économie numérique d'Afrique subsaharienne francophone, filière IA & Génie Logiciel en partenariat avec l'école d'ingénieurs ESTIA (Biarritz, France), présentiel et à distance.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement."
+    }
+  },
+  "lucas": {
+    name: "LUCAS University College",
+    ville: ["Lomé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence", "Master"],
+    filieres: ["Développement d'Applications", "Réseaux et Télécommunications", "Sécurité Informatique", "Mathématiques et Informatique"],
+    duree: null,
+    admission: "Cours du jour, du soir, week-end, ou à distance avec séminaires mensuels",
+    frais: "Non communiqué publiquement.",
+    site: "https://www.lucas-universities-colleges.net/",
+    description: "Fondé en 2018, réseau panafricain (présent aussi au Ghana, Niger, Mali), partenariats pour doubles diplômes avec MBway et My Digital School (France) et Griffith College (Irlande), incubateur pour jeunes entrepreneurs.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement."
+    }
+  },
+  "knowbridge": {
+    name: "KNOWBRIDGE University Institute",
+    ville: ["Sokodé"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["Licence", "Master"],
+    filieres: ["Cybersécurité", "Génie des Technologies de l'Information"],
+    duree: null,
+    admission: "Sur dossier (admission.knowbridge.com), traitement 2 à 4 semaines, 2 programmes maximum par candidature",
+    frais: "Licence : 590 000 FCFA/an + 30 000 FCFA d'inscription + 10 000 FCFA de dossier · Master : 750 000 FCFA/an + 50 000 FCFA d'inscription + 20 000 FCFA de dossier. Paiement en 3 tranches (source : knowbridge.com/pages/fees).",
+    site: "https://www.knowbridge.com/",
+    description: "Institut privé à Sokodé, formations en présentiel, à distance et modules flexibles, combine cybersécurité, développement logiciel et intelligence artificielle.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié en ligne — contacte l'établissement directement (admission.knowbridge.com)."
+    }
+  },
+  "bakpessi": {
+    name: "Institut Supérieur de Management Mgr BAKPESSI",
+    ville: ["Kara"],
+    statut: "prive",
+    agree: true,
+    niveaux: ["BTS", "Licence Professionnelle", "Master Professionnel"],
+    filieres: ["Maintenance Informatique", "Développement d'Applications"],
+    duree: null,
+    admission: "Sur dossier (relevé de notes du Bac, diplôme, acte de naissance, photo, pièce d'identité, lettre de motivation, CV)",
+    frais: "Non communiqué publiquement.",
+    site: null,
+    description: "Institut privé à Kara, fondé pour rapprocher l'enseignement supérieur des populations du nord du Togo ; offre informatique limitée à 2 filières BTS parmi 13 spécialités.",
+    datesCles: {
+      mode: "inconnu",
+      note: "Aucun calendrier publié — contact direct uniquement.",
+      contact: "+228 26 60 13 67 / isgmgrb@gmail.com"
+    }
   }
 };
 
@@ -4182,7 +4407,8 @@ const VILLES = {
   "Lomé": { icon: "🏙️" },
   "Kara": { icon: "🏘️" },
   "Sokodé": { icon: "🏘️" },
-  "Bassar": { icon: "🏘️" }
+  "Bassar": { icon: "🏘️" },
+  "Atakpamé": { icon: "🏘️" }
 };
 
 // ---- Test d'orientation ----
@@ -4311,6 +4537,7 @@ const QUIZ_QUESTIONS = [
       { label: "À Kara", value: "Kara" },
       { label: "À Sokodé", value: "Sokodé" },
       { label: "À Bassar", value: "Bassar" },
+      { label: "À Atakpamé", value: "Atakpamé" },
       { label: "Peu importe, je peux me déplacer", value: "peu-importe" }
     ]
   },
