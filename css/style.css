@@ -1117,6 +1117,19 @@ main {
   margin-bottom: 16px;
 }
 
+.eco-subheading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tk-text-muted);
+  margin: 24px 0 14px;
+}
+
+.eco-subheading:first-of-type {
+  margin-top: 0;
+}
+
 .eco-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
