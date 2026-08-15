@@ -3891,7 +3891,7 @@ const SCHOOLS = {
     statut: "prive",
     agree: true,
     niveaux: ["BTS", "Licence", "Master"],
-    filieres: ["Informatique de Gestion", "Développement d'Applications", "Systèmes et Réseaux", "Sécurité Informatique", "Intelligence Artificielle & Big Data"],
+    filieres: ["Informatique de Gestion", "Développement d'Applications", "Systèmes et Réseaux", "Sécurité Informatique", "Intelligence Artificielle & Big Data", "Marketing Digital"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans après la Licence",
     admission: "Ouvert à tous les bacheliers en 1ère année ; dossier + entretien pour une admission directe en cours de cursus",
     frais: "Non communiqué publiquement — l'école renvoie explicitement au secrétariat local pour les tarifs. (Un document non officiel daté de 2021 circule en ligne mais n'est pas fiable pour l'année en cours.)",
@@ -4400,6 +4400,23 @@ const SCHOOLS = {
       note: "Aucun calendrier publié — contact direct uniquement.",
       contact: "+228 26 60 13 67 / isgmgrb@gmail.com"
     }
+  },
+  "lome-digital-school": {
+    name: "Lomé Digital School",
+    ville: ["Lomé"],
+    statut: "prive",
+    agreeNote: "Bootcamp accrédité ICDL, pas un cursus académique classique — aucun agrément d'État confirmé pour l'instant.",
+    niveaux: ["Bootcamp / Formation courte"],
+    filieres: ["Design UX/UI", "Développement Web & Mobile", "Marketing Digital", "Data Analytics & Power BI", "Product Management", "Intelligence Artificielle pour les professionnels", "Stratégie & Création de contenu"],
+    duree: "Bootcamps de 3 à 7 mois selon le programme (5 samedis à 12 semaines, 400h+ en présentiel)",
+    admission: "Ouvert aux débutants, étudiants, jeunes diplômés et professionnels en reconversion — formations adaptées au niveau du candidat",
+    frais: "90 000 FCFA (Stratégie & Création de contenu) · 180 000 (Design UX/UI) · 220 000 (IA pour les professionnels) · 350 000 (Data Analytics, Développement web & mobile, ou Marketing Digital) — source : lomedigitalschool.com.",
+    site: "https://lomedigitalschool.com/",
+    description: "Se présente comme le premier bootcamp numérique du Togo : formations courtes et pratiques (UX/UI, marketing digital, data, dev, IA), pensées pour une insertion professionnelle rapide plutôt qu'un diplôme académique long.",
+    datesCles: {
+      mode: "continue",
+      note: "Sessions ouvertes en continu selon les programmes — pas de calendrier académique fixe comme les autres écoles du comparatif."
+    }
   }
 };
 
@@ -4430,15 +4447,15 @@ const QUIZ_QUESTIONS = [
   },
   {
     type: "domain",
-    question: "Dans un jeu vidéo, tu préfères plutôt...",
+    question: "Pour organiser un événement dans ton lycée (kermesse, tournoi, fête de fin d'année), tu prendrais plutôt en charge...",
     options: [
-      { label: "Créer des mods ou du contenu personnalisé", domain: "Développement" },
-      { label: "Optimiser ta stratégie à partir de statistiques", domain: "Data & IA" },
-      { label: "Chercher les failles et les limites du jeu", domain: "Sécurité" },
-      { label: "Personnaliser ton avatar et ton interface", domain: "Produit & Design" },
-      { label: "Monter et administrer un serveur multijoueur", domain: "Infrastructure & DevOps" },
-      { label: "Streamer ou créer du contenu autour du jeu", domain: "Marketing digital" },
-      { label: "Organiser un tournoi entre joueurs", domain: "Gestion & Management" }
+      { label: "Un petit outil ou une liste pour gérer les inscriptions", domain: "Développement" },
+      { label: "L'analyse des votes ou des résultats pour comprendre les tendances", domain: "Data & IA" },
+      { label: "La surveillance pour que personne ne triche ou ne vole la caisse", domain: "Sécurité" },
+      { label: "Les affiches et la décoration", domain: "Produit & Design" },
+      { label: "La sono, l'électricité, tout ce qui doit tenir toute la soirée", domain: "Infrastructure & DevOps" },
+      { label: "La promo sur les réseaux sociaux pour faire venir du monde", domain: "Marketing digital" },
+      { label: "La coordination des équipes et du budget", domain: "Gestion & Management" }
     ]
   },
   {
@@ -4486,9 +4503,9 @@ const QUIZ_QUESTIONS = [
     options: [
       { label: "Bidouiller un petit projet de code perso", domain: "Développement" },
       { label: "Explorer un jeu de données qui t'intéresse", domain: "Data & IA" },
-      { label: "Regarder des vidéos sur des CTF ou du piratage éthique", domain: "Sécurité" },
+      { label: "Chercher comment on pourrait pirater un compte ou une appli, pour mieux comprendre comment s'en protéger", domain: "Sécurité" },
       { label: "Redessiner l'appli d'une marque que tu utilises", domain: "Produit & Design" },
-      { label: "Monter ton propre serveur ou Raspberry Pi", domain: "Infrastructure & DevOps" },
+      { label: "Bidouiller les réglages de ton téléphone ou de ta box internet pour mieux comprendre comment ça marche", domain: "Infrastructure & DevOps" },
       { label: "Créer du contenu et faire grandir une page", domain: "Marketing digital" },
       { label: "Organiser un événement ou un club", domain: "Gestion & Management" }
     ]
@@ -4597,11 +4614,11 @@ const ACADEMIC_TIMELINE = [
 // Mots-clés utilisés pour relier un domaine (voir DOMAINS) aux filières réelles
 // des écoles (voir SCHOOLS) — recherche insensible à la casse dans les filières.
 const DOMAIN_KEYWORDS = {
-  "Développement": ["développement", "génie logiciel", "logiciel", "programmeur", "application", "web", "mobile"],
-  "Data & IA": ["intelligence artificielle", "data", "science des données", "statistique"],
-  "Sécurité": ["cybersécurité", "sécurité", "cybercriminalité"],
-  "Produit & Design": ["multimédia", "design", "infographie", "webdesign"],
-  "Infrastructure & DevOps": ["réseaux", "systèmes", "administrateur", "maintenance informatique", "télécommunication"],
-  "Marketing digital": ["marketing", "économie numérique", "commerce"],
+  "Développement": ["développement", "génie logiciel", "logiciel", "programmeur", "application", "web", "mobile", "software engineering", "computer science"],
+  "Data & IA": ["intelligence artificielle", "artificial intelligence", "data", "science des données", "statistique", "robotique", "robotics"],
+  "Sécurité": ["cybersécurité", "sécurité", "cybercriminalité", "cybersecurity"],
+  "Produit & Design": ["multimédia", "design", "infographie", "webdesign", "ux/ui", "ui/ux", "product management"],
+  "Infrastructure & DevOps": ["réseaux", "systèmes", "administrateur", "maintenance informatique", "télécommunication", "telecommunication", "information technology"],
+  "Marketing digital": ["marketing", "social media", "digital technology management", "création de contenu"],
   "Gestion & Management": ["gestion", "management"]
 };
