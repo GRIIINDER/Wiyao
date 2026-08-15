@@ -1,4 +1,4 @@
-const CACHE_NAME = "wiyao-v6";
+const CACHE_NAME = "wiyao-v7";
 
 const PRECACHE_URLS = [
   "index.html",
@@ -20,6 +20,8 @@ const PRECACHE_URLS = [
   "manifest.json",
   "icons/icon-192.png",
   "icons/icon-512.png",
+  "fonts/cabin-latin.woff2",
+  "fonts/cabin-latin-ext.woff2",
 ];
 
 self.addEventListener("install", (event) => {
