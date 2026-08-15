@@ -136,6 +136,28 @@
     }
   }
 
+  // ---- Primer "l'informatique en 7 domaines" (page test d'orientation) ----
+  function renderDomainPrimer() {
+    const container = document.getElementById("domain-primer-grid");
+    if (!container || typeof DOMAINS === "undefined") return;
+
+    Object.keys(DOMAINS).forEach((domainName) => {
+      const meta = DOMAINS[domainName];
+      const item = document.createElement("div");
+      item.className = "domain-primer-item";
+
+      const heading = document.createElement("h4");
+      heading.textContent = meta.icon ? `${meta.icon} ${domainName}` : domainName;
+      item.appendChild(heading);
+
+      const desc = document.createElement("p");
+      desc.textContent = meta.description;
+      item.appendChild(desc);
+
+      container.appendChild(item);
+    });
+  }
+
   // ---- Recherche + filtres par domaine (page d'accueil) ----
   function applyFilters() {
     const searchInput = document.getElementById("roadmap-search");
@@ -771,6 +793,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     renderGrid();
+    renderDomainPrimer();
     initFilters();
     renderRoadmap();
     renderSchools();
