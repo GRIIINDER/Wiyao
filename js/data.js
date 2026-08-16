@@ -3840,8 +3840,10 @@ const ALL_ROADMAPS = Object.assign({}, ROLES, SKILLS);
 // ---- Écoles & universités ----
 // Données vérifiées sur les sites officiels de chaque établissement (recherche août 2026).
 // Statut "agree" : présence confirmée dans la liste des établissements privés d'enseignement
-// supérieur agréés par le Ministère togolais de l'Enseignement Supérieur et de la Recherche
-// (arrêté du 4 novembre 2022). null = non applicable (établissement public) ou statut particulier.
+// supérieur reconnus par le Ministère togolais de l'Enseignement Supérieur et de la Recherche
+// pour l'année académique 2025-2026 (liste de 93 établissements, publiée le 30 septembre 2025 —
+// vérifiée à jour en août 2026, remplace l'ancienne liste de l'arrêté du 4 novembre 2022).
+// null = non applicable (établissement public) ou statut particulier.
 const SCHOOLS = {
   "ipnet": {
     name: "IPNET Institute of Technology",
