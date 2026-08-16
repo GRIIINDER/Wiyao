@@ -23,17 +23,22 @@
     <a class="brand" href="index.html">WIYAO</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu"></button>
     <nav class="site-nav" id="site-nav">
-      <a href="recherche.html">Recherche</a>
+      <a href="recherche.html" class="nav-search-link" aria-label="Recherche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span class="nav-search-text">Recherche</span></a>
       <a href="test-orientation.html">Test d'orientation</a>
       <a href="index.html">Roadmaps</a>
       <a href="ecoles.html">Écoles &amp; universités</a>
       <a href="calendrier.html">Calendrier</a>
-      <a href="bourses-financement.html">Bourses &amp; financement</a>
       <a href="stages-emploi.html">Stages &amp; emploi</a>
       <a href="ecosysteme.html">Écosystème togolais</a>
-      <a href="actualites.html" class="active" aria-current="page">Actualités</a>
-      <a href="temoignages.html">Témoignages</a>
-      <a href="faq.html">FAQ</a>
+      <div class="nav-more">
+        <button class="nav-more-toggle active" type="button" aria-expanded="false" aria-haspopup="true">Plus ▾</button>
+        <div class="nav-more-menu">
+          <a href="bourses-financement.html">Bourses &amp; financement</a>
+          <a href="actualites.html" class="active" aria-current="page">Actualités</a>
+          <a href="temoignages.html">Témoignages</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
@@ -161,6 +166,6 @@
   </div>
 </footer>
 
-<script src="js/nav.js"></script>
+<script src="js/nav.js?v=2"></script>
 </body>
 </html>

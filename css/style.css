@@ -207,6 +207,91 @@ nav.site-nav a.active {
   box-shadow: inset 0 0 0 1px rgba(102, 196, 255, 0.25);
 }
 
+.nav-search-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.nav-search-text {
+  display: none;
+}
+
+.nav-more {
+  position: relative;
+}
+
+.nav-more-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--tk-text-muted);
+  font-weight: 600;
+  font-size: 0.76rem;
+  font-family: inherit;
+  padding: 8px 13px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.nav-more-toggle:hover {
+  color: var(--tk-text);
+}
+
+.nav-more-toggle.active {
+  color: var(--tk-primary);
+  background: var(--tk-primary-soft);
+  box-shadow: inset 0 0 0 1px rgba(102, 196, 255, 0.25);
+}
+
+.nav-more-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--tk-surface-soft);
+  border: 1px solid var(--tk-border);
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+  z-index: 30;
+}
+
+.nav-more.is-open .nav-more-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-more-menu a {
+  color: var(--tk-text-muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 9px 14px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.nav-more-menu a:hover {
+  color: var(--tk-text);
+  background: var(--tk-surface);
+}
+
+.nav-more-menu a.active {
+  color: var(--tk-primary);
+}
+
 .nav-toggle {
   display: none;
   align-items: center;
@@ -1464,6 +1549,35 @@ footer.site-footer {
     display: flex;
   }
   nav.site-nav a {
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--tk-surface-soft);
+    font-size: 0.85rem;
+  }
+  .nav-search-text {
+    display: inline;
+  }
+  .nav-more {
+    width: 100%;
+  }
+  .nav-more-toggle {
+    display: none;
+  }
+  .nav-more-menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    gap: 4px;
+  }
+  .nav-more-menu a {
     text-align: center;
     padding: 12px 16px;
     border-radius: 12px;

@@ -33,6 +33,39 @@
   });
 })();
 
+// Menu déroulant "Plus" (desktop) - WIYAO
+(function () {
+  "use strict";
+
+  var more = document.querySelector(".nav-more");
+  var toggle = more ? more.querySelector(".nav-more-toggle") : null;
+  if (!more || !toggle) return;
+
+  function setOpen(isOpen) {
+    more.classList.toggle("is-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  toggle.addEventListener("click", function (event) {
+    event.stopPropagation();
+    setOpen(!more.classList.contains("is-open"));
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!more.contains(event.target)) setOpen(false);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") setOpen(false);
+  });
+
+  more.querySelectorAll(".nav-more-menu a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      setOpen(false);
+    });
+  });
+})();
+
 // Bouton retour en haut - WIYAO
 (function () {
   "use strict";
