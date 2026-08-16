@@ -791,10 +791,137 @@
     });
   }
 
+  // ---- Recherche transversale (page recherche.html) ----
+  // Indexe roadmaps/écoles depuis js/data.js, et scanne les .eco-item / .timeline-item
+  // des autres pages via fetch + DOMParser pour rester la seule source de vérité
+  // (pas de duplication de contenu à maintenir en double).
+  function buildGlobalIndex() {
+    const index = [];
+
+    if (typeof ROLES !== "undefined") {
+      Object.keys(ROLES).forEach((id) => {
+        const r = ROLES[id];
+        index.push({ title: r.title, description: r.description || "", category: "Roadmap · métier", url: `roadmap.html?id=${id}` });
+      });
+    }
+    if (typeof SKILLS !== "undefined") {
+      Object.keys(SKILLS).forEach((id) => {
+        const s = SKILLS[id];
+        index.push({ title: s.title, description: s.description || "", category: "Roadmap · compétence", url: `roadmap.html?id=${id}` });
+      });
+    }
+    if (typeof SCHOOLS !== "undefined") {
+      Object.keys(SCHOOLS).forEach((id) => {
+        const sc = SCHOOLS[id];
+        index.push({ title: sc.name, description: sc.description || "", category: "École", url: "ecoles.html" });
+      });
+    }
+
+    const pagesToScan = [
+      { url: "ecosysteme.html", category: "Écosystème togolais", itemSelector: ".eco-item" },
+      { url: "bourses-financement.html", category: "Bourses & financement", itemSelector: ".eco-item" },
+      { url: "stages-emploi.html", category: "Stages & emploi", itemSelector: ".eco-item" },
+      { url: "actualites.html", category: "Actualités", itemSelector: ".timeline-item" }
+    ];
+
+    const fetches = pagesToScan.map((page) =>
+      fetch(page.url)
+        .then((res) => res.text())
+        .then((html) => {
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          doc.querySelectorAll(page.itemSelector).forEach((item) => {
+            const heading = item.querySelector("h3, h4");
+            const desc = item.querySelector("p");
+            const link = item.querySelector("a.eco-link");
+            if (!heading) return;
+            const section = item.closest("section[id]");
+            index.push({
+              title: heading.textContent.trim(),
+              description: desc ? desc.textContent.trim() : "",
+              category: page.category,
+              url: section ? `${page.url}#${section.id}` : page.url,
+              externalUrl: link ? link.getAttribute("href") : null
+            });
+          });
+        })
+        .catch(function () {})
+    );
+
+    return Promise.all(fetches).then(() => index);
+  }
+
+  function initGlobalSearch() {
+    const input = document.getElementById("global-search-input");
+    const results = document.getElementById("global-search-results");
+    const status = document.getElementById("global-search-status");
+    if (!input || !results || !status) return;
+
+    function normalize(str) {
+      const decomposed = str.toLowerCase().normalize("NFD");
+      let out = "";
+      for (let i = 0; i < decomposed.length; i++) {
+        const code = decomposed.charCodeAt(i);
+        if (code < 0x0300 || code > 0x036f) out += decomposed[i];
+      }
+      return out;
+    }
+
+    let index = null;
+    buildGlobalIndex().then((idx) => {
+      index = idx;
+      status.textContent = `${idx.length} ressources indexées. Tape pour chercher.`;
+      if (input.value.trim()) runSearch();
+    });
+
+    function runSearch() {
+      results.innerHTML = "";
+      const query = normalize(input.value.trim());
+      if (!query) {
+        status.textContent = index ? `${index.length} ressources indexées. Tape pour chercher.` : "Chargement de l'index de recherche...";
+        return;
+      }
+      if (!index) return;
+
+      const matches = index.filter((item) => normalize(item.title + " " + item.description).indexOf(query) !== -1);
+      status.textContent = matches.length ? `${matches.length} résultat${matches.length > 1 ? "s" : ""}` : "Aucun résultat. Essaie un autre mot-clé.";
+
+      matches.slice(0, 60).forEach((item) => {
+        const card = document.createElement("a");
+        card.className = "search-result";
+        const targetUrl = item.externalUrl || item.url;
+        card.href = targetUrl;
+        if (item.externalUrl) {
+          card.target = "_blank";
+          card.rel = "noopener";
+        }
+
+        const cat = document.createElement("span");
+        cat.className = "search-result-category";
+        cat.textContent = item.category;
+        card.appendChild(cat);
+
+        const title = document.createElement("h3");
+        title.textContent = item.title;
+        card.appendChild(title);
+
+        if (item.description) {
+          const desc = document.createElement("p");
+          desc.textContent = item.description;
+          card.appendChild(desc);
+        }
+
+        results.appendChild(card);
+      });
+    }
+
+    input.addEventListener("input", runSearch);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     renderGrid();
     renderDomainPrimer();
     initFilters();
+    initGlobalSearch();
     renderRoadmap();
     renderSchools();
     initSchoolFilters();

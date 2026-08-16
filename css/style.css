@@ -463,6 +463,46 @@ main {
   font-weight: 700;
 }
 
+#global-search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.search-result {
+  display: block;
+  background: var(--tk-surface-soft);
+  border: 1px solid var(--tk-border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+}
+
+.search-result:hover {
+  border-color: var(--tk-primary);
+}
+
+.search-result-category {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tk-primary);
+  margin-bottom: 6px;
+}
+
+.search-result h3 {
+  font-size: 0.98rem;
+  margin: 0 0 4px;
+}
+
+.search-result p {
+  color: var(--tk-text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
 .domain-primer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

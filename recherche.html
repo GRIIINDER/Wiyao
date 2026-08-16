@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Politique de confidentialité — WIYAO</title>
-<meta name="description" content="Politique de confidentialité de WIYAO : aucune collecte de données personnelles, progression enregistrée uniquement en local dans le navigateur.">
+<title>Recherche — WIYAO</title>
+<meta name="description" content="Recherche unique sur tout WIYAO : roadmaps, écoles, écosystème togolais, bourses, stages & emploi et actualités en un seul endroit.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
@@ -23,7 +23,7 @@
     <a class="brand" href="index.html">WIYAO</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu"></button>
     <nav class="site-nav" id="site-nav">
-      <a href="recherche.html">Recherche</a>
+      <a href="recherche.html" class="active" aria-current="page">Recherche</a>
       <a href="test-orientation.html">Test d'orientation</a>
       <a href="index.html">Roadmaps</a>
       <a href="ecoles.html">Écoles &amp; universités</a>
@@ -40,33 +40,20 @@
 
 <main id="main-content">
   <section class="hero">
-    <h1>Politique de <span class="hero-accent">confidentialité</span></h1>
-    <p>Ce que WIYAO fait, et surtout ne fait pas, avec ce que tu utilises sur le site.</p>
+    <h1>Cherche <span class="hero-accent">n'importe quoi</span> sur WIYAO</h1>
+    <p>Une seule recherche pour tout le site : roadmaps, écoles, écosystème togolais, bourses, stages &amp; emploi
+       et actualités.</p>
   </section>
 
-  <section class="about-section">
-    <h2>Aucune collecte de données personnelles</h2>
-    <p>WIYAO ne demande pas de compte, pas d'inscription, et ne collecte aucune donnée personnelle sur un serveur. Tu peux utiliser tout le site — roadmaps, test d'orientation, calendrier, annuaire des écoles — sans jamais fournir d'information sur toi.</p>
-  </section>
-
-  <section class="about-section">
-    <h2>Stockage local (localStorage)</h2>
-    <p>Ta progression sur les roadmaps est enregistrée uniquement dans le stockage local (localStorage) de ton navigateur. Cette donnée reste sur ton appareil, n'est jamais transmise à un serveur, et tu peux l'effacer à tout moment via le bouton « Réinitialiser la progression » sur une roadmap, ou en vidant les données de ton navigateur.</p>
-  </section>
-
-  <section class="about-section">
-    <h2>Pas de suivi ni de publicité</h2>
-    <p>Le site n'utilise aucun outil d'analyse tierce (Google Analytics ou équivalent), aucun cookie de suivi, et n'affiche aucune publicité.</p>
-  </section>
-
-  <section class="about-section">
-    <h2>Liens externes</h2>
-    <p>WIYAO renvoie vers des sites tiers (écoles, plateformes d'emploi, dépôt GitHub, réseaux communautaires...). Ces sites ont leurs propres règles de confidentialité, indépendantes de celles de WIYAO.</p>
-  </section>
-
-  <section class="about-section">
-    <h2>Contact</h2>
-    <p>Pour toute question sur cette politique : <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.</p>
+  <section class="roadmap-category">
+    <div class="search-bar-wrap">
+      <div class="search-bar">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="search" id="global-search-input" placeholder="Ex : cybersécurité, Kara, bourse, Gozem, IAI-Togo..." aria-label="Rechercher sur tout WIYAO" autofocus>
+      </div>
+    </div>
+    <p class="category-desc" id="global-search-status">Chargement de l'index de recherche...</p>
+    <div id="global-search-results"></div>
   </section>
 </main>
 
