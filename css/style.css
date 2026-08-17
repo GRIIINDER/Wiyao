@@ -916,6 +916,17 @@ main {
   color: var(--tk-primary-hover);
 }
 
+.about-section ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+.about-section li {
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
 /* Écoles & universités */
 .school-card {
   display: flex;
