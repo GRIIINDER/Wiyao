@@ -1457,22 +1457,24 @@ footer.site-footer {
   gap: 10px;
 }
 
-.footer-social-icon {
+.footer-social-row .footer-social-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 1px solid var(--tk-border);
+  padding: 0;
+  border: none;
   border-radius: 50%;
-  color: var(--tk-text-muted);
-  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  background: var(--tk-surface-soft);
+  color: var(--tk-text);
+  text-transform: none;
+  transition: background 0.2s, color 0.2s;
 }
 
-.footer-social-icon:hover {
-  color: var(--tk-primary);
-  border-color: transparent;
-  background: var(--tk-primary-soft);
+.footer-social-row .footer-social-icon:hover {
+  color: var(--tk-canvas);
+  background: var(--tk-primary);
 }
 
 .footer-note {
