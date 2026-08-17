@@ -627,6 +627,9 @@
     const second = ranked[1];
     const totalAnswers = QUIZ_QUESTIONS.length;
     const topMeta = DOMAINS[top];
+    const topScore = quizScores[top] || 0;
+    const secondScore = second ? (quizScores[second] || 0) : 0;
+    const isCloseCall = !!second && topScore > 0 && topScore - secondScore <= 1;
 
     const matchingRoles = typeof ROLES !== "undefined"
       ? Object.keys(ROLES).filter((id) => ROLES[id].domain === top).slice(0, 3)
@@ -634,6 +637,9 @@
     const schoolMatches = computeSchoolMatches(top);
 
     let html = `
+      <p class="quiz-disclaimer">Ce résultat est un point de départ, pas un verdict — 12 questions ne peuvent pas te connaître à 100 %.
+        Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu'un du métier, et teste la roadmap avant de t'engager
+        financièrement dans une école.</p>
       <h2>Ton profil : ${topMeta.icon} ${top}</h2>
       <p class="category-desc">${topMeta.description}</p>
     `;
@@ -642,9 +648,9 @@
       html += `<div class="grid" id="quiz-role-grid"></div>`;
     }
 
-    if (second) {
+    if (isCloseCall) {
       const secondMeta = DOMAINS[second];
-      html += `<p class="quiz-secondary">Ce profil te correspond bien aussi : <strong>${secondMeta.icon} ${second}</strong>.</p>`;
+      html += `<p class="quiz-secondary">Résultat serré : <strong>${secondMeta.icon} ${second}</strong> te correspond presque autant que ${top}. Vaut le coup d'explorer les deux avant de choisir.</p>`;
     }
 
     if (schoolMatches.length) {

@@ -1124,6 +1124,23 @@ main {
   background: var(--accent-wash);
 }
 
+.quiz-disclaimer {
+  max-width: 640px;
+  margin: 0 auto 28px;
+  padding: 14px 18px;
+  background: var(--tk-surface-soft);
+  border: 1px solid var(--tk-border);
+  border-radius: var(--radius);
+  color: var(--tk-text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.quiz-disclaimer a {
+  font-weight: 700;
+}
+
 .quiz-secondary {
   text-align: center;
   color: var(--tk-text-muted);
