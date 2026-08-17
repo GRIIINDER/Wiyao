@@ -792,6 +792,74 @@
       fr: "<strong>5. Prépare un CV court et concret.</strong> Un recruteur tech togolais regarde d'abord ce que tu as construit, pas une liste de compétences vagues. Mets en avant 2-3 projets précis plutôt qu'une longue liste de technologies.",
       en: "<strong>5. Prepare a short, concrete résumé.</strong> A Togolese tech recruiter looks first at what you've built, not a vague list of skills. Highlight 2-3 specific projects rather than a long list of technologies.",
     },
+
+    "bourses.s1.h2": { fr: "Bourses proposées directement par les écoles", en: "Scholarships offered directly by schools" },
+    "bourses.s1.desc": {
+      fr: 'La majorité des écoles privées togolaises proposent leurs propres réductions ou concours de bourses —\n      souvent la piste la plus accessible, mais la moins visible. Détails complets (filières, frais, contact) sur la page\n      <a href="ecoles.html">Écoles &amp; universités</a>.',
+      en: 'Most Togolese private schools offer their own discounts or scholarship competitions — often the most accessible option, but the least visible. Full details (programs, fees, contact) on the <a href="ecoles.html">Schools &amp; universities</a> page.',
+    },
+    "bourses.s1.i1.p": { fr: "Bourses sociales et au mérite, avec possibilité de payer les frais en 3 fois.", en: "Need-based and merit scholarships, with the option to pay fees in 3 installments." },
+    "bourses.s1.i2.p": { fr: "Bourses FONAP, bourses de mobilité (Le Havre, Belgique) et bourses au mérite scolaire (source : esig.tg/faq).", en: "FONAP scholarships, mobility scholarships (Le Havre, Belgium) and academic merit scholarships (source: esig.tg/faq)." },
+    "bourses.s1.i3.p": { fr: "Concours de bourses togolais donnant droit à une réduction de 15 à 75 % sur les frais de scolarité.", en: "Togolese scholarship competition offering a 15 to 75% discount on tuition fees." },
+    "bourses.s1.i4.p": {
+      fr: 'Bourse « Étoile Scientifique » de 200 000 FCFA/an réservée aux étudiantes en informatique, plus une réduction fratrie de 50 000 FCFA/an (source : ucao-uut.tg/admissions).',
+      en: '"Étoile Scientifique" scholarship of 200,000 FCFA/year reserved for female computer science students, plus a 50,000 FCFA/year sibling discount (source: ucao-uut.tg/admissions).',
+    },
+    "bourses.s1.i5.p": { fr: "Concours de bourses chaque année en septembre (réduction sur les frais de scolarité, montant variable).", en: "Scholarship competition every September (discount on tuition fees, variable amount)." },
+    "bourses.s1.i6.p": { fr: "Accès à la bourse d'État togolaise comme toute université publique, ainsi qu'à des bourses internationales (France, Inde) pour les meilleurs dossiers.", en: "Access to the Togolese State scholarship like any public university, as well as international scholarships (France, India) for the strongest applications." },
+    "bourses.s1.i7.p": { fr: "Bourses ponctuelles attribuées par tirage au sort à la rentrée — non garanties chaque année.", en: "One-off scholarships awarded by lottery at the start of the year — not guaranteed annually." },
+    "bourses.s1.i8.p": { fr: "Bourses disponibles de 50 000 à 250 000 FCFA selon le niveau (Licence/Master).", en: "Scholarships available from 50,000 to 250,000 FCFA depending on level (Bachelor's/Master's)." },
+    "bourses.s1.note": { fr: "Montants et conditions changent d'une année à l'autre — vérifie toujours le détail actuel directement auprès de l'école avant de t'engager.", en: "Amounts and conditions change from year to year — always check the current details directly with the school before committing." },
+
+    "bourses.s2.h2": { fr: "Bourse d'État togolaise", en: "Togolese State scholarship" },
+    "bourses.s2.i1.h4": { fr: "Bourse nationale", en: "National scholarship" },
+    "bourses.s2.i1.p": {
+      fr: 'Réservée aux étudiants de nationalité togolaise <strong>déjà inscrits dans une université publique togolaise</strong>\n           (Université de Lomé, Université de Kara), avec une moyenne « assez-bien » ou plus. La procédure n\'est pas\n           numérisée : le dossier se dépose physiquement, selon un calendrier fixé chaque année.',
+      en: 'Reserved for Togolese nationals <strong>already enrolled in a Togolese public university</strong> (Université de Lomé, Université de Kara), with a "good" grade average or above. The process is not digitized: applications are filed in person, on a schedule set each year.',
+    },
+    "bourses.s2.i2.h4": { fr: "Bourses de coopération (étudier à l'étranger)", en: "Cooperation scholarships (studying abroad)" },
+    "bourses.s2.i2.p": {
+      fr: "Accords bilatéraux gérés par la DBS : bourses AMCI (Maroc), bourse d'excellence de l'UEMOA, bourses vers le\n           Brésil et d'autres pays partenaires. Chaque programme a ses propres critères et dates, publiés au fil de\n           l'année — l'appel pour l'AMCI 2026-2027 a par exemple été publié début août 2026.",
+      en: "Bilateral agreements managed by the DBS: AMCI scholarships (Morocco), UEMOA excellence scholarship, scholarships to Brazil and other partner countries. Each program has its own criteria and dates, published throughout the year — the call for AMCI 2026-2027, for instance, was published in early August 2026.",
+    },
+    "bourses.s2.i3.h4": { fr: "Allocations de secours", en: "Emergency grants" },
+    "bourses.s2.i3.p": {
+      fr: "Aide financière ponctuelle pour les étudiants des universités publiques togolaises en difficulté, distincte\n           de la bourse nationale — demande à adresser également à la DBS.",
+      en: "One-off financial aid for Togolese public university students in difficulty, separate from the national scholarship — also requested through the DBS.",
+    },
+    "bourses.s2.note": {
+      fr: "Toutes ces demandes se gèrent auprès de la Direction des Bourses et Stages (DBS) — consulte\n      ses annonces à jour avant de constituer un dossier, les délais et critères changent chaque année. Ces bourses ne\n      concernent pas les écoles privées — pour elles, voir les bourses propres à chaque établissement ci-dessus.",
+      en: "All these applications are handled through the Direction des Bourses et Stages (DBS) — check its current announcements before putting together an application, as deadlines and criteria change every year. These scholarships don't apply to private schools — for those, see each institution's own scholarships above.",
+    },
+
+    "bourses.s3.h2": { fr: "Financement bancaire", en: "Bank financing" },
+    "bourses.s3.i1.p": { fr: "Prêt à court terme pour financer une rentrée (frais de scolarité, fournitures), réservé aux titulaires d'un compte courant. Réponse annoncée sous 72h.", en: "Short-term loan to finance a school year (tuition fees, supplies), reserved for checking account holders. Response promised within 72 hours." },
+    "bourses.s3.i2.p": { fr: "Offre bancaire pour élèves et étudiants (compte épargne, carte Visa Keaz, SMS Banking) — pas un prêt en soi, mais une base pour gérer ton budget d'études.", en: "Banking package for students (savings account, Visa Keaz card, SMS Banking) — not a loan as such, but a base for managing your study budget." },
+
+    "bourses.s4.h2": { fr: "Bourses internationales et régionales accessibles aux Togolais", en: "International and regional scholarships accessible to Togolese students" },
+    "bourses.s4.desc": { fr: "Utiles surtout après une Licence, pour un Master ou une spécialisation — à garder en tête pour plus tard dans ton parcours.", en: "Mostly useful after a Bachelor's degree, for a Master's or a specialization — worth keeping in mind for later in your journey." },
+    "bourses.s4.i1.p": { fr: "Bourses de mobilité pour un Master (M1/M2) ou un Doctorat dans un établissement membre de l'AUF, hors du pays d'origine — le Togo fait partie des pays éligibles.", en: "Mobility scholarships for a Master's (M1/M2) or a PhD at an AUF member institution, outside your home country — Togo is among the eligible countries." },
+    "bourses.s4.i2.p": {
+      fr: 'Programme de bourses (Fondation Femmes pour l\'Afrique) pour des étudiantes africaines, dont togolaises, souhaitant étudier en Espagne — plus de 100 bourses toutes disciplines, relayé notamment par <a href="ecosysteme.html#communautes">Togolaises In Science</a>.',
+      en: 'Scholarship program (Fondation Femmes pour l\'Afrique) for African female students, including Togolese, wishing to study in Spain — over 100 scholarships across all disciplines, promoted notably by <a href="ecosysteme.html#communautes">Togolaises In Science</a>.',
+    },
+    "bourses.s4.i3.p": { fr: "Programme régional pour les meilleurs étudiants des pays membres de l'UEMOA, dont le Togo — appel à candidatures publié annuellement.", en: "Regional program for top students from UEMOA member countries, including Togo — call for applications published annually." },
+    "bourses.s4.i4.p": { fr: "Bourses du gouvernement français pour poursuivre des études supérieures en France, ouvertes aux candidatures togolaises via l'ambassade de France.", en: "French government scholarships to pursue higher education in France, open to Togolese applications via the French embassy." },
+
+    "bourses.s5.h2": { fr: "Se former sans payer de frais de scolarité", en: "Training without paying tuition fees" },
+    "bourses.s5.desc": { fr: "Une alternative ou un complément à un cursus classique, surtout pour démarrer ou tester un domaine avant de s'engager financièrement.", en: "An alternative or complement to a traditional program, especially for getting started or testing out a field before committing financially." },
+    "bourses.s5.i1.p": { fr: "Formation en ligne entièrement gratuite à Adidogomé (Lomé) : blockchain, communication digitale, design graphique, IA et marketing digital.", en: "Entirely free online training in Adidogomé (Lomé): blockchain, digital communication, graphic design, AI and digital marketing." },
+    "bourses.s5.i2.p": {
+      fr: "Programme gratuit du Ministère de la Transformation Numérique, ouvert à tous les étudiants des universités et écoles togolaises (pas seulement en informatique) : plateforme d'apprentissage avec IA, assistant pédagogique disponible 24h/24, tutorat humain par des enseignants universitaires, format hybride en ligne et présentiel.",
+      en: "Free program from the Ministry of Digital Transformation, open to all Togolese university and school students (not just computer science): AI-powered learning platform, teaching assistant available 24/7, human tutoring by university lecturers, hybrid online and in-person format.",
+    },
+    "bourses.s5.i3.p": {
+      fr: 'Formations gratuites aux métiers du numérique (développement web/mobile, marketing digital, IA, data, et depuis juillet 2026 la fabrication numérique/FabLab) portées par l\'Organisation Internationale de la Francophonie — plus de 600 jeunes togolais formés depuis 2024. Détails dans l\'<a href="ecosysteme.html#hubs">écosystème togolais</a>.',
+      en: 'Free training in digital careers (web/mobile development, digital marketing, AI, data, and since July 2026 digital fabrication/FabLab) run by the Organisation Internationale de la Francophonie — over 600 young Togolese trained since 2024. Details in the <a href="ecosysteme.html#hubs">Togolese ecosystem</a>.',
+    },
+    "bourses.s5.i4.h4": { fr: "Ressources en ligne gratuites", en: "Free online resources" },
+    "bourses.s5.i4.p": { fr: "Les roadmaps WIYAO s'appuient largement sur des ressources gratuites (documentation officielle, cours en ligne) — de quoi apprendre l'essentiel d'un métier sans frais avant de choisir une école.", en: "WIYAO's roadmaps rely heavily on free resources (official documentation, online courses) — enough to learn the essentials of a role at no cost before choosing a school." },
+    "bourses.s5.i4.link": { fr: "Voir les roadmaps", en: "See the roadmaps" },
   };
 
   function getLang() {
