@@ -247,6 +247,227 @@
       fr: "Les règles d'utilisation de WIYAO — à lire avant de naviguer sur le site.",
       en: "WIYAO's usage rules — read before browsing the site.",
     },
+
+    "about.s1.h2": { fr: "Le projet", en: "The project" },
+    "about.s1.p1": {
+      fr: "WIYAO est un projet communautaire indépendant, sans statut commercial, édité et maintenu à titre personnel — inspiré de roadmap.sh et adapté au contexte togolais. Ce n'est pas une startup : pas de compte à créer, pas d'abonnement, pas de publicité, rien à vendre.",
+      en: "WIYAO is an independent community project, with no commercial status, published and maintained on a personal basis — inspired by roadmap.sh and adapted to the Togolese context. It's not a startup: no account to create, no subscription, no ads, nothing to sell.",
+    },
+    "about.s1.p2": {
+      fr: 'Il rassemble des roadmaps de carrière pour les métiers et compétences de la tech, avec les écoles, communautés, hubs et institutions à connaître pour construire une carrière tech au Togo. Le site est gratuit, utilisable sans inscription, et hébergé par Vercel — détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
+      en: 'It brings together career roadmaps for tech roles and skills, along with the schools, communities, hubs and institutions worth knowing to build a tech career in Togo. The site is free, usable without registration, and hosted by Vercel — full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
+    },
+    "about.s2.h2": { fr: "Roadmaps par métier", en: "Role-based roadmaps" },
+    "about.s2.p": {
+      fr: 'Les 60 roadmaps par métier s\'appuient sur une recherche des offres d\'emploi et fiches de poste réellement publiées sur des plateformes togolaises telles que <a href="https://emploi.tg" target="_blank" rel="noopener">emploi.tg</a>, <a href="https://novojob.com" target="_blank" rel="noopener">novojob.com</a>, JobRelais, l\'Agence Togo Digital et d\'autres sites d\'offres d\'emploi togolais, afin d\'identifier les compétences concrètement demandées par les employeurs locaux. Ce contenu est complété par des ressources d\'apprentissage reconnues (documentation officielle, cours en ligne francophones et internationaux).',
+      en: 'The 60 role-based roadmaps are built from research into job postings and role descriptions actually published on Togolese platforms such as <a href="https://emploi.tg" target="_blank" rel="noopener">emploi.tg</a>, <a href="https://novojob.com" target="_blank" rel="noopener">novojob.com</a>, JobRelais, Agence Togo Digital and other Togolese job sites, to identify the skills local employers actually ask for. This content is complemented by well-established learning resources (official documentation, French and international online courses).',
+    },
+    "about.s3.h2": { fr: "Roadmaps par compétence", en: "Skill-based roadmaps" },
+    "about.s3.p": {
+      fr: "Les 29 roadmaps par compétence suivent une taxonomie standard de l'industrie (langages, frameworks, outils, pratiques), cohérente avec les référentiels internationaux du secteur (dont roadmap.sh), pour rester alignées avec les attentes du marché au-delà du seul contexte togolais.",
+      en: "The 29 skill-based roadmaps follow a standard industry taxonomy (languages, frameworks, tools, practices), consistent with international references in the field (including roadmap.sh), to stay aligned with market expectations beyond the Togolese context alone.",
+    },
+    "about.s4.h2": { fr: "Limites et mises à jour", en: "Limitations and updates" },
+    "about.s4.p1": {
+      fr: 'Le marché de l\'emploi et l\'écosystème tech togolais évoluent vite : certaines informations (contacts, programmes de formation, structures citées dans l\'<a href="ecosysteme.html">écosystème togolais</a>) peuvent changer. Vérifie toujours directement auprès des établissements et organismes concernés avant de t\'engager.',
+      en: 'The job market and the Togolese tech ecosystem evolve quickly: some information (contacts, training programs, organizations listed in the <a href="ecosysteme.html">Togolese ecosystem</a>) may change. Always check directly with the relevant institutions and organizations before committing.',
+    },
+    "about.s4.p2": {
+      fr: "Contenu vérifié pour la dernière fois en juillet 2026 (60 métiers, 29 compétences).",
+      en: "Content last verified in July 2026 (60 roles, 29 skills).",
+    },
+    "about.s5.h2": { fr: "Contribuer", en: "Contribute" },
+    "about.s5.p": {
+      fr: 'WIYAO est un projet ouvert et perfectible. Pour signaler une erreur, proposer une roadmap ou compléter l\'écosystème togolais, direction le <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">dépôt GitHub</a>.',
+      en: 'WIYAO is an open, evolving project. To report an error, suggest a roadmap or add to the Togolese ecosystem, head to the <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">GitHub repository</a>.',
+    },
+
+    "mentions.s1.h2": { fr: "Éditeur du site", en: "Site publisher" },
+    "mentions.s1.p1": {
+      fr: "WIYAO est un projet communautaire indépendant, sans statut commercial, édité et maintenu à titre personnel. Il n'est affilié à aucune administration ni institution togolaise citée sur le site.",
+      en: "WIYAO is an independent community project, with no commercial status, published and maintained on a personal basis. It is not affiliated with any Togolese administration or institution mentioned on the site.",
+    },
+    "mentions.s1.p2": {
+      fr: 'Contact : <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a> — Lomé, Togo.',
+      en: 'Contact: <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a> — Lomé, Togo.',
+    },
+    "mentions.s2.h2": { fr: "Hébergement", en: "Hosting" },
+    "mentions.s2.p": {
+      fr: 'Le site est hébergé par Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis — <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>.',
+      en: 'The site is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States — <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>.',
+    },
+    "mentions.s3.h2": { fr: "Propriété intellectuelle", en: "Intellectual property" },
+    "mentions.s3.p": {
+      fr: 'Le code source du site est ouvert et consultable sur le <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">dépôt GitHub</a>. Les contenus (roadmaps, fiches écoles, guides) sont proposés à titre informatif et peuvent être réutilisés en citant la source.',
+      en: 'The site\'s source code is open and available on the <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">GitHub repository</a>. The content (roadmaps, school profiles, guides) is provided for informational purposes and may be reused with attribution.',
+    },
+    "mentions.s4.h2": { fr: "Responsabilité", en: "Liability" },
+    "mentions.s4.p": {
+      fr: 'Les informations publiées (dates d\'admission, filières, coordonnées d\'écoles ou d\'employeurs) proviennent de sources publiques vérifiées au moment de la rédaction, mais peuvent évoluer. Vérifie toujours les informations sensibles directement auprès des établissements concernés avant de t\'engager — voir aussi la page <a href="about.html">À propos &amp; méthodologie</a>.',
+      en: 'The information published (admission dates, programs, contact details for schools or employers) comes from public sources verified at the time of writing, but may change. Always check sensitive information directly with the relevant institutions before committing — see also the <a href="about.html">About &amp; methodology</a> page.',
+    },
+
+    "conf.s1.h2": { fr: "1. Généralités", en: "1. General" },
+    "conf.s1.p1": {
+      fr: "La présente politique de confidentialité tient compte de la loi n°2019-014 du 29 octobre 2019 relative à la protection des données à caractère personnel, applicable au Togo.",
+      en: "This privacy policy takes into account law n°2019-014 of October 29, 2019 on the protection of personal data, applicable in Togo.",
+    },
+    "conf.s1.p2": {
+      fr: 'WIYAO est un projet communautaire indépendant, édité et maintenu à titre personnel — voir les <a href="mentions-legales.html">mentions légales</a>. L\'accès et la navigation sur WIYAO sont volontaires et gratuits et confèrent automatiquement à la personne intéressée le statut de « Visiteur » (ci-après, « Visiteur », « vous »).',
+      en: 'WIYAO is an independent community project, published and maintained on a personal basis — see the <a href="mentions-legales.html">legal notice</a>. Access to and browsing of WIYAO are voluntary and free, and automatically grant the person concerned the status of "Visitor" (hereinafter, "Visitor", "you").',
+    },
+    "conf.s1.p3": {
+      fr: "Le site ne proposant ni compte, ni inscription, ni candidature en ligne, il n'existe pas de statut « Utilisateur » distinct : tout le monde navigue sur WIYAO en tant que Visiteur, y compris pour utiliser le test d'orientation ou suivre sa progression sur les roadmaps.",
+      en: 'Since the site offers no account, no registration and no online application, there is no separate "User" status: everyone browses WIYAO as a Visitor, including to use the orientation test or track progress on roadmaps.',
+    },
+    "conf.s2.h2": { fr: "2. Collecte de données personnelles", en: "2. Personal data collection" },
+    "conf.s2.p1": {
+      fr: "Aucune information personnelle n'est collectée, automatiquement ou non, pour un Visiteur qui utilise WIYAO — que ce soit pour consulter les roadmaps, répondre au test d'orientation, comparer des écoles ou consulter le calendrier. Le site ne demande ni nom, ni email, ni aucune autre donnée pour fonctionner.",
+      en: "No personal information is collected, automatically or otherwise, for a Visitor using WIYAO — whether to browse roadmaps, take the orientation test, compare schools or check the calendar. The site asks for no name, no email, and no other data to function.",
+    },
+    "conf.s2.p2": {
+      fr: 'Seule exception : ta progression sur les roadmaps est enregistrée dans le stockage local (localStorage) de ton navigateur. Cette donnée reste uniquement sur ton appareil, n\'est jamais transmise à un serveur ni à WIYAO, et tu peux l\'effacer à tout moment via le bouton « Réinitialiser la progression » sur une roadmap, ou en vidant les données de ton navigateur.',
+      en: 'The only exception: your progress on roadmaps is saved in your browser\'s local storage (localStorage). This data stays only on your device, is never sent to a server or to WIYAO, and you can erase it at any time via the "Reset progress" button on a roadmap, or by clearing your browser data.',
+    },
+    "conf.s2.p3": {
+      fr: 'Si tu utilises la page <a href="contact.html">Contact</a>, les informations que tu choisis d\'y saisir (nom, email, message) ne sont pas envoyées à un serveur : le bouton « Envoyer » ouvre ton client email habituel avec le message pré-rempli, à toi de l\'envoyer depuis là.',
+      en: 'If you use the <a href="contact.html">Contact</a> page, the information you choose to enter there (name, email, message) is not sent to a server: the "Send" button opens your usual email client with the message pre-filled, for you to send from there.',
+    },
+    "conf.s3.h2": { fr: "3. Droits de la personne dont les données font l'objet d'un traitement", en: "3. Rights of the person whose data is processed" },
+    "conf.s3.p1": {
+      fr: "La loi togolaise n°2019-014 garantit à toute personne dont les données sont traitées un droit à l'information, un droit d'accès, un droit d'opposition, un droit de rectification et de suppression, ainsi qu'un droit à l'effacement lorsque les données ont été rendues publiques.",
+      en: "Togolese law n°2019-014 guarantees anyone whose data is processed a right to information, a right of access, a right to object, a right of rectification and deletion, as well as a right to erasure when the data has been made public.",
+    },
+    "conf.s3.p2": {
+      fr: "WIYAO ne traitant aucune donnée personnelle côté serveur (voir section 2), ces droits n'ont aujourd'hui rien à s'appliquer en pratique. La seule donnée qui existe — ta progression sur les roadmaps — reste sur ton appareil et sous ton contrôle exclusif : tu peux la consulter, la modifier ou la supprimer toi-même directement dans le navigateur, sans avoir à nous solliciter.",
+      en: "Since WIYAO processes no personal data server-side (see section 2), these rights currently have nothing to apply to in practice. The only data that exists — your progress on roadmaps — stays on your device under your exclusive control: you can view, edit or delete it yourself directly in the browser, without needing to contact us.",
+    },
+    "conf.s3.p3": {
+      fr: 'Pour toute question sur ces droits, contacte-nous via la page <a href="contact.html">Contact</a> ou par email à <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
+      en: 'For any question about these rights, contact us via the <a href="contact.html">Contact</a> page or by email at <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
+    },
+    "conf.s4.h2": { fr: "4. Sécurité", en: "4. Security" },
+    "conf.s4.p": {
+      fr: "WIYAO ne stockant aucune donnée personnelle sur un serveur, il n'y a pas de base de données à protéger contre une fuite ou un accès non autorisé. La connexion au site est chiffrée (HTTPS), via l'hébergeur Vercel.",
+      en: "Since WIYAO stores no personal data on a server, there is no database to protect against a leak or unauthorized access. The connection to the site is encrypted (HTTPS), via the host Vercel.",
+    },
+    "conf.s5.h2": { fr: "5. Pas de suivi ni de publicité", en: "5. No tracking or advertising" },
+    "conf.s5.p": {
+      fr: "Le site n'utilise aucun outil d'analyse tierce (Google Analytics ou équivalent), aucun cookie de suivi, et n'affiche aucune publicité.",
+      en: "The site uses no third-party analytics tool (Google Analytics or equivalent), no tracking cookie, and displays no advertising.",
+    },
+    "conf.s6.h2": { fr: "6. Liens externes", en: "6. External links" },
+    "conf.s6.p": {
+      fr: "WIYAO renvoie vers des sites tiers (écoles, plateformes d'emploi, dépôt GitHub, réseaux communautaires...). Ces sites ont leurs propres règles de confidentialité, indépendantes de celles de WIYAO.",
+      en: "WIYAO links to third-party sites (schools, job platforms, GitHub repository, community networks...). These sites have their own privacy rules, independent of WIYAO's.",
+    },
+    "conf.s7.h2": { fr: "7. Contact", en: "7. Contact" },
+    "conf.s7.p": {
+      fr: 'Pour toute question sur cette politique, écris-nous via la page <a href="contact.html">Contact</a> ou par email à <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
+      en: 'For any question about this policy, write to us via the <a href="contact.html">Contact</a> page or by email at <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
+    },
+
+    "cgu.s1.h2": { fr: "1. Généralités", en: "1. General" },
+    "cgu.s1.p1": {
+      fr: 'WIYAO est un projet communautaire indépendant, édité et maintenu à titre personnel — voir les <a href="mentions-legales.html">mentions légales</a> pour le détail sur l\'éditeur du site.',
+      en: 'WIYAO is an independent community project, published and maintained on a personal basis — see the <a href="mentions-legales.html">legal notice</a> for details on the site publisher.',
+    },
+    "cgu.s1.p2": {
+      fr: "L'accès et la navigation sur WIYAO sont volontaires, libres et gratuits, et confèrent automatiquement à la personne intéressée le statut d'« Utilisateur » (ci-après, « Utilisateur », « vous »).",
+      en: 'Access to and browsing of WIYAO are voluntary, free and unrestricted, and automatically grant the person concerned the status of "User" (hereinafter, "User", "you").',
+    },
+    "cgu.s1.p3": {
+      fr: "Le statut d'Utilisateur implique l'acceptation pleine et entière des présentes Conditions Générales d'Utilisation (CGU). Nous te recommandons de les lire attentivement avant d'utiliser le site. Si tu n'acceptes pas d'être lié par ces CGU, tu ne dois pas utiliser WIYAO.",
+      en: "User status implies full and complete acceptance of these Terms of Use. We recommend you read them carefully before using the site. If you do not accept to be bound by these Terms of Use, you must not use WIYAO.",
+    },
+    "cgu.s1.p4": {
+      fr: "Les présentes CGU peuvent être mises à jour à tout moment, notamment pour suivre l'évolution des fonctionnalités du site. Les nouvelles CGU sont applicables dès leur publication sur cette page ; il est de la responsabilité de l'Utilisateur de les consulter périodiquement.",
+      en: "These Terms of Use may be updated at any time, in particular to keep up with the evolution of the site's features. The new Terms of Use apply as soon as they are published on this page; it is the User's responsibility to review them periodically.",
+    },
+    "cgu.s1.p5": {
+      fr: "L'Utilisateur s'engage à utiliser et naviguer sur WIYAO dans le respect des lois et réglementations applicables ainsi que des présentes CGU.",
+      en: "The User agrees to use and browse WIYAO in compliance with applicable laws and regulations as well as these Terms of Use.",
+    },
+    "cgu.s1.p6": {
+      fr: "Si une clause des présentes CGU est déclarée nulle et non avenue par une décision de justice, les autres clauses restent valables.",
+      en: "If a clause of these Terms of Use is declared null and void by a court decision, the other clauses remain valid.",
+    },
+    "cgu.s2.h2": { fr: "2. Informations et services fournis", en: "2. Information and services provided" },
+    "cgu.s2.p1": {
+      fr: 'WIYAO donne accès gratuitement, sans création de compte, à des roadmaps d\'orientation tech, un <a href="test-orientation.html">test d\'orientation</a>, un annuaire d\'<a href="ecoles.html">écoles et universités togolaises</a>, un <a href="calendrier.html">calendrier des dates clés</a>, des ressources sur les <a href="bourses-financement.html">bourses et le financement</a>, des offres de <a href="stages-emploi.html">stages et d\'emploi</a>, ainsi qu\'un panorama de l\'<a href="ecosysteme.html">écosystème tech togolais</a>.',
+      en: 'WIYAO gives free access, with no account required, to tech orientation roadmaps, an <a href="test-orientation.html">orientation test</a>, a directory of <a href="ecoles.html">Togolese schools and universities</a>, a <a href="calendrier.html">calendar of key dates</a>, resources on <a href="bourses-financement.html">scholarships and funding</a>, <a href="stages-emploi.html">internship and job</a> listings, as well as an overview of the <a href="ecosysteme.html">Togolese tech ecosystem</a>.',
+    },
+    "cgu.s2.p2": {
+      fr: 'Le site étant accessible sans inscription ni collecte de données personnelles (voir la <a href="politique-confidentialite.html">politique de confidentialité</a>), aucune vérification d\'âge ou de capacité juridique n\'est requise pour le consulter. Les parents ou tuteurs de mineurs restent libres d\'encadrer l\'utilisation d\'Internet par les enfants dont ils ont la charge.',
+      en: 'As the site is accessible without registration or personal data collection (see the <a href="politique-confidentialite.html">privacy policy</a>), no age or legal capacity verification is required to consult it. Parents or guardians of minors remain free to oversee their children\'s use of the Internet.',
+    },
+    "cgu.s3.h2": { fr: "3. Règles de conduite", en: "3. Rules of conduct" },
+    "cgu.s3.p1": {
+      fr: "De manière générale, l'Utilisateur doit utiliser WIYAO, son contenu et ses fonctionnalités conformément aux présentes CGU, aux lois et réglementations en vigueur, aux bonnes mœurs et à l'ordre public, et ce à tout moment.",
+      en: "In general, the User must use WIYAO, its content and its features in accordance with these Terms of Use, applicable laws and regulations, good morals and public order, at all times.",
+    },
+    "cgu.s3.p2": {
+      fr: "Plus spécifiquement, et sans limitation aux points ci-après énumérés, l'Utilisateur ne doit pas :",
+      en: "More specifically, and without limitation to the points listed below, the User must not:",
+    },
+    "cgu.s3.li1": {
+      fr: "faire un usage inapproprié ou illicite du contenu de WIYAO, ni l'utiliser pour se livrer à des activités illégales ou préjudiciables aux intérêts ou aux droits de tiers ;",
+      en: "make inappropriate or unlawful use of WIYAO's content, or use it to engage in activities that are illegal or harmful to the interests or rights of third parties;",
+    },
+    "cgu.s3.li2": {
+      fr: "faire usage du contenu de WIYAO à des fins illégales ou pour porter atteinte à des tiers ;",
+      en: "use WIYAO's content for illegal purposes or to harm third parties;",
+    },
+    "cgu.s3.li3": {
+      fr: "restreindre ou empêcher un autre Utilisateur d'utiliser et de profiter du site ;",
+      en: "restrict or prevent another User from using and enjoying the site;",
+    },
+    "cgu.s3.li4": {
+      fr: "copier, distribuer ou modifier le contenu du site à des fins commerciales, en dehors des conditions prévues à la section « Propriété intellectuelle » ci-dessous ;",
+      en: 'copy, distribute or modify the site\'s content for commercial purposes, outside the conditions set out in the "Intellectual property" section below;',
+    },
+    "cgu.s3.li5": {
+      fr: "contourner, désactiver ou perturber de quelque manière que ce soit les fonctionnalités liées à la sécurité du site ;",
+      en: "circumvent, disable or disrupt in any way the security-related features of the site;",
+    },
+    "cgu.s3.li6": {
+      fr: "envoyer ou diffuser des informations, codes ou contenus susceptibles de nuire, perturber ou endommager le site, son infrastructure, ou les équipements d'autres Utilisateurs — logiciels malveillants, virus et autres codes de cette nature inclus, sans s'y limiter.",
+      en: "send or distribute information, code or content likely to harm, disrupt or damage the site, its infrastructure, or other Users' equipment — including but not limited to malware, viruses and other code of this nature.",
+    },
+    "cgu.s3.p3": {
+      fr: "L'Utilisateur qui ne respecte pas les présentes CGU peut voir son accès à WIYAO restreint, afin de préserver la sécurité et la disponibilité du site pour les autres.",
+      en: "A User who does not comply with these Terms of Use may have their access to WIYAO restricted, in order to preserve the security and availability of the site for others.",
+    },
+    "cgu.s4.h2": { fr: "4. Limitation des garanties et de la responsabilité", en: "4. Limitation of warranties and liability" },
+    "cgu.s4.p1": {
+      fr: 'L\'utilisation de WIYAO se fait sous la responsabilité de l\'Utilisateur. WIYAO fait ses meilleurs efforts, à titre bénévole, pour assurer la disponibilité du site et la fiabilité des informations publiées — voir la méthodologie de vérification détaillée sur la page <a href="about.html">À propos &amp; méthodologie</a> — mais ne peut garantir une disponibilité continue ni l\'absence totale d\'erreur.',
+      en: 'Use of WIYAO is at the User\'s own responsibility. WIYAO makes its best efforts, on a volunteer basis, to ensure the site\'s availability and the reliability of published information — see the detailed verification methodology on the <a href="about.html">About &amp; methodology</a> page — but cannot guarantee continuous availability or the total absence of errors.',
+    },
+    "cgu.s4.p2": {
+      fr: 'Si tu repères une inexactitude, merci de nous le signaler via la page <a href="contact.html">Contact</a>.',
+      en: 'If you spot an inaccuracy, please let us know via the <a href="contact.html">Contact</a> page.',
+    },
+    "cgu.s4.p3": {
+      fr: "WIYAO ne peut être tenu responsable d'un usage de son contenu par un Utilisateur ou un tiers à des fins illégales ou pour porter atteinte à des tiers, ni des dommages pouvant résulter d'une intrusion illégitime indépendante de sa volonté.",
+      en: "WIYAO cannot be held liable for the use of its content by a User or a third party for illegal purposes or to harm third parties, nor for damages that may result from an illegitimate intrusion beyond its control.",
+    },
+    "cgu.s4.p4": {
+      fr: "WIYAO est exonéré de toute responsabilité pouvant découler de la violation des présentes CGU par l'Utilisateur.",
+      en: "WIYAO is released from any liability that may arise from a User's violation of these Terms of Use.",
+    },
+    "cgu.s5.h2": { fr: "5. Propriété intellectuelle", en: "5. Intellectual property" },
+    "cgu.s5.p1": {
+      fr: 'Le code source de WIYAO est ouvert et consultable sur le <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">dépôt GitHub</a>. Les contenus rédigés par WIYAO (roadmaps, fiches écoles, guides, textes du site) sont proposés à titre informatif et peuvent être réutilisés à titre non commercial en citant la source.',
+      en: 'WIYAO\'s source code is open and available on the <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">GitHub repository</a>. Content written by WIYAO (roadmaps, school profiles, guides, site text) is provided for informational purposes and may be reused for non-commercial purposes with attribution.',
+    },
+    "cgu.s5.p2": {
+      fr: "Les informations et documents tiers cités sur WIYAO (textes officiels, sites d'écoles, articles de presse, données d'organismes publics) restent la propriété de leurs auteurs ou éditeurs respectifs ; WIYAO n'en revendique aucun droit.",
+      en: "Third-party information and documents cited on WIYAO (official texts, school websites, press articles, public organization data) remain the property of their respective authors or publishers; WIYAO claims no rights over them.",
+    },
+    "cgu.s5.p3": {
+      fr: "L'accès et l'utilisation de WIYAO ne transfèrent en aucun cas à l'Utilisateur les droits de propriété intellectuelle sur des éléments qui ne lui appartiennent pas déjà.",
+      en: "Access to and use of WIYAO does not, under any circumstances, transfer to the User any intellectual property rights over elements that do not already belong to them.",
+    },
   };
 
   function getLang() {
