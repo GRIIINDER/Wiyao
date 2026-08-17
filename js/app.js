@@ -10,6 +10,19 @@
 
   const STORAGE_KEY = "wiyao-progress";
 
+  // Traduction du contenu dynamique (data.js) : chaque objet peut porter un
+  // champ "xxxEn" à côté de "xxx" ; tField renvoie la version anglaise si elle
+  // existe et que la langue courante est "en", sinon la version française.
+  function currentLang() {
+    return localStorage.getItem("wiyao-lang") === "en" ? "en" : "fr";
+  }
+
+  function tField(obj, field) {
+    if (!obj) return "";
+    const en = obj[field + "En"];
+    return currentLang() === "en" && en ? en : obj[field];
+  }
+
   function loadProgress() {
     try {
       return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
@@ -53,12 +66,20 @@
     return "";
   }
 
+  function levelLabel(level) {
+    if (currentLang() !== "en") return level;
+    if (level === "Débutant") return "Beginner";
+    if (level === "Intermédiaire") return "Intermediate";
+    if (level === "Avancé") return "Advanced";
+    return level;
+  }
+
   function badgesHtml(rm) {
     const levelBadge = rm.level
-      ? `<span class="badge level-badge level-${levelSlug(rm.level)}">${rm.level}</span>`
+      ? `<span class="badge level-badge level-${levelSlug(rm.level)}">${levelLabel(rm.level)}</span>`
       : "";
     const togoBadge = rm.togoVerified
-      ? `<span class="badge togo-badge">✓ Vérifié Togo</span>`
+      ? `<span class="badge togo-badge">✓ ${currentLang() === "en" ? "Togo-verified" : "Vérifié Togo"}</span>`
       : "";
     return levelBadge + togoBadge;
   }
@@ -74,13 +95,14 @@
     card.dataset.title = rm.title.toLowerCase();
     if (rm.domain) card.dataset.domain = rm.domain;
     const badges = badgesHtml(rm);
+    const cardLabel = currentLang() === "en" ? "completed" : "complété";
     card.innerHTML = `
       <div class="card-icon">${rm.icon}</div>
       ${badges ? `<div class="card-badges">${badges}</div>` : ""}
-      <h3>${rm.title}</h3>
-      <p>${rm.subtitle}</p>
+      <h3>${tField(rm, "title")}</h3>
+      <p>${tField(rm, "subtitle")}</p>
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-      <span class="progress-label">${pct}% complété</span>
+      <span class="progress-label">${pct}% ${cardLabel}</span>
     `;
     return card;
   }
@@ -111,15 +133,16 @@
         const group = document.createElement("div");
         group.className = "domain-group";
 
+        const domainLabel = meta && currentLang() === "en" && meta.nameEn ? meta.nameEn : domainName;
         const heading = document.createElement("h3");
         heading.className = "domain-group-title";
-        heading.textContent = meta && meta.icon ? `${meta.icon} ${domainName}` : domainName;
+        heading.textContent = meta && meta.icon ? `${meta.icon} ${domainLabel}` : domainLabel;
         group.appendChild(heading);
 
         if (meta && meta.description) {
           const desc = document.createElement("p");
           desc.className = "domain-group-desc";
-          desc.textContent = meta.description;
+          desc.textContent = tField(meta, "description");
           group.appendChild(desc);
         }
 
@@ -143,15 +166,16 @@
 
     Object.keys(DOMAINS).forEach((domainName) => {
       const meta = DOMAINS[domainName];
+      const domainLabel = currentLang() === "en" && meta.nameEn ? meta.nameEn : domainName;
       const item = document.createElement("div");
       item.className = "domain-primer-item";
 
       const heading = document.createElement("h4");
-      heading.textContent = meta.icon ? `${meta.icon} ${domainName}` : domainName;
+      heading.textContent = meta.icon ? `${meta.icon} ${domainLabel}` : domainLabel;
       item.appendChild(heading);
 
       const desc = document.createElement("p");
-      desc.textContent = meta.description;
+      desc.textContent = tField(meta, "description");
       item.appendChild(desc);
 
       container.appendChild(item);
@@ -228,7 +252,7 @@
     section.className = "related-section";
 
     const heading = document.createElement("h2");
-    heading.textContent = "Roadmaps liées";
+    heading.textContent = currentLang() === "en" ? "Related roadmaps" : "Roadmaps liées";
     section.appendChild(heading);
 
     const grid = document.createElement("div");
@@ -253,32 +277,37 @@
       return;
     }
 
-    document.title = `${rm.title} — WIYAO`;
+    document.title = `${tField(rm, "title")} — WIYAO`;
 
     const total = countItems(rm);
     let progress = loadProgress();
     if (!progress[id]) progress[id] = [];
 
-    const typeLabel = rm.type === "skill" ? "Roadmap par compétence" : "Roadmap par métier";
-    const categoryLabel = rm.type === "skill" ? "Par compétence" : "Par métier";
+    const isEn = currentLang() === "en";
+    const typeLabel = rm.type === "skill" ? (isEn ? "Skill roadmap" : "Roadmap par compétence") : (isEn ? "Role roadmap" : "Roadmap par métier");
+    const categoryLabel = rm.type === "skill" ? (isEn ? "By skill" : "Par compétence") : (isEn ? "By role" : "Par métier");
     const categoryHref = rm.type === "skill" ? "index.html#par-competence" : "index.html#par-metier";
 
     const breadcrumb = document.createElement("nav");
     breadcrumb.className = "breadcrumb";
-    breadcrumb.setAttribute("aria-label", "Fil d'Ariane");
+    breadcrumb.setAttribute("aria-label", isEn ? "Breadcrumb" : "Fil d'Ariane");
     breadcrumb.innerHTML = `
       <a href="index.html">WIYAO</a>
       <span class="breadcrumb-sep">›</span>
       <a href="${categoryHref}">${categoryLabel}</a>
       <span class="breadcrumb-sep">›</span>
-      <span class="breadcrumb-current">${rm.title}</span>
+      <span class="breadcrumb-current">${tField(rm, "title")}</span>
     `;
     container.appendChild(breadcrumb);
 
     const badges = badgesHtml(rm);
     const togoNotice =
       rm.type === "role" && !rm.togoVerified
-        ? `<div class="togo-notice">Ce métier n'a pas encore de données confirmées sur le marché togolais, mais les compétences ci-dessous sont transférables et recherchées à l'international.</div>`
+        ? `<div class="togo-notice">${
+            isEn
+              ? "This role doesn't yet have confirmed data on the Togolese market, but the skills below are transferable and in demand internationally."
+              : "Ce métier n'a pas encore de données confirmées sur le marché togolais, mais les compétences ci-dessous sont transférables et recherchées à l'international."
+          }</div>`
         : "";
 
     const header = document.createElement("div");
@@ -286,8 +315,8 @@
     header.innerHTML = `
       <span class="badge type-badge">${typeLabel}</span>
       ${badges}
-      <h1>${rm.icon} ${rm.title}</h1>
-      <p class="subtitle">${rm.subtitle}</p>
+      <h1>${rm.icon} ${tField(rm, "title")}</h1>
+      <p class="subtitle">${tField(rm, "subtitle")}</p>
       ${togoNotice}
       <div class="progress-bar large"><div class="progress-fill" id="global-fill"></div></div>
       <span class="progress-label" id="global-label"></span>
@@ -298,7 +327,9 @@
       const done = (loadProgress()[id] || []).length;
       const pct = total ? Math.round((done / total) * 100) : 0;
       document.getElementById("global-fill").style.width = pct + "%";
-      document.getElementById("global-label").textContent = `${done} / ${total} étapes complétées (${pct}%)`;
+      document.getElementById("global-label").textContent = isEn
+        ? `${done} / ${total} steps completed (${pct}%)`
+        : `${done} / ${total} étapes complétées (${pct}%)`;
     }
 
     const track = document.createElement("div");
@@ -345,7 +376,7 @@
         if (item.level === "option") {
           const badge = document.createElement("span");
           badge.className = "badge";
-          badge.textContent = "optionnel";
+          badge.textContent = currentLang() === "en" ? "optional" : "optionnel";
           labelWrap.appendChild(badge);
         }
 
@@ -386,7 +417,11 @@
     const resetBtn = document.getElementById("reset-progress");
     if (resetBtn) {
       resetBtn.addEventListener("click", () => {
-        if (confirm("Réinitialiser la progression pour cette roadmap ?")) {
+        const confirmMsg =
+          currentLang() === "en"
+            ? "Reset progress for this roadmap?"
+            : "Réinitialiser la progression pour cette roadmap ?";
+        if (confirm(confirmMsg)) {
           const p = loadProgress();
           p[id] = [];
           saveProgress(p);
@@ -520,7 +555,7 @@
     if (progressLabel) progressLabel.textContent = `Question ${quizIndex + 1} / ${total}`;
 
     questionEl.innerHTML = `
-      <h2 class="quiz-question-title">${q.question}</h2>
+      <h2 class="quiz-question-title">${tField(q, "question")}</h2>
       <div class="quiz-options"></div>
     `;
     const optionsWrap = questionEl.querySelector(".quiz-options");
@@ -528,7 +563,7 @@
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "quiz-option";
-      btn.textContent = opt.label;
+      btn.textContent = tField(opt, "label");
       btn.addEventListener("click", () => answerQuiz(q.type, opt.domain || opt.value));
       optionsWrap.appendChild(btn);
     });
@@ -635,13 +670,17 @@
       ? Object.keys(ROLES).filter((id) => ROLES[id].domain === top).slice(0, 3)
       : [];
     const schoolMatches = computeSchoolMatches(top);
+    const isEn = currentLang() === "en";
+    const topLabel = isEn && topMeta.nameEn ? topMeta.nameEn : top;
 
     let html = `
-      <p class="quiz-disclaimer">Ce résultat est un point de départ, pas un verdict — 12 questions ne peuvent pas te connaître à 100 %.
-        Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu'un du métier, et teste la roadmap avant de t'engager
-        financièrement dans une école.</p>
-      <h2>Ton profil : ${topMeta.icon} ${top}</h2>
-      <p class="category-desc">${topMeta.description}</p>
+      <p class="quiz-disclaimer">${
+        isEn
+          ? 'This result is a starting point, not a verdict — 12 questions can\'t know you 100%. Compare it against a <a href="temoignages.html">real testimonial</a> from someone in the role, and try the roadmap before committing financially to a school.'
+          : 'Ce résultat est un point de départ, pas un verdict — 12 questions ne peuvent pas te connaître à 100 %. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier, et teste la roadmap avant de t\'engager financièrement dans une école.'
+      }</p>
+      <h2>${isEn ? "Your profile" : "Ton profil"} : ${topMeta.icon} ${topLabel}</h2>
+      <p class="category-desc">${tField(topMeta, "description")}</p>
     `;
 
     if (matchingRoles.length) {
@@ -650,22 +689,31 @@
 
     if (isCloseCall) {
       const secondMeta = DOMAINS[second];
-      html += `<p class="quiz-secondary">Résultat serré : <strong>${secondMeta.icon} ${second}</strong> te correspond presque autant que ${top}. Vaut le coup d'explorer les deux avant de choisir.</p>`;
+      const secondLabel = isEn && secondMeta.nameEn ? secondMeta.nameEn : second;
+      html += `<p class="quiz-secondary">${
+        isEn
+          ? `Close call: <strong>${secondMeta.icon} ${secondLabel}</strong> suits you almost as much as ${topLabel}. Worth exploring both before choosing.`
+          : `Résultat serré : <strong>${secondMeta.icon} ${secondLabel}</strong> te correspond presque autant que ${topLabel}. Vaut le coup d'explorer les deux avant de choisir.`
+      }</p>`;
     }
 
     if (schoolMatches.length) {
       html += `
-        <h3 class="quiz-scores-title">Écoles recommandées pour toi</h3>
-        <p class="category-desc" style="text-align:center;">D'après ton domaine et tes réponses sur le niveau, la ville et le budget — chaque critère coché est vérifié, pas deviné.</p>
+        <h3 class="quiz-scores-title">${isEn ? "Schools recommended for you" : "Écoles recommandées pour toi"}</h3>
+        <p class="category-desc" style="text-align:center;">${
+          isEn
+            ? "Based on your domain and your answers about level, city and budget — every checked criterion is verified, not guessed."
+            : "D'après ton domaine et tes réponses sur le niveau, la ville et le budget — chaque critère coché est vérifié, pas deviné."
+        }</p>
         <div class="grid" id="quiz-school-grid"></div>
-        <p class="quiz-secondary"><a href="ecoles.html">Voir toutes les écoles →</a></p>
+        <p class="quiz-secondary"><a href="ecoles.html">${isEn ? "See all schools →" : "Voir toutes les écoles →"}</a></p>
       `;
     }
 
     html += `
-      <h3 class="quiz-scores-title">Répartition de tes réponses</h3>
+      <h3 class="quiz-scores-title">${isEn ? "Breakdown of your answers" : "Répartition de tes réponses"}</h3>
       <div class="quiz-scores"></div>
-      <button class="btn" id="quiz-restart" type="button">Refaire le test</button>
+      <button class="btn" id="quiz-restart" type="button">${isEn ? "Retake the test" : "Refaire le test"}</button>
     `;
 
     resultsSection.innerHTML = html;
@@ -685,10 +733,11 @@
       const score = quizScores[domain] || 0;
       const pct = Math.round((score / totalAnswers) * 100);
       const meta = DOMAINS[domain];
+      const domainLabel = isEn && meta.nameEn ? meta.nameEn : domain;
       const row = document.createElement("div");
       row.className = "quiz-score-row";
       row.innerHTML = `
-        <span class="quiz-score-label">${meta.icon} ${domain}</span>
+        <span class="quiz-score-label">${meta.icon} ${domainLabel}</span>
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
         <span class="quiz-score-value">${score}/${totalAnswers}</span>
       `;
@@ -724,10 +773,10 @@
       const item = document.createElement("div");
       item.className = "timeline-item";
       item.innerHTML = `
-        <div class="timeline-period">${step.periode}</div>
+        <div class="timeline-period">${tField(step, "periode")}</div>
         <div class="timeline-content">
-          <h3>${step.titre}</h3>
-          <p>${step.description}</p>
+          <h3>${tField(step, "titre")}</h3>
+          <p>${tField(step, "description")}</p>
         </div>
       `;
       container.appendChild(item);

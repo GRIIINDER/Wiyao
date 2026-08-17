@@ -11,7 +11,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Développeur Web",
+    titleEn: "Web Developer",
     subtitle: "Du HTML au full-stack, avec les ressources disponibles au Togo",
+    subtitleEn: "From HTML to full-stack, with resources available in Togo",
     icon: "🌐",
     sections: [
       {
@@ -94,7 +96,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Développeur Backend",
+    titleEn: "Backend Developer",
     subtitle: "Langages, bases de données, architecture et sécurité",
+    subtitleEn: "Languages, databases, architecture and security",
     icon: "🛠️",
     sections: [
       {
@@ -173,7 +177,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "DevOps & Cloud",
+    titleEn: "DevOps & Cloud",
     subtitle: "Infrastructure, automatisation et exploitation",
+    subtitleEn: "Infrastructure, automation and operations",
     icon: "☁️",
     sections: [
       {
@@ -244,7 +250,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Cybersécurité & Réseaux",
+    titleEn: "Cybersecurity & Networks",
     subtitle: "Sécurité offensive, défensive et gouvernance",
+    subtitleEn: "Offensive security, defensive security and governance",
     icon: "🔐",
     sections: [
       {
@@ -320,7 +328,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Data & Intelligence Artificielle",
+    titleEn: "Data & Artificial Intelligence",
     subtitle: "Des statistiques au machine learning appliqué",
+    subtitleEn: "From statistics to applied machine learning",
     icon: "📊",
     sections: [
       {
@@ -384,7 +394,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Développement Mobile",
+    titleEn: "Mobile Development",
     subtitle: "Natif ou cross-platform, de l'idée au Play Store",
+    subtitleEn: "Native or cross-platform, from idea to the Play Store",
     icon: "📱",
     sections: [
       {
@@ -449,7 +461,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Product Manager",
+    titleEn: "Product Manager",
     subtitle: "Piloter un produit numérique, de l'idée à la mise en marché",
+    subtitleEn: "Steering a digital product, from idea to market launch",
     icon: "🧭",
     sections: [
       {
@@ -511,7 +525,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "UX/UI Designer",
+    titleEn: "UX/UI Designer",
     subtitle: "Concevoir des interfaces utiles, claires et agréables à utiliser",
+    subtitleEn: "Designing interfaces that are useful, clear and pleasant to use",
     icon: "🎨",
     sections: [
       {
@@ -572,7 +588,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: true,
     title: "Data Analyst",
+    titleEn: "Data Analyst",
     subtitle: "Transformer des données brutes en décisions",
+    subtitleEn: "Turning raw data into decisions",
     icon: "📈",
     sections: [
       {
@@ -628,7 +646,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: true,
     title: "Support IT / Helpdesk",
+    titleEn: "IT Support / Helpdesk",
     subtitle: "Assister les utilisateurs et maintenir le parc informatique",
+    subtitleEn: "Assisting users and maintaining the IT equipment fleet",
     icon: "🖥️",
     sections: [
       {
@@ -686,7 +706,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Chef de Projet IT",
+    titleEn: "IT Project Manager",
     subtitle: "Planifier, coordonner et livrer des projets informatiques",
+    subtitleEn: "Planning, coordinating and delivering IT projects",
     icon: "📋",
     sections: [
       {
@@ -739,7 +761,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: true,
     title: "QA / Testeur Logiciel",
+    titleEn: "QA / Software Tester",
     subtitle: "Garantir la qualité et la fiabilité des logiciels avant leur mise en production",
+    subtitleEn: "Ensuring software quality and reliability before it goes into production",
     icon: "🐞",
     sections: [
       {
@@ -790,7 +814,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Administrateur Systèmes et Réseaux",
+    titleEn: "Systems and Network Administrator",
     subtitle: "Maintenir et sécuriser l'infrastructure informatique d'une organisation",
+    subtitleEn: "Maintaining and securing an organization's IT infrastructure",
     icon: "🖧",
     sections: [
       {
@@ -845,7 +871,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Ingénieur Réseaux et Télécommunications",
+    titleEn: "Network and Telecommunications Engineer",
     subtitle: "Concevoir et exploiter les infrastructures de télécommunication",
+    subtitleEn: "Designing and operating telecommunications infrastructure",
     icon: "📡",
     sections: [
       {
@@ -896,7 +924,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Architecte Logiciel",
+    titleEn: "Software Architect",
     subtitle: "Concevoir la structure technique de systèmes complexes",
+    subtitleEn: "Designing the technical structure of complex systems",
     icon: "🏗️",
     sections: [
       {
@@ -946,7 +976,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Développeur ERP/CRM",
+    titleEn: "ERP/CRM Developer",
     subtitle: "Paramétrer et développer des solutions de gestion d'entreprise",
+    subtitleEn: "Configuring and developing business management solutions",
     icon: "🧩",
     sections: [
       {
@@ -989,7 +1021,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Ingénieur IoT / Systèmes Embarqués",
+    titleEn: "IoT / Embedded Systems Engineer",
     subtitle: "Concevoir des objets connectés et des systèmes électroniques intelligents",
+    subtitleEn: "Designing connected devices and smart electronic systems",
     icon: "🔌",
     sections: [
       {
@@ -1032,7 +1066,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Développeur Blockchain / Web3",
+    titleEn: "Blockchain / Web3 Developer",
     subtitle: "Construire des applications décentralisées et des smart contracts",
+    subtitleEn: "Building decentralized applications and smart contracts",
     icon: "⛓️",
     sections: [
       {
@@ -1074,7 +1110,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: true,
     title: "Marketing Digital",
+    titleEn: "Digital Marketing",
     subtitle: "Développer la présence et l'audience d'une marque en ligne",
+    subtitleEn: "Growing a brand's online presence and audience",
     icon: "📣",
     sections: [
       {
@@ -1118,7 +1156,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: true,
     title: "Community Manager",
+    titleEn: "Community Manager",
     subtitle: "Animer et développer une communauté de marque sur les réseaux sociaux",
+    subtitleEn: "Growing and animating a brand community on social media",
     icon: "💬",
     sections: [
       {
@@ -1160,7 +1200,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Formateur en Informatique",
+    titleEn: "IT Trainer",
     subtitle: "Transmettre des compétences numériques à des apprenants",
+    subtitleEn: "Passing on digital skills to learners",
     icon: "🎓",
     sections: [
       {
@@ -1202,7 +1244,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Consultant en Transformation Digitale",
+    titleEn: "Digital Transformation Consultant",
     subtitle: "Accompagner les organisations dans leur passage au numérique",
+    subtitleEn: "Guiding organizations through their shift to digital",
     icon: "🧭",
     sections: [
       {
@@ -1244,7 +1288,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Data Engineer",
+    titleEn: "Data Engineer",
     subtitle: "Construire les pipelines qui collectent, transforment et livrent la donnée",
+    subtitleEn: "Building the pipelines that collect, transform and deliver data",
     icon: "🔧",
     sections: [
       {
@@ -1296,7 +1342,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Administrateur de Bases de Données (DBA)",
+    titleEn: "Database Administrator (DBA)",
     subtitle: "Garantir la performance, la disponibilité et la sécurité des bases de données",
+    subtitleEn: "Ensuring the performance, availability and security of databases",
     icon: "🗃️",
     sections: [
       {
@@ -1348,7 +1396,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: true,
     title: "Graphiste / Infographiste",
+    titleEn: "Graphic Designer",
     subtitle: "Créer les visuels et supports de communication d'une marque",
+    subtitleEn: "Creating a brand's visuals and communication materials",
     icon: "🖌️",
     sections: [
       {
@@ -1393,7 +1443,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: true,
     title: "Webmaster",
+    titleEn: "Webmaster",
     subtitle: "Gérer et maintenir un site web au quotidien",
+    subtitleEn: "Managing and maintaining a website day to day",
     icon: "🧰",
     sections: [
       {
@@ -1432,7 +1484,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "E-commerce Manager",
+    titleEn: "E-commerce Manager",
     subtitle: "Piloter une boutique en ligne, de la mise en rayon à la vente",
+    subtitleEn: "Running an online store, from listing products to closing sales",
     icon: "🛒",
     sections: [
       {
@@ -1477,7 +1531,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Responsable Informatique / DSI",
+    titleEn: "IT Manager / CIO",
     subtitle: "Piloter la stratégie et les ressources informatiques d'une organisation",
+    subtitleEn: "Steering an organization's IT strategy and resources",
     icon: "🧑‍💼",
     sections: [
       {
@@ -1522,7 +1578,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Ingénieur en Informatique Industrielle",
+    titleEn: "Industrial Computing Engineer",
     subtitle: "Automatiser et superviser les processus industriels",
+    subtitleEn: "Automating and supervising industrial processes",
     icon: "⚙️",
     sections: [
       {
@@ -1566,7 +1624,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "RSSI / Responsable de la Sécurité des Systèmes d'Information",
+    titleEn: "CISO / Information Systems Security Manager",
     subtitle: "Piloter la stratégie de cybersécurité et la gestion des risques d'une organisation",
+    subtitleEn: "Steering an organization's cybersecurity strategy and risk management",
     icon: "🛡️",
     sections: [
       {
@@ -1612,7 +1672,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Auditeur en Sécurité des Systèmes d'Information",
+    titleEn: "Information Systems Security Auditor",
     subtitle: "Évaluer la conformité et les vulnérabilités des systèmes d'une organisation",
+    subtitleEn: "Assessing an organization's systems for compliance and vulnerabilities",
     icon: "🔍",
     sections: [
       {
@@ -1656,7 +1718,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: true,
     title: "Architecte d'Entreprise",
+    titleEn: "Enterprise Architect",
     subtitle: "Aligner les systèmes d'information sur la stratégie globale d'une organisation",
+    subtitleEn: "Aligning information systems with an organization's overall strategy",
     icon: "🏛️",
     sections: [
       {
@@ -1701,7 +1765,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Juriste IT / Droit du Numérique",
+    titleEn: "IT Lawyer / Digital Law",
     subtitle: "Sécuriser juridiquement les projets technologiques et la conformité numérique",
+    subtitleEn: "Providing legal security for tech projects and digital compliance",
     icon: "⚖️",
     sections: [
       {
@@ -1745,7 +1811,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Scrum Master",
+    titleEn: "Scrum Master",
     subtitle: "Faciliter l'application des méthodes agiles au sein d'une équipe produit",
+    subtitleEn: "Facilitating agile practices within a product team",
     icon: "🔄",
     sections: [
       {
@@ -1795,7 +1863,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: true,
     title: "Intégrateur Systèmes",
+    titleEn: "Systems Integrator",
     subtitle: "Assembler et faire communiquer différents systèmes et logiciels entre eux",
+    subtitleEn: "Assembling different systems and software and making them work together",
     icon: "🔗",
     sections: [
       {
@@ -1840,7 +1910,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: true,
     title: "UX Writer / Spécialiste en Microcopy",
+    titleEn: "UX Writer / Microcopy Specialist",
     subtitle: "Écrire les textes d'interface qui guident et rassurent l'utilisateur",
+    subtitleEn: "Writing the interface text that guides and reassures users",
     icon: "✍️",
     sections: [
       {
@@ -1884,7 +1956,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Site Reliability Engineer (SRE)",
+    titleEn: "Site Reliability Engineer (SRE)",
     subtitle: "Garantir la fiabilité, la disponibilité et la performance des systèmes en production",
+    subtitleEn: "Ensuring the reliability, availability and performance of production systems",
     icon: "📈",
     sections: [
       {
@@ -1923,7 +1997,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Platform Engineer",
+    titleEn: "Platform Engineer",
     subtitle: "Construire les plateformes internes qui accélèrent le travail des équipes de développement",
+    subtitleEn: "Building the internal platforms that speed up development teams' work",
     icon: "🧱",
     sections: [
       {
@@ -1961,7 +2037,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Solutions Engineer / Ingénieur Avant-Vente",
+    titleEn: "Solutions Engineer / Pre-Sales Engineer",
     subtitle: "Faire le lien technique entre un produit et les besoins d'un client",
+    subtitleEn: "Making the technical link between a product and a client's needs",
     icon: "🤝",
     sections: [
       {
@@ -1999,7 +2077,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: false,
     title: "Rédacteur Technique / Technical Writer",
+    titleEn: "Technical Writer",
     subtitle: "Documenter les produits et systèmes pour les rendre compréhensibles",
+    subtitleEn: "Documenting products and systems to make them understandable",
     icon: "📝",
     sections: [
       {
@@ -2038,7 +2118,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Developer Advocate / DevRel Engineer",
+    titleEn: "Developer Advocate / DevRel Engineer",
     subtitle: "Créer le lien entre une entreprise tech et sa communauté de développeurs",
+    subtitleEn: "Building the link between a tech company and its developer community",
     icon: "📢",
     sections: [
       {
@@ -2076,7 +2158,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Analyste SOC (Security Operations Center)",
+    titleEn: "SOC Analyst (Security Operations Center)",
     subtitle: "Surveiller, détecter et réagir aux menaces de sécurité en temps réel",
+    subtitleEn: "Monitoring, detecting and responding to security threats in real time",
     icon: "🚨",
     sections: [
       {
@@ -2114,7 +2198,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Pentester / Ethical Hacker",
+    titleEn: "Pentester / Ethical Hacker",
     subtitle: "Simuler des attaques pour identifier les failles de sécurité avant les attaquants réels",
+    subtitleEn: "Simulating attacks to find security flaws before real attackers do",
     icon: "🕵️",
     sections: [
       {
@@ -2152,7 +2238,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Data Protection Officer (DPO)",
+    titleEn: "Data Protection Officer (DPO)",
     subtitle: "Garantir la conformité d'une organisation en matière de protection des données",
+    subtitleEn: "Ensuring an organization's compliance with data protection requirements",
     icon: "🔏",
     sections: [
       {
@@ -2190,7 +2278,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Product Owner",
+    titleEn: "Product Owner",
     subtitle: "Porter la vision produit au sein d'une équipe agile et prioriser le backlog",
+    subtitleEn: "Carrying the product vision within an agile team and prioritizing the backlog",
     icon: "📦",
     sections: [
       {
@@ -2227,7 +2317,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Engineering Manager",
+    titleEn: "Engineering Manager",
     subtitle: "Encadrer une équipe d'ingénieurs et faire le lien entre technique et organisation",
+    subtitleEn: "Leading a team of engineers and bridging the technical and organizational sides",
     icon: "🧑‍🏫",
     sections: [
       {
@@ -2264,7 +2356,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "CTO / Directeur Technique",
+    titleEn: "CTO / Chief Technology Officer",
     subtitle: "Définir et porter la vision technologique globale d'une organisation",
+    subtitleEn: "Defining and carrying an organization's overall technology vision",
     icon: "🧑‍💻",
     sections: [
       {
@@ -2301,7 +2395,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "UX Researcher",
+    titleEn: "UX Researcher",
     subtitle: "Comprendre les utilisateurs en profondeur pour guider les décisions produit",
+    subtitleEn: "Deeply understanding users to guide product decisions",
     icon: "🔬",
     sections: [
       {
@@ -2338,7 +2434,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Technical Program Manager (TPM)",
+    titleEn: "Technical Program Manager (TPM)",
     subtitle: "Coordonner des programmes techniques complexes impliquant plusieurs équipes",
+    subtitleEn: "Coordinating complex technical programs involving multiple teams",
     icon: "🗂️",
     sections: [
       {
@@ -2375,7 +2473,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Business Analyst IT",
+    titleEn: "IT Business Analyst",
     subtitle: "Traduire les besoins métier en exigences fonctionnelles pour les équipes techniques",
+    subtitleEn: "Translating business needs into functional requirements for technical teams",
     icon: "📋",
     sections: [
       {
@@ -2412,7 +2512,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Développeur de Jeux Vidéo",
+    titleEn: "Video Game Developer",
     subtitle: "Programmer la logique et les mécaniques d'un jeu vidéo",
+    subtitleEn: "Programming the logic and mechanics of a video game",
     icon: "🎮",
     sections: [
       {
@@ -2450,7 +2552,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Game Designer",
+    titleEn: "Game Designer",
     subtitle: "Concevoir les règles, la progression et l'expérience d'un jeu",
+    subtitleEn: "Designing a game's rules, progression and experience",
     icon: "🕹️",
     sections: [
       {
@@ -2487,7 +2591,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Développeur AR/VR",
+    titleEn: "AR/VR Developer",
     subtitle: "Créer des expériences immersives en réalité augmentée et virtuelle",
+    subtitleEn: "Creating immersive augmented and virtual reality experiences",
     icon: "🥽",
     sections: [
       {
@@ -2523,7 +2629,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Ingénieur Robotique",
+    titleEn: "Robotics Engineer",
     subtitle: "Concevoir et programmer des systèmes robotiques autonomes",
+    subtitleEn: "Designing and programming autonomous robotic systems",
     icon: "🤖",
     sections: [
       {
@@ -2561,7 +2669,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Administrateur Salesforce / CRM",
+    titleEn: "Salesforce / CRM Administrator",
     subtitle: "Paramétrer et faire évoluer une plateforme CRM au service des équipes commerciales",
+    subtitleEn: "Configuring and evolving a CRM platform to serve sales teams",
     icon: "☁️",
     sections: [
       {
@@ -2597,7 +2707,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Consultant SAP",
+    titleEn: "SAP Consultant",
     subtitle: "Implémenter et paramétrer les modules SAP dans une organisation",
+    subtitleEn: "Implementing and configuring SAP modules within an organization",
     icon: "🧮",
     sections: [
       {
@@ -2633,7 +2745,9 @@ const ROLES = {
     level: "Avancé",
     togoVerified: false,
     title: "Quant Developer / Analyste Quantitatif",
+    titleEn: "Quant Developer / Quantitative Analyst",
     subtitle: "Développer des modèles mathématiques et des systèmes pour la finance",
+    subtitleEn: "Developing mathematical models and systems for finance",
     icon: "📐",
     sections: [
       {
@@ -2669,7 +2783,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Growth Hacker",
+    titleEn: "Growth Hacker",
     subtitle: "Expérimenter rapidement pour accélérer la croissance d'un produit",
+    subtitleEn: "Running fast experiments to accelerate a product's growth",
     icon: "🚀",
     sections: [
       {
@@ -2705,7 +2821,9 @@ const ROLES = {
     level: "Débutant",
     togoVerified: false,
     title: "Content Strategist",
+    titleEn: "Content Strategist",
     subtitle: "Définir la stratégie de contenu d'une marque sur le long terme",
+    subtitleEn: "Defining a brand's long-term content strategy",
     icon: "📰",
     sections: [
       {
@@ -2742,7 +2860,9 @@ const ROLES = {
     level: "Intermédiaire",
     togoVerified: false,
     title: "Traffic Manager",
+    titleEn: "Traffic Manager",
     subtitle: "Piloter les campagnes publicitaires payantes pour maximiser le retour sur investissement",
+    subtitleEn: "Running paid advertising campaigns to maximize return on investment",
     icon: "🎯",
     sections: [
       {
@@ -2775,20 +2895,22 @@ const ROLES = {
 };
 
 const DOMAINS = {
-  "Développement": { icon: "💻", description: "Concevoir et construire des logiciels, applications et sites web." },
-  "Data & IA": { icon: "📊", description: "Exploiter, analyser et modéliser la donnée." },
-  "Sécurité": { icon: "🔐", description: "Protéger les systèmes, les données et les organisations." },
-  "Produit & Design": { icon: "🎨", description: "Concevoir des produits et expériences centrées sur l'utilisateur." },
-  "Infrastructure & DevOps": { icon: "☁️", description: "Déployer, exploiter et fiabiliser les systèmes et réseaux." },
-  "Marketing digital": { icon: "📣", description: "Faire connaître, acquérir et fidéliser via le numérique." },
-  "Gestion & Management": { icon: "🧭", description: "Piloter des projets, des équipes et des transformations." }
+  "Développement": { icon: "💻", nameEn: "Development", description: "Concevoir et construire des logiciels, applications et sites web.", descriptionEn: "Designing and building software, applications and websites." },
+  "Data & IA": { icon: "📊", nameEn: "Data & AI", description: "Exploiter, analyser et modéliser la donnée.", descriptionEn: "Working with, analyzing and modeling data." },
+  "Sécurité": { icon: "🔐", nameEn: "Security", description: "Protéger les systèmes, les données et les organisations.", descriptionEn: "Protecting systems, data and organizations." },
+  "Produit & Design": { icon: "🎨", nameEn: "Product & Design", description: "Concevoir des produits et expériences centrées sur l'utilisateur.", descriptionEn: "Designing products and experiences centered on the user." },
+  "Infrastructure & DevOps": { icon: "☁️", nameEn: "Infrastructure & DevOps", description: "Déployer, exploiter et fiabiliser les systèmes et réseaux.", descriptionEn: "Deploying, operating and ensuring the reliability of systems and networks." },
+  "Marketing digital": { icon: "📣", nameEn: "Digital Marketing", description: "Faire connaître, acquérir et fidéliser via le numérique.", descriptionEn: "Building awareness, acquiring and retaining customers through digital channels." },
+  "Gestion & Management": { icon: "🧭", nameEn: "Management", description: "Piloter des projets, des équipes et des transformations.", descriptionEn: "Steering projects, teams and transformations." }
 };
 
 const SKILLS = {
   "git-github": {
     type: "skill",
     title: "Git & GitHub",
+    titleEn: "Git & GitHub",
     subtitle: "Le contrôle de version, un incontournable pour tous les métiers tech",
+    subtitleEn: "Version control, essential for every tech role",
     icon: "🔧",
     sections: [
       {
@@ -2828,7 +2950,9 @@ const SKILLS = {
   "linux": {
     type: "skill",
     title: "Linux & Ligne de commande",
+    titleEn: "Linux & Command Line",
     subtitle: "Administration système et manipulation en ligne de commande",
+    subtitleEn: "System administration and command-line skills",
     icon: "🐧",
     sections: [
       {
@@ -2866,7 +2990,9 @@ const SKILLS = {
   "docker": {
     type: "skill",
     title: "Docker & Conteneurisation",
+    titleEn: "Docker & Containerization",
     subtitle: "Empaqueter et exécuter des applications de façon reproductible",
+    subtitleEn: "Packaging and running applications reproducibly",
     icon: "🐳",
     sections: [
       {
@@ -2903,7 +3029,9 @@ const SKILLS = {
   "sql": {
     type: "skill",
     title: "SQL & Bases de données relationnelles",
+    titleEn: "SQL & Relational Databases",
     subtitle: "Modéliser, interroger et optimiser des données structurées",
+    subtitleEn: "Modeling, querying and optimizing structured data",
     icon: "🗄️",
     sections: [
       {
@@ -2941,7 +3069,9 @@ const SKILLS = {
   "javascript": {
     type: "skill",
     title: "JavaScript",
+    titleEn: "JavaScript",
     subtitle: "Le langage du web, côté client comme côté serveur",
+    subtitleEn: "The language of the web, on both client and server",
     icon: "📜",
     sections: [
       {
@@ -2981,7 +3111,9 @@ const SKILLS = {
   "python": {
     type: "skill",
     title: "Python",
+    titleEn: "Python",
     subtitle: "Un langage polyvalent : backend, data, automatisation",
+    subtitleEn: "A versatile language: backend, data, automation",
     icon: "🐍",
     sections: [
       {
@@ -3018,7 +3150,9 @@ const SKILLS = {
   "reseaux": {
     type: "skill",
     title: "Réseaux TCP/IP",
+    titleEn: "TCP/IP Networking",
     subtitle: "Les fondations de toute infrastructure et de la cybersécurité",
+    subtitleEn: "The foundations of all infrastructure and cybersecurity",
     icon: "🌐",
     sections: [
       {
@@ -3056,7 +3190,9 @@ const SKILLS = {
   "cloud": {
     type: "skill",
     title: "Cloud (AWS / Azure / GCP)",
+    titleEn: "Cloud (AWS / Azure / GCP)",
     subtitle: "Les fondamentaux communs aux principaux fournisseurs cloud",
+    subtitleEn: "The fundamentals common to the major cloud providers",
     icon: "☁️",
     sections: [
       {
@@ -3094,7 +3230,9 @@ const SKILLS = {
   "react": {
     type: "skill",
     title: "React",
+    titleEn: "React",
     subtitle: "La bibliothèque JavaScript la plus utilisée pour construire des interfaces",
+    subtitleEn: "The most widely used JavaScript library for building interfaces",
     icon: "⚛️",
     sections: [
       {
@@ -3132,7 +3270,9 @@ const SKILLS = {
   "vue": {
     type: "skill",
     title: "Vue.js",
+    titleEn: "Vue.js",
     subtitle: "Framework JavaScript progressif, apprécié pour sa courbe d'apprentissage douce",
+    subtitleEn: "A progressive JavaScript framework, valued for its gentle learning curve",
     icon: "💚",
     sections: [
       {
@@ -3168,7 +3308,9 @@ const SKILLS = {
   "typescript": {
     type: "skill",
     title: "TypeScript",
+    titleEn: "TypeScript",
     subtitle: "JavaScript typé pour des applications plus robustes et maintenables",
+    subtitleEn: "Typed JavaScript for more robust, maintainable applications",
     icon: "🔷",
     sections: [
       {
@@ -3203,7 +3345,9 @@ const SKILLS = {
   "nodejs": {
     type: "skill",
     title: "Node.js",
+    titleEn: "Node.js",
     subtitle: "Exécuter du JavaScript côté serveur pour construire des API et services",
+    subtitleEn: "Running JavaScript on the server to build APIs and services",
     icon: "🟢",
     sections: [
       {
@@ -3238,7 +3382,9 @@ const SKILLS = {
   "java": {
     type: "skill",
     title: "Java",
+    titleEn: "Java",
     subtitle: "Langage orienté objet incontournable dans les systèmes d'entreprise",
+    subtitleEn: "An essential object-oriented language in enterprise systems",
     icon: "☕",
     sections: [
       {
@@ -3274,7 +3420,9 @@ const SKILLS = {
   "cpp": {
     type: "skill",
     title: "C++",
+    titleEn: "C++",
     subtitle: "Langage bas niveau pour la performance : jeux, systèmes, finance",
+    subtitleEn: "A low-level language for performance: games, systems, finance",
     icon: "🔵",
     sections: [
       {
@@ -3309,7 +3457,9 @@ const SKILLS = {
   "go": {
     type: "skill",
     title: "Go (Golang)",
+    titleEn: "Go (Golang)",
     subtitle: "Langage simple et performant, très utilisé pour les services cloud et DevOps",
+    subtitleEn: "A simple, high-performance language widely used for cloud and DevOps services",
     icon: "🐹",
     sections: [
       {
@@ -3344,7 +3494,9 @@ const SKILLS = {
   "php": {
     type: "skill",
     title: "PHP",
+    titleEn: "PHP",
     subtitle: "Langage serveur très répandu pour le développement web",
+    subtitleEn: "A widely used server-side language for web development",
     icon: "🐘",
     sections: [
       {
@@ -3378,7 +3530,9 @@ const SKILLS = {
   "kubernetes": {
     type: "skill",
     title: "Kubernetes",
+    titleEn: "Kubernetes",
     subtitle: "Orchestrer des conteneurs à grande échelle",
+    subtitleEn: "Orchestrating containers at scale",
     icon: "☸️",
     sections: [
       {
@@ -3414,7 +3568,9 @@ const SKILLS = {
   "terraform": {
     type: "skill",
     title: "Terraform",
+    titleEn: "Terraform",
     subtitle: "Gérer son infrastructure comme du code, de façon reproductible",
+    subtitleEn: "Managing infrastructure as code, reproducibly",
     icon: "🌍",
     sections: [
       {
@@ -3449,7 +3605,9 @@ const SKILLS = {
   "flutter": {
     type: "skill",
     title: "Flutter",
+    titleEn: "Flutter",
     subtitle: "Créer des applications mobiles natives pour Android et iOS avec un seul code",
+    subtitleEn: "Building native mobile apps for Android and iOS from a single codebase",
     icon: "🦋",
     sections: [
       {
@@ -3484,7 +3642,9 @@ const SKILLS = {
   "kotlin-android": {
     type: "skill",
     title: "Kotlin & Android natif",
+    titleEn: "Kotlin & Native Android",
     subtitle: "Développer des applications Android natives modernes",
+    subtitleEn: "Building modern native Android applications",
     icon: "📱",
     sections: [
       {
@@ -3518,7 +3678,9 @@ const SKILLS = {
   "swift-ios": {
     type: "skill",
     title: "Swift & iOS natif",
+    titleEn: "Swift & Native iOS",
     subtitle: "Développer des applications iOS natives avec Swift",
+    subtitleEn: "Building native iOS applications with Swift",
     icon: "🍎",
     sections: [
       {
@@ -3552,7 +3714,9 @@ const SKILLS = {
   "mongodb": {
     type: "skill",
     title: "MongoDB & NoSQL",
+    titleEn: "MongoDB & NoSQL",
     subtitle: "Bases de données orientées documents pour des besoins flexibles",
+    subtitleEn: "Document-oriented databases for flexible needs",
     icon: "🍃",
     sections: [
       {
@@ -3586,7 +3750,9 @@ const SKILLS = {
   "graphql": {
     type: "skill",
     title: "GraphQL",
+    titleEn: "GraphQL",
     subtitle: "Un langage de requête flexible pour les API",
+    subtitleEn: "A flexible query language for APIs",
     icon: "🔺",
     sections: [
       {
@@ -3620,7 +3786,9 @@ const SKILLS = {
   "machine-learning": {
     type: "skill",
     title: "Machine Learning",
+    titleEn: "Machine Learning",
     subtitle: "Entraîner des modèles capables d'apprendre à partir de données",
+    subtitleEn: "Training models that can learn from data",
     icon: "🧠",
     sections: [
       {
@@ -3660,7 +3828,9 @@ const SKILLS = {
   "solidity": {
     type: "skill",
     title: "Solidity & Smart Contracts",
+    titleEn: "Solidity & Smart Contracts",
     subtitle: "Programmer des contrats intelligents sur la blockchain Ethereum",
+    subtitleEn: "Programming smart contracts on the Ethereum blockchain",
     icon: "⛓️",
     sections: [
       {
@@ -3694,7 +3864,9 @@ const SKILLS = {
   "system-design": {
     type: "skill",
     title: "System Design",
+    titleEn: "System Design",
     subtitle: "Concevoir des systèmes logiciels à grande échelle",
+    subtitleEn: "Designing software systems at scale",
     icon: "🗺️",
     sections: [
       {
@@ -3730,7 +3902,9 @@ const SKILLS = {
   "dsa": {
     type: "skill",
     title: "Data Structures & Algorithms",
+    titleEn: "Data Structures & Algorithms",
     subtitle: "Les fondamentaux algorithmiques utiles pour tout développeur",
+    subtitleEn: "The algorithmic fundamentals every developer needs",
     icon: "🧮",
     sections: [
       {
@@ -3767,7 +3941,9 @@ const SKILLS = {
   "api-design": {
     type: "skill",
     title: "API Design (REST)",
+    titleEn: "API Design (REST)",
     subtitle: "Concevoir des API cohérentes, prévisibles et faciles à utiliser",
+    subtitleEn: "Designing APIs that are consistent, predictable and easy to use",
     icon: "🔌",
     sections: [
       {
@@ -3801,7 +3977,9 @@ const SKILLS = {
   "cicd": {
     type: "skill",
     title: "CI/CD",
+    titleEn: "CI/CD",
     subtitle: "Automatiser les tests et le déploiement du code",
+    subtitleEn: "Automating code testing and deployment",
     icon: "🔁",
     sections: [
       {
@@ -4461,145 +4639,157 @@ const QUIZ_QUESTIONS = [
   {
     type: "domain",
     question: "Qu'est-ce qui t'attire le plus dans la tech ?",
+    questionEn: "What attracts you most about tech?",
     options: [
-      { label: "Construire des applications et des sites qui marchent bien", domain: "Développement" },
-      { label: "Comprendre des chiffres, des tendances, entraîner des modèles", domain: "Data & IA" },
-      { label: "Protéger des systèmes contre les attaques", domain: "Sécurité" },
-      { label: "Créer des interfaces belles et faciles à utiliser", domain: "Produit & Design" },
-      { label: "Faire tourner des serveurs et des infrastructures fiables", domain: "Infrastructure & DevOps" },
-      { label: "Faire connaître un produit ou une marque en ligne", domain: "Marketing digital" },
-      { label: "Organiser, planifier, piloter des équipes et des projets", domain: "Gestion & Management" }
+      { label: "Construire des applications et des sites qui marchent bien", labelEn: "Building applications and websites that work well", domain: "Développement" },
+      { label: "Comprendre des chiffres, des tendances, entraîner des modèles", labelEn: "Understanding numbers and trends, training models", domain: "Data & IA" },
+      { label: "Protéger des systèmes contre les attaques", labelEn: "Protecting systems against attacks", domain: "Sécurité" },
+      { label: "Créer des interfaces belles et faciles à utiliser", labelEn: "Creating interfaces that are beautiful and easy to use", domain: "Produit & Design" },
+      { label: "Faire tourner des serveurs et des infrastructures fiables", labelEn: "Running reliable servers and infrastructure", domain: "Infrastructure & DevOps" },
+      { label: "Faire connaître un produit ou une marque en ligne", labelEn: "Building awareness for a product or brand online", domain: "Marketing digital" },
+      { label: "Organiser, planifier, piloter des équipes et des projets", labelEn: "Organizing, planning and steering teams and projects", domain: "Gestion & Management" }
     ]
   },
   {
     type: "domain",
     question: "Pour organiser un événement dans ton lycée (kermesse, tournoi, fête de fin d'année), tu prendrais plutôt en charge...",
+    questionEn: "To organize an event at your school (fair, tournament, end-of-year party), you'd rather take charge of...",
     options: [
-      { label: "Un petit outil ou une liste pour gérer les inscriptions", domain: "Développement" },
-      { label: "L'analyse des votes ou des résultats pour comprendre les tendances", domain: "Data & IA" },
-      { label: "La surveillance pour que personne ne triche ou ne vole la caisse", domain: "Sécurité" },
-      { label: "Les affiches et la décoration", domain: "Produit & Design" },
-      { label: "La sono, l'électricité, tout ce qui doit tenir toute la soirée", domain: "Infrastructure & DevOps" },
-      { label: "La promo sur les réseaux sociaux pour faire venir du monde", domain: "Marketing digital" },
-      { label: "La coordination des équipes et du budget", domain: "Gestion & Management" }
+      { label: "Un petit outil ou une liste pour gérer les inscriptions", labelEn: "A small tool or a list to manage sign-ups", domain: "Développement" },
+      { label: "L'analyse des votes ou des résultats pour comprendre les tendances", labelEn: "Analyzing votes or results to spot trends", domain: "Data & IA" },
+      { label: "La surveillance pour que personne ne triche ou ne vole la caisse", labelEn: "Keeping watch so no one cheats or steals the cash box", domain: "Sécurité" },
+      { label: "Les affiches et la décoration", labelEn: "The posters and decorations", domain: "Produit & Design" },
+      { label: "La sono, l'électricité, tout ce qui doit tenir toute la soirée", labelEn: "The sound system, the power, everything that has to hold up all night", domain: "Infrastructure & DevOps" },
+      { label: "La promo sur les réseaux sociaux pour faire venir du monde", labelEn: "The social media promo to bring people in", domain: "Marketing digital" },
+      { label: "La coordination des équipes et du budget", labelEn: "Coordinating the teams and the budget", domain: "Gestion & Management" }
     ]
   },
   {
     type: "domain",
     question: "Face à un problème, ton premier réflexe...",
+    questionEn: "Faced with a problem, your first instinct is to...",
     options: [
-      { label: "Écrire du code pour le résoudre", domain: "Développement" },
-      { label: "Analyser des données pour comprendre pourquoi", domain: "Data & IA" },
-      { label: "Chercher comment quelqu'un pourrait en abuser", domain: "Sécurité" },
-      { label: "Repenser l'expérience pour que ça n'arrive plus", domain: "Produit & Design" },
-      { label: "Vérifier si l'infrastructure tient la charge", domain: "Infrastructure & DevOps" },
-      { label: "Communiquer dessus pour rassurer tout le monde", domain: "Marketing digital" },
-      { label: "Réunir les bonnes personnes pour trancher", domain: "Gestion & Management" }
+      { label: "Écrire du code pour le résoudre", labelEn: "Write code to solve it", domain: "Développement" },
+      { label: "Analyser des données pour comprendre pourquoi", labelEn: "Analyze data to understand why", domain: "Data & IA" },
+      { label: "Chercher comment quelqu'un pourrait en abuser", labelEn: "Look for how someone could exploit it", domain: "Sécurité" },
+      { label: "Repenser l'expérience pour que ça n'arrive plus", labelEn: "Rethink the experience so it doesn't happen again", domain: "Produit & Design" },
+      { label: "Vérifier si l'infrastructure tient la charge", labelEn: "Check whether the infrastructure can handle the load", domain: "Infrastructure & DevOps" },
+      { label: "Communiquer dessus pour rassurer tout le monde", labelEn: "Communicate about it to reassure everyone", domain: "Marketing digital" },
+      { label: "Réunir les bonnes personnes pour trancher", labelEn: "Bring the right people together to decide", domain: "Gestion & Management" }
     ]
   },
   {
     type: "domain",
     question: "Ton environnement de travail idéal...",
+    questionEn: "Your ideal work environment...",
     options: [
-      { label: "Seul·e, concentré·e, à écrire du code", domain: "Développement" },
-      { label: "Entouré·e de tableaux de données et de graphiques", domain: "Data & IA" },
-      { label: "En veille permanente, à surveiller des menaces", domain: "Sécurité" },
-      { label: "Avec des maquettes, des couleurs, du visuel", domain: "Produit & Design" },
-      { label: "En salle serveur ou sur des consoles cloud", domain: "Infrastructure & DevOps" },
-      { label: "Sur les réseaux sociaux, au contact d'une audience", domain: "Marketing digital" },
-      { label: "En réunion, à coordonner plusieurs personnes", domain: "Gestion & Management" }
+      { label: "Seul·e, concentré·e, à écrire du code", labelEn: "Alone, focused, writing code", domain: "Développement" },
+      { label: "Entouré·e de tableaux de données et de graphiques", labelEn: "Surrounded by data tables and charts", domain: "Data & IA" },
+      { label: "En veille permanente, à surveiller des menaces", labelEn: "On constant watch, monitoring for threats", domain: "Sécurité" },
+      { label: "Avec des maquettes, des couleurs, du visuel", labelEn: "Working with mockups, colors, visuals", domain: "Produit & Design" },
+      { label: "En salle serveur ou sur des consoles cloud", labelEn: "In a server room or on cloud consoles", domain: "Infrastructure & DevOps" },
+      { label: "Sur les réseaux sociaux, au contact d'une audience", labelEn: "On social media, in touch with an audience", domain: "Marketing digital" },
+      { label: "En réunion, à coordonner plusieurs personnes", labelEn: "In meetings, coordinating several people", domain: "Gestion & Management" }
     ]
   },
   {
     type: "domain",
     question: "Ce qui te frustre le plus...",
+    questionEn: "What frustrates you the most...",
     options: [
-      { label: "Un code mal écrit qui plante", domain: "Développement" },
-      { label: "Des données mal organisées ou peu fiables", domain: "Data & IA" },
-      { label: "Une faille de sécurité qu'on préfère ignorer", domain: "Sécurité" },
-      { label: "Une interface confuse et pénible à utiliser", domain: "Produit & Design" },
-      { label: "Un serveur qui tombe en panne au mauvais moment", domain: "Infrastructure & DevOps" },
-      { label: "Une campagne qui rate complètement sa cible", domain: "Marketing digital" },
-      { label: "Un projet lancé sans plan clair", domain: "Gestion & Management" }
+      { label: "Un code mal écrit qui plante", labelEn: "Poorly written code that crashes", domain: "Développement" },
+      { label: "Des données mal organisées ou peu fiables", labelEn: "Data that's poorly organized or unreliable", domain: "Data & IA" },
+      { label: "Une faille de sécurité qu'on préfère ignorer", labelEn: "A security flaw that people would rather ignore", domain: "Sécurité" },
+      { label: "Une interface confuse et pénible à utiliser", labelEn: "An interface that's confusing and painful to use", domain: "Produit & Design" },
+      { label: "Un serveur qui tombe en panne au mauvais moment", labelEn: "A server that goes down at the worst possible time", domain: "Infrastructure & DevOps" },
+      { label: "Une campagne qui rate complètement sa cible", labelEn: "A campaign that completely misses its target", domain: "Marketing digital" },
+      { label: "Un projet lancé sans plan clair", labelEn: "A project launched without a clear plan", domain: "Gestion & Management" }
     ]
   },
   {
     type: "domain",
     question: "Ce que tu ferais gratuitement, sur ton temps libre...",
+    questionEn: "What you'd do for free, in your spare time...",
     options: [
-      { label: "Bidouiller un petit projet de code perso", domain: "Développement" },
-      { label: "Explorer un jeu de données qui t'intéresse", domain: "Data & IA" },
-      { label: "Chercher comment on pourrait pirater un compte ou une appli, pour mieux comprendre comment s'en protéger", domain: "Sécurité" },
-      { label: "Redessiner l'appli d'une marque que tu utilises", domain: "Produit & Design" },
-      { label: "Bidouiller les réglages de ton téléphone ou de ta box internet pour mieux comprendre comment ça marche", domain: "Infrastructure & DevOps" },
-      { label: "Créer du contenu et faire grandir une page", domain: "Marketing digital" },
-      { label: "Organiser un événement ou un club", domain: "Gestion & Management" }
+      { label: "Bidouiller un petit projet de code perso", labelEn: "Tinker with a small personal coding project", domain: "Développement" },
+      { label: "Explorer un jeu de données qui t'intéresse", labelEn: "Explore a dataset that interests you", domain: "Data & IA" },
+      { label: "Chercher comment on pourrait pirater un compte ou une appli, pour mieux comprendre comment s'en protéger", labelEn: "Figure out how an account or app could be hacked, to better understand how to protect it", domain: "Sécurité" },
+      { label: "Redessiner l'appli d'une marque que tu utilises", labelEn: "Redesign the app of a brand you use", domain: "Produit & Design" },
+      { label: "Bidouiller les réglages de ton téléphone ou de ta box internet pour mieux comprendre comment ça marche", labelEn: "Tinker with your phone or internet router settings to understand how they really work", domain: "Infrastructure & DevOps" },
+      { label: "Créer du contenu et faire grandir une page", labelEn: "Create content and grow a page", domain: "Marketing digital" },
+      { label: "Organiser un événement ou un club", labelEn: "Organize an event or a club", domain: "Gestion & Management" }
     ]
   },
   {
     type: "domain",
     question: "Une matière scolaire où tu es à l'aise...",
+    questionEn: "A school subject where you feel comfortable...",
     options: [
-      { label: "Algorithmique et logique", domain: "Développement" },
-      { label: "Mathématiques et statistiques", domain: "Data & IA" },
-      { label: "Informatique, avec l'envie de comprendre comment ça marche vraiment", domain: "Sécurité" },
-      { label: "Arts plastiques et créativité visuelle", domain: "Produit & Design" },
-      { label: "Sciences physiques et systèmes", domain: "Infrastructure & DevOps" },
-      { label: "Communication et langues", domain: "Marketing digital" },
-      { label: "Économie et gestion", domain: "Gestion & Management" }
+      { label: "Algorithmique et logique", labelEn: "Algorithms and logic", domain: "Développement" },
+      { label: "Mathématiques et statistiques", labelEn: "Mathematics and statistics", domain: "Data & IA" },
+      { label: "Informatique, avec l'envie de comprendre comment ça marche vraiment", labelEn: "Computer science, with a drive to understand how things really work", domain: "Sécurité" },
+      { label: "Arts plastiques et créativité visuelle", labelEn: "Visual arts and visual creativity", domain: "Produit & Design" },
+      { label: "Sciences physiques et systèmes", labelEn: "Physics and systems", domain: "Infrastructure & DevOps" },
+      { label: "Communication et langues", labelEn: "Communication and languages", domain: "Marketing digital" },
+      { label: "Économie et gestion", labelEn: "Economics and management", domain: "Gestion & Management" }
     ]
   },
   {
     type: "domain",
     question: "Dans un projet d'équipe, ton rôle naturel...",
+    questionEn: "In a team project, your natural role is...",
     options: [
-      { label: "Celui ou celle qui code la solution", domain: "Développement" },
-      { label: "Celui ou celle qui analyse les résultats", domain: "Data & IA" },
-      { label: "Celui ou celle qui teste et cherche les failles", domain: "Sécurité" },
-      { label: "Celui ou celle qui soigne la présentation", domain: "Produit & Design" },
-      { label: "Celui ou celle qui s'assure que tout tourne techniquement", domain: "Infrastructure & DevOps" },
-      { label: "Celui ou celle qui présente et « vend » le projet", domain: "Marketing digital" },
-      { label: "Celui ou celle qui coordonne l'équipe", domain: "Gestion & Management" }
+      { label: "Celui ou celle qui code la solution", labelEn: "The one who codes the solution", domain: "Développement" },
+      { label: "Celui ou celle qui analyse les résultats", labelEn: "The one who analyzes the results", domain: "Data & IA" },
+      { label: "Celui ou celle qui teste et cherche les failles", labelEn: "The one who tests and looks for flaws", domain: "Sécurité" },
+      { label: "Celui ou celle qui soigne la présentation", labelEn: "The one who takes care of the presentation", domain: "Produit & Design" },
+      { label: "Celui ou celle qui s'assure que tout tourne techniquement", labelEn: "The one who makes sure everything runs technically", domain: "Infrastructure & DevOps" },
+      { label: "Celui ou celle qui présente et « vend » le projet", labelEn: "The one who presents and \"sells\" the project", domain: "Marketing digital" },
+      { label: "Celui ou celle qui coordonne l'équipe", labelEn: "The one who coordinates the team", domain: "Gestion & Management" }
     ]
   },
   {
     type: "niveau",
     question: "Une fois ton domaine identifié : quel niveau veux-tu viser pour commencer ?",
+    questionEn: "Once you've identified your domain: what level do you want to aim for to start?",
     options: [
-      { label: "Un diplôme court et professionnalisant (BTS, Brevet de Technicien)", value: "court" },
-      { label: "Une Licence classique (Bac+3)", value: "licence" },
-      { label: "Directement un cursus long (Master, Ingénieur)", value: "long" },
-      { label: "Je ne sais pas encore", value: "peu-importe" }
+      { label: "Un diplôme court et professionnalisant (BTS, Brevet de Technicien)", labelEn: "A short, career-focused diploma (BTS, Brevet de Technicien)", value: "court" },
+      { label: "Une Licence classique (Bac+3)", labelEn: "A standard Bachelor's degree (Bac+3)", value: "licence" },
+      { label: "Directement un cursus long (Master, Ingénieur)", labelEn: "Directly a long program (Master's, Engineering degree)", value: "long" },
+      { label: "Je ne sais pas encore", labelEn: "I don't know yet", value: "peu-importe" }
     ]
   },
   {
     type: "ville",
     question: "Où peux-tu ou veux-tu étudier ?",
+    questionEn: "Where can or do you want to study?",
     options: [
-      { label: "À Lomé", value: "Lomé" },
-      { label: "À Kara", value: "Kara" },
-      { label: "À Sokodé", value: "Sokodé" },
-      { label: "À Bassar", value: "Bassar" },
-      { label: "À Atakpamé", value: "Atakpamé" },
-      { label: "Peu importe, je peux me déplacer", value: "peu-importe" }
+      { label: "À Lomé", labelEn: "In Lomé", value: "Lomé" },
+      { label: "À Kara", labelEn: "In Kara", value: "Kara" },
+      { label: "À Sokodé", labelEn: "In Sokodé", value: "Sokodé" },
+      { label: "À Bassar", labelEn: "In Bassar", value: "Bassar" },
+      { label: "À Atakpamé", labelEn: "In Atakpamé", value: "Atakpamé" },
+      { label: "Peu importe, je peux me déplacer", labelEn: "It doesn't matter, I can travel", value: "peu-importe" }
     ]
   },
   {
     type: "statut",
     question: "Qu'est-ce qui correspond le mieux à ta situation budgétaire ?",
+    questionEn: "What best matches your budget situation?",
     options: [
-      { label: "Je dois viser le public, gratuit ou presque", value: "public" },
-      { label: "Je peux payer une école privée, avec un budget serré", value: "prive" },
-      { label: "Le budget n'est pas un frein majeur", value: "peu-importe" }
+      { label: "Je dois viser le public, gratuit ou presque", labelEn: "I need to aim for public school, free or almost free", value: "public" },
+      { label: "Je peux payer une école privée, avec un budget serré", labelEn: "I can afford a private school, on a tight budget", value: "prive" },
+      { label: "Le budget n'est pas un frein majeur", labelEn: "Budget isn't a major constraint", value: "peu-importe" }
     ]
   },
   {
     type: "priorite",
     question: "Qu'est-ce qui compte le plus pour toi dans une école ?",
+    questionEn: "What matters most to you in a school?",
     options: [
-      { label: "Que le diplôme soit officiellement reconnu (agrément d'État, CAMES)", value: "agree" },
-      { label: "Une formation concrète, avec beaucoup de pratique et de stages", value: "pratique" },
-      { label: "Peu importe, je regarderai au cas par cas", value: "peu-importe" }
+      { label: "Que le diplôme soit officiellement reconnu (agrément d'État, CAMES)", labelEn: "That the diploma is officially recognized (state accreditation, CAMES)", value: "agree" },
+      { label: "Une formation concrète, avec beaucoup de pratique et de stages", labelEn: "Hands-on training, with lots of practice and internships", value: "pratique" },
+      { label: "Peu importe, je regarderai au cas par cas", labelEn: "It doesn't matter, I'll look case by case", value: "peu-importe" }
     ]
   }
 ];
@@ -4612,28 +4802,43 @@ const QUIZ_QUESTIONS = [
 const ACADEMIC_TIMELINE = [
   {
     periode: "Juin – Juillet",
+    periodeEn: "June – July",
     titre: "Résultats du BAC",
-    description: "Publication des résultats du baccalauréat togolais. C'est le point de départ : la plupart des dossiers de candidature demandent une attestation ou un relevé du BAC."
+    titreEn: "BAC results",
+    description: "Publication des résultats du baccalauréat togolais. C'est le point de départ : la plupart des dossiers de candidature demandent une attestation ou un relevé du BAC.",
+    descriptionEn: "Publication of Togolese baccalauréat results. This is the starting point: most application files require a BAC certificate or transcript."
   },
   {
     periode: "Juillet – Septembre",
+    periodeEn: "July – September",
     titre: "Période de candidature",
-    description: "Ouverture des inscriptions dans la majorité des écoles et universités. Beaucoup d'écoles privées togolaises admettent en continu sur cette période, sans date limite stricte."
+    titreEn: "Application period",
+    description: "Ouverture des inscriptions dans la majorité des écoles et universités. Beaucoup d'écoles privées togolaises admettent en continu sur cette période, sans date limite stricte.",
+    descriptionEn: "Registration opens at most schools and universities. Many private Togolese schools admit on a rolling basis during this period, with no strict deadline."
   },
   {
     periode: "Août – Septembre",
+    periodeEn: "August – September",
     titre: "Concours d'entrée",
-    description: "Pour les établissements qui en organisent un (universités publiques, grandes écoles comme l'EPL ou l'IAI-Togo) : épreuves écrites, généralement sur cette fenêtre."
+    titreEn: "Entrance exams",
+    description: "Pour les établissements qui en organisent un (universités publiques, grandes écoles comme l'EPL ou l'IAI-Togo) : épreuves écrites, généralement sur cette fenêtre.",
+    descriptionEn: "For institutions that hold one (public universities, top schools like EPL or IAI-Togo): written exams, generally within this window."
   },
   {
     periode: "Septembre – Octobre",
+    periodeEn: "September – October",
     titre: "Résultats d'admission",
-    description: "Publication des listes d'admis pour les établissements à concours ou à sélection sur dossier."
+    titreEn: "Admission results",
+    description: "Publication des listes d'admis pour les établissements à concours ou à sélection sur dossier.",
+    descriptionEn: "Publication of admission lists for institutions using entrance exams or file-based selection."
   },
   {
     periode: "Octobre – Novembre",
+    periodeEn: "October – November",
     titre: "Rentrée académique",
-    description: "Début des cours dans la plupart des écoles et universités togolaises."
+    titreEn: "Start of the academic year",
+    description: "Début des cours dans la plupart des écoles et universités togolaises.",
+    descriptionEn: "Classes begin at most Togolese schools and universities."
   }
 ];
 
