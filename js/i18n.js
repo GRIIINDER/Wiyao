@@ -635,6 +635,71 @@
       fr: "Parcours reconstitués à partir de sources publiques (presse togolaise et africaine, sites institutionnels) citées sous chaque portrait — aucun nom, citation ou détail n'est inventé. Certains éléments biographiques (dates précises, cursus complet) n'ont pas pu être confirmés partout et sont volontairement omis plutôt que devinés.",
       en: "Profiles reconstructed from public sources (Togolese and African press, institutional websites) cited under each portrait — no name, quote or detail is invented. Some biographical details (exact dates, full academic history) could not be confirmed everywhere and are deliberately omitted rather than guessed.",
     },
+
+    "actu.t1.date": { fr: "12-13 août 2026", en: "August 12-13, 2026" },
+    "actu.t1.h3": { fr: "Togo IT Days, 2ᵉ édition", en: "Togo IT Days, 2nd edition" },
+    "actu.t1.p": {
+      fr: "Conférence numérique tenue à l'Hôtel 2 Février (Lomé) : entrepreneuriat numérique, IA, cybersécurité,\n             développement des compétences des jeunes, numérique responsable et inclusion des femmes dans la tech,\n             avec hackathon et espace d'exposition de startups.",
+      en: "Digital conference held at Hôtel 2 Février (Lomé): digital entrepreneurship, AI, cybersecurity, youth skills development, responsible digital practices and women's inclusion in tech, with a hackathon and startup exhibition space.",
+    },
+    "actu.t2.date": { fr: "Début août 2026", en: "Early August 2026" },
+    "actu.t2.h3": { fr: "1ʳᵉ édition du Kara Digital Summit", en: "1st edition of the Kara Digital Summit" },
+    "actu.t2.p": {
+      fr: "Événement numérique tenu à Kara pour rapprocher la formation numérique des jeunes en dehors de Lomé,\n             avec un programme de mentorat personnalisé — extension prévue vers Dapaong, Sokodé, Atakpamé et Notsè\n             pour démocratiser l'usage pratique du numérique et de l'IA sur tout le territoire.",
+      en: "Digital event held in Kara to bring digital training closer to young people outside Lomé, with a personalized mentoring program — expansion planned to Dapaong, Sokodé, Atakpamé and Notsè to spread practical use of digital tools and AI nationwide.",
+    },
+    "actu.t3.date": { fr: "24 juillet 2026", en: "July 24, 2026" },
+    "actu.t3.h3": { fr: "Nouvelle liste des établissements accrédités pour 2026-2027", en: "New list of accredited institutions for 2026-2027" },
+    "actu.t3.p": {
+      fr: 'Le ministère de l\'Enseignement Supérieur publie la liste actualisée : 111 établissements reconnus\n             (13 publics, 98 privés), contre 97 l\'année précédente. Le ministère rappelle : « avant toute\n             inscription, vérifiez que l\'établissement choisi y figure ». WIYAO a mis à jour son comparateur\n             d\'écoles en conséquence (ajout d\'ISBIC-ALG, renommage de Collège de Paris Togo en Ascencia · Keyce,\n             retrait du badge Agréé État de DEFITECH).',
+      en: 'The Ministry of Higher Education publishes the updated list: 111 recognized institutions (13 public, 98 private), up from 97 the previous year. The ministry reminds applicants: "before enrolling anywhere, check that the chosen institution is on the list." WIYAO updated its school comparison accordingly (added ISBIC-ALG, renamed Collège de Paris Togo to Ascencia · Keyce, removed the State-accredited badge from DEFITECH).',
+    },
+    "actu.t4.date": { fr: "18-29 mai 2026", en: "May 18-29, 2026" },
+    "actu.t4.h3": { fr: "9 startups edtech togolaises accompagnées vers l'international", en: "9 Togolese edtech startups supported toward international markets" },
+    "actu.t4.p": {
+      fr: "Programme accéléré porté par l'Agence Togo Digital (ATD) avec le soutien de la GIZ (ProDigiT) :\n             9 startups sélectionnées sur 39 candidatures (dont 2 dirigées par des femmes) — MainBridge, Edumiaa,\n             Eforma Africa, ENOVSKY, Edufast, SKULLVI, Deezpro, Nufia et Mon Choix Ma Carrière. Elles participent\n             ensuite à eLearning Africa (Accra) ; les projets les plus avancés reçoivent un accompagnement\n             supplémentaire du Djanta Tech Hub.",
+      en: "Accelerator program run by Agence Togo Digital (ATD) with support from GIZ (ProDigiT): 9 startups selected out of 39 applications (2 of them women-led) — MainBridge, Edumiaa, Eforma Africa, ENOVSKY, Edufast, SKULLVI, Deezpro, Nufia and Mon Choix Ma Carrière. They then took part in eLearning Africa (Accra); the most advanced projects receive additional support from Djanta Tech Hub.",
+    },
+    "actu.t5.date": { fr: "7 mai 2026", en: "May 7, 2026" },
+    "actu.t5.h3": { fr: "Inauguration officielle du Djanta Tech Hub", en: "Official opening of Djanta Tech Hub" },
+    "actu.t5.p": {
+      fr: 'Incubateur national financé par la Banque mondiale, avec Djanta Academy (formation), Djanta Start\n             (incubation), Nana Tech (entrepreneuriat féminin) et Djanta Lab (recherche). Accompagnera environ\n             72 startups togolaises entre juin 2026 et juillet 2027, et lance le fonds « Start » (subventions\n             moyennes de 15 000 € pour une trentaine d\'entrepreneurs).',
+      en: 'National incubator funded by the World Bank, with Djanta Academy (training), Djanta Start (incubation), Nana Tech (women\'s entrepreneurship) and Djanta Lab (research). Will support around 72 Togolese startups between June 2026 and July 2027, and launches the "Start" fund (average grants of €15,000 for around thirty entrepreneurs).',
+    },
+    "actu.t6.date": { fr: "26 avril 2026", en: "April 26, 2026" },
+    "actu.t6.h3": { fr: "Six centres d'innovation tech annoncés en région", en: "Six regional tech innovation centers announced" },
+    "actu.t6.p": {
+      fr: 'Le Togo prépare six « Pods » technologiques (incubation, formation, accompagnement de projets) dans les\n             préfectures de Tône, Kozah, Tchaoudjo, Ogou, Kloto et Zio, financés par la Banque mondiale (IDA) —\n             objectif : sortir les opportunités numériques de la seule concentration à Lomé. Projet encore en phase\n             préparatoire (appel à manifestation d\'intérêt lancé, aucune construction démarrée à cette date).',
+      en: 'Togo is preparing six tech "Pods" (incubation, training, project support) in the Tône, Kozah, Tchaoudjo, Ogou, Kloto and Zio prefectures, funded by the World Bank (IDA) — the goal: spread digital opportunities beyond Lomé alone. Project still in the preparatory phase (call for expressions of interest launched, no construction started as of this date).',
+    },
+    "actu.t7.date": { fr: "16 avril 2026", en: "April 16, 2026" },
+    "actu.t7.h3": { fr: "L'Université de Lomé part à la rencontre des futurs bacheliers", en: "University of Lomé reaches out to future high-school graduates" },
+    "actu.t7.p": {
+      fr: "Campagne nationale de sensibilisation dans une quarantaine de lycées des régions Maritime, Plateaux\n             Ouest et Centrale : système LMD, filières, conditions d'admission, bourses et vie étudiante, avec\n             temps d'échange dédié aux questions des élèves de première et terminale.",
+      en: "National outreach campaign across about forty high schools in the Maritime, Plateaux Ouest and Centrale regions: the LMD system, programs, admission requirements, scholarships and student life, with dedicated Q&amp;A time for 11th and 12th grade students.",
+    },
+    "actu.t8.date": { fr: "24 octobre 2025", en: "October 24, 2025" },
+    "actu.t8.h3": { fr: "Lancement du collectif TogoTech", en: "Launch of the TogoTech collective" },
+    "actu.t8.p": {
+      fr: '13 startups tech togolaises (Gozem, Semoa, Édolé, Solimi, MiaPay, Kondjigbalé, Anaxar,\n             Clinicaa...) s\'unissent en collectif national — plus de 2 milliards FCFA de chiffre d\'affaires cumulé\n             et une centaine d\'emplois directs. Partenariats signés avec Cyber Defense Africa (cybersécurité) et\n             Acquereburu &amp; Partners (cadre juridique). La ministre Cina Lawson y voit « un acte de maturité »\n             pour le secteur.',
+      en: '13 Togolese tech startups (Gozem, Semoa, Édolé, Solimi, MiaPay, Kondjigbalé, Anaxar, Clinicaa...) join forces in a national collective — over 2 billion FCFA in combined revenue and around a hundred direct jobs. Partnerships signed with Cyber Defense Africa (cybersecurity) and Acquereburu &amp; Partners (legal framework). Minister Cina Lawson called it "an act of maturity" for the sector.',
+    },
+    "actu.t9.date": { fr: "6 octobre 2025", en: "October 6, 2025" },
+    "actu.t9.h3": { fr: "ACAN lance Orientys, un outil d'orientation numérique pour bacheliers", en: "ACAN launches Orientys, a digital orientation tool for high-school graduates" },
+    "actu.t9.p": {
+      fr: 'Plateforme en ligne qui suggère 3 métiers du numérique adaptés au profil scolaire d\'un bachelier\n             (série, notes) avec fiches métiers et formations correspondantes au Togo et dans la sous-région.\n             « Le numérique n\'est pas réservé à une élite : il peut devenir une voie pour tous », selon Giovanni\n             Hounkpati, directeur général d\'ACAN.',
+      en: 'Online platform that suggests 3 digital careers matched to a high-school graduate\'s academic profile (track, grades), with role profiles and matching training programs in Togo and the sub-region. "Digital tech isn\'t reserved for an elite: it can become a path for everyone," according to Giovanni Hounkpati, ACAN\'s managing director.',
+    },
+    "actu.t10.date": { fr: "Rentrée 2025-2026", en: "2025-2026 school year" },
+    "actu.t10.h3": { fr: "Une université américaine s'installe au Togo : GUST", en: "An American university sets up in Togo: GUST" },
+    "actu.t10.p": {
+      fr: 'La Global University of Science &amp; Technology (GUST), fédération académique déjà présente aux\n             États-Unis, au Canada et en France, ouvre son premier campus francophone d\'Afrique à Lomé (quartier\n             Agoè Anomé) — accréditée par le Ministère togolais de l\'Enseignement Supérieur et de la Recherche.',
+      en: 'Global University of Science &amp; Technology (GUST), an academic federation already present in the United States, Canada and France, opens its first French-speaking African campus in Lomé (Agoè Anomé district) — accredited by the Togolese Ministry of Higher Education and Research.',
+    },
+    "actu.note": {
+      fr: 'WIYAO n\'a pas de flux d\'actualités automatique — chaque entrée ci-dessus est ajoutée et vérifiée manuellement contre une source publique. Pour l\'actualité en continu, suis directement <a href="https://www.togofirst.com/" target="_blank" rel="noopener">Togo First</a> ou les <a href="ecosysteme.html#communautes">communautés tech togolaises</a>.',
+      en: 'WIYAO has no automated news feed — every entry above is added and manually verified against a public source. For continuous updates, follow <a href="https://www.togofirst.com/" target="_blank" rel="noopener">Togo First</a> directly or the <a href="ecosysteme.html#communautes">Togolese tech communities</a>.',
+    },
   };
 
   function getLang() {
