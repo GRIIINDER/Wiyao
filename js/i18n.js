@@ -468,6 +468,90 @@
       fr: "L'accès et l'utilisation de WIYAO ne transfèrent en aucun cas à l'Utilisateur les droits de propriété intellectuelle sur des éléments qui ne lui appartiennent pas déjà.",
       en: "Access to and use of WIYAO does not, under any circumstances, transfer to the User any intellectual property rights over elements that do not already belong to them.",
     },
+
+    "faq.cat1.h2": { fr: "Sur WIYAO", en: "About WIYAO" },
+    "faq.c1.q1": { fr: "C'est gratuit ?", en: "Is it free?" },
+    "faq.c1.a1": { fr: "Oui, entièrement. Pas de compte à créer, pas d'abonnement, pas de publicité.", en: "Yes, entirely. No account to create, no subscription, no ads." },
+    "faq.c1.q2": { fr: "Il faut créer un compte pour utiliser le site ?", en: "Do I need to create an account to use the site?" },
+    "faq.c1.a2": { fr: "Non. Tout le site — roadmaps, test d'orientation, comparateur d'écoles, calendrier — s'utilise sans compte ni inscription.", en: "No. The whole site — roadmaps, orientation test, school comparison, calendar — works without an account or registration." },
+    "faq.c1.q3": { fr: "Comment ma progression sur les roadmaps est-elle sauvegardée ?", en: "How is my progress on roadmaps saved?" },
+    "faq.c1.a3": { fr: "Uniquement dans le stockage local (localStorage) de ton navigateur, jamais envoyée à un serveur. Si tu changes d'appareil ou de navigateur, ou si tu vides les données de ton navigateur, ta progression est perdue.", en: "Only in your browser's local storage (localStorage), never sent to a server. If you switch device or browser, or clear your browser data, your progress is lost." },
+    "faq.c1.q4": { fr: "Est-ce que WIYAO collecte mes données personnelles ?", en: "Does WIYAO collect my personal data?" },
+    "faq.c1.a4": {
+      fr: 'Non. Aucune collecte de données, aucun outil de suivi (analytics), aucune publicité. Détails dans la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
+      en: 'No. No data collection, no tracking tools (analytics), no advertising. Details in the <a href="politique-confidentialite.html">privacy policy</a>.',
+    },
+    "faq.c1.q5": { fr: "Qui a créé WIYAO ?", en: "Who created WIYAO?" },
+    "faq.c1.a5": {
+      fr: 'Un projet communautaire indépendant, sans statut commercial, maintenu à titre personnel, inspiré de roadmap.sh et adapté au contexte togolais. Détails dans <a href="about.html">À propos &amp; méthodologie</a> et les <a href="mentions-legales.html">mentions légales</a>.',
+      en: 'An independent community project, with no commercial status, maintained on a personal basis, inspired by roadmap.sh and adapted to the Togolese context. Details in <a href="about.html">About &amp; methodology</a> and the <a href="mentions-legales.html">legal notice</a>.',
+    },
+    "faq.c1.q6": { fr: "Les informations du site sont-elles vérifiées ?", en: "Is the site's information verified?" },
+    "faq.c1.a6": {
+      fr: "Oui — sourcées activement (sites officiels, presse togolaise, documents signés). Quand une information ne peut pas être confirmée (par exemple des frais de scolarité), le site l'indique clairement plutôt que d'inventer un chiffre. Le marché évolue vite : vérifie toujours en direct auprès de l'établissement ou l'organisme concerné avant de t'engager.",
+      en: "Yes — actively sourced (official sites, Togolese press, signed documents). When something can't be confirmed (for example, tuition fees), the site says so clearly rather than making up a number. The market moves fast: always check directly with the relevant institution or organization before committing.",
+    },
+    "faq.c1.q7": { fr: "Comment signaler une erreur ou proposer un ajout ?", en: "How do I report an error or suggest an addition?" },
+    "faq.c1.a7": {
+      fr: 'Via le <a href="https://github.com/GRIIINDER/Wiyao/issues" target="_blank" rel="noopener">dépôt GitHub</a> ou par email à <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
+      en: 'Via the <a href="https://github.com/GRIIINDER/Wiyao/issues" target="_blank" rel="noopener">GitHub repository</a> or by email at <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
+    },
+    "faq.c1.q8": { fr: "WIYAO fonctionne hors connexion ?", en: "Does WIYAO work offline?" },
+    "faq.c1.a8": {
+      fr: "Oui. WIYAO est une application web installable (PWA) : une fois une page visitée, elle reste accessible même sans connexion Internet.",
+      en: "Yes. WIYAO is an installable web app (PWA): once a page has been visited, it stays accessible even without an internet connection.",
+    },
+
+    "faq.cat2.h2": { fr: "Sur l'orientation et les roadmaps", en: "About orientation and roadmaps" },
+    "faq.c2.q1": { fr: "Je ne sais pas du tout quoi choisir, par où je commence ?", en: "I have no idea what to choose, where do I start?" },
+    "faq.c2.a1": {
+      fr: 'Par le <a href="test-orientation.html">test d\'orientation</a> — 12 questions pour identifier le domaine tech qui te correspond, puis les métiers et écoles adaptés.',
+      en: 'With the <a href="test-orientation.html">orientation test</a> — 12 questions to identify the tech field that suits you, then matching roles and schools.',
+    },
+    "faq.c2.q2": { fr: "Quelle est la différence entre roadmap « par métier » et « par compétence » ?", en: 'What\'s the difference between a "role" roadmap and a "skill" roadmap?' },
+    "faq.c2.a2": {
+      fr: "Une roadmap par métier (ex : Développeur Web) est le chemin complet à suivre pour viser un rôle donné. Une roadmap par compétence (ex : Git &amp; GitHub) couvre un sujet précis, indépendant du métier — utile en complément d'une roadmap métier.",
+      en: "A role-based roadmap (e.g. Web Developer) is the complete path to follow to aim for a given role. A skill-based roadmap (e.g. Git &amp; GitHub) covers a specific topic, independent of any role — useful alongside a role roadmap.",
+    },
+    "faq.c2.q3": { fr: "Je dois suivre toute la roadmap dans l'ordre ?", en: "Do I have to follow the whole roadmap in order?" },
+    "faq.c2.a3": {
+      fr: "Les étapes marquées comme essentielles sont recommandées dans l'ordre. Les étapes optionnelles peuvent être sautées ou reportées selon ton niveau et ton objectif.",
+      en: "Steps marked as essential are recommended in order. Optional steps can be skipped or postponed depending on your level and goal.",
+    },
+
+    "faq.cat3.h2": { fr: "Sur les écoles et les frais", en: "About schools and fees" },
+    "faq.c3.q1": { fr: "Toutes les écoles listées sont-elles reconnues par l'État ?", en: "Are all the listed schools recognized by the State?" },
+    "faq.c3.a1": {
+      fr: "Le badge « 🏛️ Agréé État » indique une présence sur la liste officielle du Ministère togolais de l'Enseignement Supérieur (liste des établissements reconnus pour l'année académique 2025-2026, publiée le 30 septembre 2025). Les établissements publics et l'IAI-Togo (institut inter-États) n'ont pas ce badge pour des raisons de statut, pas de qualité.",
+      en: 'The "🏛️ State-accredited" badge indicates presence on the official list from the Togolese Ministry of Higher Education (list of recognized institutions for the 2025-2026 academic year, published September 30, 2025). Public institutions and IAI-Togo (an inter-state institute) don\'t carry this badge for reasons of status, not quality.',
+    },
+    "faq.c3.q2": { fr: "Comment sont trouvés les frais de scolarité affichés ?", en: "How are the displayed tuition fees found?" },
+    "faq.c3.a2": {
+      fr: "Par une recherche active sur les sites officiels des écoles, des documents PDF signés et la presse togolaise. Chaque montant publié est sourcé.",
+      en: "Through active research on schools' official websites, signed PDF documents and the Togolese press. Every published amount is sourced.",
+    },
+    "faq.c3.q3": { fr: "Pourquoi certaines écoles n'ont pas leurs frais affichés ?", en: "Why don't some schools have their fees displayed?" },
+    "faq.c3.a3": {
+      fr: "Parce que l'information n'a pas été trouvée quelque part de fiable et public. Plutôt que d'inventer un montant, WIYAO l'indique « non communiqué publiquement » — il faut alors contacter l'école directement.",
+      en: 'Because the information wasn\'t found anywhere reliable and public. Rather than making up a figure, WIYAO marks it "not publicly disclosed" — you\'ll need to contact the school directly.',
+    },
+    "faq.c3.q4": { fr: "WIYAO couvre quelles villes du Togo ?", en: "Which Togolese cities does WIYAO cover?" },
+    "faq.c3.a4": {
+      fr: "Majoritairement Lomé et Kara, avec des écoles également référencées à Sokodé, Bassar et Atakpamé.",
+      en: "Mainly Lomé and Kara, with schools also listed in Sokodé, Bassar and Atakpamé.",
+    },
+
+    "faq.cat4.h2": { fr: "Après le choix", en: "After you've chosen" },
+    "faq.c4.q1": { fr: "Comment trouver un stage ou un emploi ?", en: "How do I find an internship or a job?" },
+    "faq.c4.a1": {
+      fr: 'Direction la page <a href="stages-emploi.html">Stages &amp; emploi</a> : plateformes togolaises et employeurs numériques qui recrutent régulièrement.',
+      en: 'Head to the <a href="stages-emploi.html">Internships &amp; jobs</a> page: Togolese platforms and digital employers that hire regularly.',
+    },
+    "faq.c4.q2": { fr: "Comment rencontrer d'autres personnes dans la tech togolaise ?", en: "How do I meet other people in Togolese tech?" },
+    "faq.c4.a2": {
+      fr: 'La page <a href="ecosysteme.html">Écosystème togolais</a> liste communautés, événements, hubs et incubateurs à connaître.',
+      en: 'The <a href="ecosysteme.html">Togolese ecosystem</a> page lists communities, events, hubs and incubators worth knowing.',
+    },
   };
 
   function getLang() {
