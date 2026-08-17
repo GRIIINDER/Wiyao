@@ -1378,6 +1378,13 @@ main {
   font-weight: 600;
 }
 
+.eco-item .eco-contact {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
 footer.site-footer {
   margin-top: 80px;
 }
