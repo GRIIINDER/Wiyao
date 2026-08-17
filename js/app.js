@@ -734,6 +734,21 @@
     });
   }
 
+  // ---- Page Contact ----
+  function initContactForm() {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = form.elements["name"].value.trim();
+      const email = form.elements["email"].value.trim();
+      const subject = form.elements["subject"].value.trim();
+      const message = form.elements["message"].value.trim();
+      const body = `${message}\n\n— ${name} (${email})`;
+      window.location.href = `mailto:wiya.info@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
+
   function schoolDatesRank(school) {
     const dc = school.datesCles;
     if (dc && dc.urgent) return 0;
@@ -934,5 +949,6 @@
     initQuiz();
     renderAcademicTimeline();
     renderSchoolDates();
+    initContactForm();
   });
 })();
