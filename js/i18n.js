@@ -947,6 +947,41 @@
     "eco.i5.h4": { fr: "Portail de l'Écosystème Numérique Togolais", en: "Togolese Digital Ecosystem Portal" },
     "eco.i5.p": { fr: "Annuaire officiel du gouvernement recensant les acteurs du numérique togolais : 170 startups, 33 structures d'accompagnement (SAEI), 55 PME et 9 ONG/associations référencées, filtrables par ville et secteur d'activité.", en: "Official government directory listing Togolese digital tech players: 170 startups, 33 support structures (SAEI), 55 SMEs and 9 NGOs/associations listed, filterable by city and industry." },
     "eco.i6.p": { fr: "Chapitre togolais du réseau panafricain Open Source Community Africa (35 chapitres à travers le continent) : rencontres mensuelles, contribution à des projets open source, festival annuel Open Source Festival.", en: "Togolese chapter of the pan-African Open Source Community Africa network (35 chapters across the continent): monthly meetups, contributing to open source projects, annual Open Source Festival." },
+
+    "eco.cyber.h2": { fr: "Cybersécurité et gouvernance", en: "Cybersecurity and governance" },
+    "eco.cy1.h4": { fr: "ANCy — Agence Nationale de la Cybersécurité", en: "ANCy — National Cybersecurity Agency" },
+    "eco.cy1.p": { fr: "Autorité nationale de sécurité des systèmes d'information, créée par la loi n°2018-026. Sensibilisation, stratégie et compétitions Capture The Flag.", en: "National information systems security authority, created by law n°2018-026. Awareness, strategy and Capture The Flag competitions." },
+    "eco.cy2.p": {
+      fr: "Équipe togolaise de compétition Capture The Flag (CTF) en cybersécurité, aux résultats internationaux vérifiables : 1ʳᵉ place au Hackerlab CTF 2025, 2ᵉ place aux qualifications Cyberlympics CTF 2023 (54 pays africains éligibles), 3ᵉ place au Sub-Saharan CTF 2023 (150+ équipes), 4ᵉ place à l'ECOWAS CTF 2024 et au picoCTF Afrique 2025, 73ᵉ place sur 2968 équipes au NahamCon CTF 2025.",
+      en: "Togolese Capture The Flag (CTF) cybersecurity competition team, with verifiable international results: 1st place at Hackerlab CTF 2025, 2nd place at Cyberlympics CTF 2023 qualifiers (54 eligible African countries), 3rd place at Sub-Saharan CTF 2023 (150+ teams), 4th place at ECOWAS CTF 2024 and picoCTF Africa 2025, 73rd out of 2,968 teams at NahamCon CTF 2025.",
+    },
+    "eco.cy3.p": { fr: "Centre national de réponse aux incidents de cybersécurité, opéré par Cyber Defense Africa pour le compte de l'ANCy.", en: "National cybersecurity incident response center, operated by Cyber Defense Africa on behalf of the ANCy." },
+    "eco.cy4.h4": { fr: "IPDCP — Instance de Protection des Données à Caractère Personnel", en: "IPDCP — Personal Data Protection Authority" },
+    "eco.cy4.p": { fr: "Autorité administrative indépendante chargée de contrôler le respect de la loi sur les données personnelles, créée par la loi n°2019-014 et opérationnalisée en 2024-2025.", en: "Independent administrative authority responsible for overseeing compliance with the personal data law, created by law n°2019-014 and made operational in 2024-2025." },
+    "eco.cy5.p": { fr: "Régulateur des communications électroniques et des postes. Depuis la loi n°2022-009, partage avec l'ANCy la compétence d'accréditation des prestataires de services de confiance.", en: "Regulator of electronic communications and postal services. Since law n°2022-009, shares with the ANCy the authority to accredit trusted service providers." },
+    "eco.cy6.h4": { fr: "Loi n°2019-014 relative à la protection des données à caractère personnel", en: "Law n°2019-014 on the protection of personal data" },
+    "eco.cy6.p": { fr: "Cadre juridique togolais régissant la collecte, le traitement et la protection des données personnelles ; base légale de l'IPDCP.", en: "Togolese legal framework governing the collection, processing and protection of personal data; the IPDCP's legal basis." },
+    "eco.cy7.p": {
+      fr: 'Société publique-privée mandatée par l\'ANCy pour sécuriser les systèmes d\'information de l\'État et opérer le CERT.tg. Organise les « Cafés de la Cybersécurité », rencontres trimestrielles de professionnels.',
+      en: 'Public-private company mandated by the ANCy to secure the State\'s information systems and operate CERT.tg. Organizes the "Cybersecurity Cafés," quarterly gatherings of professionals.',
+    },
+    "eco.cy8.h4": { fr: "Sommet de la Cybersécurité de Lomé (2022)", en: "Lomé Cybersecurity Summit (2022)" },
+    "eco.cy8.p": {
+      fr: 'Premier sommet africain de chefs d\'État sur la cybersécurité, coorganisé avec la Commission économique des Nations Unies pour l\'Afrique, ayant abouti à la « Déclaration de Lomé ».',
+      en: 'First African summit of heads of state on cybersecurity, co-organized with the United Nations Economic Commission for Africa, which resulted in the "Lomé Declaration."',
+    },
+    "eco.cy9.h4": { fr: "Forum International sur la Protection des Données à Caractère Personnel (FIPDCP)", en: "International Forum on Personal Data Protection (FIPDCP)" },
+    "eco.cy9.p": { fr: "Forum togolais dédié à la protection des données personnelles ; 2ᵉ édition prévue en juillet 2026 à Lomé.", en: "Togolese forum dedicated to personal data protection; 2nd edition planned for July 2026 in Lomé." },
+
+    "eco.res.h2": { fr: "Ressources francophones en ligne", en: "French-language online resources" },
+    "eco.r1.p": { fr: "Cours structurés en français, du développement web à la data.", en: "Structured courses in French, from web development to data." },
+    "eco.r2.h4": { fr: "MDN Web Docs (français)", en: "MDN Web Docs (French)" },
+    "eco.r2.p": { fr: "Référence technique pour HTML, CSS et JavaScript.", en: "Technical reference for HTML, CSS and JavaScript." },
+    "eco.r3.p": { fr: "Parcours gratuits et certifiants en programmation, avec communauté active.", en: "Free, certifying programming tracks, with an active community." },
+    "eco.r4.p": { fr: "Plateforme française de tutoriels vidéo pour apprendre le développement web : HTML/CSS/JS, PHP, Laravel, React.", en: "French video tutorial platform for learning web development: HTML/CSS/JS, PHP, Laravel, React." },
+    "eco.r5.p": { fr: "Communauté francophone de développeurs : forums, tutoriels et actualités couvrant la plupart des langages de programmation.", en: "French-speaking developer community: forums, tutorials and news covering most programming languages." },
+    "eco.r6.p": { fr: "Plateforme associative et gratuite de partage de connaissances, avec une section importante dédiée à la programmation et à l'algorithmique.", en: "Free, community-run knowledge-sharing platform, with a large section dedicated to programming and algorithms." },
+    "eco.r7.p": { fr: "Référence francophone depuis les années 2000 pour les tutoriels HTML, CSS, JavaScript et les standards du web.", en: "French-language reference since the 2000s for HTML, CSS, JavaScript tutorials and web standards." },
   };
 
   function getLang() {
