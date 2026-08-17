@@ -1772,15 +1772,6 @@ footer.site-footer {
   color: var(--tk-primary);
 }
 
-.contact-info-note {
-  max-width: 600px;
-  margin: 24px auto 0;
-  text-align: center;
-  font-size: 0.82rem;
-  color: var(--tk-text-subtle);
-  line-height: 1.5;
-}
-
 @media (max-width: 768px) {
   .contact-layout {
     grid-template-columns: 1fr;
