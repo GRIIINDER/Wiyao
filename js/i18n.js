@@ -700,6 +700,98 @@
       fr: 'WIYAO n\'a pas de flux d\'actualités automatique — chaque entrée ci-dessus est ajoutée et vérifiée manuellement contre une source publique. Pour l\'actualité en continu, suis directement <a href="https://www.togofirst.com/" target="_blank" rel="noopener">Togo First</a> ou les <a href="ecosysteme.html#communautes">communautés tech togolaises</a>.',
       en: 'WIYAO has no automated news feed — every entry above is added and manually verified against a public source. For continuous updates, follow <a href="https://www.togofirst.com/" target="_blank" rel="noopener">Togo First</a> directly or the <a href="ecosysteme.html#communautes">Togolese tech communities</a>.',
     },
+
+    "stages.s1.h2": { fr: "Plateformes d'emploi et de stage", en: "Job and internship platforms" },
+    "stages.s1.i1.p": {
+      fr: 'Agence publique togolaise de l\'emploi. Sa page « métiers porteurs » classe les métiers informatiques parmi les secteurs prioritaires (ingénieur systèmes/réseau, télécom, développeur, administrateur système, gestionnaire de projet IT...) et référence les écoles qui y forment.',
+      en: 'Togolese public employment agency. Its "high-demand careers" page ranks IT roles among priority sectors (systems/network engineer, telecom, developer, systems administrator, IT project manager...) and lists the schools that train for them.',
+    },
+    "stages.s1.i2.p": {
+      fr: "Portail généraliste avec des pages dédiées Informatique et Développeur (offres Flutter, Java Spring, Angular, React Native déjà vues). Le site bloque la vérification automatisée directe, mais son activité est confirmée par de nombreuses sources croisées.",
+      en: "General job portal with dedicated IT and Developer pages (Flutter, Java Spring, Angular, React Native listings already seen). The site blocks direct automated verification, but its activity is confirmed by numerous cross-referenced sources.",
+    },
+    "stages.s1.i3.p": {
+      fr: "Cabinet de recrutement basé à Lomé, très actif (emplois, stages, concours, bourses). Pas de catégorie informatique dédiée, mais des offres tech y apparaissent régulièrement.",
+      en: "Recruitment firm based in Lomé, very active (jobs, internships, exams, scholarships). No dedicated IT category, but tech listings appear there regularly.",
+    },
+    "stages.s1.i4.p": {
+      fr: "Portail régional ouest-africain avec une catégorie Informatique dédiée pour le Togo — la structure existe, le volume d'offres varie selon les périodes.",
+      en: "West African regional portal with a dedicated IT category for Togo — the structure exists, though listing volume varies over time.",
+    },
+    "stages.s1.i5.p": {
+      fr: "Utile surtout pour les formations tech (Python, DevOps &amp; Cloud, IA, Power BI) plutôt que pour les offres d'emploi à proprement parler.",
+      en: "Mostly useful for tech training listings (Python, DevOps &amp; Cloud, AI, Power BI) rather than job postings as such.",
+    },
+
+    "stages.s2.h2": { fr: "Employeurs qui recrutent des profils tech", en: "Employers hiring tech profiles" },
+    "stages.s2.i1.p": {
+      fr: "Agence publique pilotant la digitalisation de l'État togolais. Recrute régulièrement développeurs, architectes, UX/UI, QA, Scrum Master, data.",
+      en: "Public agency leading the digitalization of the Togolese State. Regularly hires developers, architects, UX/UI, QA, Scrum Masters, data profiles.",
+    },
+    "stages.s2.i2.p": {
+      fr: "Coentreprise entre l'État togolais et Asseco Data Systems, opère le CERT national et un SOC. Recrute analystes SOC, consultants et formateurs en cybersécurité.",
+      en: "Joint venture between the Togolese State and Asseco Data Systems, operates the national CERT and a SOC. Hires SOC analysts, consultants and cybersecurity trainers.",
+    },
+    "stages.s2.i3.p": {
+      fr: "Deuxième opérateur télécom du pays. Page carrière active ; historique récent de recrutements réseaux, télécoms et systèmes.",
+      en: "The country's second telecom operator. Active careers page; recent history of hiring for networks, telecom and systems roles.",
+    },
+    "stages.s2.i4.p": {
+      fr: "Opérateur télécom historique du Togo (fixe, mobile, Mobile Money), né de la fusion de Togo Telecom et Togocel en 2017. Recrute régulièrement des profils informatiques (développement, systèmes d'information, réseaux OSS/BSS). Pas de portail carrières dédié identifié — les candidatures se font par e-mail directement auprès du service recrutement.",
+      en: "Togo's historic telecom operator (fixed line, mobile, Mobile Money), born from the 2017 merger of Togo Telecom and Togocel. Regularly hires IT profiles (development, information systems, OSS/BSS networks). No dedicated careers portal identified — applications go by email directly to the recruitment department.",
+    },
+    "stages.s2.i5.p": {
+      fr: "Application de mobilité et de super-app (courses, livraison, paiement mobile) fondée et lancée à Lomé en 2018 — l'un des succès tech les plus visibles nés au Togo, aujourd'hui présente dans plusieurs pays d'Afrique francophone. Recrute régulièrement des profils tech (développement, data, produit) via son portail carrières.",
+      en: "Mobility and super-app (rides, delivery, mobile payments) founded and launched in Lomé in 2018 — one of the most visible tech success stories to come out of Togo, now present in several French-speaking African countries. Regularly hires tech profiles (development, data, product) via its careers portal.",
+    },
+    "stages.s2.i6.p": {
+      fr: "Institution financière régionale dont le siège se trouve à Lomé. Recrute régulièrement sur des postes IT (réseaux, systèmes, développement, cybersécurité, gestion de projets) ainsi que des stages.",
+      en: "Regional financial institution headquartered in Lomé. Regularly hires for IT roles (networks, systems, development, cybersecurity, project management) as well as internships.",
+    },
+    "stages.s2.i7.p": {
+      fr: "Groupe bancaire panafricain dont le siège social se trouve à Lomé. Recrute régulièrement sur des postes IT et réseaux, aux côtés des autres métiers de la banque, dans ses 33 pays d'opération.",
+      en: "Pan-African banking group headquartered in Lomé. Regularly hires for IT and network roles, alongside other banking positions, across its 33 countries of operation.",
+    },
+    "stages.s2.note": {
+      fr: "D'autres grandes entreprises togolaises recrutent aussi des profils tech, sans page carrière dédiée et fiable identifiée au moment de la rédaction — les offres y passent surtout par les plateformes ci-dessus ou par candidature spontanée directe.",
+      en: "Other large Togolese companies also hire tech profiles, without a dedicated and reliable careers page identified at the time of writing — their openings mostly flow through the platforms above or direct unsolicited applications.",
+    },
+
+    "stages.s3.h2": { fr: "Ressources locales à ne pas négliger", en: "Local resources not to overlook" },
+    "stages.s3.i1.h4": { fr: "Hubs et incubateurs", en: "Hubs and incubators" },
+    "stages.s3.i1.p": {
+      fr: "Djanta Start, Nunya-Lab, CUBE et les autres incubateurs togolais accompagnent aussi bien la création de projet que l'accès à un premier stage pratique.",
+      en: "Djanta Start, Nunya-Lab, CUBE and other Togolese incubators support both starting a project and landing a first hands-on internship.",
+    },
+    "stages.s3.i1.link": { fr: "Voir les hubs et incubateurs", en: "See the hubs and incubators" },
+    "stages.s3.i2.h4": { fr: "Communautés tech", en: "Tech communities" },
+    "stages.s3.i2.p": {
+      fr: "GDG Lomé, PyCon Togo, CoTIA... la majorité des opportunités locales circulent d'abord dans ces réseaux, avant même d'être publiées quelque part.",
+      en: "GDG Lomé, PyCon Togo, CoTIA... most local opportunities circulate first within these networks, before ever being posted anywhere.",
+    },
+    "stages.s3.i2.link": { fr: "Voir les communautés", en: "See the communities" },
+
+    "stages.guide.h2": { fr: "Comment décrocher un stage ou un emploi tech", en: "How to land a tech internship or job" },
+    "stages.guide.p1": {
+      fr: "<strong>1. Construis un portfolio concret.</strong> Un profil GitHub avec quelques projets terminés (même petits) pèse souvent plus qu'un diplôme seul aux yeux d'un recruteur tech. Termine les roadmaps qui t'intéressent et mets le résultat en ligne.",
+      en: "<strong>1. Build a concrete portfolio.</strong> A GitHub profile with a few finished projects (even small ones) often carries more weight than a degree alone in the eyes of a tech recruiter. Finish the roadmaps that interest you and put the result online.",
+    },
+    "stages.guide.p2": {
+      fr: "<strong>2. Passe par le réseau avant les offres publiques.</strong> Beaucoup de stages togolais se trouvent via le bouche-à-oreille dans les communautés (GDG Lomé, PyCon Togo, CoTIA...) avant d'être publiés ailleurs. Assiste aux meetups, pose des questions, propose ton aide sur des projets.",
+      en: "<strong>2. Go through your network before public listings.</strong> Many Togolese internships are found through word of mouth in communities (GDG Lomé, PyCon Togo, CoTIA...) before being posted anywhere else. Attend meetups, ask questions, offer to help on projects.",
+    },
+    "stages.guide.p3": {
+      fr: "<strong>3. Postule directement, même sans offre publiée.</strong> Beaucoup de PME et d'agences togolaises n'ont pas de page carrière : un e-mail ciblé avec un lien vers ton portfolio a plus d'impact qu'une candidature générique sur un grand site.",
+      en: "<strong>3. Apply directly, even without a posted opening.</strong> Many Togolese SMEs and agencies have no careers page: a targeted email with a link to your portfolio has more impact than a generic application on a big site.",
+    },
+    "stages.guide.p4": {
+      fr: "<strong>4. Envisage aussi le travail à distance.</strong> Des plateformes comme Upwork, Contra ou Turing permettent à un développeur togolais de travailler pour des clients internationaux sans quitter Lomé. C'est exigeant (anglais, portfolio solide) mais ça élargit beaucoup le marché.",
+      en: "<strong>4. Consider remote work too.</strong> Platforms like Upwork, Contra or Turing let a Togolese developer work for international clients without leaving Lomé. It's demanding (English, a solid portfolio) but it greatly widens the market.",
+    },
+    "stages.guide.p5": {
+      fr: "<strong>5. Prépare un CV court et concret.</strong> Un recruteur tech togolais regarde d'abord ce que tu as construit, pas une liste de compétences vagues. Mets en avant 2-3 projets précis plutôt qu'une longue liste de technologies.",
+      en: "<strong>5. Prepare a short, concrete résumé.</strong> A Togolese tech recruiter looks first at what you've built, not a vague list of skills. Highlight 2-3 specific projects rather than a long list of technologies.",
+    },
   };
 
   function getLang() {
