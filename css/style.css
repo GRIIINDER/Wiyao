@@ -1432,11 +1432,6 @@ footer.site-footer {
   margin: 0 0 4px;
 }
 
-.footer-links-col h5::before {
-  content: "• ";
-  color: var(--tk-primary);
-}
-
 .footer-links-col a {
   display: inline-flex;
   align-items: center;
