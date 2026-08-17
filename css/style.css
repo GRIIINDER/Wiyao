@@ -292,6 +292,47 @@ nav.site-nav a.active {
   color: var(--tk-primary);
 }
 
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--tk-text-subtle);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 9px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.lang-btn:hover {
+  color: var(--tk-text);
+}
+
+.lang-btn.active {
+  color: var(--tk-canvas);
+  background: var(--tk-primary);
+}
+
+.i18n-notice {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  padding: 12px 18px;
+  background: var(--tk-surface-soft);
+  border: 1px solid var(--tk-border);
+  border-radius: var(--radius);
+  color: var(--tk-text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
 .nav-toggle {
   display: none;
   align-items: center;
@@ -1576,7 +1617,17 @@ footer.site-footer {
   .site-header-top {
     flex-wrap: wrap;
   }
+  .brand {
+    order: 1;
+  }
+  .nav-toggle {
+    order: 2;
+  }
+  .lang-switch {
+    order: 3;
+  }
   nav.site-nav {
+    order: 4;
     display: none;
     width: 100%;
     flex-direction: column;
