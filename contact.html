@@ -52,35 +52,33 @@
 
   <section class="roadmap-category">
     <div class="contact-layout">
-      <div class="contact-card">
-        <h2>Envoyer un message</h2>
-        <form id="contact-form" class="contact-form">
-          <div class="contact-form-field">
-            <label for="contact-name">Nom et prénom</label>
-            <input type="text" id="contact-name" name="name" required>
-          </div>
-          <div class="contact-form-field">
-            <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" name="email" required>
-          </div>
-          <div class="contact-form-field">
-            <label for="contact-subject">Sujet</label>
-            <input type="text" id="contact-subject" name="subject" required>
-          </div>
-          <div class="contact-form-field">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary">Envoyer</button>
-        </form>
-        <p class="contact-form-note">WIYAO est un site statique, sans serveur pour recevoir des messages : « Envoyer » ouvre ton client email habituel avec le message pré-rempli, à toi de l'envoyer depuis là.</p>
+      <div class="contact-intro">
+        <h2>Nous laisser<br>un message</h2>
+        <p class="contact-required-note">Tous les champs avec un <span class="required-mark">*</span> sont obligatoires.</p>
       </div>
 
-      <div class="contact-info-card">
-        <h2>Coordonnées</h2>
-        <p><a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a></p>
-        <p><a href="https://github.com/GRIIINDER/Wiyao/issues" target="_blank" rel="noopener">Signaler une erreur ou une idée sur GitHub</a></p>
-      </div>
+      <form id="contact-form" class="contact-form">
+        <div class="contact-form-row">
+          <div class="contact-form-field">
+            <label for="contact-name">Nom et prénom(s) <span class="required-mark">*</span></label>
+            <input type="text" id="contact-name" name="name" placeholder="Nom et prénom(s)" required>
+          </div>
+          <div class="contact-form-field">
+            <label for="contact-email">E-mail <span class="required-mark">*</span></label>
+            <input type="email" id="contact-email" name="email" placeholder="E-mail" required>
+          </div>
+        </div>
+        <div class="contact-form-field">
+          <label for="contact-subject">Votre sujet <span class="required-mark">*</span></label>
+          <input type="text" id="contact-subject" name="subject" placeholder="Votre sujet" required>
+        </div>
+        <div class="contact-form-field">
+          <label for="contact-message">Votre message <span class="required-mark">*</span></label>
+          <textarea id="contact-message" name="message" rows="6" placeholder="Votre message" required></textarea>
+        </div>
+        <button type="submit" class="btn-send">Envoyer <span aria-hidden="true">↗</span></button>
+        <p class="contact-form-note">WIYAO est un site statique, sans serveur pour recevoir des messages : « Envoyer » ouvre ton client email habituel avec le message pré-rempli. Tu peux aussi écrire directement à <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a> ou <a href="https://github.com/GRIIINDER/Wiyao/issues" target="_blank" rel="noopener">signaler sur GitHub</a>.</p>
+      </form>
     </div>
   </section>
 </main>
