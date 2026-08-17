@@ -1033,27 +1033,26 @@ main {
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   max-width: 760px;
   margin: 0 auto;
+  border-top: 1px solid var(--border);
 }
 
 .faq-item {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+  padding: 0;
 }
 
 .faq-item summary {
-  padding: 16px 0;
+  padding: 22px 0;
   font-weight: 700;
-  font-size: 0.98rem;
+  font-size: 1.08rem;
   cursor: pointer;
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   gap: 12px;
   color: var(--text);
 }
@@ -1065,20 +1064,20 @@ main {
 .faq-item summary::after {
   content: "+";
   flex: 0 0 auto;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1;
   color: var(--accent);
 }
 
 .faq-item[open] summary::after {
-  content: "\2212";
+  content: "\00d7";
 }
 
 .faq-item p {
-  margin: 0 0 18px;
+  margin: 0 0 24px;
   color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.92rem;
+  line-height: 1.7;
 }
 
 .faq-item p a {
