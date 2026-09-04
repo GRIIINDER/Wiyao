@@ -1685,6 +1685,12 @@ footer.site-footer {
 }
 
 @media (max-width: 600px) {
+  header.site-header {
+    padding: 14px 16px;
+  }
+  .hero {
+    padding: 16px 0 24px;
+  }
   .hero h1 {
     font-size: 1.6rem;
   }
