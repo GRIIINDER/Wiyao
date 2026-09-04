@@ -22,7 +22,8 @@ const ROLES = {
           { label: "Fonctionnement d'Internet, HTTP/HTTPS, DNS", level: "core", resource: { label: "MDN - Comment fonctionne le web", url: "https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web/How_the_Web_works" } },
           { label: "Ligne de commande (bash) et système de fichiers", level: "core", resource: { label: "Voir roadmap compétence Linux", url: "roadmap.html?id=linux" } },
           { label: "Git et GitHub (branches, pull requests, résolution de conflits)", level: "core", resource: { label: "Voir roadmap compétence Git & GitHub", url: "roadmap.html?id=git-github" } },
-          { label: "Éditeur de code : VS Code, extensions utiles", level: "core", resource: { label: "Documentation VS Code", url: "https://code.visualstudio.com/docs" } }
+          { label: "Éditeur de code : VS Code, extensions utiles", level: "core", resource: { label: "Documentation VS Code", url: "https://code.visualstudio.com/docs" } },
+          { label: "Outils de développement du navigateur (DevTools) : inspecter, déboguer, mesurer les performances", level: "core", resource: { label: "MDN - Qu'est-ce que sont les outils de développement ?", url: "https://developer.mozilla.org/fr/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools" } }
         ]
       },
       {
@@ -78,7 +79,14 @@ const ROLES = {
         ]
       },
       {
-        title: "8. Écosystème togolais",
+        title: "8. CMS et sites e-commerce",
+        items: [
+          { label: "Systèmes de gestion de contenu (CMS) : WordPress, thèmes et plugins", level: "option", resource: { label: "Documentation WordPress", url: "https://wordpress.org/documentation/" } },
+          { label: "Boutique en ligne : WooCommerce ou Shopify, catalogue et paiement", level: "option", resource: { label: "Documentation WooCommerce", url: "https://woocommerce.com/documentation/" } }
+        ]
+      },
+      {
+        title: "9. Écosystème togolais",
         items: [
           { label: "IAI-Togo : licence pro informatique, formation continue", level: "core", note: "Institut Africain d'Informatique, Lomé.", resource: { label: "iai-togo.tg", url: "https://new.iai-togo.tg/" } },
           { label: "ESGIS : licence Informatique Réseaux et Télécommunication", level: "core" },
@@ -209,7 +217,8 @@ const ROLES = {
         items: [
           { label: "GitHub Actions ou GitLab CI", level: "core", resource: { label: "Documentation GitHub Actions", url: "https://docs.github.com/fr/actions" } },
           { label: "Jenkins", level: "option", resource: { label: "Documentation Jenkins", url: "https://www.jenkins.io/doc/" } },
-          { label: "Stratégies de déploiement (blue-green, canary)", level: "option" }
+          { label: "Stratégies de déploiement (blue-green, canary)", level: "option" },
+          { label: "DevSecOps : scan de vulnérabilités et de dépendances intégré au pipeline CI/CD", level: "option" }
         ]
       },
       {
@@ -367,14 +376,16 @@ const ROLES = {
         title: "5. Deep Learning",
         items: [
           { label: "Réseaux de neurones, bases", level: "option" },
-          { label: "TensorFlow ou PyTorch", level: "option", resource: { label: "PyTorch - Tutoriels", url: "https://pytorch.org/tutorials/" } }
+          { label: "TensorFlow ou PyTorch", level: "option", resource: { label: "PyTorch - Tutoriels", url: "https://pytorch.org/tutorials/" } },
+          { label: "Traitement du langage naturel (NLP) : tokenisation, modèles de langage, LLM", level: "option" }
         ]
       },
       {
         title: "6. Mise en production",
         items: [
           { label: "Déploiement de modèles (API Flask/FastAPI)", level: "option", resource: { label: "Documentation FastAPI", url: "https://fastapi.tiangolo.com/" } },
-          { label: "Notions de MLOps et monitoring", level: "option" }
+          { label: "Notions de MLOps et monitoring", level: "option" },
+          { label: "IA responsable et éthique : biais, transparence, impact sur les utilisateurs", level: "option" }
         ]
       },
       {
@@ -404,7 +415,8 @@ const ROLES = {
         items: [
           { label: "Cross-platform : Flutter (Dart) ou React Native", level: "core", resource: { label: "Documentation Flutter", url: "https://docs.flutter.dev/" } },
           { label: "Natif Android : Kotlin", level: "option", resource: { label: "Android Developers - Kotlin", url: "https://developer.android.com/kotlin" } },
-          { label: "Natif iOS : Swift", level: "option", resource: { label: "Apple Developer - Swift", url: "https://developer.apple.com/swift/" } }
+          { label: "Natif iOS : Swift", level: "option", resource: { label: "Apple Developer - Swift", url: "https://developer.apple.com/swift/" } },
+          { label: "Jeux mobiles : approche différente, avec un moteur de jeu (Unity, Godot) plutôt qu'un framework applicatif classique", level: "option", note: "Filière distincte, voir la roadmap dédiée.", resource: { label: "Voir roadmap métier Développeur de Jeux Vidéo", url: "roadmap.html?id=game-developer" } }
         ]
       },
       {
@@ -688,7 +700,8 @@ const ROLES = {
         title: "6. Certifications",
         items: [
           { label: "CompTIA A+", level: "core", resource: { label: "CompTIA A+", url: "https://www.comptia.org/certifications/a" } },
-          { label: "ITIL Foundation", level: "option", resource: { label: "ITIL - Axelos", url: "https://www.axelos.com/certifications/itil-service-management" } }
+          { label: "ITIL Foundation", level: "option", resource: { label: "ITIL - Axelos", url: "https://www.axelos.com/certifications/itil-service-management" } },
+          { label: "Microsoft 365 Certified: Fundamentals", level: "option", resource: { label: "Microsoft Learn - Certifications", url: "https://learn.microsoft.com/en-us/credentials/" } }
         ]
       },
       {
@@ -851,13 +864,20 @@ const ROLES = {
         ]
       },
       {
-        title: "6. Certifications",
+        title: "6. Automatisation et gestion des services IT",
+        items: [
+          { label: "Scripts d'automatisation : Bash, PowerShell ou Ansible pour les tâches répétitives", level: "core", resource: { label: "Documentation Ansible", url: "https://docs.ansible.com/" } },
+          { label: "Gestion des services IT (ITSM) : tickets, incidents, changements — bases d'ITIL", level: "option" }
+        ]
+      },
+      {
+        title: "7. Certifications",
         items: [
           { label: "CompTIA Network+", level: "option", resource: { label: "CompTIA Network+", url: "https://www.comptia.org/certifications/network" } }
         ]
       },
       {
-        title: "7. Écosystème togolais",
+        title: "8. Écosystème togolais",
         items: [
           { label: "ESGIS, ESSEYI, Université de Lomé (CIC) : formations réseaux et systèmes", level: "core" }
         ]
@@ -1381,7 +1401,15 @@ const ROLES = {
         ]
       },
       {
-        title: "6. Écosystème togolais",
+        title: "6. Gouvernance et qualité des données",
+        items: [
+          { label: "Catalogue de données, métadonnées et documentation", level: "core" },
+          { label: "Qualité des données : dédoublonnage, validation, cohérence", level: "core" },
+          { label: "Politiques de conformité et cycle de vie des données (rétention, archivage)", level: "option" }
+        ]
+      },
+      {
+        title: "7. Écosystème togolais",
         items: [
           { label: "Profils DBA recherchés régulièrement sur les job boards togolais (SQL/NoSQL, big data)", level: "core" },
           { label: "ESGIS, Université de Lomé (CIC) : bases en gestion de données", level: "option" }
@@ -1639,7 +1667,8 @@ const ROLES = {
         title: "2. Gouvernance",
         items: [
           { label: "Politique de sécurité des systèmes d'information (PSSI)", level: "core" },
-          { label: "Normes ISO 27001, gestion des risques", level: "core" }
+          { label: "Normes ISO 27001, gestion des risques", level: "core" },
+          { label: "Programmes de sensibilisation à la sécurité pour les employés", level: "core" }
         ]
       },
       {
@@ -1703,7 +1732,14 @@ const ROLES = {
         ]
       },
       {
-        title: "5. Écosystème togolais",
+        title: "5. Certifications",
+        items: [
+          { label: "CISA (Certified Information Systems Auditor), ISACA — la certification de référence pour ce métier", level: "core", resource: { label: "ISACA - Certification CISA", url: "https://www.isaca.org/credentialing/cisa" } },
+          { label: "CISSP ((ISC)²), pour les profils orientés sécurité globale", level: "option" }
+        ]
+      },
+      {
+        title: "6. Écosystème togolais",
         items: [
           { label: "Cyber Defense Africa (Togo) : recrute régulièrement des auditeurs SSI", level: "core" },
           { label: "ANCy : autorité nationale de référence en cybersécurité", level: "core", resource: { label: "ancy.gouv.tg", url: "https://ancy.gouv.tg/" } }
@@ -1845,7 +1881,8 @@ const ROLES = {
       {
         title: "5. Certifications",
         items: [
-          { label: "Professional Scrum Master (PSM)", level: "core", resource: { label: "Scrum.org - Certifications PSM", url: "https://www.scrum.org/professional-scrum-certifications" } }
+          { label: "Professional Scrum Master (PSM), Scrum.org", level: "core", resource: { label: "Scrum.org - Certifications PSM", url: "https://www.scrum.org/professional-scrum-certifications" } },
+          { label: "Certified ScrumMaster (CSM), Scrum Alliance", level: "option", resource: { label: "Scrum Alliance - Certification CSM", url: "https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster" } }
         ]
       },
       {
@@ -2173,7 +2210,8 @@ const ROLES = {
         title: "2. Détection",
         items: [
           { label: "SIEM : corrélation et analyse d'alertes", level: "core" },
-          { label: "Analyse de logs et de trafic réseau", level: "core" }
+          { label: "Analyse de logs et de trafic réseau", level: "core" },
+          { label: "Gestion des vulnérabilités : scan régulier, priorisation, suivi des correctifs", level: "core" }
         ]
       },
       {
@@ -2219,7 +2257,8 @@ const ROLES = {
       {
         title: "3. Outils",
         items: [
-          { label: "Nmap, Metasploit, Burp Suite", level: "core", resource: { label: "Documentation Nmap", url: "https://nmap.org/book/man.html" } }
+          { label: "Nmap, Metasploit, Burp Suite", level: "core", resource: { label: "Documentation Nmap", url: "https://nmap.org/book/man.html" } },
+          { label: "Sécurité des applications mobiles : analyse statique/dynamique d'APK et d'IPA", level: "option" }
         ]
       },
       {
@@ -2501,6 +2540,13 @@ const ROLES = {
         title: "4. Validation",
         items: [
           { label: "Recette fonctionnelle et validation utilisateur", level: "core" }
+        ]
+      },
+      {
+        title: "5. Certifications",
+        items: [
+          { label: "ECBA (Entry Certificate in Business Analysis), IIBA — pour démarrer", level: "option", resource: { label: "IIBA - Certifications", url: "https://www.iiba.org/business-analysis-certifications/" } },
+          { label: "CBAP (Certified Business Analysis Professional), IIBA — niveau avancé", level: "option" }
         ]
       }
     ]
@@ -2943,6 +2989,12 @@ const SKILLS = {
           { label: "Convention de nommage des commits", level: "core" },
           { label: "GitFlow ou trunk-based development", level: "option" }
         ]
+      },
+      {
+        title: "5. Certification",
+        items: [
+          { label: "GitHub Foundations — certification d'entrée validant les bases de la plateforme", level: "option", resource: { label: "GitHub Learn - Certifications", url: "https://learn.github.com/certifications" } }
+        ]
       }
     ]
   },
@@ -3218,7 +3270,14 @@ const SKILLS = {
         ]
       },
       {
-        title: "4. Pour aller plus loin",
+        title: "4. Cloud natif",
+        items: [
+          { label: "Fonctions serverless (AWS Lambda, Cloud Functions, Azure Functions)", level: "option" },
+          { label: "Conteneurs managés (ECS, Cloud Run) — voir aussi la roadmap compétence Docker", level: "option", resource: { label: "Voir roadmap compétence Docker", url: "roadmap.html?id=docker" } }
+        ]
+      },
+      {
+        title: "5. Pour aller plus loin",
         items: [
           { label: "Facturation et optimisation des coûts", level: "option" },
           { label: "Certification fondamentale (AWS Cloud Practitioner, etc.)", level: "option" }
@@ -3412,6 +3471,12 @@ const SKILLS = {
         title: "4. Tests et qualité",
         items: [
           { label: "Tests unitaires avec JUnit", level: "core" }
+        ]
+      },
+      {
+        title: "5. Certification",
+        items: [
+          { label: "Oracle Certified Professional: Java — certification de référence pour ce langage", level: "option", resource: { label: "Oracle University - Certifications", url: "https://education.oracle.com/" } }
         ]
       }
     ]
