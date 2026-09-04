@@ -798,6 +798,37 @@
     });
   }
 
+  // ---- Page Proposer du contenu ----
+  function initProposalForm() {
+    const form = document.getElementById("proposal-form");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const type = form.elements["type"].value.trim();
+      const ville = form.elements["ville"].value.trim();
+      const nom = form.elements["nom"].value.trim();
+      const lien = form.elements["lien"].value.trim();
+      const date = form.elements["date"].value.trim();
+      const description = form.elements["description"].value.trim();
+      const name = form.elements["name"].value.trim();
+      const email = form.elements["email"].value.trim();
+      const subject = `[Proposition ${type}] ${nom}`;
+      const bodyLines = [
+        `Type : ${type}`,
+        `Nom : ${nom}`,
+        `Ville : ${ville || "non précisée"}`,
+        `Lien / source : ${lien}`,
+        `Date (si événement) : ${date || "non précisée"}`,
+        "",
+        "Description :",
+        description,
+        "",
+        `— Proposé par ${name} (${email})`,
+      ];
+      window.location.href = `mailto:wiya.info@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+    });
+  }
+
   function schoolDatesRank(school) {
     const dc = school.datesCles;
     if (dc && dc.urgent) return 0;
@@ -999,5 +1030,6 @@
     renderAcademicTimeline();
     renderSchoolDates();
     initContactForm();
+    initProposalForm();
   });
 })();

@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roadmap — WIYAO</title>
+<title>Proposer du contenu — WIYAO</title>
+<meta name="description" content="Tu connais un événement tech, une communauté ou une ressource qui manque sur WIYAO ? Propose-la ici — elle sera vérifiée avant publication.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
@@ -24,20 +25,20 @@
     <nav class="site-nav" id="site-nav">
       <a href="recherche.html" class="nav-search-link" aria-label="Recherche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span class="nav-search-text">Recherche</span></a>
       <a href="test-orientation.html">Test d'orientation</a>
-      <a href="index.html" class="active" aria-current="page">Roadmaps</a>
+      <a href="index.html">Roadmaps</a>
       <a href="ecoles.html">Écoles &amp; universités</a>
       <a href="calendrier.html">Calendrier</a>
       <a href="stages-emploi.html">Stages &amp; emploi</a>
       <a href="ecosysteme.html">Écosystème togolais</a>
       <div class="nav-more">
-        <button class="nav-more-toggle" type="button" aria-expanded="false" aria-haspopup="true">Plus ▾</button>
+        <button class="nav-more-toggle active" type="button" aria-expanded="false" aria-haspopup="true">Plus ▾</button>
         <div class="nav-more-menu">
           <a href="bourses-financement.html">Bourses &amp; financement</a>
           <a href="actualites.html">Actualités</a>
           <a href="temoignages.html">Témoignages</a>
           <a href="faq.html">FAQ</a>
           <a href="contact.html">Contact</a>
-          <a href="proposer.html">Proposer du contenu</a>
+          <a href="proposer.html" class="active" aria-current="page">Proposer du contenu</a>
         </div>
       </div>
     </nav>
@@ -50,10 +51,65 @@
 
 <main id="main-content">
   <p id="i18n-notice" class="i18n-notice" hidden>🇬🇧 This page isn't fully translated yet — some sections below remain in French.</p>
-  <div class="roadmap-toolbar">
-    <button id="reset-progress" class="btn" type="button" data-i18n-key="roadmap.reset">Réinitialiser la progression</button>
-  </div>
-  <div id="roadmap-detail"></div>
+  <section class="hero">
+    <h1 data-i18n-key="proposer.hero.title">Propose du <span class="hero-accent">contenu</span></h1>
+    <p data-i18n-key="proposer.hero.subtitle">Un événement tech, une communauté ou une ressource togolaise qui manque sur WIYAO ? Dis-nous-en plus — on vérifie et on ajoute.</p>
+  </section>
+
+  <section class="roadmap-category">
+    <div class="contact-layout">
+      <div class="contact-intro">
+        <h2>Proposer un<br>événement ou une communauté</h2>
+        <p class="contact-required-note">Tous les champs avec un <span class="required-mark">*</span> sont obligatoires. Chaque proposition est vérifiée manuellement avant d'être ajoutée au site — aucune publication automatique.</p>
+      </div>
+
+      <form id="proposal-form" class="contact-form">
+        <div class="contact-form-row">
+          <div class="contact-form-field">
+            <label for="proposal-type">Type de contenu <span class="required-mark">*</span></label>
+            <select id="proposal-type" name="type" required>
+              <option value="" disabled selected>Choisis un type</option>
+              <option value="Événement">Événement (meetup, conférence, hackathon...)</option>
+              <option value="Communauté">Communauté (groupe, association, collectif...)</option>
+              <option value="Autre ressource">Autre ressource</option>
+            </select>
+          </div>
+          <div class="contact-form-field">
+            <label for="proposal-ville">Ville</label>
+            <input type="text" id="proposal-ville" name="ville" placeholder="Ex : Lomé, Kara...">
+          </div>
+        </div>
+        <div class="contact-form-field">
+          <label for="proposal-nom">Nom de l'événement / de la communauté <span class="required-mark">*</span></label>
+          <input type="text" id="proposal-nom" name="nom" placeholder="Ex : DevFest Lomé, GDG Lomé..." required>
+        </div>
+        <div class="contact-form-field">
+          <label for="proposal-lien">Lien ou source de vérification <span class="required-mark">*</span></label>
+          <input type="url" id="proposal-lien" name="lien" placeholder="Site web, page Facebook, groupe WhatsApp public..." required>
+        </div>
+        <div class="contact-form-field">
+          <label for="proposal-date">Date (si événement)</label>
+          <input type="text" id="proposal-date" name="date" placeholder="Ex : 15 novembre 2026, ou récurrent">
+        </div>
+        <div class="contact-form-field">
+          <label for="proposal-description">Description courte <span class="required-mark">*</span></label>
+          <textarea id="proposal-description" name="description" rows="4" placeholder="En quelques phrases : quoi, pour qui, pourquoi ça a sa place sur WIYAO" required></textarea>
+        </div>
+        <div class="contact-form-row">
+          <div class="contact-form-field">
+            <label for="proposal-name">Ton nom et prénom(s) <span class="required-mark">*</span></label>
+            <input type="text" id="proposal-name" name="name" placeholder="Nom et prénom(s)" required>
+          </div>
+          <div class="contact-form-field">
+            <label for="proposal-email">Ton e-mail <span class="required-mark">*</span></label>
+            <input type="email" id="proposal-email" name="email" placeholder="E-mail" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-send">Envoyer la proposition <span aria-hidden="true">↗</span></button>
+        <p class="contact-form-note">WIYAO est un site statique, sans serveur pour recevoir des soumissions : « Envoyer » ouvre ton client email habituel avec la proposition pré-remplie, à destination de l'équipe WIYAO qui la vérifie avant publication.</p>
+      </form>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -100,8 +156,6 @@
         </div>
       </div>
     </div>
-
-    <div class="footer-note" data-i18n-key="roadmap.footernote">Coche les étapes au fur et à mesure. Ta progression est enregistrée localement dans ton navigateur.</div>
 
     <div class="footer-bottom">
       <p>© 2026 WIYAO. Tous droits réservés.</p>

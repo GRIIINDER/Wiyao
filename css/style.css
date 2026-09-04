@@ -1742,7 +1742,8 @@ footer.site-footer {
 }
 
 .contact-form-field input,
-.contact-form-field textarea {
+.contact-form-field textarea,
+.contact-form-field select {
   width: 100%;
   box-sizing: border-box;
   border: 1px solid var(--border);
@@ -1755,7 +1756,8 @@ footer.site-footer {
 }
 
 .contact-form-field input:focus,
-.contact-form-field textarea:focus {
+.contact-form-field textarea:focus,
+.contact-form-field select:focus {
   outline: none;
   border-color: var(--tk-primary);
 }
