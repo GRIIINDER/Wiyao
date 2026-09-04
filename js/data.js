@@ -4081,12 +4081,12 @@ const SKILLS = {
 const ALL_ROADMAPS = Object.assign({}, ROLES, SKILLS);
 
 // ---- Écoles & universités ----
-// Données vérifiées sur les sites officiels de chaque établissement (recherche août 2026).
-// Statut "agree" : présence confirmée dans la liste des établissements privés d'enseignement
-// supérieur reconnus par le Ministère togolais de l'Enseignement Supérieur et de la Recherche
-// pour l'année académique 2025-2026 (liste de 93 établissements, publiée le 30 septembre 2025 —
-// vérifiée à jour en août 2026, remplace l'ancienne liste de l'arrêté du 4 novembre 2022).
-// null = non applicable (établissement public) ou statut particulier.
+// Données vérifiées sur les sites officiels de chaque établissement (recherche août-septembre 2026).
+// Statut "agree" : présence confirmée dans la liste des établissements d'enseignement supérieur
+// accrédités par le Ministère togolais de l'Enseignement Supérieur et de la Recherche pour
+// l'année académique 2026-2027 (liste de 111 établissements — 13 publics, 98 privés —, publiée
+// le 24 juillet 2026 sur edusup.gouv.tg, remplace la liste 2025-2026 de 93 établissements).
+// null = non applicable ou statut particulier.
 const SCHOOLS = {
   "ipnet": {
     name: "IPNET Institute of Technology",
@@ -4110,8 +4110,8 @@ const SCHOOLS = {
     name: "Institut Africain d'Informatique (IAI-Togo)",
     ville: ["Lomé"],
     statut: "inter-etats",
-    agree: null,
-    agreeNote: "École inter-États d'enseignement supérieur (réseau régional créé en 1971) : statut distinct des établissements privés togolais recensés par le Ministère.",
+    agree: true,
+    agreeNote: "École inter-États d'enseignement supérieur (réseau régional créé en 1971). Jusqu'à la liste 2025-2026, son statut inter-États le distinguait des établissements recensés par le Ministère togolais — mais la nouvelle liste officielle 2026-2027 (edusup.gouv.tg, publiée le 24 juillet 2026) l'inscrit désormais explicitement en position n°5 des établissements PUBLICS.",
     niveaux: ["Licence Professionnelle", "Ingénieur des Travaux Informatiques", "Ingénieur Concepteur"],
     filieres: ["Génie Logiciel & Systèmes d'Information", "Administration des Systèmes et Réseaux", "Multimédia", "Technologies Web"],
     duree: "Cycle ITI / Licence Pro : 3 ans, avec stage en 2e et 3e années",
@@ -4367,17 +4367,18 @@ const SCHOOLS = {
     }
   },
   "epl": {
-    name: "École Polytechnique de Lomé (EPL)",
+    name: "École Nationale Polytechnique (ENP, ex-École Polytechnique de Lomé)",
     ville: ["Lomé"],
     statut: "public",
-    agree: null,
+    agree: true,
+    agreeNote: "Établissement public n°13 sur la liste officielle des établissements d'enseignement supérieur accrédités pour l'année académique 2026-2027 (edusup.gouv.tg, publiée le 24 juillet 2026). L'ENP a remplacé l'École Polytechnique de Lomé (EPL) en juillet 2026 (source : Togonews/AllAfrica, 23 juillet 2026) — les informations ci-dessous (frais, concours) datent de l'ère EPL et restent à recouper auprès de l'établissement.",
     niveaux: ["Licence Fondamentale", "Licence Professionnelle", "Master", "Diplôme d'Ingénieur"],
     filieres: ["Informatique et Systèmes", "Intelligence Artificielle & Big Data", "Génie Logiciel", "Systèmes et Réseaux Informatiques"],
     duree: null,
     admission: "Concours d'entrée post-Bac (Bac C, D, E scientifique pour la licence fondamentale)",
-    frais: "404 000 FCFA/an (étudiants togolais, inscription incluse) · 514 000 (salariés) · 754 000 (étrangers). Les 20% premiers au concours d'entrée ne paient que 50 000 FCFA de frais pédagogiques, le reste pris en charge par l'établissement (source : presse togolaise, recoupée sur 3 articles).",
+    frais: "404 000 FCFA/an (étudiants togolais, inscription incluse) · 514 000 (salariés) · 754 000 (étrangers). Les 20% premiers au concours d'entrée ne paient que 50 000 FCFA de frais pédagogiques, le reste pris en charge par l'établissement (source : presse togolaise, recoupée sur 3 articles, sous l'ancien nom EPL — à confirmer que ces tarifs s'appliquent toujours sous l'ENP).",
     site: "https://univ-lome.tg/",
-    description: "École d'ingénieurs publique, composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).",
+    description: "École nationale d'ingénieurs publique (ENP), qui a remplacé en juillet 2026 l'École Polytechnique de Lomé — elle-même composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).",
     datesCles: {
       mode: "campagne",
       note: "Concours écrit annuel réservé aux nouveaux bacheliers, dépôt possible à Lomé, Kara (DAAS) et dans les directions régionales.",
