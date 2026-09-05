@@ -191,6 +191,13 @@
       desc.textContent = tField(meta, "description");
       item.appendChild(desc);
 
+      if (meta.presenceTogo) {
+        const presence = document.createElement("p");
+        presence.className = "domain-primer-presence";
+        presence.textContent = `🇹🇬 ${tField(meta, "presenceTogo")}`;
+        item.appendChild(presence);
+      }
+
       container.appendChild(item);
     });
   }

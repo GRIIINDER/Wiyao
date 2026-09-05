@@ -63,8 +63,8 @@
     },
     "quiz.primer.title": { fr: "L'informatique, en 7 grands domaines", en: "Tech, in 7 major domains" },
     "quiz.primer.desc": {
-      fr: "Un aperçu rapide avant de répondre — pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver.",
-      en: "A quick overview before you answer — no need to know it all by heart, that's exactly what the test is here to help you sort out.",
+      fr: "Un aperçu rapide avant de répondre — pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver. Chaque domaine est une catégorie mondiale du secteur tech ; la mention 🇹🇬 précise sa présence concrète sur le marché togolais.",
+      en: "A quick overview before you answer — no need to know it all by heart, that's exactly what the test is here to help you sort out. Each domain is a worldwide tech-sector category; the 🇹🇬 note points to its concrete presence on the Togolese market.",
     },
     "calendrier.sourcenote": {
       fr: "Les dates précises changent chaque année et ne sont pas toujours republiées à temps par les établissements eux-mêmes. Celles marquées « dates de référence » viennent d'une campagne passée et donnent une idée du calendrier habituel, pas une garantie pour l'année en cours.",
