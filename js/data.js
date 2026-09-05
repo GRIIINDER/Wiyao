@@ -1278,21 +1278,25 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "SEO (référencement naturel)", level: "core" },
-          { label: "SEM et stratégie de contenu", level: "core" }
+          { label: "SEO (référencement naturel) : recherche de mots-clés, on-page/off-page", level: "core" },
+          { label: "SEM et stratégie de contenu", level: "core" },
+          { label: "Marketing funnel : notoriété, considération, conversion, fidélisation", level: "core" },
+          { label: "Bases de copywriting publicitaire", level: "option" }
         ]
       },
       {
         title: "2. Publicité en ligne",
         items: [
           { label: "Meta Ads", level: "core", resource: { label: "Meta Business Help Center", url: "https://www.facebook.com/business/help" } },
-          { label: "Google Ads", level: "core", resource: { label: "Centre d'aide Google Ads", url: "https://support.google.com/google-ads" } }
+          { label: "Google Ads", level: "core", resource: { label: "Centre d'aide Google Ads", url: "https://support.google.com/google-ads" } },
+          { label: "TikTok Ads", level: "option" }
         ]
       },
       {
         title: "3. Analytics",
         items: [
-          { label: "Google Analytics, tableaux de bord de performance", level: "core", resource: { label: "Centre d'aide Google Analytics", url: "https://support.google.com/analytics" } }
+          { label: "Google Analytics, tableaux de bord de performance", level: "core", resource: { label: "Centre d'aide Google Analytics", url: "https://support.google.com/analytics" } },
+          { label: "Outils SEO (SEMrush, Ahrefs, Google Search Console)", level: "option" }
         ]
       },
       {
@@ -1324,25 +1328,30 @@ const ROLES = {
       {
         title: "1. Stratégie de contenu",
         items: [
-          { label: "Ligne éditoriale, calendrier de publication", level: "core" }
+          { label: "Ligne éditoriale, calendrier de publication", level: "core" },
+          { label: "Création de visuels et vidéos courtes (Canva, CapCut)", level: "core" }
         ]
       },
       {
         title: "2. Gestion des réseaux sociaux",
         items: [
-          { label: "Facebook, Instagram, LinkedIn, TikTok", level: "core" }
+          { label: "Facebook, Instagram, LinkedIn, TikTok", level: "core" },
+          { label: "Outils de planification (Meta Business Suite, Buffer, Hootsuite)", level: "option" },
+          { label: "Compréhension des algorithmes et bonnes pratiques par plateforme", level: "option" }
         ]
       },
       {
         title: "3. Animation de communauté",
         items: [
-          { label: "Modération, gestion de crise", level: "core" }
+          { label: "Modération, gestion de crise", level: "core" },
+          { label: "Charte de communauté et bonnes pratiques de modération", level: "option" },
+          { label: "Collaboration avec créateurs de contenu (UGC, micro-influenceurs)", level: "option" }
         ]
       },
       {
         title: "4. Analyse de performance",
         items: [
-          { label: "Indicateurs d'engagement", level: "core" }
+          { label: "Indicateurs d'engagement (portée, taux d'interaction)", level: "core" }
         ]
       },
       {
@@ -1686,20 +1695,23 @@ const ROLES = {
         title: "2. Catalogue et opérations",
         items: [
           { label: "Gestion du catalogue produits, fiches produits", level: "core" },
-          { label: "Gestion des commandes et de la logistique", level: "core" }
+          { label: "Gestion des commandes, des stocks et de la logistique", level: "core" },
+          { label: "Politique de retours et service client", level: "option" }
         ]
       },
       {
         title: "3. Paiement",
         items: [
-          { label: "Intégration des paiements mobiles (Flooz, T-Money, Mobile Money)", level: "core", note: "Essentiel pour le marché togolais." }
+          { label: "Intégration des paiements mobiles (Flooz, T-Money, Mobile Money)", level: "core", note: "Essentiel pour le marché togolais." },
+          { label: "Sécurité des transactions en ligne (notions PCI-DSS)", level: "option" }
         ]
       },
       {
         title: "4. Acquisition et conversion",
         items: [
           { label: "Marketing digital appliqué à l'e-commerce", level: "core", resource: { label: "Voir roadmap métier Marketing Digital", url: "roadmap.html?id=marketing-digital" } },
-          { label: "Optimisation du taux de conversion", level: "option" }
+          { label: "Optimisation du taux de conversion (réduction de l'abandon de panier)", level: "option" },
+          { label: "Vente multicanale (site propre, marketplaces, réseaux sociaux)", level: "option" }
         ]
       },
       {
@@ -2361,6 +2373,8 @@ const ROLES = {
         title: "2. Contenu",
         items: [
           { label: "Articles techniques, tutoriels, démos de code", level: "core" },
+          { label: "Applications d'exemple (sample apps) et SDKs", level: "option" },
+          { label: "Vidéos et streaming technique (YouTube, Twitch)", level: "option" },
           { label: "Prises de parole en conférence", level: "core" }
         ]
       },
@@ -2368,13 +2382,15 @@ const ROLES = {
         title: "3. Communauté",
         items: [
           { label: "Animation de communauté de développeurs", level: "core" },
+          { label: "Contributions open source et gestion de projets communautaires", level: "option" },
           { label: "Recueil de retours produit auprès des utilisateurs", level: "core" }
         ]
       },
       {
         title: "4. Écosystème",
         items: [
-          { label: "Participation à des meetups et conférences tech", level: "option" }
+          { label: "Participation à des meetups et conférences tech", level: "option" },
+          { label: "Présence sur les réseaux sociaux orientés développeurs (X, LinkedIn)", level: "option" }
         ]
       }
     ]
@@ -3101,25 +3117,30 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Funnel d'acquisition, activation, rétention (AARRR)", level: "core" }
+          { label: "Funnel d'acquisition, activation, rétention (AARRR)", level: "core" },
+          { label: "Growth loops et boucles virales", level: "option" }
         ]
       },
       {
         title: "2. Expérimentation",
         items: [
-          { label: "Tests A/B et itération rapide", level: "core" }
+          { label: "Tests A/B et itération rapide", level: "core" },
+          { label: "Priorisation des expériences (framework ICE)", level: "option" },
+          { label: "Automatisation sans code (Zapier, Make)", level: "option" }
         ]
       },
       {
         title: "3. Canaux",
         items: [
-          { label: "SEO, paid ads, viralité, partenariats", level: "core", resource: { label: "Voir roadmap métier Marketing Digital", url: "roadmap.html?id=marketing-digital" } }
+          { label: "SEO, paid ads, viralité, partenariats", level: "core", resource: { label: "Voir roadmap métier Marketing Digital", url: "roadmap.html?id=marketing-digital" } },
+          { label: "Programmes de parrainage (referral)", level: "option" }
         ]
       },
       {
         title: "4. Analyse",
         items: [
-          { label: "Analytics produit et métriques de croissance", level: "core" }
+          { label: "Analytics produit et métriques de croissance (North Star Metric)", level: "core" },
+          { label: "Analyse de cohortes et courbes de rétention", level: "option" }
         ]
       }
     ]
@@ -3139,26 +3160,29 @@ const ROLES = {
       {
         title: "1. Stratégie",
         items: [
-          { label: "Audit de contenu existant", level: "core" },
-          { label: "Ligne éditoriale et piliers de contenu", level: "core" }
+          { label: "Audit de contenu existant et analyse concurrentielle", level: "core" },
+          { label: "Ligne éditoriale et piliers de contenu", level: "core" },
+          { label: "Recherche d'audience et personas", level: "core" }
         ]
       },
       {
         title: "2. Production",
         items: [
-          { label: "Calendrier éditorial multi-canal", level: "core" }
+          { label: "Calendrier éditorial multi-canal (outils : Notion, Trello)", level: "core" },
+          { label: "Réadaptation de contenu entre formats (repurposing : blog, vidéo, newsletter)", level: "option" }
         ]
       },
       {
         title: "3. SEO et distribution",
         items: [
-          { label: "Optimisation SEO du contenu", level: "core" }
+          { label: "Optimisation SEO du contenu", level: "core" },
+          { label: "Distribution multicanale (réseaux sociaux, email, partenariats)", level: "option" }
         ]
       },
       {
         title: "4. Mesure",
         items: [
-          { label: "Analyse de performance du contenu", level: "core" }
+          { label: "Analyse de performance du contenu (trafic, engagement, conversions)", level: "core" }
         ]
       }
     ]
@@ -3178,26 +3202,32 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Fonctionnement des enchères publicitaires", level: "core" }
+          { label: "Fonctionnement des enchères publicitaires", level: "core" },
+          { label: "Suivi et mesure : pixels, UTM, paramétrage du tracking", level: "core" }
         ]
       },
       {
         title: "2. Plateformes",
         items: [
           { label: "Google Ads", level: "core", resource: { label: "Centre d'aide Google Ads", url: "https://support.google.com/google-ads" } },
-          { label: "Meta Ads", level: "core", resource: { label: "Meta Business Help Center", url: "https://www.facebook.com/business/help" } }
+          { label: "Meta Ads", level: "core", resource: { label: "Meta Business Help Center", url: "https://www.facebook.com/business/help" } },
+          { label: "TikTok Ads, LinkedIn Ads selon la cible", level: "option" }
         ]
       },
       {
         title: "3. Optimisation",
         items: [
-          { label: "Ciblage, budgets, optimisation des enchères", level: "core" }
+          { label: "Ciblage, budgets, optimisation des enchères", level: "core" },
+          { label: "Retargeting et audiences similaires (lookalike)", level: "option" },
+          { label: "Tests créatifs publicitaires (A/B sur visuels et accroches)", level: "option" },
+          { label: "Optimisation des pages d'atterrissage (landing pages)", level: "option" }
         ]
       },
       {
         title: "4. Reporting",
         items: [
-          { label: "Suivi du ROAS et reporting de campagne", level: "core" }
+          { label: "Suivi du ROAS et reporting de campagne", level: "core" },
+          { label: "Modèles d'attribution (dernier clic, multi-touch)", level: "option" }
         ]
       }
     ]
