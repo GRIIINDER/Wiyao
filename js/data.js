@@ -819,7 +819,9 @@ const ROLES = {
         title: "3. Pilotage",
         items: [
           { label: "Gestion des risques", level: "core" },
-          { label: "Gestion du budget", level: "core" }
+          { label: "Gestion du budget", level: "core" },
+          { label: "Matrice RACI et gestion des parties prenantes", level: "core" },
+          { label: "Gestion du changement et clôture de projet (retours d'expérience)", level: "option" }
         ]
       },
       {
@@ -1377,7 +1379,9 @@ const ROLES = {
       {
         title: "1. Pédagogie",
         items: [
-          { label: "Conception de programme de formation", level: "core" }
+          { label: "Conception de programme de formation (méthode ADDIE)", level: "core" },
+          { label: "Principes d'andragogie (apprentissage des adultes)", level: "option" },
+          { label: "Pédagogie par projet et mise en pratique", level: "core" }
         ]
       },
       {
@@ -1389,13 +1393,14 @@ const ROLES = {
       {
         title: "3. Outils pédagogiques",
         items: [
-          { label: "Plateformes e-learning, supports de cours", level: "core" }
+          { label: "Plateformes e-learning (Moodle), supports de cours", level: "core" },
+          { label: "Animation de formations à distance et hybrides", level: "option" }
         ]
       },
       {
         title: "4. Évaluation",
         items: [
-          { label: "Évaluation des acquis des apprenants", level: "core" }
+          { label: "Évaluation des acquis des apprenants (quiz, projets, certifications)", level: "core" }
         ]
       },
       {
@@ -1427,13 +1432,17 @@ const ROLES = {
       {
         title: "2. Stratégie",
         items: [
-          { label: "Feuille de route de transformation digitale", level: "core" }
+          { label: "Feuille de route de transformation digitale", level: "core" },
+          { label: "Automatisation des processus métier (RPA)", level: "option" },
+          { label: "Stratégie de migration vers le cloud", level: "option" }
         ]
       },
       {
         title: "3. Conduite du changement",
         items: [
-          { label: "Accompagnement des équipes, formation interne", level: "core" }
+          { label: "Accompagnement des équipes, formation interne", level: "core" },
+          { label: "Modèles de gestion du changement (Kotter, ADKAR)", level: "option" },
+          { label: "Obtention du soutien de la direction (sponsorship exécutif)", level: "core" }
         ]
       },
       {
@@ -1739,7 +1748,9 @@ const ROLES = {
         title: "1. Vision stratégique",
         items: [
           { label: "Alignement de la stratégie IT avec les objectifs de l'organisation", level: "core" },
-          { label: "Gestion du budget informatique", level: "core" }
+          { label: "Gestion du budget informatique", level: "core" },
+          { label: "Cadres de gouvernance IT (COBIT, ITIL)", level: "option" },
+          { label: "Gestion des fournisseurs et des contrats (vendor management)", level: "option" }
         ]
       },
       {
@@ -1752,7 +1763,8 @@ const ROLES = {
         title: "3. Infrastructure et sécurité",
         items: [
           { label: "Supervision de l'infrastructure et des systèmes d'information", level: "core", resource: { label: "Voir roadmap métier Administrateur Systèmes et Réseaux", url: "roadmap.html?id=sysadmin" } },
-          { label: "Gouvernance de la cybersécurité", level: "core", resource: { label: "Voir roadmap métier Cybersécurité & Réseaux", url: "roadmap.html?id=cyber" } }
+          { label: "Gouvernance de la cybersécurité", level: "core", resource: { label: "Voir roadmap métier Cybersécurité & Réseaux", url: "roadmap.html?id=cyber" } },
+          { label: "Continuité de service et plan de reprise d'activité", level: "option" }
         ]
       },
       {
@@ -1951,20 +1963,23 @@ const ROLES = {
       {
         title: "2. Cadres méthodologiques",
         items: [
-          { label: "TOGAF ou cadres équivalents", level: "core" }
+          { label: "TOGAF ou cadres équivalents", level: "core" },
+          { label: "Notation de modélisation ArchiMate", level: "option" }
         ]
       },
       {
         title: "3. Alignement stratégique",
         items: [
           { label: "Traduction des besoins métier en architecture cible", level: "core" },
+          { label: "Modélisation des capacités métier (business capability mapping)", level: "option" },
           { label: "Feuille de route de transformation du SI", level: "core" }
         ]
       },
       {
         title: "4. Gouvernance",
         items: [
-          { label: "Standards, urbanisation du SI, gestion des dépendances", level: "core" }
+          { label: "Standards, urbanisation du SI, gestion des dépendances", level: "core" },
+          { label: "Gestion du cycle de vie technologique (technology radar)", level: "option" }
         ]
       },
       {
@@ -1998,20 +2013,23 @@ const ROLES = {
       {
         title: "2. Protection des données",
         items: [
-          { label: "Protection des données personnelles", level: "core" },
+          { label: "Protection des données personnelles : loi togolaise n°2019-014", level: "core", resource: { label: "Voir roadmap métier DPO", url: "roadmap.html?id=dpo" } },
           { label: "Cadre légal togolais de la cybersécurité (loi n°2018-026)", level: "core", resource: { label: "ancy.gouv.tg", url: "https://ancy.gouv.tg/" } }
         ]
       },
       {
         title: "3. Contrats et négociation",
         items: [
-          { label: "Contrats de prestation IT, SLA, licences logicielles", level: "core" }
+          { label: "Contrats de prestation IT, SLA, licences logicielles", level: "core" },
+          { label: "Licences open source et leurs implications juridiques", level: "option" }
         ]
       },
       {
         title: "4. Conformité",
         items: [
-          { label: "Veille réglementaire numérique", level: "core" }
+          { label: "Veille réglementaire numérique", level: "core" },
+          { label: "Notions de droit du commerce électronique (signature électronique, protection du consommateur)", level: "option" },
+          { label: "Sensibilisation aux enjeux réglementaires de l'IA", level: "option" }
         ]
       },
       {
@@ -2051,13 +2069,16 @@ const ROLES = {
         title: "3. Facilitation",
         items: [
           { label: "Levée des obstacles (blockers)", level: "core" },
-          { label: "Coaching d'équipe et amélioration continue", level: "core" }
+          { label: "Coaching d'équipe et amélioration continue", level: "core" },
+          { label: "Posture de leader-serviteur (servant leadership)", level: "option" },
+          { label: "Autres approches agiles : Kanban, SAFe pour l'agilité à l'échelle", level: "option" }
         ]
       },
       {
-        title: "4. Outils",
+        title: "4. Outils et métriques",
         items: [
-          { label: "Jira, tableaux Kanban", level: "core" }
+          { label: "Jira, tableaux Kanban", level: "core" },
+          { label: "Vélocité, burndown/burnup charts", level: "option" }
         ]
       },
       {
@@ -2287,14 +2308,17 @@ const ROLES = {
       {
         title: "2. Avant-vente",
         items: [
-          { label: "Démonstrations techniques (démos)", level: "core" },
-          { label: "Réponse aux appels d'offres techniques", level: "core" }
+          { label: "Démonstrations techniques (démos) adaptées à l'audience", level: "core" },
+          { label: "Réponse aux appels d'offres techniques (RFP/RFI)", level: "core" },
+          { label: "Positionnement concurrentiel et argumentaires (battlecards)", level: "option" }
         ]
       },
       {
         title: "3. Relation client",
         items: [
-          { label: "Communication technique à un public non technique", level: "core" }
+          { label: "Communication technique à un public non technique", level: "core" },
+          { label: "Gestion des objections techniques", level: "option" },
+          { label: "Utilisation d'un CRM pour le suivi commercial", level: "option", resource: { label: "Voir roadmap métier Administrateur Salesforce / CRM", url: "roadmap.html?id=salesforce-admin" } }
         ]
       },
       {
@@ -2602,20 +2626,23 @@ const ROLES = {
       {
         title: "2. Management",
         items: [
-          { label: "Recrutement et évaluation des ingénieurs", level: "core" },
-          { label: "One-on-one et développement de carrière", level: "core" }
+          { label: "Recrutement et entretiens techniques", level: "core" },
+          { label: "One-on-one, feedback et développement de carrière", level: "core" },
+          { label: "Grilles de progression (career ladders) et évaluations de performance", level: "option" }
         ]
       },
       {
         title: "3. Livraison",
         items: [
-          { label: "Planification technique et gestion des priorités", level: "core" }
+          { label: "Planification technique et gestion des priorités", level: "core" },
+          { label: "Métriques d'ingénierie (DORA metrics : fréquence de déploiement, délai de restauration)", level: "option" }
         ]
       },
       {
         title: "4. Culture d'équipe",
         items: [
-          { label: "Qualité du code et bonnes pratiques d'équipe", level: "core" }
+          { label: "Qualité du code et bonnes pratiques d'équipe", level: "core" },
+          { label: "Animation d'équipes à distance ou hybrides", level: "option" }
         ]
       }
     ]
@@ -2641,20 +2668,23 @@ const ROLES = {
       {
         title: "2. Leadership",
         items: [
-          { label: "Structuration et recrutement des équipes techniques", level: "core" }
+          { label: "Structuration et recrutement des équipes techniques", level: "core" },
+          { label: "Mise à l'échelle de l'organisation technique (startup vers scale-up)", level: "option" }
         ]
       },
       {
         title: "3. Stratégie",
         items: [
           { label: "Alignement technologie / objectifs business", level: "core" },
-          { label: "Gestion des risques techniques", level: "core" }
+          { label: "Gestion des risques techniques et de la dette technique", level: "core" },
+          { label: "Décisions build vs buy (développer en interne ou acheter)", level: "option" }
         ]
       },
       {
         title: "4. Représentation",
         items: [
-          { label: "Interface avec investisseurs et partenaires sur les sujets techniques", level: "option" }
+          { label: "Interface avec investisseurs et partenaires sur les sujets techniques", level: "option" },
+          { label: "Due diligence technique lors de levées de fonds", level: "option" }
         ]
       }
     ]
@@ -2725,13 +2755,16 @@ const ROLES = {
         title: "2. Coordination",
         items: [
           { label: "Gestion des dépendances entre équipes", level: "core" },
-          { label: "Planification de programmes multi-équipes", level: "core" }
+          { label: "Planification de programmes multi-équipes (distinction programme/projet)", level: "core" },
+          { label: "Suivi des jalons et du chemin critique", level: "option" },
+          { label: "Gestion des risques transverses au programme", level: "option" }
         ]
       },
       {
         title: "3. Communication",
         items: [
-          { label: "Reporting aux parties prenantes techniques et non techniques", level: "core" }
+          { label: "Reporting aux parties prenantes techniques et non techniques", level: "core" },
+          { label: "Alignement des parties prenantes cross-fonctionnelles", level: "option" }
         ]
       },
       {
@@ -2757,20 +2790,23 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Recueil et analyse des besoins métier", level: "core" }
+          { label: "Recueil et analyse des besoins métier", level: "core" },
+          { label: "Analyse d'écart (gap analysis) entre existant et cible", level: "option" }
         ]
       },
       {
         title: "2. Spécifications",
         items: [
           { label: "Rédaction de cahiers des charges fonctionnels", level: "core" },
-          { label: "Modélisation de processus (BPMN)", level: "core" }
+          { label: "Modélisation de processus (BPMN) et diagrammes UML", level: "core" },
+          { label: "Rédaction de user stories et cas d'usage", level: "option" }
         ]
       },
       {
         title: "3. Liaison technique",
         items: [
-          { label: "Collaboration avec les équipes de développement", level: "core" }
+          { label: "Collaboration avec les équipes de développement", level: "core" },
+          { label: "Notions SQL pour l'analyse de données métier", level: "option", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } }
         ]
       },
       {
@@ -3039,19 +3075,28 @@ const ROLES = {
       {
         title: "2. Modules SAP",
         items: [
-          { label: "Spécialisation sur un module (FI/CO, MM, SD...)", level: "core" }
+          { label: "Spécialisation sur un module (FI/CO, MM, SD...)", level: "core" },
+          { label: "SAP S/4HANA, la suite ERP nouvelle génération", level: "option" }
         ]
       },
       {
         title: "3. Paramétrage",
         items: [
-          { label: "Configuration et personnalisation des processus", level: "core" }
+          { label: "Configuration et personnalisation des processus (customizing)", level: "core" },
+          { label: "Méthodologie de déploiement SAP Activate", level: "option" },
+          { label: "Notions ABAP pour les développements spécifiques", level: "option" }
         ]
       },
       {
         title: "4. Accompagnement",
         items: [
           { label: "Formation des utilisateurs finaux", level: "core" }
+        ]
+      },
+      {
+        title: "5. Certifications",
+        items: [
+          { label: "SAP Certified Application Associate (par module)", level: "option" }
         ]
       }
     ]
