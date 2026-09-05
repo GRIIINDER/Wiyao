@@ -1380,33 +1380,40 @@ const ROLES = {
         title: "1. Pédagogie",
         items: [
           { label: "Conception de programme de formation (méthode ADDIE)", level: "core" },
+          { label: "Modèle SAM (Successive Approximation Model) et taxonomie de Bloom", level: "option" },
           { label: "Principes d'andragogie (apprentissage des adultes)", level: "option" },
-          { label: "Pédagogie par projet et mise en pratique", level: "core" }
+          { label: "Pédagogie par projet et mise en pratique", level: "core" },
+          { label: "Gestion de groupe et dynamique de classe (niveaux hétérogènes)", level: "core" }
         ]
       },
       {
         title: "2. Expertise technique",
         items: [
-          { label: "Maîtrise approfondie du domaine enseigné", level: "core" }
+          { label: "Maîtrise approfondie du domaine enseigné", level: "core" },
+          { label: "Veille technologique continue pour garder ses cours à jour", level: "core" },
+          { label: "Création de supports pédagogiques (slides, exercices, projets fil rouge)", level: "core" }
         ]
       },
       {
         title: "3. Outils pédagogiques",
         items: [
-          { label: "Plateformes e-learning (Moodle), supports de cours", level: "core" },
+          { label: "Plateformes e-learning (Moodle)", level: "core", resource: { label: "Documentation Moodle", url: "https://docs.moodle.org/" } },
+          { label: "Outils de création de contenu interactif (Canva, H5P, Genially)", level: "option" },
           { label: "Animation de formations à distance et hybrides", level: "option" }
         ]
       },
       {
         title: "4. Évaluation",
         items: [
-          { label: "Évaluation des acquis des apprenants (quiz, projets, certifications)", level: "core" }
+          { label: "Évaluation des acquis des apprenants (quiz, projets, certifications)", level: "core" },
+          { label: "Certification des acquis (badges numériques, certificats internes)", level: "option" }
         ]
       },
       {
         title: "5. Écosystème togolais",
         items: [
-          { label: "IAI-Togo, ESGIS, HETEC et Djanta Academy : structures employant des formateurs en informatique", level: "core" }
+          { label: "IAI-Togo, ESGIS, HETEC et Djanta Academy : structures employant des formateurs en informatique", level: "core" },
+          { label: "Programme national de formation en IA, programmation et anglais : gros besoin de formateurs à l'échelle nationale", level: "option", resource: { label: "numerique.gouv.tg", url: "https://numerique.gouv.tg/projets/programme-national-de-formation-en-intelligence-artificielle-en-programmation-informatique-et-en-anglais" } }
         ]
       }
     ]
@@ -1426,7 +1433,8 @@ const ROLES = {
       {
         title: "1. Diagnostic",
         items: [
-          { label: "Audit de maturité digitale d'une organisation", level: "core" }
+          { label: "Audit de maturité digitale d'une organisation", level: "core" },
+          { label: "Cartographie des processus existants (as-is) avant transformation", level: "core" }
         ]
       },
       {
@@ -1434,7 +1442,8 @@ const ROLES = {
         items: [
           { label: "Feuille de route de transformation digitale", level: "core" },
           { label: "Automatisation des processus métier (RPA)", level: "option" },
-          { label: "Stratégie de migration vers le cloud", level: "option" }
+          { label: "Stratégie de migration vers le cloud", level: "option" },
+          { label: "Business case et calcul de retour sur investissement (ROI)", level: "core" }
         ]
       },
       {
@@ -1442,19 +1451,22 @@ const ROLES = {
         items: [
           { label: "Accompagnement des équipes, formation interne", level: "core" },
           { label: "Modèles de gestion du changement (Kotter, ADKAR)", level: "option" },
-          { label: "Obtention du soutien de la direction (sponsorship exécutif)", level: "core" }
+          { label: "Obtention du soutien de la direction (sponsorship exécutif)", level: "core" },
+          { label: "Gestion de la résistance au changement", level: "option" }
         ]
       },
       {
         title: "4. Gouvernance IT",
         items: [
-          { label: "Choix technologiques, priorisation des investissements", level: "core" }
+          { label: "Choix technologiques, priorisation des investissements", level: "core" },
+          { label: "Mise en place d'indicateurs de suivi de la transformation (KPI)", level: "option" }
         ]
       },
       {
         title: "5. Écosystème togolais",
         items: [
-          { label: "Djanta Tech Hub et CUBE : contexte institutionnel de la transformation numérique togolaise", level: "core" }
+          { label: "Djanta Tech Hub et CUBE : contexte institutionnel de la transformation numérique togolaise", level: "core" },
+          { label: "Agence Togo Digital : pilote de la stratégie de digitalisation de l'État togolais", level: "option", resource: { label: "digital.gouv.tg", url: "https://digital.gouv.tg" } }
         ]
       }
     ]
@@ -2302,7 +2314,8 @@ const ROLES = {
         title: "1. Fondamentaux",
         items: [
           { label: "Compréhension technique approfondie du produit vendu", level: "core" },
-          { label: "Bases API et intégrations", level: "core" }
+          { label: "Bases API et intégrations", level: "core" },
+          { label: "Connaissance du marché et des solutions concurrentes", level: "option" }
         ]
       },
       {
@@ -2310,6 +2323,7 @@ const ROLES = {
         items: [
           { label: "Démonstrations techniques (démos) adaptées à l'audience", level: "core" },
           { label: "Réponse aux appels d'offres techniques (RFP/RFI)", level: "core" },
+          { label: "Chiffrage et dimensionnement technique des solutions (sizing)", level: "core" },
           { label: "Positionnement concurrentiel et argumentaires (battlecards)", level: "option" }
         ]
       },
@@ -2324,7 +2338,14 @@ const ROLES = {
       {
         title: "4. Proof of concept",
         items: [
-          { label: "Mise en place de POC et pilotes", level: "core" }
+          { label: "Mise en place de POC et pilotes", level: "core" },
+          { label: "Suivi post-vente et transfert vers l'équipe d'implémentation (handoff)", level: "core" }
+        ]
+      },
+      {
+        title: "5. Certifications",
+        items: [
+          { label: "Certifications éditeur selon le produit vendu (Salesforce, AWS, Microsoft...)", level: "option" }
         ]
       }
     ]
@@ -2578,7 +2599,8 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Différence Product Owner / Product Manager", level: "core", resource: { label: "Voir roadmap métier Product Manager", url: "roadmap.html?id=product-manager" } }
+          { label: "Différence Product Owner / Product Manager", level: "core", resource: { label: "Voir roadmap métier Product Manager", url: "roadmap.html?id=product-manager" } },
+          { label: "Rôle de représentant des utilisateurs au sein de l'équipe de développement", level: "core" }
         ]
       },
       {
@@ -2586,6 +2608,8 @@ const ROLES = {
         items: [
           { label: "Rédaction de user stories selon les critères INVEST", level: "core" },
           { label: "Critères d'acceptation et Definition of Done", level: "core" },
+          { label: "Techniques de priorisation (MoSCoW, RICE, matrice Kano)", level: "core" },
+          { label: "Story mapping pour visualiser le parcours utilisateur complet", level: "option" },
           { label: "Priorisation et raffinement du backlog", level: "core" }
         ]
       },
@@ -2593,14 +2617,23 @@ const ROLES = {
         title: "3. Collaboration Scrum",
         items: [
           { label: "Sprint planning et revue de sprint", level: "core", resource: { label: "Voir roadmap métier Scrum Master", url: "roadmap.html?id=scrum-master" } },
+          { label: "Facilitation d'ateliers de refinement avec l'équipe", level: "option" },
           { label: "Communication avec les parties prenantes (stakeholders)", level: "core" },
           { label: "Arbitrages entre valeur métier et dette technique", level: "option" }
         ]
       },
       {
-        title: "4. Certifications",
+        title: "4. Outils",
         items: [
-          { label: "Professional Scrum Product Owner (PSPO)", level: "option", resource: { label: "Scrum.org - Certifications", url: "https://www.scrum.org/professional-scrum-certifications" } }
+          { label: "Jira, Azure DevOps ou Trello pour la gestion du backlog", level: "core" },
+          { label: "Notion ou Confluence pour la documentation produit", level: "option" }
+        ]
+      },
+      {
+        title: "5. Certifications",
+        items: [
+          { label: "Professional Scrum Product Owner (PSPO)", level: "option", resource: { label: "Scrum.org - Certifications", url: "https://www.scrum.org/professional-scrum-certifications" } },
+          { label: "Certified Scrum Product Owner (CSPO)", level: "option", resource: { label: "Scrum Alliance - CSPO", url: "https://www.scrumalliance.org/get-certified/product-owner-track/certified-scrum-product-owner" } }
         ]
       }
     ]
@@ -2620,7 +2653,8 @@ const ROLES = {
       {
         title: "1. Bases techniques",
         items: [
-          { label: "Solide expérience préalable en développement", level: "core", resource: { label: "Voir roadmap métier Développeur Backend", url: "roadmap.html?id=backend" } }
+          { label: "Solide expérience préalable en développement", level: "core", resource: { label: "Voir roadmap métier Développeur Backend", url: "roadmap.html?id=backend" } },
+          { label: "Capacité à lire et évaluer du code lors des revues", level: "core" }
         ]
       },
       {
@@ -2628,20 +2662,24 @@ const ROLES = {
         items: [
           { label: "Recrutement et entretiens techniques", level: "core" },
           { label: "One-on-one, feedback et développement de carrière", level: "core" },
-          { label: "Grilles de progression (career ladders) et évaluations de performance", level: "option" }
+          { label: "Grilles de progression (career ladders) et évaluations de performance", level: "option" },
+          { label: "Gestion des conflits et médiation au sein de l'équipe", level: "core" },
+          { label: "Gestion du budget d'équipe et planification des effectifs (headcount)", level: "option" }
         ]
       },
       {
         title: "3. Livraison",
         items: [
           { label: "Planification technique et gestion des priorités", level: "core" },
-          { label: "Métriques d'ingénierie (DORA metrics : fréquence de déploiement, délai de restauration)", level: "option" }
+          { label: "Métriques d'ingénierie (DORA metrics : fréquence de déploiement, délai de restauration)", level: "option" },
+          { label: "Frameworks Agile à l'échelle (SAFe, LeSS) pour coordonner plusieurs équipes", level: "option" }
         ]
       },
       {
         title: "4. Culture d'équipe",
         items: [
           { label: "Qualité du code et bonnes pratiques d'équipe", level: "core" },
+          { label: "Mise en place de rituels d'équipe (stand-ups, rétrospectives)", level: "core" },
           { label: "Animation d'équipes à distance ou hybrides", level: "option" }
         ]
       }
@@ -2662,14 +2700,16 @@ const ROLES = {
       {
         title: "1. Vision technique",
         items: [
-          { label: "Choix d'architecture et de stack à long terme", level: "core", resource: { label: "Voir roadmap métier Architecte Logiciel", url: "roadmap.html?id=architecte-logiciel" } }
+          { label: "Choix d'architecture et de stack à long terme", level: "core", resource: { label: "Voir roadmap métier Architecte Logiciel", url: "roadmap.html?id=architecte-logiciel" } },
+          { label: "Roadmap technique pluriannuelle et arbitrages d'investissement", level: "core" }
         ]
       },
       {
         title: "2. Leadership",
         items: [
           { label: "Structuration et recrutement des équipes techniques", level: "core" },
-          { label: "Mise à l'échelle de l'organisation technique (startup vers scale-up)", level: "option" }
+          { label: "Mise à l'échelle de l'organisation technique (startup vers scale-up)", level: "option" },
+          { label: "Culture d'ingénierie et rétention des talents", level: "core" }
         ]
       },
       {
@@ -2677,11 +2717,18 @@ const ROLES = {
         items: [
           { label: "Alignement technologie / objectifs business", level: "core" },
           { label: "Gestion des risques techniques et de la dette technique", level: "core" },
+          { label: "Sécurité et conformité au niveau organisationnel", level: "core" },
           { label: "Décisions build vs buy (développer en interne ou acheter)", level: "option" }
         ]
       },
       {
-        title: "4. Représentation",
+        title: "4. Veille et innovation",
+        items: [
+          { label: "Évaluation de nouvelles technologies (IA, cloud, outils émergents)", level: "option" }
+        ]
+      },
+      {
+        title: "5. Représentation",
         items: [
           { label: "Interface avec investisseurs et partenaires sur les sujets techniques", level: "option" },
           { label: "Due diligence technique lors de levées de fonds", level: "option" }
@@ -2748,7 +2795,8 @@ const ROLES = {
       {
         title: "1. Bases techniques",
         items: [
-          { label: "Compréhension des systèmes et de l'architecture concernés", level: "core" }
+          { label: "Compréhension des systèmes et de l'architecture concernés", level: "core" },
+          { label: "Connaissance des méthodologies de développement (Agile, Waterfall, hybride)", level: "core" }
         ]
       },
       {
@@ -2757,20 +2805,30 @@ const ROLES = {
           { label: "Gestion des dépendances entre équipes", level: "core" },
           { label: "Planification de programmes multi-équipes (distinction programme/projet)", level: "core" },
           { label: "Suivi des jalons et du chemin critique", level: "option" },
-          { label: "Gestion des risques transverses au programme", level: "option" }
+          { label: "Gestion des risques transverses au programme (RAID log)", level: "option" }
         ]
       },
       {
         title: "3. Communication",
         items: [
           { label: "Reporting aux parties prenantes techniques et non techniques", level: "core" },
+          { label: "Animation de comités de pilotage (steering committees)", level: "option" },
           { label: "Alignement des parties prenantes cross-fonctionnelles", level: "option" }
         ]
       },
       {
         title: "4. Outils",
         items: [
-          { label: "Jira, roadmapping multi-projets", level: "core" }
+          { label: "Jira, roadmapping multi-projets", level: "core" },
+          { label: "Outils de gestion de programme (Smartsheet, Monday, MS Project)", level: "option" },
+          { label: "Diagrammes de Gantt et visualisation du chemin critique", level: "option" }
+        ]
+      },
+      {
+        title: "5. Certifications",
+        items: [
+          { label: "PMP (Project Management Professional)", level: "option", resource: { label: "PMI - PMP", url: "https://www.pmi.org/certifications/project-management-pmp" } },
+          { label: "PgMP (Program Management Professional)", level: "option" }
         ]
       }
     ]
@@ -3069,14 +3127,16 @@ const ROLES = {
       {
         title: "1. Fondamentaux ERP",
         items: [
-          { label: "Concepts ERP et processus métier", level: "core", resource: { label: "Voir roadmap métier Développeur ERP/CRM", url: "roadmap.html?id=erp-crm" } }
+          { label: "Concepts ERP et processus métier", level: "core", resource: { label: "Voir roadmap métier Développeur ERP/CRM", url: "roadmap.html?id=erp-crm" } },
+          { label: "Cycle de vie d'un projet ERP (avant-vente, implémentation, run)", level: "core" }
         ]
       },
       {
         title: "2. Modules SAP",
         items: [
           { label: "Spécialisation sur un module (FI/CO, MM, SD...)", level: "core" },
-          { label: "SAP S/4HANA, la suite ERP nouvelle génération", level: "option" }
+          { label: "SAP S/4HANA, la suite ERP nouvelle génération", level: "option" },
+          { label: "SAP Fiori pour les interfaces utilisateurs modernes", level: "option" }
         ]
       },
       {
@@ -3084,13 +3144,15 @@ const ROLES = {
         items: [
           { label: "Configuration et personnalisation des processus (customizing)", level: "core" },
           { label: "Méthodologie de déploiement SAP Activate", level: "option" },
+          { label: "Tests d'intégration et recette utilisateur (UAT)", level: "core" },
           { label: "Notions ABAP pour les développements spécifiques", level: "option" }
         ]
       },
       {
         title: "4. Accompagnement",
         items: [
-          { label: "Formation des utilisateurs finaux", level: "core" }
+          { label: "Formation des utilisateurs finaux", level: "core" },
+          { label: "Rédaction de documentation fonctionnelle et supports de formation", level: "core" }
         ]
       },
       {
