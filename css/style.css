@@ -47,6 +47,22 @@
   font-family: "Cabin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Thème clair — mêmes rôles de variables, valeurs adaptées à un fond clair.
+   Réutilise les tons déjà présents dans la palette (--accent, --text, --border)
+   pour rester cohérent avec les cartes/chips qui sont déjà claires par défaut. */
+:root[data-theme="light"] {
+  --tk-canvas: #eef1f7;
+  --tk-surface: #ffffff;
+  --tk-surface-soft: #eaf0fb;
+  --tk-border: #dbe1ec;
+  --tk-text: #10162f;
+  --tk-text-muted: #5b6572;
+  --tk-text-subtle: #7c8794;
+  --tk-primary: #1557ff;
+  --tk-primary-hover: #0d3fd6;
+  --tk-primary-soft: #eaf3ff;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -297,6 +313,39 @@ nav.site-nav a.active {
   align-items: center;
   gap: 2px;
   flex: 0 0 auto;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--tk-text-subtle);
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--tk-text);
+  background: var(--tk-surface-soft);
+}
+
+.theme-toggle .theme-icon-sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .theme-icon-moon {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .theme-icon-sun {
+  display: inline-flex;
 }
 
 .lang-btn {
@@ -1624,6 +1673,9 @@ footer.site-footer {
     order: 2;
   }
   .lang-switch {
+    order: 3;
+  }
+  .theme-toggle {
     order: 3;
   }
   nav.site-nav {
