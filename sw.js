@@ -1,4 +1,4 @@
-const CACHE_NAME = "wiyao-v64";
+const CACHE_NAME = "wiyao-v65";
 
 const PRECACHE_URLS = [
   "index.html",
@@ -28,6 +28,8 @@ const PRECACHE_URLS = [
   "manifest.json",
   "icons/icon-192.png",
   "icons/icon-512.png",
+  "icons/logo-black.png",
+  "icons/logo-white.png",
   "fonts/cabin-latin.woff2",
   "fonts/cabin-latin-ext.woff2",
 ];

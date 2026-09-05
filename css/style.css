@@ -372,6 +372,24 @@ header.site-header {
   font-size: 1.1rem;
 }
 
+.brand-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.brand-logo-light {
+  display: none;
+}
+
+:root[data-theme="light"] .brand-logo-dark {
+  display: none;
+}
+
+:root[data-theme="light"] .brand-logo-light {
+  display: block;
+}
+
 .brand .flag {
   display: inline-flex;
   width: 22px;
