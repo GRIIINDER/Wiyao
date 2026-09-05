@@ -27,7 +27,9 @@ Zéro dépendance, zéro build. HTML/CSS/JS vanilla servis tels quels :
 
 **Commit + push.** Committer et pousser sur `origin/main` après chaque changement vérifié, sans demander confirmation à chaque fois (sauf action destructrice/inhabituelle : force-push, réécriture d'historique, suppression de fichiers).
 
-**CSP.** `vercel.json` applique une Content-Security-Policy stricte sur `script-src` (liste blanche par hash SHA-256, pas de `unsafe-inline`). Si le contenu du script inline dans `<head>` (anti-flash de thème) ou le JSON-LD d'`index.html` change, il faut recalculer son hash SHA-256 et mettre à jour `vercel.json`, sinon le script sera silencieusement bloqué en production. `style-src` autorise `unsafe-inline` (nécessaire pour les barres de progression, dont la largeur est appliquée en style inline par `app.js`).
+**CSP.** `vercel.json` applique une Content-Security-Policy stricte sur `script-src` (liste blanche par hash SHA-256, pas de `unsafe-inline`). Si le contenu du script inline dans `<head>` (anti-flash de thème) ou le JSON-LD d'`index.html` change, il faut recalculer son hash SHA-256 et mettre à jour `vercel.json`, sinon le script sera silencieusement bloqué en production. `style-src` autorise `unsafe-inline` (nécessaire pour les barres de progression, dont la largeur est appliquée en style inline par `app.js`). `form-action` autorise `https://buttondown.com` en plus de `'self'` pour le formulaire newsletter du footer — ne pas le retirer en resserrant la CSP.
+
+**Newsletter.** Le formulaire du footer (17 pages) poste directement vers `https://buttondown.com/api/emails/embed-subscribe/credo` (`target="popupwindow"`, sans JS — un `onsubmit` inline y serait bloqué par le `script-src` strict). Compte Buttondown du projet : `credo`. Toute modification du texte doit rester synchronisée FR/EN dans `js/i18n.js` (clés `footer.newsletter.*`) et avec la politique de confidentialité (section 2), qui documente cette collecte d'email comme seule exception réelle à la mention "aucune collecte de données".
 
 ## Pas encore en place
 

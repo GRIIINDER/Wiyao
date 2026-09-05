@@ -34,12 +34,19 @@
     { selector: ".footer-links-grid > .footer-links-col:nth-child(3) h5", fr: "Projet", en: "Project" },
     { selector: ".footer-social-col h5", fr: "Suivez-nous", en: "Follow us" },
     { selector: ".footer-bottom p:first-child", fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
-    { selector: ".footer-slogan", fr: "Trace ton parcours tech au Togo.", en: "Chart your tech path in Togo." },
   ];
 
   // Contenu propre à index.html (hero + parcours en 6 étapes), repéré par
   // data-i18n-key posé directement dans le HTML de cette page.
   const PAGE_CONTENT = {
+    // Newsletter du footer, identique sur les 17 pages.
+    "footer.newsletter.title": { fr: "Reste informé·e", en: "Stay in the loop" },
+    "footer.newsletter.desc": {
+      fr: "Le résumé mensuel de ce qui change sur WIYAO — nouvelles écoles, dates de concours, offres de stage — directement dans ta boîte mail.",
+      en: "The monthly digest of what's new on WIYAO — new schools, exam dates, internship listings — straight to your inbox.",
+    },
+    "footer.newsletter.label": { fr: "Ton adresse e-mail", en: "Your email address" },
+    "footer.newsletter.submit": { fr: "S'abonner", en: "Subscribe" },
     "hero.title": {
       fr: 'Trace ton <span class="hero-accent">parcours tech</span> au Togo',
       en: 'Chart your <span class="hero-accent">tech path</span> in Togo',
@@ -362,14 +369,18 @@
     },
     "conf.s2.h2": { fr: "2. Collecte de données personnelles", en: "2. Personal data collection" },
     "conf.s2.p1": {
-      fr: "Aucune information personnelle n'est collectée, automatiquement ou non, pour un Visiteur qui utilise WIYAO — que ce soit pour consulter les roadmaps, répondre au test d'orientation, comparer des écoles ou consulter le calendrier. Le site ne demande ni nom, ni email, ni aucune autre donnée pour fonctionner.",
-      en: "No personal information is collected, automatically or otherwise, for a Visitor using WIYAO — whether to browse roadmaps, take the orientation test, compare schools or check the calendar. The site asks for no name, no email, and no other data to function.",
+      fr: "Aucune information personnelle n'est collectée pour naviguer sur WIYAO, répondre au test d'orientation, comparer des écoles ou consulter le calendrier — ces usages ne demandent ni nom, ni email, ni aucune autre donnée. Trois actions volontaires font exception, décrites ci-dessous.",
+      en: "No personal information is collected to browse WIYAO, take the orientation test, compare schools or check the calendar — these uses ask for no name, no email, and no other data. Three voluntary actions are the exception, described below.",
     },
     "conf.s2.p2": {
-      fr: 'Seule exception : ta progression sur les roadmaps est enregistrée dans le stockage local (localStorage) de ton navigateur. Cette donnée reste uniquement sur ton appareil, n\'est jamais transmise à un serveur ni à WIYAO, et tu peux l\'effacer à tout moment via le bouton « Réinitialiser la progression » sur une roadmap, ou en vidant les données de ton navigateur.',
-      en: 'The only exception: your progress on roadmaps is saved in your browser\'s local storage (localStorage). This data stays only on your device, is never sent to a server or to WIYAO, and you can erase it at any time via the "Reset progress" button on a roadmap, or by clearing your browser data.',
+      fr: 'Ta progression sur les roadmaps est enregistrée dans le stockage local (localStorage) de ton navigateur. Cette donnée reste uniquement sur ton appareil, n\'est jamais transmise à un serveur ni à WIYAO, et tu peux l\'effacer à tout moment via le bouton « Réinitialiser la progression » sur une roadmap, ou en vidant les données de ton navigateur.',
+      en: 'Your progress on roadmaps is saved in your browser\'s local storage (localStorage). This data stays only on your device, is never sent to a server or to WIYAO, and you can erase it at any time via the "Reset progress" button on a roadmap, or by clearing your browser data.',
     },
     "conf.s2.p3": {
+      fr: 'Si tu t\'abonnes à la newsletter (formulaire dans le pied de page), ton adresse email est transmise à <a href="https://buttondown.com" target="_blank" rel="noopener">Buttondown</a>, le prestataire tiers qui héberge et envoie nos emails — c\'est la seule donnée que WIYAO fait volontairement transiter par un service externe. Elle sert uniquement à t\'envoyer le résumé mensuel du site, n\'est ni revendue ni utilisée à d\'autres fins. Tu peux te désabonner à tout moment via le lien présent dans chaque email, ou consulter la <a href="https://buttondown.com/legal/privacy" target="_blank" rel="noopener">politique de confidentialité de Buttondown</a>.',
+      en: 'If you subscribe to the newsletter (form in the footer), your email address is sent to <a href="https://buttondown.com" target="_blank" rel="noopener">Buttondown</a>, the third-party provider that hosts and sends our emails — it\'s the only data WIYAO deliberately routes through an external service. It is used only to send you the site\'s monthly digest, and is never resold or used for other purposes. You can unsubscribe at any time via the link in every email, or read <a href="https://buttondown.com/legal/privacy" target="_blank" rel="noopener">Buttondown\'s privacy policy</a>.',
+    },
+    "conf.s2.p4": {
       fr: 'Si tu utilises la page <a href="contact.html">Contact</a>, les informations que tu choisis d\'y saisir (nom, email, message) ne sont pas envoyées à un serveur : le bouton « Envoyer » ouvre ton client email habituel avec le message pré-rempli, à toi de l\'envoyer depuis là.',
       en: 'If you use the <a href="contact.html">Contact</a> page, the information you choose to enter there (name, email, message) is not sent to a server: the "Send" button opens your usual email client with the message pre-filled, for you to send from there.',
     },
@@ -379,8 +390,8 @@
       en: "Togolese law n°2019-014 guarantees anyone whose data is processed a right to information, a right of access, a right to object, a right of rectification and deletion, as well as a right to erasure when the data has been made public.",
     },
     "conf.s3.p2": {
-      fr: "WIYAO ne traitant aucune donnée personnelle côté serveur (voir section 2), ces droits n'ont aujourd'hui rien à s'appliquer en pratique. La seule donnée qui existe — ta progression sur les roadmaps — reste sur ton appareil et sous ton contrôle exclusif : tu peux la consulter, la modifier ou la supprimer toi-même directement dans le navigateur, sans avoir à nous solliciter.",
-      en: "Since WIYAO processes no personal data server-side (see section 2), these rights currently have nothing to apply to in practice. The only data that exists — your progress on roadmaps — stays on your device under your exclusive control: you can view, edit or delete it yourself directly in the browser, without needing to contact us.",
+      fr: "En dehors des abonnés à la newsletter — dont l'email est traité par Buttondown selon les modalités décrites en section 2 et qui peuvent se désabonner à tout moment via chaque email reçu — WIYAO ne traite aucune donnée personnelle côté serveur. La seule autre donnée qui existe, ta progression sur les roadmaps, reste sur ton appareil et sous ton contrôle exclusif : tu peux la consulter, la modifier ou la supprimer toi-même directement dans le navigateur, sans avoir à nous solliciter.",
+      en: "Aside from newsletter subscribers — whose email is processed by Buttondown as described in section 2, and who can unsubscribe at any time via every email received — WIYAO processes no personal data server-side. The only other data that exists, your progress on roadmaps, stays on your device under your exclusive control: you can view, edit or delete it yourself directly in the browser, without needing to contact us.",
     },
     "conf.s3.p3": {
       fr: 'Pour toute question sur ces droits, contacte-nous via la page <a href="contact.html">Contact</a> ou par email à <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
@@ -388,8 +399,8 @@
     },
     "conf.s4.h2": { fr: "4. Sécurité", en: "4. Security" },
     "conf.s4.p": {
-      fr: "WIYAO ne stockant aucune donnée personnelle sur un serveur, il n'y a pas de base de données à protéger contre une fuite ou un accès non autorisé. La connexion au site est chiffrée (HTTPS), via l'hébergeur Vercel.",
-      en: "Since WIYAO stores no personal data on a server, there is no database to protect against a leak or unauthorized access. The connection to the site is encrypted (HTTPS), via the host Vercel.",
+      fr: "En dehors des adresses email des abonnés à la newsletter, hébergées et sécurisées par Buttondown, WIYAO ne stocke aucune donnée personnelle sur un serveur : il n'y a pas de base de données propre à protéger contre une fuite ou un accès non autorisé. La connexion au site est chiffrée (HTTPS), via l'hébergeur Vercel.",
+      en: "Aside from the email addresses of newsletter subscribers, hosted and secured by Buttondown, WIYAO stores no personal data on a server: there is no database of our own to protect against a leak or unauthorized access. The connection to the site is encrypted (HTTPS), via the host Vercel.",
     },
     "conf.s5.h2": { fr: "5. Pas de suivi ni de publicité", en: "5. No tracking or advertising" },
     "conf.s5.p": {
@@ -518,8 +529,8 @@
     "faq.c1.a3": { fr: "Uniquement dans le stockage local (localStorage) de ton navigateur, jamais envoyée à un serveur. Si tu changes d'appareil ou de navigateur, ou si tu vides les données de ton navigateur, ta progression est perdue.", en: "Only in your browser's local storage (localStorage), never sent to a server. If you switch device or browser, or clear your browser data, your progress is lost." },
     "faq.c1.q4": { fr: "Est-ce que WIYAO collecte mes données personnelles ?", en: "Does WIYAO collect my personal data?" },
     "faq.c1.a4": {
-      fr: 'Non. Aucune collecte de données, aucun outil de suivi (analytics), aucune publicité. Détails dans la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
-      en: 'No. No data collection, no tracking tools (analytics), no advertising. Details in the <a href="politique-confidentialite.html">privacy policy</a>.',
+      fr: 'Pour naviguer, faire le test ou comparer des écoles, non : aucune collecte, aucun outil de suivi (analytics), aucune publicité. Seule exception si tu le fais volontairement : t\'abonner à la newsletter transmet ton email à Buttondown, notre prestataire d\'envoi. Détails dans la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
+      en: 'To browse, take the test, or compare schools, no: no collection, no tracking tools (analytics), no advertising. The only exception, if you do it voluntarily: subscribing to the newsletter sends your email to Buttondown, our sending provider. Details in the <a href="politique-confidentialite.html">privacy policy</a>.',
     },
     "faq.c1.q5": { fr: "Qui a créé WIYAO ?", en: "Who created WIYAO?" },
     "faq.c1.a5": {
