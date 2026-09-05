@@ -783,49 +783,76 @@
     });
   }
 
-  // ---- Page Contact ----
+  // ---- Page Contact (message ou proposition de contenu) ----
   function initContactForm() {
     const form = document.getElementById("contact-form");
     if (!form) return;
+
+    const modeButtons = document.querySelectorAll("#contact-mode-filters .domain-chip");
+    const modeFields = document.querySelectorAll(".contact-mode-fields");
+    const introTitle = document.getElementById("contact-intro-title");
+    const submitBtn = document.getElementById("contact-submit-btn");
+    const messageFieldIds = ["contact-subject", "contact-message"];
+    const proposerFieldIds = ["proposal-type", "proposal-nom", "proposal-lien", "proposal-description"];
+
+    function setMode(mode) {
+      modeButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.mode === mode));
+      modeFields.forEach((block) => {
+        block.hidden = block.dataset.modeFields !== mode;
+      });
+      const isProposer = mode === "proposer";
+      messageFieldIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.required = !isProposer;
+      });
+      proposerFieldIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.required = isProposer;
+      });
+      if (introTitle) introTitle.innerHTML = isProposer ? "Proposer un<br>événement ou une communauté" : "Nous laisser<br>un message";
+      if (submitBtn) submitBtn.innerHTML = isProposer ? 'Envoyer la proposition <span aria-hidden="true">↗</span>' : 'Envoyer <span aria-hidden="true">↗</span>';
+    }
+
+    modeButtons.forEach((btn) => {
+      btn.addEventListener("click", () => setMode(btn.dataset.mode));
+    });
+
+    if (window.location.hash === "#proposer") setMode("proposer");
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      const currentMode = document.querySelector("#contact-mode-filters .domain-chip.active").dataset.mode;
       const name = form.elements["name"].value.trim();
       const email = form.elements["email"].value.trim();
+
+      if (currentMode === "proposer") {
+        const type = form.elements["type"].value.trim();
+        const ville = form.elements["ville"].value.trim();
+        const nom = form.elements["nom"].value.trim();
+        const lien = form.elements["lien"].value.trim();
+        const date = form.elements["date"].value.trim();
+        const description = form.elements["description"].value.trim();
+        const subject = `[Proposition ${type}] ${nom}`;
+        const bodyLines = [
+          `Type : ${type}`,
+          `Nom : ${nom}`,
+          `Ville : ${ville || "non précisée"}`,
+          `Lien / source : ${lien}`,
+          `Date (si événement) : ${date || "non précisée"}`,
+          "",
+          "Description :",
+          description,
+          "",
+          `— Proposé par ${name} (${email})`,
+        ];
+        window.location.href = `mailto:wiya.info@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+        return;
+      }
+
       const subject = form.elements["subject"].value.trim();
       const message = form.elements["message"].value.trim();
       const body = `${message}\n\n— ${name} (${email})`;
       window.location.href = `mailto:wiya.info@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
-  }
-
-  // ---- Page Proposer du contenu ----
-  function initProposalForm() {
-    const form = document.getElementById("proposal-form");
-    if (!form) return;
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const type = form.elements["type"].value.trim();
-      const ville = form.elements["ville"].value.trim();
-      const nom = form.elements["nom"].value.trim();
-      const lien = form.elements["lien"].value.trim();
-      const date = form.elements["date"].value.trim();
-      const description = form.elements["description"].value.trim();
-      const name = form.elements["name"].value.trim();
-      const email = form.elements["email"].value.trim();
-      const subject = `[Proposition ${type}] ${nom}`;
-      const bodyLines = [
-        `Type : ${type}`,
-        `Nom : ${nom}`,
-        `Ville : ${ville || "non précisée"}`,
-        `Lien / source : ${lien}`,
-        `Date (si événement) : ${date || "non précisée"}`,
-        "",
-        "Description :",
-        description,
-        "",
-        `— Proposé par ${name} (${email})`,
-      ];
-      window.location.href = `mailto:wiya.info@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
     });
   }
 
@@ -1030,6 +1057,5 @@
     renderAcademicTimeline();
     renderSchoolDates();
     initContactForm();
-    initProposalForm();
   });
 })();

@@ -18,7 +18,6 @@
     "temoignages.html": { fr: "Témoignages", en: "Testimonials" },
     "faq.html": { fr: "FAQ", en: "FAQ" },
     "contact.html": { fr: "Contact", en: "Contact" },
-    "proposer.html": { fr: "Proposer du contenu", en: "Suggest content" },
     "about.html": { fr: "À propos & méthodologie", en: "About & methodology" },
     "mentions-legales.html": { fr: "Mentions légales", en: "Legal notice" },
     "politique-confidentialite.html": { fr: "Politique de confidentialité", en: "Privacy policy" },
@@ -231,14 +230,6 @@
       en: "A question, a correction to suggest, a school or event to add? Write to us.",
     },
 
-    "proposer.hero.title": {
-      fr: 'Propose du <span class="hero-accent">contenu</span>',
-      en: 'Suggest <span class="hero-accent">content</span>',
-    },
-    "proposer.hero.subtitle": {
-      fr: "Un événement tech, une communauté ou une ressource togolaise qui manque sur WIYAO ? Dis-nous-en plus — on vérifie et on ajoute.",
-      en: "A tech event, community or Togolese resource missing from WIYAO? Tell us about it — we verify and add it.",
-    },
 
     "recherche.hero.title": {
       fr: 'Cherche <span class="hero-accent">n\'importe quoi</span> sur WIYAO',
