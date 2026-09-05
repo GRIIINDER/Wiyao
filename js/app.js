@@ -411,6 +411,13 @@
     container.appendChild(track);
     updateGlobal();
 
+    const helpLinks = document.createElement("p");
+    helpLinks.className = "category-desc";
+    helpLinks.innerHTML = isEn
+      ? 'School fees shouldn\'t be what stops you: see <a href="bourses-financement.html">scholarships &amp; funding</a>. Question about this path? Check the <a href="faq.html">FAQ</a>.'
+      : 'Les frais de scolarité ne doivent pas être ce qui t\'arrête : voir les <a href="bourses-financement.html">bourses &amp; financement</a>. Une question sur ce parcours ? Regarde la <a href="faq.html">FAQ</a>.';
+    container.appendChild(helpLinks);
+
     const relatedSection = buildRelatedSection(id, rm);
     if (relatedSection) container.appendChild(relatedSection);
 
@@ -706,7 +713,11 @@
             : "D'après ton domaine et tes réponses sur le niveau, la ville et le budget — chaque critère coché est vérifié, pas deviné."
         }</p>
         <div class="grid" id="quiz-school-grid"></div>
-        <p class="quiz-secondary"><a href="ecoles.html">${isEn ? "See all schools →" : "Voir toutes les écoles →"}</a></p>
+        <p class="quiz-secondary">
+          <a href="ecoles.html">${isEn ? "See all schools →" : "Voir toutes les écoles →"}</a>
+          &nbsp;·&nbsp;
+          <a href="bourses-financement.html">${isEn ? "See available scholarships →" : "Voir les bourses disponibles →"}</a>
+        </p>
       `;
     }
 
