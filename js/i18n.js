@@ -541,6 +541,11 @@
       fr: "Oui. WIYAO est une application web installable (PWA) : une fois une page visitée, elle reste accessible même sans connexion Internet.",
       en: "Yes. WIYAO is an installable web app (PWA): once a page has been visited, it stays accessible even without an internet connection.",
     },
+    "faq.c1.q9": { fr: "Comment installer WIYAO comme application sur mon téléphone ?", en: "How do I install WIYAO as an app on my phone?" },
+    "faq.c1.a9": {
+      fr: "Sur Android (Chrome) : menu ⋮ → « Ajouter à l'écran d'accueil » ou « Installer l'application ». Sur iPhone (Safari) : bouton de partage 􀈂 → « Sur l'écran d'accueil ». Une icône WIYAO apparaît alors comme une application classique, avec accès hors connexion aux pages déjà visitées.",
+      en: 'On Android (Chrome): ⋮ menu → "Add to Home screen" or "Install app". On iPhone (Safari): Share button 􀈂 → "Add to Home Screen". A WIYAO icon then appears like a regular app, with offline access to pages already visited.',
+    },
 
     "faq.cat2.h2": { fr: "Sur l'orientation et les roadmaps", en: "About orientation and roadmaps" },
     "faq.c2.q1": { fr: "Je ne sais pas du tout quoi choisir, par où je commence ?", en: "I have no idea what to choose, where do I start?" },
@@ -558,12 +563,42 @@
       fr: "Les étapes marquées comme essentielles sont recommandées dans l'ordre. Les étapes optionnelles peuvent être sautées ou reportées selon ton niveau et ton objectif.",
       en: "Steps marked as essential are recommended in order. Optional steps can be skipped or postponed depending on your level and goal.",
     },
+    "faq.c2.q4": { fr: "Le test d'orientation est-il fiable à 100 % ?", en: "Is the orientation test 100% reliable?" },
+    "faq.c2.a4": {
+      fr: 'Non, et c\'est assumé : 14 questions ne peuvent pas connaître quelqu\'un parfaitement. Le résultat est un point de départ solide, pas un verdict définitif. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier et explore la roadmap correspondante avant de t\'engager dans une école.',
+      en: 'No, and that\'s by design: 14 questions can\'t know someone perfectly. The result is a solid starting point, not a final verdict. Cross-check it against a <a href="temoignages.html">real testimonial</a> from someone in the field and explore the matching roadmap before committing to a school.',
+    },
+    "faq.c2.q5": { fr: "Le métier suggéré par le test ne me plaît pas, que faire ?", en: "I don't like the role the test suggested, what should I do?" },
+    "faq.c2.a5": {
+      fr: 'Refais le test avec des réponses différentes, ou explore directement les <a href="index.html">roadmaps</a> des autres domaines qui t\'intéressent — rien n\'empêche de comparer plusieurs métiers avant de choisir. Le test aide à démarrer, il ne t\'enferme pas dans un seul chemin.',
+      en: 'Retake the test with different answers, or explore the <a href="index.html">roadmaps</a> of other fields that interest you directly — nothing stops you from comparing several roles before choosing. The test helps you get started; it doesn\'t lock you into a single path.',
+    },
+    "faq.c2.q6": { fr: "Faut-il un Bac scientifique (série C, D) pour faire de l'informatique ?", en: "Do I need a science-track Baccalauréat (series C, D) to study IT?" },
+    "faq.c2.a6": {
+      fr: 'Non, mais ça aide selon le métier visé. Les séries C, D et E sont les plus courantes en développement, cybersécurité et infrastructure, en particulier pour les concours publics. Les séries littéraires ou économiques (A, B, G) restent accessibles pour le marketing digital, le product management ou l\'UX writing, parfois avec une remise à niveau en logique. Détails dans le guide <a href="ecoles.html#bac">« Quelle série de bac pour quelle filière »</a>.',
+      en: 'No, but it helps depending on the target role. Series C, D and E are the most common for development, cybersecurity and infrastructure, especially for public entrance exams. Literary or economics tracks (A, B, G) remain accessible for digital marketing, product management or UX writing, sometimes with a logic refresher. Details in the <a href="ecoles.html#bac">"Which Bac series for which field"</a> guide.',
+    },
+    "faq.c2.q7": { fr: "Que signifie le badge « Vérifié Togo » sur une roadmap ?", en: 'What does the "Togo-verified" badge on a roadmap mean?' },
+    "faq.c2.a7": {
+      fr: "Il indique que ce métier a des offres d'emploi confirmées sur le marché togolais actuel. Son absence ne veut pas dire que le métier est inutile — seulement qu'aucune donnée fiable sur le marché local n'a encore été trouvée : les compétences restent transférables et recherchées à l'international.",
+      en: "It indicates this role has confirmed job openings on the current Togolese market. Its absence doesn't mean the role is useless — only that no reliable local market data has been found yet: the skills remain transferable and in demand internationally.",
+    },
+    "faq.c2.q8": { fr: "Je n'ai pas d'ordinateur à la maison, puis-je quand même me former ?", en: "I don't have a computer at home, can I still learn?" },
+    "faq.c2.a8": {
+      fr: 'Oui, en t\'organisant : cybercafés, salles informatiques des <a href="ecoles.html">écoles</a>, ou espaces gratuits comme les <a href="ecosysteme.html#hubs">hubs et incubateurs</a> (WoeLab, Djanta Tech Hub, Campus 42...). Beaucoup de bases (algorithmique, HTML/CSS) peuvent même s\'apprendre sur smartphone avant de passer à la pratique sur ordinateur.',
+      en: 'Yes, by organizing around it: cybercafés, <a href="ecoles.html">school</a> computer labs, or free spaces like <a href="ecosysteme.html#hubs">hubs and incubators</a> (WoeLab, Djanta Tech Hub, Campus 42...). Many fundamentals (algorithms, HTML/CSS) can even be learned on a smartphone before moving to hands-on practice on a computer.',
+    },
+    "faq.c2.q9": { fr: "Peut-on apprendre l'informatique seul, sans passer par une école ?", en: "Can you learn IT alone, without going through a school?" },
+    "faq.c2.a9": {
+      fr: 'Oui pour beaucoup de métiers du développement, de la data ou du design — les roadmaps WIYAO sont justement conçues pour l\'auto-formation, avec des ressources gratuites à chaque étape. D\'autres métiers (réseaux, cybersécurité avancée, gestion) bénéficient davantage d\'un encadrement académique ou de certifications reconnues. Dans tous les cas, un <a href="ecosysteme.html">réseau</a> et des projets concrets comptent autant que le diplôme aux yeux des recruteurs tech.',
+      en: 'Yes, for many roles in development, data or design — WIYAO\'s roadmaps are precisely designed for self-study, with free resources at every step. Other roles (networking, advanced cybersecurity, management) benefit more from academic training or recognized certifications. Either way, a <a href="ecosysteme.html">network</a> and concrete projects matter as much as a diploma to tech recruiters.',
+    },
 
     "faq.cat3.h2": { fr: "Sur les écoles et les frais", en: "About schools and fees" },
     "faq.c3.q1": { fr: "Toutes les écoles listées sont-elles reconnues par l'État ?", en: "Are all the listed schools recognized by the State?" },
     "faq.c3.a1": {
-      fr: "Le badge « 🏛️ Agréé État » indique une présence sur la liste officielle du Ministère togolais de l'Enseignement Supérieur (liste des établissements reconnus pour l'année académique 2025-2026, publiée le 30 septembre 2025). Les établissements publics et l'IAI-Togo (institut inter-États) n'ont pas ce badge pour des raisons de statut, pas de qualité.",
-      en: 'The "🏛️ State-accredited" badge indicates presence on the official list from the Togolese Ministry of Higher Education (list of recognized institutions for the 2025-2026 academic year, published September 30, 2025). Public institutions and IAI-Togo (an inter-state institute) don\'t carry this badge for reasons of status, not quality.',
+      fr: "Le badge « 🏛️ Agréé État » indique une présence sur la liste officielle du Ministère togolais de l'Enseignement Supérieur et de la Recherche (liste des établissements accrédités pour l'année académique 2026-2027, publiée le 24 juillet 2026, 111 établissements dont 13 publics).",
+      en: 'The "🏛️ State-accredited" badge indicates presence on the official list from the Togolese Ministry of Higher Education and Research (list of accredited institutions for the 2026-2027 academic year, published July 24, 2026, 111 institutions including 13 public ones).',
     },
     "faq.c3.q2": { fr: "Comment sont trouvés les frais de scolarité affichés ?", en: "How are the displayed tuition fees found?" },
     "faq.c3.a2": {
@@ -579,6 +614,28 @@
     "faq.c3.a4": {
       fr: "Majoritairement Lomé et Kara, avec des écoles également référencées à Sokodé, Bassar et Atakpamé.",
       en: "Mainly Lomé and Kara, with schools also listed in Sokodé, Bassar and Atakpamé.",
+    },
+    "faq.c3.q5": { fr: "Quelle est la différence entre BTS, Licence et Master ?", en: "What's the difference between BTS, Licence and Master?" },
+    "faq.c3.a5": {
+      fr: 'Le BTS (Bac+2) est un diplôme professionnalisant court. La Licence (Bac+3) peut être académique ou professionnelle. Le Master (Bac+5, souvent en 2 ans après la Licence) approfondit une spécialisation. Le <a href="ecoles.html#lexique">lexique des écoles</a> détaille aussi les autres sigles courants (LMD, CAMES, cursus ingénieur...).',
+      en: 'The BTS (Bac+2) is a short, career-focused diploma. The Licence (Bac+3) can be academic or professional. The Master (Bac+5, often 2 years after the Licence) deepens a specialization. The <a href="ecoles.html#lexique">schools glossary</a> also explains other common acronyms (LMD, CAMES, engineering track...).',
+    },
+    "faq.c3.q6": { fr: "Puis-je étudier dans une école togolaise puis continuer mes études à l'étranger ?", en: "Can I study at a Togolese school and then continue abroad?" },
+    "faq.c3.a6": {
+      fr: 'Oui, c\'est un parcours courant. Un diplôme accrédité CAMES (Conseil Africain et Malgache pour l\'Enseignement Supérieur) ou reconnu par une université partenaire facilite la poursuite d\'études à l\'étranger. Vérifie ce point directement auprès de l\'école visée, et regarde aussi les <a href="bourses-financement.html#international">bourses internationales</a> pour financer une mobilité après une Licence.',
+      en: 'Yes, this is a common path. A degree accredited by CAMES (the African and Malagasy Council for Higher Education) or recognized by a partner university makes it easier to continue studying abroad. Check this directly with the school in question, and also look at <a href="bourses-financement.html#international">international scholarships</a> to fund a move abroad after a Licence.',
+    },
+
+    "faq.cat5.h2": { fr: "Sur les bourses et le financement", en: "About scholarships and funding" },
+    "faq.c5.q1": { fr: "Existe-t-il des bourses pour financer mes études d'informatique au Togo ?", en: "Are there scholarships to fund IT studies in Togo?" },
+    "faq.c5.a1": {
+      fr: 'Oui, plusieurs types : bourses propres à certaines écoles privées, bourse d\'État togolaise pour les universités publiques, bourses internationales (AUF, coopération bilatérale) et solutions bancaires comme le crédit scolaire. Tout est centralisé sur la page <a href="bourses-financement.html">Bourses &amp; financement</a>.',
+      en: 'Yes, several kinds: scholarships specific to some private schools, the Togolese State scholarship for public universities, international scholarships (AUF, bilateral cooperation) and banking options like school loans. Everything is centralized on the <a href="bourses-financement.html">Scholarships &amp; funding</a> page.',
+    },
+    "faq.c5.q2": { fr: "Qui peut bénéficier de la bourse d'État togolaise ?", en: "Who can get the Togolese State scholarship?" },
+    "faq.c5.a2": {
+      fr: 'Elle est réservée aux étudiants de nationalité togolaise déjà inscrits dans une université publique (Université de Lomé ou Université de Kara), avec une moyenne « assez-bien » ou plus. Elle ne concerne pas les écoles privées. Le dossier se dépose physiquement auprès de la Direction des Bourses et Stages (DBS), selon un calendrier fixé chaque année — détails dans la section <a href="bourses-financement.html#etat">Bourse d\'État togolaise</a>.',
+      en: 'It\'s reserved for Togolese nationals already enrolled in a public university (University of Lomé or University of Kara), with a "assez-bien" average or better. It doesn\'t apply to private schools. The application is filed in person with the Directorate of Scholarships and Internships (DBS), on a calendar set each year — details in the <a href="bourses-financement.html#etat">Togolese State scholarship</a> section.',
     },
 
     "faq.cat4.h2": { fr: "Après le choix", en: "After you've chosen" },
