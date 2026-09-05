@@ -102,8 +102,8 @@
     "journey.2.link": { fr: "Voir les roadmaps →", en: "See the roadmaps →" },
     "journey.3.title": { fr: "Choisis ton école", en: "Choose your school" },
     "journey.3.desc": {
-      fr: 'Compare 31 écoles et universités togolaises : filières, niveaux, admission, frais de scolarité — et les <a href="bourses-financement.html">bourses disponibles</a> pour les alléger.',
-      en: 'Compare 31 Togolese schools and universities: programs, levels, admission, tuition fees — and the <a href="bourses-financement.html">scholarships available</a> to ease them.',
+      fr: 'Compare 32 écoles et universités togolaises : filières, niveaux, admission, frais de scolarité — et les <a href="bourses-financement.html">bourses disponibles</a> pour les alléger.',
+      en: 'Compare 32 Togolese schools and universities: programs, levels, admission, tuition fees — and the <a href="bourses-financement.html">scholarships available</a> to ease them.',
     },
     "journey.3.link": { fr: "Comparer les écoles →", en: "Compare schools →" },
     "journey.4.title": { fr: "Vise les bonnes dates", en: "Aim for the right dates" },
