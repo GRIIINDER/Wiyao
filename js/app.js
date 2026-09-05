@@ -23,6 +23,19 @@
     return currentLang() === "en" && en ? en : obj[field];
   }
 
+  // Minuscules + suppression des accents, pour un matching de recherche
+  // insensible à la casse et aux accents (partagé par la recherche globale
+  // et l'assistant).
+  function normalize(str) {
+    const decomposed = str.toLowerCase().normalize("NFD");
+    let out = "";
+    for (let i = 0; i < decomposed.length; i++) {
+      const code = decomposed.charCodeAt(i);
+      if (code < 0x0300 || code > 0x036f) out += decomposed[i];
+    }
+    return out;
+  }
+
   function loadProgress() {
     try {
       return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
@@ -1018,16 +1031,6 @@
     const status = document.getElementById("global-search-status");
     if (!input || !results || !status) return;
 
-    function normalize(str) {
-      const decomposed = str.toLowerCase().normalize("NFD");
-      let out = "";
-      for (let i = 0; i < decomposed.length; i++) {
-        const code = decomposed.charCodeAt(i);
-        if (code < 0x0300 || code > 0x036f) out += decomposed[i];
-      }
-      return out;
-    }
-
     let index = null;
     buildGlobalIndex().then((idx) => {
       idx.forEach((item) => {
@@ -1102,4 +1105,8 @@
     renderSchoolDates();
     initContactForm();
   });
+
+  // Exposé pour js/assistant.js — réutilise la même normalisation et le même
+  // index de recherche que la page Recherche, pas de logique dupliquée.
+  window.WIYAO_SEARCH = { buildGlobalIndex, normalize, currentLang };
 })();
