@@ -519,6 +519,7 @@ const ROLES = {
         title: "2. Découverte utilisateur",
         items: [
           { label: "Entretiens utilisateurs et personas", level: "core" },
+          { label: "Framework Jobs to be Done (JTBD)", level: "option" },
           { label: "Analyse de la concurrence", level: "core" }
         ]
       },
@@ -526,7 +527,9 @@ const ROLES = {
         title: "3. Stratégie produit",
         items: [
           { label: "Vision et roadmap produit", level: "core" },
-          { label: "Priorisation (RICE, MoSCoW, Kano)", level: "core" }
+          { label: "Objectifs et résultats clés (OKR)", level: "core" },
+          { label: "Priorisation (RICE, MoSCoW, Kano)", level: "core" },
+          { label: "Stratégie de mise sur le marché (go-to-market)", level: "option" }
         ]
       },
       {
@@ -540,7 +543,8 @@ const ROLES = {
       {
         title: "5. Data et métriques",
         items: [
-          { label: "KPIs produit, tableaux de bord", level: "core" },
+          { label: "KPIs produit, tableaux de bord, North Star Metric", level: "core" },
+          { label: "Outils d'analytics produit (Amplitude, Mixpanel, Google Analytics)", level: "option" },
           { label: "A/B testing", level: "option" }
         ]
       },
@@ -1566,28 +1570,32 @@ const ROLES = {
       {
         title: "1. Fondamentaux du design graphique",
         items: [
-          { label: "Théorie des couleurs, typographie, composition", level: "core" }
+          { label: "Théorie des couleurs, typographie, composition", level: "core" },
+          { label: "Modes colorimétriques (RVB/CMJN) et résolution (DPI)", level: "core" }
         ]
       },
       {
         title: "2. Outils",
         items: [
           { label: "Adobe Photoshop et Illustrator", level: "core" },
-          { label: "Canva pour la production rapide", level: "option" }
+          { label: "Canva pour la production rapide", level: "option" },
+          { label: "Figma pour les visuels collaboratifs et web", level: "option", resource: { label: "Voir roadmap métier UX/UI Design", url: "roadmap.html?id=ux-ui" } }
         ]
       },
       {
         title: "3. Production",
         items: [
           { label: "Identité visuelle, logos, chartes graphiques", level: "core" },
-          { label: "Supports imprimés : flyers, roll-ups, affiches", level: "core" },
-          { label: "Visuels pour réseaux sociaux", level: "core" }
+          { label: "Supports imprimés : flyers, roll-ups, affiches (gestion du fond perdu)", level: "core" },
+          { label: "Visuels pour réseaux sociaux", level: "core" },
+          { label: "Constitution d'un portfolio professionnel", level: "core" }
         ]
       },
       {
         title: "4. Vidéo et montage",
         items: [
-          { label: "Montage vidéo de base pour supports digitaux", level: "option" }
+          { label: "Montage vidéo de base pour supports digitaux", level: "option" },
+          { label: "Motion design simple (After Effects, Canva)", level: "option" }
         ]
       },
       {
@@ -2102,26 +2110,32 @@ const ROLES = {
         title: "1. Fondamentaux",
         items: [
           { label: "Principes de clarté et de concision", level: "core" },
-          { label: "Ton et voix de marque", level: "core" }
+          { label: "Ton et voix de marque", level: "core" },
+          { label: "Rédaction en langage clair (plain language)", level: "core" }
         ]
       },
       {
         title: "2. Microcopy",
         items: [
           { label: "Boutons, messages d'erreur, états vides", level: "core" },
-          { label: "Textes de confirmation et d'onboarding", level: "core" }
+          { label: "Textes de confirmation et d'onboarding", level: "core" },
+          { label: "Notifications et emails transactionnels", level: "option" }
         ]
       },
       {
-        title: "3. Collaboration",
+        title: "3. Systèmes de contenu",
         items: [
+          { label: "Guide de style et content design system", level: "core" },
+          { label: "Cohérence terminologique dans un glossaire produit", level: "option" },
           { label: "Travail en binôme avec les UX/UI Designers", level: "core", resource: { label: "Voir roadmap métier UX/UI Designer", url: "roadmap.html?id=ux-ui" } }
         ]
       },
       {
-        title: "4. Tests",
+        title: "4. Tests et accessibilité",
         items: [
-          { label: "Tests utilisateurs de contenu", level: "option" }
+          { label: "Tests utilisateurs de contenu", level: "option" },
+          { label: "Accessibilité du contenu (lecteurs d'écran, lisibilité)", level: "option" },
+          { label: "Notions de localisation et traduction (i18n)", level: "option" }
         ]
       },
       {
@@ -2276,20 +2290,25 @@ const ROLES = {
         title: "2. Types de documentation",
         items: [
           { label: "Documentation développeur (API, SDK)", level: "core" },
-          { label: "Guides utilisateurs et tutoriels", level: "core" }
+          { label: "Spécifications OpenAPI/Swagger pour documenter des API REST", level: "option" },
+          { label: "Guides utilisateurs et tutoriels", level: "core" },
+          { label: "Notes de version (changelogs) et documentation de dépannage", level: "option" }
         ]
       },
       {
         title: "3. Outils",
         items: [
-          { label: "Markdown, générateurs de documentation statique", level: "core" },
-          { label: "Outils de gestion de version (Git)", level: "option", resource: { label: "Voir roadmap compétence Git & GitHub", url: "roadmap.html?id=git-github" } }
+          { label: "Markdown, générateurs de documentation statique (Docusaurus, MkDocs)", level: "core" },
+          { label: "Outils de gestion de version (Git)", level: "option", resource: { label: "Voir roadmap compétence Git & GitHub", url: "roadmap.html?id=git-github" } },
+          { label: "Guides de style de référence (Google, Microsoft Writing Style Guide)", level: "option" },
+          { label: "Diagrammes et schémas explicatifs", level: "option" }
         ]
       },
       {
         title: "4. Collaboration",
         items: [
-          { label: "Travail avec les équipes produit et ingénierie", level: "core" }
+          { label: "Travail avec les équipes produit et ingénierie", level: "core" },
+          { label: "Docs-as-code : documentation versionnée avec le code source", level: "option" }
         ]
       }
     ]
@@ -2499,14 +2518,17 @@ const ROLES = {
       {
         title: "2. Backlog",
         items: [
-          { label: "Rédaction de user stories", level: "core" },
+          { label: "Rédaction de user stories selon les critères INVEST", level: "core" },
+          { label: "Critères d'acceptation et Definition of Done", level: "core" },
           { label: "Priorisation et raffinement du backlog", level: "core" }
         ]
       },
       {
         title: "3. Collaboration Scrum",
         items: [
-          { label: "Sprint planning et revue de sprint", level: "core", resource: { label: "Voir roadmap métier Scrum Master", url: "roadmap.html?id=scrum-master" } }
+          { label: "Sprint planning et revue de sprint", level: "core", resource: { label: "Voir roadmap métier Scrum Master", url: "roadmap.html?id=scrum-master" } },
+          { label: "Communication avec les parties prenantes (stakeholders)", level: "core" },
+          { label: "Arbitrages entre valeur métier et dette technique", level: "option" }
         ]
       },
       {
@@ -2617,18 +2639,23 @@ const ROLES = {
         title: "2. Collecte de données",
         items: [
           { label: "Entretiens utilisateurs, sondages", level: "core" },
-          { label: "Tests d'utilisabilité", level: "core" }
+          { label: "Tests d'utilisabilité modérés et non modérés", level: "core" },
+          { label: "Tri de cartes (card sorting) et tests d'arborescence", level: "option" },
+          { label: "Recrutement de participants et considérations éthiques (consentement)", level: "option" }
         ]
       },
       {
         title: "3. Analyse",
         items: [
-          { label: "Synthèse des insights, personas", level: "core" }
+          { label: "Synthèse des insights, personas", level: "core" },
+          { label: "Cartographie du parcours utilisateur (customer journey map)", level: "core" },
+          { label: "Diagrammes d'affinité pour organiser les observations", level: "option" }
         ]
       },
       {
-        title: "4. Collaboration",
+        title: "4. Outils et collaboration",
         items: [
+          { label: "Outils de research ops (Dovetail, Maze, UserTesting)", level: "option" },
           { label: "Restitution aux équipes produit et design", level: "core", resource: { label: "Voir roadmap métier UX/UI Designer", url: "roadmap.html?id=ux-ui" } }
         ]
       }
@@ -2781,25 +2808,36 @@ const ROLES = {
         title: "1. Fondamentaux",
         items: [
           { label: "Mécaniques de jeu et boucles de gameplay", level: "core" },
-          { label: "Équilibrage et courbes de progression", level: "core" }
+          { label: "Équilibrage et courbes de progression", level: "core" },
+          { label: "Psychologie du joueur : motivation, types de joueurs", level: "option" }
         ]
       },
       {
-        title: "2. Documentation",
+        title: "2. Disciplines de conception",
+        items: [
+          { label: "Level design : composition et rythme des niveaux", level: "core" },
+          { label: "Narrative design : histoire, dialogues, choix du joueur", level: "option" },
+          { label: "Économie de jeu et monétisation (free-to-play, achats)", level: "option" }
+        ]
+      },
+      {
+        title: "3. Documentation",
         items: [
           { label: "Rédaction de game design documents (GDD)", level: "core" }
         ]
       },
       {
-        title: "3. Prototypage",
+        title: "4. Prototypage",
         items: [
-          { label: "Prototypage rapide de mécaniques", level: "core" }
+          { label: "Prototypage rapide de mécaniques (papier ou moteur de jeu)", level: "core" },
+          { label: "Outils de prototypage narratif (Twine)", level: "option" }
         ]
       },
       {
-        title: "4. Playtesting",
+        title: "5. Playtesting",
         items: [
-          { label: "Tests de jouabilité et itération", level: "core" }
+          { label: "Tests de jouabilité et itération", level: "core" },
+          { label: "Équilibrage post-lancement (live ops) selon les retours joueurs", level: "option" }
         ]
       }
     ]
