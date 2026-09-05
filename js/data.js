@@ -368,11 +368,12 @@ const ROLES = {
         ]
       },
       {
-        title: "2. Programmation",
+        title: "2. Programmation et préparation des données",
         items: [
           { label: "Python : syntaxe, structures de données", level: "core", resource: { label: "Voir roadmap compétence Python", url: "roadmap.html?id=python" } },
           { label: "Pandas et NumPy", level: "core", resource: { label: "Documentation Pandas", url: "https://pandas.pydata.org/docs/" } },
-          { label: "SQL pour l'analyse de données", level: "core", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } }
+          { label: "SQL pour l'analyse de données", level: "core", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } },
+          { label: "Nettoyage et préparation des données (data wrangling)", level: "core" }
         ]
       },
       {
@@ -391,17 +392,20 @@ const ROLES = {
         ]
       },
       {
-        title: "5. Deep Learning",
+        title: "5. Deep Learning et IA générative",
         items: [
           { label: "Réseaux de neurones, bases", level: "option" },
           { label: "TensorFlow ou PyTorch", level: "option", resource: { label: "PyTorch - Tutoriels", url: "https://pytorch.org/tutorials/" } },
-          { label: "Traitement du langage naturel (NLP) : tokenisation, modèles de langage, LLM", level: "option" }
+          { label: "Traitement du langage naturel (NLP) : tokenisation, modèles de langage", level: "option" },
+          { label: "Grands modèles de langage (LLM) : APIs, prompt engineering", level: "option" },
+          { label: "RAG (Retrieval-Augmented Generation) et bases vectorielles", level: "option" }
         ]
       },
       {
         title: "6. Mise en production",
         items: [
           { label: "Déploiement de modèles (API Flask/FastAPI)", level: "option", resource: { label: "Documentation FastAPI", url: "https://fastapi.tiangolo.com/" } },
+          { label: "Suivi d'expérimentations (MLflow, Weights & Biases)", level: "option" },
           { label: "Notions de MLOps et monitoring", level: "option" },
           { label: "IA responsable et éthique : biais, transparence, impact sur les utilisateurs", level: "option" }
         ]
@@ -1435,33 +1439,43 @@ const ROLES = {
         title: "1. Fondamentaux",
         items: [
           { label: "SQL avancé et modélisation de données", level: "core", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } },
-          { label: "Python pour le traitement de données", level: "core", resource: { label: "Voir roadmap compétence Python", url: "roadmap.html?id=python" } }
+          { label: "Python pour le traitement de données", level: "core", resource: { label: "Voir roadmap compétence Python", url: "roadmap.html?id=python" } },
+          { label: "Modélisation dimensionnelle : schéma en étoile, schéma en flocon", level: "core" }
         ]
       },
       {
         title: "2. Pipelines de données",
         items: [
           { label: "ETL / ELT : extraction, transformation, chargement", level: "core" },
-          { label: "Orchestration : Apache Airflow", level: "core", resource: { label: "Documentation Apache Airflow", url: "https://airflow.apache.org/docs/" } }
+          { label: "Orchestration : Apache Airflow", level: "core", resource: { label: "Documentation Apache Airflow", url: "https://airflow.apache.org/docs/" } },
+          { label: "Traitement par lots (batch) vs streaming", level: "core" },
+          { label: "Traitement distribué : Apache Spark", level: "option" },
+          { label: "Streaming temps réel : Apache Kafka", level: "option" },
+          { label: "Transformation en SQL versionnée : dbt", level: "option" }
         ]
       },
       {
         title: "3. Stockage",
         items: [
-          { label: "Data warehouse et data lake", level: "core" },
+          { label: "Data warehouse (BigQuery, Redshift, Snowflake)", level: "core" },
+          { label: "Data lake et architecture lakehouse (Delta Lake, Iceberg)", level: "option" },
           { label: "Bases NoSQL et systèmes distribués", level: "option" }
         ]
       },
       {
         title: "4. Qualité et gouvernance",
         items: [
-          { label: "Qualité de données, tests et monitoring de pipelines", level: "core" }
+          { label: "Qualité de données, tests et monitoring de pipelines", level: "core" },
+          { label: "Outils de validation de données (Great Expectations)", level: "option" },
+          { label: "Gouvernance et confidentialité des données (RGPD, catalogues de données)", level: "option" }
         ]
       },
       {
-        title: "5. Cloud",
+        title: "5. Cloud et infrastructure",
         items: [
-          { label: "Services de données cloud", level: "option", resource: { label: "Voir roadmap compétence Cloud", url: "roadmap.html?id=cloud" } }
+          { label: "Services de données cloud", level: "core", resource: { label: "Voir roadmap compétence Cloud", url: "roadmap.html?id=cloud" } },
+          { label: "Conteneurisation des pipelines (Docker)", level: "option", resource: { label: "Voir roadmap compétence Docker", url: "roadmap.html?id=docker" } },
+          { label: "Infrastructure as Code (Terraform)", level: "option", resource: { label: "Voir roadmap compétence Terraform", url: "roadmap.html?id=terraform" } }
         ]
       },
       {
@@ -1494,8 +1508,9 @@ const ROLES = {
       {
         title: "2. Administration",
         items: [
-          { label: "Installation, configuration, mises à jour des SGBD", level: "core" },
-          { label: "Gestion des utilisateurs et des droits d'accès", level: "core" }
+          { label: "Installation, configuration, mises à jour des SGBD (PostgreSQL, MySQL, Oracle, SQL Server)", level: "core" },
+          { label: "Gestion des utilisateurs et des droits d'accès", level: "core" },
+          { label: "Bases de données managées cloud (RDS, Cloud SQL)", level: "option" }
         ]
       },
       {
@@ -1509,7 +1524,8 @@ const ROLES = {
         title: "4. Sauvegarde et reprise",
         items: [
           { label: "Politiques de sauvegarde et restauration", level: "core" },
-          { label: "Haute disponibilité et réplication", level: "option" }
+          { label: "Haute disponibilité et réplication", level: "option" },
+          { label: "Plan de reprise d'activité (PRA) et tests de restauration réels", level: "option" }
         ]
       },
       {
@@ -2937,25 +2953,33 @@ const ROLES = {
       {
         title: "1. Fondamentaux mathématiques",
         items: [
-          { label: "Statistiques avancées, probabilités, calcul stochastique", level: "core" }
+          { label: "Statistiques avancées et probabilités", level: "core" },
+          { label: "Calcul stochastique et équations différentielles", level: "core" },
+          { label: "Algèbre linéaire appliquée à l'optimisation", level: "core" }
         ]
       },
       {
         title: "2. Programmation",
         items: [
-          { label: "Python ou C++ pour le calcul haute performance", level: "core", resource: { label: "Voir roadmap compétence Python", url: "roadmap.html?id=python" } }
+          { label: "Python : NumPy, Pandas, calcul scientifique", level: "core", resource: { label: "Voir roadmap compétence Python", url: "roadmap.html?id=python" } },
+          { label: "C++ pour le calcul haute performance et le trading basse latence", level: "option" },
+          { label: "Bibliothèques spécialisées : QuantLib", level: "option" }
         ]
       },
       {
         title: "3. Modélisation financière",
         items: [
-          { label: "Pricing de produits financiers, gestion des risques", level: "core" }
+          { label: "Pricing de produits dérivés (modèle Black-Scholes, arbres binomiaux)", level: "core" },
+          { label: "Gestion des risques : VaR (Value at Risk), Greeks", level: "core" },
+          { label: "Stratégies de trading algorithmique et backtesting", level: "option" }
         ]
       },
       {
-        title: "4. Données",
+        title: "4. Données et infrastructure",
         items: [
-          { label: "Traitement de séries temporelles financières", level: "core" }
+          { label: "Traitement de séries temporelles financières", level: "core" },
+          { label: "Flux de données de marché en temps réel (market data feeds, APIs)", level: "option" },
+          { label: "Machine learning appliqué à la finance quantitative", level: "option" }
         ]
       }
     ]
