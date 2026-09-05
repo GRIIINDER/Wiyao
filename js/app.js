@@ -1008,21 +1008,28 @@
     let index = null;
     buildGlobalIndex().then((idx) => {
       index = idx;
-      status.textContent = `${idx.length} ressources indexées. Tape pour chercher.`;
+      status.textContent = currentLang() === "en"
+        ? `${idx.length} indexed resources. Start typing to search.`
+        : `${idx.length} ressources indexées. Tape pour chercher.`;
       if (input.value.trim()) runSearch();
     });
 
     function runSearch() {
       results.innerHTML = "";
       const query = normalize(input.value.trim());
+      const isEn = currentLang() === "en";
       if (!query) {
-        status.textContent = index ? `${index.length} ressources indexées. Tape pour chercher.` : "Chargement de l'index de recherche...";
+        status.textContent = index
+          ? (isEn ? `${index.length} indexed resources. Start typing to search.` : `${index.length} ressources indexées. Tape pour chercher.`)
+          : (isEn ? "Loading search index..." : "Chargement de l'index de recherche...");
         return;
       }
       if (!index) return;
 
       const matches = index.filter((item) => normalize(item.title + " " + item.description).indexOf(query) !== -1);
-      status.textContent = matches.length ? `${matches.length} résultat${matches.length > 1 ? "s" : ""}` : "Aucun résultat. Essaie un autre mot-clé.";
+      status.textContent = matches.length
+        ? (isEn ? `${matches.length} result${matches.length > 1 ? "s" : ""}` : `${matches.length} résultat${matches.length > 1 ? "s" : ""}`)
+        : (isEn ? "No results. Try a different keyword." : "Aucun résultat. Essaie un autre mot-clé.");
 
       matches.slice(0, 60).forEach((item) => {
         const card = document.createElement("a");

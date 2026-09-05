@@ -179,6 +179,10 @@
       fr: "12 questions pour identifier le domaine tech qui te correspond, puis les écoles togolaises\n       adaptées à ton niveau, ta ville et ton budget — pas juste un métier, un vrai point de départ.",
       en: "12 questions to identify the tech field that suits you, then the Togolese schools matched to your level, city and budget — not just a job title, a real starting point.",
     },
+    "quiz.hero.faq": {
+      fr: 'Une question sur comment fonctionne l\'orientation ? Voir la <a href="faq.html#orientation">FAQ orientation &amp; roadmaps</a>.',
+      en: 'A question about how the orientation works? See the <a href="faq.html#orientation">orientation &amp; roadmaps FAQ</a>.',
+    },
 
     "eco.hero.title": {
       fr: 'Écosystème tech <span class="hero-accent">togolais</span>',
@@ -192,6 +196,10 @@
       fr: 'Étudiant·e à la recherche d\'une école ? Direction la page « <a href="ecoles.html">Écoles &amp; universités</a> ». Développeur·se en quête d\'un réseau ? Rejoins les « Communautés et événements ». Porteur·se de projet en recherche d\'accompagnement ? Regarde du côté des « Hubs et incubateurs ».',
       en: 'Student looking for a school? Head to the "<a href="ecoles.html">Schools &amp; universities</a>" page. Developer looking for a network? Join the "Communities and events". Founder looking for support? Check out the "Hubs and incubators".',
     },
+    "eco.hero.propose": {
+      fr: 'Tu connais une communauté ou un événement tech togolais qui manque ici ? <a href="contact.html#proposer">Propose-le</a> — on vérifie et on ajoute.',
+      en: 'Know a Togolese tech community or event that\'s missing here? <a href="contact.html#proposer">Suggest it</a> — we verify and add it.',
+    },
 
     "actu.hero.title": {
       fr: 'Ce qui se passe dans la <span class="hero-accent">tech togolaise</span>',
@@ -202,6 +210,10 @@
       en: "Events, launches, startups, funding — recent highlights from the ecosystem, sourced and dated. Not an automated feed: every entry is hand-verified, with its source.",
     },
     "actu.hero.guide": { fr: "Dernière mise à jour : 5 septembre 2026.", en: "Last updated: September 5, 2026." },
+    "actu.hero.propose": {
+      fr: 'Un événement ou une actu tech togolaise qui manque ? <a href="contact.html#proposer">Propose-la</a> — on vérifie et on ajoute.',
+      en: 'A Togolese tech event or news item missing? <a href="contact.html#proposer">Suggest it</a> — we verify and add it.',
+    },
 
     "temoignages.hero.title": {
       fr: 'Convaincs tes <span class="hero-accent">parents</span>',
