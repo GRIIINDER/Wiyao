@@ -67,7 +67,10 @@ const ROLES = {
         items: [
           { label: "Node.js et Express, ou équivalent", level: "core", resource: { label: "Documentation Node.js", url: "https://nodejs.org/fr/docs" } },
           { label: "API REST, méthodes HTTP, codes de statut", level: "core" },
-          { label: "Bases de données SQL (PostgreSQL/MySQL) et NoSQL (MongoDB)", level: "core", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } }
+          { label: "Bases de données SQL (PostgreSQL/MySQL) et NoSQL (MongoDB)", level: "core", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } },
+          { label: "Authentification et sessions : JWT, OAuth", level: "core" },
+          { label: "Mise en cache avec Redis pour accélérer les temps de réponse", level: "option" },
+          { label: "Tests automatisés (Jest, Vitest)", level: "option" }
         ]
       },
       {
@@ -209,7 +212,8 @@ const ROLES = {
         items: [
           { label: "Docker : images, volumes, réseaux", level: "core", resource: { label: "Voir roadmap compétence Docker", url: "roadmap.html?id=docker" } },
           { label: "Docker Compose pour environnements multi-services", level: "core" },
-          { label: "Kubernetes : pods, services, déploiements", level: "option", resource: { label: "Documentation Kubernetes", url: "https://kubernetes.io/fr/docs/home/" } }
+          { label: "Kubernetes : pods, services, déploiements", level: "option", resource: { label: "Documentation Kubernetes", url: "https://kubernetes.io/fr/docs/home/" } },
+          { label: "Orchestration managée dans le cloud (EKS, GKE, AKS) plutôt que Kubernetes auto-géré", level: "option" }
         ]
       },
       {
@@ -218,14 +222,16 @@ const ROLES = {
           { label: "GitHub Actions ou GitLab CI", level: "core", resource: { label: "Documentation GitHub Actions", url: "https://docs.github.com/fr/actions" } },
           { label: "Jenkins", level: "option", resource: { label: "Documentation Jenkins", url: "https://www.jenkins.io/doc/" } },
           { label: "Stratégies de déploiement (blue-green, canary)", level: "option" },
-          { label: "DevSecOps : scan de vulnérabilités et de dépendances intégré au pipeline CI/CD", level: "option" }
+          { label: "DevSecOps : scan de vulnérabilités et de dépendances intégré au pipeline CI/CD", level: "option" },
+          { label: "GitOps : déploiement continu piloté par l'état déclaré dans Git (ArgoCD, FluxCD)", level: "option" }
         ]
       },
       {
         title: "5. Infrastructure as Code",
         items: [
           { label: "Terraform", level: "core", resource: { label: "Documentation Terraform", url: "https://developer.hashicorp.com/terraform/docs" } },
-          { label: "Ansible", level: "option", resource: { label: "Documentation Ansible", url: "https://docs.ansible.com/" } }
+          { label: "Ansible", level: "option", resource: { label: "Documentation Ansible", url: "https://docs.ansible.com/" } },
+          { label: "Gestion des secrets (Vault, secrets managers cloud) plutôt que des identifiants en clair", level: "option" }
         ]
       },
       {
@@ -300,19 +306,29 @@ const ROLES = {
           { label: "OWASP Top 10", level: "core", resource: { label: "OWASP Top 10", url: "https://owasp.org/www-project-top-ten/" } },
           { label: "Tests d'intrusion (pentest), outils : Nmap, Metasploit, Burp Suite", level: "core", resource: { label: "Documentation Nmap", url: "https://nmap.org/book/man.html" } },
           { label: "Analyse de trafic avec Wireshark", level: "core", resource: { label: "Documentation Wireshark", url: "https://www.wireshark.org/docs/" } },
-          { label: "SIEM et gestion des incidents", level: "option" }
+          { label: "SIEM et gestion des incidents", level: "option" },
+          { label: "Framework MITRE ATT&CK : cartographier les tactiques et techniques d'attaque connues", level: "option", resource: { label: "MITRE ATT&CK", url: "https://attack.mitre.org/" } },
+          { label: "Processus de réponse à incident : préparation, identification, confinement, éradication, retour à la normale, retour d'expérience", level: "option" }
         ]
       },
       {
-        title: "6. Gouvernance et conformité",
+        title: "6. Sécurité Cloud",
+        items: [
+          { label: "Sécurité des environnements cloud : IAM, chiffrement au repos/en transit, configuration", level: "core" },
+          { label: "Modèle de responsabilité partagée (IaaS/PaaS/SaaS) : ce qui relève du fournisseur cloud vs de l'entreprise", level: "option" }
+        ]
+      },
+      {
+        title: "7. Gouvernance et conformité",
         items: [
           { label: "Loi n°2018-026 sur la cybersécurité et la cybercriminalité (Togo)", level: "core", note: "Cadre légal togolais, base des obligations de sécurité.", resource: { label: "ancy.gouv.tg", url: "https://ancy.gouv.tg/" } },
           { label: "Normes ISO 27001, gestion des risques", level: "core" },
+          { label: "Concept de Zero Trust : ne faire confiance à rien par défaut, vérifier systématiquement", level: "option" },
           { label: "Protection des données personnelles", level: "option" }
         ]
       },
       {
-        title: "7. Certifications",
+        title: "8. Certifications",
         items: [
           { label: "CompTIA Security+", level: "core", resource: { label: "CompTIA Security+", url: "https://www.comptia.org/certifications/security" } },
           { label: "CEH (Certified Ethical Hacker)", level: "option" },
@@ -320,7 +336,7 @@ const ROLES = {
         ]
       },
       {
-        title: "8. Écosystème togolais",
+        title: "9. Écosystème togolais",
         items: [
           { label: "ANCy : Agence Nationale de la Cybersécurité du Togo", level: "core", note: "Autorité nationale, organise des Capture The Flag et campagnes de sensibilisation.", resource: { label: "ancy.gouv.tg", url: "https://ancy.gouv.tg/" } },
           { label: "CERT.tg : centre national de réponse aux incidents cyber", level: "core", note: "Opéré par Cyber Defense Africa pour le compte de l'ANCy.", resource: { label: "cert.tg", url: "https://cert.tg/" } },
@@ -546,14 +562,16 @@ const ROLES = {
         title: "1. Fondamentaux du design",
         items: [
           { label: "Théorie des couleurs, typographie, grille", level: "core" },
-          { label: "Principes d'ergonomie et de hiérarchie visuelle", level: "core" }
+          { label: "Principes d'ergonomie et de hiérarchie visuelle", level: "core" },
+          { label: "Conception centrée utilisateur (norme internationale ISO 9241-210)", level: "option", resource: { label: "ISO 9241-210", url: "https://www.iso.org/standard/77520.html" } }
         ]
       },
       {
         title: "2. Recherche utilisateur (UX)",
         items: [
           { label: "Entretiens, personas, parcours utilisateur", level: "core", resource: { label: "Google - Certificat UX Design", url: "https://www.coursera.org/professional-certificates/google-ux-design" } },
-          { label: "Architecture de l'information", level: "core" }
+          { label: "Architecture de l'information", level: "core" },
+          { label: "Tests d'utilisabilité modérés vs non modérés", level: "option" }
         ]
       },
       {
@@ -567,7 +585,8 @@ const ROLES = {
         title: "4. Interface (UI)",
         items: [
           { label: "Design systems et composants réutilisables", level: "core" },
-          { label: "Accessibilité visuelle (contraste, tailles de police)", level: "core" }
+          { label: "Accessibilité visuelle (contraste, tailles de police)", level: "core" },
+          { label: "Normes d'accessibilité WCAG (Web Content Accessibility Guidelines)", level: "core", resource: { label: "W3C - WCAG", url: "https://www.w3.org/WAI/standards-guidelines/wcag/" } }
         ]
       },
       {
@@ -581,7 +600,8 @@ const ROLES = {
         title: "6. Tests et itération",
         items: [
           { label: "Tests d'utilisabilité", level: "core" },
-          { label: "Itération à partir des retours", level: "core" }
+          { label: "Itération à partir des retours", level: "core" },
+          { label: "Références Nielsen Norman Group : heuristiques d'utilisabilité reconnues mondialement", level: "option", resource: { label: "Nielsen Norman Group", url: "https://www.nngroup.com/articles/ten-usability-heuristics/" } }
         ]
       },
       {
@@ -606,44 +626,80 @@ const ROLES = {
     icon: "📈",
     sections: [
       {
-        title: "1. Tableurs",
+        title: "1. Fondamentaux de l'analyse de données",
         items: [
-          { label: "Excel ou Google Sheets avancé (TCD, formules)", level: "core", resource: { label: "Support Google Sheets", url: "https://support.google.com/docs/topic/9054603" } }
+          { label: "Les 4 types d'analyse : descriptive (que s'est-il passé), diagnostique (pourquoi), prédictive (que va-t-il se passer), prescriptive (que faire)", level: "core" },
+          { label: "Cycle de vie de la donnée : collecte, nettoyage, exploration, analyse, visualisation, communication", level: "core" }
         ]
       },
       {
-        title: "2. SQL",
+        title: "2. Tableurs",
         items: [
-          { label: "Requêtes et agrégations", level: "core", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } }
+          { label: "Formules avancées (RECHERCHEV/RECHERCHEX, INDEX/EQUIV, SI imbriqués)", level: "core", resource: { label: "Support Google Sheets", url: "https://support.google.com/docs/topic/9054603" } },
+          { label: "Tableaux croisés dynamiques (TCD) et mise en forme conditionnelle", level: "core" },
+          { label: "Validation de données et nettoyage de base (doublons, espaces, formats)", level: "core" }
         ]
       },
       {
-        title: "3. Programmation",
+        title: "3. SQL",
         items: [
-          { label: "Python pour l'analyse (Pandas)", level: "core", resource: { label: "Voir roadmap compétence Python", url: "roadmap.html?id=python" } }
+          { label: "Requêtes de base : SELECT, WHERE, ORDER BY, agrégations (COUNT, SUM, AVG)", level: "core", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } },
+          { label: "Jointures (JOIN) entre plusieurs tables", level: "core" },
+          { label: "GROUP BY / HAVING, sous-requêtes", level: "core" },
+          { label: "Fonctions de fenêtrage (window functions)", level: "option" }
         ]
       },
       {
-        title: "4. Visualisation",
+        title: "4. Programmation pour la donnée",
+        items: [
+          { label: "Python : bases du langage", level: "core", resource: { label: "Voir roadmap compétence Python", url: "roadmap.html?id=python" } },
+          { label: "Pandas : manipulation de tableaux de données (DataFrames)", level: "core", resource: { label: "Documentation Pandas", url: "https://pandas.pydata.org/docs/" } },
+          { label: "NumPy : calcul numérique de base", level: "option" },
+          { label: "R comme alternative à Python (fréquent en recherche/statistiques)", level: "option" }
+        ]
+      },
+      {
+        title: "5. Nettoyage et préparation des données",
+        items: [
+          { label: "Traitement des valeurs manquantes et des doublons", level: "core" },
+          { label: "Détection des valeurs aberrantes (outliers)", level: "core" },
+          { label: "Transformation et restructuration des données (pivot, jointure de tables)", level: "core" }
+        ]
+      },
+      {
+        title: "6. Visualisation et Business Intelligence",
         items: [
           { label: "Power BI ou Tableau", level: "core", resource: { label: "Documentation Power BI", url: "https://learn.microsoft.com/power-bi/" } },
-          { label: "Looker Studio (gratuit)", level: "option" }
+          { label: "Choisir le bon graphique (barres, lignes, nuages de points, histogrammes) selon le message à transmettre", level: "core" },
+          { label: "Looker Studio (gratuit)", level: "option" },
+          { label: "Matplotlib / Seaborn (visualisation en Python)", level: "option" }
         ]
       },
       {
-        title: "5. Statistiques",
+        title: "7. Statistiques appliquées",
         items: [
-          { label: "Statistiques descriptives, corrélation", level: "core" }
+          { label: "Statistiques descriptives : moyenne, médiane, écart-type, distribution", level: "core" },
+          { label: "Corrélation entre variables", level: "core" },
+          { label: "Tests d'hypothèses et intervalles de confiance", level: "option" },
+          { label: "Régression linéaire simple", level: "option" }
         ]
       },
       {
-        title: "6. Communication",
+        title: "8. Communication des résultats",
         items: [
-          { label: "Storytelling avec les données, tableaux de bord", level: "core" }
+          { label: "Storytelling avec les données : construire un récit, pas juste un graphique", level: "core" },
+          { label: "Concevoir un tableau de bord (dashboard) lisible pour un public non technique", level: "core" }
         ]
       },
       {
-        title: "7. Écosystème togolais",
+        title: "9. Pour aller plus loin",
+        items: [
+          { label: "Introduction au Machine Learning (classification, régression)", level: "option", resource: { label: "Voir roadmap métier Data & IA", url: "roadmap.html?id=data-ia" } },
+          { label: "Notions de Big Data (volumes, traitement distribué)", level: "option" }
+        ]
+      },
+      {
+        title: "10. Écosystème togolais",
         items: [
           { label: "PyCon Togo : conférence nationale Python", level: "core", resource: { label: "pycontg.pytogo.org", url: "https://pycontg.pytogo.org/" } },
           { label: "Djanta Lab : recherche et innovation", level: "option" }
