@@ -1804,21 +1804,25 @@ const ROLES = {
         title: "2. Gouvernance",
         items: [
           { label: "Politique de sécurité des systèmes d'information (PSSI)", level: "core" },
-          { label: "Normes ISO 27001, gestion des risques", level: "core" },
-          { label: "Programmes de sensibilisation à la sécurité pour les employés", level: "core" }
+          { label: "Normes ISO 27001, cadre NIST Cybersecurity Framework", level: "core" },
+          { label: "Gestion des risques (ISO 27005) : identification, traitement, acceptation", level: "core" },
+          { label: "Programmes de sensibilisation à la sécurité pour les employés", level: "core" },
+          { label: "Reporting à la direction : indicateurs (KPI) et tableaux de bord sécurité", level: "option" }
         ]
       },
       {
         title: "3. Conformité",
         items: [
           { label: "Loi n°2018-026 sur la cybersécurité et la cybercriminalité (Togo)", level: "core", resource: { label: "ancy.gouv.tg", url: "https://ancy.gouv.tg/" } },
-          { label: "Protection des données personnelles", level: "core" }
+          { label: "Protection des données personnelles", level: "core" },
+          { label: "Gestion des fournisseurs et des risques tiers (audits, contrats)", level: "option" }
         ]
       },
       {
         title: "4. Gestion de crise",
         items: [
           { label: "Plan de réponse aux incidents", level: "core" },
+          { label: "Plan de continuité d'activité (PCA) et de reprise après sinistre", level: "core" },
           { label: "Coordination avec un CERT/CSIRT", level: "option", note: "Au Togo, coordination possible avec CERT.tg." }
         ]
       },
@@ -1853,19 +1857,24 @@ const ROLES = {
         title: "2. Méthodologie d'audit",
         items: [
           { label: "Audit organisationnel et technique", level: "core" },
-          { label: "Tests d'intrusion dans un cadre d'audit", level: "core" }
+          { label: "Cadrage de mission : périmètre, règles d'engagement", level: "core" },
+          { label: "Tests d'intrusion dans un cadre d'audit", level: "core" },
+          { label: "Outils de scan de vulnérabilités (Nessus, OpenVAS)", level: "option" }
         ]
       },
       {
         title: "3. Référentiels",
         items: [
-          { label: "ISO 27001, référentiels d'audit reconnus", level: "core" }
+          { label: "ISO 27001/27002, référentiels d'audit reconnus", level: "core" },
+          { label: "Méthode d'analyse de risques EBIOS RM", level: "option" },
+          { label: "PCI-DSS pour les audits liés aux paiements", level: "option" }
         ]
       },
       {
         title: "4. Restitution",
         items: [
-          { label: "Rédaction de rapports d'audit et recommandations", level: "core" }
+          { label: "Rédaction de rapports d'audit et recommandations priorisées", level: "core" },
+          { label: "Suivi de la mise en œuvre des plans d'action correctifs", level: "option" }
         ]
       },
       {
@@ -2346,22 +2355,27 @@ const ROLES = {
       {
         title: "2. Détection",
         items: [
-          { label: "SIEM : corrélation et analyse d'alertes", level: "core" },
+          { label: "SIEM : corrélation et analyse d'alertes (Splunk, Elastic, QRadar)", level: "core" },
           { label: "Analyse de logs et de trafic réseau", level: "core" },
+          { label: "Solutions EDR/XDR pour la détection sur les postes", level: "option" },
+          { label: "Cadre MITRE ATT&CK pour classifier les techniques d'attaque", level: "core" },
           { label: "Gestion des vulnérabilités : scan régulier, priorisation, suivi des correctifs", level: "core" }
         ]
       },
       {
         title: "3. Réponse à incident",
         items: [
-          { label: "Triage et qualification des incidents", level: "core" },
-          { label: "Escalade et remédiation", level: "core" }
+          { label: "Triage et qualification des incidents (niveaux N1/N2/N3)", level: "core" },
+          { label: "Utilisation de playbooks et outils SOAR", level: "option" },
+          { label: "Escalade et remédiation", level: "core" },
+          { label: "Notions de veille en renseignement sur les menaces (threat intelligence)", level: "option" }
         ]
       },
       {
         title: "4. Certifications",
         items: [
-          { label: "CompTIA Security+", level: "option", resource: { label: "CompTIA Security+", url: "https://www.comptia.org/certifications/security" } }
+          { label: "CompTIA Security+", level: "option", resource: { label: "CompTIA Security+", url: "https://www.comptia.org/certifications/security" } },
+          { label: "GIAC/GCIA ou Blue Team Level 1 pour se spécialiser", level: "option" }
         ]
       }
     ]
@@ -2387,22 +2401,27 @@ const ROLES = {
       {
         title: "2. Méthodologie",
         items: [
+          { label: "Cadrage légal : autorisation écrite, règles d'engagement, types de test (boîte noire/grise/blanche)", level: "core" },
           { label: "Reconnaissance, exploitation, post-exploitation", level: "core" },
-          { label: "OWASP Top 10", level: "core", resource: { label: "OWASP Top 10", url: "https://owasp.org/www-project-top-ten/" } }
+          { label: "OWASP Top 10", level: "core", resource: { label: "OWASP Top 10", url: "https://owasp.org/www-project-top-ten/" } },
+          { label: "Rédaction de rapports de test d'intrusion clairs et actionnables", level: "core" }
         ]
       },
       {
-        title: "3. Outils",
+        title: "3. Outils et spécialisations",
         items: [
-          { label: "Nmap, Metasploit, Burp Suite", level: "core", resource: { label: "Documentation Nmap", url: "https://nmap.org/book/man.html" } },
-          { label: "Sécurité des applications mobiles : analyse statique/dynamique d'APK et d'IPA", level: "option" }
+          { label: "Nmap, Metasploit, Burp Suite, Wireshark", level: "core", resource: { label: "Documentation Nmap", url: "https://nmap.org/book/man.html" } },
+          { label: "Distribution Kali Linux comme environnement de travail", level: "core" },
+          { label: "Pentest d'Active Directory (environnements Windows d'entreprise)", level: "option" },
+          { label: "Sécurité des applications mobiles : analyse statique/dynamique d'APK et d'IPA", level: "option" },
+          { label: "Bug bounty : plateformes (HackerOne, Bugcrowd) pour pratiquer légalement", level: "option" }
         ]
       },
       {
         title: "4. Certifications",
         items: [
           { label: "CEH (Certified Ethical Hacker)", level: "option" },
-          { label: "OSCP (Offensive Security Certified Professional)", level: "option" }
+          { label: "OSCP (Offensive Security Certified Professional) — référence pratique reconnue", level: "option" }
         ]
       }
     ]
@@ -2423,26 +2442,38 @@ const ROLES = {
         title: "1. Fondamentaux juridiques",
         items: [
           { label: "Cadres de protection des données (RGPD et équivalents)", level: "core" },
-          { label: "Droits des personnes concernées", level: "core" }
+          { label: "Droits des personnes concernées (accès, rectification, opposition, portabilité)", level: "core" },
+          { label: "Bases légales du traitement (consentement, intérêt légitime, obligation légale)", level: "core" }
         ]
       },
       {
         title: "2. Gouvernance",
         items: [
-          { label: "Cartographie des traitements de données", level: "core" },
-          { label: "Analyses d'impact (AIPD/PIA)", level: "core" }
+          { label: "Cartographie des traitements de données (registre des activités)", level: "core" },
+          { label: "Analyses d'impact (AIPD/PIA)", level: "core" },
+          { label: "Gestion des transferts internationaux de données", level: "option" },
+          { label: "Gestion des violations de données (notification, délais légaux)", level: "core" }
         ]
       },
       {
         title: "3. Sécurité des données",
         items: [
-          { label: "Collaboration avec les équipes sécurité IT", level: "core", resource: { label: "Voir roadmap métier RSSI", url: "roadmap.html?id=rssi" } }
+          { label: "Collaboration avec les équipes sécurité IT", level: "core", resource: { label: "Voir roadmap métier RSSI", url: "roadmap.html?id=rssi" } },
+          { label: "Privacy by design et by default dans les projets", level: "option" }
         ]
       },
       {
         title: "4. Sensibilisation",
         items: [
-          { label: "Formation des équipes internes", level: "core" }
+          { label: "Formation des équipes internes", level: "core" },
+          { label: "Point de contact pour les personnes concernées et les autorités", level: "core" }
+        ]
+      },
+      {
+        title: "5. Écosystème togolais",
+        items: [
+          { label: "Loi n°2019-014 du 29 octobre 2019 relative à la protection des données à caractère personnel", level: "core", resource: { label: "assemblee-nationale.tg", url: "https://assemblee-nationale.tg/lois_adoptees/loi-relative-a-la-protection-des-donnees-a-caractere-personnel/" } },
+          { label: "IPDCP : autorité togolaise de contrôle de la protection des données", level: "core", resource: { label: "ipdcp.tg", url: "https://ipdcp.tg/" } }
         ]
       }
     ]
