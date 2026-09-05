@@ -1866,21 +1866,11 @@ footer.site-footer {
   border-top: 1px solid var(--tk-border);
   font-size: 0.8rem;
   color: var(--tk-text-muted);
-  text-align: left;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 20px;
+  text-align: center;
 }
 
 .footer-bottom p {
   margin: 0;
-}
-
-.footer-slogan {
-  color: var(--tk-text-subtle);
-  font-style: italic;
 }
 
 @media (max-width: 768px) {
