@@ -13,8 +13,8 @@
   const INTENTS = [
     {
       keywords: ["sais pas quoi", "sait pas quoi", "aucune idee", "quoi choisir", "indecis", "perdu", "hesite", "no idea", "don't know what", "not sure what"],
-      fr: { text: "Pas sûr·e de ton domaine ? Le test d'orientation te pose 12 questions et identifie le domaine tech qui te correspond, puis les écoles adaptées à ton niveau et ta ville.", links: [{ label: "Faire le test d'orientation", url: "test-orientation.html" }] },
-      en: { text: "Not sure about your field? The orientation test asks 12 questions to identify the tech field that suits you, then the schools matched to your level and city.", links: [{ label: "Take the orientation test", url: "test-orientation.html" }] }
+      fr: { text: "Pas sûr·e de ton domaine ? Le test d'orientation te pose 14 questions et identifie le domaine tech et le métier précis qui te correspondent, puis les écoles adaptées à ton niveau et ta ville.", links: [{ label: "Faire le test d'orientation", url: "test-orientation.html" }] },
+      en: { text: "Not sure about your field? The orientation test asks 14 questions to identify the tech field and the specific role that suit you, then the schools matched to your level and city.", links: [{ label: "Take the orientation test", url: "test-orientation.html" }] }
     },
     {
       keywords: ["combien", "coute", "cher", "frais", "prix", "payer", "bourse", "financement", "cost", "expensive", "scholarship", "tuition"],

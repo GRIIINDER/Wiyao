@@ -90,8 +90,8 @@
     },
     "journey.1.title": { fr: "Découvre ton domaine", en: "Discover your field" },
     "journey.1.desc": {
-      fr: "Pas sûr·e de ta voie ? Le test d'orientation identifie en 12 questions le domaine tech qui te correspond.",
-      en: "Not sure which path? The orientation test identifies the tech field that suits you in 12 questions.",
+      fr: "Pas sûr·e de ta voie ? Le test d'orientation identifie en 14 questions le domaine tech — et le métier précis — qui te correspond.",
+      en: "Not sure which path? The orientation test identifies the tech field — and the specific role — that suits you in 14 questions.",
     },
     "journey.1.link": { fr: "Faire le test d'orientation →", en: "Take the orientation test →" },
     "journey.2.title": { fr: "Suis ta roadmap", en: "Follow your roadmap" },
@@ -176,8 +176,8 @@
       en: 'Not sure about your <span class="hero-accent">path</span>?',
     },
     "quiz.hero.subtitle": {
-      fr: "12 questions pour identifier le domaine tech qui te correspond, puis les écoles togolaises\n       adaptées à ton niveau, ta ville et ton budget — pas juste un métier, un vrai point de départ.",
-      en: "12 questions to identify the tech field that suits you, then the Togolese schools matched to your level, city and budget — not just a job title, a real starting point.",
+      fr: "14 questions pour identifier le domaine tech qui te correspond, puis le métier précis, puis les écoles\n       togolaises adaptées à ton niveau, ta ville et ton budget — pas juste un domaine flou, un vrai point de départ.",
+      en: "14 questions to identify the tech field that suits you, then the specific role, then the Togolese schools matched to your level, city and budget — not just a vague field, a real starting point.",
     },
     "quiz.hero.faq": {
       fr: 'Une question sur comment fonctionne l\'orientation ? Voir la <a href="faq.html#orientation">FAQ orientation &amp; roadmaps</a>.',
@@ -545,8 +545,8 @@
     "faq.cat2.h2": { fr: "Sur l'orientation et les roadmaps", en: "About orientation and roadmaps" },
     "faq.c2.q1": { fr: "Je ne sais pas du tout quoi choisir, par où je commence ?", en: "I have no idea what to choose, where do I start?" },
     "faq.c2.a1": {
-      fr: 'Par le <a href="test-orientation.html">test d\'orientation</a> — 12 questions pour identifier le domaine tech qui te correspond, puis les métiers et écoles adaptés.',
-      en: 'With the <a href="test-orientation.html">orientation test</a> — 12 questions to identify the tech field that suits you, then matching roles and schools.',
+      fr: 'Par le <a href="test-orientation.html">test d\'orientation</a> — 14 questions pour identifier le domaine tech qui te correspond, puis le métier précis et les écoles adaptés.',
+      en: 'With the <a href="test-orientation.html">orientation test</a> — 14 questions to identify the tech field that suits you, then the specific role and matching schools.',
     },
     "faq.c2.q2": { fr: "Quelle est la différence entre roadmap « par métier » et « par compétence » ?", en: 'What\'s the difference between a "role" roadmap and a "skill" roadmap?' },
     "faq.c2.a2": {

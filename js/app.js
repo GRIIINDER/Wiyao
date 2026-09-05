@@ -558,9 +558,18 @@
   }
 
   // ---- Test d'orientation ----
+  // Le test est adaptatif en deux temps : 8 questions de domaine d'abord, puis
+  // — une fois le domaine dominant connu — 2 questions spécifiques à ce domaine
+  // qui affinent la recommandation vers un métier précis (au lieu des 3 premiers
+  // métiers du domaine par ordre d'insertion), avant les questions pratiques
+  // (niveau, ville, budget, priorité). 14 questions au total, quel que soit le
+  // profil.
   let quizIndex = 0;
   let quizScores = {};
+  let quizRoleScores = {};
   let quizPractical = { niveau: null, ville: null, statut: null, priorite: null };
+  let quizFlow = typeof QUIZ_QUESTIONS !== "undefined" ? QUIZ_QUESTIONS.filter((q) => q.type === "domain") : [];
+  const quizDomainCount = quizFlow.length;
 
   function renderQuizQuestion() {
     const questionEl = document.getElementById("quiz-question");
@@ -568,8 +577,8 @@
 
     const progressFill = document.getElementById("quiz-progress-fill");
     const progressLabel = document.getElementById("quiz-progress-label");
-    const total = QUIZ_QUESTIONS.length;
-    const q = QUIZ_QUESTIONS[quizIndex];
+    const total = quizFlow.length;
+    const q = quizFlow[quizIndex];
 
     if (progressFill) progressFill.style.width = Math.round((quizIndex / total) * 100) + "%";
     if (progressLabel) progressLabel.textContent = `Question ${quizIndex + 1} / ${total}`;
@@ -584,19 +593,34 @@
       btn.type = "button";
       btn.className = "quiz-option";
       btn.textContent = tField(opt, "label");
-      btn.addEventListener("click", () => answerQuiz(q.type, opt.domain || opt.value));
+      btn.addEventListener("click", () => answerQuiz(q.type, opt.domain || opt.value, opt.roles));
       optionsWrap.appendChild(btn);
     });
   }
 
-  function answerQuiz(type, value) {
+  function answerQuiz(type, value, roles) {
     if (type === "domain") {
       quizScores[value] = (quizScores[value] || 0) + 1;
+    } else if (type === "role") {
+      (roles || []).forEach((r) => {
+        quizRoleScores[r] = (quizRoleScores[r] || 0) + 1;
+      });
     } else {
       quizPractical[type] = value;
     }
     quizIndex += 1;
-    if (quizIndex >= QUIZ_QUESTIONS.length) {
+
+    // Juste après la dernière question de domaine : le domaine dominant est
+    // déjà connu, on insère ses questions de métier avant les questions
+    // pratiques (niveau/ville/statut/priorité), qui restent communes à tous.
+    if (quizIndex === quizDomainCount) {
+      const leadingDomain = Object.keys(quizScores).sort((a, b) => (quizScores[b] || 0) - (quizScores[a] || 0))[0];
+      const roleQuestions = (typeof ROLE_QUESTIONS !== "undefined" && ROLE_QUESTIONS[leadingDomain]) || [];
+      const practicalQuestions = QUIZ_QUESTIONS.filter((q) => q.type !== "domain");
+      quizFlow = quizFlow.concat(roleQuestions, practicalQuestions);
+    }
+
+    if (quizIndex >= quizFlow.length) {
       showQuizResults();
     } else {
       renderQuizQuestion();
@@ -680,14 +704,21 @@
     const ranked = domains.slice().sort((a, b) => (quizScores[b] || 0) - (quizScores[a] || 0));
     const top = ranked[0];
     const second = ranked[1];
-    const totalAnswers = QUIZ_QUESTIONS.length;
+    const totalAnswers = quizDomainCount;
     const topMeta = DOMAINS[top];
     const topScore = quizScores[top] || 0;
     const secondScore = second ? (quizScores[second] || 0) : 0;
     const isCloseCall = !!second && topScore > 0 && topScore - secondScore <= 1;
 
+    // Métiers du domaine dominant, classés par le score des questions de
+    // deuxième niveau (voir ROLE_QUESTIONS) plutôt que par ordre d'insertion —
+    // les métiers jamais boostés (score 0) ne sont proposés que s'il n'y a pas
+    // assez de métiers mieux notés pour remplir les 3 recommandations.
     const matchingRoles = typeof ROLES !== "undefined"
-      ? Object.keys(ROLES).filter((id) => ROLES[id].domain === top).slice(0, 3)
+      ? Object.keys(ROLES)
+          .filter((id) => ROLES[id].domain === top)
+          .sort((a, b) => (quizRoleScores[b] || 0) - (quizRoleScores[a] || 0))
+          .slice(0, 3)
       : [];
     const schoolMatches = computeSchoolMatches(top);
     const isEn = currentLang() === "en";
@@ -696,8 +727,8 @@
     let html = `
       <p class="quiz-disclaimer">${
         isEn
-          ? 'This result is a starting point, not a verdict — 12 questions can\'t know you 100%. Compare it against a <a href="temoignages.html">real testimonial</a> from someone in the role, and try the roadmap before committing financially to a school.'
-          : 'Ce résultat est un point de départ, pas un verdict — 12 questions ne peuvent pas te connaître à 100 %. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier, et teste la roadmap avant de t\'engager financièrement dans une école.'
+          ? 'This result is a starting point, not a verdict — 14 questions can\'t know you 100%. Compare it against a <a href="temoignages.html">real testimonial</a> from someone in the role, and try the roadmap before committing financially to a school.'
+          : 'Ce résultat est un point de départ, pas un verdict — 14 questions ne peuvent pas te connaître à 100 %. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier, et teste la roadmap avant de t\'engager financièrement dans une école.'
       }</p>
       <h2>${isEn ? "Your profile" : "Ton profil"} : ${topMeta.icon} ${topLabel}</h2>
       <p class="category-desc">${tField(topMeta, "description")}</p>
@@ -775,7 +806,9 @@
   function restartQuiz() {
     quizIndex = 0;
     quizScores = {};
+    quizRoleScores = {};
     quizPractical = { niveau: null, ville: null, statut: null, priorite: null };
+    quizFlow = QUIZ_QUESTIONS.filter((q) => q.type === "domain");
     const quizSection = document.getElementById("quiz-section");
     const resultsSection = document.getElementById("quiz-results");
     if (resultsSection) resultsSection.hidden = true;

@@ -4860,6 +4860,205 @@ const QUIZ_QUESTIONS = [
   }
 ];
 
+// Questions de deuxième niveau, injectées juste après la 8ᵉ question (une fois
+// le domaine dominant identifié) pour affiner la recommandation vers un métier
+// précis plutôt que les 3 premiers métiers du domaine par ordre d'insertion.
+// Chaque option porte un ou plusieurs ids de ROLES : le score se cumule question
+// par question, comme pour les questions de domaine.
+const ROLE_QUESTIONS = {
+  "Développement": [
+    {
+      type: "role",
+      question: "Quel type de projet te motive le plus ?",
+      questionEn: "What kind of project excites you the most?",
+      options: [
+        { label: "Un site web ou une application que le grand public utilise", labelEn: "A website or app used by the general public", roles: ["web-dev", "mobile"] },
+        { label: "Ce qui fait tourner tout ça derrière : bases de données, API, règles métier", labelEn: "What runs behind the scenes: databases, APIs, business logic", roles: ["backend", "erp-crm"] },
+        { label: "Un jeu vidéo ou une expérience immersive en réalité virtuelle/augmentée", labelEn: "A video game or an immersive VR/AR experience", roles: ["game-developer", "ar-vr-developer"] },
+        { label: "Repérer les bugs et garantir la qualité avant la mise en production", labelEn: "Spotting bugs and ensuring quality before release", roles: ["qa-testeur"] },
+        { label: "L'architecture technique globale d'un système complexe, ou une application décentralisée (blockchain)", labelEn: "The overall technical architecture of a complex system, or a decentralized (blockchain) app", roles: ["architecte-logiciel", "blockchain-web3"] },
+        { label: "Faire vivre et évoluer un site déjà en ligne, au quotidien", labelEn: "Keeping an existing website running and evolving, day to day", roles: ["webmaster"] }
+      ]
+    },
+    {
+      type: "role",
+      question: "Tu préfères...",
+      questionEn: "You'd rather...",
+      options: [
+        { label: "Construire des interfaces que les gens manipulent directement (web ou mobile)", labelEn: "Build interfaces people interact with directly (web or mobile)", roles: ["web-dev", "mobile"] },
+        { label: "Travailler sur la logique et les données, sans forcément d'interface visuelle", labelEn: "Work on logic and data, without necessarily a visual interface", roles: ["backend", "erp-crm"] },
+        { label: "Explorer des technologies encore peu répandues (jeux, VR/AR, blockchain)", labelEn: "Explore technologies that are still uncommon (games, VR/AR, blockchain)", roles: ["game-developer", "ar-vr-developer", "blockchain-web3"] },
+        { label: "Être la personne rigoureuse qui traque ce qui ne marche pas", labelEn: "Be the meticulous person who hunts down what's broken", roles: ["qa-testeur"] },
+        { label: "Prendre les décisions techniques structurantes d'un projet", labelEn: "Make the structuring technical decisions on a project", roles: ["architecte-logiciel"] },
+        { label: "Assurer la maintenance fiable d'un système existant plutôt que d'en créer un nouveau", labelEn: "Reliably maintain an existing system rather than build a new one", roles: ["webmaster"] }
+      ]
+    }
+  ],
+  "Data & IA": [
+    {
+      type: "role",
+      question: "Ce qui t'intéresse le plus avec la donnée...",
+      questionEn: "What interests you most about data...",
+      options: [
+        { label: "Construire des modèles qui apprennent et font des prédictions (IA, machine learning)", labelEn: "Building models that learn and make predictions (AI, machine learning)", roles: ["data-ia"] },
+        { label: "Transformer des chiffres en décisions claires pour une entreprise", labelEn: "Turning numbers into clear decisions for a business", roles: ["data-analyst"] },
+        { label: "Construire les pipelines qui collectent, nettoient et acheminent la donnée", labelEn: "Building the pipelines that collect, clean and move data", roles: ["data-engineer"] },
+        { label: "Garantir que les bases de données restent rapides, fiables et sécurisées", labelEn: "Ensuring databases stay fast, reliable and secure", roles: ["dba"] },
+        { label: "Utiliser les maths et les statistiques pour des décisions financières", labelEn: "Using math and statistics for financial decisions", roles: ["quant-developer"] }
+      ]
+    },
+    {
+      type: "role",
+      question: "Ton style de travail avec les chiffres...",
+      questionEn: "Your working style with numbers...",
+      options: [
+        { label: "Expérimenter avec des algorithmes et de gros volumes de données non structurées", labelEn: "Experimenting with algorithms and large volumes of unstructured data", roles: ["data-ia"] },
+        { label: "Créer des tableaux de bord et raconter une histoire claire à partir des données", labelEn: "Building dashboards and telling a clear story from data", roles: ["data-analyst"] },
+        { label: "Une approche d'ingénierie : automatiser, industrialiser, fiabiliser des flux de données", labelEn: "An engineering approach: automating, industrializing, hardening data flows", roles: ["data-engineer"] },
+        { label: "Une approche très technique et minutieuse de l'administration de systèmes de données", labelEn: "A highly technical, meticulous approach to managing data systems", roles: ["dba"] },
+        { label: "Une approche mathématique et quantitative, orientée finance ou trading", labelEn: "A mathematical, quantitative approach, geared toward finance or trading", roles: ["quant-developer"] }
+      ]
+    }
+  ],
+  "Sécurité": [
+    {
+      type: "role",
+      question: "Face à la sécurité informatique, tu préfères...",
+      questionEn: "When it comes to cybersecurity, you'd rather...",
+      options: [
+        { label: "Attaquer un système (avec autorisation) pour trouver ses failles avant les vrais pirates", labelEn: "Attack a system (with authorization) to find its flaws before real attackers do", roles: ["pentester"] },
+        { label: "Surveiller en continu et réagir vite face à une menace en cours", labelEn: "Continuously monitor and react quickly to an ongoing threat", roles: ["analyste-soc"] },
+        { label: "Vérifier que les systèmes d'une organisation respectent les bonnes pratiques et les normes", labelEn: "Check that an organization's systems follow best practices and standards", roles: ["auditeur-ssi"] },
+        { label: "Piloter la stratégie de sécurité globale d'une organisation", labelEn: "Steer an organization's overall security strategy", roles: ["rssi"] },
+        { label: "Protéger les technologies et l'infrastructure réseau au quotidien", labelEn: "Protect network technologies and infrastructure day to day", roles: ["cyber"] },
+        { label: "Veiller à la conformité et à la bonne utilisation des données personnelles", labelEn: "Ensure compliance and proper use of personal data", roles: ["dpo"] }
+      ]
+    },
+    {
+      type: "role",
+      question: "Ce qui te correspond le mieux...",
+      questionEn: "What matches you best...",
+      options: [
+        { label: "Un rôle offensif : simuler des attaques pour révéler les vulnérabilités", labelEn: "An offensive role: simulating attacks to reveal vulnerabilities", roles: ["pentester"] },
+        { label: "Un rôle défensif : détection et réponse aux incidents en temps réel", labelEn: "A defensive role: detection and incident response in real time", roles: ["analyste-soc"] },
+        { label: "Un rôle de contrôle et de conseil, plutôt que d'action directe", labelEn: "A control and advisory role, rather than hands-on action", roles: ["auditeur-ssi", "dpo"] },
+        { label: "Un rôle de direction et de décision stratégique", labelEn: "A leadership and strategic decision-making role", roles: ["rssi"] },
+        { label: "Un rôle très technique, au contact direct des systèmes et réseaux", labelEn: "A hands-on technical role, working directly with systems and networks", roles: ["cyber"] }
+      ]
+    }
+  ],
+  "Produit & Design": [
+    {
+      type: "role",
+      question: "Dans la conception d'un produit, ce qui te parle le plus...",
+      questionEn: "In building a product, what speaks to you the most...",
+      options: [
+        { label: "Définir la vision et les priorités d'un produit numérique", labelEn: "Defining the vision and priorities of a digital product", roles: ["product-manager", "product-owner"] },
+        { label: "Dessiner des interfaces et des parcours agréables à utiliser", labelEn: "Designing interfaces and journeys that are pleasant to use", roles: ["ux-ui"] },
+        { label: "Créer les visuels et l'identité graphique d'une marque", labelEn: "Creating a brand's visuals and graphic identity", roles: ["graphiste"] },
+        { label: "Écrire les textes d'une interface pour guider et rassurer les utilisateurs", labelEn: "Writing interface text to guide and reassure users", roles: ["ux-writer", "technical-writer"] },
+        { label: "Comprendre en profondeur les utilisateurs avant de concevoir quoi que ce soit", labelEn: "Deeply understanding users before designing anything", roles: ["ux-researcher"] },
+        { label: "Concevoir les règles et la progression d'un jeu", labelEn: "Designing a game's rules and progression", roles: ["game-designer"] }
+      ]
+    },
+    {
+      type: "role",
+      question: "Ton talent naturel...",
+      questionEn: "Your natural talent...",
+      options: [
+        { label: "Prioriser, trancher, faire des choix produit sous contrainte", labelEn: "Prioritizing, deciding, making product trade-offs under constraints", roles: ["product-manager", "product-owner"] },
+        { label: "Un sens esthétique et un souci du détail visuel", labelEn: "An eye for aesthetics and visual detail", roles: ["ux-ui", "graphiste"] },
+        { label: "Une plume claire, précise, qui simplifie le compliqué", labelEn: "Clear, precise writing that simplifies the complicated", roles: ["ux-writer", "technical-writer"] },
+        { label: "Poser les bonnes questions et écouter pour comprendre un besoin", labelEn: "Asking the right questions and listening to understand a need", roles: ["ux-researcher"] },
+        { label: "Imaginer des mécaniques de jeu amusantes et équilibrées", labelEn: "Imagining fun, balanced game mechanics", roles: ["game-designer"] }
+      ]
+    }
+  ],
+  "Infrastructure & DevOps": [
+    {
+      type: "role",
+      question: "Ce qui t'attire dans l'infrastructure...",
+      questionEn: "What draws you to infrastructure...",
+      options: [
+        { label: "Automatiser le déploiement et la fiabilité des applications dans le cloud", labelEn: "Automating deployment and reliability of cloud applications", roles: ["devops", "sre", "platform-engineer"] },
+        { label: "Aider directement des utilisateurs à résoudre leurs problèmes informatiques", labelEn: "Directly helping users solve their IT problems", roles: ["support-it"] },
+        { label: "Administrer et sécuriser les serveurs et réseaux d'une organisation", labelEn: "Administering and securing an organization's servers and networks", roles: ["sysadmin", "reseaux-telecoms"] },
+        { label: "Programmer des objets connectés, des systèmes embarqués ou des robots", labelEn: "Programming connected devices, embedded systems or robots", roles: ["iot-embarque", "robotique"] },
+        { label: "Superviser des systèmes industriels automatisés", labelEn: "Supervising automated industrial systems", roles: ["informatique-industrielle"] },
+        { label: "Faire communiquer entre eux plusieurs systèmes ou logiciels différents", labelEn: "Making different systems or software work together", roles: ["integrateur-systemes", "salesforce-admin"] }
+      ]
+    },
+    {
+      type: "role",
+      question: "Ton style de travail technique...",
+      questionEn: "Your technical working style...",
+      options: [
+        { label: "Écrire du code pour automatiser l'infrastructure (scripts, pipelines CI/CD)", labelEn: "Writing code to automate infrastructure (scripts, CI/CD pipelines)", roles: ["devops", "sre", "platform-engineer"] },
+        { label: "Un contact humain direct, patient et pédagogue", labelEn: "Direct, patient, teaching-oriented human contact", roles: ["support-it"] },
+        { label: "Une rigueur réseau et système, au service de la sécurité", labelEn: "Network and systems rigor, in service of security", roles: ["sysadmin", "reseaux-telecoms"] },
+        { label: "Un mélange d'électronique et de programmation", labelEn: "A mix of electronics and programming", roles: ["iot-embarque", "robotique", "informatique-industrielle"] },
+        { label: "Assembler des briques existantes plutôt que tout construire depuis zéro", labelEn: "Assembling existing building blocks rather than building everything from scratch", roles: ["integrateur-systemes", "salesforce-admin"] }
+      ]
+    }
+  ],
+  "Marketing digital": [
+    {
+      type: "role",
+      question: "Ce qui te motive dans le marketing digital...",
+      questionEn: "What motivates you about digital marketing...",
+      options: [
+        { label: "Construire la stratégie globale de présence en ligne d'une marque", labelEn: "Building a brand's overall online presence strategy", roles: ["marketing-digital"] },
+        { label: "Animer une communauté et créer du lien avec une audience", labelEn: "Engaging a community and building connection with an audience", roles: ["community-manager"] },
+        { label: "Faire vendre une boutique en ligne, du catalogue au paiement", labelEn: "Driving sales for an online store, from catalog to checkout", roles: ["ecommerce-manager"] },
+        { label: "Faire le pont entre une entreprise tech et les développeurs qui l'utilisent", labelEn: "Bridging a tech company and the developers who use it", roles: ["devrel"] },
+        { label: "Tester rapidement des idées pour faire décoller la croissance", labelEn: "Quickly testing ideas to accelerate growth", roles: ["growth-hacker"] },
+        { label: "Raconter une histoire de marque à travers du contenu écrit ou vidéo", labelEn: "Telling a brand's story through written or video content", roles: ["content-strategist"] },
+        { label: "Optimiser des campagnes publicitaires pour un meilleur retour sur investissement", labelEn: "Optimizing ad campaigns for a better return on investment", roles: ["traffic-manager"] }
+      ]
+    },
+    {
+      type: "role",
+      question: "Ton approche naturelle...",
+      questionEn: "Your natural approach...",
+      options: [
+        { label: "Vision stratégique globale d'une marque en ligne", labelEn: "Overall strategic vision for an online brand", roles: ["marketing-digital"] },
+        { label: "Relationnel et proximité avec une audience", labelEn: "Relational, close to an audience", roles: ["community-manager", "devrel"] },
+        { label: "Orientée résultats commerciaux concrets et mesurables", labelEn: "Oriented toward concrete, measurable commercial results", roles: ["ecommerce-manager", "traffic-manager", "growth-hacker"] },
+        { label: "Créative, orientée écriture et storytelling", labelEn: "Creative, writing- and storytelling-oriented", roles: ["content-strategist"] }
+      ]
+    }
+  ],
+  "Gestion & Management": [
+    {
+      type: "role",
+      question: "Ce qui te correspond le plus dans la gestion de projets tech...",
+      questionEn: "What suits you best in managing tech projects...",
+      options: [
+        { label: "Planifier, coordonner et livrer des projets IT dans les délais", labelEn: "Planning, coordinating and delivering IT projects on time", roles: ["project-manager", "technical-program-manager"] },
+        { label: "Transmettre des compétences numériques à d'autres", labelEn: "Passing on digital skills to others", roles: ["formateur-informatique"] },
+        { label: "Accompagner une organisation dans sa transformation numérique", labelEn: "Guiding an organization through its digital transformation", roles: ["consultant-transfo-digitale"] },
+        { label: "Piloter la stratégie et les ressources informatiques d'une organisation", labelEn: "Steering an organization's IT strategy and resources", roles: ["dsi-responsable-informatique", "cto"] },
+        { label: "Aligner les systèmes d'information avec la stratégie globale de l'entreprise", labelEn: "Aligning information systems with the company's overall strategy", roles: ["architecte-entreprise"] },
+        { label: "Sécuriser juridiquement des projets numériques (contrats, données, propriété intellectuelle)", labelEn: "Providing legal security for digital projects (contracts, data, IP)", roles: ["juriste-it"] },
+        { label: "Faciliter le travail d'une équipe agile au quotidien", labelEn: "Facilitating an agile team's day-to-day work", roles: ["scrum-master"] }
+      ]
+    },
+    {
+      type: "role",
+      question: "Un second aspect qui te parle...",
+      questionEn: "A second aspect that speaks to you...",
+      options: [
+        { label: "Faire le lien technique entre un produit et les besoins d'un client", labelEn: "Making the technical link between a product and a client's needs", roles: ["solutions-engineer"] },
+        { label: "Diriger une équipe d'ingénieurs et faire le pont technique/organisationnel", labelEn: "Leading a team of engineers and bridging the technical and organizational sides", roles: ["engineering-manager"] },
+        { label: "Traduire des besoins métier en exigences compréhensibles pour les équipes techniques", labelEn: "Translating business needs into requirements technical teams can understand", roles: ["business-analyst-it"] },
+        { label: "Implémenter et configurer des logiciels de gestion d'entreprise (type SAP)", labelEn: "Implementing and configuring enterprise management software (like SAP)", roles: ["sap-consultant"] },
+        { label: "Coordonner plusieurs programmes techniques complexes en parallèle", labelEn: "Coordinating several complex technical programs in parallel", roles: ["technical-program-manager"] },
+        { label: "Avant tout, la coordination et la logistique d'un projet", labelEn: "Above all, the coordination and logistics of a project", roles: ["project-manager"] }
+      ]
+    }
+  ]
+};
+
 // ---- Calendrier académique togolais (repère général) ----
 // Enchaînement habituel d'une année de candidature au Togo. Les mois sont
 // volontairement donnés comme des périodes indicatives ("généralement") : ils
