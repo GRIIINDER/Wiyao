@@ -10,7 +10,7 @@
         { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'sha256-EaISVSPdkxm9ALx5q6jZqiYLGqdAwhL9rwNgScB71Hg=' 'sha256-PuhtbmlJaQOXC6obC3qAq78BIwvVSMGLlJCpInpsUh0='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' 'sha256-EaISVSPdkxm9ALx5q6jZqiYLGqdAwhL9rwNgScB71Hg=' 'sha256-PuhtbmlJaQOXC6obC3qAq78BIwvVSMGLlJCpInpsUh0='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
         }
       ]
     }
