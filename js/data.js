@@ -996,7 +996,8 @@ const ROLES = {
       {
         title: "1. Fondamentaux réseaux",
         items: [
-          { label: "TCP/IP, routage, commutation", level: "core", resource: { label: "Voir roadmap compétence Réseaux", url: "roadmap.html?id=reseaux" } }
+          { label: "TCP/IP, routage, commutation", level: "core", resource: { label: "Voir roadmap compétence Réseaux", url: "roadmap.html?id=reseaux" } },
+          { label: "Modèle OSI et plan d'adressage IP (IPv4/IPv6)", level: "core" }
         ]
       },
       {
@@ -1004,20 +1005,24 @@ const ROLES = {
         items: [
           { label: "Téléphonie IP (VoIP)", level: "core" },
           { label: "Réseaux mobiles (3G/4G/5G) et fibre optique", level: "core" },
-          { label: "Réseaux sans fil (Wi-Fi) : normes et déploiement", level: "core" }
+          { label: "Réseaux sans fil (Wi-Fi) : normes et déploiement", level: "core" },
+          { label: "Réseaux satellitaires et solutions rurales (VSAT)", level: "option" }
         ]
       },
       {
         title: "3. Équipements et supervision",
         items: [
           { label: "Configuration Cisco ou Huawei", level: "core" },
-          { label: "Supervision réseau (SNMP) et gestion de la qualité de service (QoS)", level: "option" }
+          { label: "Supervision réseau (SNMP) et gestion de la qualité de service (QoS)", level: "option" },
+          { label: "Documentation et schémas réseau (Visio, Draw.io)", level: "option" }
         ]
       },
       {
         title: "4. Sécurité télécoms",
         items: [
-          { label: "Sécurisation des infrastructures réseau (pare-feu, VPN, segmentation)", level: "core" }
+          { label: "Sécurisation des infrastructures réseau (pare-feu, VPN, segmentation)", level: "core" },
+          { label: "Détection d'intrusion réseau (IDS/IPS)", level: "option" },
+          { label: "Plan de reprise après sinistre (PRA) pour les infrastructures critiques", level: "core" }
         ]
       },
       {
@@ -1031,7 +1036,8 @@ const ROLES = {
         title: "6. Écosystème togolais",
         items: [
           { label: "ESGIS et ESSEYI : bachelor Informatique Réseaux et Télécommunication", level: "core" },
-          { label: "Togocom et Moov Africa Togo : principaux employeurs du secteur télécom", level: "option" }
+          { label: "Togocom et Moov Africa Togo : principaux employeurs du secteur télécom", level: "option" },
+          { label: "ARCEP : autorité togolaise de régulation des télécommunications", level: "option", resource: { label: "arcep.tg", url: "https://arcep.tg/" } }
         ]
       }
     ]
@@ -1353,13 +1359,22 @@ const ROLES = {
       {
         title: "4. Analyse de performance",
         items: [
-          { label: "Indicateurs d'engagement (portée, taux d'interaction)", level: "core" }
+          { label: "Indicateurs d'engagement (portée, taux d'interaction)", level: "core" },
+          { label: "Reporting mensuel et ajustement de la stratégie selon les résultats", level: "option" }
         ]
       },
       {
-        title: "5. Écosystème togolais",
+        title: "5. Publicité et budget",
         items: [
-          { label: "Djanta Academy et CUBE : formations numériques accessibles", level: "core" }
+          { label: "Bases des publicités payantes (Meta Ads, TikTok Ads)", level: "option" },
+          { label: "Gestion d'un budget de contenu sponsorisé (boost de publications)", level: "option" }
+        ]
+      },
+      {
+        title: "6. Écosystème togolais",
+        items: [
+          { label: "Djanta Academy et CUBE : formations numériques accessibles", level: "core" },
+          { label: "Réseau LinkedIn Local Togo : communauté active pour le networking professionnel", level: "option" }
         ]
       }
     ]
@@ -1666,7 +1681,8 @@ const ROLES = {
         title: "1. Gestion de site",
         items: [
           { label: "WordPress : installation, thèmes, plugins", level: "core", resource: { label: "Documentation WordPress", url: "https://wordpress.org/documentation/" } },
-          { label: "Mises à jour et maintenance courante", level: "core" }
+          { label: "Mises à jour et maintenance courante", level: "core" },
+          { label: "Gestion multi-sites et environnements de test (staging)", level: "option" }
         ]
       },
       {
@@ -1674,7 +1690,8 @@ const ROLES = {
         items: [
           { label: "Rédaction et publication de contenu web", level: "core" },
           { label: "Bases SEO pour le référencement", level: "core" },
-          { label: "Google Analytics / Search Console pour suivre le trafic", level: "core" }
+          { label: "Google Analytics / Search Console pour suivre le trafic", level: "core" },
+          { label: "Optimisation des images et des temps de chargement", level: "option" }
         ]
       },
       {
@@ -1683,13 +1700,15 @@ const ROLES = {
           { label: "HTML/CSS de base pour les ajustements", level: "core", resource: { label: "Voir roadmap compétence JavaScript", url: "roadmap.html?id=javascript" } },
           { label: "Certificat SSL/HTTPS et nom de domaine", level: "core" },
           { label: "Sauvegarde et sécurité du site", level: "core" },
-          { label: "Surveillance de la disponibilité (uptime monitoring)", level: "option" }
+          { label: "Surveillance de la disponibilité (uptime monitoring)", level: "option" },
+          { label: "Diagnostic de base des pannes courantes (erreur 500, site lent, plugin en conflit)", level: "option" }
         ]
       },
       {
         title: "4. Écosystème togolais",
         items: [
-          { label: "Rôle courant dans les PME togolaises, souvent combiné avec design graphique et gestion des réseaux sociaux", level: "core" }
+          { label: "Rôle courant dans les PME togolaises, souvent combiné avec design graphique et gestion des réseaux sociaux", level: "core" },
+          { label: "Go Africa Online et Wiijob : plateformes locales où ce profil est recherché", level: "option" }
         ]
       }
     ]
@@ -1817,13 +1836,15 @@ const ROLES = {
       {
         title: "2. Supervision",
         items: [
-          { label: "Systèmes SCADA de supervision industrielle", level: "core" }
+          { label: "Systèmes SCADA de supervision industrielle", level: "core" },
+          { label: "Historisation des données de production (data historian)", level: "option" }
         ]
       },
       {
         title: "3. Réseaux industriels et sécurité",
         items: [
           { label: "Protocoles industriels (Modbus, Profibus)", level: "core" },
+          { label: "Protocole industriel Ethernet/IP", level: "option" },
           { label: "Notions réseaux classiques", level: "option", resource: { label: "Voir roadmap compétence Réseaux", url: "roadmap.html?id=reseaux" } },
           { label: "Cybersécurité des systèmes industriels (OT security)", level: "option" }
         ]
@@ -1831,13 +1852,22 @@ const ROLES = {
       {
         title: "4. Programmation",
         items: [
-          { label: "Programmation bas niveau et systèmes embarqués", level: "core", resource: { label: "Voir roadmap métier Ingénieur IoT / Systèmes Embarqués", url: "roadmap.html?id=iot-embarque" } }
+          { label: "Programmation bas niveau et systèmes embarqués", level: "core", resource: { label: "Voir roadmap métier Ingénieur IoT / Systèmes Embarqués", url: "roadmap.html?id=iot-embarque" } },
+          { label: "Langages de programmation d'automates (Ladder, Grafcet, Structured Text)", level: "core" }
         ]
       },
       {
-        title: "5. Écosystème togolais",
+        title: "5. Maintenance",
         items: [
-          { label: "Postes réguliers via AfricaWork Togo (Ingénieur et Technicien en Informatique Industrielle)", level: "core" }
+          { label: "Maintenance préventive et curative des équipements automatisés", level: "core" },
+          { label: "Diagnostic de panne sur ligne de production", level: "option" }
+        ]
+      },
+      {
+        title: "6. Écosystème togolais",
+        items: [
+          { label: "Postes réguliers via AfricaWork Togo (Ingénieur et Technicien en Informatique Industrielle)", level: "core" },
+          { label: "Filière disponible à HEST et à l'Institut Bakpessi (Informatique Industrielle), ainsi qu'à l'ISBIC-ALG (Automatique et Informatique Industrielle)", level: "option" }
         ]
       }
     ]
@@ -2019,21 +2049,24 @@ const ROLES = {
         title: "1. Fondamentaux juridiques",
         items: [
           { label: "Droit des contrats appliqué à l'IT", level: "core" },
-          { label: "Propriété intellectuelle et logicielle", level: "core" }
+          { label: "Propriété intellectuelle et logicielle", level: "core" },
+          { label: "Responsabilité contractuelle en cas de défaillance logicielle", level: "core" }
         ]
       },
       {
         title: "2. Protection des données",
         items: [
           { label: "Protection des données personnelles : loi togolaise n°2019-014", level: "core", resource: { label: "Voir roadmap métier DPO", url: "roadmap.html?id=dpo" } },
-          { label: "Cadre légal togolais de la cybersécurité (loi n°2018-026)", level: "core", resource: { label: "ancy.gouv.tg", url: "https://ancy.gouv.tg/" } }
+          { label: "Cadre légal togolais de la cybersécurité (loi n°2018-026)", level: "core", resource: { label: "ancy.gouv.tg", url: "https://ancy.gouv.tg/" } },
+          { label: "Collaboration avec l'IPDCP sur les dossiers de conformité", level: "option", resource: { label: "ipdcp.tg", url: "https://ipdcp.tg/" } }
         ]
       },
       {
         title: "3. Contrats et négociation",
         items: [
           { label: "Contrats de prestation IT, SLA, licences logicielles", level: "core" },
-          { label: "Licences open source et leurs implications juridiques", level: "option" }
+          { label: "Licences open source et leurs implications juridiques", level: "option" },
+          { label: "Négociation des clauses de propriété intellectuelle et de transfert de compétences", level: "option" }
         ]
       },
       {
@@ -2041,6 +2074,7 @@ const ROLES = {
         items: [
           { label: "Veille réglementaire numérique", level: "core" },
           { label: "Notions de droit du commerce électronique (signature électronique, protection du consommateur)", level: "option" },
+          { label: "Audits de conformité et plans de remédiation", level: "core" },
           { label: "Sensibilisation aux enjeux réglementaires de l'IA", level: "option" }
         ]
       },
@@ -2241,7 +2275,9 @@ const ROLES = {
       {
         title: "3. Observabilité",
         items: [
-          { label: "Monitoring, logging, tracing distribué", level: "core", resource: { label: "Documentation Prometheus", url: "https://prometheus.io/docs/introduction/overview/" } }
+          { label: "Monitoring, logging, tracing distribué", level: "core", resource: { label: "Documentation Prometheus", url: "https://prometheus.io/docs/introduction/overview/" } },
+          { label: "Corrélation logs/métriques/traces (Grafana, ELK, Datadog)", level: "option" },
+          { label: "Tableaux de bord et alerting actionnable (éviter la fatigue d'alertes)", level: "core" }
         ]
       },
       {
@@ -2250,6 +2286,12 @@ const ROLES = {
           { label: "Infrastructure as Code", level: "core", resource: { label: "Voir roadmap métier DevOps & Cloud", url: "roadmap.html?id=devops" } },
           { label: "Conteneurisation et orchestration", level: "core", resource: { label: "Voir roadmap compétence Docker", url: "roadmap.html?id=docker" } },
           { label: "Réduction du travail répétitif (toil) par l'automatisation", level: "option" }
+        ]
+      },
+      {
+        title: "5. Certifications",
+        items: [
+          { label: "Certification cloud orientée fiabilité (AWS, GCP ou Azure)", level: "option" }
         ]
       }
     ]
@@ -2269,7 +2311,8 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Cloud et conteneurisation", level: "core", resource: { label: "Voir roadmap compétence Cloud", url: "roadmap.html?id=cloud" } }
+          { label: "Cloud et conteneurisation", level: "core", resource: { label: "Voir roadmap compétence Cloud", url: "roadmap.html?id=cloud" } },
+          { label: "Bases Linux et réseaux", level: "core", resource: { label: "Voir roadmap compétence Linux", url: "roadmap.html?id=linux" } }
         ]
       },
       {
@@ -2277,7 +2320,8 @@ const ROLES = {
         items: [
           { label: "Self-service pour les équipes produit", level: "core" },
           { label: "Golden paths et standardisation", level: "core" },
-          { label: "Portails développeurs (Backstage)", level: "option" }
+          { label: "Portails développeurs (Backstage)", level: "option" },
+          { label: "Expérience développeur (Developer Experience / DevEx) comme métrique de succès", level: "option" }
         ]
       },
       {
@@ -2286,14 +2330,16 @@ const ROLES = {
           { label: "Kubernetes et opérateurs", level: "core", resource: { label: "Documentation Kubernetes", url: "https://kubernetes.io/fr/docs/home/" } },
           { label: "CI/CD as a service", level: "core" },
           { label: "Modules Infrastructure as Code réutilisables (Terraform)", level: "option", resource: { label: "Voir roadmap compétence Terraform", url: "roadmap.html?id=terraform" } },
-          { label: "GitOps (ArgoCD, Flux)", level: "option" }
+          { label: "GitOps (ArgoCD, Flux)", level: "option" },
+          { label: "Gestion des secrets (Vault, secrets managers cloud)", level: "option" }
         ]
       },
       {
         title: "4. Culture DevOps",
         items: [
           { label: "Collaboration avec les équipes produit", level: "core" },
-          { label: "Notions de FinOps : optimisation des coûts cloud", level: "option" }
+          { label: "Notions de FinOps : optimisation des coûts cloud", level: "option" },
+          { label: "Sécurité intégrée dès la conception de la plateforme (shift-left security)", level: "option" }
         ]
       }
     ]
@@ -2411,7 +2457,8 @@ const ROLES = {
       {
         title: "1. Fondamentaux techniques",
         items: [
-          { label: "Maîtrise pratique du produit ou langage promu", level: "core" }
+          { label: "Maîtrise pratique du produit ou langage promu", level: "core" },
+          { label: "Compréhension de l'expérience développeur (onboarding, friction dans la doc)", level: "core" }
         ]
       },
       {
@@ -2420,6 +2467,7 @@ const ROLES = {
           { label: "Articles techniques, tutoriels, démos de code", level: "core" },
           { label: "Applications d'exemple (sample apps) et SDKs", level: "option" },
           { label: "Vidéos et streaming technique (YouTube, Twitch)", level: "option" },
+          { label: "Newsletters techniques et notes de version", level: "option" },
           { label: "Prises de parole en conférence", level: "core" }
         ]
       },
@@ -2427,14 +2475,22 @@ const ROLES = {
         title: "3. Communauté",
         items: [
           { label: "Animation de communauté de développeurs", level: "core" },
+          { label: "Programmes d'ambassadeurs et de champions communautaires", level: "option" },
           { label: "Contributions open source et gestion de projets communautaires", level: "option" },
           { label: "Recueil de retours produit auprès des utilisateurs", level: "core" }
         ]
       },
       {
-        title: "4. Écosystème",
+        title: "4. Métriques",
+        items: [
+          { label: "Suivi de l'adoption développeur (temps jusqu'au premier succès, rétention API)", level: "option" }
+        ]
+      },
+      {
+        title: "5. Écosystème",
         items: [
           { label: "Participation à des meetups et conférences tech", level: "option" },
+          { label: "Communautés locales comme relais (GDG Lomé, PyCon Togo)", level: "option" },
           { label: "Présence sur les réseaux sociaux orientés développeurs (X, LinkedIn)", level: "option" }
         ]
       }
@@ -2751,7 +2807,8 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Méthodes de recherche qualitative et quantitative", level: "core" }
+          { label: "Méthodes de recherche qualitative et quantitative", level: "core" },
+          { label: "Recherche générative (explorer) vs évaluative (valider)", level: "option" }
         ]
       },
       {
@@ -2760,6 +2817,7 @@ const ROLES = {
           { label: "Entretiens utilisateurs, sondages", level: "core" },
           { label: "Tests d'utilisabilité modérés et non modérés", level: "core" },
           { label: "Tri de cartes (card sorting) et tests d'arborescence", level: "option" },
+          { label: "Études terrain et observation contextuelle (contextual inquiry)", level: "option" },
           { label: "Recrutement de participants et considérations éthiques (consentement)", level: "option" }
         ]
       },
@@ -2768,13 +2826,15 @@ const ROLES = {
         items: [
           { label: "Synthèse des insights, personas", level: "core" },
           { label: "Cartographie du parcours utilisateur (customer journey map)", level: "core" },
-          { label: "Diagrammes d'affinité pour organiser les observations", level: "option" }
+          { label: "Diagrammes d'affinité pour organiser les observations", level: "option" },
+          { label: "Priorisation des insights selon leur impact business", level: "option" }
         ]
       },
       {
         title: "4. Outils et collaboration",
         items: [
           { label: "Outils de research ops (Dovetail, Maze, UserTesting)", level: "option" },
+          { label: "Constitution d'un répertoire de recherche réutilisable (research repository)", level: "option" },
           { label: "Restitution aux équipes produit et design", level: "core", resource: { label: "Voir roadmap métier UX/UI Designer", url: "roadmap.html?id=ux-ui" } }
         ]
       }
@@ -2849,7 +2909,8 @@ const ROLES = {
         title: "1. Fondamentaux",
         items: [
           { label: "Recueil et analyse des besoins métier", level: "core" },
-          { label: "Analyse d'écart (gap analysis) entre existant et cible", level: "option" }
+          { label: "Analyse d'écart (gap analysis) entre existant et cible", level: "option" },
+          { label: "Techniques d'entretien et d'animation d'ateliers avec les parties prenantes", level: "core" }
         ]
       },
       {
@@ -2857,20 +2918,23 @@ const ROLES = {
         items: [
           { label: "Rédaction de cahiers des charges fonctionnels", level: "core" },
           { label: "Modélisation de processus (BPMN) et diagrammes UML", level: "core" },
-          { label: "Rédaction de user stories et cas d'usage", level: "option" }
+          { label: "Rédaction de user stories et cas d'usage", level: "option" },
+          { label: "Wireframes et maquettes basse fidélité pour illustrer les besoins", level: "option" }
         ]
       },
       {
         title: "3. Liaison technique",
         items: [
           { label: "Collaboration avec les équipes de développement", level: "core" },
-          { label: "Notions SQL pour l'analyse de données métier", level: "option", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } }
+          { label: "Notions SQL pour l'analyse de données métier", level: "option", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } },
+          { label: "Priorisation des exigences (MoSCoW) selon la valeur et l'effort", level: "option" }
         ]
       },
       {
         title: "4. Validation",
         items: [
-          { label: "Recette fonctionnelle et validation utilisateur", level: "core" }
+          { label: "Recette fonctionnelle et validation utilisateur", level: "core" },
+          { label: "Rédaction de plans de test et de scénarios de recette", level: "option" }
         ]
       },
       {
@@ -3015,7 +3079,8 @@ const ROLES = {
         title: "4. Interaction",
         items: [
           { label: "Interfaces immersives, tracking et contrôleurs", level: "core" },
-          { label: "Interactions main libre et reconnaissance de gestes", level: "option" }
+          { label: "Interactions main libre et reconnaissance de gestes", level: "option" },
+          { label: "Retour haptique (haptic feedback) pour renforcer l'immersion", level: "option" }
         ]
       },
       {
@@ -3023,6 +3088,12 @@ const ROLES = {
         items: [
           { label: "Performance sur casques et appareils mobiles (framerate stable)", level: "core" },
           { label: "Réduction du mal des transports en VR (comfort settings)", level: "option" }
+        ]
+      },
+      {
+        title: "6. Distribution",
+        items: [
+          { label: "Publication sur les stores dédiés (Meta Quest Store, App Lab, SideQuest)", level: "option" }
         ]
       }
     ]
@@ -3043,14 +3114,15 @@ const ROLES = {
         title: "1. Fondamentaux",
         items: [
           { label: "Mécanique, capteurs, actionneurs", level: "core" },
-          { label: "Électronique embarquée", level: "core", resource: { label: "Voir roadmap métier Ingénieur IoT / Systèmes Embarqués", url: "roadmap.html?id=iot-embarque" } }
+          { label: "Électronique embarquée", level: "core", resource: { label: "Voir roadmap métier Ingénieur IoT / Systèmes Embarqués", url: "roadmap.html?id=iot-embarque" } },
+          { label: "Notions d'automatique et systèmes asservis", level: "option" }
         ]
       },
       {
         title: "2. Programmation",
         items: [
           { label: "C/C++ et Python pour la robotique", level: "core" },
-          { label: "ROS (Robot Operating System)", level: "core" },
+          { label: "ROS (Robot Operating System)", level: "core", resource: { label: "Documentation ROS", url: "https://docs.ros.org/" } },
           { label: "Cinématique et planification de trajectoire", level: "option" }
         ]
       },
@@ -3058,14 +3130,16 @@ const ROLES = {
         title: "3. Perception et contrôle",
         items: [
           { label: "Vision par ordinateur de base, algorithmes de contrôle", level: "option" },
-          { label: "Fusion de capteurs et cartographie/localisation (SLAM)", level: "option" }
+          { label: "Fusion de capteurs et cartographie/localisation (SLAM)", level: "option" },
+          { label: "Bases de l'intelligence artificielle appliquée à la navigation autonome", level: "option" }
         ]
       },
       {
         title: "4. Intégration",
         items: [
           { label: "Simulation (Gazebo) et tests physiques", level: "core" },
-          { label: "Normes de sécurité pour la robotique industrielle et collaborative", level: "option" }
+          { label: "Normes de sécurité pour la robotique industrielle et collaborative", level: "option" },
+          { label: "Prototypage rapide (impression 3D, fablabs)", level: "option" }
         ]
       }
     ]
@@ -3085,7 +3159,8 @@ const ROLES = {
       {
         title: "1. Fondamentaux CRM",
         items: [
-          { label: "Concepts de gestion de la relation client", level: "core" }
+          { label: "Concepts de gestion de la relation client", level: "core" },
+          { label: "Cycle de vie du client (lead, opportunité, compte, contact)", level: "core" }
         ]
       },
       {
@@ -3100,7 +3175,8 @@ const ROLES = {
       {
         title: "3. Automatisation",
         items: [
-          { label: "Flows et automatisations sans code", level: "core" }
+          { label: "Flows et automatisations sans code", level: "core" },
+          { label: "Validation rules pour garantir la qualité des données saisies", level: "option" }
         ]
       },
       {
@@ -3108,6 +3184,13 @@ const ROLES = {
         items: [
           { label: "Tableaux de bord et rapports CRM", level: "core" },
           { label: "Salesforce Certified Administrator", level: "option", resource: { label: "Salesforce Trailhead - Certifications", url: "https://trailhead.salesforce.com/credentials/administrator" } }
+        ]
+      },
+      {
+        title: "5. Accompagnement des utilisateurs",
+        items: [
+          { label: "Formation des équipes commerciales à l'outil", level: "core" },
+          { label: "Support de premier niveau et gestion des demandes d'évolution", level: "option" }
         ]
       }
     ]
@@ -3224,6 +3307,7 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
+          { label: "Ajustement produit-marché (product-market fit) comme préalable", level: "core" },
           { label: "Funnel d'acquisition, activation, rétention (AARRR)", level: "core" },
           { label: "Growth loops et boucles virales", level: "option" }
         ]
@@ -3233,6 +3317,7 @@ const ROLES = {
         items: [
           { label: "Tests A/B et itération rapide", level: "core" },
           { label: "Priorisation des expériences (framework ICE)", level: "option" },
+          { label: "Tracking et instrumentation (pixels, UTM, événements)", level: "core" },
           { label: "Automatisation sans code (Zapier, Make)", level: "option" }
         ]
       },
@@ -3248,6 +3333,12 @@ const ROLES = {
         items: [
           { label: "Analytics produit et métriques de croissance (North Star Metric)", level: "core" },
           { label: "Analyse de cohortes et courbes de rétention", level: "option" }
+        ]
+      },
+      {
+        title: "5. Outils",
+        items: [
+          { label: "Outils d'analytics produit (Mixpanel, Amplitude, Google Analytics)", level: "core" }
         ]
       }
     ]
@@ -3276,20 +3367,23 @@ const ROLES = {
         title: "2. Production",
         items: [
           { label: "Calendrier éditorial multi-canal (outils : Notion, Trello)", level: "core" },
-          { label: "Réadaptation de contenu entre formats (repurposing : blog, vidéo, newsletter)", level: "option" }
+          { label: "Réadaptation de contenu entre formats (repurposing : blog, vidéo, newsletter)", level: "option" },
+          { label: "Guide de style et cohérence de la voix de marque", level: "core" }
         ]
       },
       {
         title: "3. SEO et distribution",
         items: [
           { label: "Optimisation SEO du contenu", level: "core" },
+          { label: "Recherche de mots-clés et intention de recherche", level: "option" },
           { label: "Distribution multicanale (réseaux sociaux, email, partenariats)", level: "option" }
         ]
       },
       {
         title: "4. Mesure",
         items: [
-          { label: "Analyse de performance du contenu (trafic, engagement, conversions)", level: "core" }
+          { label: "Analyse de performance du contenu (trafic, engagement, conversions)", level: "core" },
+          { label: "Audit de contenu récurrent (mise à jour ou retrait du contenu obsolète)", level: "option" }
         ]
       }
     ]
