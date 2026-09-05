@@ -201,7 +201,7 @@
       fr: "Événements, lancements, startups, financements — les faits marquants récents de l'écosystème, sourcés\n       et datés. Pas un flux automatique : chaque entrée est vérifiée à la main, avec sa source.",
       en: "Events, launches, startups, funding — recent highlights from the ecosystem, sourced and dated. Not an automated feed: every entry is hand-verified, with its source.",
     },
-    "actu.hero.guide": { fr: "Dernière mise à jour : 16 août 2026.", en: "Last updated: August 16, 2026." },
+    "actu.hero.guide": { fr: "Dernière mise à jour : 5 septembre 2026.", en: "Last updated: September 5, 2026." },
 
     "temoignages.hero.title": {
       fr: 'Convaincs tes <span class="hero-accent">parents</span>',
@@ -664,6 +664,18 @@
       en: "Profiles reconstructed from public sources (Togolese and African press, institutional websites) cited under each portrait — no name, quote or detail is invented. Some biographical details (exact dates, full academic history) could not be confirmed everywhere and are deliberately omitted rather than guessed.",
     },
 
+    "actu.t11.date": { fr: "3 septembre 2026", en: "September 3, 2026" },
+    "actu.t11.h3": { fr: "L'ANCy lance un appel à talents en cybersécurité", en: "ANCy launches a call for cybersecurity talent" },
+    "actu.t11.p": {
+      fr: "L'Agence Nationale de Cybersécurité (ANCy) ouvre un appel à manifestation d'intérêt pour constituer un\n             vivier national d'experts togolais (audits, tests d'intrusion, réponse à incident, formation) —\n             candidatures ouvertes jusqu'au 30 octobre 2026, 17h30. S'inscrit dans la Stratégie nationale de\n             cybersécurité 2024-2028 ; le Togo est classé dans le top 10 africain de l'indice mondial de\n             cybersécurité 2024 de l'UIT (88,8 points).",
+      en: "Togo's National Cybersecurity Agency (ANCy) has opened a call for expressions of interest to build a national pool of Togolese experts (audits, penetration testing, incident response, training) — applications open until October 30, 2026, 5:30 PM. Part of the 2024-2028 national cybersecurity strategy; Togo ranks in Africa's top 10 on the ITU's 2024 Global Cybersecurity Index (88.8 points).",
+    },
+    "actu.t12.date": { fr: "24-29 août 2026", en: "August 24-29, 2026" },
+    "actu.t12.h3": { fr: "1ʳᵉ édition de la Togo AI Summer School (TAISS)", en: "1st edition of the Togo AI Summer School (TAISS)" },
+    "actu.t12.p": {
+      fr: "100 participants sélectionnés parmi plus de 300 candidatures (Togo, Bénin, Niger) pour une semaine de\n             formation intensive à l'UniPod (Université de Lomé) : data science &amp; machine learning, analyse de\n             données &amp; business intelligence, data engineering &amp; MLOps, géo-intelligence &amp; SIG. Portée\n             par Togo AI Lab, soutenue par la coopération allemande (GIZ, ProDigiT).",
+      en: "100 participants selected from over 300 applications (Togo, Benin, Niger) for a week of intensive training at UniPod (University of Lomé): data science & machine learning, data analysis & business intelligence, data engineering & MLOps, geo-intelligence & GIS. Run by Togo AI Lab, backed by German cooperation (GIZ, ProDigiT).",
+    },
     "actu.t1.date": { fr: "12-13 août 2026", en: "August 12-13, 2026" },
     "actu.t1.h3": { fr: "Togo IT Days, 2ᵉ édition", en: "Togo IT Days, 2nd edition" },
     "actu.t1.p": {
