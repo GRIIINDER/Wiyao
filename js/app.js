@@ -934,25 +934,46 @@
   // Indexe roadmaps/écoles depuis js/data.js, et scanne les .eco-item / .timeline-item
   // des autres pages via fetch + DOMParser pour rester la seule source de vérité
   // (pas de duplication de contenu à maintenir en double).
+  // Aplatit le contenu détaillé d'une roadmap (titres de section + libellés
+  // d'étapes) en un seul texte, pour que la recherche trouve une compétence
+  // citée à l'intérieur d'une roadmap et pas seulement dans son titre.
+  function flattenRoadmapKeywords(rm) {
+    return (rm.sections || [])
+      .map((section) => section.title + " " + (section.items || []).map((item) => item.label).join(" "))
+      .join(" ");
+  }
+
+  // Résume les dates clés d'une école en texte cherchable (concours,
+  // ouverture, clôture, rentrée) sans dupliquer la logique d'affichage
+  // dédiée de calendrier.html.
+  function flattenSchoolKeywords(school) {
+    const parts = [(school.filieres || []).join(" "), (school.niveaux || []).join(" ")];
+    const dc = school.datesCles;
+    if (dc) {
+      parts.push([dc.ouverture, dc.cloture, dc.concours, dc.resultats, dc.rentree, dc.note].filter(Boolean).join(" "));
+    }
+    return parts.join(" ");
+  }
+
   function buildGlobalIndex() {
     const index = [];
 
     if (typeof ROLES !== "undefined") {
       Object.keys(ROLES).forEach((id) => {
         const r = ROLES[id];
-        index.push({ title: r.title, description: r.description || "", category: "Roadmap · métier", url: `roadmap.html?id=${id}` });
+        index.push({ title: r.title, description: r.description || "", category: "Roadmap · métier", url: `roadmap.html?id=${id}`, keywords: flattenRoadmapKeywords(r) });
       });
     }
     if (typeof SKILLS !== "undefined") {
       Object.keys(SKILLS).forEach((id) => {
         const s = SKILLS[id];
-        index.push({ title: s.title, description: s.description || "", category: "Roadmap · compétence", url: `roadmap.html?id=${id}` });
+        index.push({ title: s.title, description: s.description || "", category: "Roadmap · compétence", url: `roadmap.html?id=${id}`, keywords: flattenRoadmapKeywords(s) });
       });
     }
     if (typeof SCHOOLS !== "undefined") {
       Object.keys(SCHOOLS).forEach((id) => {
         const sc = SCHOOLS[id];
-        index.push({ title: sc.name, description: sc.description || "", category: "École", url: "ecoles.html" });
+        index.push({ title: sc.name, description: sc.description || "", category: "École", url: "ecoles.html", keywords: flattenSchoolKeywords(sc) });
       });
     }
 
@@ -960,7 +981,9 @@
       { url: "ecosysteme.html", category: "Écosystème togolais", itemSelector: ".eco-item" },
       { url: "bourses-financement.html", category: "Bourses & financement", itemSelector: ".eco-item" },
       { url: "stages-emploi.html", category: "Stages & emploi", itemSelector: ".eco-item" },
-      { url: "actualites.html", category: "Actualités", itemSelector: ".timeline-item" }
+      { url: "actualites.html", category: "Actualités", itemSelector: ".timeline-item" },
+      { url: "temoignages.html", category: "Témoignages", itemSelector: ".eco-item" },
+      { url: "faq.html", category: "FAQ", itemSelector: ".faq-item", headingSelector: "summary", linkSelector: null }
     ];
 
     const fetches = pagesToScan.map((page) =>
@@ -969,9 +992,9 @@
         .then((html) => {
           const doc = new DOMParser().parseFromString(html, "text/html");
           doc.querySelectorAll(page.itemSelector).forEach((item) => {
-            const heading = item.querySelector("h3, h4");
+            const heading = item.querySelector(page.headingSelector || "h3, h4");
             const desc = item.querySelector("p");
-            const link = item.querySelector("a.eco-link");
+            const link = page.linkSelector === null ? null : item.querySelector(page.linkSelector || "a.eco-link");
             if (!heading) return;
             const section = item.closest("section[id]");
             index.push({
@@ -1007,6 +1030,9 @@
 
     let index = null;
     buildGlobalIndex().then((idx) => {
+      idx.forEach((item) => {
+        item.searchText = normalize(item.title + " " + item.description + " " + (item.keywords || ""));
+      });
       index = idx;
       status.textContent = currentLang() === "en"
         ? `${idx.length} indexed resources. Start typing to search.`
@@ -1026,7 +1052,7 @@
       }
       if (!index) return;
 
-      const matches = index.filter((item) => normalize(item.title + " " + item.description).indexOf(query) !== -1);
+      const matches = index.filter((item) => item.searchText.indexOf(query) !== -1);
       status.textContent = matches.length
         ? (isEn ? `${matches.length} result${matches.length > 1 ? "s" : ""}` : `${matches.length} résultat${matches.length > 1 ? "s" : ""}`)
         : (isEn ? "No results. Try a different keyword." : "Aucun résultat. Essaie un autre mot-clé.");
