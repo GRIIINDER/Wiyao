@@ -3311,7 +3311,8 @@ const SKILLS = {
         items: [
           { label: "Créer, changer, fusionner une branche (merge)", level: "core" },
           { label: "Gérer les conflits", level: "core" },
-          { label: "Rebase", level: "option" }
+          { label: "Rebase", level: "option" },
+          { label: "stash, cherry-pick, tags de version", level: "option" }
         ]
       },
       {
@@ -3325,7 +3326,7 @@ const SKILLS = {
       {
         title: "4. Bonnes pratiques",
         items: [
-          { label: "Convention de nommage des commits", level: "core" },
+          { label: "Convention de nommage des commits (Conventional Commits)", level: "core" },
           { label: "GitFlow ou trunk-based development", level: "option" }
         ]
       },
@@ -3362,8 +3363,9 @@ const SKILLS = {
         ]
       },
       {
-        title: "3. Scripting",
+        title: "3. Traitement de texte et scripting",
         items: [
+          { label: "Pipes et redirections, grep, sed, awk", level: "core" },
           { label: "Scripts bash, variables, boucles, conditions", level: "core" },
           { label: "Cron pour les tâches planifiées", level: "option" }
         ]
@@ -3372,7 +3374,9 @@ const SKILLS = {
         title: "4. Réseau et paquets",
         items: [
           { label: "Gestion de paquets (apt, yum)", level: "core" },
-          { label: "Commandes réseau de base (ping, curl, ssh)", level: "core" }
+          { label: "Commandes réseau de base (ping, curl, ssh)", level: "core" },
+          { label: "Authentification par clés SSH", level: "option" },
+          { label: "Variables d'environnement et fichiers de configuration shell", level: "option" }
         ]
       }
     ]
@@ -3396,21 +3400,23 @@ const SKILLS = {
       {
         title: "2. Utilisation",
         items: [
-          { label: "Dockerfile : construire une image", level: "core", resource: { label: "Docker - Référence Dockerfile", url: "https://docs.docker.com/reference/dockerfile/" } },
+          { label: "Dockerfile : construire une image, .dockerignore", level: "core", resource: { label: "Docker - Référence Dockerfile", url: "https://docs.docker.com/reference/dockerfile/" } },
           { label: "Volumes et persistance des données", level: "core" },
-          { label: "Réseaux Docker", level: "core" }
+          { label: "Réseaux Docker", level: "core" },
+          { label: "Registres d'images : Docker Hub, registres privés", level: "option" }
         ]
       },
       {
         title: "3. Multi-conteneurs",
         items: [
-          { label: "Docker Compose", level: "core", resource: { label: "Docker Compose - Documentation", url: "https://docs.docker.com/compose/" } }
+          { label: "Docker Compose pour les environnements de développement", level: "core", resource: { label: "Docker Compose - Documentation", url: "https://docs.docker.com/compose/" } }
         ]
       },
       {
         title: "4. Pour aller plus loin",
         items: [
           { label: "Optimisation d'images (multi-stage build)", level: "option" },
+          { label: "Scan de vulnérabilités des images (Docker Scout, Trivy)", level: "option" },
           { label: "Orchestration avec Kubernetes", level: "option", resource: { label: "Documentation Kubernetes", url: "https://kubernetes.io/fr/docs/home/" } }
         ]
       }
@@ -3442,16 +3448,18 @@ const SKILLS = {
       {
         title: "3. Requêtes avancées",
         items: [
-          { label: "Jointures (INNER, LEFT, RIGHT)", level: "core" },
+          { label: "Jointures (INNER, LEFT, RIGHT, FULL OUTER)", level: "core" },
           { label: "Agrégations (GROUP BY, HAVING)", level: "core" },
-          { label: "Sous-requêtes et CTE", level: "option" }
+          { label: "Sous-requêtes et CTE", level: "option" },
+          { label: "Fonctions de fenêtrage (window functions)", level: "option" }
         ]
       },
       {
         title: "4. Performance",
         items: [
           { label: "Index et plans d'exécution", level: "core" },
-          { label: "Transactions et niveaux d'isolation", level: "option" }
+          { label: "Transactions et niveaux d'isolation", level: "option" },
+          { label: "Vues et procédures stockées", level: "option" }
         ]
       }
     ]
@@ -3469,8 +3477,9 @@ const SKILLS = {
         title: "1. Fondamentaux",
         items: [
           { label: "Variables, types, opérateurs", level: "core", resource: { label: "MDN - Réapprendre JavaScript", url: "https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide" } },
-          { label: "Fonctions et portée (scope)", level: "core" },
-          { label: "Tableaux et objets", level: "core" }
+          { label: "Fonctions, portée (scope) et closures", level: "core" },
+          { label: "Tableaux et objets", level: "core" },
+          { label: "Le mot-clé this et prototypes", level: "option" }
         ]
       },
       {
@@ -3490,10 +3499,12 @@ const SKILLS = {
         ]
       },
       {
-        title: "4. Environnements",
+        title: "4. Environnements et outillage",
         items: [
           { label: "JavaScript dans le navigateur (DOM, événements)", level: "core" },
-          { label: "Node.js côté serveur", level: "core", resource: { label: "Documentation Node.js", url: "https://nodejs.org/fr/docs" } }
+          { label: "Node.js côté serveur", level: "core", resource: { label: "Documentation Node.js", url: "https://nodejs.org/fr/docs" } },
+          { label: "Bundlers modernes (Vite, Webpack)", level: "option" },
+          { label: "Tests unitaires (Jest, Vitest)", level: "option" }
         ]
       }
     ]
@@ -3511,19 +3522,22 @@ const SKILLS = {
         title: "1. Fondamentaux",
         items: [
           { label: "Syntaxe, types, structures de données", level: "core", resource: { label: "Documentation Python", url: "https://docs.python.org/fr/3/tutorial/" } },
-          { label: "Fonctions et modules", level: "core" }
+          { label: "Fonctions et modules", level: "core" },
+          { label: "Gestion des exceptions (try/except)", level: "core" },
+          { label: "List/dict comprehensions", level: "option" }
         ]
       },
       {
         title: "2. Programmation orientée objet",
         items: [
-          { label: "Classes, héritage, encapsulation", level: "core" }
+          { label: "Classes, héritage, encapsulation", level: "core" },
+          { label: "Type hints pour un code plus robuste", level: "option" }
         ]
       },
       {
         title: "3. Écosystème",
         items: [
-          { label: "Gestion des paquets (pip, venv)", level: "core" },
+          { label: "Gestion des paquets et environnements virtuels (pip, venv, Poetry)", level: "core" },
           { label: "Tests avec pytest", level: "option" }
         ]
       },
@@ -3565,14 +3579,17 @@ const SKILLS = {
         items: [
           { label: "Switching, VLAN", level: "core" },
           { label: "Routage statique et dynamique", level: "core" },
-          { label: "DNS, DHCP, NAT", level: "core" }
+          { label: "DNS, DHCP, NAT", level: "core" },
+          { label: "HTTP/HTTPS et TLS", level: "core" },
+          { label: "Répartition de charge (load balancing)", level: "option" }
         ]
       },
       {
         title: "4. Sécurité réseau de base",
         items: [
           { label: "Pare-feu et listes de contrôle d'accès (ACL)", level: "core" },
-          { label: "VPN", level: "option" }
+          { label: "VPN", level: "option" },
+          { label: "Outils de diagnostic (Wireshark, traceroute)", level: "option" }
         ]
       }
     ]
@@ -3612,7 +3629,9 @@ const SKILLS = {
         title: "4. Cloud natif",
         items: [
           { label: "Fonctions serverless (AWS Lambda, Cloud Functions, Azure Functions)", level: "option" },
-          { label: "Conteneurs managés (ECS, Cloud Run) — voir aussi la roadmap compétence Docker", level: "option", resource: { label: "Voir roadmap compétence Docker", url: "roadmap.html?id=docker" } }
+          { label: "Conteneurs managés (ECS, Cloud Run) — voir aussi la roadmap compétence Docker", level: "option", resource: { label: "Voir roadmap compétence Docker", url: "roadmap.html?id=docker" } },
+          { label: "CDN pour la distribution de contenu (CloudFront, Cloudflare)", level: "option" },
+          { label: "Infrastructure as Code", level: "option", resource: { label: "Voir roadmap compétence Terraform", url: "roadmap.html?id=terraform" } }
         ]
       },
       {
@@ -3644,7 +3663,7 @@ const SKILLS = {
         items: [
           { label: "Composants et JSX", level: "core", resource: { label: "React - Apprendre", url: "https://react.dev/learn" } },
           { label: "Props et state", level: "core" },
-          { label: "Hooks : useState, useEffect", level: "core" }
+          { label: "Hooks : useState, useEffect, useRef", level: "core" }
         ]
       },
       {
@@ -3652,13 +3671,14 @@ const SKILLS = {
         items: [
           { label: "Gestion d'état globale (Context, Zustand, Redux)", level: "core" },
           { label: "Routing avec React Router", level: "core" },
-          { label: "Hooks personnalisés", level: "option" }
+          { label: "Hooks personnalisés", level: "option" },
+          { label: "Optimisation des performances (useMemo, useCallback, memo)", level: "option" }
         ]
       },
       {
         title: "4. Écosystème",
         items: [
-          { label: "Next.js pour le rendu côté serveur", level: "option", resource: { label: "Documentation Next.js", url: "https://nextjs.org/docs" } },
+          { label: "Next.js pour le rendu côté serveur et les server components", level: "option", resource: { label: "Documentation Next.js", url: "https://nextjs.org/docs" } },
           { label: "Tests avec React Testing Library", level: "option" }
         ]
       }
@@ -3682,9 +3702,9 @@ const SKILLS = {
       {
         title: "2. Fondamentaux",
         items: [
-          { label: "Templates et directives", level: "core", resource: { label: "Documentation Vue.js", url: "https://vuejs.org/guide/introduction.html" } },
+          { label: "Templates et directives, composants monofichiers (SFC)", level: "core", resource: { label: "Documentation Vue.js", url: "https://vuejs.org/guide/introduction.html" } },
           { label: "Composants et props", level: "core" },
-          { label: "Composition API", level: "core" }
+          { label: "Composition API : ref, reactive, cycle de vie", level: "core" }
         ]
       },
       {
@@ -3697,7 +3717,8 @@ const SKILLS = {
       {
         title: "4. Écosystème",
         items: [
-          { label: "Nuxt.js pour le rendu côté serveur", level: "option", resource: { label: "Documentation Nuxt", url: "https://nuxt.com/docs" } }
+          { label: "Nuxt.js pour le rendu côté serveur", level: "option", resource: { label: "Documentation Nuxt", url: "https://nuxt.com/docs" } },
+          { label: "Tests avec Vitest", level: "option" }
         ]
       }
     ]
@@ -3721,14 +3742,16 @@ const SKILLS = {
         title: "2. Fondamentaux",
         items: [
           { label: "Types de base, interfaces, types personnalisés", level: "core", resource: { label: "Documentation TypeScript", url: "https://www.typescriptlang.org/docs/" } },
-          { label: "Fonctions typées, génériques", level: "core" }
+          { label: "Fonctions typées, génériques", level: "core" },
+          { label: "Types union et intersection, enums", level: "core" }
         ]
       },
       {
         title: "3. Concepts avancés",
         items: [
           { label: "Types utilitaires (Partial, Pick, Omit)", level: "core" },
-          { label: "Configuration tsconfig.json", level: "core" }
+          { label: "Rétrécissement de type (type narrowing, type guards)", level: "option" },
+          { label: "Configuration tsconfig.json et mode strict", level: "core" }
         ]
       },
       {
@@ -3765,13 +3788,15 @@ const SKILLS = {
         title: "3. Construction d'API",
         items: [
           { label: "Express.js : routes, middlewares", level: "core", resource: { label: "Documentation Express", url: "https://expressjs.com/fr/starter/installing.html" } },
+          { label: "Alternatives : NestJS, Fastify", level: "option" },
           { label: "Gestion des erreurs et validation", level: "core" }
         ]
       },
       {
         title: "4. Production",
         items: [
-          { label: "Variables d'environnement, logs, tests", level: "core" }
+          { label: "Variables d'environnement, logs, tests", level: "core" },
+          { label: "Gestion de processus (PM2) et mise à l'échelle", level: "option" }
         ]
       }
     ]
@@ -3789,14 +3814,16 @@ const SKILLS = {
         title: "1. Fondamentaux",
         items: [
           { label: "Syntaxe, types, structures de contrôle", level: "core", resource: { label: "Documentation Java (Oracle)", url: "https://docs.oracle.com/en/java/" } },
-          { label: "Programmation orientée objet", level: "core" }
+          { label: "Programmation orientée objet", level: "core" },
+          { label: "Gestion des exceptions", level: "core" }
         ]
       },
       {
         title: "2. Écosystème",
         items: [
           { label: "Gestion de dépendances : Maven ou Gradle", level: "core" },
-          { label: "Collections et généricité", level: "core" }
+          { label: "Collections, généricité, Streams API", level: "core" },
+          { label: "Bases du multithreading", level: "option" }
         ]
       },
       {
@@ -3846,12 +3873,15 @@ const SKILLS = {
         title: "3. Bibliothèque standard",
         items: [
           { label: "STL : conteneurs, algorithmes, itérateurs", level: "core" },
-          { label: "Smart pointers (RAII)", level: "core" }
+          { label: "Smart pointers (RAII)", level: "core" },
+          { label: "Templates et programmation générique", level: "option" }
         ]
       },
       {
-        title: "4. Applications",
+        title: "4. Outils et applications",
         items: [
+          { label: "Systèmes de build (CMake)", level: "option" },
+          { label: "Fonctionnalités modernes (C++17/20)", level: "option" },
           { label: "Utilisation courante : moteurs de jeu, robotique, calcul haute performance", level: "core" }
         ]
       }
@@ -3869,8 +3899,8 @@ const SKILLS = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Syntaxe, types, structures", level: "core", resource: { label: "Documentation Go", url: "https://go.dev/doc/" } },
-          { label: "Gestion des erreurs à la Go", level: "core" }
+          { label: "Syntaxe, types, structs et interfaces", level: "core", resource: { label: "Documentation Go", url: "https://go.dev/doc/" } },
+          { label: "Gestion des erreurs à la Go, defer/panic/recover", level: "core" }
         ]
       },
       {
@@ -3883,7 +3913,8 @@ const SKILLS = {
         title: "3. Écosystème",
         items: [
           { label: "Modules Go, gestion de dépendances", level: "core" },
-          { label: "Construction d'API avec net/http ou Gin", level: "core" }
+          { label: "Construction d'API avec net/http ou Gin", level: "core" },
+          { label: "Tests avec le package testing intégré", level: "option" }
         ]
       },
       {
@@ -3919,13 +3950,15 @@ const SKILLS = {
         title: "3. Écosystème",
         items: [
           { label: "Composer : gestion de dépendances", level: "core" },
-          { label: "Laravel : routes, Eloquent ORM, migrations", level: "core", resource: { label: "Documentation Laravel", url: "https://laravel.com/docs" } }
+          { label: "Laravel : routes, Eloquent ORM, migrations", level: "core", resource: { label: "Documentation Laravel", url: "https://laravel.com/docs" } },
+          { label: "WordPress : le CMS PHP le plus utilisé au monde", level: "option" }
         ]
       },
       {
         title: "4. Bonnes pratiques",
         items: [
-          { label: "Sécurité web de base (injection, XSS)", level: "core" }
+          { label: "Sécurité web de base (injection, XSS)", level: "core" },
+          { label: "Standards PSR et tests avec PHPUnit", level: "option" }
         ]
       }
     ]
@@ -3949,7 +3982,8 @@ const SKILLS = {
         title: "2. Concepts de base",
         items: [
           { label: "Pods, deployments, services", level: "core", resource: { label: "Documentation Kubernetes", url: "https://kubernetes.io/fr/docs/home/" } },
-          { label: "ConfigMaps et Secrets", level: "core" }
+          { label: "ConfigMaps et Secrets", level: "core" },
+          { label: "Namespaces pour l'isolation logique", level: "option" }
         ]
       },
       {
@@ -3963,7 +3997,8 @@ const SKILLS = {
         title: "4. Exploitation",
         items: [
           { label: "Helm pour le packaging d'applications", level: "option" },
-          { label: "kubectl et debugging de base", level: "core" }
+          { label: "kubectl et debugging de base", level: "core" },
+          { label: "Mise à l'échelle automatique (HPA) et rolling updates", level: "option" }
         ]
       }
     ]
@@ -3988,19 +4023,21 @@ const SKILLS = {
         title: "2. Utilisation",
         items: [
           { label: "Providers, ressources, variables", level: "core" },
-          { label: "State et backends distants", level: "core" }
+          { label: "State et backends distants, verrouillage du state", level: "core" }
         ]
       },
       {
         title: "3. Organisation",
         items: [
-          { label: "Modules réutilisables", level: "core" }
+          { label: "Modules réutilisables", level: "core" },
+          { label: "Workspaces pour gérer plusieurs environnements", level: "option" }
         ]
       },
       {
         title: "4. Bonnes pratiques",
         items: [
-          { label: "Plan/apply en toute sécurité, gestion des environnements", level: "core" }
+          { label: "Plan/apply en toute sécurité, gestion des environnements", level: "core" },
+          { label: "Import d'infrastructure existante", level: "option" }
         ]
       }
     ]
@@ -4023,8 +4060,9 @@ const SKILLS = {
       {
         title: "2. Fondamentaux Flutter",
         items: [
-          { label: "Widgets et arbre de widgets", level: "core", resource: { label: "Documentation Flutter", url: "https://docs.flutter.dev/" } },
-          { label: "Layouts et navigation", level: "core" }
+          { label: "Widgets et arbre de widgets, StatelessWidget/StatefulWidget", level: "core", resource: { label: "Documentation Flutter", url: "https://docs.flutter.dev/" } },
+          { label: "Layouts et navigation", level: "core" },
+          { label: "Hot reload pour le développement rapide", level: "option" }
         ]
       },
       {
@@ -4034,9 +4072,10 @@ const SKILLS = {
         ]
       },
       {
-        title: "4. Intégration",
+        title: "4. Intégration et tests",
         items: [
           { label: "Appels API et stockage local", level: "core" },
+          { label: "Tests de widgets", level: "option" },
           { label: "Publication sur Play Store et App Store", level: "option" }
         ]
       }
@@ -4054,20 +4093,23 @@ const SKILLS = {
       {
         title: "1. Fondamentaux Kotlin",
         items: [
-          { label: "Syntaxe, null-safety, fonctions", level: "core", resource: { label: "Android Developers - Kotlin", url: "https://developer.android.com/kotlin" } }
+          { label: "Syntaxe, null-safety, fonctions", level: "core", resource: { label: "Android Developers - Kotlin", url: "https://developer.android.com/kotlin" } },
+          { label: "Coroutines pour la programmation asynchrone", level: "core" }
         ]
       },
       {
         title: "2. Développement Android",
         items: [
           { label: "Activities, Fragments, cycle de vie", level: "core" },
-          { label: "Jetpack Compose pour l'UI", level: "core" }
+          { label: "Jetpack Compose pour l'UI", level: "core" },
+          { label: "Room pour le stockage local", level: "option" }
         ]
       },
       {
         title: "3. Architecture",
         items: [
-          { label: "MVVM et ViewModel", level: "core" }
+          { label: "MVVM et ViewModel", level: "core" },
+          { label: "Injection de dépendances (Hilt, Koin)", level: "option" }
         ]
       },
       {
@@ -4090,14 +4132,16 @@ const SKILLS = {
       {
         title: "1. Fondamentaux Swift",
         items: [
-          { label: "Syntaxe, optionnels, structures et classes", level: "core", resource: { label: "Apple Developer - Swift", url: "https://developer.apple.com/swift/" } }
+          { label: "Syntaxe, optionnels, structures et classes", level: "core", resource: { label: "Apple Developer - Swift", url: "https://developer.apple.com/swift/" } },
+          { label: "Concurrence moderne : async/await", level: "core" }
         ]
       },
       {
         title: "2. Développement iOS",
         items: [
           { label: "SwiftUI pour l'interface", level: "core" },
-          { label: "Cycle de vie d'une application iOS", level: "core" }
+          { label: "Cycle de vie d'une application iOS", level: "core" },
+          { label: "Core Data pour le stockage local", level: "option" }
         ]
       },
       {
@@ -4132,20 +4176,22 @@ const SKILLS = {
       {
         title: "2. Requêtes",
         items: [
-          { label: "CRUD, requêtes et agrégations", level: "core" }
+          { label: "CRUD, requêtes et pipeline d'agrégation", level: "core" }
         ]
       },
       {
-        title: "3. Modélisation",
+        title: "3. Modélisation et mise à l'échelle",
         items: [
           { label: "Modélisation orientée documents vs relationnelle", level: "core" },
-          { label: "Index et performance", level: "core" }
+          { label: "Index et performance", level: "core" },
+          { label: "Réplication et sharding pour la montée en charge", level: "option" }
         ]
       },
       {
         title: "4. Écosystème",
         items: [
-          { label: "Mongoose (Node.js) ou drivers officiels", level: "option" }
+          { label: "Mongoose (Node.js) ou drivers officiels", level: "option" },
+          { label: "Autres familles NoSQL : clé-valeur (Redis), colonnes larges (Cassandra)", level: "option" }
         ]
       }
     ]
@@ -4175,7 +4221,9 @@ const SKILLS = {
         title: "3. Implémentation",
         items: [
           { label: "Serveur GraphQL (Apollo Server ou équivalent)", level: "core" },
-          { label: "Résolveurs (resolvers)", level: "core" }
+          { label: "Résolveurs (resolvers)", level: "core" },
+          { label: "Subscriptions pour les données temps réel", level: "option" },
+          { label: "Problème du N+1 et DataLoader", level: "option" }
         ]
       },
       {
@@ -4205,13 +4253,16 @@ const SKILLS = {
       {
         title: "2. Apprentissage supervisé",
         items: [
-          { label: "Régression et classification", level: "core", resource: { label: "Scikit-learn - Tutoriels", url: "https://scikit-learn.org/stable/tutorial/index.html" } }
+          { label: "Régression et classification", level: "core", resource: { label: "Scikit-learn - Tutoriels", url: "https://scikit-learn.org/stable/tutorial/index.html" } },
+          { label: "Surapprentissage (overfitting) et régularisation", level: "core" },
+          { label: "Validation croisée et métriques d'évaluation", level: "core" }
         ]
       },
       {
         title: "3. Apprentissage non supervisé",
         items: [
-          { label: "Clustering, réduction de dimension", level: "core" }
+          { label: "Clustering, réduction de dimension", level: "core" },
+          { label: "Feature engineering", level: "option" }
         ]
       },
       {
@@ -4223,7 +4274,8 @@ const SKILLS = {
       {
         title: "5. Mise en production",
         items: [
-          { label: "Évaluation, déploiement de modèles", level: "option" }
+          { label: "Évaluation, déploiement de modèles", level: "option" },
+          { label: "Suivi d'expérimentations (MLflow)", level: "option" }
         ]
       }
     ]
@@ -4246,20 +4298,24 @@ const SKILLS = {
       {
         title: "2. Fondamentaux Solidity",
         items: [
-          { label: "Syntaxe, types, fonctions de contrat", level: "core", resource: { label: "Documentation Solidity", url: "https://docs.soliditylang.org/" } }
+          { label: "Syntaxe, types, fonctions de contrat", level: "core", resource: { label: "Documentation Solidity", url: "https://docs.soliditylang.org/" } },
+          { label: "Standards de tokens (ERC-20, ERC-721)", level: "option" }
         ]
       },
       {
         title: "3. Développement",
         items: [
           { label: "Hardhat ou Foundry pour le développement local", level: "core" },
-          { label: "Tests de smart contracts", level: "core" }
+          { label: "Tests de smart contracts", level: "core" },
+          { label: "Optimisation du gas", level: "option" },
+          { label: "Déploiement et vérification (Etherscan)", level: "option" }
         ]
       },
       {
         title: "4. Sécurité",
         items: [
-          { label: "Vulnérabilités courantes (reentrancy, overflow)", level: "core" }
+          { label: "Vulnérabilités courantes (reentrancy, overflow)", level: "core" },
+          { label: "Outils d'audit (Slither, MythX)", level: "option" }
         ]
       }
     ]
@@ -4291,7 +4347,9 @@ const SKILLS = {
         title: "3. Architecture distribuée",
         items: [
           { label: "Files de messages, architecture événementielle", level: "core" },
-          { label: "Théorème CAP", level: "option" }
+          { label: "Théorème CAP", level: "option" },
+          { label: "Microservices vs monolithe, API gateway", level: "option" },
+          { label: "Limitation de débit (rate limiting)", level: "option" }
         ]
       },
       {
@@ -4330,13 +4388,15 @@ const SKILLS = {
         title: "3. Techniques avancées",
         items: [
           { label: "Programmation dynamique", level: "core" },
-          { label: "Parcours de graphes (BFS, DFS)", level: "core" }
+          { label: "Parcours de graphes (BFS, DFS)", level: "core" },
+          { label: "Algorithmes gloutons (greedy), fenêtre glissante, deux pointeurs", level: "option" }
         ]
       },
       {
-        title: "4. Complexité",
+        title: "4. Complexité et pratique",
         items: [
-          { label: "Notation Big O", level: "core" }
+          { label: "Notation Big O", level: "core" },
+          { label: "Plateformes d'entraînement (LeetCode, HackerRank)", level: "option" }
         ]
       }
     ]
@@ -4360,7 +4420,8 @@ const SKILLS = {
         title: "2. Conception",
         items: [
           { label: "Nommage des routes, versionnement", level: "core" },
-          { label: "Pagination, filtrage, tri", level: "core" }
+          { label: "Pagination, filtrage, tri", level: "core" },
+          { label: "Idempotence et formats d'erreur cohérents", level: "option" }
         ]
       },
       {
@@ -4403,6 +4464,7 @@ const SKILLS = {
         title: "3. Bonnes pratiques",
         items: [
           { label: "Tests automatisés dans le pipeline", level: "core" },
+          { label: "Portes de qualité (linting, couverture de tests)", level: "option" },
           { label: "Stratégies de déploiement (blue-green, canary)", level: "option" }
         ]
       },
