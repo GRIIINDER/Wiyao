@@ -1115,7 +1115,8 @@ const ROLES = {
         title: "1. Concepts",
         items: [
           { label: "Différence ERP / CRM, modules de gestion (comptabilité, stock, RH, ventes)", level: "core" },
-          { label: "Modélisation des processus métier (BPMN de base)", level: "option" }
+          { label: "Modélisation des processus métier (BPMN de base)", level: "option" },
+          { label: "Cycle de vie d'un projet ERP (cadrage, paramétrage, recette, déploiement)", level: "core" }
         ]
       },
       {
@@ -1137,7 +1138,8 @@ const ROLES = {
         title: "4. Intégration",
         items: [
           { label: "Connexion à des systèmes tiers (API, imports/exports)", level: "core" },
-          { label: "ETL de base : extraire, transformer, charger des données entre systèmes", level: "option" }
+          { label: "ETL de base : extraire, transformer, charger des données entre systèmes", level: "option" },
+          { label: "Automatisation entre applications (webhooks, Zapier, Make)", level: "option" }
         ]
       },
       {
@@ -1180,7 +1182,8 @@ const ROLES = {
         items: [
           { label: "C/C++ pour systèmes embarqués", level: "core" },
           { label: "Systèmes d'exploitation temps réel (RTOS) : notions de base", level: "option" },
-          { label: "Gestion de l'énergie et conception basse consommation", level: "option" }
+          { label: "Gestion de l'énergie et conception basse consommation", level: "option" },
+          { label: "Débogage matériel (analyseur logique, oscilloscope)", level: "option" }
         ]
       },
       {
@@ -1194,6 +1197,7 @@ const ROLES = {
         title: "4. Cloud, sécurité et connectivité",
         items: [
           { label: "Envoi de données vers le cloud, dashboards IoT", level: "option" },
+          { label: "Plateformes IoT cloud (AWS IoT Core, Azure IoT Hub)", level: "option" },
           { label: "Sécurité des objets connectés : mise à jour firmware, authentification", level: "option" }
         ]
       },
@@ -1297,7 +1301,8 @@ const ROLES = {
         items: [
           { label: "Meta Ads", level: "core", resource: { label: "Meta Business Help Center", url: "https://www.facebook.com/business/help" } },
           { label: "Google Ads", level: "core", resource: { label: "Centre d'aide Google Ads", url: "https://support.google.com/google-ads" } },
-          { label: "TikTok Ads", level: "option" }
+          { label: "TikTok Ads", level: "option" },
+          { label: "Ciblage d'audience et retargeting", level: "core" }
         ]
       },
       {
@@ -1310,11 +1315,20 @@ const ROLES = {
       {
         title: "4. Email marketing",
         items: [
-          { label: "Campagnes et automatisation", level: "option" }
+          { label: "Campagnes et automatisation", level: "option" },
+          { label: "Segmentation de liste et personnalisation des envois", level: "option" },
+          { label: "Outils d'envoi (Mailchimp, Brevo, Buttondown)", level: "option" }
         ]
       },
       {
-        title: "5. Écosystème togolais",
+        title: "5. Influence et affiliation",
+        items: [
+          { label: "Collaboration avec des micro-influenceurs locaux", level: "option" },
+          { label: "Marketing d'affiliation", level: "option" }
+        ]
+      },
+      {
+        title: "6. Écosystème togolais",
         items: [
           { label: "Djanta Academy et CUBE : formations entrepreneuriat et compétences numériques", level: "core" }
         ]
@@ -1728,7 +1742,8 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Plateformes e-commerce : Shopify, WooCommerce", level: "core", resource: { label: "Documentation WooCommerce", url: "https://woocommerce.com/documentation/" } }
+          { label: "Plateformes e-commerce : Shopify, WooCommerce", level: "core", resource: { label: "Documentation WooCommerce", url: "https://woocommerce.com/documentation/" } },
+          { label: "Choix de plateforme selon le volume et le budget", level: "option" }
         ]
       },
       {
@@ -1736,14 +1751,16 @@ const ROLES = {
         items: [
           { label: "Gestion du catalogue produits, fiches produits", level: "core" },
           { label: "Gestion des commandes, des stocks et de la logistique", level: "core" },
-          { label: "Politique de retours et service client", level: "option" }
+          { label: "Politique de retours et service client", level: "option" },
+          { label: "Livraison locale et suivi de colis (dernier kilomètre)", level: "option" }
         ]
       },
       {
         title: "3. Paiement",
         items: [
           { label: "Intégration des paiements mobiles (Flooz, T-Money, Mobile Money)", level: "core", note: "Essentiel pour le marché togolais." },
-          { label: "Sécurité des transactions en ligne (notions PCI-DSS)", level: "option" }
+          { label: "Sécurité des transactions en ligne (notions PCI-DSS)", level: "option" },
+          { label: "Gestion des fraudes et des litiges de paiement", level: "option" }
         ]
       },
       {
@@ -1787,7 +1804,8 @@ const ROLES = {
       {
         title: "2. Management d'équipe",
         items: [
-          { label: "Encadrement des équipes techniques (dev, infra, support)", level: "core" }
+          { label: "Encadrement des équipes techniques (dev, infra, support)", level: "core" },
+          { label: "Recrutement et montée en compétence des équipes IT", level: "option" }
         ]
       },
       {
@@ -1801,7 +1819,8 @@ const ROLES = {
       {
         title: "4. Gestion de projets",
         items: [
-          { label: "Pilotage de projets de transformation numérique", level: "core", resource: { label: "Voir roadmap métier Chef de Projet IT", url: "roadmap.html?id=project-manager" } }
+          { label: "Pilotage de projets de transformation numérique", level: "core", resource: { label: "Voir roadmap métier Chef de Projet IT", url: "roadmap.html?id=project-manager" } },
+          { label: "Arbitrage entre développement interne et solutions externes (build vs buy)", level: "option" }
         ]
       },
       {
@@ -2005,7 +2024,7 @@ const ROLES = {
       {
         title: "2. Cadres méthodologiques",
         items: [
-          { label: "TOGAF ou cadres équivalents", level: "core" },
+          { label: "TOGAF ou cadres équivalents", level: "core", resource: { label: "The Open Group - TOGAF", url: "https://www.opengroup.org/togaf" } },
           { label: "Notation de modélisation ArchiMate", level: "option" }
         ]
       },
@@ -2014,14 +2033,16 @@ const ROLES = {
         items: [
           { label: "Traduction des besoins métier en architecture cible", level: "core" },
           { label: "Modélisation des capacités métier (business capability mapping)", level: "option" },
-          { label: "Feuille de route de transformation du SI", level: "core" }
+          { label: "Feuille de route de transformation du SI", level: "core" },
+          { label: "Analyse d'impact des changements sur l'existant", level: "option" }
         ]
       },
       {
         title: "4. Gouvernance",
         items: [
           { label: "Standards, urbanisation du SI, gestion des dépendances", level: "core" },
-          { label: "Gestion du cycle de vie technologique (technology radar)", level: "option" }
+          { label: "Gestion du cycle de vie technologique (technology radar)", level: "option" },
+          { label: "Comités d'architecture et validation des choix techniques", level: "option" }
         ]
       },
       {
@@ -2166,7 +2187,8 @@ const ROLES = {
         items: [
           { label: "API et interopérabilité entre systèmes", level: "core" },
           { label: "Middleware et bus de données (ESB)", level: "option" },
-          { label: "Outils d'intégration/ETL pour connecter les flux de données", level: "option" }
+          { label: "Outils d'intégration/ETL pour connecter les flux de données", level: "option" },
+          { label: "Formats d'échange de données (JSON, XML, CSV)", level: "core" }
         ]
       },
       {
@@ -2181,7 +2203,8 @@ const ROLES = {
       {
         title: "4. Support",
         items: [
-          { label: "Résolution des incidents d'intégration", level: "core" }
+          { label: "Résolution des incidents d'intégration", level: "core" },
+          { label: "Suivi de la performance des interfaces (monitoring des flux)", level: "option" }
         ]
       },
       {
@@ -3017,13 +3040,15 @@ const ROLES = {
         items: [
           { label: "Level design : composition et rythme des niveaux", level: "core" },
           { label: "Narrative design : histoire, dialogues, choix du joueur", level: "option" },
-          { label: "Économie de jeu et monétisation (free-to-play, achats)", level: "option" }
+          { label: "Économie de jeu et monétisation (free-to-play, achats)", level: "option" },
+          { label: "Systems design : interactions entre mécaniques", level: "option" }
         ]
       },
       {
         title: "3. Documentation",
         items: [
-          { label: "Rédaction de game design documents (GDD)", level: "core" }
+          { label: "Rédaction de game design documents (GDD)", level: "core" },
+          { label: "Wireframes et diagrammes de flux de jeu", level: "option" }
         ]
       },
       {
@@ -3360,7 +3385,8 @@ const ROLES = {
         items: [
           { label: "Audit de contenu existant et analyse concurrentielle", level: "core" },
           { label: "Ligne éditoriale et piliers de contenu", level: "core" },
-          { label: "Recherche d'audience et personas", level: "core" }
+          { label: "Recherche d'audience et personas", level: "core" },
+          { label: "Cartographie du contenu selon le tunnel d'achat (awareness, considération, décision)", level: "option" }
         ]
       },
       {
@@ -3404,7 +3430,8 @@ const ROLES = {
         title: "1. Fondamentaux",
         items: [
           { label: "Fonctionnement des enchères publicitaires", level: "core" },
-          { label: "Suivi et mesure : pixels, UTM, paramétrage du tracking", level: "core" }
+          { label: "Suivi et mesure : pixels, UTM, paramétrage du tracking", level: "core" },
+          { label: "Google Tag Manager pour centraliser le tracking", level: "option" }
         ]
       },
       {
