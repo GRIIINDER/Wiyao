@@ -640,6 +640,10 @@ nav.site-nav a.active {
   padding: 9px 16px;
 }
 
+.search-bar:focus-within {
+  border-color: var(--tk-primary);
+}
+
 .search-icon {
   flex: 0 0 auto;
   color: var(--tk-text-subtle);

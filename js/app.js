@@ -2,12 +2,6 @@
 (function () {
   "use strict";
 
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-      navigator.serviceWorker.register("sw.js").catch(function () {});
-    });
-  }
-
   const STORAGE_KEY = "wiyao-progress";
 
   // Traduction du contenu dynamique (data.js) : chaque objet peut porter un

@@ -1,3 +1,16 @@
+// Enregistrement du service worker - WIYAO
+// Placé dans nav.js (chargé sur les 17 pages) pour que le SW s'installe
+// quelle que soit la première page visitée, pas seulement celles avec app.js.
+(function () {
+  "use strict";
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("sw.js").catch(function () {});
+    });
+  }
+})();
+
 // Menu mobile - WIYAO
 (function () {
   "use strict";
