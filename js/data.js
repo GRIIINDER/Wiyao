@@ -754,14 +754,17 @@ const ROLES = {
         title: "3. Diagnostic et support",
         items: [
           { label: "Méthodologie de résolution de problèmes", level: "core" },
-          { label: "Gestion de tickets (ITSM)", level: "core" }
+          { label: "Gestion de tickets (ITSM) : outils comme Zendesk, Freshdesk", level: "core" },
+          { label: "Prise en main à distance (TeamViewer, AnyDesk)", level: "core" },
+          { label: "Communication claire avec des utilisateurs non techniques", level: "core" }
         ]
       },
       {
         title: "4. Administration",
         items: [
           { label: "Active Directory, gestion des comptes", level: "core" },
-          { label: "Gestion de parc informatique", level: "core" }
+          { label: "Gestion de parc informatique et des périphériques (imprimantes, etc.)", level: "core" },
+          { label: "Sauvegardes de postes utilisateurs", level: "option" }
         ]
       },
       {
@@ -924,19 +927,22 @@ const ROLES = {
       {
         title: "1. Systèmes",
         items: [
-          { label: "Administration Linux et Windows Server", level: "core", resource: { label: "Voir roadmap compétence Linux", url: "roadmap.html?id=linux" } }
+          { label: "Administration Linux et Windows Server", level: "core", resource: { label: "Voir roadmap compétence Linux", url: "roadmap.html?id=linux" } },
+          { label: "Services DNS, DHCP, Active Directory/LDAP", level: "core" }
         ]
       },
       {
-        title: "2. Réseaux",
+        title: "2. Réseaux et sécurité",
         items: [
-          { label: "Architecture réseau, VLAN, routage", level: "core", resource: { label: "Voir roadmap compétence Réseaux", url: "roadmap.html?id=reseaux" } }
+          { label: "Architecture réseau, VLAN, routage", level: "core", resource: { label: "Voir roadmap compétence Réseaux", url: "roadmap.html?id=reseaux" } },
+          { label: "Pare-feu et durcissement des serveurs (hardening)", level: "core" }
         ]
       },
       {
-        title: "3. Virtualisation",
+        title: "3. Virtualisation et cloud",
         items: [
-          { label: "VMware, Hyper-V ou Proxmox", level: "core" }
+          { label: "VMware, Hyper-V ou Proxmox", level: "core" },
+          { label: "Infrastructures hybrides (on-premise + cloud)", level: "option", resource: { label: "Voir roadmap compétence Cloud", url: "roadmap.html?id=cloud" } }
         ]
       },
       {
@@ -995,19 +1001,21 @@ const ROLES = {
         title: "2. Télécommunications",
         items: [
           { label: "Téléphonie IP (VoIP)", level: "core" },
-          { label: "Réseaux mobiles (3G/4G/5G) et fibre optique", level: "core" }
+          { label: "Réseaux mobiles (3G/4G/5G) et fibre optique", level: "core" },
+          { label: "Réseaux sans fil (Wi-Fi) : normes et déploiement", level: "core" }
         ]
       },
       {
-        title: "3. Équipements",
+        title: "3. Équipements et supervision",
         items: [
-          { label: "Configuration Cisco ou Huawei", level: "core" }
+          { label: "Configuration Cisco ou Huawei", level: "core" },
+          { label: "Supervision réseau (SNMP) et gestion de la qualité de service (QoS)", level: "option" }
         ]
       },
       {
         title: "4. Sécurité télécoms",
         items: [
-          { label: "Sécurisation des infrastructures réseau", level: "core" }
+          { label: "Sécurisation des infrastructures réseau (pare-feu, VPN, segmentation)", level: "core" }
         ]
       },
       {
@@ -1154,25 +1162,31 @@ const ROLES = {
       {
         title: "1. Électronique et microcontrôleurs",
         items: [
-          { label: "Arduino, Raspberry Pi, ESP32", level: "core", resource: { label: "Documentation Arduino", url: "https://docs.arduino.cc/" } }
+          { label: "Arduino, Raspberry Pi, ESP32", level: "core", resource: { label: "Documentation Arduino", url: "https://docs.arduino.cc/" } },
+          { label: "Capteurs et actionneurs (température, mouvement, relais)", level: "core" },
+          { label: "Bases de conception de circuits imprimés (PCB)", level: "option" }
         ]
       },
       {
         title: "2. Programmation embarquée",
         items: [
-          { label: "C/C++ pour systèmes embarqués", level: "core" }
+          { label: "C/C++ pour systèmes embarqués", level: "core" },
+          { label: "Systèmes d'exploitation temps réel (RTOS) : notions de base", level: "option" },
+          { label: "Gestion de l'énergie et conception basse consommation", level: "option" }
         ]
       },
       {
         title: "3. Protocoles IoT",
         items: [
-          { label: "MQTT, LoRa", level: "core", resource: { label: "mqtt.org - Documentation", url: "https://mqtt.org/" } }
+          { label: "MQTT, LoRa", level: "core", resource: { label: "mqtt.org - Documentation", url: "https://mqtt.org/" } },
+          { label: "Autres protocoles : Zigbee, Bluetooth Low Energy (BLE), NB-IoT", level: "option" }
         ]
       },
       {
-        title: "4. Cloud et connectivité",
+        title: "4. Cloud, sécurité et connectivité",
         items: [
-          { label: "Envoi de données vers le cloud, dashboards IoT", level: "option" }
+          { label: "Envoi de données vers le cloud, dashboards IoT", level: "option" },
+          { label: "Sécurité des objets connectés : mise à jour firmware, authentification", level: "option" }
         ]
       },
       {
@@ -1759,8 +1773,9 @@ const ROLES = {
       {
         title: "1. Automatisation",
         items: [
-          { label: "Automates programmables industriels (API/PLC)", level: "core" },
-          { label: "Capteurs et actionneurs", level: "core" }
+          { label: "Automates programmables industriels (API/PLC), norme IEC 61131-3", level: "core" },
+          { label: "Capteurs et actionneurs", level: "core" },
+          { label: "Interfaces homme-machine (IHM/HMI)", level: "core" }
         ]
       },
       {
@@ -1770,10 +1785,11 @@ const ROLES = {
         ]
       },
       {
-        title: "3. Réseaux industriels",
+        title: "3. Réseaux industriels et sécurité",
         items: [
           { label: "Protocoles industriels (Modbus, Profibus)", level: "core" },
-          { label: "Notions réseaux classiques", level: "option", resource: { label: "Voir roadmap compétence Réseaux", url: "roadmap.html?id=reseaux" } }
+          { label: "Notions réseaux classiques", level: "option", resource: { label: "Voir roadmap compétence Réseaux", url: "roadmap.html?id=reseaux" } },
+          { label: "Cybersécurité des systèmes industriels (OT security)", level: "option" }
         ]
       },
       {
@@ -2070,14 +2086,17 @@ const ROLES = {
         title: "2. Intégration",
         items: [
           { label: "API et interopérabilité entre systèmes", level: "core" },
-          { label: "Middleware et bus de données", level: "option" }
+          { label: "Middleware et bus de données (ESB)", level: "option" },
+          { label: "Outils d'intégration/ETL pour connecter les flux de données", level: "option" }
         ]
       },
       {
         title: "3. Déploiement",
         items: [
+          { label: "Recueil des besoins et cadrage technique du projet", level: "core" },
           { label: "Installation et paramétrage de solutions tierces", level: "core" },
-          { label: "Tests d'intégration", level: "core" }
+          { label: "Tests d'intégration", level: "core" },
+          { label: "Documentation de l'architecture d'intégration", level: "option" }
         ]
       },
       {
@@ -2169,7 +2188,9 @@ const ROLES = {
         title: "2. Fiabilité",
         items: [
           { label: "SLI, SLO, SLA et budgets d'erreur", level: "core" },
-          { label: "Gestion des incidents et post-mortems", level: "core" }
+          { label: "Gestion des incidents, astreinte (on-call) et post-mortems sans blâme", level: "core" },
+          { label: "Planification de la capacité (capacity planning)", level: "option" },
+          { label: "Ingénierie du chaos (chaos engineering)", level: "option" }
         ]
       },
       {
@@ -2182,7 +2203,8 @@ const ROLES = {
         title: "4. Automatisation",
         items: [
           { label: "Infrastructure as Code", level: "core", resource: { label: "Voir roadmap métier DevOps & Cloud", url: "roadmap.html?id=devops" } },
-          { label: "Conteneurisation et orchestration", level: "core", resource: { label: "Voir roadmap compétence Docker", url: "roadmap.html?id=docker" } }
+          { label: "Conteneurisation et orchestration", level: "core", resource: { label: "Voir roadmap compétence Docker", url: "roadmap.html?id=docker" } },
+          { label: "Réduction du travail répétitif (toil) par l'automatisation", level: "option" }
         ]
       }
     ]
@@ -2209,20 +2231,24 @@ const ROLES = {
         title: "2. Internal Developer Platform",
         items: [
           { label: "Self-service pour les équipes produit", level: "core" },
-          { label: "Golden paths et standardisation", level: "core" }
+          { label: "Golden paths et standardisation", level: "core" },
+          { label: "Portails développeurs (Backstage)", level: "option" }
         ]
       },
       {
         title: "3. Outillage",
         items: [
           { label: "Kubernetes et opérateurs", level: "core", resource: { label: "Documentation Kubernetes", url: "https://kubernetes.io/fr/docs/home/" } },
-          { label: "CI/CD as a service", level: "core" }
+          { label: "CI/CD as a service", level: "core" },
+          { label: "Modules Infrastructure as Code réutilisables (Terraform)", level: "option", resource: { label: "Voir roadmap compétence Terraform", url: "roadmap.html?id=terraform" } },
+          { label: "GitOps (ArgoCD, Flux)", level: "option" }
         ]
       },
       {
         title: "4. Culture DevOps",
         items: [
-          { label: "Collaboration avec les équipes produit", level: "core" }
+          { label: "Collaboration avec les équipes produit", level: "core" },
+          { label: "Notions de FinOps : optimisation des coûts cloud", level: "option" }
         ]
       }
     ]
@@ -2914,19 +2940,22 @@ const ROLES = {
         title: "2. Programmation",
         items: [
           { label: "C/C++ et Python pour la robotique", level: "core" },
-          { label: "ROS (Robot Operating System)", level: "core" }
+          { label: "ROS (Robot Operating System)", level: "core" },
+          { label: "Cinématique et planification de trajectoire", level: "option" }
         ]
       },
       {
         title: "3. Perception et contrôle",
         items: [
-          { label: "Vision par ordinateur de base, algorithmes de contrôle", level: "option" }
+          { label: "Vision par ordinateur de base, algorithmes de contrôle", level: "option" },
+          { label: "Fusion de capteurs et cartographie/localisation (SLAM)", level: "option" }
         ]
       },
       {
         title: "4. Intégration",
         items: [
-          { label: "Simulation et tests physiques", level: "core" }
+          { label: "Simulation (Gazebo) et tests physiques", level: "core" },
+          { label: "Normes de sécurité pour la robotique industrielle et collaborative", level: "option" }
         ]
       }
     ]
@@ -2952,7 +2981,10 @@ const ROLES = {
       {
         title: "2. Salesforce",
         items: [
-          { label: "Configuration des objets, workflows, permissions", level: "core", resource: { label: "Salesforce Trailhead", url: "https://trailhead.salesforce.com/" } }
+          { label: "Configuration des objets, workflows, permissions", level: "core", resource: { label: "Salesforce Trailhead", url: "https://trailhead.salesforce.com/" } },
+          { label: "Modèle de sécurité : profils, rôles, règles de partage", level: "core" },
+          { label: "Gestion des données : import/export, dédoublonnage", level: "option" },
+          { label: "Alternatives CRM plus légères : HubSpot, Zoho CRM", level: "option" }
         ]
       },
       {
@@ -2962,9 +2994,10 @@ const ROLES = {
         ]
       },
       {
-        title: "4. Reporting",
+        title: "4. Reporting et certification",
         items: [
-          { label: "Tableaux de bord et rapports CRM", level: "core" }
+          { label: "Tableaux de bord et rapports CRM", level: "core" },
+          { label: "Salesforce Certified Administrator", level: "option", resource: { label: "Salesforce Trailhead - Certifications", url: "https://trailhead.salesforce.com/credentials/administrator" } }
         ]
       }
     ]
