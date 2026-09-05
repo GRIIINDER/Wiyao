@@ -52,8 +52,8 @@
       en: 'Chart your <span class="hero-accent">tech path</span> in Togo',
     },
     "hero.subtitle": {
-      fr: "Des roadmaps communautaires pour tous les métiers de la tech, avec les écoles, communautés et ressources disponibles à Lomé et au Togo.",
-      en: "Community-built roadmaps for every tech role, alongside the schools, communities and resources available in Lomé and across Togo.",
+      fr: "Le guide qui t'accompagne à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses et stages — à Lomé et dans tout le Togo.",
+      en: "The guide that walks you through every step: orientation, choosing a domain, a track, a university, career roadmaps, scholarships and internships — in Lomé and across Togo.",
     },
     "hero.cta": {
       fr: "Pas sûr·e de ta voie ? Fais le test d'orientation →",
@@ -301,8 +301,8 @@
       en: "WIYAO is an independent community project, with no commercial status, published and maintained on a personal basis — inspired by roadmap.sh and adapted to the Togolese context. It's not a startup: no account to create, no subscription, no ads, nothing to sell.",
     },
     "about.s1.p2": {
-      fr: 'Il rassemble des roadmaps de carrière pour les métiers et compétences de la tech, avec les écoles, communautés, hubs et institutions à connaître pour construire une carrière tech au Togo. Le site est gratuit, utilisable sans inscription, et hébergé par Vercel — détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
-      en: 'It brings together career roadmaps for tech roles and skills, along with the schools, communities, hubs and institutions worth knowing to build a tech career in Togo. The site is free, usable without registration, and hosted by Vercel — full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
+      fr: 'C\'est un guide qui accompagne le bachelier togolais à chaque étape de son parcours tech : orientation, choix de domaine, de filière et d\'université, roadmaps de carrière et de compétences, bourses, stages et emploi, écosystème local à connaître. Le site est gratuit, utilisable sans inscription, et hébergé par Vercel — détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
+      en: 'It\'s a guide that walks the Togolese bachelier through every step of their tech journey: orientation, choosing a domain, a track and a university, career and skill roadmaps, scholarships, internships and jobs, the local ecosystem worth knowing. The site is free, usable without registration, and hosted by Vercel — full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
     },
     "about.s2.h2": { fr: "Roadmaps par métier", en: "Role-based roadmaps" },
     "about.s2.p": {

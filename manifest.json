@@ -1,7 +1,7 @@
 {
-  "name": "WIYAO — Roadmaps tech au Togo",
+  "name": "WIYAO — Guide tech au Togo",
   "short_name": "WIYAO",
-  "description": "Roadmaps de carrière, comparateur d'écoles et opportunités de stages/emploi pour les bacheliers togolais qui se lancent dans la tech.",
+  "description": "Le guide qui accompagne le bachelier togolais : orientation, choix de domaine, de filière, d'université, roadmaps, bourses et stages.",
   "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",

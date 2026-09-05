@@ -1,12 +1,12 @@
 # WIYAO
 
-Roadmaps de carrière, comparateur d'écoles et opportunités de stages/emploi pour les bacheliers togolais qui se lancent dans la tech.
+Le guide qui accompagne les bacheliers togolais qui se lancent dans la tech, à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps de carrière, bourses et stages/emploi.
 
 **Site en ligne :** [wiyao.vercel.app](https://wiyao.vercel.app)
 
 ## Le projet
 
-WIYAO couvre tout le parcours d'orientation tech au Togo :
+WIYAO n'est pas qu'un catalogue de roadmaps : c'est un guide qui suit le bachelier togolais tout au long de son orientation tech, étape par étape.
 
 - **Roadmaps** — plus de 80 métiers et compétences tech, avec les ressources d'apprentissage et le suivi de progression.
 - **Écoles & universités** — comparateur des établissements togolais formant à l'informatique, filtrable par ville et statut.

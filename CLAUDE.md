@@ -1,6 +1,6 @@
 # WIYAO — notes pour Claude Code
 
-WIYAO est une plateforme d'orientation tech pour les bacheliers togolais : roadmaps de carrière, comparateur d'écoles, calendrier, bourses/financement, stages/emploi, écosystème tech togolais. Site statique (aucun backend, aucune base de données), déployé sur Vercel via l'intégration GitHub (push sur `main` = déploiement auto), dépôt public `GRIIINDER/Wiyao`.
+WIYAO n'est pas qu'un catalogue de roadmaps : c'est un guide qui accompagne le bachelier togolais à chaque étape de son parcours tech — orientation, choix de domaine, de filière, d'université — puis roadmaps de carrière, comparateur d'écoles, calendrier, bourses/financement, stages/emploi, écosystème tech togolais. Site statique (aucun backend, aucune base de données), déployé sur Vercel via l'intégration GitHub (push sur `main` = déploiement auto), dépôt public `GRIIINDER/Wiyao`.
 
 ## Stack
 
