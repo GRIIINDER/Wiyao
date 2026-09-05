@@ -143,7 +143,8 @@ const ROLES = {
         items: [
           { label: "REST : conception, versionnement, pagination", level: "core" },
           { label: "GraphQL", level: "option", resource: { label: "Documentation GraphQL", url: "https://graphql.org/learn/" } },
-          { label: "Authentification JWT, sessions, OAuth2", level: "core", resource: { label: "jwt.io - Introduction aux JWT", url: "https://jwt.io/introduction" } }
+          { label: "Authentification JWT, sessions, OAuth2", level: "core", resource: { label: "jwt.io - Introduction aux JWT", url: "https://jwt.io/introduction" } },
+          { label: "Idempotence et gestion des erreurs API (codes HTTP, formats d'erreur)", level: "core" }
         ]
       },
       {
@@ -168,7 +169,8 @@ const ROLES = {
           { label: "Tests unitaires et d'intégration", level: "core" },
           { label: "Docker et conteneurisation", level: "core", resource: { label: "Voir roadmap compétence Docker", url: "roadmap.html?id=docker" } },
           { label: "CI/CD basique (GitHub Actions)", level: "option", resource: { label: "Documentation GitHub Actions", url: "https://docs.github.com/fr/actions" } },
-          { label: "Administration d'un serveur Linux", level: "core", resource: { label: "Voir roadmap compétence Linux", url: "roadmap.html?id=linux" } }
+          { label: "Administration d'un serveur Linux", level: "core", resource: { label: "Voir roadmap compétence Linux", url: "roadmap.html?id=linux" } },
+          { label: "Observabilité : logs structurés, métriques, tracing", level: "option" }
         ]
       },
       {
@@ -466,14 +468,22 @@ const ROLES = {
         ]
       },
       {
-        title: "6. Publication",
+        title: "6. Tests et fiabilité",
+        items: [
+          { label: "Tests unitaires et de widgets/composants", level: "core" },
+          { label: "Mode hors-ligne (offline-first) et synchronisation des données", level: "core", note: "Essentiel vu la connectivité variable au Togo." },
+          { label: "Tests sur appareils réels à faible/moyenne gamme", level: "option" }
+        ]
+      },
+      {
+        title: "7. Publication",
         items: [
           { label: "Google Play Store : préparation et publication", level: "core", resource: { label: "Play Console - Guide de lancement", url: "https://support.google.com/googleplay/android-developer/answer/9859152" } },
           { label: "Apple App Store : préparation et publication", level: "option" }
         ]
       },
       {
-        title: "7. Écosystème togolais",
+        title: "8. Écosystème togolais",
         items: [
           { label: "GDG Lomé : ateliers Android/Flutter", level: "core", resource: { label: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
           { label: "IAI-Togo et HETEC : bootcamps développement mobile", level: "option" },
@@ -839,37 +849,52 @@ const ROLES = {
         title: "1. Fondamentaux du test",
         items: [
           { label: "Types de tests : unitaire, intégration, système, acceptation", level: "core" },
-          { label: "Cycle de vie du test logiciel", level: "core" }
+          { label: "Cycle de vie du test logiciel, vérification vs validation", level: "core" },
+          { label: "Boîte noire, boîte blanche, boîte grise", level: "option" }
         ]
       },
       {
-        title: "2. Tests manuels",
+        title: "2. Techniques de test",
+        items: [
+          { label: "Tests fonctionnels vs non-fonctionnels", level: "core" },
+          { label: "Fumée (smoke), régression, exploratoire, recette utilisateur (UAT)", level: "core" },
+          { label: "Tests de performance, de charge et de résistance", level: "option" },
+          { label: "Tests de sécurité de base et d'accessibilité (WAVE, AXE)", level: "option" }
+        ]
+      },
+      {
+        title: "3. Tests manuels",
         items: [
           { label: "Rédaction de cas et scénarios de test", level: "core" },
           { label: "Rapport et suivi des anomalies", level: "core" }
         ]
       },
       {
-        title: "3. Tests automatisés",
+        title: "4. Tests automatisés",
         items: [
           { label: "Selenium", level: "core", resource: { label: "Documentation Selenium", url: "https://www.selenium.dev/documentation/" } },
-          { label: "Cypress ou Playwright", level: "option", resource: { label: "Documentation Playwright", url: "https://playwright.dev/docs/intro" } }
+          { label: "Cypress ou Playwright", level: "option", resource: { label: "Documentation Playwright", url: "https://playwright.dev/docs/intro" } },
+          { label: "Tests d'API avec Postman", level: "core", resource: { label: "Documentation Postman", url: "https://learning.postman.com/docs/introduction/overview/" } },
+          { label: "Tests mobiles avec Appium", level: "option" }
         ]
       },
       {
-        title: "4. Méthodologie",
+        title: "5. Méthodologie",
         items: [
-          { label: "Tests dans un cycle Agile, tests de régression", level: "core" }
+          { label: "Tests dans un cycle Agile/Scrum, tests de régression", level: "core" },
+          { label: "TDD (Test-Driven Development) et BDD (Behavior-Driven Development)", level: "option" },
+          { label: "Certification ISTQB Foundation Level, référence internationale du métier", level: "option", resource: { label: "ISTQB", url: "https://www.istqb.org/" } }
         ]
       },
       {
-        title: "5. Outils",
+        title: "6. Outils",
         items: [
-          { label: "Jira ou TestRail pour le suivi", level: "core" }
+          { label: "Jira ou TestRail pour le suivi", level: "core" },
+          { label: "Intégration des tests dans un pipeline CI/CD", level: "option" }
         ]
       },
       {
-        title: "6. Écosystème togolais",
+        title: "7. Écosystème togolais",
         items: [
           { label: "IAI-Togo, ESGIS et HETEC : bases en développement logiciel utiles au test", level: "core" }
         ]
@@ -1008,32 +1033,37 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Principes SOLID et design patterns", level: "core" }
+          { label: "Principes SOLID et design patterns (GoF)", level: "core" },
+          { label: "Domain-Driven Design (DDD) : modéliser autour du métier", level: "option" }
         ]
       },
       {
         title: "2. Styles d'architecture",
         items: [
-          { label: "Monolithe vs microservices", level: "core" },
-          { label: "Architecture événementielle (event-driven)", level: "option" }
+          { label: "Monolithe vs microservices vs monolithe modulaire", level: "core" },
+          { label: "Architecture événementielle (event-driven), CQRS et event sourcing", level: "option" },
+          { label: "Architecture hexagonale (ports et adaptateurs)", level: "option" }
         ]
       },
       {
         title: "3. Qualité et performance",
         items: [
-          { label: "Scalabilité, disponibilité, résilience", level: "core" }
+          { label: "Attributs de qualité : scalabilité, disponibilité, résilience, maintenabilité", level: "core" },
+          { label: "Compromis architecturaux (trade-offs) et dette technique", level: "core" }
         ]
       },
       {
-        title: "4. Documentation",
+        title: "4. Documentation et décisions",
         items: [
-          { label: "Modélisation d'architecture (C4 model, diagrammes)", level: "core" }
+          { label: "Modélisation d'architecture (C4 model, diagrammes)", level: "core", resource: { label: "The C4 model", url: "https://c4model.com/" } },
+          { label: "Architecture Decision Records (ADR) : tracer pourquoi un choix a été fait", level: "option" }
         ]
       },
       {
         title: "5. Cloud et infrastructure",
         items: [
-          { label: "Bases cloud nécessaires à l'architecture", level: "core", resource: { label: "Voir roadmap compétence Cloud", url: "roadmap.html?id=cloud" } }
+          { label: "Bases cloud nécessaires à l'architecture", level: "core", resource: { label: "Voir roadmap compétence Cloud", url: "roadmap.html?id=cloud" } },
+          { label: "Files de messages et communication asynchrone (Kafka, RabbitMQ)", level: "option" }
         ]
       },
       {
@@ -1060,7 +1090,8 @@ const ROLES = {
       {
         title: "1. Concepts",
         items: [
-          { label: "Différence ERP / CRM, modules de gestion", level: "core" }
+          { label: "Différence ERP / CRM, modules de gestion (comptabilité, stock, RH, ventes)", level: "core" },
+          { label: "Modélisation des processus métier (BPMN de base)", level: "option" }
         ]
       },
       {
@@ -1071,19 +1102,29 @@ const ROLES = {
         ]
       },
       {
-        title: "3. Intégration",
+        title: "3. Solutions internationales alternatives",
         items: [
-          { label: "Connexion à des systèmes tiers (API, imports/exports)", level: "core" }
+          { label: "Salesforce : personnalisation et développement Apex/Flow", level: "option", resource: { label: "Trailhead - Salesforce", url: "https://trailhead.salesforce.com/" } },
+          { label: "Microsoft Dynamics 365", level: "option" },
+          { label: "SAP : notions de base (voir roadmap dédiée pour un poste de consultant SAP)", level: "option", resource: { label: "Voir roadmap métier Consultant SAP", url: "roadmap.html?id=sap-consultant" } }
         ]
       },
       {
-        title: "4. Déploiement et maintenance",
+        title: "4. Intégration",
         items: [
-          { label: "Installation, mises à jour, sauvegardes", level: "core" }
+          { label: "Connexion à des systèmes tiers (API, imports/exports)", level: "core" },
+          { label: "ETL de base : extraire, transformer, charger des données entre systèmes", level: "option" }
         ]
       },
       {
-        title: "5. Écosystème togolais",
+        title: "5. Déploiement et maintenance",
+        items: [
+          { label: "Installation, mises à jour, sauvegardes", level: "core" },
+          { label: "Formation des utilisateurs finaux et conduite du changement", level: "option" }
+        ]
+      },
+      {
+        title: "6. Écosystème togolais",
         items: [
           { label: "Peu de filières spécialisées ERP au Togo à ce jour : les bases s'acquièrent via IAI-Togo, ESGIS puis en autoformation et en entreprise", level: "core" }
         ]
@@ -1150,29 +1191,50 @@ const ROLES = {
       {
         title: "1. Fondamentaux blockchain",
         items: [
-          { label: "Mécanismes de consensus, cryptographie de base", level: "core" }
+          { label: "Structure d'une blockchain : blocs, hash, arbre de Merkle", level: "core" },
+          { label: "Mécanismes de consensus : Proof of Work, Proof of Stake", level: "core" },
+          { label: "Cryptographie de base : clés publiques/privées, signatures", level: "core" },
+          { label: "Portefeuilles (wallets) et gestion des clés", level: "core" }
         ]
       },
       {
         title: "2. Smart contracts",
         items: [
-          { label: "Solidity et Ethereum", level: "core", resource: { label: "Documentation Solidity", url: "https://docs.soliditylang.org/" } }
+          { label: "Solidity et l'écosystème Ethereum (EVM)", level: "core", resource: { label: "Documentation Solidity", url: "https://docs.soliditylang.org/" } },
+          { label: "Standards de tokens : ERC-20 (fongibles), ERC-721/ERC-1155 (NFT)", level: "core" },
+          { label: "Autres chaînes compatibles EVM : Polygon, BNB Chain, Arbitrum", level: "option" },
+          { label: "Alternatives non-EVM : Solana (Rust), Move (Aptos/Sui)", level: "option" }
         ]
       },
       {
-        title: "3. Outils",
+        title: "3. Concepts DeFi et Web3",
         items: [
-          { label: "Hardhat, Remix, MetaMask", level: "core", resource: { label: "Ethereum.org - Guides développeurs", url: "https://ethereum.org/en/developers/docs/" } }
+          { label: "Finance décentralisée (DeFi) : DEX, lending, staking, AMM", level: "option" },
+          { label: "Oracles blockchain (Chainlink) pour données externes", level: "option" },
+          { label: "Interaction front-end avec ethers.js / viem + wagmi", level: "core" },
+          { label: "IPFS et stockage décentralisé", level: "option" }
         ]
       },
       {
-        title: "4. Sécurité",
+        title: "4. Outils et environnement de développement",
         items: [
-          { label: "Vulnérabilités courantes des smart contracts", level: "core" }
+          { label: "Hardhat ou Foundry pour compiler, tester et déployer", level: "core", resource: { label: "Ethereum.org - Guides développeurs", url: "https://ethereum.org/en/developers/docs/" } },
+          { label: "Remix IDE pour le prototypage rapide", level: "core" },
+          { label: "MetaMask et autres wallets pour les tests", level: "core" },
+          { label: "Réseaux de test (testnets) et faucets", level: "core" }
         ]
       },
       {
-        title: "5. Écosystème togolais",
+        title: "5. Sécurité et bonnes pratiques",
+        items: [
+          { label: "Vulnérabilités courantes : reentrancy, overflow, front-running", level: "core" },
+          { label: "Optimisation du gas (coût des transactions)", level: "core" },
+          { label: "Tests automatisés des smart contracts (Hardhat/Foundry tests)", level: "core" },
+          { label: "Audits de sécurité et outils (Slither, MythX)", level: "option" }
+        ]
+      },
+      {
+        title: "6. Écosystème togolais",
         items: [
           { label: "Domaine encore émergent au Togo, communauté naissante autour des événements GDG Lomé et DevFest", level: "core" }
         ]
@@ -1543,14 +1605,17 @@ const ROLES = {
         title: "2. Contenu",
         items: [
           { label: "Rédaction et publication de contenu web", level: "core" },
-          { label: "Bases SEO pour le référencement", level: "core" }
+          { label: "Bases SEO pour le référencement", level: "core" },
+          { label: "Google Analytics / Search Console pour suivre le trafic", level: "core" }
         ]
       },
       {
         title: "3. Technique de base",
         items: [
           { label: "HTML/CSS de base pour les ajustements", level: "core", resource: { label: "Voir roadmap compétence JavaScript", url: "roadmap.html?id=javascript" } },
-          { label: "Sauvegarde et sécurité du site", level: "core" }
+          { label: "Certificat SSL/HTTPS et nom de domaine", level: "core" },
+          { label: "Sauvegarde et sécurité du site", level: "core" },
+          { label: "Surveillance de la disponibilité (uptime monitoring)", level: "option" }
         ]
       },
       {
@@ -2623,26 +2688,32 @@ const ROLES = {
         title: "1. Fondamentaux",
         items: [
           { label: "Programmation orientée objet et structures de données", level: "core" },
-          { label: "Mathématiques appliquées au jeu (vecteurs, physique de base)", level: "core" }
+          { label: "Mathématiques appliquées au jeu (vecteurs, physique de base)", level: "core" },
+          { label: "Boucle de jeu (game loop), gestion des états et des scènes", level: "core" }
         ]
       },
       {
         title: "2. Moteurs de jeu",
         items: [
           { label: "Unity (C#)", level: "core", resource: { label: "Documentation Unity", url: "https://docs.unity3d.com/Manual/index.html" } },
-          { label: "Unreal Engine (C++/Blueprints)", level: "option", resource: { label: "Documentation Unreal Engine", url: "https://dev.epicgames.com/documentation/en-us/unreal-engine" } }
+          { label: "Unreal Engine (C++/Blueprints)", level: "option", resource: { label: "Documentation Unreal Engine", url: "https://dev.epicgames.com/documentation/en-us/unreal-engine" } },
+          { label: "Godot (gratuit et open-source, GDScript)", level: "option", resource: { label: "Documentation Godot", url: "https://docs.godotengine.org/" } }
         ]
       },
       {
-        title: "3. Gameplay",
+        title: "3. Gameplay et production",
         items: [
-          { label: "Systèmes de gameplay, IA de jeu basique", level: "core" }
+          { label: "Systèmes de gameplay, IA de jeu basique (pathfinding, machine à états)", level: "core" },
+          { label: "Gestion du son et de la musique interactive", level: "option" },
+          { label: "Contrôle de version adapté au jeu vidéo (Git LFS pour les gros assets)", level: "core" },
+          { label: "Notions de multijoueur : netcode, synchronisation client-serveur", level: "option" }
         ]
       },
       {
         title: "4. Publication",
         items: [
-          { label: "Optimisation et publication sur plateformes (Steam, mobile)", level: "option" }
+          { label: "Optimisation et publication sur plateformes (Steam, mobile, consoles)", level: "option" },
+          { label: "Monétisation : achats intégrés, publicité, modèles free-to-play", level: "option" }
         ]
       }
     ]
@@ -2701,25 +2772,36 @@ const ROLES = {
       {
         title: "1. Fondamentaux",
         items: [
-          { label: "Notions 3D : mesh, textures, éclairage", level: "core" }
+          { label: "Notions 3D : mesh, textures, éclairage, caméras", level: "core" },
+          { label: "Spatial computing : suivi de position, ancrage dans l'espace réel", level: "core" }
         ]
       },
       {
-        title: "2. Outils",
+        title: "2. Outils et SDK",
         items: [
-          { label: "Unity avec AR Foundation / SDK VR", level: "core", resource: { label: "Documentation Unity", url: "https://docs.unity3d.com/Manual/index.html" } }
+          { label: "Unity avec AR Foundation / SDK VR (multiplateforme)", level: "core", resource: { label: "Documentation Unity", url: "https://docs.unity3d.com/Manual/index.html" } },
+          { label: "ARKit (iOS) et ARCore (Android) pour la réalité augmentée mobile", level: "core" },
+          { label: "OpenXR comme standard multiplateforme pour la VR/AR", level: "option" }
         ]
       },
       {
-        title: "3. Interaction",
+        title: "3. Plateformes casques",
         items: [
-          { label: "Interfaces immersives, tracking et contrôleurs", level: "core" }
+          { label: "Meta Quest (SDK Meta), PlayStation VR, casques PC (SteamVR)", level: "option" }
         ]
       },
       {
-        title: "4. Optimisation",
+        title: "4. Interaction",
         items: [
-          { label: "Performance sur casques et appareils mobiles", level: "core" }
+          { label: "Interfaces immersives, tracking et contrôleurs", level: "core" },
+          { label: "Interactions main libre et reconnaissance de gestes", level: "option" }
+        ]
+      },
+      {
+        title: "5. Optimisation",
+        items: [
+          { label: "Performance sur casques et appareils mobiles (framerate stable)", level: "core" },
+          { label: "Réduction du mal des transports en VR (comfort settings)", level: "option" }
         ]
       }
     ]
