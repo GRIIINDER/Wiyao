@@ -774,6 +774,26 @@
       fr: "Utile surtout pour les formations tech (Python, DevOps &amp; Cloud, IA, Power BI) plutôt que pour les offres d'emploi à proprement parler.",
       en: "Mostly useful for tech training listings (Python, DevOps &amp; Cloud, AI, Power BI) rather than job postings as such.",
     },
+    "stages.s1.i6.p": {
+      fr: "Portail généraliste avec une catégorie Informatique très détaillée (développeur, ingénieur systèmes, technicien support, responsable informatique...), offres pour le Togo confirmées.",
+      en: "General job portal with a very detailed IT category (developer, systems engineer, support technician, IT manager...), confirmed listings for Togo.",
+    },
+    "stages.s1.i7.p": {
+      fr: "Annuaire d'entreprises et portail d'offres d'emploi panafricain avec une section togolaise active ; profil professionnel gratuit et candidature en ligne.",
+      en: "Pan-African business directory and job portal with an active Togolese section; free professional profile and online applications.",
+    },
+    "stages.s1.i8.p": {
+      fr: "Cabinet de recrutement régional (Togo, Sénégal, Mali, Côte d'Ivoire, Burkina Faso) avec une catégorie Informatique dédiée dans son moteur de recherche d'offres.",
+      en: "Regional recruitment firm (Togo, Senegal, Mali, Côte d'Ivoire, Burkina Faso) with a dedicated IT category in its job search engine.",
+    },
+    "stages.s1.i9.p": {
+      fr: "Agrégateur d'offres pour le Togo avec conseils de recherche d'emploi et outils de CV, met en avant les secteurs porteurs locaux (numérique, banque, logistique portuaire).",
+      en: "Job aggregator for Togo with job-search advice and CV tools, highlights local high-demand sectors (digital, banking, port logistics).",
+    },
+    "stages.s1.i10.p": {
+      fr: "Les grands moteurs de recherche d'emploi mondiaux indexent aussi des offres basées à Lomé et au Togo — utile en complément des plateformes locales, surtout pour les entreprises internationales.",
+      en: "The major global job search engines also index listings based in Lomé and Togo — useful alongside local platforms, especially for international companies.",
+    },
 
     "stages.s2.h2": { fr: "Employeurs qui recrutent des profils tech", en: "Employers hiring tech profiles" },
     "stages.s2.i1.p": {
@@ -803,6 +823,26 @@
     "stages.s2.i7.p": {
       fr: "Groupe bancaire panafricain dont le siège social se trouve à Lomé. Recrute régulièrement sur des postes IT et réseaux, aux côtés des autres métiers de la banque, dans ses 33 pays d'opération.",
       en: "Pan-African banking group headquartered in Lomé. Regularly hires for IT and network roles, alongside other banking positions, across its 33 countries of operation.",
+    },
+    "stages.s2.i8.p": {
+      fr: "Filiale togolaise du groupe bancaire panafricain Orabank (12 filiales en Afrique de l'Ouest et Centrale). Recrute régulièrement des postes IT (Directeur des Systèmes d'Information, Administrateur Réseau et Systèmes).",
+      en: "Togolese subsidiary of the pan-African Orabank banking group (12 subsidiaries across West and Central Africa). Regularly hires for IT roles (Chief Information Officer, Network and Systems Administrator).",
+    },
+    "stages.s2.i9.p": {
+      fr: "Filiale togolaise du groupe bancaire panafricain Bank of Africa. Page carrière active avec des offres IT publiées directement (ex. Administrateur Réseau et Système).",
+      en: "Togolese subsidiary of the pan-African Bank of Africa group. Active careers page with IT openings posted directly (e.g. Network and Systems Administrator).",
+    },
+    "stages.s2.i10.p": {
+      fr: "Banque centrale des huit pays de l'UEMOA, avec une agence nationale à Lomé. Recrute régulièrement des profils IT (analyste sécurité des systèmes d'information, techniciens et ingénieurs) pour son siège et ses agences nationales.",
+      en: "Central bank of the eight UEMOA countries, with a national agency in Lomé. Regularly hires IT profiles (information systems security analyst, technicians and engineers) for its headquarters and national agencies.",
+    },
+    "stages.s2.i11.p": {
+      fr: "Agence publique togolaise de régulation et de réponse à incident en cybersécurité (CERT.tg). Recrute régulièrement (auditeurs SSI, analystes) et a lancé un appel national pour référencer les talents togolais en cybersécurité (pentest, sécurité applicative, DevSecOps, réponse à incident).",
+      en: "Togolese public cybersecurity regulation and incident-response agency (CERT.tg). Regularly hires (IS security auditors, analysts) and launched a national call to register Togolese cybersecurity talent (pentesting, application security, DevSecOps, incident response).",
+    },
+    "stages.s2.i12.p": {
+      fr: "Fintech togolaise fondée à Lomé en 2016, spécialisée dans le paiement digital et la digitalisation du cash (solution Cashpay), présente dans 13 pays d'Afrique. Recrute des profils tech, notamment via son profil sur Emploi.tg.",
+      en: "Togolese fintech founded in Lomé in 2016, specializing in digital payments and cash digitization (Cashpay solution), present in 13 African countries. Hires tech profiles, notably via its Emploi.tg profile.",
     },
     "stages.s2.note": {
       fr: "D'autres grandes entreprises togolaises recrutent aussi des profils tech, sans page carrière dédiée et fiable identifiée au moment de la rédaction — les offres y passent surtout par les plateformes ci-dessus ou par candidature spontanée directe.",
