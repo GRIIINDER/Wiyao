@@ -32,7 +32,6 @@
     { selector: ".footer-links-grid > .footer-links-col:nth-child(1) h5", fr: "Parcours", en: "Journey" },
     { selector: ".footer-links-grid > .footer-links-col:nth-child(2) h5", fr: "Plus", en: "More" },
     { selector: ".footer-links-grid > .footer-links-col:nth-child(3) h5", fr: "Projet", en: "Project" },
-    { selector: ".footer-social-col h5", fr: "Suivez-nous", en: "Follow us" },
     { selector: ".footer-bottom p:first-child", fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
   ];
 
@@ -47,6 +46,10 @@
     },
     "footer.newsletter.label": { fr: "Ton adresse e-mail", en: "Your email address" },
     "footer.newsletter.submit": { fr: "S'abonner", en: "Subscribe" },
+    "footer.brand.tagline": {
+      fr: "Le guide qui accompagne le bachelier togolais dans son parcours tech, de l'orientation au premier emploi.",
+      en: "The guide that walks Togolese high-school graduates through their tech journey, from orientation to their first job.",
+    },
     "hero.title": {
       fr: 'Trace ton <span class="hero-accent">parcours tech</span> au Togo',
       en: 'Chart your <span class="hero-accent">tech path</span> in Togo',
@@ -1172,7 +1175,7 @@
     document.documentElement.lang = lang;
 
     document
-      .querySelectorAll(".site-nav a[href], .footer-links-col:not(.footer-social-col) a[href]")
+      .querySelectorAll(".site-nav a[href], .footer-links-col a[href], .footer-legal-links a[href]")
       .forEach((el) => {
         if (el.classList.contains("nav-search-link")) return;
         const entry = BY_HREF[el.getAttribute("href")];
