@@ -1915,7 +1915,8 @@ footer.site-footer {
 }
 
 .footer-links-col a {
-  display: inline-flex;
+  display: flex;
+  flex-basis: 100%;
   align-items: center;
   color: var(--tk-text-muted);
   font-size: 0.72rem;
