@@ -1869,6 +1869,12 @@ footer.site-footer {
   color: var(--tk-text-muted);
 }
 
+.footer-social-col .footer-brand-tagline {
+  flex-basis: 100%;
+  margin-top: 6px;
+  max-width: 200px;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
