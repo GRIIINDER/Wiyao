@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="Mentions légales — WIYAO">
 <meta name="twitter:description" content="Mentions légales de WIYAO : éditeur, hébergement, propriété intellectuelle et responsabilité sur le contenu du site.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=12">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -93,28 +93,36 @@
   </section>
 </main>
 
+<section class="newsletter-section">
+  <div class="newsletter-inner">
+    <div class="newsletter-text">
+      <h5 data-i18n-key="footer.newsletter.title">Reste informé·e</h5>
+      <p data-i18n-key="footer.newsletter.desc">Le résumé mensuel de ce qui change sur WIYAO — nouvelles écoles, dates de concours, offres de stage — directement dans ta boîte mail.</p>
+    </div>
+    <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/credo" method="post" target="popupwindow">
+      <label for="newsletter-email" class="sr-only" data-i18n-key="footer.newsletter.label">Ton adresse e-mail</label>
+      <input type="email" name="email" id="newsletter-email" placeholder="ton@email.com" required autocomplete="email">
+      <input type="hidden" value="1" name="embed">
+      <button type="submit" class="btn-primary newsletter-submit" data-i18n-key="footer.newsletter.submit">S'abonner</button>
+    </form>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="footer-lower">
     <div class="footer-card">
-      <div class="footer-newsletter">
-        <div class="footer-newsletter-text">
-          <h5 data-i18n-key="footer.newsletter.title">Reste informé·e</h5>
-          <p data-i18n-key="footer.newsletter.desc">Le résumé mensuel de ce qui change sur WIYAO — nouvelles écoles, dates de concours, offres de stage — directement dans ta boîte mail.</p>
-        </div>
-        <form class="footer-newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/credo" method="post" target="popupwindow">
-          <label for="newsletter-email" class="sr-only" data-i18n-key="footer.newsletter.label">Ton adresse e-mail</label>
-          <input type="email" name="email" id="newsletter-email" placeholder="ton@email.com" required autocomplete="email">
-          <input type="hidden" value="1" name="embed">
-          <button type="submit" class="btn-primary footer-newsletter-submit" data-i18n-key="footer.newsletter.submit">S'abonner</button>
-        </form>
-      </div>
-
       <div class="footer-card-top">
         <div class="footer-brand">
           <a class="footer-brand-logo" href="index.html" aria-label="WIYAO">
             <img class="brand-logo brand-logo-dark" src="icons/logo-white.png?v=1" alt="WIYAO">
             <img class="brand-logo brand-logo-light" src="icons/logo-black.png?v=1" alt="WIYAO">
           </a>
+          <p class="footer-brand-tagline" data-i18n-key="footer.brand.tagline">Le guide qui accompagne le bachelier togolais dans son parcours tech, de l'orientation au premier emploi.</p>
+          <div class="footer-social-row">
+            <a class="footer-social-icon" href="#" target="_blank" rel="noopener" aria-label="WIYAO sur LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+            <a class="footer-social-icon" href="#" target="_blank" rel="noopener" aria-label="WIYAO sur Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.21.96.48 1.38.9.42.42.68.82.9 1.38.17.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.17-1.06.36-2.23.42-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.17-.42-.36-1.06-.42-2.23-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.17 1.06-.36 2.23-.42 1.27-.06 1.64-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.65.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.85a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/></svg></a>
+            <a class="footer-social-icon" href="#" target="_blank" rel="noopener" aria-label="WIYAO sur TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.6 5.82c-1.1-1.09-1.66-2.66-1.66-4.32V1h-3.4v14.4a2.6 2.6 0 1 1-1.82-2.48V9.4a5.94 5.94 0 0 0-.78-.05A6 6 0 1 0 15 15.4V8.13a8.14 8.14 0 0 0 4.74 1.5V6.24a4.9 4.9 0 0 1-3.14-.42z"/></svg></a>
+          </div>
         </div>
 
         <div class="footer-links-grid">
@@ -124,33 +132,22 @@
             <a href="test-orientation.html">Test d'orientation</a>
             <a href="index.html">Roadmaps</a>
             <a href="ecoles.html">Écoles &amp; universités</a>
+          </div>
+
+          <div class="footer-links-col">
+            <h5>Opportunités</h5>
             <a href="calendrier.html">Calendrier</a>
+            <a href="bourses-financement.html">Bourses &amp; financement</a>
             <a href="stages-emploi.html">Stages &amp; emploi</a>
             <a href="ecosysteme.html">Écosystème togolais</a>
           </div>
 
           <div class="footer-links-col">
-            <h5>Plus</h5>
-            <a href="bourses-financement.html">Bourses &amp; financement</a>
+            <h5>Communauté</h5>
             <a href="actualites.html">Actualités</a>
             <a href="temoignages.html">Témoignages</a>
             <a href="faq.html">FAQ</a>
-          </div>
-
-          <div class="footer-links-col">
-            <h5>Projet</h5>
-            <a href="about.html">À propos &amp; méthodologie</a>
             <a href="contact.html">Contact</a>
-          </div>
-
-          <div class="footer-links-col footer-social-col">
-            <h5>Suivez-nous</h5>
-            <div class="footer-social-row">
-              <a class="footer-social-icon" href="#" target="_blank" rel="noopener" aria-label="WIYAO sur LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
-            <a class="footer-social-icon" href="#" target="_blank" rel="noopener" aria-label="WIYAO sur Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.21.96.48 1.38.9.42.42.68.82.9 1.38.17.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.17-1.06.36-2.23.42-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.17-.42-.36-1.06-.42-2.23-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.17 1.06-.36 2.23-.42 1.27-.06 1.64-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.65.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.85a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/></svg></a>
-            <a class="footer-social-icon" href="#" target="_blank" rel="noopener" aria-label="WIYAO sur TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.6 5.82c-1.1-1.09-1.66-2.66-1.66-4.32V1h-3.4v14.4a2.6 2.6 0 1 1-1.82-2.48V9.4a5.94 5.94 0 0 0-.78-.05A6 6 0 1 0 15 15.4V8.13a8.14 8.14 0 0 0 4.74 1.5V6.24a4.9 4.9 0 0 1-3.14-.42z"/></svg></a>
-            </div>
-            <p class="footer-brand-tagline" data-i18n-key="footer.brand.tagline">Le guide qui accompagne le bachelier togolais dans son parcours tech, de l'orientation au premier emploi.</p>
           </div>
         </div>
       </div>
@@ -158,6 +155,7 @@
       <div class="footer-bottom">
         <p>© 2026 WIYAO. Tous droits réservés.</p>
         <div class="footer-legal-links">
+          <a href="about.html">À propos &amp; méthodologie</a>
           <a href="mentions-legales.html">Mentions légales</a>
           <a href="politique-confidentialite.html">Politique de confidentialité</a>
           <a href="conditions-utilisation.html">Conditions d'utilisation</a>
@@ -172,6 +170,6 @@
 <script src="js/nav.js?v=3"></script>
 <script src="js/theme.js?v=1"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=19"></script>
+<script src="js/i18n.js?v=20"></script>
 </body>
 </html>
