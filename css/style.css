@@ -484,10 +484,10 @@ nav.site-nav {
 nav.site-nav a {
   color: var(--tk-text-muted);
   font-weight: 600;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   text-transform: none;
   letter-spacing: normal;
-  padding: 8px 13px;
+  padding: 8px 10px;
   border-radius: 999px;
   white-space: nowrap;
   transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
@@ -522,9 +522,9 @@ nav.site-nav a.active {
   gap: 3px;
   color: var(--tk-text-muted);
   font-weight: 600;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-family: inherit;
-  padding: 8px 13px;
+  padding: 8px 10px;
   border-radius: 999px;
   border: none;
   background: transparent;
