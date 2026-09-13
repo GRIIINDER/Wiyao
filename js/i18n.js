@@ -29,7 +29,8 @@
   const BY_SELECTOR = [
     { selector: "#nav-parcours .nav-more-toggle", fr: "Parcours ▾", en: "Journey ▾" },
     { selector: "#nav-opportunites .nav-more-toggle", fr: "Opportunités ▾", en: "Opportunities ▾" },
-    { selector: "#nav-communaute .nav-more-toggle", fr: "Communauté ▾", en: "Community ▾" },
+    { selector: "#nav-ecosysteme .nav-more-toggle", fr: "Écosystème ▾", en: "Ecosystem ▾" },
+    { selector: "#nav-infos .nav-more-toggle", fr: "Infos ▾", en: "Info ▾" },
     { selector: ".nav-search-text", fr: "Recherche", en: "Search" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(2) h5", fr: "Parcours", en: "Journey" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(3) h5", fr: "Opportunités", en: "Opportunities" },
