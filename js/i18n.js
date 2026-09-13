@@ -382,9 +382,9 @@
       fr: "Crédo Ahiafor en est également le directeur de la publication, au sens du Code de la presse et de la communication (loi n°2020-001).",
       en: "Crédo Ahiafor is also the publication director, within the meaning of the Press and Communication Code (law n°2020-001).",
     },
-    "mentions.s1.p3": {
-      fr: 'Contact : <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>, <a href="tel:+22892236379">+228 92 23 63 79</a> · <a href="tel:+22899113199">+228 99 11 31 99</a>, Lomé, Togo.',
-      en: 'Contact: <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>, <a href="tel:+22892236379">+228 92 23 63 79</a> · <a href="tel:+22899113199">+228 99 11 31 99</a>, Lomé, Togo.',
+    "mentions.s1.p3.list": {
+      fr: '<li><strong>Email :</strong> <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a></li><li><strong>Téléphone :</strong> <a href="tel:+22892236379">+228 92 23 63 79</a> · <a href="tel:+22899113199">+228 99 11 31 99</a></li><li><strong>Adresse :</strong> Lomé, Togo</li>',
+      en: '<li><strong>Email:</strong> <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a></li><li><strong>Phone:</strong> <a href="tel:+22892236379">+228 92 23 63 79</a> · <a href="tel:+22899113199">+228 99 11 31 99</a></li><li><strong>Address:</strong> Lomé, Togo</li>',
     },
     "mentions.s2.h2": { fr: "Hébergement", en: "Hosting" },
     "mentions.s2.p": {
@@ -1082,25 +1082,30 @@
     "stages.s3.i2.link": { fr: "Voir les communautés", en: "See the communities" },
 
     "stages.guide.h2": { fr: "Comment décrocher un stage ou un emploi tech", en: "How to land a tech internship or job" },
-    "stages.guide.p1": {
-      fr: "<strong>1. Construis un portfolio concret.</strong> Un profil GitHub avec quelques projets terminés (même petits) pèse souvent plus qu'un diplôme seul aux yeux d'un recruteur tech. Termine les roadmaps qui t'intéressent et mets le résultat en ligne.",
-      en: "<strong>1. Build a concrete portfolio.</strong> A GitHub profile with a few finished projects (even small ones) often carries more weight than a degree alone in the eyes of a tech recruiter. Finish the roadmaps that interest you and put the result online.",
+    "stages.guide.s1.title": { fr: "Construis un portfolio concret.", en: "Build a concrete portfolio." },
+    "stages.guide.s1.desc": {
+      fr: "Un profil GitHub avec quelques projets terminés (même petits) pèse souvent plus qu'un diplôme seul aux yeux d'un recruteur tech. Termine les roadmaps qui t'intéressent et mets le résultat en ligne.",
+      en: "A GitHub profile with a few finished projects (even small ones) often carries more weight than a degree alone in the eyes of a tech recruiter. Finish the roadmaps that interest you and put the result online.",
     },
-    "stages.guide.p2": {
-      fr: "<strong>2. Passe par le réseau avant les offres publiques.</strong> Beaucoup de stages togolais se trouvent via le bouche-à-oreille dans les communautés (GDG Lomé, PyCon Togo, CoTIA...) avant d'être publiés ailleurs. Assiste aux meetups, pose des questions, propose ton aide sur des projets.",
-      en: "<strong>2. Go through your network before public listings.</strong> Many Togolese internships are found through word of mouth in communities (GDG Lomé, PyCon Togo, CoTIA...) before being posted anywhere else. Attend meetups, ask questions, offer to help on projects.",
+    "stages.guide.s2.title": { fr: "Passe par le réseau avant les offres publiques.", en: "Go through your network before public listings." },
+    "stages.guide.s2.desc": {
+      fr: "Beaucoup de stages togolais se trouvent via le bouche-à-oreille dans les communautés (GDG Lomé, PyCon Togo, CoTIA...) avant d'être publiés ailleurs. Assiste aux meetups, pose des questions, propose ton aide sur des projets.",
+      en: "Many Togolese internships are found through word of mouth in communities (GDG Lomé, PyCon Togo, CoTIA...) before being posted anywhere else. Attend meetups, ask questions, offer to help on projects.",
     },
-    "stages.guide.p3": {
-      fr: "<strong>3. Postule directement, même sans offre publiée.</strong> Beaucoup de PME et d'agences togolaises n'ont pas de page carrière : un e-mail ciblé avec un lien vers ton portfolio a plus d'impact qu'une candidature générique sur un grand site.",
-      en: "<strong>3. Apply directly, even without a posted opening.</strong> Many Togolese SMEs and agencies have no careers page: a targeted email with a link to your portfolio has more impact than a generic application on a big site.",
+    "stages.guide.s3.title": { fr: "Postule directement, même sans offre publiée.", en: "Apply directly, even without a posted opening." },
+    "stages.guide.s3.desc": {
+      fr: "Beaucoup de PME et d'agences togolaises n'ont pas de page carrière : un e-mail ciblé avec un lien vers ton portfolio a plus d'impact qu'une candidature générique sur un grand site.",
+      en: "Many Togolese SMEs and agencies have no careers page: a targeted email with a link to your portfolio has more impact than a generic application on a big site.",
     },
-    "stages.guide.p4": {
-      fr: "<strong>4. Envisage aussi le travail à distance.</strong> Des plateformes comme Upwork, Contra ou Turing permettent à un développeur togolais de travailler pour des clients internationaux sans quitter Lomé. C'est exigeant (anglais, portfolio solide) mais ça élargit beaucoup le marché.",
-      en: "<strong>4. Consider remote work too.</strong> Platforms like Upwork, Contra or Turing let a Togolese developer work for international clients without leaving Lomé. It's demanding (English, a solid portfolio) but it greatly widens the market.",
+    "stages.guide.s4.title": { fr: "Envisage aussi le travail à distance.", en: "Consider remote work too." },
+    "stages.guide.s4.desc": {
+      fr: "Des plateformes comme Upwork, Contra ou Turing permettent à un développeur togolais de travailler pour des clients internationaux sans quitter Lomé. C'est exigeant (anglais, portfolio solide) mais ça élargit beaucoup le marché.",
+      en: "Platforms like Upwork, Contra or Turing let a Togolese developer work for international clients without leaving Lomé. It's demanding (English, a solid portfolio) but it greatly widens the market.",
     },
-    "stages.guide.p5": {
-      fr: "<strong>5. Prépare un CV court et concret.</strong> Un recruteur tech togolais regarde d'abord ce que tu as construit, pas une liste de compétences vagues. Mets en avant 2-3 projets précis plutôt qu'une longue liste de technologies.",
-      en: "<strong>5. Prepare a short, concrete résumé.</strong> A Togolese tech recruiter looks first at what you've built, not a vague list of skills. Highlight 2-3 specific projects rather than a long list of technologies.",
+    "stages.guide.s5.title": { fr: "Prépare un CV court et concret.", en: "Prepare a short, concrete résumé." },
+    "stages.guide.s5.desc": {
+      fr: "Un recruteur tech togolais regarde d'abord ce que tu as construit, pas une liste de compétences vagues. Mets en avant 2-3 projets précis plutôt qu'une longue liste de technologies.",
+      en: "A Togolese tech recruiter looks first at what you've built, not a vague list of skills. Highlight 2-3 specific projects rather than a long list of technologies.",
     },
 
     "bourses.s1.h2": { fr: "Bourses proposées directement par les écoles", en: "Scholarships offered directly by schools" },
