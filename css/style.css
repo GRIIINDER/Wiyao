@@ -1564,7 +1564,7 @@ main {
 
 .faq-content {
   max-width: 980px;
-  margin: 40px 0 0;
+  margin: 40px auto 0;
 }
 
 .faq-list {
