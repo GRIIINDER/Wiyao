@@ -2404,30 +2404,9 @@ footer.site-footer {
 
 .footer-card-top {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   align-items: start;
-}
-
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
-}
-
-.footer-brand-logo {
-  display: inline-flex;
-  width: fit-content;
-  transition: opacity 0.15s ease;
-}
-
-.footer-brand-logo:hover {
-  opacity: 0.75;
-}
-
-.footer-brand .brand-logo {
-  height: 28px;
 }
 
 .sr-only {
@@ -2471,31 +2450,6 @@ footer.site-footer {
 
 .footer-links-col a:hover {
   color: var(--tk-primary);
-}
-
-.footer-social-row {
-  display: flex;
-  gap: 10px;
-}
-
-.footer-social-row .footer-social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: var(--tk-surface-soft);
-  color: var(--tk-text);
-  text-transform: none;
-  transition: background 0.2s, color 0.2s;
-}
-
-.footer-social-row .footer-social-icon:hover {
-  color: var(--tk-canvas);
-  background: var(--tk-primary);
 }
 
 .footer-note {
@@ -2643,9 +2597,6 @@ footer.site-footer {
     justify-items: center;
     gap: 30px;
     text-align: center;
-  }
-  .footer-brand {
-    align-items: center;
   }
   .footer-links-col {
     align-items: center;

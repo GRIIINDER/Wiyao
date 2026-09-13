@@ -32,10 +32,10 @@
     { selector: "#nav-communaute .nav-more-toggle", fr: "Communauté ▾", en: "Community ▾" },
     { selector: "#nav-contact .nav-more-toggle", fr: "Contact ▾", en: "Contact ▾" },
     { selector: ".nav-search-text", fr: "Rechercher sur WIYAO...", en: "Search WIYAO..." },
-    { selector: ".footer-card-top > .footer-links-col:nth-child(2) h5", fr: "Parcours", en: "Journey" },
-    { selector: ".footer-card-top > .footer-links-col:nth-child(3) h5", fr: "Opportunités", en: "Opportunities" },
-    { selector: ".footer-card-top > .footer-links-col:nth-child(4) h5", fr: "Communauté", en: "Community" },
-    { selector: ".footer-card-top > .footer-links-col:nth-child(5) h5", fr: "Contact", en: "Contact" },
+    { selector: ".footer-card-top > .footer-links-col:nth-child(1) h5", fr: "Parcours", en: "Journey" },
+    { selector: ".footer-card-top > .footer-links-col:nth-child(2) h5", fr: "Opportunités", en: "Opportunities" },
+    { selector: ".footer-card-top > .footer-links-col:nth-child(3) h5", fr: "Communauté", en: "Community" },
+    { selector: ".footer-card-top > .footer-links-col:nth-child(4) h5", fr: "Contact", en: "Contact" },
     { selector: ".footer-bottom p:first-child", fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
   ];
 
