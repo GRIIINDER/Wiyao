@@ -29,13 +29,13 @@
   const BY_SELECTOR = [
     { selector: "#nav-parcours .nav-more-toggle", fr: "Parcours ▾", en: "Journey ▾" },
     { selector: "#nav-opportunites .nav-more-toggle", fr: "Opportunités ▾", en: "Opportunities ▾" },
-    { selector: "#nav-ecosysteme .nav-more-toggle", fr: "Écosystème ▾", en: "Ecosystem ▾" },
-    { selector: "#nav-infos .nav-more-toggle", fr: "Infos ▾", en: "Info ▾" },
+    { selector: "#nav-communaute .nav-more-toggle", fr: "Communauté ▾", en: "Community ▾" },
+    { selector: "#nav-contact .nav-more-toggle", fr: "Contact ▾", en: "Contact ▾" },
     { selector: ".nav-search-text", fr: "Recherche", en: "Search" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(2) h5", fr: "Parcours", en: "Journey" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(3) h5", fr: "Opportunités", en: "Opportunities" },
-    { selector: ".footer-card-top > .footer-links-col:nth-child(4) h5", fr: "Écosystème", en: "Ecosystem" },
-    { selector: ".footer-card-top > .footer-links-col:nth-child(5) h5", fr: "Infos", en: "Info" },
+    { selector: ".footer-card-top > .footer-links-col:nth-child(4) h5", fr: "Communauté", en: "Community" },
+    { selector: ".footer-card-top > .footer-links-col:nth-child(5) h5", fr: "Contact", en: "Contact" },
     { selector: ".footer-bottom p:first-child", fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
   ];
 
