@@ -482,12 +482,20 @@ nav.site-nav a.active {
 .nav-search-link {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
+  gap: 8px;
+  width: 220px;
+  max-width: 40vw;
+  padding: 8px 16px;
+  background: var(--tk-surface);
+  border-radius: 999px;
+  color: var(--tk-text-subtle);
 }
 
 .nav-search-text {
-  display: none;
+  display: inline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nav-more {
@@ -2579,8 +2587,10 @@ footer.site-footer {
     background: var(--tk-surface-soft);
     font-size: 0.85rem;
   }
-  .nav-search-text {
-    display: inline;
+  .nav-search-link {
+    width: 100%;
+    max-width: none;
+    justify-content: center;
   }
   .nav-more {
     width: 100%;
