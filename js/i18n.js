@@ -255,13 +255,6 @@
     },
     "faq.badge": { fr: "Aide &amp; réponses", en: "Help &amp; answers" },
     "faq.categories": { fr: "Catégories", en: "Categories" },
-    "faq.cta.title": { fr: "Toujours une question ?", en: "Still have a question?" },
-    "faq.cta.desc": {
-      fr: "Si tu n'as pas trouvé ta réponse, écris-nous directement.",
-      en: "If you didn't find your answer, write to us directly.",
-    },
-    "faq.cta.link": { fr: "Nous contacter", en: "Contact us" },
-
     "contact.hero.title": {
       fr: 'Contacte-<span class="hero-accent">nous</span>',
       en: 'Contact <span class="hero-accent">us</span>',

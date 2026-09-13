@@ -1688,47 +1688,6 @@ main {
   font-weight: 600;
 }
 
-.faq-cta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  max-width: 980px;
-  margin: 40px 0 0;
-  padding: 26px 28px;
-  border: 1px solid var(--tk-border);
-  border-radius: 18px;
-  background: var(--tk-surface);
-}
-
-.faq-cta-text h2 {
-  margin: 0 0 4px;
-  font-size: 1.05rem;
-}
-
-.faq-cta-text p {
-  margin: 0;
-  color: var(--tk-text-muted);
-  font-size: 0.88rem;
-}
-
-.faq-cta-btn {
-  flex: 0 0 auto;
-  padding: 11px 22px;
-  border: 1px solid var(--tk-border);
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--tk-text);
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
-}
-
-.faq-cta-btn:hover {
-  border-color: var(--tk-primary);
-  color: var(--tk-primary);
-  background: var(--tk-primary-soft);
-}
-
 /* Test d'orientation : questionnaire façon "liste de questions" */
 #quiz-progress-wrap {
   max-width: 620px;
@@ -2729,10 +2688,6 @@ footer.site-footer {
   }
   .faq-cat-link.active {
     border-color: var(--tk-primary);
-  }
-  .faq-cta {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 
