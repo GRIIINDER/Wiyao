@@ -254,7 +254,6 @@
       en: "Everything you ask us most often about WIYAO, in one place.",
     },
     "faq.badge": { fr: "Aide &amp; réponses", en: "Help &amp; answers" },
-    "faq.categories": { fr: "Catégories", en: "Categories" },
     "contact.hero.title": {
       fr: 'Contacte-<span class="hero-accent">nous</span>',
       en: 'Contact <span class="hero-accent">us</span>',

@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="FAQ - WIYAO">
 <meta name="twitter:description" content="Questions fréquentes sur WIYAO : gratuité, données personnelles, fiabilité des informations, roadmaps, écoles, frais de scolarité, stages et emploi.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=73">
+<link rel="stylesheet" href="css/style.css?v=74">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -78,23 +78,10 @@
     <p data-i18n-key="faq.hero.subtitle">Tout ce qu'on te demande le plus souvent sur WIYAO, en un seul endroit.</p>
   </section>
 
-  <div class="faq-layout">
-    <aside class="faq-sidebar">
-      <p class="faq-sidebar-title" data-i18n-key="faq.categories">Catégories</p>
-      <nav class="faq-cat-nav" aria-label="Catégories de la FAQ">
-        <button type="button" class="faq-cat-link active" data-target="wiyao" aria-current="true" data-i18n-key="faq.cat1.h2">Sur WIYAO</button>
-        <button type="button" class="faq-cat-link" data-target="orientation" data-i18n-key="faq.cat2.h2">Sur l'orientation et les roadmaps</button>
-        <button type="button" class="faq-cat-link" data-target="ecoles-frais" data-i18n-key="faq.cat3.h2">Sur les écoles et les frais</button>
-        <button type="button" class="faq-cat-link" data-target="bourses" data-i18n-key="faq.cat5.h2">Sur les bourses et le financement</button>
-        <button type="button" class="faq-cat-link" data-target="apres-le-choix" data-i18n-key="faq.cat4.h2">Après le choix</button>
-      </nav>
-    </aside>
-
-    <div class="faq-content">
-      <section class="faq-panel" id="wiyao">
-        <h2 class="sr-only" data-i18n-key="faq.cat1.h2">Sur WIYAO</h2>
-        <div class="faq-list">
-          <details class="faq-item">
+  <div class="faq-content">
+    <div class="faq-list">
+      <h2 class="sr-only" data-i18n-key="faq.cat1.h2">Sur WIYAO</h2>
+          <details class="faq-item" id="wiyao">
             <summary data-i18n-key="faq.c1.q1">C'est gratuit ?</summary>
             <p data-i18n-key="faq.c1.a1">Oui, entièrement. Pas de compte à créer, pas d'abonnement, pas de publicité.</p>
           </details>
@@ -134,12 +121,8 @@
             <summary data-i18n-key="faq.c1.q10">WIYAO est-il accessible si j'ai un handicap (visuel, auditif, moteur) ?</summary>
             <p data-i18n-key="faq.c1.a10">Le site applique les bases : navigation au clavier, structure HTML lisible par un lecteur d'écran, lien d'évitement vers le contenu, et contrastes de couleur vérifiés. Ce n'est pas (encore) un site audité pour l'accessibilité (RGAA/WCAG) : certaines pages peuvent donc rester imparfaites avec un lecteur d'écran ou un autre outil d'assistance. Si tu rencontres un blocage, dis-le nous par email à <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a> : on corrige en priorité ce qui empêche réellement d'utiliser le site.</p>
           </details>
-        </div>
-      </section>
-      <section class="faq-panel" id="orientation" hidden>
-        <h2 class="sr-only" data-i18n-key="faq.cat2.h2">Sur l'orientation et les roadmaps</h2>
-        <div class="faq-list">
-          <details class="faq-item">
+      <h2 class="sr-only" data-i18n-key="faq.cat2.h2">Sur l'orientation et les roadmaps</h2>
+          <details class="faq-item" id="orientation">
             <summary data-i18n-key="faq.c2.q1">Je ne sais pas du tout quoi choisir, par où je commence ?</summary>
             <p data-i18n-key="faq.c2.a1">Par le <a href="test-orientation.html">test d'orientation</a> : 14 questions pour identifier le domaine tech qui te correspond, puis le métier précis et les écoles adaptés.</p>
           </details>
@@ -187,12 +170,8 @@
             <summary data-i18n-key="faq.c2.q12">Je suis déjà en cours d'études et je pense m'être trompé de filière, je fais quoi ?</summary>
             <p data-i18n-key="faq.c2.a12">Ça arrive, et ce n'est pas une catastrophe : plusieurs professionnels togolais de la tech ont changé de voie en cours de route (voir les <a href="temoignages.html">Témoignages</a>). Deux cas différents : si c'est le domaine qui ne te convient plus, refais le <a href="test-orientation.html">test d'orientation</a> avec un regard neuf : un changement proche (développement vers data, par exemple) réutilise souvent une bonne partie de ce que tu as déjà appris. Si c'est plutôt l'école qui pose problème alors que le domaine te plaît toujours, renseigne-toi sur un transfert vers une autre école pour la même filière plutôt que de tout recommencer. Dans les deux cas, parle-en au service scolarité de ton école actuelle et à quelqu'un du métier visé avant de décider seul·e : tu sauras concrètement ce que tu perds et gagnes à changer.</p>
           </details>
-        </div>
-      </section>
-      <section class="faq-panel" id="ecoles-frais" hidden>
-        <h2 class="sr-only" data-i18n-key="faq.cat3.h2">Sur les écoles et les frais</h2>
-        <div class="faq-list">
-          <details class="faq-item">
+      <h2 class="sr-only" data-i18n-key="faq.cat3.h2">Sur les écoles et les frais</h2>
+          <details class="faq-item" id="ecoles-frais">
             <summary data-i18n-key="faq.c3.q1">Toutes les écoles listées sont-elles reconnues par l'État ?</summary>
             <p data-i18n-key="faq.c3.a1">Le badge « 🏛️ Agréé État » indique une présence sur la liste officielle du Ministère togolais de l'Enseignement Supérieur et de la Recherche (liste des établissements accrédités pour l'année académique 2026-2027, publiée le 24 juillet 2026, 111 établissements dont 13 publics).</p>
           </details>
@@ -228,12 +207,8 @@
             <summary data-i18n-key="faq.c3.q9">Un BTS ou une Licence suffit pour trouver un emploi, ou faut-il un Master ?</summary>
             <p data-i18n-key="faq.c3.a9">Pour beaucoup de métiers du développement, le niveau de diplôme compte moins qu'on ne le pense : un portfolio de projets concrets pèse souvent plus qu'un BTS ou une Licence seule aux yeux d'un recruteur tech togolais (voir le guide de la page <a href="stages-emploi.html#guide">Stages &amp; emploi</a>). Un Master reste utile pour se spécialiser ou viser des postes à responsabilité, mais n'est pas un prérequis pour démarrer.</p>
           </details>
-        </div>
-      </section>
-      <section class="faq-panel" id="bourses" hidden>
-        <h2 class="sr-only" data-i18n-key="faq.cat5.h2">Sur les bourses et le financement</h2>
-        <div class="faq-list">
-          <details class="faq-item">
+      <h2 class="sr-only" data-i18n-key="faq.cat5.h2">Sur les bourses et le financement</h2>
+          <details class="faq-item" id="bourses">
             <summary data-i18n-key="faq.c5.q1">Existe-t-il des bourses pour financer mes études d'informatique au Togo ?</summary>
             <p data-i18n-key="faq.c5.a1">Oui, plusieurs types : bourses propres à certaines écoles privées, bourse d'État togolaise pour les universités publiques, bourses internationales (AUF, coopération bilatérale) et solutions bancaires comme le crédit scolaire. Tout est centralisé sur la page <a href="bourses-financement.html">Bourses &amp; financement</a>.</p>
           </details>
@@ -241,12 +216,8 @@
             <summary data-i18n-key="faq.c5.q2">Qui peut bénéficier de la bourse d'État togolaise ?</summary>
             <p data-i18n-key="faq.c5.a2">Elle est réservée aux étudiants de nationalité togolaise déjà inscrits dans une université publique (Université de Lomé ou Université de Kara), avec une moyenne « assez-bien » ou plus. Elle ne concerne pas les écoles privées. Le dossier se dépose physiquement auprès de la Direction des Bourses et Stages (DBS), selon un calendrier fixé chaque année : détails dans la section <a href="bourses-financement.html#etat">Bourse d'État togolaise</a>.</p>
           </details>
-        </div>
-      </section>
-      <section class="faq-panel" id="apres-le-choix" hidden>
-        <h2 class="sr-only" data-i18n-key="faq.cat4.h2">Après le choix</h2>
-        <div class="faq-list">
-          <details class="faq-item">
+      <h2 class="sr-only" data-i18n-key="faq.cat4.h2">Après le choix</h2>
+          <details class="faq-item" id="apres-le-choix">
             <summary data-i18n-key="faq.c4.q1">Comment trouver un stage ou un emploi ?</summary>
             <p data-i18n-key="faq.c4.a1">Direction la page <a href="stages-emploi.html">Stages &amp; emploi</a> : plateformes togolaises et employeurs numériques qui recrutent régulièrement.</p>
           </details>
@@ -258,8 +229,6 @@
             <summary data-i18n-key="faq.c4.q3">Puis-je travailler pour des entreprises étrangères depuis le Togo ?</summary>
             <p data-i18n-key="faq.c4.a3">Oui, le travail à distance (freelance ou salarié) est une vraie option pour un développeur togolais, via des plateformes comme Upwork, Contra ou Turing. C'est exigeant (anglais, portfolio solide) mais ça élargit beaucoup le marché au-delà des employeurs locaux : détails dans le guide de la page <a href="stages-emploi.html#guide">Stages &amp; emploi</a>.</p>
           </details>
-        </div>
-      </section>
     </div>
   </div>
 </main>
@@ -344,8 +313,7 @@
 </footer>
 
 <script src="js/nav.js?v=6"></script>
-<script src="js/faq.js?v=1"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=60"></script>
+<script src="js/i18n.js?v=61"></script>
 </body>
 </html>
