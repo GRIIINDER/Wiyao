@@ -1569,10 +1569,6 @@ main {
   max-width: 980px;
   margin: 40px 0 0;
   align-items: start;
-  background: var(--tk-surface);
-  border: 1px solid var(--tk-border);
-  border-radius: 24px;
-  padding: 32px;
 }
 
 .faq-sidebar {
@@ -1629,19 +1625,19 @@ main {
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
 }
 
 .faq-item {
   border: none;
-  border-radius: 14px;
-  background: var(--tk-surface-soft);
-  padding: 0 20px;
-  transition: background-color 0.15s ease;
+  border-bottom: 1px solid var(--tk-border);
+  border-radius: 0;
+  background: none;
+  padding: 0;
 }
 
-.faq-item[open] {
-  background: var(--tk-primary-soft);
+.faq-item:last-child {
+  border-bottom: none;
 }
 
 .faq-item[open] summary {
@@ -1649,7 +1645,7 @@ main {
 }
 
 .faq-item summary {
-  padding: 18px 0;
+  padding: 22px 0;
   font-weight: 700;
   font-size: 0.98rem;
   cursor: pointer;
@@ -1668,22 +1664,16 @@ main {
 .faq-item summary::after {
   content: "+";
   flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--tk-surface);
-  color: var(--tk-primary);
-  font-size: 1.2rem;
+  color: var(--tk-text-subtle);
+  font-size: 1.3rem;
+  font-weight: 400;
   line-height: 1;
 }
 
 .faq-item[open] summary::after {
-  content: "\2212";
-  background: var(--tk-primary);
-  color: var(--tk-canvas);
+  content: "\00d7";
+  color: var(--tk-primary);
+  font-size: 1.5rem;
 }
 
 .faq-item p {
@@ -2716,7 +2706,6 @@ footer.site-footer {
   .faq-layout {
     grid-template-columns: 1fr;
     gap: 18px;
-    padding: 20px;
   }
   .faq-sidebar {
     position: static;
