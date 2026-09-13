@@ -114,6 +114,46 @@
     return card;
   }
 
+  // ---- Bouton "Voir les N roadmaps/compétences" : replié par défaut pour
+  // éviter un scroll de ~70 cartes d'un coup sur l'accueil. Le texte se lit
+  // sur les attributs posés à la création (kind, count), pas sur des
+  // paramètres passés à chaque appel, pour rester correct après un clic. ----
+  function updateGroupToggleLabel(toggle) {
+    const n = toggle.dataset.count;
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    const en = currentLang() === "en";
+    if (isOpen) {
+      toggle.textContent = en ? "Show less ▴" : "Réduire ▴";
+      return;
+    }
+    if (toggle.dataset.kind === "skill") {
+      toggle.textContent = en ? `See ${n} skills ▾` : `Voir les ${n} compétences ▾`;
+    } else {
+      toggle.textContent = en
+        ? `See ${n} roadmap${n === "1" ? "" : "s"} ▾`
+        : `Voir ${n === "1" ? "la" : "les"} ${n} roadmap${n === "1" ? "" : "s"} ▾`;
+    }
+  }
+
+  function setGroupOpen(toggle, subGrid, isOpen) {
+    subGrid.hidden = !isOpen;
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    updateGroupToggleLabel(toggle);
+  }
+
+  function buildGroupToggle(kind, count, controlsId) {
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "domain-group-toggle";
+    if (kind === "skill") toggle.classList.add("skill-grid-toggle");
+    toggle.dataset.kind = kind;
+    toggle.dataset.count = String(count);
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", controlsId);
+    updateGroupToggleLabel(toggle);
+    return toggle;
+  }
+
   // ---- Page d'accueil : deux grilles, par métier et par compétence ----
   function renderGrid() {
     const roleGrid = document.getElementById("role-grid");
@@ -134,8 +174,9 @@
         if (orderedDomains.indexOf(d) === -1) orderedDomains.push(d);
       });
 
-      orderedDomains.forEach((domainName) => {
+      orderedDomains.forEach((domainName, index) => {
         const meta = typeof DOMAINS !== "undefined" ? DOMAINS[domainName] : null;
+        const ids = byDomain[domainName];
 
         const group = document.createElement("div");
         group.className = "domain-group";
@@ -155,14 +196,26 @@
 
         const subGrid = document.createElement("div");
         subGrid.className = "grid";
-        byDomain[domainName].forEach((id) => subGrid.appendChild(buildCard(id, ROLES[id])));
+        subGrid.id = `domain-grid-${index}`;
+        subGrid.hidden = true;
+        ids.forEach((id) => subGrid.appendChild(buildCard(id, ROLES[id])));
+
+        const toggle = buildGroupToggle("roadmap", ids.length, subGrid.id);
+        toggle.addEventListener("click", () => setGroupOpen(toggle, subGrid, subGrid.hidden));
+        group.appendChild(toggle);
         group.appendChild(subGrid);
 
         roleGrid.appendChild(group);
       });
     }
     if (skillGrid && typeof SKILLS !== "undefined") {
-      Object.keys(SKILLS).forEach((id) => skillGrid.appendChild(buildCard(id, SKILLS[id])));
+      const skillIds = Object.keys(SKILLS);
+      skillIds.forEach((id) => skillGrid.appendChild(buildCard(id, SKILLS[id])));
+      skillGrid.hidden = true;
+
+      const skillToggle = buildGroupToggle("skill", skillIds.length, "skill-grid");
+      skillToggle.addEventListener("click", () => setGroupOpen(skillToggle, skillGrid, skillGrid.hidden));
+      skillGrid.insertAdjacentElement("beforebegin", skillToggle);
     }
   }
 
@@ -213,10 +266,27 @@
         card.hidden = !visible;
         if (visible) visibleCount += 1;
       });
-      grid.querySelectorAll(".domain-group").forEach((group) => {
-        const anyVisible = Array.prototype.some.call(group.querySelectorAll(".card"), (c) => !c.hidden);
-        group.hidden = !anyVisible;
-      });
+
+      // Recherche/filtre actifs : déplie automatiquement les catégories
+      // repliées qui contiennent un résultat, pour ne pas cacher un match
+      // derrière un bouton fermé.
+      const filtering = !!query || (useDomain && activeDomain !== "all");
+      const domainGroups = grid.querySelectorAll(".domain-group");
+      if (domainGroups.length) {
+        domainGroups.forEach((group) => {
+          const anyVisible = Array.prototype.some.call(group.querySelectorAll(".card"), (c) => !c.hidden);
+          group.hidden = !anyVisible;
+          if (filtering && anyVisible) {
+            const subGrid = group.querySelector(".grid");
+            const toggle = group.querySelector(".domain-group-toggle");
+            if (subGrid && toggle && subGrid.hidden) setGroupOpen(toggle, subGrid, true);
+          }
+        });
+      } else if (filtering && visibleCount > 0 && grid.hidden) {
+        const toggle = document.querySelector(`.domain-group-toggle[aria-controls="${grid.id}"]`);
+        if (toggle) setGroupOpen(toggle, grid, true);
+      }
+
       const noResults = grid.parentElement.querySelector(".no-results");
       if (noResults) noResults.hidden = visibleCount !== 0;
     }
