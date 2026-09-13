@@ -1398,6 +1398,9 @@ main {
   .hero-legal h1 {
     font-size: 3rem;
   }
+  .hero.faq-hero h1 {
+    font-size: 3rem;
+  }
   .about-section h2 {
     font-size: 1.8rem;
   }
@@ -1549,7 +1552,16 @@ main {
   text-align: left;
 }
 
-/* FAQ */
+/* FAQ : titre 64 px, sous-titre et questions 24 px, réponses 20 px. */
+.hero.faq-hero h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+.hero.faq-hero p {
+  font-size: 1.5rem;
+}
+
 .faq-badge {
   display: inline-block;
   margin-bottom: 14px;
@@ -1592,7 +1604,7 @@ main {
 .faq-item summary {
   padding: 22px 0;
   font-weight: 700;
-  font-size: 0.98rem;
+  font-size: 1.5rem;
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -1624,7 +1636,7 @@ main {
 .faq-item p {
   margin: 0 0 18px;
   color: var(--tk-text-muted);
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   line-height: 1.7;
 }
 
@@ -2620,6 +2632,9 @@ footer.site-footer {
     font-size: 1.85rem;
   }
   .hero-legal h1 {
+    font-size: 2.3rem;
+  }
+  .hero.faq-hero h1 {
     font-size: 2.3rem;
   }
   .about-section h2 {
