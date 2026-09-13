@@ -328,14 +328,30 @@
       fr: 'WIYAO est un projet communautaire indépendant, sans statut commercial, créé et maintenu à titre personnel par Crédo Ahiafor : inspiré de <a href="https://roadmap.sh" target="_blank" rel="noopener">roadmap.sh</a> et adapté au contexte togolais. Ce n\'est pas une startup : pas de compte à créer, pas d\'abonnement, pas de publicité, rien à vendre.',
       en: 'WIYAO is an independent community project, with no commercial status, created and maintained personally by Crédo Ahiafor: inspired by <a href="https://roadmap.sh" target="_blank" rel="noopener">roadmap.sh</a> and adapted to the Togolese context. It\'s not a startup: no account to create, no subscription, no ads, nothing to sell.',
     },
-    "about.s1.p2": {
-      fr: 'C\'est un guide qui accompagne le bachelier togolais à chaque étape de son parcours tech : orientation, choix de domaine, de filière et d\'université, roadmaps de carrière et de compétences, bourses, stages et emploi, écosystème local à connaître. Le site est gratuit, utilisable sans inscription, et hébergé par Vercel : détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
-      en: 'It\'s a guide that walks the Togolese bachelier through every step of their tech journey: orientation, choosing a domain, a track and a university, career and skill roadmaps, scholarships, internships and jobs, the local ecosystem worth knowing. The site is free, usable without registration, and hosted by Vercel : full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
+    "about.s1.p2.intro": {
+      fr: "C'est un guide qui accompagne le bachelier togolais à chaque étape de son parcours tech :",
+      en: "It's a guide that walks the Togolese bachelier through every step of their tech journey:",
+    },
+    "about.s1.p2.list": {
+      fr: "<li>Orientation</li><li>Choix de domaine, de filière et d'université</li><li>Roadmaps de carrière et de compétences</li><li>Bourses, stages et emploi</li><li>Écosystème local à connaître</li>",
+      en: "<li>Orientation</li><li>Choosing a domain, a track and a university</li><li>Career and skill roadmaps</li><li>Scholarships, internships and jobs</li><li>The local ecosystem worth knowing</li>",
+    },
+    "about.s1.p2.outro": {
+      fr: 'Le site est gratuit, utilisable sans inscription, et hébergé par Vercel : détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
+      en: 'The site is free, usable without registration, and hosted by Vercel: full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
     },
     "about.s2.h2": { fr: "Roadmaps par métier", en: "Role-based roadmaps" },
-    "about.s2.p": {
-      fr: 'Les 60 roadmaps par métier s\'appuient sur une recherche des offres d\'emploi et fiches de poste réellement publiées sur des plateformes togolaises telles que <a href="https://emploi.tg" target="_blank" rel="noopener">emploi.tg</a>, <a href="https://novojob.com" target="_blank" rel="noopener">novojob.com</a>, <a href="https://www.jobrelais.com" target="_blank" rel="noopener">JobRelais</a>, l\'<a href="https://digital.gouv.tg/recrutements" target="_blank" rel="noopener">Agence Togo Digital</a> et d\'autres sites d\'offres d\'emploi togolais, afin d\'identifier les compétences concrètement demandées par les employeurs locaux. Ce contenu est complété par des ressources d\'apprentissage reconnues (documentation officielle, cours en ligne francophones et internationaux).',
-      en: 'The 60 role-based roadmaps are built from research into job postings and role descriptions actually published on Togolese platforms such as <a href="https://emploi.tg" target="_blank" rel="noopener">emploi.tg</a>, <a href="https://novojob.com" target="_blank" rel="noopener">novojob.com</a>, <a href="https://www.jobrelais.com" target="_blank" rel="noopener">JobRelais</a>, <a href="https://digital.gouv.tg/recrutements" target="_blank" rel="noopener">Agence Togo Digital</a> and other Togolese job sites, to identify the skills local employers actually ask for. This content is complemented by well-established learning resources (official documentation, French and international online courses).',
+    "about.s2.p.intro": {
+      fr: "Les 60 roadmaps par métier s'appuient sur une recherche des offres d'emploi et fiches de poste réellement publiées sur des plateformes togolaises, afin d'identifier les compétences concrètement demandées par les employeurs locaux :",
+      en: "The 60 role-based roadmaps are built from research into job postings and role descriptions actually published on Togolese platforms, to identify the skills local employers actually ask for:",
+    },
+    "about.s2.p.list": {
+      fr: '<li><a href="https://emploi.tg" target="_blank" rel="noopener">emploi.tg</a></li><li><a href="https://novojob.com" target="_blank" rel="noopener">novojob.com</a></li><li><a href="https://www.jobrelais.com" target="_blank" rel="noopener">JobRelais</a></li><li>l\'<a href="https://digital.gouv.tg/recrutements" target="_blank" rel="noopener">Agence Togo Digital</a></li><li>et d\'autres sites d\'offres d\'emploi togolais</li>',
+      en: '<li><a href="https://emploi.tg" target="_blank" rel="noopener">emploi.tg</a></li><li><a href="https://novojob.com" target="_blank" rel="noopener">novojob.com</a></li><li><a href="https://www.jobrelais.com" target="_blank" rel="noopener">JobRelais</a></li><li><a href="https://digital.gouv.tg/recrutements" target="_blank" rel="noopener">Agence Togo Digital</a></li><li>and other Togolese job sites</li>',
+    },
+    "about.s2.p.outro": {
+      fr: "Ce contenu est complété par des ressources d'apprentissage reconnues (documentation officielle, cours en ligne francophones et internationaux).",
+      en: "This content is complemented by well-established learning resources (official documentation, French and international online courses).",
     },
     "about.s3.h2": { fr: "Roadmaps par compétence", en: "Skill-based roadmaps" },
     "about.s3.p": {
