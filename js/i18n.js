@@ -78,10 +78,6 @@
       fr: "Un aperçu rapide avant de répondre : pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver. Chaque domaine est une catégorie mondiale du secteur tech ; la mention 🇹🇬 précise sa présence concrète sur le marché togolais.",
       en: "A quick overview before you answer : no need to know it all by heart, that's exactly what the test is here to help you sort out. Each domain is a worldwide tech-sector category; the 🇹🇬 note points to its concrete presence on the Togolese market.",
     },
-    "calendrier.sourcenote": {
-      fr: "Les dates précises changent chaque année et ne sont pas toujours republiées à temps par les établissements eux-mêmes. Celles marquées « dates de référence » viennent d'une campagne passée et donnent une idée du calendrier habituel, pas une garantie pour l'année en cours.",
-      en: "Exact dates change every year and aren't always republished in time by the institutions themselves. Those marked \"reference dates\" come from a past admissions cycle and give an idea of the usual calendar, not a guarantee for the current year.",
-    },
     "index.parmetier.h2": { fr: "Roadmaps par métier", en: "Roadmaps by role" },
     "index.parmetier.desc": { fr: "Le chemin complet à suivre pour viser un rôle donné.", en: "The full path to follow to aim for a given role." },
     "index.parcompetence.h2": { fr: "Roadmaps par compétence", en: "Roadmaps by skill" },
