@@ -1115,8 +1115,9 @@ main {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 0;
   display: block;
+  overflow: hidden;
   color: var(--text);
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
@@ -1128,6 +1129,28 @@ main {
 .card:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
   transform: translateY(-2px);
+}
+
+/* Bandeau de type de carte, façon Codecademy ("Career path" /
+   "Free course") : le type réel déjà utilisé par la recherche
+   (Roadmap · métier / compétence), pas une catégorie inventée. */
+.card-kind-bar {
+  background: var(--tk-canvas);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 24px;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+.card-meta-divider {
+  border-top: 1px dashed var(--border);
+  margin: 16px 0 12px;
 }
 
 .card-icon {

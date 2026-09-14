@@ -91,7 +91,7 @@
     return levelBadge + togoBadge;
   }
 
-  function buildCard(id, rm) {
+  function buildCard(id, rm, kind) {
     const total = countItems(rm);
     const done = getDoneCount(id);
     const pct = total ? Math.round((done / total) * 100) : 0;
@@ -103,13 +103,18 @@
     if (rm.domain) card.dataset.domain = rm.domain;
     const badges = badgesHtml(rm);
     const cardLabel = currentLang() === "en" ? "completed" : "complété";
+    const kindLabel = kind === "skill" ? "Roadmap · compétence" : "Roadmap · métier";
     card.innerHTML = `
-      <div class="card-icon">${rm.icon}</div>
-      ${badges ? `<div class="card-badges">${badges}</div>` : ""}
-      <h3>${tField(rm, "title")}</h3>
-      <p>${tField(rm, "subtitle")}</p>
-      <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-      <span class="progress-label">${pct}% ${cardLabel}</span>
+      <div class="card-kind-bar">${kindLabel}</div>
+      <div class="card-body">
+        <div class="card-icon">${rm.icon}</div>
+        ${badges ? `<div class="card-badges">${badges}</div>` : ""}
+        <h3>${tField(rm, "title")}</h3>
+        <p>${tField(rm, "subtitle")}</p>
+        <div class="card-meta-divider"></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <span class="progress-label">${pct}% ${cardLabel}</span>
+      </div>
     `;
     return card;
   }
@@ -198,7 +203,7 @@
         subGrid.className = "grid";
         subGrid.id = `domain-grid-${index}`;
         subGrid.hidden = true;
-        ids.forEach((id) => subGrid.appendChild(buildCard(id, ROLES[id])));
+        ids.forEach((id) => subGrid.appendChild(buildCard(id, ROLES[id], "role")));
 
         const toggle = buildGroupToggle("roadmap", ids.length, subGrid.id);
         toggle.addEventListener("click", () => setGroupOpen(toggle, subGrid, subGrid.hidden));
@@ -210,7 +215,7 @@
     }
     if (skillGrid && typeof SKILLS !== "undefined") {
       const skillIds = Object.keys(SKILLS);
-      skillIds.forEach((id) => skillGrid.appendChild(buildCard(id, SKILLS[id])));
+      skillIds.forEach((id) => skillGrid.appendChild(buildCard(id, SKILLS[id], "skill")));
       skillGrid.hidden = true;
 
       const skillToggle = buildGroupToggle("skill", skillIds.length, "skill-grid");
@@ -348,7 +353,7 @@
 
     const grid = document.createElement("div");
     grid.className = "grid";
-    related.forEach((rid) => grid.appendChild(buildCard(rid, ROLES[rid])));
+    related.forEach((rid) => grid.appendChild(buildCard(rid, ROLES[rid], "role")));
     section.appendChild(grid);
 
     return section;
@@ -913,7 +918,7 @@
 
     const roleGrid = document.getElementById("quiz-role-grid");
     if (roleGrid) {
-      matchingRoles.forEach((id) => roleGrid.appendChild(buildCard(id, ROLES[id])));
+      matchingRoles.forEach((id) => roleGrid.appendChild(buildCard(id, ROLES[id], "role")));
     }
 
     const schoolGrid = document.getElementById("quiz-school-grid");
