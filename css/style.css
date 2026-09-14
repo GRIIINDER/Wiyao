@@ -1433,8 +1433,11 @@ main {
    traitement « document » lisible inspiré des pages légales de Codecademy —
    corps de texte large, interlignage confortable, hiérarchie nette,
    liens bleus soulignés. */
+/* Toute la largeur du contenu, texte aligné à gauche (pas justifié) :
+   façon Codecademy (codecademy.com/terms), plutôt qu'une colonne de
+   lecture étroite et justifiée. */
 .about-section {
-  max-width: 720px;
+  max-width: none;
   margin: 0 0 34px;
 }
 
@@ -1450,8 +1453,7 @@ main {
   font-size: 1.25rem;
   line-height: 1.5;
   margin: 0 0 18px;
-  text-align: justify;
-  text-align-last: left;
+  text-align: left;
 }
 
 .about-section p:last-child {
@@ -1487,6 +1489,12 @@ main {
    d'échelle par rapport au reste de la page). */
 #guide h2 {
   font-size: 1.375rem;
+}
+
+/* Contrairement aux 4 pages légales, le guide de stages-emploi.html
+   garde sa colonne de lecture étroite (pas concerné par ce changement). */
+#guide {
+  max-width: 720px;
 }
 
 #guide p {
