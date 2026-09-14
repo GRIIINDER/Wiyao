@@ -811,7 +811,8 @@ main {
 /* Sous-titre de la page d'accueil : prend toute la largeur du
    contenu (comme les autres sites) plutôt qu'une colonne de lecture
    étroite, lu de gauche à droite et justifié (pas centré). */
-.hero p[data-i18n-key="hero.subtitle"] {
+.hero p[data-i18n-key="hero.subtitle"],
+.hero p[data-i18n-key="quiz.hero.subtitle"] {
   max-width: none;
   text-align: justify;
   text-align-last: left;
@@ -2646,7 +2647,8 @@ footer.site-footer {
   .section h2 {
     font-size: 1.2rem;
   }
-  .hero p[data-i18n-key="hero.subtitle"] {
+  .hero p[data-i18n-key="hero.subtitle"],
+  .hero p[data-i18n-key="quiz.hero.subtitle"] {
     text-align: left;
     text-align-last: left;
   }
