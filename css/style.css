@@ -1057,36 +1057,48 @@ main {
   margin: 0;
 }
 
+/* Même disposition que les blocs de roadmaps (.grid / .card) : grille et
+   carte blanche identiques, icône séparée du titre. */
 .domain-primer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 24px;
 }
 
 .domain-primer-item {
-  background: var(--tk-surface-soft);
-  border: 1px solid var(--tk-border);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px 16px;
+  padding: 24px;
+  color: var(--text);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.domain-primer-item:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.domain-primer-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
 }
 
 .domain-primer-item h4 {
-  font-size: 0.95rem;
   margin: 0 0 6px;
 }
 
 .domain-primer-item p {
-  color: var(--tk-text-muted);
-  font-size: 1.25rem;
-  margin: 0;
+  color: var(--text-muted);
+  margin: 0 0 16px;
 }
 
 .domain-primer-presence {
-  margin-top: 8px !important;
+  margin-top: 0 !important;
   padding-top: 8px;
-  border-top: 1px solid var(--tk-border);
+  border-top: 1px solid var(--border);
   font-size: 0.78rem !important;
-  color: var(--tk-text-subtle);
+  color: var(--text-muted);
 }
 
 .grid {
@@ -2257,7 +2269,8 @@ main {
 .journey-step p,
 .domain-group-desc,
 .timeline-content p,
-.search-result p {
+.search-result p,
+.domain-primer-item p {
   font-size: 1.25rem;
   line-height: 1.5;
 }

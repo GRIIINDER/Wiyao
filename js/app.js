@@ -230,8 +230,15 @@
       const item = document.createElement("div");
       item.className = "domain-primer-item";
 
+      if (meta.icon) {
+        const icon = document.createElement("div");
+        icon.className = "domain-primer-icon";
+        icon.textContent = meta.icon;
+        item.appendChild(icon);
+      }
+
       const heading = document.createElement("h4");
-      heading.textContent = meta.icon ? `${meta.icon} ${domainLabel}` : domainLabel;
+      heading.textContent = domainLabel;
       item.appendChild(heading);
 
       const desc = document.createElement("p");
