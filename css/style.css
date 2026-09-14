@@ -2421,19 +2421,15 @@ footer.site-footer {
   border: 0;
 }
 
+/* Colonnes centrées : seule façon d'avoir un écart identique de
+   chaque côté de CHAQUE colonne (un alignement gauche/droite laisse
+   un écart qui varie avec la longueur du texte de chaque colonne). */
 .footer-links-col {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 10px;
-}
-
-/* Dernière colonne alignée à droite : son contenu colle au bord droit
-   de la carte, en miroir de la première colonne collée au bord gauche
-   (les colonnes du milieu restent alignées à gauche). */
-.footer-card-top > .footer-links-col:last-child {
-  align-items: flex-end;
-  text-align: right;
 }
 
 .footer-links-col h5 {
@@ -2604,13 +2600,6 @@ footer.site-footer {
     justify-content: stretch;
     justify-items: center;
     gap: 30px;
-    text-align: center;
-  }
-  .footer-links-col {
-    align-items: center;
-  }
-  .footer-card-top > .footer-links-col:last-child {
-    align-items: center;
     text-align: center;
   }
   .newsletter-inner {
