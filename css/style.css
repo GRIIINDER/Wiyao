@@ -2359,17 +2359,19 @@ footer.site-footer {
 .footer-links-col {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   gap: 10px;
 }
 
 .footer-links-col h5 {
+  align-self: center;
   color: var(--tk-text);
   font-size: 1.05rem;
   font-weight: 800;
   text-transform: none;
   letter-spacing: normal;
+  text-align: center;
   margin: 0 0 10px;
 }
 
