@@ -274,6 +274,14 @@
       fr: "Une seule recherche pour tout le site : roadmaps, écoles, écosystème togolais, bourses, stages &amp; emploi\n       et actualités.",
       en: "One search for the entire site: roadmaps, schools, the Togolese ecosystem, scholarships, internships &amp; jobs, and news.",
     },
+    "recherche.suggestions.label": {
+      fr: "Essaie par exemple",
+      en: "Try for example",
+    },
+    "recherche.categories.label": {
+      fr: "Parcourir par catégorie",
+      en: "Browse by category",
+    },
 
     "error404.title": { fr: "Page introuvable", en: "Page not found" },
     "error404.subtitle": {

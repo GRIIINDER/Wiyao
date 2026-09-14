@@ -1263,11 +1263,70 @@
     input.addEventListener("input", runSearch);
   }
 
+  // ---- Suggestions de recherche (page recherche.html) : raccourcis vers
+  // les 7 domaines et les rubriques du site, affichés tant que le champ est
+  // vide (pas de "recherches populaires" : WIYAO ne suit aucune statistique
+  // d'usage, ces suggestions sont éditoriales). ----
+  const SEARCH_CATEGORIES = [
+    { label: "Roadmaps", labelEn: "Roadmaps", url: "index.html" },
+    { label: "Test d'orientation", labelEn: "Orientation test", url: "test-orientation.html" },
+    { label: "Écoles & universités", labelEn: "Schools & universities", url: "ecoles.html" },
+    { label: "Calendrier", labelEn: "Calendar", url: "calendrier.html" },
+    { label: "Bourses & financement", labelEn: "Scholarships & funding", url: "bourses-financement.html" },
+    { label: "Stages & emploi", labelEn: "Internships & jobs", url: "stages-emploi.html" },
+    { label: "Écosystème togolais", labelEn: "Togolese ecosystem", url: "ecosysteme.html" },
+    { label: "Actualités", labelEn: "News", url: "actualites.html" },
+    { label: "Témoignages", labelEn: "Testimonials", url: "temoignages.html" },
+    { label: "FAQ", labelEn: "FAQ", url: "faq.html" },
+  ];
+
+  function initSearchSuggestions() {
+    const input = document.getElementById("global-search-input");
+    const suggestionsGroup = document.getElementById("search-suggestions-group");
+    const suggestionsRow = document.getElementById("search-suggestions");
+    const categoriesGroup = document.getElementById("search-categories-group");
+    const categoriesRow = document.getElementById("search-categories");
+    if (!input || !suggestionsRow || !categoriesRow) return;
+
+    if (typeof DOMAINS !== "undefined") {
+      Object.keys(DOMAINS).forEach((domainName) => {
+        const meta = DOMAINS[domainName];
+        const label = currentLang() === "en" && meta.nameEn ? meta.nameEn : domainName;
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "domain-chip";
+        chip.textContent = meta.icon ? `${meta.icon} ${label}` : label;
+        chip.addEventListener("click", () => {
+          input.value = domainName;
+          input.dispatchEvent(new Event("input", { bubbles: true }));
+          input.focus();
+        });
+        suggestionsRow.appendChild(chip);
+      });
+    }
+
+    SEARCH_CATEGORIES.forEach((cat) => {
+      const a = document.createElement("a");
+      a.href = cat.url;
+      a.textContent = currentLang() === "en" ? cat.labelEn : cat.label;
+      categoriesRow.appendChild(a);
+    });
+
+    function toggleSuggestions() {
+      const hasQuery = input.value.trim().length > 0;
+      if (suggestionsGroup) suggestionsGroup.hidden = hasQuery;
+      if (categoriesGroup) categoriesGroup.hidden = hasQuery;
+    }
+    input.addEventListener("input", toggleSuggestions);
+    toggleSuggestions();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     renderGrid();
     renderDomainPrimer();
     initFilters();
     initGlobalSearch();
+    initSearchSuggestions();
     renderRoadmap();
     renderSchools();
     initSchoolFilters();
