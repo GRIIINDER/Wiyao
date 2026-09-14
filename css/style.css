@@ -2428,6 +2428,14 @@ footer.site-footer {
   gap: 10px;
 }
 
+/* Dernière colonne alignée à droite : son contenu colle au bord droit
+   de la carte, en miroir de la première colonne collée au bord gauche
+   (les colonnes du milieu restent alignées à gauche). */
+.footer-card-top > .footer-links-col:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
 .footer-links-col h5 {
   color: var(--tk-text);
   font-size: 1.05rem;
@@ -2600,6 +2608,10 @@ footer.site-footer {
   }
   .footer-links-col {
     align-items: center;
+  }
+  .footer-card-top > .footer-links-col:last-child {
+    align-items: center;
+    text-align: center;
   }
   .newsletter-inner {
     grid-template-columns: 1fr;
