@@ -813,7 +813,15 @@ main {
    étroite, lu de gauche à droite et justifié (pas centré). */
 .hero p[data-i18n-key="hero.subtitle"],
 .hero p[data-i18n-key="quiz.hero.subtitle"],
-.hero p[data-i18n-key="ecoles.hero.subtitle"] {
+.hero p[data-i18n-key="ecoles.hero.subtitle"],
+.hero p[data-i18n-key="calendrier.hero.subtitle"],
+.hero p[data-i18n-key="bourses.hero.subtitle"],
+.hero p[data-i18n-key="stages.hero.subtitle"],
+.hero p[data-i18n-key="eco.hero.subtitle"],
+.hero p[data-i18n-key="actu.hero.subtitle"],
+.hero p[data-i18n-key="temoignages.hero.subtitle"],
+.hero p[data-i18n-key="faq.hero.subtitle"],
+.hero p[data-i18n-key="contact.hero.subtitle"] {
   max-width: none;
   text-align: justify;
   text-align-last: left;
@@ -831,6 +839,15 @@ main {
   margin: 14px 0 0;
   font-size: 0.88rem;
   font-style: italic;
+}
+
+/* Lignes hero-guide dont le texte tient en moins de lignes sur toute
+   la largeur du contenu (mesuré page par page, pas systématique). */
+.hero-guide[data-i18n-key="stages.hero.propose"],
+.hero-guide[data-i18n-key="eco.hero.guide"],
+.hero-guide[data-i18n-key="eco.hero.propose"],
+.hero-guide[data-i18n-key="actu.hero.propose"] {
+  max-width: none;
 }
 
 /* Accueil : plus d'air entre le bouton d'orientation et la ligne
@@ -2650,7 +2667,15 @@ footer.site-footer {
   }
   .hero p[data-i18n-key="hero.subtitle"],
   .hero p[data-i18n-key="quiz.hero.subtitle"],
-  .hero p[data-i18n-key="ecoles.hero.subtitle"] {
+  .hero p[data-i18n-key="ecoles.hero.subtitle"],
+  .hero p[data-i18n-key="calendrier.hero.subtitle"],
+  .hero p[data-i18n-key="bourses.hero.subtitle"],
+  .hero p[data-i18n-key="stages.hero.subtitle"],
+  .hero p[data-i18n-key="eco.hero.subtitle"],
+  .hero p[data-i18n-key="actu.hero.subtitle"],
+  .hero p[data-i18n-key="temoignages.hero.subtitle"],
+  .hero p[data-i18n-key="faq.hero.subtitle"],
+  .hero p[data-i18n-key="contact.hero.subtitle"] {
     text-align: left;
     text-align-last: left;
   }
