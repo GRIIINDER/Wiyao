@@ -1415,6 +1415,8 @@ main {
   font-size: 1.25rem;
   line-height: 1.5;
   margin: 0 0 18px;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .about-section p:last-child {
@@ -1455,6 +1457,8 @@ main {
 #guide p {
   font-size: 1.25rem;
   line-height: 1.5;
+  text-align: justify;
+  text-align-last: left;
 }
 
 /* Titre de page des 4 pages légales : même échelle que Codecademy (64 px). */
@@ -1707,6 +1711,8 @@ main {
   color: var(--tk-text-muted);
   font-size: 1.25rem;
   line-height: 1.5;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .faq-item p a {
@@ -2256,6 +2262,16 @@ main {
   line-height: 1.5;
 }
 
+/* Justifié seulement sur les paragraphes en pleine largeur du contenu
+   (pas les textes de carte/grille, trop étroits : la justification y
+   créerait des espaces irréguliers entre les mots). */
+.category-desc,
+.journey-step p,
+.domain-group-desc {
+  text-align: justify;
+  text-align-last: left;
+}
+
 footer.site-footer {
   margin-top: 0;
 }
@@ -2687,6 +2703,18 @@ footer.site-footer {
     text-align: left;
     text-align-last: left;
   }
+  /* Sous 600px, la colonne de lecture devient trop étroite pour que la
+     justification garde un espacement régulier entre les mots. */
+  .category-desc,
+  .journey-step p,
+  .domain-group-desc,
+  .about-section p,
+  #guide p,
+  .faq-item p,
+  .contact-intro-desc {
+    text-align: left;
+    text-align-last: left;
+  }
 }
 
 /* Page Contact : une carte unique, coordonnées + gros titre à gauche, formulaire à droite */
@@ -2724,6 +2752,8 @@ footer.site-footer {
   font-size: 1.25rem;
   line-height: 1.5;
   max-width: 38ch;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .contact-details {
