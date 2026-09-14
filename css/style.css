@@ -808,10 +808,11 @@ main {
   font-size: 1.05rem;
 }
 
-/* Sous-titre de la page d'accueil : lu de gauche à droite et justifié
-   (pas centré), avec un interligne plus aéré. */
+/* Sous-titre de la page d'accueil : prend toute la largeur du
+   contenu (comme les autres sites) plutôt qu'une colonne de lecture
+   étroite, lu de gauche à droite et justifié (pas centré). */
 .hero p[data-i18n-key="hero.subtitle"] {
-  max-width: 640px;
+  max-width: none;
   text-align: justify;
   text-align-last: left;
   line-height: 1.65;
