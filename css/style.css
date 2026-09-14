@@ -1615,7 +1615,7 @@ main {
   color: var(--text-muted);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 12px;
 }
 
 .school-meta strong {
