@@ -822,7 +822,10 @@ main {
 .hero p[data-i18n-key="temoignages.hero.subtitle"],
 .hero p[data-i18n-key="faq.hero.subtitle"],
 .hero p[data-i18n-key="contact.hero.subtitle"],
-.hero p[data-i18n-key="mentions.hero.subtitle"] {
+.hero p[data-i18n-key="mentions.hero.subtitle"],
+.hero p[data-i18n-key="about.hero.subtitle"],
+.hero p[data-i18n-key="confidentialite.hero.subtitle"],
+.hero p[data-i18n-key="cgu.hero.subtitle"] {
   max-width: none;
   text-align: justify;
   text-align-last: left;
@@ -2677,7 +2680,10 @@ footer.site-footer {
   .hero p[data-i18n-key="temoignages.hero.subtitle"],
   .hero p[data-i18n-key="faq.hero.subtitle"],
   .hero p[data-i18n-key="contact.hero.subtitle"],
-  .hero p[data-i18n-key="mentions.hero.subtitle"] {
+  .hero p[data-i18n-key="mentions.hero.subtitle"],
+  .hero p[data-i18n-key="about.hero.subtitle"],
+  .hero p[data-i18n-key="confidentialite.hero.subtitle"],
+  .hero p[data-i18n-key="cgu.hero.subtitle"] {
     text-align: left;
     text-align-last: left;
   }
