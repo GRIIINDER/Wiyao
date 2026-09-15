@@ -2422,6 +2422,7 @@ footer.site-footer {
 .footer-legal-links a {
   color: var(--tk-text-muted);
   text-decoration: none;
+  font-size: 14px;
 }
 
 .footer-legal-links a:not(:last-child)::after {
