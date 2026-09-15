@@ -2365,13 +2365,11 @@ footer.site-footer {
 }
 
 .footer-links-col h5 {
-  align-self: center;
   color: var(--tk-text);
   font-size: 1.05rem;
   font-weight: 800;
   text-transform: none;
   letter-spacing: normal;
-  text-align: center;
   margin: 0 0 10px;
 }
 
