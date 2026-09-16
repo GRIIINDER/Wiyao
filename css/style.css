@@ -1435,10 +1435,25 @@ main {
    liens bleus soulignés. */
 /* Toute la largeur du contenu, texte aligné à gauche (pas justifié) :
    façon Codecademy (codecademy.com/terms), plutôt qu'une colonne de
-   lecture étroite et justifiée. */
+   lecture étroite et justifiée. Valeur par défaut ; les 4 pages légales
+   resserrent et centrent ce bloc juste en dessous (règle .hero-legal ~). */
 .about-section {
   max-width: none;
   margin: 0 0 34px;
+}
+
+/* Les 4 pages légales (About, Mentions légales, Confidentialité, CGU)
+   reprennent la disposition des pages légales d'anthropic.com : une
+   colonne resserrée et centrée sur la page plutôt que pleine largeur ;
+   le texte à l'intérieur reste aligné à gauche. Le sélecteur .hero-legal ~
+   ne cible que les .about-section de ces 4 pages (identifiées par leur
+   hero), sans toucher au guide de stages-emploi.html qui réutilise aussi
+   .about-section mais garde sa propre colonne étroite non centrée (#guide). */
+.hero-legal,
+.hero-legal ~ .about-section {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-section h2 {
