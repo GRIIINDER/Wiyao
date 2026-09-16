@@ -2334,15 +2334,16 @@ footer.site-footer {
   padding: 40px 32px;
 }
 
-/* Colonnes dimensionnées à leur propre contenu (pas 1fr égaux) :
-   avec un texte aligné à gauche, des pistes de largeur fixe laissent
-   un espace interne inutilisé qui varie d'une colonne à l'autre et
-   rend l'écart visuel entre colonnes inégal. En largeur "contenu",
-   le gap devient l'écart réel entre chaque paire de colonnes,
-   identique partout. */
+/* Colonnes dimensionnées à leur propre contenu (pas 1fr égaux), avec
+   justify-content: space-between pour qu'elles se répartissent sur
+   toute la largeur de la carte (première collée à gauche, dernière
+   à droite, façon anthropic.com) tout en gardant un écart identique
+   entre chaque paire de colonnes — gap sert de minimum, l'espace
+   restant est distribué également entre les colonnes. */
 .footer-card-top {
   display: grid;
   grid-template-columns: repeat(4, max-content);
+  justify-content: space-between;
   gap: 32px;
   align-items: start;
 }
