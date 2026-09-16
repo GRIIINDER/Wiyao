@@ -1153,6 +1153,74 @@ main {
   margin: 16px 0 12px;
 }
 
+/* Actualités : grille de cartes d'annonce façon anthropic.com/news, à la
+   place de la chronologie verticale (.timeline) — 3 colonnes sur desktop
+   via auto-fill, sans media query dédiée (même mécanique que .grid). */
+.actu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.actu-card-title {
+  margin: 0 0 10px;
+}
+
+.actu-card-desc {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.actu-meta {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.actu-meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.actu-meta-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.actu-meta-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+}
+
+.actu-card-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--tk-canvas);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.actu-card-btn::after {
+  content: " →";
+}
+
+.actu-card-btn:hover {
+  opacity: 0.85;
+}
+
 .card-icon {
   font-size: 1.8rem;
   margin-bottom: 8px;
