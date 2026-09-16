@@ -2334,9 +2334,15 @@ footer.site-footer {
   padding: 40px 32px;
 }
 
+/* Colonnes dimensionnées à leur propre contenu (pas 1fr égaux) :
+   avec un texte aligné à gauche, des pistes de largeur fixe laissent
+   un espace interne inutilisé qui varie d'une colonne à l'autre et
+   rend l'écart visuel entre colonnes inégal. En largeur "contenu",
+   le gap devient l'écart réel entre chaque paire de colonnes,
+   identique partout. */
 .footer-card-top {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, max-content);
   gap: 32px;
   align-items: start;
 }
