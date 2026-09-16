@@ -1,0 +1,5 @@
+Contact: mailto:wiya.info@gmail.com
+Contact: https://wiyao.vercel.app/contact.html
+Expires: 2027-09-16T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://wiyao.vercel.app/.well-known/security.txt
