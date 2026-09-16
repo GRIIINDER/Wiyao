@@ -300,6 +300,10 @@
       fr: "Qui édite WIYAO, où le site est hébergé, et dans quelles conditions son contenu peut être réutilisé.",
       en: "Who publishes WIYAO, where the site is hosted, and under what conditions its content may be reused.",
     },
+    "mentions.hero.updated": {
+      fr: "Dernière mise à jour : septembre 2026",
+      en: "Last updated: September 2026",
+    },
 
     "confidentialite.hero.title": {
       fr: 'Politique de <span class="hero-accent">confidentialité</span>',
@@ -309,6 +313,10 @@
       fr: "Ce que WIYAO fait, et surtout ne fait pas, avec ce que tu utilises sur le site.",
       en: "What WIYAO does, and importantly, doesn't do, with what you use on the site.",
     },
+    "confidentialite.hero.updated": {
+      fr: "Dernière mise à jour : septembre 2026",
+      en: "Last updated: September 2026",
+    },
 
     "cgu.hero.title": {
       fr: 'Conditions <span class="hero-accent">d\'utilisation</span>',
@@ -317,6 +325,10 @@
     "cgu.hero.subtitle": {
       fr: "Les règles d'utilisation de WIYAO : à lire avant de naviguer sur le site.",
       en: "WIYAO's usage rules: read before browsing the site.",
+    },
+    "cgu.hero.updated": {
+      fr: "Dernière mise à jour : septembre 2026",
+      en: "Last updated: September 2026",
     },
 
     "about.s1.h2": { fr: "Le projet", en: "The project" },
@@ -409,8 +421,8 @@
     },
     "mentions.s7.h2": { fr: "Mise à jour de ces mentions légales", en: "Updates to this legal notice" },
     "mentions.s7.p": {
-      fr: "Ces mentions légales peuvent être mises à jour à tout moment, notamment pour refléter un changement dans le fonctionnement du site ou dans la réglementation applicable. Dernière mise à jour : septembre 2026.",
-      en: "This legal notice may be updated at any time, in particular to reflect a change in how the site works or in applicable regulations. Last updated: September 2026.",
+      fr: "Ces mentions légales peuvent être mises à jour à tout moment, notamment pour refléter un changement dans le fonctionnement du site ou dans la réglementation applicable.",
+      en: "This legal notice may be updated at any time, in particular to reflect a change in how the site works or in applicable regulations.",
     },
 
     "conf.s1.h2": { fr: "1. Généralités", en: "1. General" },
@@ -489,8 +501,8 @@
     },
     "conf.s11.h2": { fr: "11. Modifications de cette politique", en: "11. Changes to this policy" },
     "conf.s11.p": {
-      fr: "Cette politique peut être mise à jour pour refléter un changement dans le fonctionnement du site ou dans la réglementation applicable. Dernière mise à jour : septembre 2026.",
-      en: "This policy may be updated to reflect a change in how the site works or in applicable regulations. Last updated: September 2026.",
+      fr: "Cette politique peut être mise à jour pour refléter un changement dans le fonctionnement du site ou dans la réglementation applicable.",
+      en: "This policy may be updated to reflect a change in how the site works or in applicable regulations.",
     },
     "conf.s12.h2": { fr: "12. Contact", en: "12. Contact" },
     "conf.s12.p": {
@@ -607,8 +619,8 @@
     },
     "cgu.s8.h2": { fr: "8. Modifications des CGU", en: "8. Changes to these Terms" },
     "cgu.s8.p": {
-      fr: "Les présentes CGU peuvent être mises à jour à tout moment, notamment pour suivre l'évolution des fonctionnalités du site. Les nouvelles CGU sont applicables dès leur publication sur cette page ; il est de la responsabilité du Visiteur de les consulter périodiquement. Dernière mise à jour : septembre 2026.",
-      en: "These Terms of Use may be updated at any time, in particular to keep up with the evolution of the site's features. The new Terms of Use apply as soon as they are published on this page; it is the Visitor's responsibility to review them periodically. Last updated: September 2026.",
+      fr: "Les présentes CGU peuvent être mises à jour à tout moment, notamment pour suivre l'évolution des fonctionnalités du site. Les nouvelles CGU sont applicables dès leur publication sur cette page ; il est de la responsabilité du Visiteur de les consulter périodiquement.",
+      en: "These Terms of Use may be updated at any time, in particular to keep up with the evolution of the site's features. The new Terms of Use apply as soon as they are published on this page; it is the Visitor's responsibility to review them periodically.",
     },
     "cgu.s9.h2": { fr: "9. Contact", en: "9. Contact" },
     "cgu.s9.p": {

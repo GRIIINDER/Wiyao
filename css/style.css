@@ -1510,6 +1510,15 @@ main {
   line-height: 1.2;
 }
 
+/* Ligne "Dernière mise à jour" sous le hero, façon anthropic.com/legal/*. */
+.hero-legal-meta {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--tk-text-muted);
+  font-size: 0.95rem;
+}
+
 @media (max-width: 900px) {
   .hero-legal h1 {
     font-size: 3rem;
