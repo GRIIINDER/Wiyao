@@ -598,7 +598,7 @@ nav.site-nav a.active {
   border: none;
   background: transparent;
   color: var(--tk-text-muted);
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   font-weight: 600;
   padding: 6px 12px;
   border-radius: 999px;
@@ -2465,7 +2465,7 @@ footer.site-footer {
 
 .footer-links-col h5 {
   color: var(--tk-text);
-  font-size: 1.05rem;
+  font-size: 0.75rem;
   font-weight: 800;
   text-transform: none;
   letter-spacing: normal;
@@ -2474,7 +2474,7 @@ footer.site-footer {
 
 .footer-links-col a {
   color: var(--tk-text-muted);
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 400;
   text-transform: none;
   letter-spacing: normal;
@@ -2509,7 +2509,7 @@ footer.site-footer {
 
 .footer-bottom p {
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .footer-legal-links {
@@ -2522,7 +2522,7 @@ footer.site-footer {
 .footer-legal-links a {
   color: var(--tk-text-muted);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .footer-legal-links a:not(:last-child)::after {
