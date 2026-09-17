@@ -1225,52 +1225,52 @@ const ROLES = {
       {
         title: "1. Fondamentaux blockchain",
         items: [
-          { label: "Structure d'une blockchain : blocs, hash, arbre de Merkle", level: "core" },
-          { label: "Mécanismes de consensus : Proof of Work, Proof of Stake", level: "core" },
-          { label: "Cryptographie de base : clés publiques/privées, signatures", level: "core" },
-          { label: "Portefeuilles (wallets) et gestion des clés", level: "core" }
+          { label: "Structure d'une blockchain : blocs, hash, arbre de Merkle", level: "core", resource: { label: "Ethereum.org - Les blocs", url: "https://ethereum.org/developers/docs/blocks/" } },
+          { label: "Mécanismes de consensus : Proof of Work, Proof of Stake", level: "core", resource: { label: "Ethereum.org - Proof-of-stake vs proof-of-work", url: "https://ethereum.org/developers/docs/consensus-mechanisms/pos/pos-vs-pow/" } },
+          { label: "Cryptographie de base : clés publiques/privées, signatures", level: "core", resource: { label: "CISA - Understanding Digital Signatures", url: "https://www.cisa.gov/news-events/news/understanding-digital-signatures" } },
+          { label: "Portefeuilles (wallets) et gestion des clés", level: "core", resource: { label: "MetaMask - Guide de démarrage", url: "https://support.metamask.io/start/getting-started-with-metamask" } }
         ]
       },
       {
         title: "2. Smart contracts",
         items: [
           { label: "Solidity et l'écosystème Ethereum (EVM)", level: "core", resource: { label: "Documentation Solidity", url: "https://docs.soliditylang.org/" } },
-          { label: "Standards de tokens : ERC-20 (fongibles), ERC-721/ERC-1155 (NFT)", level: "core" },
-          { label: "Autres chaînes compatibles EVM : Polygon, BNB Chain, Arbitrum", level: "option" },
-          { label: "Alternatives non-EVM : Solana (Rust), Move (Aptos/Sui)", level: "option" }
+          { label: "Standards de tokens : ERC-20 (fongibles), ERC-721/ERC-1155 (NFT)", level: "core", resource: { label: "Ethereum.org - Standards de tokens", url: "https://ethereum.org/developers/docs/standards/tokens" } },
+          { label: "Autres chaînes compatibles EVM : Polygon, BNB Chain, Arbitrum", level: "option", resource: { label: "Ethereum.org - Les solutions Layer 2", url: "https://ethereum.org/layer-2/" } },
+          { label: "Alternatives non-EVM : Solana (Rust), Move (Aptos/Sui)", level: "option", resource: { label: "Solana - Développer des programmes en Rust", url: "https://solana.com/docs/programs/rust" } }
         ]
       },
       {
         title: "3. Concepts DeFi et Web3",
         items: [
-          { label: "Finance décentralisée (DeFi) : DEX, lending, staking, AMM", level: "option" },
-          { label: "Oracles blockchain (Chainlink) pour données externes", level: "option" },
-          { label: "Interaction front-end avec ethers.js / viem + wagmi", level: "core" },
-          { label: "IPFS et stockage décentralisé", level: "option" }
+          { label: "Finance décentralisée (DeFi) : DEX, lending, staking, AMM", level: "option", resource: { label: "Ethereum.org - Qu'est-ce que la DeFi ?", url: "https://ethereum.org/defi/" } },
+          { label: "Oracles blockchain (Chainlink) pour données externes", level: "option", resource: { label: "Documentation Chainlink", url: "https://docs.chain.link/" } },
+          { label: "Interaction front-end avec ethers.js / viem + wagmi", level: "core", resource: { label: "Viem - Documentation", url: "https://viem.sh/" } },
+          { label: "IPFS et stockage décentralisé", level: "option", resource: { label: "Documentation IPFS - Démarrer", url: "https://docs.ipfs.tech/install/" } }
         ]
       },
       {
         title: "4. Outils et environnement de développement",
         items: [
           { label: "Hardhat ou Foundry pour compiler, tester et déployer", level: "core", resource: { label: "Ethereum.org - Guides développeurs", url: "https://ethereum.org/en/developers/docs/" } },
-          { label: "Remix IDE pour le prototypage rapide", level: "core" },
-          { label: "MetaMask et autres wallets pour les tests", level: "core" },
-          { label: "Réseaux de test (testnets) et faucets", level: "core" }
+          { label: "Remix IDE pour le prototypage rapide", level: "core", resource: { label: "Documentation Remix IDE", url: "https://remix-ide.readthedocs.io/en/latest/" } },
+          { label: "MetaMask et autres wallets pour les tests", level: "core", resource: { label: "MetaMask - Guide de démarrage", url: "https://support.metamask.io/start/getting-started-with-metamask" } },
+          { label: "Réseaux de test (testnets) et faucets", level: "core", resource: { label: "Ethereum.org - Réseaux et testnets", url: "https://ethereum.org/developers/docs/networks/" } }
         ]
       },
       {
         title: "5. Sécurité et bonnes pratiques",
         items: [
-          { label: "Vulnérabilités courantes : reentrancy, overflow, front-running", level: "core" },
-          { label: "Optimisation du gas (coût des transactions)", level: "core" },
-          { label: "Tests automatisés des smart contracts (Hardhat/Foundry tests)", level: "core" },
-          { label: "Audits de sécurité et outils (Slither, MythX)", level: "option" }
+          { label: "Vulnérabilités courantes : reentrancy, overflow, front-running", level: "core", resource: { label: "Ethereum.org - Sécurité des smart contracts", url: "https://ethereum.org/developers/docs/smart-contracts/security/" } },
+          { label: "Optimisation du gas (coût des transactions)", level: "core", resource: { label: "Ethereum.org - Gas et frais", url: "https://ethereum.org/developers/docs/gas/" } },
+          { label: "Tests automatisés des smart contracts (Hardhat/Foundry tests)", level: "core", resource: { label: "Foundry Book - Écrire des tests", url: "https://www.getfoundry.sh/forge/testing" } },
+          { label: "Audits de sécurité et outils (Slither, MythX)", level: "option", resource: { label: "Slither (Trail of Bits) - GitHub", url: "https://github.com/crytic/slither" } }
         ]
       },
       {
         title: "6. Écosystème togolais",
         items: [
-          { label: "Domaine encore émergent au Togo, communauté naissante autour des événements GDG Lomé et DevFest", level: "core" }
+          { label: "Domaine encore émergent au Togo, communauté naissante autour des événements GDG Lomé et DevFest", level: "core", resource: { label: "GDG Lomé - Communauté Google Developer Groups", url: "https://gdg.community.dev/gdg-lome/" } }
         ]
       }
     ]
