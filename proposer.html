@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - WIYAO</title>
-<meta name="description" content="Une question ou une erreur à signaler sur WIYAO ? Contacte-nous par email ou via GitHub.">
-<link rel="canonical" href="https://wiyao.vercel.app/contact.html">
+<title>Proposer un contenu - WIYAO</title>
+<meta name="description" content="Une école, une entreprise, une communauté ou un événement tech togolais qui manque sur WIYAO ? Propose-le : chaque proposition est vérifiée manuellement avant ajout.">
+<link rel="canonical" href="https://wiyao.vercel.app/proposer.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://wiyao.vercel.app/contact.html">
+<meta property="og:url" content="https://wiyao.vercel.app/proposer.html">
 <meta property="og:site_name" content="WIYAO">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Contact - WIYAO">
-<meta property="og:description" content="Une question ou une erreur à signaler sur WIYAO ? Contacte-nous par email ou via GitHub.">
+<meta property="og:title" content="Proposer un contenu - WIYAO">
+<meta property="og:description" content="Une école, une entreprise, une communauté ou un événement tech togolais qui manque sur WIYAO ? Propose-le : chaque proposition est vérifiée manuellement avant ajout.">
 <meta property="og:image" content="https://wiyao.vercel.app/icons/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contact - WIYAO">
-<meta name="twitter:description" content="Une question ou une erreur à signaler sur WIYAO ? Contacte-nous par email ou via GitHub.">
+<meta name="twitter:title" content="Proposer un contenu - WIYAO">
+<meta name="twitter:description" content="Une école, une entreprise, une communauté ou un événement tech togolais qui manque sur WIYAO ? Propose-le : chaque proposition est vérifiée manuellement avant ajout.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
 <link rel="stylesheet" href="css/style.css?v=126">
 <link rel="manifest" href="manifest.json">
@@ -64,8 +64,8 @@
         <button class="nav-more-toggle active" type="button" aria-expanded="false" aria-haspopup="true">Contact ▾</button>
         <div class="nav-more-menu">
           <a href="faq.html">FAQ</a>
-          <a href="contact.html" class="active" aria-current="page">Contact</a>
-          <a href="proposer.html">Proposer un contenu</a>
+          <a href="contact.html">Contact</a>
+          <a href="proposer.html" class="active" aria-current="page">Proposer un contenu</a>
         </div>
       </div>
     </nav>
@@ -79,15 +79,15 @@
 <main id="main-content">
   <p id="i18n-notice" class="i18n-notice" hidden>🇬🇧 This page isn't fully translated yet : some sections below remain in French.</p>
   <section class="hero">
-    <h1 data-i18n-key="contact.hero.title">Contacte-<span class="hero-accent">nous</span></h1>
-    <p data-i18n-key="contact.hero.subtitle">Une question ou une correction à signaler ? Écris-nous. Pour proposer une école, une entreprise ou un événement, direction la page <a href="proposer.html">Proposer un contenu</a>.</p>
+    <h1 data-i18n-key="proposer.hero.title">Proposer <span class="hero-accent">un contenu</span></h1>
+    <p data-i18n-key="proposer.hero.subtitle">Une école, une entreprise, une communauté ou un événement tech togolais qui manque sur WIYAO ? Propose-le : on vérifie et on ajoute.</p>
   </section>
 
   <section class="contact-section">
     <div class="contact-card">
       <div class="contact-intro">
-        <h2>Nous laisser<br>un message</h2>
-        <p class="contact-intro-desc">Une question ou une correction à signaler : écris-nous, on répond directement par email.</p>
+        <h2>Proposer un<br>contenu</h2>
+        <p class="contact-intro-desc">Chaque proposition est vérifiée manuellement avant d'être ajoutée au site : aucune publication automatique.</p>
 
         <div class="contact-details">
           <div class="contact-detail-item">
@@ -114,31 +114,56 @@
         </div>
       </div>
 
-      <form id="contact-form" class="contact-form contact-form-card">
+      <form id="proposer-form" class="contact-form contact-form-card">
         <p class="contact-required-note">Tous les champs avec un <span class="required-mark">*</span> sont obligatoires.</p>
 
         <div class="contact-form-row">
           <div class="contact-form-field">
-            <label for="contact-name">Nom et prénom(s) <span class="required-mark">*</span></label>
-            <input type="text" id="contact-name" name="name" placeholder="Nom et prénom(s)" required>
+            <label for="proposer-name">Nom et prénom(s) <span class="required-mark">*</span></label>
+            <input type="text" id="proposer-name" name="name" placeholder="Nom et prénom(s)" required>
           </div>
           <div class="contact-form-field">
-            <label for="contact-email">E-mail <span class="required-mark">*</span></label>
-            <input type="email" id="contact-email" name="email" placeholder="E-mail" required>
+            <label for="proposer-email">E-mail <span class="required-mark">*</span></label>
+            <input type="email" id="proposer-email" name="email" placeholder="E-mail" required>
           </div>
         </div>
 
-        <div class="contact-form-field">
-          <label for="contact-subject">Votre sujet <span class="required-mark">*</span></label>
-          <input type="text" id="contact-subject" name="subject" placeholder="Votre sujet" required>
+        <div class="contact-form-row">
+          <div class="contact-form-field">
+            <label for="proposal-type">Type de contenu <span class="required-mark">*</span></label>
+            <select id="proposal-type" name="type" required>
+              <option value="" disabled selected>Choisis un type</option>
+              <option value="Événement">Événement (meetup, conférence, hackathon...)</option>
+              <option value="Communauté">Communauté (groupe, association, collectif...)</option>
+              <option value="Établissement">Établissement (école, université, centre de formation)</option>
+              <option value="Entreprise">Entreprise (employeur, offre de stage ou d'emploi)</option>
+              <option value="Autre ressource">Autre ressource</option>
+            </select>
+          </div>
+          <div class="contact-form-field">
+            <label for="proposal-ville">Ville</label>
+            <input type="text" id="proposal-ville" name="ville" placeholder="Ex : Lomé, Kara...">
+          </div>
         </div>
         <div class="contact-form-field">
-          <label for="contact-message">Votre message <span class="required-mark">*</span></label>
-          <textarea id="contact-message" name="message" rows="6" placeholder="Votre message" required></textarea>
+          <label for="proposal-nom">Nom <span class="required-mark">*</span></label>
+          <input type="text" id="proposal-nom" name="nom" placeholder="Ex : DevFest Lomé, GDG Lomé, ESGIS, Semoa..." required>
+        </div>
+        <div class="contact-form-field">
+          <label for="proposal-lien">Lien ou source de vérification <span class="required-mark">*</span></label>
+          <input type="url" id="proposal-lien" name="lien" placeholder="Site web, page Facebook, groupe WhatsApp public..." required>
+        </div>
+        <div class="contact-form-field">
+          <label for="proposal-date">Date (si applicable)</label>
+          <input type="text" id="proposal-date" name="date" placeholder="Ex : 15 novembre 2026, ou récurrent">
+        </div>
+        <div class="contact-form-field">
+          <label for="proposal-description">Description courte <span class="required-mark">*</span></label>
+          <textarea id="proposal-description" name="description" rows="4" placeholder="En quelques phrases : quoi, pour qui, pourquoi ça a sa place sur WIYAO" required></textarea>
         </div>
 
-        <button type="submit" class="btn-send" id="contact-submit-btn">Envoyer</button>
-        <p class="contact-form-note">WIYAO est un site statique, sans serveur pour recevoir des messages : « Envoyer » ouvre ton client email habituel avec le message pré-rempli.</p>
+        <button type="submit" class="btn-send" id="proposer-submit-btn">Envoyer la proposition</button>
+        <p class="contact-form-note">WIYAO est un site statique, sans serveur pour recevoir des messages : « Envoyer la proposition » ouvre ton client email habituel avec le message pré-rempli.</p>
       </form>
     </div>
   </section>

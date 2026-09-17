@@ -8,13 +8,13 @@ Zéro dépendance, zéro build. HTML/CSS/JS vanilla servis tels quels :
 - `js/data.js` — source de vérité du contenu : `ROLES`, `SKILLS`, `SCHOOLS`, `DOMAINS`.
 - `js/app.js` — rendu (roadmaps, écoles, recherche, quiz d'orientation, formulaire contact) + enregistrement du service worker.
 - `js/i18n.js` — toutes les chaînes FR/EN, indexées par `data-i18n-key`.
-- `js/nav.js` — menu mobile (chargé sur les 18 pages, contrairement à `app.js`).
+- `js/nav.js` — menu mobile (chargé sur les 19 pages, contrairement à `app.js`).
 - `js/assistant.js` — widget d'assistant.
 - `sw.js` — service worker stale-while-revalidate (offline + PWA installable).
 
 ## Règles à ne jamais oublier
 
-**Cache-busting.** Chaque `<script src="...">` / `<link href="...">` porte un `?v=N`. Dès qu'un fichier JS/CSS change, bump son `?v=N` sur **les 18 pages HTML** qui le référencent (pas seulement celle qu'on vient d'éditer). Vérifier après coup avec `grep -c` qu'aucune page n'est restée sur l'ancienne version.
+**Cache-busting.** Chaque `<script src="...">` / `<link href="...">` porte un `?v=N`. Dès qu'un fichier JS/CSS change, bump son `?v=N` sur **les 19 pages HTML** qui le référencent (pas seulement celle qu'on vient d'éditer). Vérifier après coup avec `grep -c` qu'aucune page n'est restée sur l'ancienne version.
 
 **Service worker.** Bump `CACHE_NAME` dans `sw.js` à chaque changement qui touche une page ou un asset précaché. Ajouter les nouveaux assets statiques à `PRECACHE_URLS`. Comportement connu et normal : le tout premier chargement après un déploiement peut encore servir une version en cache le temps de la revalidation en arrière-plan — ce n'est pas un bug si un deuxième chargement affiche le bon contenu.
 

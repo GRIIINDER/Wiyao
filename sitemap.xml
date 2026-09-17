@@ -85,6 +85,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://wiyao.vercel.app/proposer.html</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://wiyao.vercel.app/mentions-legales.html</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>

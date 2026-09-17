@@ -6,7 +6,7 @@
   // Traductions des liens de nav/footer, indexées par href : partagées par
   // toutes les pages sans avoir à taguer chaque lien individuellement.
   const BY_HREF = {
-    "contact.html#proposer": { fr: "Proposer un contenu", en: "Suggest content" },
+    "proposer.html": { fr: "Proposer un contenu", en: "Suggest content" },
     "test-orientation.html": { fr: "Test d'orientation", en: "Orientation test" },
     "index.html": { fr: "Roadmaps", en: "Roadmaps" },
     "ecoles.html": { fr: "Écoles & universités", en: "Schools & universities" },
@@ -132,8 +132,8 @@
       en: "32 Togolese schools and universities teaching computing and digital skills, with their programs, levels and admission requirements.",
     },
     "ecoles.hero.propose": {
-      fr: 'Une école togolaise qui manque ici ? <a href="contact.html#proposer">Propose-la</a> : on vérifie et on ajoute.',
-      en: 'A Togolese school missing here? <a href="contact.html#proposer">Suggest it</a> : we verify and add it.',
+      fr: 'Une école togolaise qui manque ici ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
+      en: 'A Togolese school missing here? <a href="proposer.html">Suggest it</a> : we verify and add it.',
     },
 
     "calendrier.hero.title": {
@@ -173,8 +173,8 @@
       en: "Where to look for an internship or a first tech job in Togo, and how to give yourself the best chance. This is a directory of lasting resources, not a listings feed : current openings change too fast to be reliable here, head to the platforms below for that.",
     },
     "stages.hero.propose": {
-      fr: 'Une entreprise togolaise qui recrute et qui manque ici ? <a href="contact.html#proposer">Propose-la</a> : on vérifie et on ajoute.',
-      en: 'A hiring Togolese company missing here? <a href="contact.html#proposer">Suggest it</a> : we verify and add it.',
+      fr: 'Une entreprise togolaise qui recrute et qui manque ici ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
+      en: 'A hiring Togolese company missing here? <a href="proposer.html">Suggest it</a> : we verify and add it.',
     },
 
     "quiz.hero.title": {
@@ -203,8 +203,8 @@
       en: 'Student looking for a school? Head to the "<a href="ecoles.html">Schools &amp; universities</a>" page. Developer looking for a network? Join the "Communities and events". Founder looking for support? Check out the "Hubs and incubators".',
     },
     "eco.hero.propose": {
-      fr: 'Tu connais une communauté ou un événement tech togolais qui manque ici ? <a href="contact.html#proposer">Propose-le</a> : on vérifie et on ajoute.',
-      en: 'Know a Togolese tech community or event that\'s missing here? <a href="contact.html#proposer">Suggest it</a> : we verify and add it.',
+      fr: 'Tu connais une communauté ou un événement tech togolais qui manque ici ? <a href="proposer.html">Propose-le</a> : on vérifie et on ajoute.',
+      en: 'Know a Togolese tech community or event that\'s missing here? <a href="proposer.html">Suggest it</a> : we verify and add it.',
     },
     "eco.jump.communautes": { fr: "Communautés &amp; événements", en: "Communities &amp; events" },
     "eco.jump.hubs": { fr: "Hubs &amp; incubateurs", en: "Hubs &amp; incubators" },
@@ -222,8 +222,8 @@
     },
     "actu.hero.guide": { fr: "Dernière mise à jour : 17 septembre 2026.", en: "Last updated: September 17, 2026." },
     "actu.hero.propose": {
-      fr: 'Un événement ou une actu tech togolaise qui manque ? <a href="contact.html#proposer">Propose-la</a> : on vérifie et on ajoute.',
-      en: 'A Togolese tech event or news item missing? <a href="contact.html#proposer">Suggest it</a> : we verify and add it.',
+      fr: 'Un événement ou une actu tech togolaise qui manque ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
+      en: 'A Togolese tech event or news item missing? <a href="proposer.html">Suggest it</a> : we verify and add it.',
     },
     "actu.meta.date": { fr: "Date", en: "Date" },
     "actu.meta.category": { fr: "Catégorie", en: "Category" },
@@ -287,8 +287,16 @@
       en: 'Contact <span class="hero-accent">us</span>',
     },
     "contact.hero.subtitle": {
-      fr: "Une question, une correction à proposer, une école, une entreprise ou un événement à ajouter ? Écris-nous.",
-      en: "A question, a correction to suggest, a school, a company or an event to add? Write to us.",
+      fr: 'Une question ou une correction à signaler ? Écris-nous. Pour proposer une école, une entreprise ou un événement, direction la page <a href="proposer.html">Proposer un contenu</a>.',
+      en: 'A question or a correction to report? Write to us. To suggest a school, a company or an event, head to the <a href="proposer.html">Suggest content</a> page.',
+    },
+    "proposer.hero.title": {
+      fr: 'Proposer <span class="hero-accent">un contenu</span>',
+      en: 'Suggest <span class="hero-accent">content</span>',
+    },
+    "proposer.hero.subtitle": {
+      fr: "Une école, une entreprise, une communauté ou un événement tech togolais qui manque sur WIYAO ? Propose-le : on vérifie et on ajoute.",
+      en: "A Togolese school, company, community or tech event missing from WIYAO? Suggest it: we verify and add it.",
     },
 
 
