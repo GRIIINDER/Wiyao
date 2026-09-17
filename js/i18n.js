@@ -421,12 +421,6 @@
       fr: "Contenu vérifié pour la dernière fois en septembre 2026 (60 métiers, 29 compétences).",
       en: "Content last verified in September 2026 (60 roles, 29 skills).",
     },
-    "about.s5.h2": { fr: "Contribuer", en: "Contribute" },
-    "about.s5.p": {
-      fr: 'WIYAO est un projet ouvert et perfectible. Pour signaler une erreur, proposer une roadmap ou compléter l\'écosystème togolais, direction le <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">dépôt GitHub</a>.',
-      en: 'WIYAO is an open, evolving project. To report an error, suggest a roadmap or add to the Togolese ecosystem, head to the <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">GitHub repository</a>.',
-    },
-
     "mentions.s1.h2": { fr: "Éditeur du site", en: "Site publisher" },
     "mentions.s1.p1": {
       fr: 'WIYAO est un projet communautaire indépendant, sans statut commercial, édité et maintenu à titre personnel par <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> (<a href="https://github.com/GRIIINDER" target="_blank" rel="noopener">GitHub</a>). Il n\'est affilié à aucune administration ni institution togolaise citée sur le site.',

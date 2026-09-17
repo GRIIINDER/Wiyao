@@ -1054,6 +1054,44 @@ main {
   font-weight: 700;
 }
 
+/* Page d'accueil : le parcours devient une chronologie verticale (ligne +
+   pastilles numérotées reliées), pour que le hero débouche sur une vue
+   d'ensemble du site entier plutôt que directement sur le catalogue de
+   roadmaps. Scopé à #parcours : les autres pages (ex. stages-emploi.html)
+   gardent les cartes .journey-step classiques. */
+#parcours .journey-steps {
+  position: relative;
+  gap: 0;
+}
+
+#parcours .journey-steps::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: var(--tk-border);
+}
+
+#parcours .journey-step {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0 0 28px 48px;
+}
+
+#parcours .journey-step:last-child {
+  padding-bottom: 0;
+}
+
+#parcours .journey-step-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
 #global-search-results {
   display: flex;
   flex-direction: column;
