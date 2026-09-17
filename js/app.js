@@ -599,27 +599,31 @@
     card.dataset.ville = school.ville.join(",");
     card.dataset.statut = school.statut;
 
+    const body = document.createElement("div");
+    body.className = "card-body";
+    card.appendChild(body);
+
     const badges = document.createElement("div");
     badges.className = "card-badges school-badges";
     badges.innerHTML =
       `<span class="badge status-${school.statut === "public" ? "public" : "prive"}">${STATUT_LABELS[school.statut] || school.statut}</span>` +
       school.ville.map((v) => `<span class="badge ville-badge">${v}</span>`).join("") +
       (school.agree === true ? `<span class="badge status-public">🏛️ Agréé État</span>` : "");
-    card.appendChild(badges);
+    body.appendChild(badges);
 
     const title = document.createElement("h3");
     title.textContent = school.name;
-    card.appendChild(title);
+    body.appendChild(title);
 
     const subtitle = document.createElement("p");
     subtitle.className = "school-subtitle";
     subtitle.textContent = school.description;
-    card.appendChild(subtitle);
+    body.appendChild(subtitle);
 
     const filieres = document.createElement("ul");
     filieres.className = "school-filieres";
     filieres.innerHTML = school.filieres.map((f) => `<li>${f}</li>`).join("");
-    card.appendChild(filieres);
+    body.appendChild(filieres);
 
     const meta = document.createElement("div");
     meta.className = "school-meta";
@@ -629,7 +633,7 @@
     if (school.frais) metaHtml += `<span><strong>Frais :</strong> ${school.frais}</span>`;
     if (school.agreeNote) metaHtml += `<span>ℹ️ ${school.agreeNote}</span>`;
     meta.innerHTML = metaHtml;
-    card.appendChild(meta);
+    body.appendChild(meta);
 
     if (school.site) {
       const link = document.createElement("a");
@@ -638,7 +642,7 @@
       link.target = "_blank";
       link.rel = "noopener";
       link.textContent = "Voir le site officiel →";
-      card.appendChild(link);
+      body.appendChild(link);
     }
 
     return card;
