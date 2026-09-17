@@ -242,6 +242,27 @@
       en: "National tour of the government's Nana Tech program to build digital skills among young women across six cities: Lomé, Aného, Sokodé, Kpalimé, Atakpamé and Kara. A participation certificate for everyone, with a certifying training track offered to the best participants. Run by the Ministry of Public Service Efficiency and Digital Transformation, with Djanta Tech Hub, German cooperation (GIZ), the European Union, Luxembourg, Digital Girl, GDG Lomé, RedTeam-TG and Women Techmakers Lomé.",
     },
     "actu.t14.cat": { fr: "Formation", en: "Training" },
+    "actu.t15.date": { fr: "5-8 octobre 2026", en: "October 5-8, 2026" },
+    "actu.t15.h3": { fr: "Nana Tech : formation à l'IA pour chercheuses, enseignantes-chercheuses et doctorantes", en: "Nana Tech: AI training for women researchers, professors and PhD students" },
+    "actu.t15.p": {
+      fr: "Programme national Nana Tech pour accompagner la montée en compétences des femmes chercheuses\n             togolaises en intelligence artificielle, du 5 au 8 octobre 2026 à l'UniPod (Université de Lomé).\n             Deux parcours : IT (notions de code requises, Python conseillé) et non-IT (ouvert sans prérequis\n             technique, tous domaines dont santé, droit, lettres, SHS, éducation). Au programme : fondements\n             et éthique de l'IA, recherche augmentée avec des outils d'IA générative, analyse de données,\n             projets pratiques. Formation ouverte aux femmes en situation de handicap. Candidatures jusqu'au\n             29 septembre 2026.",
+      en: "National Nana Tech program to support the upskilling of Togolese women researchers in artificial intelligence, October 5-8, 2026 at UniPod (University of Lomé). Two tracks: IT (coding basics required, Python recommended) and non-IT (open with no technical prerequisites, any field including health, law, humanities, social sciences, education). Program: foundations and ethics of AI, AI-augmented research with generative AI tools, data analysis, hands-on projects. Open to women with disabilities. Applications close September 29, 2026.",
+    },
+    "actu.t15.cat": { fr: "Formation", en: "Training" },
+    "actu.t16.date": { fr: "Inscriptions du 1ᵉʳ au 30 septembre 2026", en: "Registration September 1-30, 2026" },
+    "actu.t16.h3": { fr: "Fata recrute ses ambassadeurs togolais pour la cohorte 2027", en: "Fata recruits its Togolese ambassadors for the 2027 cohort" },
+    "actu.t16.p": {
+      fr: "L'école de programmation en ligne et gratuite Fata (fondée en Guinée, communauté panafricaine) ouvre\n             son programme d'ambassadeurs au Togo : candidatures ouvertes à tous les étudiants du 1ᵉʳ au\n             30 septembre 2026, pour faire grandir la communauté togolaise autour de son application mobile\n             d'apprentissage du développement web.",
+      en: "Fata, a free online programming school founded in Guinea with a pan-African community, is opening its ambassador program in Togo: applications open to all students from September 1 to 30, 2026, to grow the Togolese community around its mobile web-development learning app.",
+    },
+    "actu.t16.cat": { fr: "Écosystème", en: "Ecosystem" },
+    "actu.t17.date": { fr: "14-19 septembre 2026", en: "September 14-19, 2026" },
+    "actu.t17.h3": { fr: "2ᵉ édition de la Lomé Summer School on IA", en: "2nd edition of the Lomé Summer School on AI" },
+    "actu.t17.p": {
+      fr: "Formation intensive à l'intelligence artificielle organisée à Lomé avec plusieurs écoles supérieures\n             partenaires (UCAO, ESIBA Business School, ESIG Global Success, Lomé Business School, ESGIS), avec\n             le soutien de YAS et de l'Académie Numérique ACAN. Formateur notamment M. Kougbanhoun Atou Koffi,\n             chef du service Data Science au Togo AI Lab.",
+      en: "Intensive artificial intelligence training held in Lomé with several partner higher-education schools (UCAO, ESIBA Business School, ESIG Global Success, Lomé Business School, ESGIS), supported by YAS and the ACAN Digital Academy. Trainers include Mr. Kougbanhoun Atou Koffi, Head of Data Science at Togo AI Lab.",
+    },
+    "actu.t17.cat": { fr: "Formation", en: "Training" },
 
     "temoignages.hero.title": {
       fr: 'Convaincs tes <span class="hero-accent">parents</span>',
@@ -1237,6 +1258,7 @@
     "eco.c23.p": { fr: 'Communauté de cartographie libre créée en 2013, au service de l\'action humanitaire et de l\'aide au développement : rencontre mensuelle « Quartier à la carte » pour les cartographes togolais.', en: 'Free/open mapping community created in 2013, in service of humanitarian action and development aid: monthly "Quartier à la carte" (Neighborhood on the Map) meetup for Togolese mapmakers.' },
     "eco.c24.p": { fr: "Communauté togolaise des utilisateurs de LinkedIn : rencontres de réseautage autour des opportunités professionnelles, avec des éditions communes menées aux côtés des chapitres sœurs du Bénin et de la Côte d'Ivoire.", en: "Togolese community of LinkedIn users: networking meetups around professional opportunities, with joint editions held alongside sister chapters in Benin and Côte d'Ivoire." },
     "eco.c25.p": { fr: "Antenne togolaise du programme mondial Google pour les femmes en tech, adossée à GDG Lomé : ateliers sur l'équité de genre dans la tech et événements comme le WTM IWD (Journée internationale des droits des femmes).", en: "Togolese chapter of Google's global program for women in tech, hosted by GDG Lomé: workshops on gender equity in tech and events like WTM IWD (International Women's Day)." },
+    "eco.c26.p": { fr: "École de programmation en ligne et gratuite, fondée en Guinée, qui développe une communauté active au Togo via un programme d'ambassadeurs (cohorte 2027, inscriptions ouvertes) : apprentissage du développement web entre pairs, application mobile de révision.", en: "Free online programming school founded in Guinea, now building an active community in Togo through an ambassador program (2027 cohort, registration open): peer-based web development learning, with a mobile revision app." },
 
     "eco.sub2": { fr: "Événements annuels ou ponctuels", en: "Annual or one-off events" },
     "eco.e1.p": { fr: "Conférence annuelle de GDG Lomé, l'un des plus grands rassemblements tech du pays.", en: "Annual conference by GDG Lomé, one of the country's largest tech gatherings." },
