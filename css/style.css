@@ -400,9 +400,10 @@ header.site-header {
   border-radius: 999px;
   padding: 10px 14px;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto auto auto;
+  justify-content: start;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   box-shadow: 0 1px 2px rgba(21, 35, 45, 0.05);
 }
 
@@ -449,14 +450,24 @@ header.site-header .brand {
 nav.site-nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   justify-self: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+/* Bloc des pages du menu (Parcours/Opportunités/Communauté/Contact),
+   visuellement séparé de la barre de recherche : sa propre pilule,
+   au lieu de partager le même conteneur que .nav-search-link. */
+.nav-menu-group {
+  display: flex;
+  align-items: center;
   gap: 2px;
   background: var(--tk-surface-soft);
   border: 1px solid var(--tk-border);
   border-radius: 999px;
   padding: 4px;
-  font-size: 0.95rem;
 }
 
 nav.site-nav a {
@@ -2566,7 +2577,7 @@ footer.site-footer {
     border: none;
     padding: 0;
     margin-top: 12px;
-    gap: 4px;
+    gap: 12px;
   }
   nav.site-nav.is-open {
     display: flex;
@@ -2582,6 +2593,15 @@ footer.site-footer {
     width: 100%;
     max-width: none;
     justify-content: center;
+  }
+  .nav-menu-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    padding: 0;
   }
   .nav-more {
     width: 100%;
