@@ -220,7 +220,7 @@
       fr: "Événements, lancements, startups, financements : les faits marquants récents de l'écosystème, sourcés\n       et datés. Pas un flux automatique : chaque entrée est vérifiée à la main, avec sa source.",
       en: "Events, launches, startups, funding : recent highlights from the ecosystem, sourced and dated. Not an automated feed: every entry is hand-verified, with its source.",
     },
-    "actu.hero.guide": { fr: "Dernière mise à jour : 5 septembre 2026.", en: "Last updated: September 5, 2026." },
+    "actu.hero.guide": { fr: "Dernière mise à jour : 17 septembre 2026.", en: "Last updated: September 17, 2026." },
     "actu.hero.propose": {
       fr: 'Un événement ou une actu tech togolaise qui manque ? <a href="contact.html#proposer">Propose-la</a> : on vérifie et on ajoute.',
       en: 'A Togolese tech event or news item missing? <a href="contact.html#proposer">Suggest it</a> : we verify and add it.',
@@ -228,6 +228,20 @@
     "actu.meta.date": { fr: "Date", en: "Date" },
     "actu.meta.category": { fr: "Catégorie", en: "Category" },
     "actu.readSource": { fr: "Lire la source", en: "Read source" },
+    "actu.t13.date": { fr: "25-26 septembre 2026", en: "September 25-26, 2026" },
+    "actu.t13.h3": { fr: "ESIG Tech Arena 2026 : hackathons, CTF et Code Racing", en: "ESIG Tech Arena 2026: hackathons, CTF and Code Racing" },
+    "actu.t13.p": {
+      fr: "Compétition tech de deux jours au Campus ESIG, organisée par le club ESIG TechSphere : hackathon\n             développement, hackathon réseau &amp; sécurité, Capture The Flag et Tech Quiz / Code Racing.\n             100 000 FCFA pour le premier groupe de chaque hackathon et du CTF, prix « Meilleure jeune fille »\n             de 25 000 FCFA dans chaque catégorie principale. Inscriptions compétiteurs closes ; billets\n             participants encore ouverts pour suivre panels et épreuves.",
+      en: 'Two-day tech competition at Campus ESIG, organized by the ESIG TechSphere club: development hackathon, network & security hackathon, Capture The Flag and Tech Quiz / Code Racing. 100,000 FCFA for the first-place group in each hackathon and the CTF, a "Best young woman" prize of 25,000 FCFA in each main category. Competitor registration is closed; participant tickets remain open to attend the panels and events.',
+    },
+    "actu.t13.cat": { fr: "Événement", en: "Event" },
+    "actu.t14.date": { fr: "Inscriptions jusqu'au 18 septembre 2026", en: "Registration until September 18, 2026" },
+    "actu.t14.h3": { fr: "Nana Tech Tour : une tournée nationale pour les jeunes femmes du numérique", en: "Nana Tech Tour: a national tour for young women in tech" },
+    "actu.t14.p": {
+      fr: "Tournée nationale du programme gouvernemental Nana Tech pour développer les compétences numériques\n             des jeunes femmes dans six villes : Lomé, Aného, Sokodé, Kpalimé, Atakpamé et Kara. Certificat de\n             participation pour toutes, parcours de formation certifiante offert aux meilleures. Portée par le\n             ministère de l'Efficacité du Service Public et de la Transformation Numérique, avec Djanta Tech\n             Hub, la coopération allemande (GIZ), l'Union européenne, le Luxembourg, Digital Girl, GDG Lomé,\n             RedTeam-TG et Women Techmakers Lomé.",
+      en: "National tour of the government's Nana Tech program to build digital skills among young women across six cities: Lomé, Aného, Sokodé, Kpalimé, Atakpamé and Kara. A participation certificate for everyone, with a certifying training track offered to the best participants. Run by the Ministry of Public Service Efficiency and Digital Transformation, with Djanta Tech Hub, German cooperation (GIZ), the European Union, Luxembourg, Digital Girl, GDG Lomé, RedTeam-TG and Women Techmakers Lomé.",
+    },
+    "actu.t14.cat": { fr: "Formation", en: "Training" },
 
     "temoignages.hero.title": {
       fr: 'Convaincs tes <span class="hero-accent">parents</span>',
