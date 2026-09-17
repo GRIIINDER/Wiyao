@@ -2396,6 +2396,78 @@ main {
   line-height: 1.5;
 }
 
+/* "Ils l'ont fait" : carte façon témoignage — texte, puis identité
+   (avatar initiales + nom + rôle) ancrée en pied de carte, source en bas. */
+#portraits .eco-list {
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+}
+
+#portraits .eco-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.portrait-quote {
+  flex: 1;
+  margin: 0;
+}
+
+.portrait-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.portrait-avatar {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.portrait-person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.portrait-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.portrait-role {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.portrait-source {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.portrait-source a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.portrait-source a:hover {
+  text-decoration: underline;
+}
+
 /* ── Échelle typographique calée sur le catalogue Codecademy ──
    titre de section 22 px · titre de carte 18 px · description 16 px.
    Placé après les règles de composants pour l'emporter sur leurs
