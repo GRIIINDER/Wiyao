@@ -646,25 +646,25 @@ const ROLES = {
       {
         title: "1. Fondamentaux de l'analyse de données",
         items: [
-          { label: "Les 4 types d'analyse : descriptive (que s'est-il passé), diagnostique (pourquoi), prédictive (que va-t-il se passer), prescriptive (que faire)", level: "core" },
-          { label: "Cycle de vie de la donnée : collecte, nettoyage, exploration, analyse, visualisation, communication", level: "core" }
+          { label: "Les 4 types d'analyse : descriptive (que s'est-il passé), diagnostique (pourquoi), prédictive (que va-t-il se passer), prescriptive (que faire)", level: "core", resource: { label: "EPSI - Les méthodes d'analyse de données", url: "https://www.epsi.fr/actualites/donnees-methodes-analyse" } },
+          { label: "Cycle de vie de la donnée : collecte, nettoyage, exploration, analyse, visualisation, communication", level: "core", resource: { label: "IBM - Data lifecycle management", url: "https://www.ibm.com/think/topics/data-lifecycle-management" } }
         ]
       },
       {
         title: "2. Tableurs",
         items: [
           { label: "Formules avancées (RECHERCHEV/RECHERCHEX, INDEX/EQUIV, SI imbriqués)", level: "core", resource: { label: "Support Google Sheets", url: "https://support.google.com/docs/topic/9054603" } },
-          { label: "Tableaux croisés dynamiques (TCD) et mise en forme conditionnelle", level: "core" },
-          { label: "Validation de données et nettoyage de base (doublons, espaces, formats)", level: "core" }
+          { label: "Tableaux croisés dynamiques (TCD) et mise en forme conditionnelle", level: "core", resource: { label: "Aide Google Docs - Tableaux croisés dynamiques", url: "https://support.google.com/docs/answer/1272900?hl=fr&co=GENIE.Platform%3DDesktop" } },
+          { label: "Validation de données et nettoyage de base (doublons, espaces, formats)", level: "core", resource: { label: "Aide Google Docs - Liste déroulante et validation", url: "https://support.google.com/docs/answer/186103?hl=fr&co=GENIE.Platform%3DDesktop" } }
         ]
       },
       {
         title: "3. SQL",
         items: [
           { label: "Requêtes de base : SELECT, WHERE, ORDER BY, agrégations (COUNT, SUM, AVG)", level: "core", resource: { label: "Voir roadmap compétence SQL", url: "roadmap.html?id=sql" } },
-          { label: "Jointures (JOIN) entre plusieurs tables", level: "core" },
-          { label: "GROUP BY / HAVING, sous-requêtes", level: "core" },
-          { label: "Fonctions de fenêtrage (window functions)", level: "option" }
+          { label: "Jointures (JOIN) entre plusieurs tables", level: "core", resource: { label: "W3Schools - SQL JOIN", url: "https://www.w3schools.com/sql/sql_join.asp" } },
+          { label: "GROUP BY / HAVING, sous-requêtes", level: "core", resource: { label: "W3Schools - SQL GROUP BY", url: "https://www.w3schools.com/sql/sql_groupby.asp" } },
+          { label: "Fonctions de fenêtrage (window functions)", level: "option", resource: { label: "Documentation PostgreSQL - Window Functions", url: "https://www.postgresql.org/docs/current/functions-window.html" } }
         ]
       },
       {
@@ -672,55 +672,55 @@ const ROLES = {
         items: [
           { label: "Python : bases du langage", level: "core", resource: { label: "Voir roadmap compétence Python", url: "roadmap.html?id=python" } },
           { label: "Pandas : manipulation de tableaux de données (DataFrames)", level: "core", resource: { label: "Documentation Pandas", url: "https://pandas.pydata.org/docs/" } },
-          { label: "NumPy : calcul numérique de base", level: "option" },
-          { label: "R comme alternative à Python (fréquent en recherche/statistiques)", level: "option" }
+          { label: "NumPy : calcul numérique de base", level: "option", resource: { label: "Documentation NumPy - Quickstart", url: "https://numpy.org/doc/stable/user/quickstart.html" } },
+          { label: "R comme alternative à Python (fréquent en recherche/statistiques)", level: "option", resource: { label: "CRAN - An Introduction to R", url: "https://cran.r-project.org/doc/manuals/r-release/R-intro.html" } }
         ]
       },
       {
         title: "5. Nettoyage et préparation des données",
         items: [
-          { label: "Traitement des valeurs manquantes et des doublons", level: "core" },
-          { label: "Détection des valeurs aberrantes (outliers)", level: "core" },
-          { label: "Transformation et restructuration des données (pivot, jointure de tables)", level: "core" }
+          { label: "Traitement des valeurs manquantes et des doublons", level: "core", resource: { label: "Documentation Pandas - Valeurs manquantes", url: "https://pandas.pydata.org/docs/user_guide/missing_data.html" } },
+          { label: "Détection des valeurs aberrantes (outliers)", level: "core", resource: { label: "Mr. Mint - Les valeurs aberrantes (outliers)", url: "https://mrmint.fr/outliers-machine-learning" } },
+          { label: "Transformation et restructuration des données (pivot, jointure de tables)", level: "core", resource: { label: "Documentation Pandas - Reshaping & Pivot Tables", url: "https://pandas.pydata.org/docs/user_guide/reshaping.html" } }
         ]
       },
       {
         title: "6. Visualisation et Business Intelligence",
         items: [
           { label: "Power BI ou Tableau", level: "core", resource: { label: "Documentation Power BI", url: "https://learn.microsoft.com/power-bi/" } },
-          { label: "Choisir le bon graphique (barres, lignes, nuages de points, histogrammes) selon le message à transmettre", level: "core" },
-          { label: "Looker Studio (gratuit)", level: "option" },
-          { label: "Matplotlib / Seaborn (visualisation en Python)", level: "option" }
+          { label: "Choisir le bon graphique (barres, lignes, nuages de points, histogrammes) selon le message à transmettre", level: "core", resource: { label: "Tableau - Choisir le bon type de graphique", url: "https://help.tableau.com/current/pro/desktop/fr-fr/what_chart_example.htm" } },
+          { label: "Looker Studio (gratuit)", level: "option", resource: { label: "Google Cloud - Guide de démarrage Looker Studio", url: "https://docs.cloud.google.com/data-studio/quick-start-guide" } },
+          { label: "Matplotlib / Seaborn (visualisation en Python)", level: "option", resource: { label: "Documentation Matplotlib - Quickstart", url: "https://matplotlib.org/stable/users/explain/quick_start.html" } }
         ]
       },
       {
         title: "7. Statistiques appliquées",
         items: [
-          { label: "Statistiques descriptives : moyenne, médiane, écart-type, distribution", level: "core" },
-          { label: "Corrélation entre variables", level: "core" },
-          { label: "Tests d'hypothèses et intervalles de confiance", level: "option" },
-          { label: "Régression linéaire simple", level: "option" }
+          { label: "Statistiques descriptives : moyenne, médiane, écart-type, distribution", level: "core", resource: { label: "Khan Academy - Moyenne, médiane et mode", url: "https://fr.khanacademy.org/math/be-4eme-secondaire2/x213a6fc6f6c9e122:statistiques/x213a6fc6f6c9e122:parametres-de-position/a/mean-median-and-mode-review" } },
+          { label: "Corrélation entre variables", level: "core", resource: { label: "OpenClassrooms - Analyser la corrélation entre deux variables", url: "https://openclassrooms.com/fr/courses/7410486-nettoyez-et-analysez-votre-jeu-de-donnees/7428368-analysez-la-correlation-entre-deux-variables-quantitatives" } },
+          { label: "Tests d'hypothèses et intervalles de confiance", level: "option", resource: { label: "Khan Academy - Intervalles de confiance", url: "https://fr.khanacademy.org/math/statistics-probability/confidence-intervals-one-sample" } },
+          { label: "Régression linéaire simple", level: "option", resource: { label: "Khan Academy - La régression linéaire", url: "https://fr.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/introduction-to-trend-lines/a/linear-regression-review" } }
         ]
       },
       {
         title: "8. Communication des résultats",
         items: [
-          { label: "Storytelling avec les données : construire un récit, pas juste un graphique", level: "core" },
-          { label: "Concevoir un tableau de bord (dashboard) lisible pour un public non technique", level: "core" }
+          { label: "Storytelling avec les données : construire un récit, pas juste un graphique", level: "core", resource: { label: "Ostraca - Guide du data storytelling", url: "https://blog.ostraca.fr/blog/guide-data-storytelling-exemple-avec-donnees/" } },
+          { label: "Concevoir un tableau de bord (dashboard) lisible pour un public non technique", level: "core", resource: { label: "Tableau - 10 bonnes pratiques pour les tableaux de bord", url: "https://www.tableau.com/fr-fr/learn/whitepapers/10-best-practices-building-effective-dashboards" } }
         ]
       },
       {
         title: "9. Pour aller plus loin",
         items: [
           { label: "Introduction au Machine Learning (classification, régression)", level: "option", resource: { label: "Voir roadmap métier Data & IA", url: "roadmap.html?id=data-ia" } },
-          { label: "Notions de Big Data (volumes, traitement distribué)", level: "option" }
+          { label: "Notions de Big Data (volumes, traitement distribué)", level: "option", resource: { label: "SAP - Qu'est-ce que le Big Data ?", url: "https://www.sap.com/france/resources/what-is-big-data" } }
         ]
       },
       {
         title: "10. Écosystème togolais",
         items: [
           { label: "PyCon Togo : conférence nationale Python", level: "core", resource: { label: "pycontg.pytogo.org", url: "https://pycontg.pytogo.org/" } },
-          { label: "Djanta Lab : recherche et innovation", level: "option" }
+          { label: "Djanta Lab : recherche et innovation", level: "option", resource: { label: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
     ]
