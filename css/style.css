@@ -2430,15 +2430,16 @@ footer.site-footer {
   padding: 24px;
 }
 
-/* Colonnes dimensionnées à leur propre contenu (pas 1fr égaux), groupées
-   à gauche avec un écart fixe de 20px — pas de justify-content:
-   space-between : sur un écran large, ça étirait les colonnes sur toute
-   la largeur de la carte (jusqu'à 1240px) et créait de gros espaces
-   vides entre elles. */
+/* Colonnes dimensionnées à leur propre contenu (pas 1fr égaux), avec
+   justify-content: space-between pour qu'elles se répartissent sur
+   toute la largeur de la carte. Maintenant que .footer-card est en
+   width: fit-content (ajustée à sa ligne la plus large, .footer-bottom),
+   ça ne crée plus les grands vides d'avant quand la carte faisait
+   1240px de large quel que soit son contenu. */
 .footer-card-top {
   display: grid;
   grid-template-columns: repeat(4, max-content);
-  justify-content: start;
+  justify-content: space-between;
   gap: 20px;
   align-items: start;
 }
