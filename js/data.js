@@ -512,54 +512,54 @@ const ROLES = {
         title: "1. Le rôle",
         items: [
           { label: "Différence Product Manager / Product Owner", level: "core", resource: { label: "Atlassian - Product management", url: "https://www.atlassian.com/agile/product-management" } },
-          { label: "Cycle de vie d'un produit", level: "core" }
+          { label: "Cycle de vie d'un produit", level: "core", resource: { label: "Aha! - Le cycle de vie produit", url: "https://www.aha.io/roadmapping/guide/what-is-the-product-lifecycle" } }
         ]
       },
       {
         title: "2. Découverte utilisateur",
         items: [
-          { label: "Entretiens utilisateurs et personas", level: "core" },
-          { label: "Framework Jobs to be Done (JTBD)", level: "option" },
-          { label: "Analyse de la concurrence", level: "core" }
+          { label: "Entretiens utilisateurs et personas", level: "core", resource: { label: "SVPG - Les personas en product management", url: "https://www.svpg.com/personas-for-product-management/" } },
+          { label: "Framework Jobs to be Done (JTBD)", level: "option", resource: { label: "Aha! - Le framework Jobs to be Done", url: "https://www.aha.io/roadmapping/guide/release-management/what-is-the-jobs-to-be-done-framework" } },
+          { label: "Analyse de la concurrence", level: "core", resource: { label: "Aha! - Analyser la concurrence", url: "https://www.aha.io/roadmapping/guide/product-strategy/how-should-product-managers-research-competitors" } }
         ]
       },
       {
         title: "3. Stratégie produit",
         items: [
-          { label: "Vision et roadmap produit", level: "core" },
-          { label: "Objectifs et résultats clés (OKR)", level: "core" },
-          { label: "Priorisation (RICE, MoSCoW, Kano)", level: "core" },
-          { label: "Stratégie de mise sur le marché (go-to-market)", level: "option" }
+          { label: "Vision et roadmap produit", level: "core", resource: { label: "Atlassian - Le product roadmap", url: "https://www.atlassian.com/agile/product-management/product-roadmaps" } },
+          { label: "Objectifs et résultats clés (OKR)", level: "core", resource: { label: "Atlassian - Le guide des OKR", url: "https://www.atlassian.com/agile/agile-at-scale/okr" } },
+          { label: "Priorisation (RICE, MoSCoW, Kano)", level: "core", resource: { label: "Atlassian - Frameworks de priorisation", url: "https://www.atlassian.com/agile/product-management/prioritization-framework" } },
+          { label: "Stratégie de mise sur le marché (go-to-market)", level: "option", resource: { label: "ProductPlan - Stratégie go-to-market", url: "https://www.productplan.com/glossary/go-to-market-strategy" } }
         ]
       },
       {
         title: "4. Exécution",
         items: [
-          { label: "Rédaction de specs et user stories", level: "core" },
+          { label: "Rédaction de specs et user stories", level: "core", resource: { label: "Atlassian - Les user stories", url: "https://www.atlassian.com/agile/project-management/user-stories" } },
           { label: "Méthodologies agiles : Scrum, Kanban", level: "core", resource: { label: "Scrum.org - Ressources", url: "https://www.scrum.org/resources" } },
-          { label: "Gestion du backlog", level: "core" }
+          { label: "Gestion du backlog", level: "core", resource: { label: "Atlassian - Gérer le backlog produit", url: "https://www.atlassian.com/agile/scrum/backlogs" } }
         ]
       },
       {
         title: "5. Data et métriques",
         items: [
-          { label: "KPIs produit, tableaux de bord, North Star Metric", level: "core" },
-          { label: "Outils d'analytics produit (Amplitude, Mixpanel, Google Analytics)", level: "option" },
-          { label: "A/B testing", level: "option" }
+          { label: "KPIs produit, tableaux de bord, North Star Metric", level: "core", resource: { label: "Amplitude - Trouver son North Star Metric", url: "https://amplitude.com/blog/product-north-star-metric" } },
+          { label: "Outils d'analytics produit (Amplitude, Mixpanel, Google Analytics)", level: "option", resource: { label: "Centre d'aide Google Analytics", url: "https://support.google.com/analytics/" } },
+          { label: "A/B testing", level: "option", resource: { label: "Pendo - L'A/B testing en product management", url: "https://www.pendo.io/pendo-blog/product-management-101-a-b-testing/" } }
         ]
       },
       {
         title: "6. Outils",
         items: [
-          { label: "Jira, Notion, Linear", level: "core" },
-          { label: "Lecture de maquettes Figma", level: "option" }
+          { label: "Jira, Notion, Linear", level: "core", resource: { label: "Atlassian - Jira", url: "https://www.atlassian.com/software/jira" } },
+          { label: "Lecture de maquettes Figma", level: "option", resource: { label: "Figma Learn - Centre d'aide", url: "https://help.figma.com/hc/en-us" } }
         ]
       },
       {
         title: "7. Écosystème togolais",
         items: [
-          { label: "Djanta Start (Djanta Tech Hub) : accompagnement de startups", level: "core" },
-          { label: "CUBE : incubateur et formation entrepreneuriat numérique", level: "option" }
+          { label: "Djanta Start (Djanta Tech Hub) : accompagnement de startups", level: "core", resource: { label: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } },
+          { label: "CUBE : incubateur et formation entrepreneuriat numérique", level: "option", resource: { label: "togofirst.com - L'incubateur CUBE", url: "https://www.togofirst.com/fr/tic/0801-15491-togo-l-incubateur-cube-et-l-oif-pour-former-300-jeunes-au-digital-et-a-lentrepreneuriat" } }
         ]
       }
     ]
