@@ -731,6 +731,34 @@ nav.site-nav a.active {
   color: var(--tk-canvas);
 }
 
+/* Sélecteur de mode du formulaire de contact ("Nous écrire" /
+   "Proposer un contenu") : gros boutons pilule à bordure visible,
+   inspirés d'un formulaire de type "I AM A..." (contours nets, grande
+   zone cliquable) plutôt que les petites puces de filtre du reste
+   du site. */
+#contact-mode-filters {
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+#contact-mode-filters .domain-chip {
+  flex: 1;
+  border: 1.5px solid var(--tk-border);
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+#contact-mode-filters .domain-chip:hover {
+  border-color: var(--tk-primary);
+}
+
+#contact-mode-filters .domain-chip.active {
+  border-color: var(--tk-primary);
+}
+
 .eco-jump-nav {
   display: flex;
   flex-wrap: wrap;
@@ -2839,13 +2867,13 @@ footer.site-footer {
 .contact-form-field select {
   width: 100%;
   box-sizing: border-box;
-  border: none;
-  padding: 13px 20px;
+  border: 1.5px solid var(--tk-border);
+  padding: 15px 22px;
   font-size: 0.95rem;
   font-family: inherit;
   color: var(--tk-text);
   background: var(--tk-surface-soft);
-  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .contact-form-field input,
@@ -2869,20 +2897,23 @@ footer.site-footer {
 .contact-form-field select:focus {
   outline: none;
   background: var(--tk-surface);
+  border-color: var(--tk-primary);
   box-shadow: 0 0 0 3px rgba(102, 196, 255, 0.25);
 }
 
 .btn-send {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
   background: var(--tk-primary);
   color: var(--tk-canvas);
   border: none;
   border-radius: 999px;
-  padding: 13px 30px;
-  font-size: 0.92rem;
-  font-weight: 700;
+  padding: 18px 30px;
+  font-size: 1rem;
+  font-weight: 800;
   cursor: pointer;
   transition: filter 0.15s ease, transform 0.15s ease;
 }
