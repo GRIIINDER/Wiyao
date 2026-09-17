@@ -3004,7 +3004,7 @@ footer.site-footer {
 
 .contact-form-field textarea {
   border-radius: var(--radius);
-  resize: vertical;
+  resize: none;
   min-height: 140px;
 }
 
