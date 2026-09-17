@@ -2417,7 +2417,7 @@ footer.site-footer {
 
 .footer-lower {
   background: var(--tk-canvas);
-  padding: 40px 24px;
+  padding: 24px 24px;
 }
 
 .footer-card {
@@ -2426,7 +2426,7 @@ footer.site-footer {
   background: var(--tk-surface);
   border: 1px solid var(--tk-border);
   border-radius: 20px;
-  padding: 40px 32px;
+  padding: 24px;
 }
 
 /* Colonnes dimensionnées à leur propre contenu (pas 1fr égaux), avec
@@ -2439,7 +2439,7 @@ footer.site-footer {
   display: grid;
   grid-template-columns: repeat(4, max-content);
   justify-content: space-between;
-  gap: 32px;
+  gap: 20px;
   align-items: start;
 }
 
@@ -2463,7 +2463,7 @@ footer.site-footer {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  gap: 10px;
+  gap: 6px;
 }
 
 .footer-links-col h5 {
@@ -2472,7 +2472,7 @@ footer.site-footer {
   font-weight: 800;
   text-transform: none;
   letter-spacing: normal;
-  margin: 0 0 10px;
+  margin: 0 0 6px;
 }
 
 .footer-links-col a {
@@ -2498,14 +2498,14 @@ footer.site-footer {
 }
 
 .footer-bottom {
-  margin: 32px 0 0;
-  padding-top: 24px;
+  margin: 20px 0 0;
+  padding-top: 16px;
   border-top: 1px solid var(--tk-border);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
   font-size: 1rem;
   color: var(--tk-text-muted);
 }
@@ -2636,7 +2636,7 @@ footer.site-footer {
     grid-template-columns: 1fr;
     justify-content: stretch;
     justify-items: center;
-    gap: 30px;
+    gap: 18px;
     text-align: center;
   }
   .footer-bottom {
