@@ -787,8 +787,13 @@ nav.site-nav a.active {
   color: var(--tk-text);
 }
 
+/* Largeur calée sur celle (fit-content) du menu principal dans le
+   header, pas sur --content-max (1240px) utilisé ailleurs : le header
+   ne remplit plus toute cette largeur depuis son passage en
+   width: fit-content, donc le contenu des pages doit suivre la même
+   largeur réelle pour rester aligné dessous. */
 main {
-  max-width: var(--content-max);
+  max-width: 875px;
   margin: 0 auto;
   padding: 40px 24px 40px;
 }
