@@ -416,7 +416,7 @@ header.site-header {
 }
 
 .brand-logo {
-  height: 34px;
+  height: 12px;
   width: auto;
   display: block;
 }
@@ -2908,4 +2908,43 @@ footer.site-footer {
   .contact-form-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* ── Aplat volontaire de l'échelle typographique du corps du site
+   (tout ce qui est dans <main>, pas le header/nav/footer déjà à 12px) :
+   16px pour tous les titres (H1 des heroes, H2 de section, H3/H4 de
+   carte), 14px pour les sous-titres (texte d'intro sous un titre), 12px
+   pour tout le reste du texte de paragraphe/liste. Remplace l'ancienne
+   hiérarchie à plusieurs tailles (44px/22-34px/16-20px) par ces 3 seuls
+   niveaux ; !important nécessaire pour primer sur les dizaines de
+   sélecteurs contextuels ci-dessus sans les éditer un par un. */
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+main summary {
+  font-size: 16px !important;
+}
+
+main .hero p,
+main .hero-guide,
+main .category-desc,
+main .domain-group-desc,
+main .contact-intro-desc,
+main .school-subtitle,
+main .subtitle {
+  font-size: 14px !important;
+}
+
+main p,
+main li {
+  font-size: 12px !important;
+}
+
+/* Le "404" reste un gros chiffre décoratif, pas un paragraphe de texte
+   courant : exclu de l'aplat ci-dessus. */
+main .hero p.error-code {
+  font-size: 5rem !important;
 }
