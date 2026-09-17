@@ -2422,6 +2422,7 @@ footer.site-footer {
 
 .footer-card {
   max-width: var(--content-max);
+  width: fit-content;
   margin: 0 auto;
   background: var(--tk-surface);
   border: 1px solid var(--tk-border);
@@ -2630,6 +2631,9 @@ footer.site-footer {
     border-radius: 12px;
     background: var(--tk-surface-soft);
     font-size: 0.85rem;
+  }
+  .footer-card {
+    width: 100%;
   }
   .footer-card-top {
     grid-template-columns: 1fr;
