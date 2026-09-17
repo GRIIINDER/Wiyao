@@ -555,13 +555,6 @@
     container.appendChild(track);
     updateGlobal();
 
-    const helpLinks = document.createElement("p");
-    helpLinks.className = "category-desc";
-    helpLinks.innerHTML = isEn
-      ? 'School fees shouldn\'t be what stops you: see <a href="bourses-financement.html">scholarships &amp; funding</a>. Question about this path? Check the <a href="faq.html">FAQ</a>.'
-      : 'Les frais de scolarité ne doivent pas être ce qui t\'arrête : voir les <a href="bourses-financement.html">bourses &amp; financement</a>. Une question sur ce parcours ? Regarde la <a href="faq.html">FAQ</a>.';
-    container.appendChild(helpLinks);
-
     const communitySection = buildCommunitySection(rm);
     if (communitySection) container.appendChild(communitySection);
 
