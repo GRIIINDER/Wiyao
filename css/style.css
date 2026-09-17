@@ -394,6 +394,7 @@ header.site-header {
 
 .site-header-top {
   max-width: var(--content-max);
+  width: fit-content;
   margin: 0 auto;
   background: var(--tk-surface);
   border: 1px solid var(--tk-border);
@@ -453,21 +454,12 @@ nav.site-nav {
   align-items: center;
   justify-content: center;
   justify-self: center;
-  gap: 12px;
-  font-size: 0.95rem;
-}
-
-/* Bloc des pages du menu (Parcours/Opportunités/Communauté/Contact),
-   visuellement séparé de la barre de recherche : sa propre pilule,
-   au lieu de partager le même conteneur que .nav-search-link. */
-.nav-menu-group {
-  display: flex;
-  align-items: center;
   gap: 2px;
   background: var(--tk-surface-soft);
   border: 1px solid var(--tk-border);
   border-radius: 999px;
   padding: 4px;
+  font-size: 0.95rem;
 }
 
 nav.site-nav a {
@@ -2555,6 +2547,7 @@ footer.site-footer {
   .site-header-top {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     border-radius: 28px;
   }
   .brand {
@@ -2577,7 +2570,7 @@ footer.site-footer {
     border: none;
     padding: 0;
     margin-top: 12px;
-    gap: 12px;
+    gap: 4px;
   }
   nav.site-nav.is-open {
     display: flex;
@@ -2593,15 +2586,6 @@ footer.site-footer {
     width: 100%;
     max-width: none;
     justify-content: center;
-  }
-  .nav-menu-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 4px;
-    background: transparent;
-    border: none;
-    padding: 0;
   }
   .nav-more {
     width: 100%;
