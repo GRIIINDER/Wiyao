@@ -462,7 +462,7 @@ nav.site-nav {
 nav.site-nav a {
   color: var(--tk-text-muted);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.75rem;
   text-transform: none;
   letter-spacing: normal;
   padding: 8px 16px;
@@ -508,7 +508,7 @@ nav.site-nav a.active {
   gap: 3px;
   color: var(--tk-text-muted);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-family: inherit;
   padding: 8px 16px;
   border-radius: 999px;
@@ -567,7 +567,7 @@ nav.site-nav a.active {
 .nav-more-menu a {
   color: var(--tk-text-muted);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.75rem;
   padding: 10px 16px;
   border-radius: 10px;
   white-space: nowrap;
