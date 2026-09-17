@@ -2632,6 +2632,7 @@ footer.site-footer {
 
 .footer-links-col a:hover {
   color: var(--tk-primary);
+  text-decoration: underline;
 }
 
 .footer-note {
@@ -2679,7 +2680,11 @@ footer.site-footer {
   pointer-events: none;
 }
 
-.footer-legal-links a:hover,
+.footer-legal-links a:hover {
+  color: var(--tk-primary);
+  text-decoration: underline;
+}
+
 .footer-legal-links a.active {
   color: var(--tk-primary);
 }
