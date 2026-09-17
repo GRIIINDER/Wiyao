@@ -2742,13 +2742,6 @@ footer.site-footer {
   text-decoration: underline;
 }
 
-.footer-note {
-  margin: 32px 0 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--tk-text-subtle);
-}
-
 .footer-bottom {
   margin: 20px 0 0;
   padding-top: 16px;

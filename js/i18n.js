@@ -67,10 +67,6 @@
       en: 'New here? See <a href="about.html">what WIYAO is</a> in 30 seconds.',
     },
     "roadmap.reset": { fr: "Réinitialiser la progression", en: "Reset progress" },
-    "roadmap.footernote": {
-      fr: "Coche les étapes au fur et à mesure. Ta progression est enregistrée localement dans ton navigateur.",
-      en: "Check off steps as you go. Your progress is saved locally in your browser.",
-    },
     "quiz.primer.title": { fr: "L'informatique, en 7 grands domaines", en: "Tech, in 7 major domains" },
     "quiz.primer.desc": {
       fr: "Un aperçu rapide avant de répondre : pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver. Chaque domaine est une catégorie mondiale du secteur tech ; la mention 🇹🇬 précise sa présence concrète sur le marché togolais.",
