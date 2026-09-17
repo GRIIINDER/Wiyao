@@ -2561,7 +2561,7 @@ main {
    JS (target="popupwindow", pas d'onsubmit — bloqué par le script-src
    strict de la CSP). */
 .newsletter-section {
-  max-width: var(--content-max);
+  max-width: 875px;
   margin: 0 auto;
   padding: 48px 24px 32px;
   text-align: center;
