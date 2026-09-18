@@ -1064,16 +1064,6 @@ main {
   gap: 0;
 }
 
-#parcours .journey-steps::before {
-  content: "";
-  position: absolute;
-  left: 15px;
-  top: 16px;
-  bottom: 16px;
-  width: 2px;
-  background: var(--tk-border);
-}
-
 #parcours .journey-step {
   position: relative;
   background: none;
@@ -1083,6 +1073,16 @@ main {
 
 #parcours .journey-step:last-child {
   padding-bottom: 0;
+}
+
+#parcours .journey-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: 0;
+  width: 2px;
+  background: var(--tk-border);
 }
 
 #parcours .journey-step-number {
