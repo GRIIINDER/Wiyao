@@ -588,34 +588,39 @@ nav.site-nav a.active {
 .lang-switch {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
   flex: 0 0 auto;
   justify-self: end;
-  background: var(--tk-surface-soft);
-  border: 1px solid var(--tk-border);
+  background: var(--card-bg);
+  border: 1.5px solid var(--tk-canvas);
   border-radius: 999px;
-  padding: 4px;
+  padding: 4px 10px;
+}
+
+.lang-switch-icon {
+  flex: none;
+  color: var(--tk-canvas);
 }
 
 .lang-btn {
   border: none;
   background: transparent;
-  color: var(--tk-text-muted);
+  color: var(--tk-text-subtle);
   font-size: 0.75rem;
-  font-weight: 600;
-  padding: 6px 12px;
+  font-weight: 700;
+  padding: 6px 10px;
   border-radius: 999px;
   cursor: pointer;
   transition: color 0.15s ease, background 0.15s ease;
 }
 
 .lang-btn:hover {
-  color: var(--tk-text);
+  color: var(--tk-canvas);
 }
 
 .lang-btn.active {
-  color: var(--tk-canvas);
-  background: var(--tk-primary);
+  color: var(--card-bg);
+  background: var(--tk-canvas);
 }
 
 .i18n-notice {
