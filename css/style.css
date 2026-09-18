@@ -592,7 +592,7 @@ nav.site-nav a.active {
   flex: 0 0 auto;
   justify-self: end;
   background: var(--card-bg);
-  border: 1.5px solid var(--tk-canvas);
+  border: 1px solid rgba(10, 13, 28, 0.3);
   border-radius: 999px;
   padding: 4px 10px;
 }
