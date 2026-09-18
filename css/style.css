@@ -2644,6 +2644,13 @@ main {
   color: var(--tk-primary);
 }
 
+.newsletter-success {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--tk-primary);
+}
+
 @media (max-width: 560px) {
   .newsletter-row {
     flex-direction: column;

@@ -50,6 +50,10 @@
     "footer.newsletter.label": { fr: "Ton adresse e-mail", en: "Your email address" },
     "footer.newsletter.submit": { fr: "S'abonner", en: "Subscribe" },
     "footer.newsletter.articles": { fr: "Voir les actualités →", en: "See the news →" },
+    "footer.newsletter.success": {
+      fr: "Merci ! Vérifie ta boîte mail (et tes spams) pour confirmer ton inscription à la newsletter.",
+      en: "Thanks! Check your inbox (and spam folder) to confirm your newsletter subscription.",
+    },
     "hero.title": {
       fr: 'Trace ton <span class="hero-accent">parcours tech</span> au Togo',
       en: 'Chart your <span class="hero-accent">tech path</span> in Togo',

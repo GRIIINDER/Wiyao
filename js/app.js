@@ -980,6 +980,17 @@
     });
   }
 
+  // ---- Newsletter (footer, accueil uniquement) ----
+  function initNewsletterForm() {
+    const form = document.querySelector(".newsletter-form");
+    const successMsg = document.getElementById("newsletter-success");
+    if (!form || !successMsg) return;
+
+    form.addEventListener("submit", function () {
+      successMsg.hidden = false;
+    });
+  }
+
   // ---- Page Contact (message) ----
   function initContactForm() {
     const form = document.getElementById("contact-form");
@@ -1312,6 +1323,7 @@
     renderSchoolDates();
     initContactForm();
     initProposerForm();
+    initNewsletterForm();
   });
 
   // Exposé pour js/assistant.js : réutilise la même normalisation et le même
