@@ -2227,16 +2227,6 @@ main {
   gap: 0;
 }
 
-#timeline-general::before {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  bottom: 6px;
-  width: 2px;
-  background: var(--tk-border);
-}
-
 #timeline-general .timeline-item {
   position: relative;
   display: block;
@@ -2252,6 +2242,16 @@ main {
 
 #timeline-general .timeline-item:last-child {
   padding-bottom: 0;
+}
+
+#timeline-general .timeline-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 17px;
+  bottom: 0;
+  width: 2px;
+  background: var(--tk-border);
 }
 
 #timeline-general .timeline-item::before {
