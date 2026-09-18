@@ -2564,7 +2564,6 @@ main {
   max-width: 875px;
   margin: 0 auto;
   padding: 48px 24px 40px;
-  border-bottom: 1px solid var(--tk-border);
 }
 
 .newsletter-inner {
