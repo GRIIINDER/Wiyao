@@ -44,8 +44,8 @@
   const PAGE_CONTENT = {
     // Newsletter du footer, identique sur les 19 pages.
     "footer.newsletter.tagline": {
-      fr: "Le résumé mensuel de ce qui change sur WIYAO (nouvelles écoles, dates de concours, offres de stage), directement dans ta boîte mail.",
-      en: "The monthly digest of what's new on WIYAO (new schools, exam dates, internship listings), straight to your inbox.",
+      fr: "Le résumé mensuel de WIYAO, directement dans ta boîte mail.",
+      en: "WIYAO's monthly digest, straight to your inbox.",
     },
     "footer.newsletter.label": { fr: "Ton adresse e-mail", en: "Your email address" },
     "footer.newsletter.submit": { fr: "S'abonner", en: "Subscribe" },

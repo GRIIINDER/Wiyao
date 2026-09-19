@@ -2613,27 +2613,30 @@ main {
 
 .newsletter-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 32px;
-  flex-wrap: wrap;
+  gap: 20px;
+  flex-wrap: nowrap;
 }
 
 .newsletter-tagline {
   margin: 0;
-  flex: 1 1 260px;
-  max-width: 360px;
-  font-size: 1.3rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.4;
   color: var(--tk-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .newsletter-row {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  flex: 1 1 320px;
+  flex: 0 1 290px;
   max-width: 420px;
   min-width: 0;
 }
@@ -2670,7 +2673,7 @@ main {
   flex: none;
   border: none;
   border-radius: 999px;
-  padding: 12px 24px;
+  padding: 12px 20px;
   background: var(--tk-canvas);
   color: var(--tk-text);
   font-weight: 700;
@@ -2713,6 +2716,9 @@ main {
   .newsletter-tagline,
   .newsletter-row {
     max-width: none;
+  }
+  .newsletter-tagline {
+    white-space: normal;
   }
   .newsletter-row {
     width: 100%;
