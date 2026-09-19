@@ -3487,7 +3487,7 @@ const COMMUNITY_BY_DOMAIN = {
     { name: "Python Togo", url: "https://www.pytogo.org/", note: "Communauté Python, langage central en data/IA.", noteEn: "Python community, the core language for data/AI." },
   ],
   "Sécurité": [
-    { name: "Tech Communities Club (TCC), IAI-Togo", url: "https://www.linkedin.com/company/tech-communities-clubs-iai-togo", note: "Organise le hackathon/CTF Hack &amp; Defend.", noteEn: "Organizes the Hack &amp; Defend hackathon/CTF." },
+    { name: "Tech Communities Club (TCC), IAI-Togo", url: "https://www.linkedin.com/company/tech-communities-clubs-iai-togo", note: "Organise le hackathon/CTF Hack & Defend.", noteEn: "Organizes the Hack & Defend hackathon/CTF." },
   ],
   "Produit & Design": [
     { name: "Togo Designers", url: null, note: "1ʳᵉ alliance des designers numériques togolais.", noteEn: "1st alliance of Togolese digital designers." },
@@ -3495,7 +3495,7 @@ const COMMUNITY_BY_DOMAIN = {
   "Infrastructure & DevOps": [
     { name: "GDG Lomé", url: "https://gdg.community.dev/gdg-lome/", note: "Ateliers Google Cloud.", noteEn: "Google Cloud workshops." },
     { name: "MLSA Togo", url: "https://mlsatogo.vercel.app/", note: "Programme Microsoft (Azure, GitHub) avec parcours de mentorat intégré.", noteEn: "Microsoft program (Azure, GitHub) with a built-in mentorship track." },
-    { name: "Chapitre Togolais d'Internet Society (ISOC Togo)", url: "http://www.internetsociety.tg", note: "Réseaux communautaires locaux pour l'accès à Internet.", noteEn: "Local community networks for Internet access." },
+    { name: "Chapitre Togolais d'Internet Society (ISOC Togo)", url: "https://www.internetsociety.tg", note: "Réseaux communautaires locaux pour l'accès à Internet.", noteEn: "Local community networks for Internet access." },
   ],
   "Marketing digital": [
     { name: "LinkedIn Local Togo", url: "https://www.facebook.com/people/Linkedln-Local-Togo/61557712180082/", note: "Réseautage professionnel togolais.", noteEn: "Togolese professional networking." },

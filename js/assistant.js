@@ -51,6 +51,24 @@
   const GREETINGS = ["bonjour", "salut", "hello", "hey", "coucou", "bonsoir"];
   const THANKS = ["merci", "thanks", "thank you"];
 
+  function safeHref(url) {
+    if (window.WIYAO_SEARCH && typeof window.WIYAO_SEARCH.safeUrl === "function") {
+      return window.WIYAO_SEARCH.safeUrl(url);
+    }
+    if (!url || typeof url !== "string") return "";
+    const trimmed = url.trim();
+    if (!trimmed || trimmed.startsWith("//") || trimmed.indexOf("\\") !== -1) return "";
+    if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(trimmed)) {
+      if (trimmed.indexOf(":") !== -1) return "";
+      return trimmed;
+    }
+    try {
+      const parsed = new URL(trimmed);
+      if (parsed.protocol === "https:" || parsed.protocol === "http:") return parsed.href;
+    } catch (e) {}
+    return "";
+  }
+
   const CHIPS = [
     { fr: "Je sais pas quoi choisir", en: "I don't know what to choose", query: "sais pas quoi choisir" },
     { fr: "Trouve-moi une école", en: "Find me a school", query: "ecole" },
@@ -116,12 +134,14 @@
       const linkWrap = document.createElement("div");
       linkWrap.className = "wiyao-assistant-links";
       links.forEach((l) => {
+        const href = safeHref(l.url);
+        if (!href) return;
         const a = document.createElement("a");
-        a.href = l.url;
+        a.href = href;
         a.textContent = l.label;
         if (l.external) {
           a.target = "_blank";
-          a.rel = "noopener";
+          a.rel = "noopener noreferrer";
         }
         linkWrap.appendChild(a);
       });
