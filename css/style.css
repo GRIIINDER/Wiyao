@@ -836,6 +836,46 @@ main {
   padding: 40px 0 30px;
 }
 
+/* Accueil uniquement : lueur de fond qui dérive lentement derrière le hero,
+   scopée à #home-hero (comme #parcours ailleurs) pour ne pas toucher le
+   .hero partagé par les 18 autres pages. */
+#home-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+#home-hero::before {
+  content: "";
+  position: absolute;
+  top: -35%;
+  right: -8%;
+  width: 55%;
+  aspect-ratio: 1;
+  min-width: 360px;
+  background: radial-gradient(circle, var(--tk-primary) 0%, transparent 70%);
+  opacity: 0.16;
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+  animation: home-hero-glow-drift 20s ease-in-out infinite;
+}
+
+#home-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes home-hero-glow-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8%, 10%) scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home-hero::before {
+    animation: none;
+  }
+}
+
 .hero h1 {
   font-size: 2.75rem;
   line-height: 1.15;
@@ -2595,6 +2635,7 @@ main {
   gap: 10px;
   flex: 1 1 320px;
   max-width: 420px;
+  min-width: 0;
 }
 
 .newsletter-form {
@@ -2672,6 +2713,9 @@ main {
   .newsletter-tagline,
   .newsletter-row {
     max-width: none;
+  }
+  .newsletter-row {
+    width: 100%;
   }
   .newsletter-articles-link {
     align-self: flex-start;
