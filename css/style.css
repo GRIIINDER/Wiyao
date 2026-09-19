@@ -460,6 +460,7 @@ nav.site-nav a.active {
   font-weight: 600;
   font-size: 0.75rem;
   font-family: inherit;
+  text-transform: uppercase;
   padding: 8px 16px;
   border-radius: 999px;
   border: none;
@@ -521,6 +522,10 @@ nav.site-nav a.active {
   padding: 10px 16px;
   border-radius: 10px;
   white-space: nowrap;
+}
+
+.site-nav .nav-more-menu a {
+  text-transform: uppercase;
 }
 
 .nav-more-menu a:hover {
@@ -2605,7 +2610,7 @@ footer.site-footer {
   color: var(--tk-text);
   font-size: 0.75rem;
   font-weight: 800;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: normal;
   margin: 0 0 6px;
 }
@@ -2614,7 +2619,7 @@ footer.site-footer {
   color: var(--tk-text-muted);
   font-size: 0.75rem;
   font-weight: 400;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: normal;
   line-height: 1.4;
   padding: 2px 0;
@@ -2654,6 +2659,7 @@ footer.site-footer {
 .footer-legal-links a {
   color: var(--tk-text-muted);
   text-decoration: none;
+  text-transform: uppercase;
   font-size: 12px;
 }
 
