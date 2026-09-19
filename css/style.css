@@ -340,8 +340,8 @@ header.site-header {
 }
 
 .site-header-top {
-  max-width: var(--content-max);
-  width: fit-content;
+  max-width: 875px;
+  width: 100%;
   margin: 0 auto;
   background: var(--tk-surface);
   border: 1px solid var(--tk-border);
@@ -433,7 +433,7 @@ nav.site-nav a.active {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: 220px;
+  width: 176px;
   max-width: 40vw;
   padding: 8px 16px;
   background: var(--tk-surface);
@@ -767,11 +767,10 @@ nav.site-nav a.active {
   color: var(--tk-text);
 }
 
-/* Largeur calée sur celle (fit-content) du menu principal dans le
-   header, pas sur --content-max (1240px) utilisé ailleurs : le header
-   ne remplit plus toute cette largeur depuis son passage en
-   width: fit-content, donc le contenu des pages doit suivre la même
-   largeur réelle pour rester aligné dessous. */
+/* Largeur de référence du site (875px) : partagée avec .site-header-top
+   et .footer-card pour que header, contenu et footer soient alignés
+   exactement à la même largeur, pas sur --content-max (1240px) utilisé
+   ailleurs (ex. .contact-card, deux colonnes plus larges). */
 main {
   max-width: 875px;
   margin: 0 auto;
@@ -2556,8 +2555,8 @@ footer.site-footer {
 }
 
 .footer-card {
-  max-width: var(--content-max);
-  width: fit-content;
+  max-width: 875px;
+  width: 100%;
   margin: 0 auto;
   background: var(--tk-surface);
   border: 1px solid var(--tk-border);
@@ -2786,6 +2785,9 @@ footer.site-footer {
 @media (max-width: 600px) {
   header.site-header {
     padding: 14px 16px;
+  }
+  .footer-lower {
+    padding: 24px 16px;
   }
   .hero {
     padding: 16px 0 24px;
