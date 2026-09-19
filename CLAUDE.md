@@ -34,6 +34,12 @@ Zéro dépendance, zéro build. HTML/CSS/JS vanilla servis tels quels :
 
 **Vérification quotidienne de fraîcheur.** `.github/workflows/daily-freshness-check.yml` lance chaque jour `scripts/check-freshness.js` : vérifie que tous les liens externes du site répondent toujours, et liste les écoles actuellement marquées `urgent: true` dans `js/data.js` pour reconfirmation. Ce script **ne modifie jamais le contenu** : il publie un rapport dans une issue GitHub persistante (« 🔍 Rapport de fraîcheur automatique ») pour revue humaine. Catégorisation volontairement prudente : seuls les 404/410 sont listés comme "probablement morts" ; tout le reste (403, timeout, erreurs réseau) va dans "à vérifier manuellement", car beaucoup de sites bloquent ce script sans être réellement hors service (vécu plusieurs fois en recherche manuelle). Ne jamais faire confiance au rapport pour corriger un lien sans l'avoir vérifié soi-même dans un navigateur d'abord. Déclenchement manuel possible depuis l'onglet Actions du dépôt (`workflow_dispatch`).
 
+**DevSecOps.** Trois workflows de sécurité tournent en CI, avec les actions épinglées sur un SHA (Dependabot les met à jour chaque lundi) :
+- `.github/workflows/devsecops.yml` — secrets (Gitleaks), hygiène statique (`scripts/ci-security-hygiene.js`), dependency-review, Trivy, zizmor.
+- `.github/workflows/codeql.yml` — SAST JavaScript + workflows Actions.
+- `.github/workflows/scorecard.yml` — OpenSSF Scorecard (supply chain).
+La divulgation des vulnérabilités est documentée dans `SECURITY.md`. Ne pas réintroduire d'actions épinglées sur un tag mutable (`@v4`) : le script d'hygiène échoue volontairement dans ce cas.
+
 ## Pas encore en place
 
-Pas de tests automatisés, pas de protection de branche sur `main` — la vérification fonctionnelle (contenu, accessibilité, régression visuelle) se fait manuellement à chaque session, en testant le site réel dans le navigateur avant de pousser. Le seul contrôle automatisé est la vérification de fraîcheur des liens/échéances décrite ci-dessus, qui informe mais ne bloque rien.
+Pas de tests fonctionnels automatisés, pas de protection de branche sur `main` — la vérification visuelle (contenu, accessibilité, régression) se fait manuellement à chaque session, en testant le site réel dans le navigateur avant de pousser. Les contrôles automatisés sont la fraîcheur des liens (informative) et les gates DevSecOps (bloquantes sur PR une fois les checks rendus required).
