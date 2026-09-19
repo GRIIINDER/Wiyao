@@ -1,4 +1,4 @@
-const CACHE_NAME = "wiyao-v261";
+const CACHE_NAME = "wiyao-v262";
 
 const PRECACHE_URLS = [
   "index.html",
@@ -30,14 +30,8 @@ const PRECACHE_URLS = [
   "icons/icon-512.png",
   "icons/logo-white.png",
   "icons/credo-ahiafor.jpg",
-  "fonts/inter-400-latin.woff2",
-  "fonts/inter-400-latin-ext.woff2",
-  "fonts/inter-600-latin.woff2",
-  "fonts/inter-600-latin-ext.woff2",
-  "fonts/inter-700-latin.woff2",
-  "fonts/inter-700-latin-ext.woff2",
-  "fonts/inter-800-latin.woff2",
-  "fonts/inter-800-latin-ext.woff2",
+  "fonts/jetbrains-mono-variable-latin.woff2",
+  "fonts/jetbrains-mono-variable-latin-ext.woff2",
 ];
 
 self.addEventListener("install", (event) => {
