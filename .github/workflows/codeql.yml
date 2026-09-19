@@ -1,6 +1,7 @@
 # SAST CodeQL — JavaScript et workflows GitHub Actions.
-# Les alertes vont dans l'onglet Security ; ce workflow échoue
-# uniquement sur une erreur d'analyse, pas sur chaque finding.
+# L'analyse est un gate CI. L'upload vers l'onglet Security est
+# best-effort : un dépôt privé sans GitHub Advanced Security refuse
+# l'API code scanning (échec constaté sur ce dépôt).
 
 name: CodeQL
 
@@ -54,4 +55,16 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
         with:
+          category: "/language:${{ matrix.language }}"
+          output: results
+          upload: never
+          upload-database: false
+          wait-for-processing: false
+
+      - name: Upload CodeQL SARIF to code scanning
+        if: always() && hashFiles('results/**/*.sarif') != ''
+        continue-on-error: true
+        uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        with:
+          sarif_file: results
           category: "/language:${{ matrix.language }}"
