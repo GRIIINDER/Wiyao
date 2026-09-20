@@ -1840,27 +1840,42 @@ main {
   font-size: 1.5rem;
 }
 
+/* Mise en page façon FAQ Composio : colonne de titre "collante" (sticky)
+   à gauche, questions à droite (même schéma que .calendrier-general-layout
+   / .calendrier-general-intro, réutilisé ici pour rester cohérent). */
+.faq-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.faq-sidebar {
+  position: sticky;
+  top: 128px;
+}
+
 .faq-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 14px;
-  padding: 5px 14px;
-  border-radius: 999px;
-  background: var(--tk-primary-soft);
-  color: var(--tk-primary);
+  padding: 4px 10px;
+  border: 1px solid var(--tk-text);
+  color: var(--tk-text);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.03em;
 }
 
 .faq-content {
-  max-width: 980px;
-  margin: 40px auto 0;
+  min-width: 0;
 }
 
 .faq-list {
   display: flex;
   flex-direction: column;
   gap: 0;
+  border-top: 1px solid var(--tk-border);
 }
 
 .faq-item {
@@ -1923,6 +1938,16 @@ main {
 .faq-item p a {
   color: var(--tk-primary);
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .faq-sidebar {
+    position: static;
+  }
 }
 
 /* Test d'orientation : questionnaire façon "liste de questions" */
