@@ -3101,3 +3101,16 @@ main li {
 main .hero p.error-code {
   font-size: 5rem !important;
 }
+
+/* Accueil : titre du hero, titres de section du parcours et des
+   roadmaps, titres d'étape et noms de domaine ramenés à 14px (au lieu
+   du 16px de l'aplat ci-dessus) ; !important nécessaire pour primer sur
+   l'aplat, qui utilise déjà !important. */
+#home-hero h1,
+#parcours h2,
+#parcours .journey-step h3,
+#par-metier h2,
+#par-competence h2,
+#par-metier .domain-group-title {
+  font-size: 14px !important;
+}
