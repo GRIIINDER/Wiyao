@@ -2659,7 +2659,6 @@ footer.site-footer {
 .footer-legal-links a {
   color: var(--tk-text-muted);
   text-decoration: none;
-  text-transform: uppercase;
   font-size: 12px;
 }
 
