@@ -3114,3 +3114,7 @@ main .hero p.error-code {
 #par-metier .domain-group-title {
   font-size: 14px !important;
 }
+
+#parcours .journey-step a {
+  font-size: 14px;
+}
