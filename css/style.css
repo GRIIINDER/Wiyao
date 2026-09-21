@@ -981,7 +981,7 @@ main {
   border-radius: 999px;
   padding: 10px 18px;
   margin: 0 0 24px;
-  font-size: 1rem;
+  font-size: 12px;
   font-weight: 700;
   font-family: inherit;
   color: var(--tk-text);
@@ -3117,4 +3117,8 @@ main .hero p.error-code {
 
 #parcours .journey-step a {
   font-size: 14px;
+}
+
+.domain-group-toggle {
+  font-size: 12px;
 }
