@@ -1165,7 +1165,7 @@ main {
   margin-top: 0 !important;
   padding-top: 8px;
   border-top: 1px solid var(--border);
-  font-size: 0.78rem !important;
+  font-size: 12px !important;
   color: var(--text-muted);
 }
 
@@ -3063,14 +3063,20 @@ footer.site-footer {
   }
 }
 
-/* ── Aplat volontaire de l'échelle typographique du corps du site
-   (tout ce qui est dans <main>, pas le header/nav/footer déjà à 12px) :
-   16px pour tous les titres (H1 des heroes, H2 de section, H3/H4 de
-   carte), 14px pour les sous-titres (texte d'intro sous un titre), 12px
-   pour tout le reste du texte de paragraphe/liste. Remplace l'ancienne
-   hiérarchie à plusieurs tailles (44px/22-34px/16-20px) par ces 3 seuls
-   niveaux ; !important nécessaire pour primer sur les dizaines de
-   sélecteurs contextuels ci-dessus sans les éditer un par un. */
+/* ── Aplat total de l'échelle typographique du corps du site (tout ce
+   qui est dans <main>, pas le header/nav/footer) : SEULEMENT 3 tailles
+   possibles, sans exception. Par défaut 12px sur absolument tout texte
+   (main *), puis deux relevés explicites : 16px pour les titres, 14px
+   pour les éléments interactifs/proéminents (boutons, liens autonomes,
+   filtres, champs de formulaire, labels, sous-titres). Un défaut
+   universel plutôt qu'une liste de classes à "12px" garantit qu'aucune
+   4e taille ne peut se glisser via un composant non couvert ci-dessous ;
+   !important nécessaire pour primer sur les dizaines de sélecteurs
+   contextuels ci-dessus sans les éditer un par un. */
+main * {
+  font-size: 12px !important;
+}
+
 main h1,
 main h2,
 main h3,
@@ -3087,19 +3093,40 @@ main .category-desc,
 main .domain-group-desc,
 main .contact-intro-desc,
 main .school-subtitle,
-main .subtitle {
+main .subtitle,
+main .btn-primary,
+main .btn,
+main .domain-chip,
+main .journey-step-number,
+main .eco-link,
+main .school-link,
+main .actu-card-btn,
+main .actu-meta-value,
+main label,
+main option,
+main input,
+main textarea,
+main select,
+main .quiz-option,
+main .portrait-name,
+main .founder-links a,
+main .eco-jump-nav a,
+main .school-meta span,
+main .hero-legal-meta span {
   font-size: 14px !important;
-}
-
-main p,
-main li {
-  font-size: 12px !important;
 }
 
 /* Le "404" reste un gros chiffre décoratif, pas un paragraphe de texte
    courant : exclu de l'aplat ci-dessus. */
 main .hero p.error-code {
   font-size: 5rem !important;
+}
+
+/* Icônes (émojis) dimensionnées par font-size, pas du texte de contenu :
+   exclues elles aussi de l'aplat, sinon elles rétréciraient à 12px. */
+main .card-icon,
+main .domain-primer-icon {
+  font-size: 1.8rem !important;
 }
 
 /* Accueil : titre du hero, titres de section du parcours et des
