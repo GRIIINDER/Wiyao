@@ -460,6 +460,7 @@ nav.site-nav a.active {
   font-weight: 600;
   font-size: 0.75rem;
   font-family: inherit;
+  text-transform: uppercase;
   padding: 8px 16px;
   border-radius: 999px;
   border: none;
@@ -521,6 +522,10 @@ nav.site-nav a.active {
   padding: 10px 16px;
   border-radius: 10px;
   white-space: nowrap;
+}
+
+.site-nav .nav-more-menu a {
+  text-transform: uppercase;
 }
 
 .nav-more-menu a:hover {
@@ -847,15 +852,13 @@ main {
 .hero p[data-i18n-key="eco.hero.subtitle"],
 .hero p[data-i18n-key="actu.hero.subtitle"],
 .hero p[data-i18n-key="temoignages.hero.subtitle"],
-.hero p[data-i18n-key="faq.hero.subtitle"],
 .hero p[data-i18n-key="contact.hero.subtitle"],
 .hero p[data-i18n-key="mentions.hero.subtitle"],
 .hero p[data-i18n-key="about.hero.subtitle"],
 .hero p[data-i18n-key="confidentialite.hero.subtitle"],
 .hero p[data-i18n-key="cgu.hero.subtitle"] {
   max-width: none;
-  text-align: justify;
-  text-align-last: left;
+  text-align: left;
   line-height: 1.65;
   margin-top: 14px;
 }
@@ -1648,8 +1651,7 @@ main {
 #guide p {
   font-size: 1.25rem;
   line-height: 1.5;
-  text-align: justify;
-  text-align-last: left;
+  text-align: left;
 }
 
 /* Titre de page des 4 pages légales : même échelle que Codecademy (64 px). */
@@ -1835,27 +1837,49 @@ main {
   font-size: 1.5rem;
 }
 
+/* Colonne de titre étroite (320px) : le justifié utilisé sur les autres
+   pages (pensé pour une colonne large) y crée de grands blancs entre
+   les mots, donc alignement à gauche ici plutôt que justifié. */
+.faq-sidebar p {
+  text-align: left;
+}
+
+/* Mise en page façon FAQ Composio : colonne de titre "collante" (sticky)
+   à gauche, questions à droite (même schéma que .calendrier-general-layout
+   / .calendrier-general-intro, réutilisé ici pour rester cohérent). */
+.faq-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.faq-sidebar {
+  position: sticky;
+  top: 128px;
+}
+
 .faq-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 14px;
-  padding: 5px 14px;
-  border-radius: 999px;
-  background: var(--tk-primary-soft);
-  color: var(--tk-primary);
+  padding: 4px 10px;
+  border: 1px solid var(--tk-text);
+  color: var(--tk-text);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.03em;
 }
 
 .faq-content {
-  max-width: 980px;
-  margin: 40px auto 0;
+  min-width: 0;
 }
 
 .faq-list {
   display: flex;
   flex-direction: column;
   gap: 0;
+  border-top: 1px solid var(--tk-border);
 }
 
 .faq-item {
@@ -1911,13 +1935,22 @@ main {
   color: var(--tk-text-muted);
   font-size: 1.25rem;
   line-height: 1.5;
-  text-align: justify;
-  text-align-last: left;
+  text-align: left;
 }
 
 .faq-item p a {
   color: var(--tk-primary);
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .faq-sidebar {
+    position: static;
+  }
 }
 
 /* Test d'orientation : questionnaire façon "liste de questions" */
@@ -2535,14 +2568,13 @@ main {
   line-height: 1.5;
 }
 
-/* Justifié seulement sur les paragraphes en pleine largeur du contenu
-   (pas les textes de carte/grille, trop étroits : la justification y
-   créerait des espaces irréguliers entre les mots). */
+/* Police monospace (JetBrains Mono) : la justification, même en pleine
+   largeur, y crée des espaces trop visibles entre les mots. Alignement
+   à gauche partout plutôt que justifié. */
 .category-desc,
 .journey-step p,
 .domain-group-desc {
-  text-align: justify;
-  text-align-last: left;
+  text-align: left;
 }
 
 footer.site-footer {
@@ -2605,7 +2637,7 @@ footer.site-footer {
   color: var(--tk-text);
   font-size: 0.75rem;
   font-weight: 800;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: normal;
   margin: 0 0 6px;
 }
@@ -2614,7 +2646,7 @@ footer.site-footer {
   color: var(--tk-text-muted);
   font-size: 0.75rem;
   font-weight: 400;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: normal;
   line-height: 1.4;
   padding: 2px 0;
@@ -2810,36 +2842,6 @@ footer.site-footer {
   .section h2 {
     font-size: 1.2rem;
   }
-  .hero p[data-i18n-key="hero.subtitle"],
-  .hero p[data-i18n-key="quiz.hero.subtitle"],
-  .hero p[data-i18n-key="ecoles.hero.subtitle"],
-  .hero p[data-i18n-key="calendrier.hero.subtitle"],
-  .hero p[data-i18n-key="bourses.hero.subtitle"],
-  .hero p[data-i18n-key="stages.hero.subtitle"],
-  .hero p[data-i18n-key="eco.hero.subtitle"],
-  .hero p[data-i18n-key="actu.hero.subtitle"],
-  .hero p[data-i18n-key="temoignages.hero.subtitle"],
-  .hero p[data-i18n-key="faq.hero.subtitle"],
-  .hero p[data-i18n-key="contact.hero.subtitle"],
-  .hero p[data-i18n-key="mentions.hero.subtitle"],
-  .hero p[data-i18n-key="about.hero.subtitle"],
-  .hero p[data-i18n-key="confidentialite.hero.subtitle"],
-  .hero p[data-i18n-key="cgu.hero.subtitle"] {
-    text-align: left;
-    text-align-last: left;
-  }
-  /* Sous 600px, la colonne de lecture devient trop étroite pour que la
-     justification garde un espacement régulier entre les mots. */
-  .category-desc,
-  .journey-step p,
-  .domain-group-desc,
-  .about-section p,
-  #guide p,
-  .faq-item p,
-  .contact-intro-desc {
-    text-align: left;
-    text-align-last: left;
-  }
 }
 
 /* Page Contact : une carte unique, coordonnées + gros titre à gauche, formulaire à droite */
@@ -2883,8 +2885,7 @@ footer.site-footer {
   font-size: 1.25rem;
   line-height: 1.5;
   max-width: 38ch;
-  text-align: justify;
-  text-align-last: left;
+  text-align: left;
 }
 
 .contact-details {
@@ -3099,4 +3100,21 @@ main li {
    courant : exclu de l'aplat ci-dessus. */
 main .hero p.error-code {
   font-size: 5rem !important;
+}
+
+/* Accueil : titre du hero, titres de section du parcours et des
+   roadmaps, titres d'étape et noms de domaine ramenés à 14px (au lieu
+   du 16px de l'aplat ci-dessus) ; !important nécessaire pour primer sur
+   l'aplat, qui utilise déjà !important. */
+#home-hero h1,
+#parcours h2,
+#parcours .journey-step h3,
+#par-metier h2,
+#par-competence h2,
+#par-metier .domain-group-title {
+  font-size: 14px !important;
+}
+
+#parcours .journey-step a {
+  font-size: 14px;
 }

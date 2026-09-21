@@ -1,0 +1,5 @@
+name: WIYAO CodeQL
+queries:
+  - uses: security-extended
+paths-ignore:
+  - ".claude/**"

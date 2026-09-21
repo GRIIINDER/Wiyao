@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="FAQ - WIYAO">
 <meta name="twitter:description" content="Questions fréquentes sur WIYAO : gratuité, données personnelles, fiabilité des informations, roadmaps, écoles, frais de scolarité, stages et emploi.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=155">
+<link rel="stylesheet" href="css/style.css?v=163">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -78,13 +78,14 @@
 </header>
 
 <main id="main-content">
-  <section class="hero faq-hero">
-    <span class="faq-badge" data-i18n-key="faq.badge">Aide &amp; réponses</span>
-    <h1 data-i18n-key="faq.hero.title">Questions <span class="hero-accent">fréquentes</span></h1>
-    <p data-i18n-key="faq.hero.subtitle">Tout ce qu'on te demande le plus souvent sur WIYAO, en un seul endroit.</p>
-  </section>
+  <div class="faq-layout">
+    <section class="hero faq-hero faq-sidebar">
+      <span class="faq-badge" data-i18n-key="faq.badge">Aide &amp; réponses</span>
+      <h1 data-i18n-key="faq.hero.title">Questions <span class="hero-accent">fréquentes</span></h1>
+      <p data-i18n-key="faq.hero.subtitle">Tout ce qu'on te demande le plus souvent sur WIYAO, en un seul endroit.</p>
+    </section>
 
-  <div class="faq-content">
+    <div class="faq-content">
     <div class="faq-list">
       <h2 class="sr-only" data-i18n-key="faq.cat1.h2">Sur WIYAO</h2>
           <details class="faq-item" id="wiyao">
@@ -235,6 +236,7 @@
             <summary data-i18n-key="faq.c4.q3">Puis-je travailler pour des entreprises étrangères depuis le Togo ?</summary>
             <p data-i18n-key="faq.c4.a3">Oui, le travail à distance (freelance ou salarié) est une vraie option pour un développeur togolais, via des plateformes comme Upwork, Contra ou Turing. C'est exigeant (anglais, portfolio solide) mais ça élargit beaucoup le marché au-delà des employeurs locaux : détails dans le guide de la page <a href="stages-emploi.html#guide">Stages &amp; emploi</a>.</p>
           </details>
+    </div>
     </div>
   </div>
 </main>

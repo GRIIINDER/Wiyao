@@ -1,0 +1,16 @@
+# Dependabot — mises à jour groupées des GitHub Actions épinglées.
+# Les SHAs sont mis à jour avec le commentaire de version (ex. # v7.0.1).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns:
+          - "*"
