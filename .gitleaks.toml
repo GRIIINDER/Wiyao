@@ -1,0 +1,15 @@
+# Allowlist ciblée : le détecteur generic-api-key prend les attributs
+# data-i18n-key="foo.bar.baz" pour des secrets (entropie des identifiants).
+# Les règles par défaut de Gitleaks restent actives via useDefault.
+
+title = "WIYAO gitleaks config"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Attributs i18n HTML (fausse positive generic-api-key)"
+regexTarget = "line"
+regexes = [
+  '''data-i18n-key="[^"]+"''',
+]

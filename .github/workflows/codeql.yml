@@ -1,0 +1,70 @@
+# SAST CodeQL — JavaScript et workflows GitHub Actions.
+# L'analyse est un gate CI. L'upload vers l'onglet Security est
+# best-effort : un dépôt privé sans GitHub Advanced Security refuse
+# l'API code scanning (échec constaté sur ce dépôt).
+
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Dimanche 02h30 UTC
+    - cron: "30 2 * * 0"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: codeql-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: javascript-typescript
+            build-mode: none
+          - language: actions
+            build-mode: none
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+          config-file: ./.github/codeql/codeql-config.yml
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        with:
+          category: "/language:${{ matrix.language }}"
+          output: results
+          upload: never
+          upload-database: false
+          wait-for-processing: false
+
+      - name: Upload CodeQL SARIF to code scanning
+        if: always() && hashFiles('results/**/*.sarif') != ''
+        continue-on-error: true
+        uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        with:
+          sarif_file: results
+          category: "/language:${{ matrix.language }}"
