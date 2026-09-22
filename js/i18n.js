@@ -1176,6 +1176,7 @@
     "bourses.s1.i6.p": { fr: "Accès à la bourse d'État togolaise comme toute université publique, ainsi qu'à des bourses internationales (France, Inde) pour les meilleurs dossiers.", en: "Access to the Togolese State scholarship like any public university, as well as international scholarships (France, India) for the strongest applications." },
     "bourses.s1.i7.p": { fr: "Bourses ponctuelles attribuées par tirage au sort à la rentrée : non garanties chaque année.", en: "One-off scholarships awarded by lottery at the start of the year : not guaranteed annually." },
     "bourses.s1.i8.p": { fr: "Bourses disponibles de 50 000 à 250 000 FCFA selon le niveau (Licence/Master).", en: "Scholarships available from 50,000 to 250,000 FCFA depending on level (Bachelor's/Master's)." },
+    "bourses.s1.i9.p": { fr: "Grand concours de bourses pour l'entrée en Licence 1 et Master 1, chaque année début octobre (2026 : samedi 3 octobre) : jusqu'à 75 % de réduction sur les frais de scolarité, épreuves de français, anglais et culture générale.", en: "Major scholarship competition for entry into Licence 1 and Master 1, every year in early October (2026: Saturday, October 3): up to 75% off tuition fees, with exams in French, English and general knowledge." },
     "bourses.s2.h2": { fr: "Bourse d'État togolaise", en: "Togolese State scholarship" },
     "bourses.s2.i1.h4": { fr: "Bourse nationale", en: "National scholarship" },
     "bourses.s2.i1.p": {

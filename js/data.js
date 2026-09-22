@@ -4961,7 +4961,7 @@ const SCHOOLS = {
       mode: "campagne",
       note: "Rentrée académique annoncée pour octobre 2026 (référence 2026-2027).",
       rentree: "Octobre 2026 (référence)",
-      contact: "+228 93 23 64 28 / +228 70 52 48 60"
+      contact: "+228 93 23 64 28 / +228 96 19 56 04 / +33 1 47 34 39 39"
     }
   },
   "isbic-alg": {
@@ -4974,7 +4974,7 @@ const SCHOOLS = {
     duree: null,
     admission: "Concours d'entrée (1er concours organisé le 13 octobre 2025)",
     frais: "750 000 FCFA (inclut supports pédagogiques, tenues, cantine et cours d'auto-école) : réduction spéciale pour les 30 premiers admis, dispositif de soutien pour les étudiantes (source : tdn.tg, septembre 2025).",
-    site: null,
+    site: "https://institutaugustelegrand.com/",
     description: "Institut lancé le 11 septembre 2025 à Amadahomé (Lomé) par le promoteur Auguste Dogbo : l'un des établissements informatique les plus récents du pays. Partenariats annoncés avec CERGI et l'Université Esprit de Tunis.",
     datesCles: {
       mode: "campagne",
@@ -4983,7 +4983,8 @@ const SCHOOLS = {
       resultats: "16 octobre 2025 (référence)",
       rentree: "20 octobre 2025 (référence)",
       anneeReference: "2025-2026",
-      aVerifier: true
+      aVerifier: true,
+      contact: "(+228) 96 45 43 11 / 93 87 49 50"
     }
   },
   "epl": {
@@ -5049,7 +5050,7 @@ const SCHOOLS = {
       rentree: "6 octobre 2026 (Licence & BTS 1) · 15 septembre 2026 (BTS 2, BT) · 2-3 novembre 2026 (Master)",
       anneeReference: "2026-2027",
       aVerifier: true,
-      contact: "contact@cifoptogo.org"
+      contact: "contact@cifoptogo.org / (+228) 22 22 82 18"
     }
   },
   "ifnti": {
