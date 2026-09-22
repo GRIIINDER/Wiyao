@@ -1107,6 +1107,7 @@
   function renderSchoolDates() {
     const container = document.getElementById("school-dates-list");
     if (!container || typeof SCHOOLS === "undefined") return;
+    const isEn = currentLang() === "en";
 
     const ids = Object.keys(SCHOOLS).sort((a, b) => schoolDatesRank(SCHOOLS[a]) - schoolDatesRank(SCHOOLS[b]));
 
@@ -1124,13 +1125,16 @@
         bodyHtml += `<p class="dates-note">${dc.note}</p>`;
       }
 
+      // Les libellés de champ sont traduits ; les valeurs elles-mêmes (dates,
+      // notes) restent telles qu'écrites/vérifiées dans data.js — c'est ce que
+      // #i18n-notice signale honnêtement aux utilisateurs EN, pas une erreur.
       const fields = dc
         ? [
-            ["Ouverture des candidatures", dc.ouverture],
-            ["Clôture", dc.cloture],
-            ["Concours", dc.concours],
-            ["Résultats", dc.resultats],
-            ["Rentrée", dc.rentree]
+            [isEn ? "Applications open" : "Ouverture des candidatures", dc.ouverture],
+            [isEn ? "Deadline" : "Clôture", dc.cloture],
+            [isEn ? "Entrance exam" : "Concours", dc.concours],
+            [isEn ? "Results" : "Résultats", dc.resultats],
+            [isEn ? "Start of term" : "Rentrée", dc.rentree]
           ].filter(([, value]) => !!value)
         : [];
 
@@ -1139,21 +1143,29 @@
       }
 
       if (dc && dc.anneeReference) {
-        bodyHtml += `<p class="dates-ref-note">Repère de calendrier (${dc.anneeReference})${dc.aVerifier ? " : à reconfirmer directement auprès de l'école" : ""}.</p>`;
+        bodyHtml += `<p class="dates-ref-note">${
+          isEn
+            ? `Calendar reference (${dc.anneeReference})${dc.aVerifier ? " : reconfirm directly with the school" : ""}.`
+            : `Repère de calendrier (${dc.anneeReference})${dc.aVerifier ? " : à reconfirmer directement auprès de l'école" : ""}.`
+        }</p>`;
       }
 
       if (dc && dc.contact) {
-        bodyHtml += `<p class="dates-ref-note">Contact direct : ${dc.contact}</p>`;
+        bodyHtml += `<p class="dates-ref-note">${isEn ? "Direct contact" : "Contact direct"} : ${dc.contact}</p>`;
       }
 
       if (!dc) {
-        bodyHtml = `<p class="dates-note">Dates non publiées en ligne : vérifie directement sur le site de l'école.</p>`;
+        bodyHtml = `<p class="dates-note">${
+          isEn
+            ? "Dates not published online : check directly on the school's website."
+            : "Dates non publiées en ligne : vérifie directement sur le site de l'école."
+        }</p>`;
       }
 
       row.innerHTML = `
         <h3>${school.name}</h3>
         ${bodyHtml}
-        ${school.site ? `<a class="school-link" href="${school.site}" target="_blank" rel="noopener">Voir le site officiel →</a>` : ""}
+        ${school.site ? `<a class="school-link" href="${school.site}" target="_blank" rel="noopener">${isEn ? "See official site →" : "Voir le site officiel →"}</a>` : ""}
       `;
       container.appendChild(row);
     });
