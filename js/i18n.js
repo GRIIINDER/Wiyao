@@ -51,8 +51,8 @@
       en: "The guide that walks you through every step: orientation, choosing a domain, a track, a university, career roadmaps, scholarships and internships, in Lomé and across Togo.",
     },
     "hero.cta": {
-      fr: "Pas sûr·e de ta voie ? Fais le test d'orientation",
-      en: "Not sure which path? Take the orientation test",
+      fr: "Faire le test d'orientation →",
+      en: "Take the orientation test →",
     },
     "hero.guide": {
       fr: 'Nouveau·elle ici ? Découvre <a href="about.html">ce qu\'est WIYAO</a> en 30 secondes.',
