@@ -66,6 +66,15 @@
     return (progress[roadmapId] || []).length;
   }
 
+  // Libellé accessible de la case à cocher d'une étape de roadmap : dépend à
+  // la fois de la langue courante et de l'état (une case déjà cochée doit
+  // annoncer qu'un clic la décochera, pas l'inverse).
+  function checkAriaLabel(isDone) {
+    const en = currentLang() === "en";
+    if (isDone) return en ? "Mark as not done" : "Décocher comme fait";
+    return en ? "Mark as done" : "Marquer comme fait";
+  }
+
   function levelSlug(level) {
     if (level === "Débutant") return "debutant";
     if (level === "Intermédiaire") return "intermediaire";
@@ -500,12 +509,14 @@
         const check = document.createElement("button");
         check.className = "check";
         check.type = "button";
-        check.setAttribute("aria-label", "Marquer comme fait");
+        check.setAttribute("aria-label", checkAriaLabel(done));
         check.textContent = done ? "✓" : "";
         check.addEventListener("click", () => {
           progress = toggleItem(id, key);
           itemEl.classList.toggle("done");
-          check.textContent = itemEl.classList.contains("done") ? "✓" : "";
+          const nowDone = itemEl.classList.contains("done");
+          check.textContent = nowDone ? "✓" : "";
+          check.setAttribute("aria-label", checkAriaLabel(nowDone));
           updateGlobal();
         });
 
