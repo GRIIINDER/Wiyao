@@ -1723,6 +1723,12 @@ main {
   font-weight: 700;
 }
 
+.badge.status-inter-etats {
+  background: #e6f4ef;
+  color: var(--green);
+  font-weight: 700;
+}
+
 .badge.ville-badge {
   background: #fff4d6;
   color: #8a6300;

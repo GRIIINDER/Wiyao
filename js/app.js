@@ -599,7 +599,7 @@
     const badges = document.createElement("div");
     badges.className = "card-badges school-badges";
     badges.innerHTML =
-      `<span class="badge status-${school.statut === "public" ? "public" : "prive"}">${STATUT_LABELS[school.statut] || school.statut}</span>` +
+      `<span class="badge status-${school.statut}">${STATUT_LABELS[school.statut] || school.statut}</span>` +
       school.ville.map((v) => `<span class="badge ville-badge">${v}</span>`).join("") +
       (school.agree === true ? `<span class="badge status-public">🏛️ Agréé État</span>` : "");
     body.appendChild(badges);
