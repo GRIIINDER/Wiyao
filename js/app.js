@@ -17,6 +17,31 @@
     return currentLang() === "en" && en ? en : obj[field];
   }
 
+  function escapeHtml(str) {
+    return String(str == null ? "" : str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  // http(s) or same-origin relative paths only. Rejects javascript:, data:, etc.
+  function safeUrl(url) {
+    if (!url || typeof url !== "string") return "";
+    const trimmed = url.trim();
+    if (!trimmed || trimmed.startsWith("//") || trimmed.indexOf("\\") !== -1) return "";
+    if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(trimmed)) {
+      if (trimmed.indexOf(":") !== -1) return "";
+      return trimmed;
+    }
+    try {
+      const parsed = new URL(trimmed);
+      if (parsed.protocol === "https:" || parsed.protocol === "http:") return parsed.href;
+    } catch (e) {}
+    return "";
+  }
+
   // Minuscules + suppression des accents, pour un matching de recherche
   // insensible à la casse et aux accents (partagé par la recherche globale
   // et l'assistant).
@@ -83,7 +108,7 @@
 
   function badgesHtml(rm) {
     const levelBadge = rm.level
-      ? `<span class="badge level-badge level-${levelSlug(rm.level)}">${levelLabel(rm.level)}</span>`
+      ? `<span class="badge level-badge level-${levelSlug(rm.level)}">${escapeHtml(levelLabel(rm.level))}</span>`
       : "";
     const togoBadge = rm.togoVerified
       ? `<span class="badge togo-badge">✓ ${currentLang() === "en" ? "Togo-verified" : "Vérifié Togo"}</span>`
@@ -97,7 +122,7 @@
     const pct = total ? Math.round((done / total) * 100) : 0;
 
     const card = document.createElement("a");
-    card.href = `roadmap.html?id=${id}`;
+    card.href = `roadmap.html?id=${encodeURIComponent(id)}`;
     card.className = "card";
     card.dataset.title = rm.title.toLowerCase();
     if (rm.domain) card.dataset.domain = rm.domain;
@@ -107,10 +132,10 @@
     card.innerHTML = `
       <div class="card-kind-bar">${kindLabel}</div>
       <div class="card-body">
-        <div class="card-icon">${rm.icon}</div>
+        <div class="card-icon">${escapeHtml(rm.icon)}</div>
         ${badges ? `<div class="card-badges">${badges}</div>` : ""}
-        <h3>${tField(rm, "title")}</h3>
-        <p>${tField(rm, "subtitle")}</p>
+        <h3>${escapeHtml(tField(rm, "title"))}</h3>
+        <p>${escapeHtml(tField(rm, "subtitle"))}</p>
         <div class="card-meta-divider"></div>
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
         <span class="progress-label">${pct}% ${cardLabel}</span>
@@ -389,15 +414,16 @@
       h4.textContent = c.name;
       item.appendChild(h4);
       const p = document.createElement("p");
-      p.innerHTML = isEn ? c.noteEn : c.note;
+      p.textContent = isEn ? c.noteEn : c.note;
       item.appendChild(p);
-      if (c.url) {
+      const href = safeUrl(c.url);
+      if (href) {
         const a = document.createElement("a");
         a.className = "eco-link";
-        a.href = c.url;
+        a.href = href;
         a.target = "_blank";
-        a.rel = "noopener";
-        a.textContent = c.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+        a.rel = "noopener noreferrer";
+        a.textContent = href.replace(/^https?:\/\//, "").replace(/\/$/, "");
         item.appendChild(a);
       }
       list.appendChild(item);
@@ -440,7 +466,7 @@
       <span class="breadcrumb-sep">›</span>
       <a href="${categoryHref}">${categoryLabel}</a>
       <span class="breadcrumb-sep">›</span>
-      <span class="breadcrumb-current">${tField(rm, "title")}</span>
+      <span class="breadcrumb-current">${escapeHtml(tField(rm, "title"))}</span>
     `;
     container.appendChild(breadcrumb);
 
@@ -459,8 +485,8 @@
     header.innerHTML = `
       <span class="badge type-badge">${typeLabel}</span>
       ${badges}
-      <h1>${rm.icon} ${tField(rm, "title")}</h1>
-      <p class="subtitle">${tField(rm, "subtitle")}</p>
+      <h1>${escapeHtml(rm.icon)} ${escapeHtml(tField(rm, "title"))}</h1>
+      <p class="subtitle">${escapeHtml(tField(rm, "subtitle"))}</p>
       ${togoNotice}
       <div class="progress-bar large"><div class="progress-fill" id="global-fill"></div></div>
       <span class="progress-label" id="global-label"></span>
@@ -532,15 +558,18 @@
         }
 
         if (item.resource) {
-          const link = document.createElement("a");
-          link.className = "item-resource";
-          link.href = item.resource.url;
-          link.textContent = "📎 " + item.resource.label;
-          if (!item.resource.url.startsWith("roadmap.html")) {
-            link.target = "_blank";
-            link.rel = "noopener";
+          const href = safeUrl(item.resource.url);
+          if (href) {
+            const link = document.createElement("a");
+            link.className = "item-resource";
+            link.href = href;
+            link.textContent = "📎 " + item.resource.label;
+            if (href.indexOf("roadmap.html") !== 0) {
+              link.target = "_blank";
+              link.rel = "noopener noreferrer";
+            }
+            labelWrap.appendChild(link);
           }
-          labelWrap.appendChild(link);
         }
 
         itemEl.appendChild(check);
@@ -598,9 +627,11 @@
 
     const badges = document.createElement("div");
     badges.className = "card-badges school-badges";
+    const statutClass = school.statut === "public" ? "public" : "prive";
+    const statutLabel = STATUT_LABELS[school.statut] || school.statut;
     badges.innerHTML =
-      `<span class="badge status-${school.statut === "public" ? "public" : "prive"}">${STATUT_LABELS[school.statut] || school.statut}</span>` +
-      school.ville.map((v) => `<span class="badge ville-badge">${v}</span>`).join("") +
+      `<span class="badge status-${statutClass}">${escapeHtml(statutLabel)}</span>` +
+      school.ville.map((v) => `<span class="badge ville-badge">${escapeHtml(v)}</span>`).join("") +
       (school.agree === true ? `<span class="badge status-public">🏛️ Agréé État</span>` : "");
     body.appendChild(badges);
 
@@ -615,25 +646,30 @@
 
     const filieres = document.createElement("ul");
     filieres.className = "school-filieres";
-    filieres.innerHTML = school.filieres.map((f) => `<li>${f}</li>`).join("");
+    school.filieres.forEach((f) => {
+      const li = document.createElement("li");
+      li.textContent = f;
+      filieres.appendChild(li);
+    });
     body.appendChild(filieres);
 
     const meta = document.createElement("div");
     meta.className = "school-meta";
-    let metaHtml = `<span><strong>Niveaux :</strong> ${school.niveaux.join(", ")}</span>`;
-    if (school.duree) metaHtml += `<span><strong>Durée :</strong> ${school.duree}</span>`;
-    if (school.admission) metaHtml += `<span><strong>Admission :</strong> ${school.admission}</span>`;
-    if (school.frais) metaHtml += `<span><strong>Frais :</strong> ${school.frais}</span>`;
-    if (school.agreeNote) metaHtml += `<span>ℹ️ ${school.agreeNote}</span>`;
+    let metaHtml = `<span><strong>Niveaux :</strong> ${escapeHtml(school.niveaux.join(", "))}</span>`;
+    if (school.duree) metaHtml += `<span><strong>Durée :</strong> ${escapeHtml(school.duree)}</span>`;
+    if (school.admission) metaHtml += `<span><strong>Admission :</strong> ${escapeHtml(school.admission)}</span>`;
+    if (school.frais) metaHtml += `<span><strong>Frais :</strong> ${escapeHtml(school.frais)}</span>`;
+    if (school.agreeNote) metaHtml += `<span>ℹ️ ${escapeHtml(school.agreeNote)}</span>`;
     meta.innerHTML = metaHtml;
     body.appendChild(meta);
 
-    if (school.site) {
+    const siteHref = safeUrl(school.site);
+    if (siteHref) {
       const link = document.createElement("a");
       link.className = "school-link";
-      link.href = school.site;
+      link.href = siteHref;
       link.target = "_blank";
-      link.rel = "noopener";
+      link.rel = "noopener noreferrer";
       link.textContent = "Voir le site officiel →";
       body.appendChild(link);
     }
@@ -722,7 +758,7 @@
     if (progressLabel) progressLabel.textContent = `Question ${quizIndex + 1} / ${total}`;
 
     questionEl.innerHTML = `
-      <h2 class="quiz-question-title">${tField(q, "question")}</h2>
+      <h2 class="quiz-question-title">${escapeHtml(tField(q, "question"))}</h2>
       <div class="quiz-options"></div>
     `;
     const optionsWrap = questionEl.querySelector(".quiz-options");
@@ -825,7 +861,7 @@
     const checklist = document.createElement("div");
     checklist.className = "quiz-match-checklist";
     checklist.innerHTML = match.checks
-      .map((c) => `<span class="${c.ok ? "match-ok" : "match-no"}">${c.ok ? "✓" : "✗"} ${c.label}</span>`)
+      .map((c) => `<span class="${c.ok ? "match-ok" : "match-no"}">${c.ok ? "✓" : "✗"} ${escapeHtml(c.label)}</span>`)
       .join("");
     card.insertBefore(checklist, card.firstChild);
     return card;
@@ -868,8 +904,8 @@
           ? 'This result is a starting point, not a verdict : 14 questions can\'t know you 100%. Compare it against a <a href="temoignages.html">real testimonial</a> from someone in the role, and try the roadmap before committing financially to a school.'
           : 'Ce résultat est un point de départ, pas un verdict : 14 questions ne peuvent pas te connaître à 100 %. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier, et teste la roadmap avant de t\'engager financièrement dans une école.'
       }</p>
-      <h2>${isEn ? "Your profile" : "Ton profil"} : ${topMeta.icon} ${topLabel}</h2>
-      <p class="category-desc">${tField(topMeta, "description")}</p>
+      <h2>${isEn ? "Your profile" : "Ton profil"} : ${escapeHtml(topMeta.icon)} ${escapeHtml(topLabel)}</h2>
+      <p class="category-desc">${escapeHtml(tField(topMeta, "description"))}</p>
     `;
 
     if (matchingRoles.length) {
@@ -881,8 +917,8 @@
       const secondLabel = isEn && secondMeta.nameEn ? secondMeta.nameEn : second;
       html += `<p class="quiz-secondary">${
         isEn
-          ? `Close call: <strong>${secondMeta.icon} ${secondLabel}</strong> suits you almost as much as ${topLabel}. Worth exploring both before choosing.`
-          : `Résultat serré : <strong>${secondMeta.icon} ${secondLabel}</strong> te correspond presque autant que ${topLabel}. Vaut le coup d'explorer les deux avant de choisir.`
+          ? `Close call: <strong>${escapeHtml(secondMeta.icon)} ${escapeHtml(secondLabel)}</strong> suits you almost as much as ${escapeHtml(topLabel)}. Worth exploring both before choosing.`
+          : `Résultat serré : <strong>${escapeHtml(secondMeta.icon)} ${escapeHtml(secondLabel)}</strong> te correspond presque autant que ${escapeHtml(topLabel)}. Vaut le coup d'explorer les deux avant de choisir.`
       }</p>`;
     }
 
@@ -932,7 +968,7 @@
       const row = document.createElement("div");
       row.className = "quiz-score-row";
       row.innerHTML = `
-        <span class="quiz-score-label">${meta.icon} ${domainLabel}</span>
+        <span class="quiz-score-label">${escapeHtml(meta.icon)} ${escapeHtml(domainLabel)}</span>
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
         <span class="quiz-score-value">${score}/${totalAnswers}</span>
       `;
@@ -970,10 +1006,10 @@
       const item = document.createElement("div");
       item.className = "timeline-item";
       item.innerHTML = `
-        <div class="timeline-period">${tField(step, "periode")}</div>
+        <div class="timeline-period">${escapeHtml(tField(step, "periode"))}</div>
         <div class="timeline-content">
-          <h3>${tField(step, "titre")}</h3>
-          <p>${tField(step, "description")}</p>
+          <h3>${escapeHtml(tField(step, "titre"))}</h3>
+          <p>${escapeHtml(tField(step, "description"))}</p>
         </div>
       `;
       container.appendChild(item);
@@ -1050,10 +1086,10 @@
 
       let bodyHtml = "";
       if (dc && dc.urgent && dc.urgentNote) {
-        bodyHtml += `<p class="dates-urgent-note">⏰ ${dc.urgentNote}</p>`;
+        bodyHtml += `<p class="dates-urgent-note">⏰ ${escapeHtml(dc.urgentNote)}</p>`;
       }
       if (dc && dc.note) {
-        bodyHtml += `<p class="dates-note">${dc.note}</p>`;
+        bodyHtml += `<p class="dates-note">${escapeHtml(dc.note)}</p>`;
       }
 
       const fields = dc
@@ -1067,25 +1103,26 @@
         : [];
 
       if (fields.length) {
-        bodyHtml += `<ul class="dates-list">` + fields.map(([label, value]) => `<li><strong>${label} :</strong> ${value}</li>`).join("") + `</ul>`;
+        bodyHtml += `<ul class="dates-list">` + fields.map(([label, value]) => `<li><strong>${label} :</strong> ${escapeHtml(value)}</li>`).join("") + `</ul>`;
       }
 
       if (dc && dc.anneeReference) {
-        bodyHtml += `<p class="dates-ref-note">Repère de calendrier (${dc.anneeReference})${dc.aVerifier ? " : à reconfirmer directement auprès de l'école" : ""}.</p>`;
+        bodyHtml += `<p class="dates-ref-note">Repère de calendrier (${escapeHtml(dc.anneeReference)})${dc.aVerifier ? " : à reconfirmer directement auprès de l'école" : ""}.</p>`;
       }
 
       if (dc && dc.contact) {
-        bodyHtml += `<p class="dates-ref-note">Contact direct : ${dc.contact}</p>`;
+        bodyHtml += `<p class="dates-ref-note">Contact direct : ${escapeHtml(dc.contact)}</p>`;
       }
 
       if (!dc) {
         bodyHtml = `<p class="dates-note">Dates non publiées en ligne : vérifie directement sur le site de l'école.</p>`;
       }
 
+      const siteHref = safeUrl(school.site);
       row.innerHTML = `
-        <h3>${school.name}</h3>
+        <h3>${escapeHtml(school.name)}</h3>
         ${bodyHtml}
-        ${school.site ? `<a class="school-link" href="${school.site}" target="_blank" rel="noopener">Voir le site officiel →</a>` : ""}
+        ${siteHref ? `<a class="school-link" href="${escapeHtml(siteHref)}" target="_blank" rel="noopener noreferrer">Voir le site officiel →</a>` : ""}
       `;
       container.appendChild(row);
     });
@@ -1122,13 +1159,13 @@
     if (typeof ROLES !== "undefined") {
       Object.keys(ROLES).forEach((id) => {
         const r = ROLES[id];
-        index.push({ title: r.title, description: r.description || "", category: "Roadmap · métier", url: `roadmap.html?id=${id}`, keywords: flattenRoadmapKeywords(r) });
+        index.push({ title: r.title, description: r.description || "", category: "Roadmap · métier", url: `roadmap.html?id=${encodeURIComponent(id)}`, keywords: flattenRoadmapKeywords(r) });
       });
     }
     if (typeof SKILLS !== "undefined") {
       Object.keys(SKILLS).forEach((id) => {
         const s = SKILLS[id];
-        index.push({ title: s.title, description: s.description || "", category: "Roadmap · compétence", url: `roadmap.html?id=${id}`, keywords: flattenRoadmapKeywords(s) });
+        index.push({ title: s.title, description: s.description || "", category: "Roadmap · compétence", url: `roadmap.html?id=${encodeURIComponent(id)}`, keywords: flattenRoadmapKeywords(s) });
       });
     }
     if (typeof SCHOOLS !== "undefined") {
@@ -1211,11 +1248,12 @@
       matches.slice(0, 60).forEach((item) => {
         const card = document.createElement("a");
         card.className = "search-result";
-        const targetUrl = item.externalUrl || item.url;
+        const targetUrl = safeUrl(item.externalUrl) || safeUrl(item.url);
+        if (!targetUrl) return;
         card.href = targetUrl;
-        if (item.externalUrl) {
+        if (item.externalUrl && targetUrl === safeUrl(item.externalUrl)) {
           card.target = "_blank";
-          card.rel = "noopener";
+          card.rel = "noopener noreferrer";
         }
 
         const cat = document.createElement("span");
@@ -1316,5 +1354,5 @@
 
   // Exposé pour js/assistant.js : réutilise la même normalisation et le même
   // index de recherche que la page Recherche, pas de logique dupliquée.
-  window.WIYAO_SEARCH = { buildGlobalIndex, normalize, currentLang };
+  window.WIYAO_SEARCH = { buildGlobalIndex, normalize, currentLang, safeUrl };
 })();

@@ -34,6 +34,16 @@ const PRECACHE_URLS = [
   "fonts/jetbrains-mono-variable-latin-ext.woff2",
 ];
 
+function isHtmlRequest(request) {
+  if (request.mode === "navigate") return true;
+  try {
+    const url = new URL(request.url);
+    return url.pathname.endsWith(".html") || url.pathname === "/" || url.pathname === "";
+  } catch (e) {
+    return false;
+  }
+}
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_URLS))
@@ -52,10 +62,21 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Stale-while-revalidate: serve from cache instantly (works offline), refresh in the background.
+// HTML with a query string (contact form fallback, roadmap?id=, etc.) is never
+// written to Cache Storage: a GET with name/email/message in the URL must not
+// persist in the service worker. Other same-origin GETs stay stale-while-revalidate.
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET" || !request.url.startsWith(self.location.origin)) return;
+
+  const url = new URL(request.url);
+  if (isHtmlRequest(request) && url.search) {
+    const barePath = url.pathname === "/" || url.pathname === "" ? "index.html" : url.pathname.replace(/^\//, "");
+    event.respondWith(
+      fetch(request).catch(() => caches.match(barePath).then((cached) => cached || caches.match("index.html")))
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(request).then((cached) => {
