@@ -700,6 +700,9 @@
   let quizRoleScores = {};
   let quizPractical = { niveau: null, ville: null, statut: null, priorite: null };
   let quizFlow = typeof QUIZ_QUESTIONS !== "undefined" ? QUIZ_QUESTIONS.filter((q) => q.type === "domain") : [];
+  // Une entrée par question déjà répondue (indexée comme quizFlow), pour
+  // pouvoir annuler une réponse quand on revient en arrière ou qu'on la change.
+  let quizHistory = [];
   const quizDomainCount = quizFlow.length;
 
   function renderQuizQuestion() {
@@ -734,9 +737,40 @@
       btn.addEventListener("click", () => answerQuiz(q.type, opt.domain || opt.value, opt.roles));
       optionsWrap.appendChild(btn);
     });
+
+    if (quizIndex > 0) {
+      const back = document.createElement("button");
+      back.type = "button";
+      back.className = "quiz-back";
+      back.textContent = currentLang() === "en" ? "← Previous question" : "← Question précédente";
+      back.addEventListener("click", goBackQuiz);
+      questionEl.appendChild(back);
+    }
+  }
+
+  // Retire la contribution d'une réponse déjà enregistrée (score de domaine,
+  // score de métier ou réponse pratique), pour permettre de revenir en
+  // arrière ou de changer une réponse sans fausser le résultat.
+  function undoQuizAnswer(entry) {
+    if (!entry) return;
+    if (entry.type === "domain") {
+      quizScores[entry.value] = (quizScores[entry.value] || 0) - 1;
+    } else if (entry.type === "role") {
+      (entry.roles || []).forEach((r) => {
+        quizRoleScores[r] = (quizRoleScores[r] || 0) - 1;
+      });
+    } else {
+      quizPractical[entry.type] = null;
+    }
   }
 
   function answerQuiz(type, value, roles) {
+    // Si cette question a déjà été répondue (retour en arrière puis nouveau
+    // choix), on annule d'abord l'ancienne contribution avant d'appliquer la
+    // nouvelle, pour ne jamais compter une question deux fois.
+    undoQuizAnswer(quizHistory[quizIndex]);
+    quizHistory[quizIndex] = { type, value, roles };
+
     if (type === "domain") {
       quizScores[value] = (quizScores[value] || 0) + 1;
     } else if (type === "role") {
@@ -751,7 +785,9 @@
     // Juste après la dernière question de domaine : le domaine dominant est
     // déjà connu, on insère ses questions de métier avant les questions
     // pratiques (niveau/ville/statut/priorité), qui restent communes à tous.
-    if (quizIndex === quizDomainCount) {
+    // (Ce point ne se déclenche qu'une fois : un retour en arrière dans les
+    // questions de domaine tronque quizFlow, voir goBackQuiz.)
+    if (quizIndex === quizDomainCount && quizFlow.length === quizDomainCount) {
       const leadingDomain = Object.keys(quizScores).sort((a, b) => (quizScores[b] || 0) - (quizScores[a] || 0))[0];
       const roleQuestions = (typeof ROLE_QUESTIONS !== "undefined" && ROLE_QUESTIONS[leadingDomain]) || [];
       const practicalQuestions = QUIZ_QUESTIONS.filter((q) => q.type !== "domain");
@@ -763,6 +799,26 @@
     } else {
       renderQuizQuestion();
     }
+  }
+
+  function goBackQuiz() {
+    if (quizIndex === 0) return;
+    quizIndex -= 1;
+
+    // Revenir dans les questions de domaine après que le domaine dominant a
+    // déjà été résolu : les questions de métier/pratiques injectées peuvent
+    // ne plus correspondre (le domaine dominant peut changer). On les retire
+    // et on annule leurs réponses ; elles seront recalculées quand la
+    // frontière sera de nouveau atteinte.
+    if (quizIndex < quizDomainCount && quizFlow.length > quizDomainCount) {
+      for (let i = quizDomainCount; i < quizHistory.length; i += 1) {
+        undoQuizAnswer(quizHistory[i]);
+      }
+      quizFlow = quizFlow.slice(0, quizDomainCount);
+      quizHistory = quizHistory.slice(0, quizDomainCount);
+    }
+
+    renderQuizQuestion();
   }
 
   // Relie le domaine dominant + les réponses pratiques (niveau, ville, budget,
@@ -949,6 +1005,7 @@
     quizRoleScores = {};
     quizPractical = { niveau: null, ville: null, statut: null, priorite: null };
     quizFlow = QUIZ_QUESTIONS.filter((q) => q.type === "domain");
+    quizHistory = [];
     const quizSection = document.getElementById("quiz-section");
     const resultsSection = document.getElementById("quiz-results");
     if (resultsSection) resultsSection.hidden = true;
