@@ -4796,8 +4796,10 @@ const SCHOOLS = {
     site: "https://www.esiba.tg/",
     description: "École agréée par l'État togolais, membre de l'Agence Universitaire de la Francophonie (AUF), plus de 36 ans d'expérience en gestion et technologie.",
     datesCles: {
-      mode: "inconnu",
-      note: "Aucune date publiée en ligne : dossier PDF à soumettre directement.",
+      mode: "continue",
+      note: "Inscription sur dossier, pas de concours à date fixe.",
+      rentree: "19 octobre 2026 (confirmée, flyer officiel ESIBA)",
+      anneeReference: "2026-2027",
       contact: "esiba@esiba.tg / +228 90 81 41 78"
     }
   },
