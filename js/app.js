@@ -1214,12 +1214,17 @@
             const desc = item.querySelector("p");
             const link = page.linkSelector === null ? null : item.querySelector(page.linkSelector || "a.eco-link");
             if (!heading) return;
+            // L'ancre peut être portée par l'item lui-même (ex. faq.html : les
+            // <details> ciblés par d'autres pages ont leur propre id, pas de
+            // <section id> autour) ou par une <section id> englobante (ex.
+            // bourses-financement.html : une section par sous-thème).
             const section = item.closest("section[id]");
+            const anchorId = item.id || (section && section.id);
             index.push({
               title: heading.textContent.trim(),
               description: desc ? desc.textContent.trim() : "",
               category: page.category,
-              url: section ? `${page.url}#${section.id}` : page.url,
+              url: anchorId ? `${page.url}#${anchorId}` : page.url,
               externalUrl: link ? link.getAttribute("href") : null
             });
           });
@@ -1261,9 +1266,12 @@
       if (!index) return;
 
       const matches = index.filter((item) => item.searchText.indexOf(query) !== -1);
-      status.textContent = matches.length
-        ? (isEn ? `${matches.length} result${matches.length > 1 ? "s" : ""}` : `${matches.length} résultat${matches.length > 1 ? "s" : ""}`)
-        : (isEn ? "No results. Try a different keyword." : "Aucun résultat. Essaie un autre mot-clé.");
+      const shownCount = Math.min(matches.length, 60);
+      status.textContent = !matches.length
+        ? (isEn ? "No results. Try a different keyword." : "Aucun résultat. Essaie un autre mot-clé.")
+        : matches.length > 60
+        ? (isEn ? `${shownCount} of ${matches.length} results shown` : `${shownCount} résultats affichés sur ${matches.length}`)
+        : (isEn ? `${matches.length} result${matches.length > 1 ? "s" : ""}` : `${matches.length} résultat${matches.length > 1 ? "s" : ""}`);
 
       matches.slice(0, 60).forEach((item) => {
         const card = document.createElement("a");
