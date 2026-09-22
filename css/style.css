@@ -370,21 +370,6 @@ header.site-header {
   display: block;
 }
 
-.brand .flag {
-  display: inline-flex;
-  width: 22px;
-  height: 16px;
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: 0 0 0 1px var(--border);
-}
-.brand .flag span {
-  flex: 1;
-}
-.brand .flag .s1 { background: var(--green); }
-.brand .flag .s2 { background: var(--yellow); }
-.brand .flag .s3 { background: var(--red); }
-
 header.site-header .brand {
   background: none;
   color: var(--tk-text);
