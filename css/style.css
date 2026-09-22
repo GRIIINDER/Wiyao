@@ -2640,7 +2640,7 @@ footer.site-footer {
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: normal;
+  letter-spacing: 0.03em;
   margin: 0 0 6px;
 }
 
@@ -2649,7 +2649,7 @@ footer.site-footer {
   font-size: 0.75rem;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: normal;
+  letter-spacing: 0.04em;
   line-height: 1.4;
   padding: 2px 0;
   transition: color 0.2s;
