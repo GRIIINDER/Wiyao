@@ -231,7 +231,7 @@
       en: 'Two-day tech competition at Campus ESIG, organized by the ESIG TechSphere club: development hackathon, network & security hackathon, Capture The Flag and Tech Quiz / Code Racing. 100,000 FCFA for the first-place group in each hackathon and the CTF, a "Best young woman" prize of 25,000 FCFA in each main category. Competitor registration is closed; participant tickets remain open to attend the panels and events.',
     },
     "actu.t13.cat": { fr: "Événement", en: "Event" },
-    "actu.t14.date": { fr: "Inscriptions jusqu'au 18 septembre 2026", en: "Registration until September 18, 2026" },
+    "actu.t14.date": { fr: "Inscriptions prolongées jusqu'au 30 septembre 2026", en: "Registration extended until September 30, 2026" },
     "actu.t14.h3": { fr: "Nana Tech Tour : une tournée nationale pour les jeunes femmes du numérique", en: "Nana Tech Tour: a national tour for young women in tech" },
     "actu.t14.p": {
       fr: "Tournée nationale du programme gouvernemental Nana Tech pour développer les compétences numériques\n             des jeunes femmes dans six villes : Lomé, Aného, Sokodé, Kpalimé, Atakpamé et Kara. Certificat de\n             participation pour toutes, parcours de formation certifiante offert aux meilleures. Portée par le\n             ministère de l'Efficacité du Service Public et de la Transformation Numérique, avec Djanta Tech\n             Hub, la coopération allemande (GIZ), l'Union européenne, le Luxembourg, Digital Girl, GDG Lomé,\n             RedTeam-TG et Women Techmakers Lomé.",
