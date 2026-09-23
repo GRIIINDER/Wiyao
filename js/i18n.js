@@ -216,7 +216,7 @@
       fr: "Événements, lancements, startups, financements : les faits marquants récents de l'écosystème, sourcés\n       et datés. Pas un flux automatique : chaque entrée est vérifiée à la main, avec sa source.",
       en: "Events, launches, startups, funding : recent highlights from the ecosystem, sourced and dated. Not an automated feed: every entry is hand-verified, with its source.",
     },
-    "actu.hero.guide": { fr: "Dernière mise à jour : 17 septembre 2026.", en: "Last updated: September 17, 2026." },
+    "actu.hero.guide": { fr: "Dernière mise à jour : 23 septembre 2026.", en: "Last updated: September 23, 2026." },
     "actu.hero.propose": {
       fr: 'Un événement ou une actu tech togolaise qui manque ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
       en: 'A Togolese tech event or news item missing? <a href="proposer.html">Suggest it</a> : we verify and add it.',
@@ -238,6 +238,16 @@
       en: "National tour of the government's Nana Tech program to build digital skills among young women across six cities: Lomé, Aného, Sokodé, Kpalimé, Atakpamé and Kara. A participation certificate for everyone, with a certifying training track offered to the best participants. Run by the Ministry of Public Service Efficiency and Digital Transformation, with Djanta Tech Hub, German cooperation (GIZ), the European Union, Luxembourg, Digital Girl, GDG Lomé, RedTeam-TG and Women Techmakers Lomé.",
     },
     "actu.t14.cat": { fr: "Formation", en: "Training" },
+    "actu.t18.date": {
+      fr: "Samedi 24 octobre 2026, 9h-12h, Institute Polytechnic Defitech (Lomé)",
+      en: "Saturday, October 24, 2026, 9am-12pm, Institute Polytechnic Defitech (Lomé)",
+    },
+    "actu.t18.h3": { fr: "GitHub Dev Days Lomé : atelier pratique GitHub Copilot", en: "GitHub Dev Days Lomé: hands-on GitHub Copilot workshop" },
+    "actu.t18.p": {
+      fr: "Atelier gratuit consacré à GitHub Copilot (développement assisté par l'IA), dans le cadre de la\n             série mondiale communautaire GitHub Dev Days (1ᵉʳ septembre - 31 octobre 2026). Ouvert à tous\n             niveaux : étudiants, développeurs en poste, simples curieux — l'atelier s'adapte au niveau de\n             chacun. Seul prérequis : un ordinateur portable et un compte GitHub (gratuit à créer).",
+      en: "Free workshop on GitHub Copilot (AI-assisted development), part of the global community-led GitHub Dev Days series (September 1 - October 31, 2026). Open to all levels: students, working developers, the simply curious — the workshop adapts to your level. Only requirement: a laptop and a free GitHub account.",
+    },
+    "actu.t18.cat": { fr: "Formation", en: "Training" },
     "actu.t15.date": { fr: "5-8 octobre 2026", en: "October 5-8, 2026" },
     "actu.t15.h3": { fr: "Nana Tech : formation à l'IA pour chercheuses, enseignantes-chercheuses et doctorantes", en: "Nana Tech: AI training for women researchers, professors and PhD students" },
     "actu.t15.p": {
