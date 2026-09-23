@@ -1308,6 +1308,10 @@
       fr: "École de code sans condition de diplôme, lancée le 4 mai 2026 par le Ministère de la Transformation Numérique, en partenariat avec le Groupe AXIAN (via Yas Togo), le réseau international 42 et le soutien de la France : 1ᵉʳ campus 42 d'Afrique de l'Ouest. Pédagogie par projets, apprentissage entre pairs et autonomie ; formations en programmation, data et intelligence artificielle pour plusieurs centaines de jeunes par an.",
       en: "Diploma-free coding school launched May 4, 2026 by the Ministry of Digital Transformation, in partnership with the AXIAN Group (via Yas Togo), the international 42 network and support from France : West Africa's 1st 42 campus. Project-based learning, peer-to-peer teaching and autonomy; training in programming, data and AI for several hundred young people a year.",
     },
+    "eco.h13.p": {
+      fr: "Communauté togolaise fondée en septembre 2022 par trois jeunes passionnés de technologie : formations pratiques en compétences numériques, intelligence artificielle, cybersécurité et électronique/Arduino, avec une approche « learning by doing ». Ambitionne de devenir un centre de référence en innovation technologique pour les jeunes, avec FabLab et formations certifiantes.",
+      en: "Togolese community founded in September 2022 by three young tech enthusiasts: hands-on training in digital skills, artificial intelligence, cybersecurity and electronics/Arduino, with a \"learning by doing\" approach. Aims to become a reference center for youth tech innovation, with a FabLab and certifying training programs.",
+    },
 
     "eco.inst.h2": { fr: "Institutions publiques et employeurs numériques", en: "Public institutions and digital employers" },
     "eco.i1.p": { fr: "Agence publique pilotant la digitalisation des démarches administratives au Togo. Recrute régulièrement sur des postes tech variés : développeurs, architectes, UX/UI, QA, Scrum Master, data.", en: "Public agency leading the digitalization of administrative processes in Togo. Regularly hires for a range of tech roles: developers, architects, UX/UI, QA, Scrum Master, data." },
