@@ -1059,10 +1059,6 @@
       fr: "Portail généraliste avec une section Togo active : particulièrement utile pour les profils marketing digital et community management, moins représentés sur les autres plateformes de cette liste.",
       en: "General-purpose portal with an active Togo section: particularly useful for digital marketing and community management profiles, which are less represented on the other platforms in this list.",
     },
-    "stages.s1.i12.p": {
-      fr: "Plateforme construite par des développeurs togolais pour l'écosystème tech local : emplois, stages, formations, programmes et événements, avec des recruteurs authentifiés avant publication.",
-      en: "Platform built by Togolese developers for the local tech ecosystem: jobs, internships, training, programs and events, with recruiters authenticated before they can publish.",
-    },
     "stages.s1.i13.p": {
       fr: "Agence togolaise de placement et d'intérim, avec une catégorie Informatique dédiée dans son moteur de recherche d'offres et une couverture au-delà de Lomé (Kara, Sokodé, Atakpamé, Kpalimé, Dapaong...).",
       en: "Togolese staffing and interim placement agency, with a dedicated IT category in its job search engine and coverage beyond Lomé (Kara, Sokodé, Atakpamé, Kpalimé, Dapaong...).",
