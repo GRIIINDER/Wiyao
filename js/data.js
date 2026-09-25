@@ -5002,9 +5002,8 @@ const SCHOOLS = {
     description: "École nationale d'ingénieurs publique (ENP), qui a remplacé en juillet 2026 l'École Polytechnique de Lomé : elle-même composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).",
     datesCles: {
       mode: "campagne",
-      note: "Concours écrit annuel réservé aux nouveaux bacheliers, dépôt possible à Lomé, Kara (DAAS) et dans les directions régionales (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong). Annonce officielle du Ministère, datée du 10 août 2026.",
-      urgent: true,
-      urgentNote: "Dépôt des dossiers jusqu'au 11 septembre 2026, 15h00 : dernière ligne droite si tu vises cette école.",
+      note: "Concours écrit annuel réservé aux nouveaux bacheliers, dépôt possible à Lomé, Kara (DAAS) et dans les directions régionales (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong). Annonce officielle du Ministère, datée du 10 août 2026. Candidatures 2026-2027 closes : les dates ci-dessous servent de repère pour la prochaine campagne.",
+      urgent: false,
       ouverture: "17 août 2026",
       cloture: "11 septembre 2026, 15h00",
       concours: "30 septembre 2026 (présélection sur dossier le 18 septembre)",
