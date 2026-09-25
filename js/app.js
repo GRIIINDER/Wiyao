@@ -596,12 +596,23 @@
     "inter-etats": "Inter-États"
   };
 
+  // Mêmes mots-clés que le rattachement écoles ↔ domaine du test d'orientation
+  // (computeSchoolMatches) : une école peut correspondre à plusieurs domaines.
+  function matchSchoolDomains(school) {
+    if (typeof DOMAIN_KEYWORDS === "undefined") return [];
+    const filieresText = school.filieres.join(" ").toLowerCase();
+    return Object.keys(DOMAIN_KEYWORDS).filter((domain) =>
+      DOMAIN_KEYWORDS[domain].some((kw) => filieresText.indexOf(kw) !== -1)
+    );
+  }
+
   function buildSchoolCard(id, school) {
     const card = document.createElement("div");
     card.className = "card school-card";
     card.dataset.title = school.name.toLowerCase() + " " + school.filieres.join(" ").toLowerCase();
     card.dataset.ville = school.ville.join(",");
     card.dataset.statut = school.statut;
+    card.dataset.domaine = matchSchoolDomains(school).join(",");
 
     const body = document.createElement("div");
     body.className = "card-body";
@@ -663,6 +674,8 @@
     if (!grid) return;
     const searchInput = document.getElementById("school-search");
     const query = searchInput ? searchInput.value.trim().toLowerCase() : "";
+    const activeDomaineChip = document.querySelector("#domaine-filters .domain-chip.active");
+    const activeDomaine = activeDomaineChip ? activeDomaineChip.dataset.domaine : "all";
     const activeVilleChip = document.querySelector("#ville-filters .domain-chip.active");
     const activeVille = activeVilleChip ? activeVilleChip.dataset.ville : "all";
     const activeStatutChip = document.querySelector("#statut-filters .domain-chip.active");
@@ -671,9 +684,10 @@
     let visibleCount = 0;
     grid.querySelectorAll(".school-card").forEach((card) => {
       const matchesQuery = !query || card.dataset.title.indexOf(query) !== -1;
+      const matchesDomaine = activeDomaine === "all" || card.dataset.domaine.split(",").indexOf(activeDomaine) !== -1;
       const matchesVille = activeVille === "all" || card.dataset.ville.split(",").indexOf(activeVille) !== -1;
       const matchesStatut = activeStatut === "all" || card.dataset.statut === activeStatut;
-      const visible = matchesQuery && matchesVille && matchesStatut;
+      const visible = matchesQuery && matchesDomaine && matchesVille && matchesStatut;
       card.hidden = !visible;
       if (visible) visibleCount += 1;
     });
@@ -686,7 +700,7 @@
     const searchInput = document.getElementById("school-search");
     if (searchInput) searchInput.addEventListener("input", applySchoolFilters);
 
-    ["ville-filters", "statut-filters"].forEach((groupId) => {
+    ["domaine-filters", "ville-filters", "statut-filters"].forEach((groupId) => {
       const group = document.getElementById(groupId);
       if (!group) return;
       group.addEventListener("click", (e) => {
