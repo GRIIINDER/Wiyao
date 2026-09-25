@@ -277,7 +277,7 @@ const ROLES = {
         items: [
           { label: "Modèle OSI et TCP/IP", level: "core", resource: { label: "Voir roadmap compétence Réseaux", url: "roadmap.html?id=reseaux" } },
           { label: "Routage, switching, VLAN, sous-réseaux", level: "core" },
-          { label: "Certification CCNA (recommandée en base)", level: "option", resource: { label: "Cisco - Certification CCNA", url: "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/ccna/index.html" } }
+          { label: "Certification CCNA (recommandée en base)", level: "option", resource: { label: "Cisco - Certification CCNA", url: "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccna/index.html" } }
         ]
       },
       {
@@ -653,7 +653,7 @@ const ROLES = {
       {
         title: "2. Tableurs",
         items: [
-          { label: "Formules avancées (RECHERCHEV/RECHERCHEX, INDEX/EQUIV, SI imbriqués)", level: "core", resource: { label: "Support Google Sheets", url: "https://support.google.com/docs/topic/9054603" } },
+          { label: "Formules avancées (RECHERCHEV/RECHERCHEX, INDEX/EQUIV, SI imbriqués)", level: "core", resource: { label: "Aide Google Docs - RECHERCHEV (VLOOKUP)", url: "https://support.google.com/docs/answer/3093318?hl=fr" } },
           { label: "Tableaux croisés dynamiques (TCD) et mise en forme conditionnelle", level: "core", resource: { label: "Aide Google Docs - Tableaux croisés dynamiques", url: "https://support.google.com/docs/answer/1272900?hl=fr&co=GENIE.Platform%3DDesktop" } },
           { label: "Validation de données et nettoyage de base (doublons, espaces, formats)", level: "core", resource: { label: "Aide Google Docs - Liste déroulante et validation", url: "https://support.google.com/docs/answer/186103?hl=fr&co=GENIE.Platform%3DDesktop" } }
         ]
@@ -1028,7 +1028,7 @@ const ROLES = {
       {
         title: "5. Certifications",
         items: [
-          { label: "CCNA", level: "core", resource: { label: "Cisco - Certification CCNA", url: "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/ccna/index.html" } },
+          { label: "CCNA", level: "core", resource: { label: "Cisco - Certification CCNA", url: "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccna/index.html" } },
           { label: "CCNP", level: "option" }
         ]
       },
@@ -3208,7 +3208,7 @@ const ROLES = {
         title: "4. Reporting et certification",
         items: [
           { label: "Tableaux de bord et rapports CRM", level: "core" },
-          { label: "Salesforce Certified Administrator", level: "option", resource: { label: "Salesforce Trailhead - Certifications", url: "https://trailhead.salesforce.com/credentials/administrator" } }
+          { label: "Salesforce Certified Administrator", level: "option", resource: { label: "Salesforce Trailhead - Certifications", url: "https://trailhead.salesforce.com/en/credentials/platformadministrator" } }
         ]
       },
       {
