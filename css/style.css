@@ -348,7 +348,7 @@ header.site-header {
   border-radius: 999px;
   padding: 10px 14px;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto 1fr auto;
   justify-content: start;
   align-items: center;
   gap: 12px;
@@ -385,7 +385,7 @@ nav.site-nav {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  justify-self: center;
+  justify-self: stretch;
   gap: 2px;
   background: var(--tk-surface-soft);
   border: 1px solid var(--tk-border);
@@ -418,8 +418,8 @@ nav.site-nav a.active {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: auto;
-  max-width: 40vw;
+  flex: 1 1 200px;
+  max-width: 520px;
   padding: 8px 16px;
   background: var(--tk-surface);
   border-radius: 999px;
@@ -2759,6 +2759,7 @@ footer.site-footer {
     font-size: 0.85rem;
   }
   .nav-search-link {
+    flex: 0 1 auto;
     width: 100%;
     max-width: none;
     justify-content: center;
