@@ -97,6 +97,30 @@ async function checkAllUrls(urls) {
 }
 
 // ---- 4. Écoles actuellement marquées "urgent" dans data.js ----
+
+// Parseur de date française volontairement conservateur : ne matche que
+// "JJ mois AAAA" avec année explicite (ex: "11 septembre 2026, 15h00").
+// Les formats sans année ("26 septembre (référence)") ou ambigus ne sont
+// jamais interprétés -- pas de fausse date plutôt qu'une date devinée,
+// cohérent avec la philosophie prudente du reste de ce script.
+const FR_MONTHS = {
+  janvier: 0, février: 1, mars: 2, avril: 3, mai: 4, juin: 5,
+  juillet: 6, août: 7, septembre: 8, octobre: 9, novembre: 10, décembre: 11,
+};
+
+function parseFrenchDate(text) {
+  if (!text) return null;
+  const re = /(\d{1,2})\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s+(\d{4})/i;
+  const m = text.match(re);
+  if (!m) return null;
+  const day = parseInt(m[1], 10);
+  const month = FR_MONTHS[m[2].toLowerCase()];
+  const year = parseInt(m[3], 10);
+  if (month === undefined || Number.isNaN(day) || Number.isNaN(year)) return null;
+  const d = new Date(year, month, day, 23, 59, 59);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
 function findUrgentSchools() {
   const src = readFile("js/data.js");
   const startsIdx = src.indexOf("const SCHOOLS = {");
@@ -117,14 +141,20 @@ function findUrgentSchools() {
     const end = k + 1 < idxs.length ? idxs[k + 1].start : schoolsSrc.length;
     blocks.push({ id: idxs[k].id, text: schoolsSrc.slice(start, end) });
   }
+  const today = new Date();
   for (const b of blocks) {
     if (/urgent:\s*true/.test(b.text)) {
       const noteMatch = b.text.match(/urgentNote:\s*"([^"]*)"/);
       const nameMatch = b.text.match(/name:\s*"([^"]*)"/);
+      const clotureMatch = b.text.match(/cloture:\s*"([^"]*)"/);
+      const clotureText = clotureMatch ? clotureMatch[1] : null;
+      const clotureDate = parseFrenchDate(clotureText);
       entries.push({
         id: b.id,
         name: nameMatch ? nameMatch[1] : b.id,
         note: noteMatch ? noteMatch[1] : "(pas de urgentNote trouvée)",
+        cloture: clotureText,
+        expired: clotureDate ? clotureDate < today : null,
       });
     }
   }
@@ -165,11 +195,27 @@ function buildReport(results, urgentSchools) {
     md += `\n`;
   }
 
+  const expiredUrgent = urgentSchools.filter((s) => s.expired === true);
+  const otherUrgent = urgentSchools.filter((s) => s.expired !== true);
+
+  if (expiredUrgent.length) {
+    md += `## 🔴 Écoles "urgent" dont la date de clôture est déjà passée (${expiredUrgent.length})\n\n`;
+    md += `Détecté automatiquement (date de \`cloture\` comparée à aujourd'hui) : ce sont des candidats quasi certains `;
+    md += `au même bug que l'ENP en septembre 2026 (bandeau "dernière ligne droite" resté affiché après la date limite). `;
+    md += `À vérifier en premier, avant le reste du rapport.\n\n`;
+    for (const s of expiredUrgent) md += `- [ ] **${s.name}** (\`${s.id}\`) — clôture : ${s.cloture} — ${s.note}\n`;
+    md += `\n`;
+  }
+
   md += `## 📅 Écoles actuellement marquées "urgent"\n\n`;
   if (urgentSchools.length) {
     md += `Reconfirmer que chaque échéance ci-dessous est toujours d'actualité — un \`urgent: true\` oublié après sa date `;
-    md += `a déjà causé une fausse alerte sur le site (école IAI-Togo, corrigé en septembre 2026).\n\n`;
-    for (const s of urgentSchools) md += `- [ ] **${s.name}** (\`${s.id}\`) — ${s.note}\n`;
+    md += `a déjà causé une fausse alerte sur le site (école IAI-Togo, corrigé en septembre 2026). `;
+    md += `Les échéances déjà passées (détection automatique) sont listées séparément ci-dessus.\n\n`;
+    for (const s of otherUrgent) {
+      const dateInfo = s.cloture ? ` (clôture : ${s.cloture})` : "";
+      md += `- [ ] **${s.name}** (\`${s.id}\`)${dateInfo} — ${s.note}\n`;
+    }
   } else {
     md += `Aucune école actuellement marquée urgente. Rien à reconfirmer.\n`;
   }
