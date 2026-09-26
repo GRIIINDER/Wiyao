@@ -1314,6 +1314,13 @@ main {
   font-weight: 700;
 }
 
+.badge.best-match-badge {
+  margin-left: 0;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
 .card h3 {
   margin: 0 0 6px;
   font-size: 1.15rem;

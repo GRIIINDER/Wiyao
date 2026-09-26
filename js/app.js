@@ -942,6 +942,15 @@
           .sort((a, b) => (quizRoleScores[b] || 0) - (quizRoleScores[a] || 0))
           .slice(0, 3)
       : [];
+    // N'affiche le badge "meilleure correspondance" que si les questions de
+    // métier ont réellement départagé les rôles (score max > 0) : sinon ce
+    // serait un ordre d'insertion présenté à tort comme un signal.
+    const maxRoleScore = matchingRoles.length
+      ? Math.max(...matchingRoles.map((id) => quizRoleScores[id] || 0))
+      : 0;
+    const bestRoleIds = maxRoleScore > 0
+      ? matchingRoles.filter((id) => (quizRoleScores[id] || 0) === maxRoleScore)
+      : [];
     const schoolMatches = computeSchoolMatches(top);
     const isEn = currentLang() === "en";
     const topLabel = isEn && topMeta.nameEn ? topMeta.nameEn : top;
@@ -957,7 +966,15 @@
     `;
 
     if (matchingRoles.length) {
-      html += `<div class="grid" id="quiz-role-grid"></div>`;
+      html += `
+        <h3 class="quiz-scores-title">${isEn ? "Recommended roles" : "Métiers recommandés"}</h3>
+        ${bestRoleIds.length ? `<p class="category-desc" style="text-align:center;">${
+          isEn
+            ? "The metier(s) below marked “Best match” fit your role-specific answers best; the others belong to the same field but scored lower."
+            : "Le(s) métier(s) ci-dessous marqués « Meilleure correspondance » collent le mieux à tes réponses sur le métier précis ; les autres restent dans le même domaine mais ont obtenu un score plus faible."
+        }</p>` : ""}
+        <div class="grid" id="quiz-role-grid"></div>
+      `;
     }
 
     if (isCloseCall) {
@@ -999,7 +1016,19 @@
 
     const roleGrid = document.getElementById("quiz-role-grid");
     if (roleGrid) {
-      matchingRoles.forEach((id) => roleGrid.appendChild(buildCard(id, ROLES[id], "role")));
+      matchingRoles.forEach((id) => {
+        const card = buildCard(id, ROLES[id], "role");
+        if (bestRoleIds.indexOf(id) !== -1) {
+          const badges = card.querySelector(".card-badges");
+          if (badges) {
+            const bestBadge = document.createElement("span");
+            bestBadge.className = "badge best-match-badge";
+            bestBadge.textContent = isEn ? "\u{1F3AF} Best match" : "\u{1F3AF} Meilleure correspondance";
+            badges.insertBefore(bestBadge, badges.firstChild);
+          }
+        }
+        roleGrid.appendChild(card);
+      });
     }
 
     const schoolGrid = document.getElementById("quiz-school-grid");
