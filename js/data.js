@@ -3506,6 +3506,7 @@ const COMMUNITY_BY_DOMAIN = {
 const SKILLS = {
   "git-github": {
     type: "skill",
+    domain: "Développement",
     title: "Git & GitHub",
     titleEn: "Git & GitHub",
     subtitle: "Le contrôle de version, un incontournable pour tous les métiers tech",
@@ -3555,6 +3556,7 @@ const SKILLS = {
 
   "linux": {
     type: "skill",
+    domain: "Infrastructure & DevOps",
     title: "Linux & Ligne de commande",
     titleEn: "Linux & Command Line",
     subtitle: "Administration système et manipulation en ligne de commande",
@@ -3598,6 +3600,7 @@ const SKILLS = {
 
   "docker": {
     type: "skill",
+    domain: "Infrastructure & DevOps",
     title: "Docker & Conteneurisation",
     titleEn: "Docker & Containerization",
     subtitle: "Empaqueter et exécuter des applications de façon reproductible",
@@ -3639,6 +3642,7 @@ const SKILLS = {
 
   "sql": {
     type: "skill",
+    domain: "Data & IA",
     title: "SQL & Bases de données relationnelles",
     titleEn: "SQL & Relational Databases",
     subtitle: "Modéliser, interroger et optimiser des données structurées",
@@ -3681,6 +3685,7 @@ const SKILLS = {
 
   "javascript": {
     type: "skill",
+    domain: "Développement",
     title: "JavaScript",
     titleEn: "JavaScript",
     subtitle: "Le langage du web, côté client comme côté serveur",
@@ -3726,6 +3731,7 @@ const SKILLS = {
 
   "python": {
     type: "skill",
+    domain: "Développement",
     title: "Python",
     titleEn: "Python",
     subtitle: "Un langage polyvalent : backend, data, automatisation",
@@ -3768,6 +3774,7 @@ const SKILLS = {
 
   "reseaux": {
     type: "skill",
+    domain: "Infrastructure & DevOps",
     title: "Réseaux TCP/IP",
     titleEn: "TCP/IP Networking",
     subtitle: "Les fondations de toute infrastructure et de la cybersécurité",
@@ -3811,6 +3818,7 @@ const SKILLS = {
 
   "cloud": {
     type: "skill",
+    domain: "Infrastructure & DevOps",
     title: "Cloud (AWS / Azure / GCP)",
     titleEn: "Cloud (AWS / Azure / GCP)",
     subtitle: "Les fondamentaux communs aux principaux fournisseurs cloud",
@@ -3860,6 +3868,7 @@ const SKILLS = {
 
   "react": {
     type: "skill",
+    domain: "Développement",
     title: "React",
     titleEn: "React",
     subtitle: "La bibliothèque JavaScript la plus utilisée pour construire des interfaces",
@@ -3901,6 +3910,7 @@ const SKILLS = {
 
   "vue": {
     type: "skill",
+    domain: "Développement",
     title: "Vue.js",
     titleEn: "Vue.js",
     subtitle: "Framework JavaScript progressif, apprécié pour sa courbe d'apprentissage douce",
@@ -3940,6 +3950,7 @@ const SKILLS = {
 
   "typescript": {
     type: "skill",
+    domain: "Développement",
     title: "TypeScript",
     titleEn: "TypeScript",
     subtitle: "JavaScript typé pour des applications plus robustes et maintenables",
@@ -3979,6 +3990,7 @@ const SKILLS = {
 
   "nodejs": {
     type: "skill",
+    domain: "Développement",
     title: "Node.js",
     titleEn: "Node.js",
     subtitle: "Exécuter du JavaScript côté serveur pour construire des API et services",
@@ -4018,6 +4030,7 @@ const SKILLS = {
 
   "java": {
     type: "skill",
+    domain: "Développement",
     title: "Java",
     titleEn: "Java",
     subtitle: "Langage orienté objet incontournable dans les systèmes d'entreprise",
@@ -4064,6 +4077,7 @@ const SKILLS = {
 
   "cpp": {
     type: "skill",
+    domain: "Développement",
     title: "C++",
     titleEn: "C++",
     subtitle: "Langage bas niveau pour la performance : jeux, systèmes, finance",
@@ -4104,6 +4118,7 @@ const SKILLS = {
 
   "go": {
     type: "skill",
+    domain: "Développement",
     title: "Go (Golang)",
     titleEn: "Go (Golang)",
     subtitle: "Langage simple et performant, très utilisé pour les services cloud et DevOps",
@@ -4142,6 +4157,7 @@ const SKILLS = {
 
   "php": {
     type: "skill",
+    domain: "Développement",
     title: "PHP",
     titleEn: "PHP",
     subtitle: "Langage serveur très répandu pour le développement web",
@@ -4180,6 +4196,7 @@ const SKILLS = {
 
   "kubernetes": {
     type: "skill",
+    domain: "Infrastructure & DevOps",
     title: "Kubernetes",
     titleEn: "Kubernetes",
     subtitle: "Orchestrer des conteneurs à grande échelle",
@@ -4220,6 +4237,7 @@ const SKILLS = {
 
   "terraform": {
     type: "skill",
+    domain: "Infrastructure & DevOps",
     title: "Terraform",
     titleEn: "Terraform",
     subtitle: "Gérer son infrastructure comme du code, de façon reproductible",
@@ -4259,6 +4277,7 @@ const SKILLS = {
 
   "flutter": {
     type: "skill",
+    domain: "Développement",
     title: "Flutter",
     titleEn: "Flutter",
     subtitle: "Créer des applications mobiles natives pour Android et iOS avec un seul code",
@@ -4298,6 +4317,7 @@ const SKILLS = {
 
   "kotlin-android": {
     type: "skill",
+    domain: "Développement",
     title: "Kotlin & Android natif",
     titleEn: "Kotlin & Native Android",
     subtitle: "Développer des applications Android natives modernes",
@@ -4337,6 +4357,7 @@ const SKILLS = {
 
   "swift-ios": {
     type: "skill",
+    domain: "Développement",
     title: "Swift & iOS natif",
     titleEn: "Swift & Native iOS",
     subtitle: "Développer des applications iOS natives avec Swift",
@@ -4375,6 +4396,7 @@ const SKILLS = {
 
   "mongodb": {
     type: "skill",
+    domain: "Data & IA",
     title: "MongoDB & NoSQL",
     titleEn: "MongoDB & NoSQL",
     subtitle: "Bases de données orientées documents pour des besoins flexibles",
@@ -4413,6 +4435,7 @@ const SKILLS = {
 
   "graphql": {
     type: "skill",
+    domain: "Développement",
     title: "GraphQL",
     titleEn: "GraphQL",
     subtitle: "Un langage de requête flexible pour les API",
@@ -4451,6 +4474,7 @@ const SKILLS = {
 
   "machine-learning": {
     type: "skill",
+    domain: "Data & IA",
     title: "Machine Learning",
     titleEn: "Machine Learning",
     subtitle: "Entraîner des modèles capables d'apprendre à partir de données",
@@ -4497,6 +4521,7 @@ const SKILLS = {
 
   "solidity": {
     type: "skill",
+    domain: "Développement",
     title: "Solidity & Smart Contracts",
     titleEn: "Solidity & Smart Contracts",
     subtitle: "Programmer des contrats intelligents sur la blockchain Ethereum",
@@ -4537,6 +4562,7 @@ const SKILLS = {
 
   "system-design": {
     type: "skill",
+    domain: "Développement",
     title: "System Design",
     titleEn: "System Design",
     subtitle: "Concevoir des systèmes logiciels à grande échelle",
@@ -4577,6 +4603,7 @@ const SKILLS = {
 
   "dsa": {
     type: "skill",
+    domain: "Développement",
     title: "Data Structures & Algorithms",
     titleEn: "Data Structures & Algorithms",
     subtitle: "Les fondamentaux algorithmiques utiles pour tout développeur",
@@ -4618,6 +4645,7 @@ const SKILLS = {
 
   "api-design": {
     type: "skill",
+    domain: "Développement",
     title: "API Design (REST)",
     titleEn: "API Design (REST)",
     subtitle: "Concevoir des API cohérentes, prévisibles et faciles à utiliser",
@@ -4655,6 +4683,7 @@ const SKILLS = {
 
   "cicd": {
     type: "skill",
+    domain: "Infrastructure & DevOps",
     title: "CI/CD",
     titleEn: "CI/CD",
     subtitle: "Automatiser les tests et le déploiement du code",
