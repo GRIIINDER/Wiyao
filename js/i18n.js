@@ -206,6 +206,7 @@
     "eco.jump.communautes": { fr: "Communautés &amp; événements", en: "Communities &amp; events" },
     "eco.jump.femmes": { fr: "Femmes dans la tech", en: "Women in tech" },
     "eco.jump.hubs": { fr: "Hubs &amp; incubateurs", en: "Hubs &amp; incubators" },
+    "eco.jump.startups": { fr: "Startups togolaises", en: "Togolese startups" },
     "eco.jump.institutions": { fr: "Institutions &amp; employeurs", en: "Institutions &amp; employers" },
     "eco.jump.cybersecurite": { fr: "Cybersécurité &amp; gouvernance", en: "Cybersecurity &amp; governance" },
     "eco.jump.ressources": { fr: "Ressources en ligne", en: "Online resources" },
@@ -1250,6 +1251,8 @@
     "eco.c24.p": { fr: "Communauté togolaise des utilisateurs de LinkedIn : rencontres de réseautage autour des opportunités professionnelles, avec des éditions communes menées aux côtés des chapitres sœurs du Bénin et de la Côte d'Ivoire.", en: "Togolese community of LinkedIn users: networking meetups around professional opportunities, with joint editions held alongside sister chapters in Benin and Côte d'Ivoire." },
     "eco.c25.p": { fr: "Antenne togolaise du programme mondial Google pour les femmes en tech, adossée à GDG Lomé : ateliers sur l'équité de genre dans la tech et événements comme le WTM IWD (Journée internationale des droits des femmes).", en: "Togolese chapter of Google's global program for women in tech, hosted by GDG Lomé: workshops on gender equity in tech and events like WTM IWD (International Women's Day)." },
     "eco.c26.p": { fr: "École de programmation en ligne et gratuite, fondée en Guinée, qui développe une communauté active au Togo via un programme d'ambassadeurs (cohorte 2027, inscriptions ouvertes) : apprentissage du développement web entre pairs, application mobile de révision.", en: "Free online programming school founded in Guinea, now building an active community in Togo through an ambassador program (2027 cohort, registration open): peer-based web development learning, with a mobile revision app." },
+    "eco.c27.p": { fr: "Tiers-lieu et communauté togolaise active depuis 2014 : espace de coworking, ateliers numériques, a organisé la première conférence Open Data du Togo.", en: "Togolese third-place and community active since 2014: coworking space, digital workshops, organized Togo's first Open Data conference." },
+    "eco.c28.p": { fr: "ONG togolaise de formation aux compétences STEM et à l'entrepreneuriat numérique, active dans 9 pays d'Afrique dont le Togo.", en: "Togolese NGO providing STEM skills and digital entrepreneurship training, active in 9 African countries including Togo." },
 
     "eco.sub2": { fr: "Événements annuels ou ponctuels", en: "Annual or one-off events" },
     "eco.e1.p": { fr: "Conférence annuelle de GDG Lomé, l'un des plus grands rassemblements tech du pays.", en: "Annual conference by GDG Lomé, one of the country's largest tech gatherings." },
@@ -1317,6 +1320,15 @@
       en: "Togolese community founded in September 2022 by three young tech enthusiasts: hands-on training in digital skills, artificial intelligence, cybersecurity and electronics/Arduino, with a \"learning by doing\" approach. Aims to become a reference center for youth tech innovation, with a FabLab and certifying training programs.",
     },
 
+    "eco.startups.h2": { fr: "Startups togolaises", en: "Togolese startups" },
+    "eco.startups.intro": { fr: 'Un échantillon de startups tech togolaises actives et vérifiées, par secteur. Liste non exhaustive : le <a href="#institutions">portail officiel de l\'écosystème numérique</a> référence 170 startups togolaises au total.', en: 'A sample of active, verified Togolese tech startups, by sector. Non-exhaustive list: the <a href="#institutions">official digital ecosystem portal</a> lists 170 Togolese startups in total.' },
+    "eco.s1.p": { fr: "Premier portail togolais de petites annonces automobiles, actif (annonces récentes confirmées).", en: "Togo's first classifieds portal for cars, active (recent listings confirmed)." },
+    "eco.s2.p": { fr: "Plateforme numérique de communication entre écoles, familles et élèves, utilisée notamment pour la digitalisation des résultats d'examens.", en: "Digital communication platform between schools, families and students, used in particular to digitize exam results." },
+    "eco.s3.p": { fr: "Startup fondée en 2016 par Achille Noussia, spécialisée dans le recyclage de papier et la production d'emballages écologiques (sacs, cartons), plusieurs fois primée.", en: "Startup founded in 2016 by Achille Noussia, specializing in paper recycling and eco-friendly packaging (bags, cartons), award-winning." },
+    "eco.s4.p": { fr: "Plateforme fondée en 2015 qui met en relation les acteurs du secteur agricole togolais, plus de 6000 agriculteurs inscrits.", en: "Platform founded in 2015 that connects players in the Togolese agricultural sector, with over 6,000 registered farmers." },
+    "eco.s5.p": { fr: "Coopérative fondée en 2014, production de chocolat bio togolais selon des méthodes traditionnelles, distinguée par plusieurs prix internationaux.", en: "Cooperative founded in 2014, producing organic Togolese chocolate using traditional methods, recognized with several international awards." },
+    "eco.s6.p": { fr: "Plateforme d'e-santé développée en 2018 avec le Ministère de la Santé et l'UNFPA : suivi du cycle menstruel, de la grossesse et consultation en ligne, plus de 10 000 abonnées.", en: "E-health platform developed in 2018 with the Ministry of Health and UNFPA: menstrual cycle and pregnancy tracking and online consultations, with over 10,000 subscribers." },
+
     "eco.inst.h2": { fr: "Institutions publiques et employeurs numériques", en: "Public institutions and digital employers" },
     "eco.i1.p": { fr: "Agence publique pilotant la digitalisation des démarches administratives au Togo. Recrute régulièrement sur des postes tech variés : développeurs, architectes, UX/UI, QA, Scrum Master, data.", en: "Public agency leading the digitalization of administrative processes in Togo. Regularly hires for a range of tech roles: developers, architects, UX/UI, QA, Scrum Master, data." },
     "eco.i2.p": {
@@ -1334,6 +1346,8 @@
     "eco.i6.p": { fr: "Chapitre togolais du réseau panafricain Open Source Community Africa (35 chapitres à travers le continent) : rencontres mensuelles, contribution à des projets open source, festival annuel Open Source Festival.", en: "Togolese chapter of the pan-African Open Source Community Africa network (35 chapters across the continent): monthly meetups, contributing to open source projects, annual Open Source Festival." },
     "eco.i7.h4": { fr: "SIN : Société d'Infrastructures Numériques", en: "SIN : Digital Infrastructure Company" },
     "eco.i7.p": { fr: "Société d'État qui détient et exploite les infrastructures télécoms stratégiques du Togo : fibre optique nationale, atterrissage du câble sous-marin Equiano, point d'échange Internet et le Carrier Hotel (1ᵉʳ data center du pays, Lomé). Acteur clé de la souveraineté numérique togolaise et employeur de profils réseaux et infrastructure.", en: "State-owned company that owns and operates Togo's strategic telecom infrastructure: national fiber optic network, the Equiano submarine cable landing, an Internet exchange point, and the Carrier Hotel (the country's 1st data center, in Lomé). A key player in Togolese digital sovereignty and employer of network and infrastructure profiles." },
+    "eco.i8.h4": { fr: "FAIEJ : Fonds d'Appui aux Initiatives Économiques des Jeunes", en: "FAIEJ : Youth Economic Initiatives Support Fund" },
+    "eco.i8.p": { fr: "Institution publique togolaise de financement de l'entrepreneuriat des jeunes, a numérisé l'accompagnement des porteurs de projets avec l'application ADACE, développée avec le PNUD (2024).", en: "Togolese public institution funding youth entrepreneurship, digitized support for project owners with the ADACE app, developed with UNDP (2024)." },
 
     "eco.cyber.h2": { fr: "Cybersécurité et gouvernance", en: "Cybersecurity and governance" },
     "eco.cy1.h4": { fr: "ANCy : Agence Nationale de la Cybersécurité", en: "ANCy : National Cybersecurity Agency" },
