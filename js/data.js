@@ -3489,9 +3489,7 @@ const COMMUNITY_BY_DOMAIN = {
   "Sécurité": [
     { name: "Tech Communities Club (TCC), IAI-Togo", url: "https://www.linkedin.com/company/tech-communities-clubs-iai-togo", note: "Organise le hackathon/CTF Hack &amp; Defend.", noteEn: "Organizes the Hack &amp; Defend hackathon/CTF." },
   ],
-  "Produit & Design": [
-    { name: "Togo Designers", url: null, note: "1ʳᵉ alliance des designers numériques togolais.", noteEn: "1st alliance of Togolese digital designers." },
-  ],
+  "Produit & Design": [],
   "Infrastructure & DevOps": [
     { name: "GDG Lomé", url: "https://gdg.community.dev/gdg-lome/", note: "Ateliers Google Cloud.", noteEn: "Google Cloud workshops." },
     { name: "MLSA Togo", url: "https://mlsatogo.vercel.app/", note: "Programme Microsoft (Azure, GitHub) avec parcours de mentorat intégré.", noteEn: "Microsoft program (Azure, GitHub) with a built-in mentorship track." },

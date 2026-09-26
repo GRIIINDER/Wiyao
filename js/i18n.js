@@ -262,13 +262,6 @@
       en: "Fata, a free online programming school founded in Guinea with a pan-African community, is opening its ambassador program in Togo: applications open to all students from September 1 to 30, 2026, to grow the Togolese community around its mobile web-development learning app.",
     },
     "actu.t16.cat": { fr: "Écosystème", en: "Ecosystem" },
-    "actu.t17.date": { fr: "14-19 septembre 2026", en: "September 14-19, 2026" },
-    "actu.t17.h3": { fr: "2ᵉ édition de la Lomé Summer School on IA", en: "2nd edition of the Lomé Summer School on AI" },
-    "actu.t17.p": {
-      fr: "Formation intensive à l'intelligence artificielle organisée à Lomé avec plusieurs écoles supérieures\n             partenaires (UCAO, ESIBA Business School, ESIG Global Success, Lomé Business School, ESGIS), avec\n             le soutien de YAS et de l'Académie Numérique ACAN. Formateur notamment M. Kougbanhoun Atou Koffi,\n             chef du service Data Science au Togo AI Lab.",
-      en: "Intensive artificial intelligence training held in Lomé with several partner higher-education schools (UCAO, ESIBA Business School, ESIG Global Success, Lomé Business School, ESGIS), supported by YAS and the ACAN Digital Academy. Trainers include Mr. Kougbanhoun Atou Koffi, Head of Data Science at Togo AI Lab.",
-    },
-    "actu.t17.cat": { fr: "Formation", en: "Training" },
 
     "temoignages.hero.title": {
       fr: 'Convaincs tes <span class="hero-accent">parents</span>',
@@ -1000,13 +993,6 @@
       en: '13 Togolese tech startups (Gozem, Semoa, Édolé, Solimi, MiaPay, Kondjigbalé, Anaxar, Clinicaa...) join forces in a national collective : over 2 billion FCFA in combined revenue and around a hundred direct jobs. Partnerships signed with Cyber Defense Africa (cybersecurity) and Acquereburu &amp; Partners (legal framework). Minister Cina Lawson called it "an act of maturity" for the sector.',
     },
     "actu.t8.cat": { fr: "Startups", en: "Startups" },
-    "actu.t9.date": { fr: "6 octobre 2025", en: "October 6, 2025" },
-    "actu.t9.h3": { fr: "ACAN lance Orientys, un outil d'orientation numérique pour bacheliers", en: "ACAN launches Orientys, a digital orientation tool for high-school graduates" },
-    "actu.t9.p": {
-      fr: 'Plateforme en ligne qui suggère 3 métiers du numérique adaptés au profil scolaire d\'un bachelier\n             (série, notes) avec fiches métiers et formations correspondantes au Togo et dans la sous-région.\n             « Le numérique n\'est pas réservé à une élite : il peut devenir une voie pour tous », selon Giovanni\n             Hounkpati, directeur général d\'ACAN.',
-      en: 'Online platform that suggests 3 digital careers matched to a high-school graduate\'s academic profile (track, grades), with role profiles and matching training programs in Togo and the sub-region. "Digital tech isn\'t reserved for an elite: it can become a path for everyone," according to Giovanni Hounkpati, ACAN\'s managing director.',
-    },
-    "actu.t9.cat": { fr: "Orientation", en: "Orientation" },
     "actu.t10.date": { fr: "Rentrée 2025-2026", en: "2025-2026 school year" },
     "actu.t10.h3": { fr: "Une université américaine s'installe au Togo : GUST", en: "An American university sets up in Togo: GUST" },
     "actu.t10.p": {
@@ -1252,12 +1238,10 @@
     "eco.c13.p": { fr: "Chapitre national actif depuis 2008 (600+ membres), organise le Forum togolais sur la gouvernance de l'Internet et déploie des réseaux communautaires locaux pour l'accès à Internet.", en: "National chapter active since 2008 (600+ members), organizes the Togolese Forum on Internet Governance and deploys local community networks for Internet access." },
     "eco.c14.h4": { fr: "ACAN : Académie Numérique", en: "ACAN : Digital Academy" },
     "eco.c14.p": { fr: "Académie de formation en ligne gratuite à Adidogomé (Lomé) : blockchain, communication digitale, design graphique, intelligence artificielle et marketing digital. 500+ étudiants formés.", en: "Free online training academy in Adidogomé (Lomé): blockchain, digital communication, graphic design, artificial intelligence and digital marketing. 500+ students trained." },
-    "eco.c15.p": { fr: "Outil d'orientation numérique lancé en octobre 2025 par ACAN : un bachelier renseigne sa série et ses notes de Bac, l'outil suggère 3 métiers du numérique adaptés à son profil avec fiches métier et établissements de formation correspondants au Togo et dans la sous-région.", en: "Digital orientation tool launched in October 2025 by ACAN: a high-school graduate enters their track and Bac grades, and the tool suggests 3 digital careers matched to their profile, with role profiles and matching training institutions in Togo and the sub-region." },
     "eco.c16.p": { fr: "Chapitre togolais du programme mondial Microsoft pour étudiants : apprentissage des technologies Microsoft (Azure, IA, GitHub, Copilot), organisation d'événements techniques et mentorat, avec un parcours de progression (Alpha, Beta, Gold MLSA).", en: "Togolese chapter of Microsoft's global student program: learning Microsoft technologies (Azure, AI, GitHub, Copilot), organizing technical events and mentoring, with a progression path (Alpha, Beta, Gold MLSA)." },
     "eco.c17.p": { fr: "Chapitre étudiant Google Developer Student Club à l'Université de Lomé : ateliers réguliers (ex. développement web HTML/CSS/JS) et développement de solutions numériques pour la communauté universitaire.", en: "Google Developer Student Club chapter at the University of Lomé: regular workshops (e.g. HTML/CSS/JS web development) and building digital solutions for the university community." },
     "eco.c18.p": { fr: "Chapitre étudiant Google Developer Student Club à Lomé Business School : ateliers pratiques (ex. contribution à l'IA de Google via Google Crowdsource).", en: "Google Developer Student Club chapter at Lomé Business School: hands-on workshops (e.g. contributing to Google's AI via Google Crowdsource)." },
     "eco.c19.p": { fr: "Communauté togolaise de développeurs mobiles autour du framework Flutter : codelabs, événements (dont un Flutter Forward Extended à Lomé) et formulaire d'adhésion ouvert.", en: "Togolese mobile developer community around the Flutter framework: codelabs, events (including a Flutter Forward Extended in Lomé) and an open membership form." },
-    "eco.c20.p": { fr: "Première alliance des designers numériques togolais (association loi 1901, fondée en 2014) : professionnalisation du secteur, tarification freelance, plaidoyer pour l'intégration du design numérique dans les cursus scolaires et supérieurs.", en: "First alliance of Togolese digital designers (a French law 1901 association, founded in 2014): professionalizing the sector, freelance pricing, advocacy for including digital design in school and higher education curricula." },
     "eco.c21.p": { fr: "Groupe local du réseau mondial de meetups WordPress (700+ groupes) : blogging, développement et webdesign autour de WordPress, ouvert aux débutants comme aux professionnels.", en: "Local chapter of the global WordPress meetup network (700+ groups): blogging, development and web design around WordPress, open to beginners and professionals alike." },
     "eco.c22.p": { fr: "Communauté de développeurs, créateurs et innovateurs tech basée à Kara : l'une des rares communautés actives structurées en dehors de Lomé.", en: "Community of developers, creators and tech innovators based in Kara : one of the few structured active communities outside Lomé." },
     "eco.c23.p": { fr: 'Communauté de cartographie libre créée en 2013, au service de l\'action humanitaire et de l\'aide au développement : rencontre mensuelle « Quartier à la carte » pour les cartographes togolais.', en: 'Free/open mapping community created in 2013, in service of humanitarian action and development aid: monthly "Quartier à la carte" (Neighborhood on the Map) meetup for Togolese mapmakers.' },
