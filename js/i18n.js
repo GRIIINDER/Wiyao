@@ -58,6 +58,7 @@
       fr: 'Nouveau·elle ici ? Découvre <a href="about.html">ce qu\'est WIYAO</a> en 30 secondes.',
       en: 'New here? See <a href="about.html">what WIYAO is</a> in 30 seconds.',
     },
+    "roadmap.print": { fr: "🖨️ Imprimer / PDF", en: "🖨️ Print / PDF" },
     "roadmap.reset": { fr: "Réinitialiser la progression", en: "Reset progress" },
     "quiz.primer.title": { fr: "L'informatique, en 7 grands domaines", en: "Tech, in 7 major domains" },
     "quiz.primer.desc": {

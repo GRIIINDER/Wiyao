@@ -1422,7 +1422,9 @@ main {
 
 .roadmap-toolbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 10px;
   margin: 10px 0 30px;
 }
 
@@ -3156,4 +3158,58 @@ main .domain-primer-icon {
 
 #parcours .journey-step a {
   font-size: 14px;
+}
+
+/* Impression d'une roadmap (bouton "Imprimer / PDF") : réutilise les
+   tokens --card-bg/--text/--border déjà clairs (cartes blanches sur fond
+   sombre) en les propageant aussi aux tokens de page (--tk-canvas etc.),
+   plutôt que de réécrire chaque sélecteur individuellement. */
+@media print {
+  :root {
+    --tk-canvas: #ffffff;
+    --tk-surface: #ffffff;
+    --tk-surface-soft: #f0f0f0;
+    --tk-border: #cccccc;
+    --tk-text: #10162f;
+    --tk-text-reading: #10162f;
+    --tk-text-muted: #444444;
+    --tk-text-subtle: #666666;
+    --tk-primary: #1557ff;
+    --tk-primary-soft: #eaf3ff;
+  }
+
+  header.site-header,
+  footer.site-footer,
+  .roadmap-toolbar,
+  .wiyao-assistant,
+  #i18n-notice,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .section,
+  .related-section,
+  .togo-notice {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a.item-resource[target="_blank"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.7rem;
+    color: #555;
+    word-break: break-all;
+  }
 }

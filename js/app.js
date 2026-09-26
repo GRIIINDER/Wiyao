@@ -572,6 +572,9 @@
     const relatedSection = buildRelatedSection(id, rm);
     if (relatedSection) container.appendChild(relatedSection);
 
+    const printBtn = document.getElementById("print-roadmap");
+    if (printBtn) printBtn.addEventListener("click", () => window.print());
+
     const resetBtn = document.getElementById("reset-progress");
     if (resetBtn) {
       resetBtn.addEventListener("click", () => {
