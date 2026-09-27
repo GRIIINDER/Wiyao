@@ -1056,19 +1056,31 @@
       fr: "Agrégateur togolais assisté par IA : rassemble en une seule recherche les offres des principales plateformes du pays, classées selon le profil du candidat, actualisées chaque jour.",
       en: "AI-assisted Togolese aggregator: gathers offers from the country's main platforms into a single search, ranked to match the candidate's profile, updated daily.",
     },
+    "stages.s1.i15.p": {
+      fr: "Plateforme togolaise de recrutement nouvelle génération : plus de 160 offres actives, plus de 100 entreprises partenaires, candidature en un clic, inscription gratuite.",
+      en: "Next-generation Togolese recruitment platform: over 160 active listings, over 100 partner companies, one-click applications, free registration.",
+    },
+    "stages.s1.i16.p": {
+      fr: "Cabinet de recrutement et chasse de têtes panafricain (37 pays), avec des pages dédiées par poste IT au Togo (ingénieur informatique industrielle, chef de projet informatique, responsable des systèmes d'information). Plutôt orienté cadres qu'offres en volume.",
+      en: "Pan-African recruitment and executive search firm (37 countries), with dedicated pages per IT role in Togo (industrial IT engineer, IT project manager, information systems manager). Geared more toward senior/executive roles than high-volume listings.",
+    },
+    "stages.s1.i17.p": {
+      fr: "Filiale togolaise du réseau international Option Carrière, avec une catégorie Informatique dédiée. Le site bloque la vérification automatisée directe, mais son contenu (stages Python/Django, administrateurs systèmes, développeurs Laravel/Vue.js) est confirmé par plusieurs sources croisées.",
+      en: "Togolese branch of the international Option Carrière network, with a dedicated IT category. The site blocks direct automated verification, but its content (Python/Django internships, systems administrators, Laravel/Vue.js developers) is confirmed by several cross-referenced sources.",
+    },
 
     "stages.s2.h2": { fr: "Employeurs qui recrutent des profils tech", en: "Employers hiring tech profiles" },
     "stages.s2.i1.p": {
-      fr: "Agence publique pilotant la digitalisation de l'État togolais. Recrute régulièrement développeurs, architectes, UX/UI, QA, Scrum Master, data.",
-      en: "Public agency leading the digitalization of the Togolese State. Regularly hires developers, architects, UX/UI, QA, Scrum Masters, data profiles.",
+      fr: "Agence publique pilotant la digitalisation de l'État togolais. Les postes publiés varient dans le temps et ne sont pas toujours techniques ; la candidature spontanée reste une option pour les profils développeur, UX/UI ou data.",
+      en: "Public agency leading the digitalization of the Togolese State. Posted roles vary over time and aren't always technical; a spontaneous application remains an option for developer, UX/UI or data profiles.",
     },
     "stages.s2.i2.p": {
       fr: "Coentreprise entre l'État togolais et Asseco Data Systems, opère le CERT national et un SOC. Recrute analystes SOC, consultants et formateurs en cybersécurité.",
       en: "Joint venture between the Togolese State and Asseco Data Systems, operates the national CERT and a SOC. Hires SOC analysts, consultants and cybersecurity trainers.",
     },
     "stages.s2.i3.p": {
-      fr: "Deuxième opérateur télécom du pays. Page carrière active ; historique récent de recrutements réseaux, télécoms et systèmes.",
-      en: "The country's second telecom operator. Active careers page; recent history of hiring for networks, telecom and systems roles.",
+      fr: "Deuxième opérateur télécom du pays. Page carrière active, sous forme de candidature spontanée plutôt que d'offres détaillées en permanence ; profils réseaux, télécoms et systèmes concernés.",
+      en: "The country's second telecom operator. Active careers page, structured as a spontaneous application rather than a running list of detailed openings; relevant for networks, telecom and systems profiles.",
     },
     "stages.s2.i4.p": {
       fr: "Opérateur télécom historique du Togo (fixe, mobile, Mobile Money), né de la fusion de Togo Telecom et Togocel en 2017, rebaptisé Yas Togo en novembre 2024 dans le cadre du rebranding panafricain du groupe Axian (le Mobile Money Tmoney devient Mixx by Yas). Page carrière active ; recrute régulièrement des profils informatiques (développement, systèmes d'information, réseaux OSS/BSS, data).",
@@ -1103,8 +1115,8 @@
       en: "Togolese public cybersecurity regulation and incident-response agency (CERT.tg). Regularly hires (IS security auditors, analysts) and launched a national call to register Togolese cybersecurity talent (pentesting, application security, DevSecOps, incident response).",
     },
     "stages.s2.i12.p": {
-      fr: "Fintech togolaise fondée à Lomé en 2016, spécialisée dans le paiement digital et la digitalisation du cash (solution Cashpay), présente dans 13 pays d'Afrique. Recrute des profils tech, notamment via son profil sur Emploi.tg.",
-      en: "Togolese fintech founded in Lomé in 2016, specializing in digital payments and cash digitization (Cashpay solution), present in 13 African countries. Hires tech profiles, notably via its Emploi.tg profile.",
+      fr: "Fintech togolaise fondée à Lomé en 2016, spécialisée dans le paiement digital et la digitalisation du cash (solution Cashpay), présente dans 13 pays d'Afrique. Pas de portail carrières dédié identifié : leur page LinkedIn reste la meilleure piste pour candidater ou suivre leurs annonces.",
+      en: "Togolese fintech founded in Lomé in 2016, specializing in digital payments and cash digitization (Cashpay solution), present in 13 African countries. No dedicated careers portal identified: their LinkedIn page remains the best way to apply or follow their announcements.",
     },
     "stages.s2.i13.p": {
       fr: "Cabinet togolais d'ingénierie informatique, de conseil et de formation fondé en 2001 à Lomé, présent dans 11 pays africains : édite des solutions de finance digitale, de mésofinance et des plateformes étatiques. Recrutements réguliers confirmés sur plusieurs mois (développeurs Java/Flutter/Spring, techniciens réseaux). Pas de portail carrières dédié identifié : les candidatures se font par e-mail.",
@@ -1113,6 +1125,22 @@
     "stages.s2.i14.p": {
       fr: "Filiale togolaise du groupe bancaire panafricain Coris Bank International. Page carrière active avec des postes IT confirmés (support monétique, sécurité opérationnelle, infrastructures techniques), aux côtés des autres métiers de la banque.",
       en: "Togolese subsidiary of the pan-African banking group Coris Bank International. Active careers page with confirmed IT roles (monetics support, operational security, technical infrastructure), alongside the bank's other professions.",
+    },
+    "stages.s2.i15.p": {
+      fr: "Premier terminal à conteneurs d'Afrique de l'Ouest (filiale du groupe MSC), au Port autonome de Lomé. Recrutements confirmés de techniciens IT et d'administrateurs d'applications et bases de données. Pas de portail carrières dédié identifié : candidatures via les agrégateurs togolais.",
+      en: "West Africa's first container terminal (MSC group subsidiary), at the Port of Lomé. Confirmed hiring for IT technicians and application/database administrators. No dedicated careers portal identified: apply via Togolese job aggregators.",
+    },
+    "stages.s2.i16.p": {
+      fr: "Autorité portuaire publique togolaise, dotée d'une Direction des Systèmes d'Information qui recrute périodiquement des agents SI (dernier avis confirmé fin 2024, à surveiller pour de nouvelles ouvertures).",
+      en: "Togolese public port authority, with an Information Systems Department that periodically hires IS staff (last confirmed notice in late 2024 — worth watching for new openings).",
+    },
+    "stages.s2.i17.p": {
+      fr: "Concessionnaire automobile togolais du groupe panafricain CFAO. A recruté du support technique Windows/Linux/réseau ; le portail carrières du groupe couvre aussi des postes Infrastructure et Réseaux, Direction SI, filtrables par pays (peu d'offres Togo au même moment).",
+      en: "Togolese car dealership under the pan-African CFAO group. Has hired Windows/Linux/network technical support; the group's careers portal also covers Infrastructure & Networks and IT Management roles, filterable by country (few Togo listings at any given time).",
+    },
+    "stages.s2.i18.p": {
+      fr: "Coopération allemande au Togo : le projet ProDigiT (transformation numérique de l'économie togolaise) recrute régulièrement des conseiller·ères digital·es — des postes de conseil en économie numérique plutôt que de développement pur. Pas de portail dédié : candidatures par e-mail.",
+      en: "German development cooperation in Togo: the ProDigiT project (digital transformation of the Togolese economy) regularly hires digital advisors — digital-economy consulting roles rather than pure development positions. No dedicated portal: applications by email.",
     },
     "stages.s3.h2": { fr: "Ressources locales à ne pas négliger", en: "Local resources not to overlook" },
     "stages.s3.i1.h4": { fr: "Hubs et incubateurs", en: "Hubs and incubators" },
