@@ -423,7 +423,10 @@
 
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
-    const rm = typeof ALL_ROADMAPS !== "undefined" ? ALL_ROADMAPS[id] : null;
+    const rm =
+      typeof ALL_ROADMAPS !== "undefined" && Object.prototype.hasOwnProperty.call(ALL_ROADMAPS, id)
+        ? ALL_ROADMAPS[id]
+        : null;
 
     if (!rm) {
       container.innerHTML = `<p>Roadmap introuvable. <a href="index.html">Retour à l'accueil</a></p>`;
