@@ -348,7 +348,7 @@ header.site-header {
   border-radius: 999px;
   padding: 10px 14px;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   justify-content: start;
   align-items: center;
   gap: 12px;
@@ -361,7 +361,8 @@ header.site-header {
   gap: 10px;
   font-weight: 700;
   font-size: 1.1rem;
-  justify-self: start;
+  justify-self: center;
+  order: 2;
 }
 
 .brand-logo {
@@ -386,12 +387,67 @@ nav.site-nav {
   align-items: center;
   justify-content: center;
   justify-self: stretch;
+  order: 1;
   gap: 2px;
   background: var(--tk-surface-soft);
   border: 1px solid var(--tk-border);
   border-radius: 999px;
   padding: 4px;
   font-size: 0.95rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: end;
+  order: 3;
+}
+
+.header-actions .lang-switch {
+  justify-self: auto;
+}
+
+.nav-search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--tk-surface-soft);
+  border: 1px solid var(--tk-border);
+  color: var(--tk-text-subtle);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-search-icon:hover {
+  color: var(--tk-primary);
+  border-color: var(--tk-primary);
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  background: var(--tk-primary);
+  color: var(--tk-canvas);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.header-cta:hover {
+  filter: brightness(0.92);
+  transform: translateY(-1px);
+}
+
+.header-cta--mobile {
+  display: none;
 }
 
 nav.site-nav a {
@@ -415,7 +471,7 @@ nav.site-nav a.active {
 }
 
 .nav-search-link {
-  display: inline-flex;
+  display: none;
   align-items: center;
   gap: 8px;
   flex: 1 1 200px;
@@ -2741,14 +2797,25 @@ footer.site-footer {
   .nav-toggle {
     order: 2;
   }
-  .lang-switch {
+  .header-actions {
     order: 3;
+  }
+  .header-actions .nav-search-icon,
+  .header-actions .header-cta {
+    display: none;
+  }
+  .header-cta--mobile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 6px;
   }
   nav.site-nav {
     order: 4;
     display: none;
     width: 100%;
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: stretch;
     justify-content: flex-start;
     background: transparent;
@@ -2759,6 +2826,8 @@ footer.site-footer {
   }
   nav.site-nav.is-open {
     display: flex;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
   }
   nav.site-nav a {
     text-align: center;
@@ -2768,6 +2837,7 @@ footer.site-footer {
     font-size: 0.85rem;
   }
   .nav-search-link {
+    display: flex;
     flex: 0 1 auto;
     width: 100%;
     max-width: none;
