@@ -5050,7 +5050,7 @@ const SCHOOLS = {
     filieres: ["Génie Logiciel", "Génie Informatique", "Réseaux et Télécommunications", "Sciences Informatiques et Télécommunications (Master)"],
     duree: null,
     admission: "Formulaire de demande en ligne",
-    frais: "BTS : 35 000 FCFA d'inscription + 400 000 FCFA/an · Master : 60 000 + 600 000 FCFA/an. Licence non communiquée publiquement (aucun montant affiché sur le site).",
+    frais: "BTS : 35 000 FCFA d'inscription + 400 000 FCFA/an · Licence : 35 000 FCFA d'inscription + 450 000 FCFA/an (tarif unique, toutes spécialités et années confondues) · Master : 60 000 + 600 000 FCFA/an (source : iaectogo.com/licence/, 2026).",
     site: "https://iaectogo.com/",
     description: "Un des tout premiers établissements privés d'enseignement supérieur du Togo (1986), membre du Groupe BK-Université.",
     datesCles: {
@@ -5243,7 +5243,7 @@ const SCHOOLS = {
     filieres: ["Systèmes et Réseaux Informatiques", "Développement d'Application", "Maintenance Informatique", "Informatique Industrielle", "Robotique et Intelligence Artificielle", "Cybersécurité", "UX/UI Design", "Génie Logiciel", "Ingénierie Informatique Mobile et Web"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "BTS : Bac toutes séries · Licence : Bac série scientifique ou équivalent · Master : Licence en sciences et technologies ou équivalent",
-    frais: "Non communiqué publiquement : bourses disponibles de 50 000 à 250 000 FCFA (Licence/Master).",
+    frais: "Scolarité non communiquée publiquement (le premier versement se fait directement à la banque). Frais d'inscription connus : 25 000 FCFA (Licence, non remboursable) · 50 000 FCFA (Master, non remboursable), source : hest-edu.net/inscription/. Bourses disponibles de 50 000 à 250 000 FCFA (Licence/Master).",
     site: "https://www.hest-edu.net/",
     description: "Une des offres informatique les plus complètes du comparatif (BTS à Master), à Tokoin Wuiti, propose aussi économie/gestion et sciences de l'information et de la communication.",
     datesCles: {
@@ -5280,7 +5280,7 @@ const SCHOOLS = {
     filieres: ["Développement d'Applications", "Réseaux et Télécommunications", "Sécurité Informatique", "Mathématiques et Informatique"],
     duree: null,
     admission: "Cours du jour, du soir, week-end, ou à distance avec séminaires mensuels",
-    frais: "Non communiqué publiquement.",
+    frais: "Scolarité annuelle normale 2024-2025 (diplôme local, hors frais d'inscription) : 1 490 000 FCFA (BTS1/L1) à 1 770 000 FCFA (L3) · Master : 1 600 000 à 1 750 000 FCFA. + frais d'inscription annuels : 50 000 FCFA (BTS/Licence) ou 60 000 FCFA (Master). Tarifs réduits sur dossier d'aide financière (dès 480 000 FCFA). Grille datée 2024-2025, commune aux campus Togo/Mali/Niger, à reconfirmer pour l'année en cours (source : PDF officiel lucas-universities-colleges.net — site dont le certificat de sécurité est expiré depuis 2020, à visiter avec prudence).",
     site: "https://www.lucas-universities-colleges.net/",
     description: "Fondé en 2018, réseau panafricain (présent aussi au Ghana, Niger, Mali), partenariats pour doubles diplômes avec MBway et My Digital School (France) et Griffith College (Irlande), incubateur pour jeunes entrepreneurs.",
     datesCles: {
