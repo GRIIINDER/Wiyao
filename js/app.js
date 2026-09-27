@@ -30,27 +30,31 @@
     return out;
   }
 
+  // Map plutôt qu'objet littéral : une clé de roadmap ne peut jamais
+  // interagir avec Object.prototype (ex. "__proto__" via roadmap.html?id=...).
   function loadProgress() {
     try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      return new Map(Object.entries(parsed || {}));
     } catch (e) {
-      return {};
+      return new Map();
     }
   }
 
-  function saveProgress(data) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  function saveProgress(progress) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.fromEntries(progress)));
   }
 
   function toggleItem(roadmapId, itemKey) {
     const progress = loadProgress();
-    if (!progress[roadmapId]) progress[roadmapId] = [];
-    const idx = progress[roadmapId].indexOf(itemKey);
+    const items = progress.get(roadmapId) || [];
+    const idx = items.indexOf(itemKey);
     if (idx >= 0) {
-      progress[roadmapId].splice(idx, 1);
+      items.splice(idx, 1);
     } else {
-      progress[roadmapId].push(itemKey);
+      items.push(itemKey);
     }
+    progress.set(roadmapId, items);
     saveProgress(progress);
     return progress;
   }
@@ -63,7 +67,7 @@
 
   function getDoneCount(roadmapId) {
     const progress = loadProgress();
-    return (progress[roadmapId] || []).length;
+    return (progress.get(roadmapId) || []).length;
   }
 
   // Libellé accessible de la case à cocher d'une étape de roadmap : dépend à
@@ -437,7 +441,7 @@
 
     const total = countItems(rm);
     let progress = loadProgress();
-    if (!progress[id]) progress[id] = [];
+    if (!progress.get(id)) progress.set(id, []);
 
     const isEn = currentLang() === "en";
     const typeLabel = rm.type === "skill" ? (isEn ? "Skill roadmap" : "Roadmap par compétence") : (isEn ? "Role roadmap" : "Roadmap par métier");
@@ -480,7 +484,7 @@
     container.appendChild(header);
 
     function updateGlobal() {
-      const done = (loadProgress()[id] || []).length;
+      const done = (loadProgress().get(id) || []).length;
       const pct = total ? Math.round((done / total) * 100) : 0;
       document.getElementById("global-fill").style.width = pct + "%";
       document.getElementById("global-label").textContent = isEn
@@ -504,7 +508,7 @@
 
       section.items.forEach((item, iIdx) => {
         const key = `${sIdx}_${iIdx}`;
-        const done = progress[id].includes(key);
+        const done = progress.get(id).includes(key);
 
         const itemEl = document.createElement("div");
         itemEl.className = "item" + (done ? " done" : "") + (item.level === "option" ? " optional" : "");
@@ -587,7 +591,7 @@
             : "Réinitialiser la progression pour cette roadmap ?";
         if (confirm(confirmMsg)) {
           const p = loadProgress();
-          p[id] = [];
+          p.set(id, []);
           saveProgress(p);
           window.location.reload();
         }
