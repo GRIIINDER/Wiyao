@@ -66,8 +66,13 @@ async function checkUrl(url) {
       signal: controller.signal,
       headers: { "User-Agent": "Mozilla/5.0 (compatible; WiyaoFreshnessCheck/1.0)" },
     });
-    // Certains serveurs refusent HEAD (405) : on retente en GET.
-    if (res.status === 405) {
+    // Beaucoup de sites (Google, GitHub, Salesforce Trailhead vécu en 2026-09-27)
+    // répondent au HEAD par un 404 sur des pages qui existent bien en GET, au
+    // lieu du 405 attendu -- confirmé sur 11/11 liens signalés "probablement
+    // morts" ce jour-là, tous vivants une fois rechargés en GET. On retente
+    // donc en GET dès que HEAD n'est pas ok, pas seulement sur 405, avant de
+    // conclure -- cohérent avec la prudence volontaire du reste du script.
+    if (!res.ok) {
       res = await fetch(url, {
         method: "GET",
         redirect: "follow",
