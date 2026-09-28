@@ -50,6 +50,10 @@
       fr: "Le guide qui t'accompagne à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses et stages, à Lomé et dans tout le Togo.",
       en: "The guide that walks you through every step: orientation, choosing a domain, a track, a university, career roadmaps, scholarships and internships, in Lomé and across Togo.",
     },
+    "footer.tagline": {
+      fr: "Le guide qui accompagne ton parcours tech au Togo.",
+      en: "The guide for your tech journey in Togo.",
+    },
     "hero.cta": {
       fr: "Faire le test d'orientation →",
       en: "Take the orientation test →",
