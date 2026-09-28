@@ -836,6 +836,34 @@ main {
   padding: 40px 0 30px;
 }
 
+/* Bandeau de titre plein cadre, façon julaya.co : bloc uni en couleur
+   d'accent (version foncée pour rester dark-only) avec le H1 en grand,
+   gras, majuscules. Le sous-titre / bouton restent dans .hero, en
+   dessous, hors du bandeau. */
+.page-title-banner {
+  background: var(--tk-primary-soft);
+  border-radius: var(--radius);
+  padding: 56px 48px;
+  margin: 32px 0 0;
+}
+
+/* Exclu de l'aplat total (voir plus bas dans ce fichier) : ce titre doit
+   rester grand pour avoir l'impact recherché, comme le "404". Le span
+   .hero-accent à l'intérieur hérite de cette taille (inherit) plutôt que
+   de redéclarer chaque palier responsive séparément. */
+.page-title-banner h1 {
+  font-size: 4.5rem !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--tk-text);
+  margin: 0;
+}
+
+.page-title-banner h1 .hero-accent {
+  font-size: inherit !important;
+}
+
 /* Accueil uniquement : lueur de fond qui dérive lentement derrière le hero,
    scopée à #home-hero (comme #parcours ailleurs) pour ne pas toucher le
    .hero partagé par les 18 autres pages. */
@@ -966,14 +994,13 @@ main {
   padding-top: 60px;
 }
 
-.hero p.error-code {
-  margin: 0;
+.page-title-banner p.error-code {
+  margin: 0 0 4px;
   max-width: none;
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1;
   color: var(--tk-primary);
-  opacity: 0.35;
 }
 
 .error-actions {
@@ -1728,6 +1755,12 @@ main {
 }
 
 @media (max-width: 900px) {
+  .page-title-banner {
+    padding: 40px 32px;
+  }
+  .page-title-banner h1 {
+    font-size: 3.25rem !important;
+  }
   .hero-legal h1 {
     font-size: 3rem;
   }
@@ -2924,6 +2957,13 @@ footer.site-footer {
   .hero h1 {
     font-size: 1.85rem;
   }
+  .page-title-banner {
+    padding: 28px 20px;
+    margin-top: 20px;
+  }
+  .page-title-banner h1 {
+    font-size: 2.1rem !important;
+  }
   .hero-legal h1 {
     font-size: 2.3rem;
   }
@@ -3215,9 +3255,14 @@ main .hero-legal-meta span {
 
 /* Le "404" reste un gros chiffre décoratif, pas un paragraphe de texte
    courant : exclu de l'aplat ci-dessus. */
-main .hero p.error-code {
-  font-size: 5rem !important;
+main .page-title-banner p.error-code {
+  font-size: 3rem !important;
 }
+
+/* Titre des bandeaux de page (façon Julaya) : exclu de l'aplat ci-dessus
+   pour le même motif que le "404". Règle de base (+ 2 paliers responsive)
+   déjà définie plus haut avec !important — pas de règle main ici pour ne
+   pas prendre le pas sur ces paliers avec une spécificité plus élevée. */
 
 /* Icônes (émojis) dimensionnées par font-size, pas du texte de contenu :
    exclues elles aussi de l'aplat, sinon elles rétréciraient à 12px. */
