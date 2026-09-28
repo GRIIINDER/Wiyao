@@ -3,9 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page introuvable - WIYAO</title>
-<meta name="description" content="Cette page n'existe pas ou plus. Retourne à l'accueil ou cherche ce que tu voulais trouver sur WIYAO.">
-<meta name="robots" content="noindex">
+<title>Roadmaps - WIYAO</title>
+<meta name="description" content="Toutes les roadmaps WIYAO : 60 métiers et 29 compétences tech, le chemin complet à suivre pour apprendre dans le bon ordre, avec des ressources vérifiées.">
+<link rel="canonical" href="https://wiyao.vercel.app/roadmaps.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wiyao.vercel.app/roadmaps.html">
+<meta property="og:site_name" content="WIYAO">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Roadmaps - WIYAO">
+<meta property="og:description" content="Toutes les roadmaps WIYAO : 60 métiers et 29 compétences tech, le chemin complet à suivre pour apprendre dans le bon ordre, avec des ressources vérifiées.">
+<meta property="og:image" content="https://wiyao.vercel.app/icons/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Roadmaps - WIYAO">
+<meta name="twitter:description" content="Toutes les roadmaps WIYAO : 60 métiers et 29 compétences tech, le chemin complet à suivre pour apprendre dans le bon ordre, avec des ressources vérifiées.">
+<meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
 <link rel="stylesheet" href="css/style.css?v=177">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
@@ -26,9 +37,9 @@
     <nav class="site-nav" id="site-nav">
       <a href="recherche.html" class="nav-search-link" aria-label="Recherche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span class="nav-search-text">Rechercher sur WIYAO...</span></a>
       <div class="nav-more" id="nav-parcours">
-        <button class="nav-more-toggle" type="button" aria-expanded="false" aria-haspopup="true">Parcours ▾</button>
+        <button class="nav-more-toggle active" type="button" aria-expanded="false" aria-haspopup="true">Parcours ▾</button>
         <div class="nav-more-menu">
-          <a href="roadmaps.html">Roadmaps</a>
+          <a href="roadmaps.html" class="active" aria-current="page">Roadmaps</a>
           <a href="test-orientation.html">Test d'orientation</a>
           <a href="ecoles.html">Écoles &amp; universités</a>
         </div>
@@ -72,15 +83,35 @@
 </header>
 
 <main id="main-content">
-  <section class="hero error-hero">
-    <p class="error-code" aria-hidden="true">404</p>
-    <h1 data-i18n-key="error404.title">Page introuvable</h1>
-    <p data-i18n-key="error404.subtitle">Cette page n'existe pas, plus, ou l'adresse contient une faute de frappe.</p>
-    <div class="error-actions">
-      <a class="btn-primary" href="index.html" data-i18n-key="error404.cta.home">Retour à l'accueil →</a>
-      <a class="btn-primary error-btn-secondary" href="recherche.html" data-i18n-key="error404.cta.search">Chercher sur WIYAO →</a>
+  <p id="i18n-notice" class="i18n-notice" hidden>🇬🇧 This page isn't fully translated yet : some sections below remain in French.</p>
+  <section class="hero">
+    <h1 data-i18n-key="roadmaps.hero.title">Choisis ta <span class="hero-accent">roadmap</span></h1>
+    <p data-i18n-key="roadmaps.hero.subtitle">89 roadmaps : 60 métiers et 29 compétences tech, avec les ressources vérifiées (togolaises et internationales) pour apprendre dans le bon ordre.</p>
+    <p class="hero-guide" data-i18n-key="roadmaps.hero.propose">Un métier ou une compétence qui manque ici ? <a href="proposer.html">Propose-le</a> : on vérifie et on ajoute.</p>
+  </section>
+
+  <section class="roadmap-category" id="par-metier">
+    <h2 data-i18n-key="roadmaps.parmetier.h2">Roadmaps par métier</h2>
+    <p class="category-desc" data-i18n-key="roadmaps.parmetier.desc">Le chemin complet à suivre pour viser un rôle donné.</p>
+    <div class="domain-filters" id="domain-filters">
+      <button class="domain-chip active" data-domain="all" type="button" data-i18n-key="roadmaps.filter.all">Tous</button>
+      <button class="domain-chip" data-domain="Développement" type="button" data-i18n-key="roadmaps.filter.dev">Développement</button>
+      <button class="domain-chip" data-domain="Data &amp; IA" type="button" data-i18n-key="roadmaps.filter.data">Data &amp; IA</button>
+      <button class="domain-chip" data-domain="Sécurité" type="button" data-i18n-key="roadmaps.filter.securite">Sécurité</button>
+      <button class="domain-chip" data-domain="Produit &amp; Design" type="button" data-i18n-key="roadmaps.filter.produit">Produit &amp; Design</button>
+      <button class="domain-chip" data-domain="Infrastructure &amp; DevOps" type="button" data-i18n-key="roadmaps.filter.infra">Infrastructure &amp; DevOps</button>
+      <button class="domain-chip" data-domain="Marketing digital" type="button" data-i18n-key="roadmaps.filter.marketing">Marketing digital</button>
+      <button class="domain-chip" data-domain="Gestion &amp; Management" type="button" data-i18n-key="roadmaps.filter.gestion">Gestion &amp; Management</button>
     </div>
-    <p class="hero-guide" data-i18n-key="error404.note">Si tu penses qu'un lien est cassé, dis-le nous via la page <a href="contact.html">Contact</a>.</p>
+    <div id="role-grid"></div>
+    <p class="no-results" hidden data-i18n-key="roadmaps.noresults">Aucune roadmap ne correspond à ta recherche.</p>
+  </section>
+
+  <section class="roadmap-category" id="par-competence">
+    <h2 data-i18n-key="roadmaps.parcompetence.h2">Roadmaps par compétence</h2>
+    <p class="category-desc" data-i18n-key="roadmaps.parcompetence.desc">Une compétence précise à maîtriser, utile pour plusieurs métiers.</p>
+    <div id="skill-grid" class="grid"></div>
+    <p class="no-results" hidden data-i18n-key="roadmaps.noresults">Aucune roadmap ne correspond à ta recherche.</p>
   </section>
 </main>
 
@@ -118,18 +149,20 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 WIYAO. Tous droits réservés.</p>
         <div class="footer-legal-links">
           <a href="about.html">À propos &amp; méthodologie</a>
           <a href="mentions-legales.html">Mentions légales</a>
           <a href="politique-confidentialite.html">Politique de confidentialité</a>
           <a href="conditions-utilisation.html">Conditions d'utilisation</a>
         </div>
+        <p>© 2026 WIYAO. Tous droits réservés.</p>
       </div>
     </div>
   </div>
 </footer>
 
+<script src="js/data.js?v=50"></script>
+<script src="js/app.js?v=44"></script>
 <script src="js/nav.js?v=6"></script>
 <script src="js/assistant.js?v=2"></script>
 <script src="js/i18n.js?v=96"></script>
