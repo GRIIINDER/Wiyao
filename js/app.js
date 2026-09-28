@@ -446,7 +446,7 @@
     const isEn = currentLang() === "en";
     const typeLabel = rm.type === "skill" ? (isEn ? "Skill roadmap" : "Roadmap par compétence") : (isEn ? "Role roadmap" : "Roadmap par métier");
     const categoryLabel = rm.type === "skill" ? (isEn ? "By skill" : "Par compétence") : (isEn ? "By role" : "Par métier");
-    const categoryHref = rm.type === "skill" ? "index.html#par-competence" : "index.html#par-metier";
+    const categoryHref = rm.type === "skill" ? "roadmaps.html#par-competence" : "roadmaps.html#par-metier";
 
     const breadcrumb = document.createElement("nav");
     breadcrumb.className = "breadcrumb";
@@ -1386,7 +1386,7 @@
   // vide (pas de "recherches populaires" : WIYAO ne suit aucune statistique
   // d'usage, ces suggestions sont éditoriales). ----
   const SEARCH_CATEGORIES = [
-    { label: "Roadmaps", labelEn: "Roadmaps", url: "index.html" },
+    { label: "Roadmaps", labelEn: "Roadmaps", url: "roadmaps.html" },
     { label: "Test d'orientation", labelEn: "Orientation test", url: "test-orientation.html" },
     { label: "Écoles & universités", labelEn: "Schools & universities", url: "ecoles.html" },
     { label: "Calendrier", labelEn: "Calendar", url: "calendrier.html" },

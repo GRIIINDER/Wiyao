@@ -8,7 +8,7 @@
   const BY_HREF = {
     "proposer.html": { fr: "Proposer un contenu", en: "Suggest content" },
     "test-orientation.html": { fr: "Test d'orientation", en: "Orientation test" },
-    "index.html": { fr: "Roadmaps", en: "Roadmaps" },
+    "roadmaps.html": { fr: "Roadmaps", en: "Roadmaps" },
     "ecoles.html": { fr: "Écoles & universités", en: "Schools & universities" },
     "calendrier.html": { fr: "Calendrier", en: "Calendar" },
     "stages-emploi.html": { fr: "Stages & emploi", en: "Internships & jobs" },
@@ -748,8 +748,8 @@
     },
     "faq.c2.q5": { fr: "Le métier suggéré par le test ne me plaît pas, que faire ?", en: "I don't like the role the test suggested, what should I do?" },
     "faq.c2.a5": {
-      fr: 'Refais le test avec des réponses différentes, ou explore directement les <a href="index.html">roadmaps</a> des autres domaines qui t\'intéressent : rien n\'empêche de comparer plusieurs métiers avant de choisir. Le test aide à démarrer, il ne t\'enferme pas dans un seul chemin.',
-      en: 'Retake the test with different answers, or explore the <a href="index.html">roadmaps</a> of other fields that interest you directly : nothing stops you from comparing several roles before choosing. The test helps you get started; it doesn\'t lock you into a single path.',
+      fr: 'Refais le test avec des réponses différentes, ou explore directement les <a href="roadmaps.html">roadmaps</a> des autres domaines qui t\'intéressent : rien n\'empêche de comparer plusieurs métiers avant de choisir. Le test aide à démarrer, il ne t\'enferme pas dans un seul chemin.',
+      en: 'Retake the test with different answers, or explore the <a href="roadmaps.html">roadmaps</a> of other fields that interest you directly : nothing stops you from comparing several roles before choosing. The test helps you get started; it doesn\'t lock you into a single path.',
     },
     "faq.c2.q6": { fr: "Faut-il un Bac scientifique (série C, D) pour faire de l'informatique ?", en: "Do I need a science-track Baccalauréat (series C, D) to study IT?" },
     "faq.c2.a6": {
@@ -856,8 +856,8 @@
     },
     "faq.c4.q2": { fr: "Comment rencontrer d'autres personnes dans la tech togolaise, trouver un mentor ?", en: "How do I meet other people in Togolese tech, find a mentor?" },
     "faq.c4.a2": {
-      fr: 'Rejoins une communauté active dans ton domaine : par exemple <a href="https://gdg.community.dev/gdg-lome/" target="_blank" rel="noopener">GDG Lomé</a> ou <a href="https://www.linkedin.com/company/tdev228/" target="_blank" rel="noopener">TDEV</a> en développement, <a href="https://cotia.tg/" target="_blank" rel="noopener">CoTIA</a> en IA. Chaque <a href="index.html">roadmap</a> te propose maintenant celles qui correspondent à ton métier. La page <a href="ecosysteme.html#communautes">Écosystème togolais</a> liste toutes les communautés, événements, hubs et incubateurs : le moyen le plus concret de rencontrer des professionnels et un mentor informel, mieux qu\'un contact anonyme sur le site.',
-      en: 'Join an active community in your field : for example <a href="https://gdg.community.dev/gdg-lome/" target="_blank" rel="noopener">GDG Lomé</a> or <a href="https://www.linkedin.com/company/tdev228/" target="_blank" rel="noopener">TDEV</a> for development, <a href="https://cotia.tg/" target="_blank" rel="noopener">CoTIA</a> for AI. Every <a href="index.html">roadmap</a> now suggests the ones matching your role. The <a href="ecosysteme.html#communautes">Togolese ecosystem</a> page lists every community, event, hub and incubator : the most concrete way to meet professionals and an informal mentor, better than an anonymous contact on the site.',
+      fr: 'Rejoins une communauté active dans ton domaine : par exemple <a href="https://gdg.community.dev/gdg-lome/" target="_blank" rel="noopener">GDG Lomé</a> ou <a href="https://www.linkedin.com/company/tdev228/" target="_blank" rel="noopener">TDEV</a> en développement, <a href="https://cotia.tg/" target="_blank" rel="noopener">CoTIA</a> en IA. Chaque <a href="roadmaps.html">roadmap</a> te propose maintenant celles qui correspondent à ton métier. La page <a href="ecosysteme.html#communautes">Écosystème togolais</a> liste toutes les communautés, événements, hubs et incubateurs : le moyen le plus concret de rencontrer des professionnels et un mentor informel, mieux qu\'un contact anonyme sur le site.',
+      en: 'Join an active community in your field : for example <a href="https://gdg.community.dev/gdg-lome/" target="_blank" rel="noopener">GDG Lomé</a> or <a href="https://www.linkedin.com/company/tdev228/" target="_blank" rel="noopener">TDEV</a> for development, <a href="https://cotia.tg/" target="_blank" rel="noopener">CoTIA</a> for AI. Every <a href="roadmaps.html">roadmap</a> now suggests the ones matching your role. The <a href="ecosysteme.html#communautes">Togolese ecosystem</a> page lists every community, event, hub and incubator : the most concrete way to meet professionals and an informal mentor, better than an anonymous contact on the site.',
     },
     "faq.c4.q3": { fr: "Puis-je travailler pour des entreprises étrangères depuis le Togo ?", en: "Can I work for foreign companies from Togo?" },
     "faq.c4.a3": {
