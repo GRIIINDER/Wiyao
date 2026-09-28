@@ -450,6 +450,12 @@ nav.site-nav {
   display: none;
 }
 
+/* roadmap.html : le test d'orientation est déjà dans le menu Parcours,
+   pas besoin du CTA d'en-tête en plus sur cette page précise. */
+.page-roadmap .header-cta {
+  display: none;
+}
+
 nav.site-nav a {
   color: var(--tk-text-muted);
   font-weight: 600;
