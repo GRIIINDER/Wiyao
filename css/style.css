@@ -848,6 +848,12 @@ main {
   margin: -40px 0 0;
 }
 
+/* Si le bandeau i18n (visible seulement en EN) précède le titre, c'est lui
+   qui touche le header, pas le titre : espacement normal en dessous. */
+#i18n-notice:not([hidden]) + .page-title-banner {
+  margin-top: 32px;
+}
+
 /* Exclu de l'aplat total (voir plus bas dans ce fichier) : ce titre doit
    rester grand pour avoir l'impact recherché, comme le "404". Le span
    .hero-accent à l'intérieur hérite de cette taille (inherit) plutôt que
