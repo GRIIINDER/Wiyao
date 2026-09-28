@@ -838,8 +838,8 @@ main {
 
 /* Bandeau de titre plein cadre, façon julaya.co : bloc uni en couleur
    d'accent (version foncée pour rester dark-only) avec le H1 en grand,
-   gras, majuscules. Le sous-titre / bouton restent dans .hero, en
-   dessous, hors du bandeau. */
+   gras, casse normale (comme le reste du site). Le sous-titre / bouton
+   restent dans .hero, en dessous, hors du bandeau. */
 .page-title-banner {
   background: var(--tk-primary-soft);
   border-radius: var(--radius);
@@ -861,7 +861,6 @@ main {
 .page-title-banner h1 {
   font-size: 4.5rem !important;
   font-weight: 800;
-  text-transform: uppercase;
   line-height: 1.05;
   color: var(--tk-text);
   margin: 0;
@@ -1771,9 +1770,6 @@ main {
   .hero-legal h1 {
     font-size: 3rem;
   }
-  .hero.faq-hero h1 {
-    font-size: 3rem;
-  }
   .about-section h2 {
     font-size: 1.8rem;
   }
@@ -1931,12 +1927,9 @@ main {
   text-align: left;
 }
 
-/* FAQ : titre 64 px, sous-titre et questions 24 px, réponses 20 px. */
-.hero.faq-hero h1 {
-  font-size: 4rem;
-  line-height: 1.2;
-}
-
+/* FAQ : sous-titre et questions 24 px, réponses 20 px. Le titre vit
+   désormais dans .page-title-banner (comme les autres pages), plus dans
+   cette colonne sticky. */
 .hero.faq-hero p {
   font-size: 1.5rem;
 }
@@ -2972,9 +2965,6 @@ footer.site-footer {
     font-size: 2.1rem !important;
   }
   .hero-legal h1 {
-    font-size: 2.3rem;
-  }
-  .hero.faq-hero h1 {
     font-size: 2.3rem;
   }
   .about-section h2 {
