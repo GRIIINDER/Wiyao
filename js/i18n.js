@@ -42,9 +42,36 @@
   // Contenu propre à index.html (hero + parcours en 6 étapes), repéré par
   // data-i18n-key posé directement dans le HTML de cette page.
   const PAGE_CONTENT = {
-    "hero.title": {
-      fr: 'Trace ton <span class="hero-accent">parcours tech</span> au Togo',
-      en: 'Chart your <span class="hero-accent">tech path</span> in Togo',
+    "home.badge": { fr: "100 % gratuit · sans compte · sans pub", en: "100% free · no account · no ads" },
+    "home.title.pre": { fr: "Deviens", en: "Become" },
+    "home.title.post": { fr: "au Togo", en: "in Togo" },
+    "home.title.sr": {
+      fr: "Deviens développeur·se web, data analyst, expert·e cyber, designer UX/UI, ingénieur·e DevOps ou spécialiste IA au Togo",
+      en: "Become a web developer, data analyst, cyber expert, UX/UI designer, DevOps engineer or AI specialist in Togo",
+    },
+    "home.search.label": { fr: "Rechercher sur WIYAO", en: "Search WIYAO" },
+    "home.chip.cyber": { fr: "Cybersécurité", en: "Cybersecurity" },
+    "home.chip.data": { fr: "Data &amp; IA", en: "Data &amp; AI" },
+    "home.chip.kara": { fr: "Écoles à Kara", en: "Schools in Kara" },
+    "home.chip.bourses": { fr: "Bourses", en: "Scholarships" },
+    "home.chip.stages": { fr: "Stages", en: "Internships" },
+    "home.cta2": { fr: "Explorer les roadmaps", en: "Explore the roadmaps" },
+    "home.stats.title": { fr: "WIYAO en chiffres", en: "WIYAO in numbers" },
+    "home.stat.roadmaps": { fr: "roadmaps métiers et compétences", en: "career and skill roadmaps" },
+    "home.stat.ecoles": { fr: "écoles et universités comparées", en: "schools and universities compared" },
+    "home.stat.quiz": { fr: "questions pour trouver ta voie", en: "questions to find your path" },
+    "home.stat.free": { fr: "gratuit, sans inscription", en: "free, no sign-up" },
+    "home.journey.eyebrow": { fr: "Comment ça marche", en: "How it works" },
+    "home.step1.eyebrow": { fr: "Orientation", en: "Orientation" },
+    "home.step2.eyebrow": { fr: "Roadmaps", en: "Roadmaps" },
+    "home.step3.eyebrow": { fr: "Écoles", en: "Schools" },
+    "home.step4.eyebrow": { fr: "Calendrier", en: "Calendar" },
+    "home.step5.eyebrow": { fr: "Stages &amp; emploi", en: "Internships &amp; jobs" },
+    "home.step6.eyebrow": { fr: "Écosystème", en: "Ecosystem" },
+    "home.final.title": { fr: "Prêt·e à tracer ton parcours ?", en: "Ready to chart your path?" },
+    "home.final.desc": {
+      fr: "Gratuit, sans compte, sans publicité. Commence par le test d'orientation : 14 questions pour trouver ta voie.",
+      en: "Free, no account, no ads. Start with the orientation test: 14 questions to find your path.",
     },
     "hero.subtitle": {
       fr: "Le guide qui t'accompagne à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses et stages, à Lomé et dans tout le Togo.",

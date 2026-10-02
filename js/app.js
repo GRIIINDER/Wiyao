@@ -1241,7 +1241,7 @@
   // ouverture, clôture, rentrée) sans dupliquer la logique d'affichage
   // dédiée de calendrier.html.
   function flattenSchoolKeywords(school) {
-    const parts = [(school.filieres || []).join(" "), (school.niveaux || []).join(" ")];
+    const parts = [(school.filieres || []).join(" "), (school.niveaux || []).join(" "), (school.ville || []).join(" ")];
     const dc = school.datesCles;
     if (dc) {
       parts.push([dc.ouverture, dc.cloture, dc.concours, dc.resultats, dc.rentree, dc.note].filter(Boolean).join(" "));
@@ -1316,6 +1316,12 @@
     const results = document.getElementById("global-search-results");
     const status = document.getElementById("global-search-status");
     if (!input || !results || !status) return;
+
+    // Recherche lancée depuis l'accueil (formulaire GET ou raccourcis) :
+    // recherche.html?q=... pré-remplit le champ. Affecté via .value, jamais
+    // injecté en HTML.
+    const initialQuery = new URLSearchParams(window.location.search).get("q");
+    if (initialQuery) input.value = initialQuery.slice(0, 80);
 
     let index = null;
     buildGlobalIndex().then((idx) => {
@@ -1439,7 +1445,187 @@
     toggleSuggestions();
   }
 
+  // ---- Page d'accueil : métier qui tourne dans le titre, chiffres calculés
+  // depuis data.js (jamais figés dans le HTML) et mini-interfaces des 6
+  // étapes, construites à partir des vraies données du site. ----
+  // Libellés limités à 18 caractères : au-delà, le titre passe sur deux
+  // lignes sur mobile (voir .home-title dans style.css).
+  const HOME_ROLES = [
+    { id: "web-dev", fr: "développeur·se web", en: "a web developer" },
+    { id: "data-analyst", fr: "data analyst", en: "a data analyst" },
+    { id: "cyber", fr: "expert·e cyber", en: "a cyber expert" },
+    { id: "ux-ui", fr: "designer UX/UI", en: "a UX/UI designer" },
+    { id: "devops", fr: "ingénieur·e DevOps", en: "a DevOps engineer" },
+    { id: "data-ia", fr: "spécialiste IA", en: "an AI specialist" },
+  ];
+  // Noms repris des pages Stages & emploi et Écosystème.
+  const HOME_JOB_SITES = ["Emploi.tg", "Novojob (Togo)", "JobRelais", "ANPE"];
+  const HOME_COMMUNITIES = ["GDG Lomé", "TDEV", "CoTIA", "Women Techmakers", "Djanta Tech Hub", "UniPod"];
+  const ARROW_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="8 7 17 7 17 16"></polyline></svg>';
+
+  function esc(str) {
+    return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+
+  function schoolShortName(name) {
+    const m = name.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
+    if (!m) return name;
+    return m[2].length <= 14 ? m[2] : m[1];
+  }
+
+  const HOME_MOCKS = {
+    quiz(isEn) {
+      if (typeof QUIZ_QUESTIONS === "undefined" || !QUIZ_QUESTIONS.length) return "";
+      const q = QUIZ_QUESTIONS[0];
+      const options = q.options.slice(0, 3).map((o, i) =>
+        `<li class="mock-item${i === 0 ? " is-selected" : ""}"><span class="mock-radio"></span>${esc(isEn && o.labelEn ? o.labelEn : o.label)}</li>`
+      ).join("");
+      return `<div class="mock-card">
+        <div class="mock-row mock-muted"><span>${isEn ? "Question 1 of 14" : "Question 1 / 14"}</span><span>${isEn ? "Orientation test" : "Test d'orientation"}</span></div>
+        <div class="mock-bar"><span style="width:7%"></span></div>
+        <p class="mock-question">${esc(isEn && q.questionEn ? q.questionEn : q.question)}</p>
+        <ul class="mock-list">${options}</ul>
+      </div>`;
+    },
+    roadmap(isEn) {
+      const rm = typeof ROLES !== "undefined" ? ROLES["web-dev"] : null;
+      if (!rm) return "";
+      const total = rm.sections.reduce((n, s) => n + s.items.length, 0);
+      const done = 2;
+      const first = rm.sections[0];
+      const checks = first.items.slice(0, 4).map((it, i) =>
+        `<li class="mock-check${i < done ? " is-done" : ""}"><span class="mock-box"></span><span class="mock-ellipsis">${esc(tField(it, "label"))}</span></li>`
+      ).join("");
+      return `<div class="mock-card">
+        <div class="mock-row"><strong class="mock-title">${esc(tField(rm, "title"))}</strong><span class="mock-badge">${isEn ? "Role roadmap" : "Roadmap par métier"}</span></div>
+        <div class="mock-bar"><span style="width:${Math.max(4, Math.round((done / total) * 100))}%"></span></div>
+        <p class="mock-muted">${isEn ? `${done} / ${total} steps completed` : `${done} / ${total} étapes complétées`}</p>
+        <p class="mock-section">${esc(tField(first, "title"))}</p>
+        <ul class="mock-list">${checks}</ul>
+      </div>`;
+    },
+    ecoles(isEn) {
+      if (typeof SCHOOLS === "undefined") return "";
+      const statut = { public: isEn ? "Public" : "Publique", prive: isEn ? "Private" : "Privée", "inter-etats": isEn ? "Inter-State" : "Inter-États" };
+      const rows = ["iai-togo", "esig", "universite-kara"].filter((id) => SCHOOLS[id]).map((id) => {
+        const s = SCHOOLS[id];
+        const chips = [statut[s.statut] || s.statut, (s.ville || []).join(" · ")];
+        if (s.agree) chips.push(isEn ? "State-accredited" : "Agréé État");
+        const n = (s.filieres || []).length;
+        return `<li class="mock-item mock-school"><div><strong>${esc(schoolShortName(s.name))}</strong><span class="mock-chips">${chips.map((c) => `<span class="mock-chip">${esc(c)}</span>`).join("")}</span></div><span class="mock-count">${n} ${isEn ? (n > 1 ? "tracks" : "track") : (n > 1 ? "filières" : "filière")}</span></li>`;
+      }).join("");
+      return `<div class="mock-card">
+        <div class="mock-row mock-muted"><span>${isEn ? "School comparison" : "Comparateur d'écoles"}</span><span>${Object.keys(SCHOOLS).length} ${isEn ? "schools" : "écoles"}</span></div>
+        <ul class="mock-list" style="margin-top:14px">${rows}</ul>
+      </div>`;
+    },
+    calendrier(isEn) {
+      if (typeof ACADEMIC_TIMELINE === "undefined") return "";
+      const rows = ACADEMIC_TIMELINE.slice(0, 4).map((s) =>
+        `<li class="mock-date"><span class="mock-period">${esc(isEn ? s.periodeEn : s.periode)}</span><span class="mock-date-title">${esc(isEn ? s.titreEn : s.titre)}</span></li>`
+      ).join("");
+      return `<div class="mock-card">
+        <div class="mock-row mock-muted" style="margin-bottom:16px"><span>${isEn ? "Key dates" : "Dates clés"}</span><span>${isEn ? "Academic year" : "Année académique"}</span></div>
+        <ul class="mock-list mock-timeline">${rows}</ul>
+      </div>`;
+    },
+    stages(isEn) {
+      const rows = HOME_JOB_SITES.map((name) =>
+        `<li class="mock-item mock-link"><span class="mock-favicon">${esc(name.charAt(0))}</span><strong>${esc(name)}</strong>${ARROW_SVG}</li>`
+      ).join("");
+      return `<div class="mock-card">
+        <div class="mock-row mock-muted" style="margin-bottom:14px"><span>${isEn ? "Job platforms in Togo" : "Plateformes d'emploi au Togo"}</span></div>
+        <ul class="mock-list">${rows}</ul>
+      </div>`;
+    },
+    ecosysteme(isEn) {
+      return `<div class="mock-card">
+        <div class="mock-row mock-muted"><span>${isEn ? "Communities &amp; hubs" : "Communautés &amp; hubs"}</span><span>Togo</span></div>
+        <div class="mock-cloud">${HOME_COMMUNITIES.map((c) => `<span class="mock-pill">${esc(c)}</span>`).join("")}</div>
+      </div>`;
+    },
+  };
+
+  function initHome() {
+    const hero = document.getElementById("home-hero");
+    if (!hero) return;
+
+    document.querySelectorAll("[data-stat]").forEach((el) => {
+      if (el.dataset.stat === "roadmaps" && typeof ROLES !== "undefined" && typeof SKILLS !== "undefined") {
+        el.textContent = Object.keys(ROLES).length + Object.keys(SKILLS).length;
+      } else if (el.dataset.stat === "ecoles" && typeof SCHOOLS !== "undefined") {
+        el.textContent = Object.keys(SCHOOLS).length;
+      }
+    });
+
+    const input = document.getElementById("home-search-input");
+    const submit = document.getElementById("home-search-btn");
+    const word = document.getElementById("home-rotator-word");
+    const pauseBtn = document.getElementById("home-rotator-pause");
+    const roles = HOME_ROLES.filter((r) => typeof ROLES === "undefined" || ROLES[r.id]);
+    let current = 0;
+    let paused = false;
+    let held = false;
+
+    const roleLabel = () => (roles.length ? (currentLang() === "en" ? roles[current].en : roles[current].fr) : "");
+
+    function updatePauseLabel() {
+      if (!pauseBtn) return;
+      const isEn = currentLang() === "en";
+      pauseBtn.setAttribute("aria-label", paused
+        ? (isEn ? "Resume the animation" : "Relancer l'animation")
+        : (isEn ? "Pause the animation" : "Mettre l'animation en pause"));
+    }
+
+    function render() {
+      const isEn = currentLang() === "en";
+      if (input) input.placeholder = isEn ? "Search for a school, a career, a scholarship…" : "Cherche une école, un métier, une bourse…";
+      if (submit) submit.setAttribute("aria-label", isEn ? "Search" : "Rechercher");
+      if (word) word.textContent = roleLabel();
+      updatePauseLabel();
+      document.querySelectorAll(".home-visual[data-mock]").forEach((el) => {
+        const build = HOME_MOCKS[el.dataset.mock];
+        el.innerHTML = build ? build(isEn) : "";
+      });
+    }
+
+    render();
+    // i18n.js change l'attribut lang de <html> à chaque bascule FR/EN.
+    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!word || roles.length < 2 || reduceMotion) return;
+
+    if (pauseBtn) {
+      pauseBtn.hidden = false;
+      pauseBtn.addEventListener("click", () => {
+        paused = !paused;
+        pauseBtn.setAttribute("aria-pressed", String(paused));
+        pauseBtn.classList.toggle("is-paused", paused);
+        updatePauseLabel();
+      });
+    }
+    hero.addEventListener("mouseenter", () => { held = true; });
+    hero.addEventListener("mouseleave", () => { held = false; });
+    hero.addEventListener("focusin", (e) => { if (e.target !== pauseBtn) held = true; });
+    hero.addEventListener("focusout", () => { held = false; });
+
+    setInterval(() => {
+      if (paused || held || document.hidden) return;
+      word.classList.add("is-leaving");
+      setTimeout(() => {
+        current = (current + 1) % roles.length;
+        word.textContent = roleLabel();
+        word.classList.remove("is-leaving");
+        word.classList.add("is-entering");
+        void word.offsetWidth;
+        word.classList.remove("is-entering");
+      }, 320);
+    }, 2800);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    initHome();
     renderGrid();
     renderDomainPrimer();
     initFilters();
