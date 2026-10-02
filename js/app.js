@@ -104,29 +104,53 @@
     return levelBadge + togoBadge;
   }
 
+  // Couleur de couverture des cartes roadmap et des onglets de l'accueil,
+  // une par domaine (voir .card-cover--* dans style.css).
+  const DOMAIN_SLUGS = {
+    "Développement": "dev",
+    "Data & IA": "data",
+    "Sécurité": "secu",
+    "Produit & Design": "design",
+    "Infrastructure & DevOps": "infra",
+    "Marketing digital": "marketing",
+    "Gestion & Management": "gestion",
+  };
+
+  function domainSlug(name) {
+    return DOMAIN_SLUGS[name] || "autre";
+  }
+
+  function domainLabel(name) {
+    const meta = typeof DOMAINS !== "undefined" ? DOMAINS[name] : null;
+    return meta && currentLang() === "en" && meta.nameEn ? meta.nameEn : name;
+  }
+
   function buildCard(id, rm, kind) {
     const total = countItems(rm);
     const done = getDoneCount(id);
     const pct = total ? Math.round((done / total) * 100) : 0;
+    const en = currentLang() === "en";
 
     const card = document.createElement("a");
     card.href = `roadmap.html?id=${id}`;
-    card.className = "card";
+    card.className = "card roadmap-card";
     card.dataset.title = rm.title.toLowerCase();
     if (rm.domain) card.dataset.domain = rm.domain;
     const badges = badgesHtml(rm);
-    const cardLabel = currentLang() === "en" ? "completed" : "complété";
-    const kindLabel = kind === "skill" ? "Roadmap · compétence" : "Roadmap · métier";
+    const kindLabel = kind === "skill" ? (en ? "Skill roadmap" : "Roadmap · compétence") : (en ? "Role roadmap" : "Roadmap · métier");
     card.innerHTML = `
-      <div class="card-kind-bar">${kindLabel}</div>
+      <div class="card-cover card-cover--${domainSlug(rm.domain)}">
+        <span class="card-cover-kind">${kindLabel}</span>
+        <span class="card-icon" aria-hidden="true">${rm.icon}</span>
+      </div>
       <div class="card-body">
-        <div class="card-icon">${rm.icon}</div>
         ${badges ? `<div class="card-badges">${badges}</div>` : ""}
         <h3>${tField(rm, "title")}</h3>
         <p>${tField(rm, "subtitle")}</p>
+        <div class="card-meta-row"><span>${total} ${en ? "steps" : "étapes"}</span><span>${rm.domain ? domainLabel(rm.domain) : ""}</span></div>
         <div class="card-meta-divider"></div>
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-        <span class="progress-label">${pct}% ${cardLabel}</span>
+        <span class="progress-label">${pct}% ${en ? "completed" : "complété"}</span>
       </div>
     `;
     return card;
@@ -335,6 +359,16 @@
         btn.classList.add("active");
         applyFilters();
       });
+
+      // roadmaps.html?domaine=... (onglets de l'accueil) : préselectionne le
+      // filtre correspondant, uniquement s'il existe parmi les puces.
+      const wanted = new URLSearchParams(window.location.search).get("domaine");
+      const chip = wanted && Array.prototype.find.call(domainFilters.querySelectorAll(".domain-chip"), (b) => b.dataset.domain === wanted);
+      if (chip) {
+        domainFilters.querySelectorAll(".domain-chip").forEach((b) => b.classList.remove("active"));
+        chip.classList.add("active");
+        applyFilters();
+      }
     }
   }
 
@@ -1569,6 +1603,65 @@
 
     const roleLabel = () => (roles.length ? (currentLang() === "en" ? roles[current].en : roles[current].fr) : "");
 
+    // Onglets "Explorer par domaine" (modèle ARIA tablist : clic, flèches,
+    // Début/Fin). Contenu tiré de DOMAINS et ROLES, jamais figé.
+    const tabsEl = document.getElementById("home-domain-tabs");
+    const panelEl = document.getElementById("home-domain-panel");
+    const domainNames = typeof DOMAINS !== "undefined" ? Object.keys(DOMAINS) : [];
+    let activeDomain = domainNames[0];
+
+    function renderDomains(isEn) {
+      if (!tabsEl || !panelEl || !domainNames.length || typeof ROLES === "undefined") return;
+      tabsEl.setAttribute("aria-label", isEn ? "Tech fields" : "Domaines tech");
+      tabsEl.innerHTML = domainNames.map((name, i) => {
+        const sel = name === activeDomain;
+        return `<button type="button" role="tab" class="home-tab" id="home-tab-${i}" aria-controls="home-domain-panel" aria-selected="${sel}" tabindex="${sel ? 0 : -1}" data-domain="${esc(name)}"><span class="home-tab-icon" aria-hidden="true">${DOMAINS[name].icon}</span><span>${esc(domainLabel(name))}</span></button>`;
+      }).join("");
+
+      const meta = DOMAINS[activeDomain];
+      const ids = Object.keys(ROLES).filter((id) => ROLES[id].domain === activeDomain);
+      const cards = ids.slice(0, 6).map((id) => {
+        const r = ROLES[id];
+        const verified = r.togoVerified ? ` · ✓ ${isEn ? "Togo-verified" : "Vérifié Togo"}` : "";
+        return `<a class="home-role-card" href="roadmap.html?id=${encodeURIComponent(id)}"><span class="home-role-icon" aria-hidden="true">${r.icon}</span><span class="home-role-body"><span class="home-role-title">${esc(tField(r, "title"))}</span><span class="home-role-meta">${esc(levelLabel(r.level))} · ${countItems(r)} ${isEn ? "steps" : "étapes"}${verified}</span></span></a>`;
+      }).join("");
+      panelEl.setAttribute("aria-labelledby", `home-tab-${domainNames.indexOf(activeDomain)}`);
+      panelEl.className = `home-tabpanel home-tabpanel--${domainSlug(activeDomain)}`;
+      panelEl.innerHTML = `
+        <div class="home-domain-intro">
+          <p class="home-domain-name"><span class="home-domain-icon" aria-hidden="true">${meta.icon}</span>${esc(domainLabel(activeDomain))}</p>
+          <p class="home-domain-desc">${esc(tField(meta, "description"))}</p>
+          ${meta.presenceTogo ? `<p class="home-domain-presence">🇹🇬 ${esc(tField(meta, "presenceTogo"))}</p>` : ""}
+          <a class="home-feature-link" href="roadmaps.html?domaine=${encodeURIComponent(activeDomain)}#par-metier">${isEn ? `See the ${ids.length} roadmaps →` : `Voir les ${ids.length} roadmaps →`}</a>
+        </div>
+        <div class="home-role-grid">${cards}</div>`;
+    }
+
+    function selectDomain(i) {
+      activeDomain = domainNames[i];
+      renderDomains(currentLang() === "en");
+      const tab = document.getElementById(`home-tab-${i}`);
+      if (tab) tab.focus();
+    }
+
+    if (tabsEl) {
+      tabsEl.addEventListener("click", (e) => {
+        const btn = e.target.closest('[role="tab"]');
+        if (btn) selectDomain(domainNames.indexOf(btn.dataset.domain));
+      });
+      tabsEl.addEventListener("keydown", (e) => {
+        const n = domainNames.length;
+        let i = domainNames.indexOf(activeDomain);
+        if (e.key === "ArrowRight") i = (i + 1) % n;
+        else if (e.key === "ArrowLeft") i = (i - 1 + n) % n;
+        else if (e.key === "Home") i = 0;
+        else if (e.key === "End") i = n - 1;
+        else return;
+        e.preventDefault();
+        selectDomain(i);
+      });
+    }
+
     function updatePauseLabel() {
       if (!pauseBtn) return;
       const isEn = currentLang() === "en";
@@ -1587,6 +1680,7 @@
         const build = HOME_MOCKS[el.dataset.mock];
         el.innerHTML = build ? build(isEn) : "";
       });
+      renderDomains(isEn);
     }
 
     render();

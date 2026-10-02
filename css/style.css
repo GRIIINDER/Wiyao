@@ -1549,6 +1549,280 @@ main {
   font-weight: 600;
 }
 
+.home-domains,
+.home-story,
+.home-faq {
+  margin-top: 120px;
+}
+
+.home-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.home-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface);
+  color: var(--tk-text-reading);
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.home-tab:hover {
+  border-color: rgba(102, 196, 255, 0.5);
+  color: var(--tk-text);
+}
+
+.home-tab[aria-selected="true"] {
+  background: var(--tk-primary);
+  border-color: var(--tk-primary);
+  color: var(--tk-canvas);
+}
+
+.home-tab:focus-visible,
+.home-tabpanel:focus-visible {
+  outline: 3px solid var(--tk-primary);
+  outline-offset: 3px;
+}
+
+.home-tabpanel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 40px;
+  align-items: start;
+  padding: 40px;
+  border-radius: 28px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface);
+  overflow: hidden;
+}
+
+.home-tabpanel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--tk-primary);
+}
+
+.home-domain-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+  color: var(--tk-text);
+  font-weight: 800;
+}
+
+.home-domain-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--tk-surface-soft);
+}
+
+.home-domain-desc {
+  margin: 0 0 14px;
+  color: var(--tk-text-reading);
+  line-height: 1.6;
+}
+
+.home-domain-presence {
+  margin: 0 0 22px;
+  color: var(--tk-text-muted);
+  line-height: 1.6;
+}
+
+.home-role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.home-role-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface-soft);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.home-role-card:hover {
+  border-color: var(--tk-primary);
+  transform: translateY(-2px);
+}
+
+.home-role-icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(102, 196, 255, 0.12);
+}
+
+.home-role-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.home-role-title {
+  color: var(--tk-text);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.home-role-meta {
+  color: var(--tk-text-muted);
+  line-height: 1.4;
+}
+
+.home-story {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+
+.home-story-card {
+  padding: 48px;
+  border-radius: 28px;
+  border: 1px solid var(--tk-border);
+  background: radial-gradient(80% 100% at 0% 0%, rgba(102, 196, 255, 0.16), transparent 60%), var(--tk-surface);
+}
+
+.home-story-text {
+  margin: 0 0 28px;
+  color: var(--tk-text);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.home-story-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.home-story-avatar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.home-story-name,
+.home-story-role {
+  display: block;
+}
+
+.home-story-name {
+  color: var(--tk-text);
+  font-weight: 800;
+}
+
+.home-story-role {
+  color: var(--tk-text-muted);
+}
+
+.home-story-source {
+  margin: 22px 0 0;
+  color: var(--tk-text-subtle);
+}
+
+.home-story-source a {
+  color: var(--tk-primary);
+  text-decoration: underline;
+}
+
+.home-story-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 40px;
+  border-radius: 28px;
+  border: 1px solid rgba(102, 196, 255, 0.14);
+  background: linear-gradient(140deg, #16133f 0%, #2c2775 60%, #6a5cff 150%);
+}
+
+.home-story-avatars {
+  display: flex;
+}
+
+.home-story-avatars span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-left: -12px;
+  border-radius: 50%;
+  border: 3px solid #241f60;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.home-story-avatars span:nth-child(2) { background: #0b8fb3; }
+.home-story-avatars span:nth-child(3) { background: #6a5cff; }
+.home-story-avatars span:nth-child(4) { background: #c04fd6; }
+.home-story-avatars span:nth-child(5) { background: #2fb38a; }
+
+.home-story-avatars span:first-child {
+  margin-left: 0;
+}
+
+.home-story-more {
+  margin: 0;
+  color: var(--tk-text-reading);
+  line-height: 1.6;
+}
+
+.home-faq {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.home-faq-head .home-h2 {
+  margin-bottom: 18px;
+}
+
+.home-faq-list {
+  border-top: 1px solid var(--tk-border);
+}
+
 .home-final {
   position: relative;
   overflow: hidden;
@@ -1588,6 +1862,27 @@ main {
   .home-visual {
     min-height: 320px;
     padding: 28px;
+  }
+  .home-domains,
+  .home-story,
+  .home-faq {
+    margin-top: 88px;
+  }
+  .home-tabpanel,
+  .home-story,
+  .home-faq {
+    grid-template-columns: 1fr;
+  }
+  .home-tabpanel {
+    gap: 28px;
+    padding: 32px 28px;
+  }
+  .home-story-card,
+  .home-story-side {
+    padding: 32px;
+  }
+  .home-faq {
+    gap: 24px;
   }
 }
 
@@ -1636,6 +1931,35 @@ main {
   .home-rotator-pause {
     top: 12px;
     right: 12px;
+  }
+  .home-tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    margin: 0 -24px 20px;
+    padding: 0 24px 4px;
+    scrollbar-width: none;
+  }
+  .home-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .home-tabpanel {
+    padding: 26px 18px;
+    border-radius: 22px;
+  }
+  .home-role-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-story-card,
+  .home-story-side {
+    padding: 26px 20px;
+    border-radius: 22px;
+  }
+}
+
+@media print {
+  .home-final {
+    display: none;
   }
 }
 
@@ -1980,21 +2304,83 @@ main {
   transform: translateY(-2px);
 }
 
-/* Bandeau de type de carte, façon Codecademy ("Career path" /
-   "Free course") : le type réel déjà utilisé par la recherche
-   (Roadmap · métier / compétence), pas une catégorie inventée. */
-.card-kind-bar {
-  background: var(--tk-canvas);
-  color: #fff;
-  font-size: 0.7rem;
+/* Couverture des cartes roadmap, façon catalogue Emeritus/Multiverse :
+   dégradé propre à chaque domaine, type réel de la carte (Roadmap ·
+   métier / compétence) et icône en tuile qui déborde sur le corps. */
+.card-cover {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 104px;
+  padding: 0 24px;
+  overflow: visible;
+  background: linear-gradient(135deg, #0a3c86 0%, #1557ff 100%);
+}
+
+.card-cover::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.card-cover--dev { background: linear-gradient(135deg, #0a3c86 0%, #1557ff 100%); }
+.card-cover--data { background: linear-gradient(135deg, #0b4a66 0%, #22a3c4 100%); }
+.card-cover--secu { background: linear-gradient(135deg, #2c2775 0%, #6a5cff 100%); }
+.card-cover--design { background: linear-gradient(135deg, #5b1f6e 0%, #c04fd6 100%); }
+.card-cover--infra { background: linear-gradient(135deg, #0f4c3a 0%, #2fb38a 100%); }
+.card-cover--marketing { background: linear-gradient(135deg, #7a3410 0%, #f08a3c 100%); }
+.card-cover--gestion { background: linear-gradient(135deg, #2b3247 0%, #6f7f9f 100%); }
+
+.card-cover-kind {
+  position: absolute;
+  top: 14px;
+  left: 24px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(10, 13, 28, 0.38);
+  color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 8px 24px;
+}
+
+.card-cover .card-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 0 -28px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(10, 13, 28, 0.2);
 }
 
 .card-body {
   padding: 24px;
+}
+
+.roadmap-card {
+  overflow: hidden;
+}
+
+.roadmap-card .card-body {
+  padding-top: 40px;
+}
+
+.card-meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 .card-meta-divider {
@@ -4042,6 +4428,64 @@ main .domain-primer-icon {
   font-size: 15px !important;
 }
 
+.page-home main .home-tab,
+.page-home main .home-tab *,
+.page-home main .home-domain-presence,
+.page-home main .home-story-role,
+.page-home main .home-story-avatars span {
+  font-size: 14px !important;
+}
+
+.page-home main .home-domain-name {
+  font-size: 22px !important;
+}
+
+.page-home main .home-domain-icon,
+.page-home main .home-role-icon {
+  font-size: 24px !important;
+}
+
+.page-home main .home-domain-desc,
+.page-home main .home-story-name,
+.page-home main .home-story-more,
+.page-home main .home-faq .faq-item p,
+.page-home main .home-faq .faq-item p * {
+  font-size: 16px !important;
+}
+
+.page-home main .home-role-title {
+  font-size: 15px !important;
+}
+
+.page-home main .home-role-meta,
+.page-home main .home-story-source,
+.page-home main .home-story-source * {
+  font-size: 13px !important;
+}
+
+.page-home main .home-story-text {
+  font-size: 24px !important;
+}
+
+.page-home main .home-faq .faq-item summary {
+  font-size: 18px !important;
+}
+
+/* Bandeau d'appel final : même composant que sur l'accueil, présent en bas
+   des pages de contenu (choix validé) ; mêmes tailles partout. */
+main .home-final .home-h2 {
+  font-size: 2.75rem !important;
+}
+
+main .home-final .home-lead {
+  font-size: 18px !important;
+}
+
+main .home-final .btn-primary,
+main .home-final .btn-ghost {
+  font-size: 16px !important;
+}
+
 @media (max-width: 900px) {
   .page-title-banner .home-title {
     font-size: min(3.25rem, calc((100vw - 120px) / 10.8)) !important;
@@ -4054,6 +4498,12 @@ main .domain-primer-icon {
   }
   .page-home main .home-stat-num {
     font-size: 2.4rem !important;
+  }
+  .page-home main .home-story-text {
+    font-size: 20px !important;
+  }
+  main .home-final .home-h2 {
+    font-size: 2.1rem !important;
   }
 }
 
@@ -4072,11 +4522,25 @@ main .domain-primer-icon {
     font-size: 16px !important;
   }
   .page-home main .btn-primary,
-  .page-home main .btn-ghost {
+  .page-home main .btn-ghost,
+  main .home-final .btn-primary,
+  main .home-final .btn-ghost {
     font-size: 15px !important;
   }
   .page-home main .home-stat-num {
     font-size: 2rem !important;
+  }
+  .page-home main .home-story-text {
+    font-size: 18px !important;
+  }
+  .page-home main .home-faq .faq-item summary {
+    font-size: 16px !important;
+  }
+  main .home-final .home-h2 {
+    font-size: 1.7rem !important;
+  }
+  main .home-final .home-lead {
+    font-size: 16px !important;
   }
 }
 

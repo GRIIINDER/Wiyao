@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="WIYAO - Le guide qui accompagne ton parcours tech au Togo">
 <meta name="twitter:description" content="WIYAO est le guide qui accompagne le bachelier togolais à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses, stages et emploi.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=182">
+<link rel="stylesheet" href="css/style.css?v=183">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -195,6 +195,62 @@
     </article>
   </section>
 
+  <section class="home-domains" id="domaines">
+    <div class="home-section-head">
+      <p class="home-eyebrow" data-i18n-key="home.domains.eyebrow">Explorer par domaine</p>
+      <h2 class="home-h2" data-i18n-key="home.domains.title">Quel domaine tech t'attire ?</h2>
+      <p class="home-lead" data-i18n-key="home.domains.desc">Choisis un domaine pour découvrir ses métiers et la roadmap de chacun.</p>
+    </div>
+    <div class="home-tabs" id="home-domain-tabs" role="tablist"></div>
+    <div class="home-tabpanel" id="home-domain-panel" role="tabpanel" tabindex="0"></div>
+  </section>
+
+  <section class="home-story">
+    <div class="home-story-card">
+      <p class="home-eyebrow" data-i18n-key="temoin.s3.h2">Ils l'ont fait</p>
+      <p class="home-story-text" data-i18n-key="temoin.s3.p2.p">Géographe de formation, sans parcours informatique initial. En 2013, à WoeLab, il construit en six mois W.Afate : la première imprimante 3D africaine fabriquée à partir de déchets électroniques récupérés dans les décharges de Lomé. Premier prix de l'innovation technologique à la conférence internationale FabLab (Barcelone, 2014).</p>
+      <div class="home-story-person">
+        <span class="home-story-avatar" aria-hidden="true">KG</span>
+        <div>
+          <span class="home-story-name">Kodjo Afate Gnikou</span>
+          <span class="home-story-role" data-i18n-key="temoin.s3.p2.role">Inventeur de l'imprimante 3D W.Afate</span>
+        </div>
+      </div>
+      <p class="home-story-source"><span data-i18n-key="home.story.source">Source :</span> <a href="https://face2faceafrica.com/article/meet-kodjo-afate-gnikou-who-built-a-3d-printer-from-electronic-waste" target="_blank" rel="noopener">face2faceafrica.com</a></p>
+    </div>
+    <div class="home-story-side">
+      <div class="home-story-avatars" aria-hidden="true"><span>SA</span><span>EA</span><span>EK</span><span>IG</span><span>RT</span></div>
+      <p class="home-story-more" data-i18n-key="home.story.more">Fondateurs, ingénieures, inventeurs : découvre d'autres parcours de la tech togolaise, tous sourcés.</p>
+      <a class="btn-ghost" href="temoignages.html#portraits" data-i18n-key="home.story.cta">Voir tous les parcours →</a>
+    </div>
+  </section>
+
+  <section class="home-faq">
+    <div class="home-faq-head">
+      <p class="home-eyebrow">FAQ</p>
+      <h2 class="home-h2" data-i18n-key="home.faq.title">Des questions ? On a les réponses.</h2>
+      <a class="home-feature-link" href="faq.html" data-i18n-key="home.faq.all">Toutes les questions →</a>
+    </div>
+    <div class="home-faq-list">
+      <details class="faq-item">
+        <summary data-i18n-key="faq.c1.q1">C'est gratuit ?</summary>
+        <p data-i18n-key="faq.c1.a1">Oui, entièrement. Pas de compte à créer, pas d'abonnement, pas de publicité.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n-key="faq.c1.q2">Il faut créer un compte pour utiliser le site ?</summary>
+        <p data-i18n-key="faq.c1.a2">Non. Tout le site (roadmaps, test d'orientation, comparateur d'écoles, calendrier) s'utilise sans compte ni inscription.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n-key="faq.c1.q6">Les informations du site sont-elles vérifiées ?</summary>
+        <p data-i18n-key="faq.c1.a6">Oui : sourcées activement (sites officiels, presse togolaise, documents signés). Quand une information ne peut pas être confirmée (par exemple des frais de scolarité), le site l'indique clairement plutôt que d'inventer un chiffre. Le marché évolue vite : vérifie toujours en direct auprès de l'établissement ou l'organisme concerné avant de t'engager.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n-key="faq.c2.q4">Le test d'orientation est-il fiable à 100 % ?</summary>
+        <p data-i18n-key="faq.c2.a4">Non, et c'est assumé : 14 questions ne peuvent pas connaître quelqu'un parfaitement. Le résultat est un point de départ solide, pas un verdict définitif. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu'un du métier et explore la roadmap correspondante avant de t'engager dans une école.</p>
+      </details>
+    </div>
+  </section>
+
   <section class="home-final">
     <h2 class="home-h2" data-i18n-key="home.final.title">Prêt·e à tracer ton parcours ?</h2>
     <p class="home-lead" data-i18n-key="home.final.desc">Gratuit, sans compte, sans publicité. Commence par le test d'orientation : 14 questions pour trouver ta voie.</p>
@@ -253,9 +309,9 @@
 </footer>
 
 <script src="js/data.js?v=52"></script>
-<script src="js/app.js?v=46"></script>
+<script src="js/app.js?v=47"></script>
 <script src="js/nav.js?v=6"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=99"></script>
+<script src="js/i18n.js?v=100"></script>
 </body>
 </html>
