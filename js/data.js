@@ -4806,8 +4806,10 @@ const SCHOOLS = {
     description: "École fondée à Lomé en 2008, 66 formations diplômantes du BTS au Master réparties en cinq domaines, accréditation Cisco Networking Academy, partenariats avec Sorbonne Paris Nord, UPEC, Le Havre Normandie et l'University of Alberta pour la mobilité internationale.",
     datesCles: {
       mode: "continue",
-      note: "Pré-inscriptions ouvertes en continu, dossier uniquement (pas de concours) : formulaire en ligne puis contact sous 24h.",
-      anneeReference: "2026-2027"
+      note: "Pré-inscriptions ouvertes en continu, dossier uniquement (pas de concours) : formulaire en ligne puis contact sous 24h. Formation modulaire (modules courts : développement web avec outils IA, initiation à la data et à l'IA, maintenance informatique, réseaux et cybersécurité…) : inscriptions ouvertes, admission sur dossier et entretien, tarif sur devis.",
+      rentree: "15 septembre 2026 (BTS, Licence, Master : ESIG News) · 26 octobre 2026 (formation modulaire : affiche officielle ESIG)",
+      anneeReference: "2026-2027",
+      contact: "Formation continue : +228 79 77 36 36 · formation@esig.tg"
     }
   },
   "esiba": {

@@ -231,7 +231,7 @@
       fr: "Événements, lancements, startups, financements : les faits marquants récents de l'écosystème, sourcés\n       et datés. Pas un flux automatique : chaque entrée est vérifiée à la main, avec sa source.",
       en: "Events, launches, startups, funding : recent highlights from the ecosystem, sourced and dated. Not an automated feed: every entry is hand-verified, with its source.",
     },
-    "actu.hero.guide": { fr: "Dernière mise à jour : 23 septembre 2026.", en: "Last updated: September 23, 2026." },
+    "actu.hero.guide": { fr: "Dernière mise à jour : 2 octobre 2026.", en: "Last updated: October 2, 2026." },
     "actu.hero.propose": {
       fr: 'Un événement ou une actu tech togolaise qui manque ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
       en: 'A Togolese tech event or news item missing? <a href="proposer.html">Suggest it</a> : we verify and add it.',
@@ -253,6 +253,13 @@
       en: "National tour of the government's Nana Tech program to build digital skills among young women across six cities: Lomé, Aného, Sokodé, Kpalimé, Atakpamé and Kara. A participation certificate for everyone, with a certifying training track offered to the best participants. Run by the Ministry of Public Service Efficiency and Digital Transformation, with Djanta Tech Hub, German cooperation (GIZ), the European Union, Luxembourg, Digital Girl, GDG Lomé, RedTeam-TG and Women Techmakers Lomé.",
     },
     "actu.t14.cat": { fr: "Formation", en: "Training" },
+    "actu.t19.date": { fr: "Rentrée le 26 octobre 2026, inscriptions ouvertes", en: "Starts October 26, 2026, registration open" },
+    "actu.t19.h3": { fr: "ESIG Global Success : rentrée de la formation modulaire le 26 octobre 2026", en: "ESIG Global Success: modular training starts October 26, 2026" },
+    "actu.t19.p": {
+      fr: "Le centre de formation modulaire de l'ESIG Global Success (Lomé) a ouvert les inscriptions pour sa rentrée du 26 octobre 2026, annoncée sur l'affiche officielle de l'école. Ce sont des parcours courts et qualifiants, organisés en modules, pour se former vite, monter en compétences ou se reconvertir. Côté numérique : développement web et création de sites avec les outils IA, initiation à la data et à l'IA, maintenance informatique, réseaux et cybersécurité, marketing digital, infographie. Admission sur dossier et entretien, tarif sur devis. À ne pas confondre avec les cursus diplômants BTS, Licence et Master de l'école, dont la rentrée a eu lieu le 15 septembre. Contact : +228 79 77 36 36 ou formation@esig.tg.",
+      en: "The modular training center of ESIG Global Success (Lomé) has opened registration for its October 26, 2026 intake, announced on the school's official poster. These are short, qualifying tracks organized in modules, to train quickly, upskill or change careers. On the digital side: web development and website creation with AI tools, introduction to data and AI, IT maintenance, networks and cybersecurity, digital marketing, graphic design. Admission based on application and interview, price on quote. Not to be confused with the school's BTS, Bachelor's and Master's degree programs, which started on September 15. Contact: +228 79 77 36 36 or formation@esig.tg.",
+    },
+    "actu.t19.cat": { fr: "Formation", en: "Training" },
     "actu.t18.date": {
       fr: "Samedi 24 octobre 2026, 9h-12h, Institute Polytechnic Defitech (Lomé)",
       en: "Saturday, October 24, 2026, 9am-12pm, Institute Polytechnic Defitech (Lomé)",
