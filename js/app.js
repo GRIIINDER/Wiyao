@@ -755,6 +755,17 @@
         applySchoolFilters();
       });
     });
+
+    // ecoles.html?ville=... (carte des villes de l'accueil) : préselectionne
+    // la ville, uniquement si elle existe parmi les puces.
+    const villeGroup = document.getElementById("ville-filters");
+    const wantedVille = new URLSearchParams(window.location.search).get("ville");
+    const villeChip = wantedVille && villeGroup && Array.prototype.find.call(villeGroup.querySelectorAll(".domain-chip"), (b) => b.dataset.ville === wantedVille);
+    if (villeChip) {
+      villeGroup.querySelectorAll(".domain-chip").forEach((b) => b.classList.remove("active"));
+      villeChip.classList.add("active");
+      applySchoolFilters();
+    }
   }
 
   // ---- Test d'orientation ----
@@ -1497,6 +1508,16 @@
   const HOME_COMMUNITIES = ["GDG Lomé", "TDEV", "CoTIA", "Women Techmakers", "Djanta Tech Hub", "UniPod"];
   const ARROW_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="8 7 17 7 17 16"></polyline></svg>';
 
+  // Latitude / longitude des villes où le comparateur recense des écoles :
+  // place les points du sud au nord sur l'accueil (aucune frontière tracée).
+  const CITY_COORDS = {
+    "Lomé": [6.13, 1.22],
+    "Atakpamé": [7.53, 1.13],
+    "Sokodé": [8.98, 1.13],
+    "Bassar": [9.25, 0.78],
+    "Kara": [9.55, 1.19],
+  };
+
   function esc(str) {
     return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
@@ -1637,6 +1658,61 @@
         <div class="home-role-grid">${cards}</div>`;
     }
 
+    function renderCities(isEn) {
+      const list = document.getElementById("home-city-list");
+      const map = document.getElementById("home-map");
+      if (!list || !map || typeof SCHOOLS === "undefined") return;
+      const counts = {};
+      Object.values(SCHOOLS).forEach((s) => (s.ville || []).forEach((v) => { counts[v] = (counts[v] || 0) + 1; }));
+      const lat = (c) => (CITY_COORDS[c] ? CITY_COORDS[c][0] : 99);
+      const cities = Object.keys(counts).sort((a, b) => lat(a) - lat(b));
+      const word = (n) => (isEn ? (n > 1 ? "schools" : "school") : (n > 1 ? "écoles" : "école"));
+      list.innerHTML = cities.map((c) =>
+        `<li><a href="ecoles.html?ville=${encodeURIComponent(c)}"><span class="home-city-name">${esc(c)}</span><span class="home-city-count">${counts[c]} ${word(counts[c])} →</span></a></li>`
+      ).join("");
+
+      const W = 360, H = 460, PAD = 52, LAT = [5.8, 10.0], LON = [0.4, 1.6];
+      const pts = cities.filter((c) => CITY_COORDS[c]).map((c) => {
+        const [la, lo] = CITY_COORDS[c];
+        return {
+          c, n: counts[c], r: 8 + 6 * Math.sqrt(counts[c]),
+          x: PAD + ((lo - LON[0]) / (LON[1] - LON[0])) * (W - 2 * PAD),
+          y: PAD + ((LAT[1] - la) / (LAT[1] - LAT[0])) * (H - 2 * PAD),
+        };
+      });
+      // Étiquette à droite du point, sauf si elle chevaucherait un autre point.
+      const labels = pts.map((p) => {
+        const width = (p.c.length + String(p.n).length + 3) * 8.4;
+        const clash = pts.some((q) => q !== p && q.x - q.r < p.x + p.r + 8 + width && q.x + q.r > p.x && Math.abs(q.y - p.y) < q.r + 10);
+        return clash
+          ? `<text class="map-label" x="${(p.x - p.r - 8).toFixed(1)}" y="${(p.y + 5).toFixed(1)}" text-anchor="end">${esc(p.c)} <tspan class="map-count">${p.n}</tspan></text>`
+          : `<text class="map-label" x="${(p.x + p.r + 8).toFixed(1)}" y="${(p.y + 5).toFixed(1)}">${esc(p.c)} <tspan class="map-count">${p.n}</tspan></text>`;
+      });
+      map.innerHTML = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+        <line class="map-axis" x1="22" y1="${PAD - 14}" x2="22" y2="${H - PAD + 14}"></line>
+        <text class="map-axis-label" x="22" y="${PAD - 22}" text-anchor="middle">N ↑</text>
+        <text class="map-axis-label" x="22" y="${H - PAD + 30}" text-anchor="middle">S</text>
+        ${pts.map((p) => `<circle class="map-halo" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${(p.r * 1.7).toFixed(1)}"></circle><circle class="map-pin" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.r.toFixed(1)}"></circle>`).join("")}
+        ${labels.join("")}
+        <text class="map-coast" x="${W / 2}" y="${H - 14}" text-anchor="middle">${isEn ? "Gulf of Guinea" : "Golfe de Guinée"}</text>
+      </svg>`;
+    }
+
+    function renderPhone(isEn) {
+      const screen = document.getElementById("home-phone-screen");
+      if (!screen) return;
+      screen.innerHTML = `
+        <div class="phone-status"><span>9:41</span><span class="phone-notch"></span><span class="phone-bars"><i></i><i></i><i></i><i></i></span></div>
+        <div class="phone-header"><img src="icons/logo-white.png?v=1" alt=""><span class="phone-menu"></span></div>
+        <div class="phone-hero">
+          <span class="phone-badge">${isEn ? "100% free" : "100 % gratuit"}</span>
+          <p class="phone-title">${isEn ? "Become" : "Deviens"}<br><span class="phone-role">${esc(roleLabel())}</span><br>${isEn ? "in Togo" : "au Togo"}</p>
+          <div class="phone-search">${isEn ? "Search WIYAO…" : "Cherche sur WIYAO…"}</div>
+          <span class="phone-btn">${isEn ? "Take the test →" : "Faire le test →"}</span>
+        </div>
+        <div class="phone-cards"><span></span><span></span></div>`;
+    }
+
     function selectDomain(i) {
       activeDomain = domainNames[i];
       renderDomains(currentLang() === "en");
@@ -1681,6 +1757,28 @@
         el.innerHTML = build ? build(isEn) : "";
       });
       renderDomains(isEn);
+      renderCities(isEn);
+      renderPhone(isEn);
+    }
+
+    // Bouton "Installer WIYAO" : affiché seulement si le navigateur propose
+    // l'installation (PWA) ; sinon les étapes manuelles restent visibles.
+    const installBtn = document.getElementById("home-install-btn");
+    let installPrompt = null;
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      installPrompt = e;
+      if (installBtn) installBtn.hidden = false;
+    });
+    window.addEventListener("appinstalled", () => { if (installBtn) installBtn.hidden = true; });
+    if (installBtn) {
+      installBtn.addEventListener("click", async () => {
+        if (!installPrompt) return;
+        installPrompt.prompt();
+        await installPrompt.userChoice;
+        installPrompt = null;
+        installBtn.hidden = true;
+      });
     }
 
     render();
@@ -1710,6 +1808,8 @@
       setTimeout(() => {
         current = (current + 1) % roles.length;
         word.textContent = roleLabel();
+        const phoneRole = document.querySelector(".phone-role");
+        if (phoneRole) phoneRole.textContent = roleLabel();
         word.classList.remove("is-leaving");
         word.classList.add("is-entering");
         void word.offsetWidth;

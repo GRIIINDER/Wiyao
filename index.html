@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="WIYAO - Le guide qui accompagne ton parcours tech au Togo">
 <meta name="twitter:description" content="WIYAO est le guide qui accompagne le bachelier togolais à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses, stages et emploi.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=183">
+<link rel="stylesheet" href="css/style.css?v=184">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -198,11 +198,46 @@
   <section class="home-domains" id="domaines">
     <div class="home-section-head">
       <p class="home-eyebrow" data-i18n-key="home.domains.eyebrow">Explorer par domaine</p>
-      <h2 class="home-h2" data-i18n-key="home.domains.title">Quel domaine tech t'attire ?</h2>
+      <h2 class="home-h2" data-i18n-key="home.domains.title">Quel domaine tech t'attire&nbsp;?</h2>
       <p class="home-lead" data-i18n-key="home.domains.desc">Choisis un domaine pour découvrir ses métiers et la roadmap de chacun.</p>
     </div>
     <div class="home-tabs" id="home-domain-tabs" role="tablist"></div>
     <div class="home-tabpanel" id="home-domain-panel" role="tabpanel" tabindex="0"></div>
+  </section>
+
+  <section class="home-cities" id="villes">
+    <div class="home-cities-text">
+      <p class="home-eyebrow" data-i18n-key="home.cities.eyebrow">Où étudier</p>
+      <h2 class="home-h2" data-i18n-key="home.cities.title">Où étudier au Togo&nbsp;?</h2>
+      <p class="home-lead" data-i18n-key="home.cities.desc">Les écoles du comparateur, ville par ville, du sud au nord. Choisis une ville pour voir ses écoles.</p>
+      <ul class="home-city-list" id="home-city-list"></ul>
+    </div>
+    <div class="home-map" id="home-map" aria-hidden="true"></div>
+  </section>
+
+  <section class="home-market">
+    <div class="home-section-head">
+      <p class="home-eyebrow" data-i18n-key="home.market.eyebrow">Pourquoi la tech</p>
+      <h2 class="home-h2" data-i18n-key="home.market.title">La tech togolaise en chiffres</h2>
+      <p class="home-lead" data-i18n-key="home.market.desc">Un secteur soutenu par l'État et par les bailleurs internationaux : de quoi rassurer tes parents.</p>
+    </div>
+    <div class="home-market-grid">
+      <div class="home-market-item">
+        <span class="home-market-num" data-i18n-key="home.market.m1.num">100 M$</span>
+        <p class="home-market-desc" data-i18n-key="home.market.m1.p">Environ 62 milliards de FCFA approuvés par la Banque mondiale en décembre 2024 pour accélérer la transformation numérique du Togo : croissance, emplois, compétitivité.</p>
+        <p class="home-market-source"><span data-i18n-key="home.story.source">Source :</span> <a href="https://www.banquemondiale.org/fr/news/press-release/2024/12/19/togo-100-million-in-funding-to-accelerate-digital-transformation" target="_blank" rel="noopener">banquemondiale.org</a></p>
+      </div>
+      <div class="home-market-item">
+        <span class="home-market-num" data-i18n-key="home.market.m2.num">8 000</span>
+        <p class="home-market-desc" data-i18n-key="home.market.m2.p">Institutions publiques à connecter au haut débit, et plus d'un million de personnes à l'Internet, grâce à ce même financement.</p>
+        <p class="home-market-source"><span data-i18n-key="home.story.source">Source :</span> <a href="https://www.banquemondiale.org/fr/news/press-release/2024/12/19/togo-100-million-in-funding-to-accelerate-digital-transformation" target="_blank" rel="noopener">banquemondiale.org</a></p>
+      </div>
+      <div class="home-market-item">
+        <span class="home-market-num" data-i18n-key="home.market.m3.num">4&nbsp;%&nbsp;→ 10&nbsp;%</span>
+        <p class="home-market-desc" data-i18n-key="home.market.m3.p">Part du numérique dans le PIB togolais en 2022, et objectif affiché par le pays pour les prochaines années.</p>
+        <p class="home-market-source"><span data-i18n-key="home.story.source">Source :</span> <a href="https://www.wearetech.africa/fr/fils/actualites/tech/togo-une-nouvelle-strategie-numerique-en-preparation-pour-la-periode-2025-2030" target="_blank" rel="noopener">wearetech.africa</a></p>
+      </div>
+    </div>
   </section>
 
   <section class="home-story">
@@ -225,10 +260,72 @@
     </div>
   </section>
 
+  <section class="home-sources">
+    <div class="home-section-head">
+      <p class="home-eyebrow" data-i18n-key="home.sources.eyebrow">Nos sources</p>
+      <h2 class="home-h2" data-i18n-key="home.sources.title">Vérifié, jamais deviné</h2>
+      <p class="home-lead" data-i18n-key="home.sources.desc">Les informations de WIYAO sont sourcées activement. Voici d'où elles viennent.</p>
+    </div>
+    <div class="home-sources-grid">
+      <div class="home-source">
+        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></span>
+        <h3 class="home-source-title" data-i18n-key="home.sources.s1.t">Sites officiels</h3>
+        <p class="home-source-desc" data-i18n-key="home.sources.s1.p">Frais, filières et dates repris des pages des écoles et des organismes, avec le lien.</p>
+      </div>
+      <div class="home-source">
+        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15l2 2 4-4"></path></svg></span>
+        <h3 class="home-source-title" data-i18n-key="home.sources.s2.t">Documents signés</h3>
+        <p class="home-source-desc" data-i18n-key="home.sources.s2.p">Échéanciers de frais et calendriers académiques officiels des écoles.</p>
+      </div>
+      <div class="home-source">
+        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></span>
+        <h3 class="home-source-title" data-i18n-key="home.sources.s3.t">Affiches officielles</h3>
+        <p class="home-source-desc" data-i18n-key="home.sources.s3.p">Annonces de rentrée ou d'inscriptions publiées par les écoles elles-mêmes.</p>
+      </div>
+      <div class="home-source">
+        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><line x1="10" y1="7" x2="18" y2="7"></line><line x1="10" y1="11" x2="18" y2="11"></line><line x1="10" y1="15" x2="15" y2="15"></line></svg></span>
+        <h3 class="home-source-title" data-i18n-key="home.sources.s4.t">Presse togolaise et africaine</h3>
+        <p class="home-source-desc" data-i18n-key="home.sources.s4.p">Togo First, CIO Mag, WeAreTech Africa… pour les portraits et les chiffres du secteur.</p>
+      </div>
+      <div class="home-source">
+        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
+        <h3 class="home-source-title" data-i18n-key="home.sources.s5.t">Institutions publiques</h3>
+        <p class="home-source-desc" data-i18n-key="home.sources.s5.p">Ministères, agences publiques et bailleurs internationaux comme la Banque mondiale.</p>
+      </div>
+      <div class="home-source">
+        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg></span>
+        <h3 class="home-source-title" data-i18n-key="home.sources.s6.t">Liens revérifiés chaque jour</h3>
+        <p class="home-source-desc" data-i18n-key="home.sources.s6.p">Un contrôle automatique teste chaque jour les liens du site ; ceux qui ne répondent plus sont revus à la main.</p>
+      </div>
+    </div>
+    <p class="home-sources-note"><span data-i18n-key="home.sources.note">Quand une information ne peut pas être confirmée, WIYAO l'indique clairement plutôt que d'inventer un chiffre.</span> <a class="home-feature-link" href="about.html" data-i18n-key="home.sources.link">Notre méthodologie →</a></p>
+  </section>
+
+  <section class="home-app">
+    <div class="home-phone" aria-hidden="true">
+      <div class="home-phone-screen" id="home-phone-screen"></div>
+    </div>
+    <div class="home-app-text">
+      <p class="home-eyebrow" data-i18n-key="home.app.eyebrow">Application</p>
+      <h2 class="home-h2" data-i18n-key="home.app.title">WIYAO dans ta poche</h2>
+      <p class="home-lead" data-i18n-key="home.app.desc">Installe WIYAO sur ton écran d'accueil comme une application : rien à télécharger depuis un store, aucun compte à créer. Après une première visite, le site reste consultable même sans connexion (hors liens externes).</p>
+      <ul class="home-app-chips">
+        <li data-i18n-key="home.app.chip1">Gratuit</li>
+        <li data-i18n-key="home.app.chip2">Sans store</li>
+        <li data-i18n-key="home.app.chip3">Hors connexion</li>
+      </ul>
+      <button class="btn-primary home-install-btn" id="home-install-btn" type="button" hidden data-i18n-key="home.app.install">Installer WIYAO</button>
+      <ol class="home-app-steps">
+        <li><strong>Android</strong> <span data-i18n-key="home.app.android">(Chrome) : menu ⋮ puis « Installer l'application » ou « Ajouter à l'écran d'accueil ».</span></li>
+        <li><strong>iPhone</strong> <span data-i18n-key="home.app.ios">(Safari) : bouton Partager puis « Sur l'écran d'accueil ».</span></li>
+      </ol>
+    </div>
+  </section>
+
   <section class="home-faq">
     <div class="home-faq-head">
       <p class="home-eyebrow">FAQ</p>
-      <h2 class="home-h2" data-i18n-key="home.faq.title">Des questions ? On a les réponses.</h2>
+      <h2 class="home-h2" data-i18n-key="home.faq.title">Des questions&nbsp;? On a les réponses.</h2>
       <a class="home-feature-link" href="faq.html" data-i18n-key="home.faq.all">Toutes les questions →</a>
     </div>
     <div class="home-faq-list">
@@ -252,7 +349,7 @@
   </section>
 
   <section class="home-final">
-    <h2 class="home-h2" data-i18n-key="home.final.title">Prêt·e à tracer ton parcours ?</h2>
+    <h2 class="home-h2" data-i18n-key="home.final.title">Prêt·e à tracer ton parcours&nbsp;?</h2>
     <p class="home-lead" data-i18n-key="home.final.desc">Gratuit, sans compte, sans publicité. Commence par le test d'orientation : 14 questions pour trouver ta voie.</p>
     <div class="home-ctas">
       <a class="btn-primary" href="test-orientation.html" data-i18n-key="hero.cta">Faire le test d'orientation →</a>
@@ -309,9 +406,9 @@
 </footer>
 
 <script src="js/data.js?v=52"></script>
-<script src="js/app.js?v=47"></script>
+<script src="js/app.js?v=48"></script>
 <script src="js/nav.js?v=6"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=100"></script>
+<script src="js/i18n.js?v=101"></script>
 </body>
 </html>

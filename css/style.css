@@ -1808,11 +1808,452 @@ main {
   line-height: 1.6;
 }
 
+.home-cities,
+.home-market,
+.home-sources,
+.home-app {
+  margin-top: 120px;
+}
+
+/* Grands numéros d'étapes décoratifs (façon Comfy), à la place des pastilles. */
+.home-features {
+  counter-reset: step;
+}
+
+.home-feature {
+  counter-increment: step;
+}
+
+.home-feature-text::before {
+  content: counter(step, decimal-leading-zero);
+  display: block;
+  margin-bottom: 10px;
+  font-size: 5.5rem;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(102, 196, 255, 0.55);
+}
+
+.home-feature .home-step-num {
+  display: none;
+}
+
+/* Où étudier au Togo : villes du sud au nord (pas de frontières tracées). */
+.home-cities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.home-cities .home-lead,
+.home-app .home-lead {
+  margin-left: 0;
+}
+
+.home-city-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 440px;
+  margin: 28px 0 0;
+  padding: 0;
+}
+
+.home-city-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.home-city-list a:hover {
+  border-color: var(--tk-primary);
+  transform: translateX(3px);
+}
+
+.home-city-name {
+  color: var(--tk-text);
+  font-weight: 700;
+}
+
+.home-city-count {
+  color: var(--tk-primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.home-map {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid var(--tk-border);
+  background: radial-gradient(70% 55% at 62% 80%, rgba(21, 87, 255, 0.28), transparent 70%), var(--tk-surface);
+}
+
+.home-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(102, 196, 255, 0.22) 1.2px, transparent 1.7px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(80% 80% at 50% 50%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(80% 80% at 50% 50%, #000 40%, transparent 100%);
+}
+
+.home-map svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.map-halo { fill: rgba(102, 196, 255, 0.16); }
+.map-pin { fill: var(--tk-primary); stroke: #0a0d1c; stroke-width: 2; }
+.map-label { fill: var(--tk-text); font-family: inherit; font-weight: 700; }
+.map-count { fill: var(--tk-primary); }
+.map-axis { stroke: var(--tk-border); stroke-width: 2; stroke-dasharray: 4 6; }
+.map-axis-label { fill: var(--tk-text-subtle); font-family: inherit; font-weight: 700; }
+.map-coast { fill: var(--tk-text-subtle); font-family: inherit; font-style: italic; }
+
+/* La tech togolaise en chiffres : chiffres vérifiés, chacun avec sa source. */
+.home-market {
+  padding: 72px 48px;
+  border-radius: 32px;
+  border: 1px solid rgba(102, 196, 255, 0.2);
+  background: radial-gradient(70% 90% at 100% 0%, rgba(102, 196, 255, 0.22), transparent 60%), linear-gradient(135deg, #0a2f6b 0%, #1557ff 140%);
+}
+
+.home-market .home-section-head {
+  margin-bottom: 48px;
+}
+
+.home-market .home-eyebrow {
+  color: #cfe9ff;
+}
+
+.home-market .home-lead {
+  color: #dbe9ff;
+}
+
+.home-market-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.home-market-item {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 13, 28, 0.35);
+}
+
+.home-market-num {
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.home-market-desc {
+  flex: 1;
+  margin: 14px 0 0;
+  color: #dbe9ff;
+  line-height: 1.6;
+}
+
+.home-market-source {
+  margin: 18px 0 0;
+  color: rgba(219, 233, 255, 0.7);
+}
+
+.home-market-source a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Vérifié, jamais deviné : les types de sources de WIYAO (façon Pogo). */
+.home-sources-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.home-source {
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface);
+}
+
+.home-source-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: rgba(102, 196, 255, 0.12);
+  color: var(--tk-primary);
+}
+
+.home-source-title {
+  margin: 0 0 8px;
+  color: var(--tk-text);
+  font-weight: 800;
+}
+
+.home-source-desc {
+  margin: 0;
+  color: var(--tk-text-muted);
+  line-height: 1.6;
+}
+
+.home-sources-note {
+  max-width: 760px;
+  margin: 32px auto 0;
+  text-align: center;
+  color: var(--tk-text-reading);
+  line-height: 1.6;
+}
+
+/* WIYAO dans ta poche : maquette de téléphone + installation (PWA). */
+.home-app {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 56px;
+  border-radius: 32px;
+  border: 1px solid var(--tk-border);
+  background: radial-gradient(60% 80% at 20% 50%, rgba(102, 196, 255, 0.18), transparent 70%), var(--tk-surface);
+}
+
+.home-phone {
+  justify-self: center;
+  width: 270px;
+  height: 540px;
+  padding: 12px;
+  border-radius: 44px;
+  border: 2px solid #2a3566;
+  background: #05070f;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), inset 0 0 0 6px #0d1328;
+}
+
+.home-phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 12px;
+  border-radius: 34px;
+  background: var(--tk-canvas);
+}
+
+.phone-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 6px 10px;
+  color: var(--tk-text);
+  font-weight: 700;
+}
+
+.phone-notch {
+  width: 72px;
+  height: 18px;
+  border-radius: 999px;
+  background: #05070f;
+}
+
+.phone-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.phone-bars i {
+  width: 3px;
+  border-radius: 1px;
+  background: var(--tk-text);
+}
+
+.phone-bars i:nth-child(1) { height: 4px; }
+.phone-bars i:nth-child(2) { height: 6px; }
+.phone-bars i:nth-child(3) { height: 8px; }
+.phone-bars i:nth-child(4) { height: 10px; }
+
+.phone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface);
+}
+
+.phone-header img {
+  height: 15px;
+}
+
+.phone-menu {
+  position: relative;
+  width: 16px;
+  height: 10px;
+  border-top: 2px solid var(--tk-text);
+  border-bottom: 2px solid var(--tk-text);
+}
+
+.phone-menu::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  border-top: 2px solid var(--tk-text);
+}
+
+.phone-hero {
+  margin-top: 12px;
+  padding: 18px 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(102, 196, 255, 0.14);
+  background: linear-gradient(180deg, #0b356f 0%, var(--tk-primary-soft) 100%);
+  text-align: center;
+}
+
+.phone-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(102, 196, 255, 0.3);
+  color: var(--tk-text);
+}
+
+.phone-title {
+  margin: 12px 0 0;
+  color: var(--tk-text);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.phone-role {
+  color: var(--tk-primary);
+}
+
+.phone-search {
+  margin: 14px 0 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f3f7f9;
+  color: #5b6572;
+  text-align: left;
+}
+
+.phone-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--tk-primary);
+  color: var(--tk-canvas);
+  font-weight: 800;
+}
+
+.phone-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.phone-cards span {
+  height: 76px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0a3c86, #1557ff);
+}
+
+.phone-cards span:nth-child(2) {
+  background: linear-gradient(135deg, #2c2775, #6a5cff);
+}
+
+.home-app-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 0;
+  padding: 0;
+}
+
+.home-app-chips li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(102, 196, 255, 0.12);
+  color: var(--tk-primary);
+  font-weight: 700;
+}
+
+.home-install-btn {
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.home-install-btn[hidden] {
+  display: none;
+}
+
+.home-app-steps {
+  margin: 24px 0 0;
+  padding-left: 20px;
+  color: var(--tk-text-reading);
+  line-height: 1.7;
+}
+
+.home-app-steps strong {
+  color: var(--tk-text);
+}
+
 .home-faq {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 56px;
   align-items: start;
+}
+
+/* FAQ numérotée (façon doo!) : 01, 02… devant chaque question. */
+.home-faq-list {
+  counter-reset: faq;
+}
+
+.home-faq .faq-item summary {
+  justify-content: flex-start;
+}
+
+.home-faq .faq-item summary::before {
+  counter-increment: faq;
+  content: counter(faq, decimal-leading-zero);
+  flex: none;
+  margin-right: 14px;
+  color: var(--tk-primary);
+  font-weight: 800;
+}
+
+.home-faq .faq-item summary::after {
+  margin-left: auto;
 }
 
 .home-faq-head .home-h2 {
@@ -1884,6 +2325,35 @@ main {
   .home-faq {
     gap: 24px;
   }
+  .home-cities,
+  .home-market,
+  .home-sources,
+  .home-app {
+    margin-top: 88px;
+  }
+  .home-cities,
+  .home-app {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .home-city-list {
+    max-width: none;
+  }
+  .home-market {
+    padding: 48px 28px;
+  }
+  .home-market-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-sources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-app {
+    padding: 40px 28px;
+  }
+  .home-feature-text::before {
+    font-size: 4rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1954,6 +2424,31 @@ main {
   .home-story-side {
     padding: 26px 20px;
     border-radius: 22px;
+  }
+  .home-market {
+    padding: 36px 18px;
+    border-radius: 24px;
+  }
+  .home-market-item,
+  .home-source {
+    padding: 22px 20px;
+  }
+  .home-sources-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-app {
+    padding: 32px 18px;
+    border-radius: 24px;
+  }
+  .home-phone {
+    width: 240px;
+    height: 480px;
+  }
+  .home-map {
+    border-radius: 22px;
+  }
+  .home-feature-text::before {
+    font-size: 3.2rem;
   }
 }
 
@@ -4471,6 +4966,50 @@ main .domain-primer-icon {
   font-size: 18px !important;
 }
 
+.page-home main .home-city-name,
+.page-home main .home-market-desc,
+.page-home main .home-sources-note,
+.page-home main .home-sources-note * {
+  font-size: 16px !important;
+}
+
+.page-home main .home-city-count,
+.page-home main .map-label,
+.page-home main .map-label *,
+.page-home main .home-app-chips li {
+  font-size: 14px !important;
+}
+
+.page-home main .home-source-desc,
+.page-home main .home-app-steps,
+.page-home main .home-app-steps * {
+  font-size: 15px !important;
+}
+
+.page-home main .home-source-title {
+  font-size: 18px !important;
+}
+
+.page-home main .home-market-num {
+  font-size: 2.5rem !important;
+}
+
+.page-home main .home-market-source,
+.page-home main .home-market-source *,
+.page-home main .map-axis-label,
+.page-home main .map-coast {
+  font-size: 12px !important;
+}
+
+.page-home main .home-phone * {
+  font-size: 10px !important;
+}
+
+.page-home main .home-phone .phone-title,
+.page-home main .home-phone .phone-title * {
+  font-size: 20px !important;
+}
+
 /* Bandeau d'appel final : même composant que sur l'accueil, présent en bas
    des pages de contenu (choix validé) ; mêmes tailles partout. */
 main .home-final .home-h2 {
@@ -4501,6 +5040,9 @@ main .home-final .btn-ghost {
   }
   .page-home main .home-story-text {
     font-size: 20px !important;
+  }
+  .page-home main .home-market-num {
+    font-size: 2.4rem !important;
   }
   main .home-final .home-h2 {
     font-size: 2.1rem !important;
