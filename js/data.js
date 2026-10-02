@@ -4960,17 +4960,18 @@ const SCHOOLS = {
     statut: "prive",
     agree: true,
     niveaux: ["BTS", "Licence Professionnelle", "Master Professionnel"],
-    filieres: ["Génie Logiciel", "Réseaux et Télécommunications", "Maintenance Informatique et Réseaux", "Cybersécurité et Cybercriminalité"],
-    duree: null,
+    filieres: ["Génie Logiciel", "Réseaux et Télécommunications", "Informatique de Gestion (Développeur d'application)", "Informatique de Gestion (Administrateur Réseaux locaux d'entreprises)", "Maintenance Informatique et Réseaux", "Sécurité Informatique, Cybersécurité et Cybercriminalité", "Informatique Industrielle", "Marketing Digital & E-Business", "Modélisation Économétrique et Analyse des Données"],
+    duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "Inscriptions continues (critères détaillés non publiés en ligne)",
-    frais: "449 999 FCFA/an (BTS/Licence 1-2) · 549 999 (Licence 3) · 669 999-799 999 (Master) + 50 000 FCFA d'inscription (source : échéancier officiel 2026-2027). Bourses ponctuelles par tirage au sort à la rentrée, non garanties chaque année.",
+    frais: "449 999 FCFA/an (BTS/Licence 1-2, cours du jour ou du soir) · 549 999 (Licence 3) · 669 999 (Master 1) · 799 999 (Master 2), payables en 10 mensualités de septembre à juin (45 000 FCFA/mois en BTS/Licence 1-2) + 50 000 FCFA d'inscription, réduits de 20 % pour les 200 premiers inscrits. Inscription et scolarité non remboursables (source : échéancier officiel 2026-2027 du 8 juin 2026). Bourses ponctuelles par tirage au sort à la rentrée, non garanties chaque année.",
     site: "https://www.esatogo.com/",
-    description: "École pluridisciplinaire fondée en 2010, plus de 33 filières, 1ère école togolaise certifiée ISO 9001.",
+    description: "École pluridisciplinaire fondée en 2010, plus de 33 filières, 1ère école togolaise certifiée ISO 9001. Selon sa brochure 2026, la Licence en Génie Logiciel et la Licence en Réseaux Télécommunications sont reconnues par le CAMES. Soins de santé gratuits pour ses étudiants et aide au logement pour ceux qui viennent de l'intérieur du pays ou de l'étranger.",
     datesCles: {
       mode: "continue",
-      note: "Admission continue, avis sous 48 à 72h après étude du dossier : pas de date limite.",
+      note: "Admission continue, avis sous 48 à 72h après étude du dossier : pas de date limite. Réduction de 20 % sur les frais d'inscription pour les 200 premiers inscrits (brochure et échéancier 2026-2027).",
       rentree: "5 octobre 2026, 8h (campus Agoè et Super Taco, confirmé)",
-      anneeReference: "2026-2027"
+      anneeReference: "2026-2027",
+      contact: "+228 91 04 82 07 / 90 89 45 70 · esatogo2024@gmail.com"
     }
   },
   "college-paris-togo": {
