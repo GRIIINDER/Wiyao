@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Écoles &amp; universités - WIYAO">
 <meta name="twitter:description" content="Compare les écoles et universités togolaises qui forment à l'informatique et au numérique : filières, niveaux, admission et statut (public, privé, agréé par l'État).">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=185">
+<link rel="stylesheet" href="css/style.css?v=186">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -92,6 +92,27 @@
     <p data-i18n-key="ecoles.hero.subtitle">32 écoles et universités togolaises qui forment à l'informatique et au numérique, avec leurs filières,
        niveaux et conditions d'admission.</p>
     <p class="hero-guide" data-i18n-key="ecoles.hero.propose">Une école togolaise qui manque ici ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.</p>
+  </section>
+
+  <section class="school-stats" aria-labelledby="school-stats-title">
+    <h2 class="school-stats-title" id="school-stats-title" data-i18n-key="ecoles.stats.title">Le comparateur en chiffres</h2>
+    <div class="school-stats-grid" id="school-stats-grid"></div>
+    <p class="school-stats-note" data-i18n-key="ecoles.stats.note">Calculé automatiquement à partir des fiches ci-dessous. Coche «&nbsp;+ Comparer&nbsp;» sur 2 ou 3 écoles pour les voir côte à côte.</p>
+  </section>
+
+  <section class="school-compare" id="comparatif" aria-labelledby="school-compare-title" hidden>
+    <div class="school-compare-head">
+      <h2 id="school-compare-title" tabindex="-1" data-i18n-key="ecoles.compare.title">Comparaison côte à côte</h2>
+      <div class="school-compare-actions">
+        <button type="button" class="school-compare-action" id="school-compare-share">Partager</button>
+        <a class="school-compare-action" id="school-compare-whatsapp" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+        <button type="button" class="school-compare-action" id="school-compare-close">Fermer</button>
+      </div>
+    </div>
+    <label class="sr-only" for="school-compare-link" data-i18n-key="ecoles.compare.link">Lien du comparatif</label>
+    <input class="school-compare-link" id="school-compare-link" type="text" readonly hidden>
+    <div class="school-compare-scroll" id="school-compare-table"></div>
+    <p class="school-compare-note" data-i18n-key="ecoles.compare.note">Infos reprises des fiches vérifiées, telles quelles : confirme toujours frais et dates auprès de l'école avant de t'engager.</p>
   </section>
 
   <section class="roadmap-category">
@@ -197,6 +218,8 @@
       <a class="btn-ghost" href="roadmaps.html" data-i18n-key="home.cta2">Explorer les roadmaps</a>
     </div>
   </section>
+
+  <div class="compare-bar" id="compare-bar" role="region" aria-label="Sélection à comparer" hidden></div>
 </main>
 
 <footer class="site-footer">
@@ -246,9 +269,9 @@
 </footer>
 
 <script src="js/data.js?v=52"></script>
-<script src="js/app.js?v=49"></script>
-<script src="js/nav.js?v=6"></script>
+<script src="js/app.js?v=50"></script>
+<script src="js/nav.js?v=7"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=102"></script>
+<script src="js/i18n.js?v=103"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@
     { selector: ".footer-card-top > .footer-links-col:nth-child(2) h5", fr: "Opportunités", en: "Opportunities" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(3) h5", fr: "Communauté", en: "Community" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(4) h5", fr: "Contact", en: "Contact" },
-    { selector: ".footer-bottom p:first-child", fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
+    { selector: ".footer-bottom > p", fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
   ];
 
   // Contenu propre à index.html (hero + parcours en 6 étapes), repéré par
@@ -297,6 +297,17 @@
     "ecoles.hero.propose": {
       fr: 'Une école togolaise qui manque ici ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
       en: 'A Togolese school missing here? <a href="proposer.html">Suggest it</a> : we verify and add it.',
+    },
+    "ecoles.stats.title": { fr: "Le comparateur en chiffres", en: "The comparison tool in numbers" },
+    "ecoles.stats.note": {
+      fr: "Calculé automatiquement à partir des fiches ci-dessous. Coche «&nbsp;+ Comparer&nbsp;» sur 2 ou 3 écoles pour les voir côte à côte.",
+      en: "Calculated automatically from the school profiles below. Tick “+ Compare” on 2 or 3 schools to see them side by side.",
+    },
+    "ecoles.compare.title": { fr: "Comparaison côte à côte", en: "Side-by-side comparison" },
+    "ecoles.compare.link": { fr: "Lien du comparatif", en: "Comparison link" },
+    "ecoles.compare.note": {
+      fr: "Infos reprises telles quelles des fiches vérifiées : confirme toujours frais et dates auprès de l'école avant de t'engager.",
+      en: "Information taken as-is from the verified school profiles: always confirm fees and dates with the school before committing.",
     },
 
     "calendrier.hero.title": {
@@ -569,6 +580,38 @@
       fr: 'Le site est gratuit, utilisable sans inscription, et hébergé par Vercel : détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
       en: 'The site is free, usable without registration, and hosted by Vercel: full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
     },
+    "about.history.h2": { fr: "L'histoire de WIYAO", en: "The story of WIYAO" },
+    "about.history.e1.t": { fr: "Le bac, et des choix faits par d'autres", en: "The bac, and choices made by others" },
+    "about.history.e1.p": {
+      fr: "Bac en poche, Crédo choisit l'informatique contre l'avis de sa famille, puis passe par l'UCAO, trois spécialisations et l'ESGIS. À chaque étape, il lui manque des informations comparables pour décider lui-même.",
+      en: "Bac in hand, Crédo chose computer science against his family's wishes, then went through UCAO, three specializations and ESGIS. At every step, he lacked comparable information to decide for himself.",
+    },
+    "about.history.e2.d": { fr: "2 juillet 2026", en: "July 2, 2026" },
+    "about.history.e2.t": { fr: "Premier prototype", en: "First prototype" },
+    "about.history.e2.p": { fr: "Les premières roadmaps par métier et par compétence voient le jour.", en: "The first career and skill roadmaps go live." },
+    "about.history.e3.d": { fr: "13 août 2026", en: "August 13, 2026" },
+    "about.history.e3.t": { fr: "Kpataa devient WIYAO", en: "Kpataa becomes WIYAO" },
+    "about.history.e3.p": { fr: "Le projet prend son nom actuel.", en: "The project takes its current name." },
+    "about.history.e4.d": { fr: "14 août 2026", en: "August 14, 2026" },
+    "about.history.e4.t": { fr: "Installable, même hors connexion", en: "Installable, even offline" },
+    "about.history.e4.p": {
+      fr: "WIYAO devient une application web : on l'ajoute à l'écran d'accueil du téléphone et il reste consultable sans connexion.",
+      en: "WIYAO becomes a web app: you add it to your phone's home screen and it stays available offline.",
+    },
+    "about.history.e5.d": { fr: "16 août 2026", en: "August 16, 2026" },
+    "about.history.e5.t": { fr: "Bourses, actualités et recherche", en: "Scholarships, news and search" },
+    "about.history.e5.p": { fr: "Trois nouvelles pages pour ne plus avoir à chercher ailleurs.", en: "Three new pages so you no longer have to look elsewhere." },
+    "about.history.e6.d": { fr: "17 août 2026", en: "August 17, 2026" },
+    "about.history.e6.t": { fr: "Une version anglaise", en: "An English version" },
+    "about.history.e6.p": { fr: "Une version anglaise s'ajoute au français.", en: "An English version is added alongside French." },
+    "about.history.now.d": { fr: "Aujourd'hui", en: "Today" },
+    "about.history.now.schools": { fr: "écoles", en: "schools" },
+    "about.history.now.roadmaps": { fr: "roadmaps", en: "roadmaps" },
+    "about.history.now.p": {
+      fr: "Et toujours le même objectif&nbsp;: que le prochain bachelier togolais ait, dès le départ, les informations qui ont manqué en 2017.",
+      en: "And still the same goal: that the next Togolese high-school graduate has, from day one, the information that was missing in 2017.",
+    },
+
     "about.s2.h2": { fr: "Roadmaps par métier", en: "Role-based roadmaps" },
     "about.s2.p.intro": {
       fr: "Les 60 roadmaps par métier s'appuient sur une recherche des offres d'emploi et fiches de poste réellement publiées sur des plateformes togolaises, afin d'identifier les compétences concrètement demandées par les employeurs locaux :",

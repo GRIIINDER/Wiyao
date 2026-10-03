@@ -3247,6 +3247,707 @@ html:has(body.page-home) {
   outline-offset: 4px;
 }
 
+/* Bande à motif géométrique (façon African Tech Journal), aux couleurs de
+   WIYAO : sous le bandeau d'annonce et au-dessus du pied de page. */
+:root {
+  --pattern-band: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='16' viewBox='0 0 64 16'%3E%3Crect width='64' height='16' fill='%230a1f4a'/%3E%3Cpath d='M0 16 8 0 16 16Z' fill='%2366c4ff'/%3E%3Cpath d='M16 0 24 16 32 0Z' fill='%231557ff'/%3E%3Cpath d='M32 16 40 0 48 16Z' fill='%2314b8a6'/%3E%3Cpath d='M48 0 56 16 64 0Z' fill='%23ffd166'/%3E%3Cpath d='M8 7 10 10 8 13 6 10Z' fill='%230a1f4a'/%3E%3Cpath d='M40 7 42 10 40 13 38 10Z' fill='%230a1f4a'/%3E%3C/svg%3E");
+}
+
+footer.site-footer::before {
+  content: "";
+  display: block;
+  height: 12px;
+  background: var(--pattern-band) repeat-x left center / 48px 12px;
+}
+
+/* Bandeau d'annonce (façon African Tech Journal) : la dernière actu, au-
+   dessus de l'en-tête de toutes les pages (rempli par js/nav.js). */
+.announce-bar {
+  background: var(--tk-surface);
+}
+
+.announce-bar::after {
+  content: "";
+  display: block;
+  height: 6px;
+  background: var(--pattern-band) repeat-x left center / 24px 6px;
+}
+
+.announce-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  color: var(--tk-text-reading);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.announce-tag {
+  flex: none;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--tk-primary);
+  color: var(--tk-canvas);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.announce-text {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--tk-text);
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.announce-date {
+  flex: none;
+  color: var(--tk-text-subtle);
+}
+
+.announce-arrow {
+  flex: none;
+  color: var(--tk-primary);
+  font-weight: 800;
+}
+
+.announce-link:hover .announce-text,
+.announce-link:focus-visible .announce-text {
+  color: var(--tk-primary);
+  text-decoration: underline;
+}
+
+/* Curseur « _ » (façon Push CI) après les grands titres, dans l'esprit de la
+   police à chasse fixe du site ; masqué des lecteurs d'écran. */
+@keyframes wiyao-caret {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.page-title-banner h1:not(.home-title)::after,
+.page-title-banner .home-title-line:last-child::after,
+.page-home main .home-h2::after,
+main .home-final .home-h2::after {
+  content: "_";
+  content: "_" / "";
+  margin-left: 0.05em;
+  color: var(--tk-primary);
+  animation: wiyao-caret 1.1s linear infinite;
+}
+
+/* Le comparateur en chiffres (façon La Ruche Health) : calculé depuis
+   data.js par app.js. */
+.school-stats {
+  margin: 8px 0 32px;
+}
+
+.school-stats-title {
+  margin: 0 0 14px;
+  color: var(--tk-text);
+}
+
+.school-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.school-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface);
+}
+
+.school-stat-num {
+  color: var(--tk-primary);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.school-stat-num small {
+  margin-left: 2px;
+  color: var(--tk-text-subtle);
+  font-weight: 700;
+}
+
+.school-stat-label {
+  color: var(--tk-text-reading);
+  line-height: 1.45;
+}
+
+.school-stat-bar {
+  display: flex;
+  height: 8px;
+  margin-top: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--tk-surface-soft);
+}
+
+.school-stat-seg--prive { background: var(--tk-primary); }
+.school-stat-seg--public { background: #ffd166; }
+.school-stat-seg--inter-etats { background: #14b8a6; }
+
+.school-stat-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 0;
+  padding: 0;
+  color: var(--tk-text-muted);
+}
+
+.school-stat-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+.school-stats-note {
+  margin: 12px 0 0;
+  color: var(--tk-text-muted);
+}
+
+/* Comparer côte à côte (façon Craydel) : sélection gardée dans l'adresse. */
+.school-compare-btn {
+  display: flex;
+  width: fit-content;
+  margin-top: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.school-compare-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.school-compare-btn[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.school-compare-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.school-compare {
+  margin: 0 0 40px;
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid rgba(102, 196, 255, 0.35);
+  background: var(--tk-surface);
+  scroll-margin-top: 110px;
+}
+
+.school-compare-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.school-compare-head h2 {
+  margin: 0;
+  color: var(--tk-text);
+}
+
+.school-compare-head h2:focus {
+  outline: none;
+}
+
+.school-compare-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.school-compare-action {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface-soft);
+  color: var(--tk-text);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.school-compare-action:hover {
+  border-color: var(--tk-primary);
+  color: var(--tk-primary);
+}
+
+.school-compare-link {
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-canvas);
+  color: var(--tk-text);
+}
+
+.school-compare-scroll {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid var(--tk-border);
+}
+
+.school-compare-table {
+  width: 100%;
+  min-width: 640px;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.school-compare-table th,
+.school-compare-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--tk-border);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.school-compare-table tr:last-child > * {
+  border-bottom: 0;
+}
+
+.school-compare-table thead th {
+  position: relative;
+  padding-right: 40px;
+  background: var(--tk-surface-soft);
+  color: var(--tk-text);
+  font-weight: 800;
+}
+
+.school-compare-table thead td,
+.school-compare-table tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: 150px;
+}
+
+.school-compare-table thead td {
+  background: var(--tk-surface-soft);
+}
+
+.school-compare-table tbody th {
+  background: var(--tk-surface);
+  color: var(--tk-text-muted);
+  font-weight: 700;
+}
+
+.school-compare-table td {
+  color: var(--tk-text-reading);
+}
+
+.school-compare-table p {
+  margin: 0;
+}
+
+.school-compare-table .school-link {
+  margin-top: 0;
+}
+
+.cmp-list {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.cmp-muted {
+  margin-top: 6px !important;
+  color: var(--tk-text-subtle);
+}
+
+.cmp-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface);
+  color: var(--tk-text-muted);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cmp-remove:hover {
+  border-color: var(--tk-primary);
+  color: var(--tk-primary);
+}
+
+.school-compare-table .cmp-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.school-compare-note {
+  margin: 12px 0 0;
+  color: var(--tk-text-muted);
+}
+
+.compare-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(920px, calc(100% - 32px));
+  padding: 12px 14px 12px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(102, 196, 255, 0.45);
+  background: rgba(16, 22, 47, 0.97);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  transform: translateX(-50%);
+}
+
+.compare-bar[hidden] {
+  display: none;
+}
+
+.compare-bar-label {
+  flex: none;
+  margin: 0;
+  color: var(--tk-text);
+  font-weight: 800;
+}
+
+.compare-bar-label span {
+  margin-left: 4px;
+  color: var(--tk-primary);
+}
+
+.compare-bar-chips {
+  flex: 1;
+  min-width: 0;
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.compare-bar-chips li {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 5px 4px 12px;
+  border-radius: 999px;
+  background: var(--tk-surface-soft);
+  color: var(--tk-text);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.compare-bar-actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.compare-bar-clear {
+  border: 0;
+  background: none;
+  color: var(--tk-text-muted);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.compare-bar .compare-bar-go {
+  margin-top: 0;
+  padding: 10px 18px;
+  border: 0;
+  cursor: pointer;
+}
+
+.compare-bar .compare-bar-go:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+body.has-compare-bar {
+  padding-bottom: 96px;
+}
+
+body.has-compare-bar .back-to-top {
+  bottom: 100px;
+}
+
+body.has-compare-bar .wiyao-assistant-toggle {
+  bottom: 164px;
+}
+
+/* Actualités : filtres par catégorie et actu « À la une » (façon
+   TechCabal / African Tech Journal), remplis par js/actualites.js. */
+.actu-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+}
+
+.actu-filter-count {
+  display: inline-block;
+  min-width: 20px;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.domain-chip.active .actu-filter-count {
+  background: rgba(10, 13, 28, 0.18);
+}
+
+.actu-card--featured {
+  grid-column: 1 / -1;
+}
+
+.actu-featured-badge {
+  display: inline-block;
+  justify-self: start;
+  margin-bottom: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.actu-agenda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: 14px;
+}
+
+.actu-agenda-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--tk-canvas);
+  background: transparent;
+  color: var(--tk-canvas);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.actu-agenda-btn:hover {
+  background: var(--tk-canvas);
+  color: #ffffff;
+}
+
+.actu-agenda-google {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (min-width: 901px) {
+  .actu-card--featured .card-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas:
+      "badge meta"
+      "title meta"
+      "desc meta"
+      "desc btn"
+      "desc agenda";
+    column-gap: 40px;
+  }
+  .actu-card--featured .actu-featured-badge { grid-area: badge; }
+  .actu-card--featured .actu-card-title { grid-area: title; }
+  .actu-card--featured .actu-card-desc { grid-area: desc; }
+  .actu-card--featured .actu-meta { grid-area: meta; margin-top: 0; align-self: start; }
+  .actu-card--featured .actu-card-btn { grid-area: btn; justify-self: start; align-self: end; }
+  .actu-card--featured .actu-agenda { grid-area: agenda; }
+}
+
+/* L'histoire de WIYAO (façon Abidjanaises In Tech) : frise de la page À
+   propos, dates vérifiées dans l'historique public du dépôt. */
+.history-timeline {
+  position: relative;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.history-timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 7px;
+  width: 2px;
+  background: linear-gradient(var(--tk-primary), var(--tk-border));
+}
+
+.history-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 4px 20px;
+  padding: 0 0 26px 36px;
+}
+
+.history-item::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--tk-primary);
+  background: var(--tk-canvas);
+}
+
+.history-item--now::before {
+  background: var(--tk-primary);
+  box-shadow: 0 0 0 6px rgba(102, 196, 255, 0.18);
+}
+
+.history-item:last-child {
+  padding-bottom: 0;
+}
+
+.history-date {
+  color: var(--tk-primary);
+  font-weight: 800;
+}
+
+.history-body h3 {
+  margin: 0 0 4px;
+  color: var(--tk-text);
+  font-weight: 800;
+}
+
+.history-body p {
+  margin: 0;
+  color: var(--tk-text-reading);
+}
+
+@media (max-width: 900px) {
+  .school-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .compare-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+    padding: 12px;
+  }
+  .compare-bar-chips {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .compare-bar-actions {
+    margin-left: auto;
+  }
+  body.has-compare-bar {
+    padding-bottom: 150px;
+  }
+  body.has-compare-bar .back-to-top {
+    bottom: 150px;
+  }
+  body.has-compare-bar .wiyao-assistant-toggle {
+    bottom: 214px;
+  }
+  .announce-date {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .school-stat {
+    padding: 16px 14px;
+  }
+  .school-compare {
+    padding: 18px 14px;
+  }
+  .history-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-title-banner h1:not(.home-title)::after,
+  .page-title-banner .home-title-line:last-child::after,
+  .page-home main .home-h2::after,
+  main .home-final .home-h2::after {
+    animation: none;
+  }
+}
+
+@media print {
+  .announce-bar,
+  .compare-bar,
+  .school-compare-btn,
+  .school-compare-actions,
+  .actu-agenda,
+  .actu-filters {
+    display: none !important;
+  }
+}
+
 @media (max-width: 900px) {
   .home-intent,
   .home-news,
@@ -6020,6 +6721,47 @@ main .domain-primer-icon {
 
 .page-home main .home-join-art .join-code {
   font-size: 30px !important;
+}
+
+/* Écoles (chiffres + comparaison), Actualités (à la une, agenda) et frise
+   de la page À propos : exceptions à l'aplat validées avec ces blocs. */
+main .school-stat-num {
+  font-size: 2rem !important;
+}
+
+main .school-stat-num small {
+  font-size: 1rem !important;
+}
+
+main .school-stat-label,
+main .school-compare-btn,
+main .school-compare-action,
+main .school-compare-table th,
+main .school-compare-table td,
+main .school-compare-table td *,
+main .compare-bar *,
+main .actu-agenda-btn,
+main .actu-agenda-google,
+main .history-date {
+  font-size: 14px !important;
+}
+
+main .school-stats-note,
+main .school-compare-note {
+  font-size: 13px !important;
+}
+
+main .actu-featured-badge {
+  font-size: 11px !important;
+}
+
+main .history-body h3 * {
+  font-size: inherit !important;
+}
+
+main .actu-card--featured .actu-card-title {
+  font-size: 22px !important;
+  line-height: 1.3;
 }
 
 /* Bandeau d'appel final : même composant que sur l'accueil, présent en bas

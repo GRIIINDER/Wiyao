@@ -653,6 +653,7 @@
   function buildSchoolCard(id, school) {
     const card = document.createElement("div");
     card.className = "card school-card";
+    card.dataset.id = id;
     card.dataset.title = school.name.toLowerCase() + " " + school.filieres.join(" ").toLowerCase();
     card.dataset.ville = school.ville.join(",");
     card.dataset.statut = school.statut;
@@ -766,6 +767,267 @@
       villeChip.classList.add("active");
       applySchoolFilters();
     }
+  }
+
+  // Frais explicitement marqués « non communiqués » dans data.js (jamais
+  // devinés) : sert au décompte du bandeau "Le comparateur en chiffres".
+  const FEES_UNPUBLISHED = /^\s*(scolarité\s+)?non communiqu/i;
+
+  const STATUT_LABELS_EN = { "public": "Public", "prive": "Private", "inter-etats": "Inter-State" };
+
+  // "Le comparateur en chiffres" (façon La Ruche Health) : tout est calculé
+  // à partir de SCHOOLS, rien n'est saisi à la main.
+  function renderSchoolStats() {
+    const el = document.getElementById("school-stats-grid");
+    if (!el || typeof SCHOOLS === "undefined") return;
+    const isEn = currentLang() === "en";
+    const schools = Object.values(SCHOOLS);
+    const n = schools.length;
+    const villes = {};
+    const statuts = { prive: 0, public: 0, "inter-etats": 0 };
+    schools.forEach((s) => {
+      s.ville.forEach((v) => { villes[v] = (villes[v] || 0) + 1; });
+      statuts[s.statut] = (statuts[s.statut] || 0) + 1;
+    });
+    const nVilles = Object.keys(villes).length;
+    const lome = villes["Lomé"] || 0;
+    const agree = schools.filter((s) => s.agree === true).length;
+    const unpublished = schools.filter((s) => FEES_UNPUBLISHED.test(s.frais || "")).length;
+    const label = (k) => (isEn ? STATUT_LABELS_EN[k] : STATUT_LABELS[k]);
+    const bar = ["prive", "public", "inter-etats"].filter((k) => statuts[k]).map((k) =>
+      `<span class="school-stat-seg school-stat-seg--${k}" style="width:${((statuts[k] / n) * 100).toFixed(2)}%"></span>`
+    ).join("");
+    const legend = ["prive", "public", "inter-etats"].filter((k) => statuts[k]).map((k) =>
+      `<li><span class="school-stat-dot school-stat-seg--${k}"></span>${statuts[k]} ${esc(label(k).toLowerCase())}${isEn ? "" : (statuts[k] > 1 && k !== "inter-etats" ? "s" : "")}</li>`
+    ).join("");
+    el.innerHTML = `
+      <div class="school-stat">
+        <span class="school-stat-num">${n}</span>
+        <span class="school-stat-label">${isEn ? `schools and universities in ${nVilles} cities, ${lome} of them in Lomé` : `écoles et universités dans ${nVilles} villes, dont ${lome} à Lomé`}</span>
+      </div>
+      <div class="school-stat">
+        <span class="school-stat-num">${statuts.prive}<small>/${n}</small></span>
+        <span class="school-stat-label">${isEn ? "are private" : "sont privées"}</span>
+        <span class="school-stat-bar" aria-hidden="true">${bar}</span>
+        <ul class="school-stat-legend">${legend}</ul>
+      </div>
+      <div class="school-stat">
+        <span class="school-stat-num">${agree}<small>/${n}</small></span>
+        <span class="school-stat-label">${isEn ? "are on the Ministry's official list of accredited institutions (2026-2027)" : "figurent sur la liste officielle des établissements agréés par le Ministère (2026-2027)"}</span>
+      </div>
+      <div class="school-stat">
+        <span class="school-stat-num">${unpublished}<small>/${n}</small></span>
+        <span class="school-stat-label">${isEn ? "don't publish their tuition fees: ask them directly" : "ne publient pas leurs frais de scolarité : demande-les directement"}</span>
+      </div>`;
+  }
+
+  // "Comparer côte à côte" (façon Craydel) : jusqu'à 3 écoles, sélection
+  // gardée dans l'adresse (?comparer=iai-togo,esig) pour pouvoir partager le
+  // lien, sans rien enregistrer dans le navigateur.
+  const COMPARE_MAX = 3;
+
+  function initSchoolCompare() {
+    const grid = document.getElementById("school-grid");
+    const section = document.getElementById("comparatif");
+    const tableWrap = document.getElementById("school-compare-table");
+    const bar = document.getElementById("compare-bar");
+    if (!grid || !section || !tableWrap || !bar || typeof SCHOOLS === "undefined") return;
+
+    const wanted = (new URLSearchParams(window.location.search).get("comparer") || "").split(",");
+    let selected = wanted.filter((id, i) => SCHOOLS[id] && wanted.indexOf(id) === i).slice(0, COMPARE_MAX);
+    let open = selected.length >= 2;
+
+    function syncUrl() {
+      const params = new URLSearchParams(window.location.search);
+      params.delete("comparer");
+      let qs = params.toString();
+      if (selected.length) qs = (qs ? qs + "&" : "") + "comparer=" + selected.join(",");
+      window.history.replaceState(null, "", window.location.pathname + (qs ? "?" + qs : "") + window.location.hash);
+    }
+
+    function datesText(s, isEn) {
+      const dc = s.datesCles;
+      if (!dc) return isEn ? "Dates not published online" : "Dates non publiées en ligne";
+      const fields = [
+        [isEn ? "Applications open" : "Ouverture des candidatures", dc.ouverture],
+        [isEn ? "Deadline" : "Clôture", dc.cloture],
+        [isEn ? "Entrance exam" : "Concours", dc.concours],
+        [isEn ? "Results" : "Résultats", dc.resultats],
+        [isEn ? "Start of term" : "Rentrée", dc.rentree],
+      ].filter(([, v]) => !!v);
+      const lines = fields.length
+        ? `<ul class="cmp-list">${fields.map(([l, v]) => `<li><strong>${esc(l)} :</strong> ${esc(v)}</li>`).join("")}</ul>`
+        : (dc.note ? `<p>${esc(dc.note)}</p>` : "");
+      const ref = dc.anneeReference
+        ? `<p class="cmp-muted">${isEn ? `Reference: ${dc.anneeReference}` : `Repère : ${dc.anneeReference}`}${dc.aVerifier ? (isEn ? " : reconfirm with the school" : " : à reconfirmer auprès de l'école") : ""}</p>`
+        : "";
+      return lines + ref;
+    }
+
+    function agreeText(s, isEn) {
+      if (s.agree === true) return `🏛️ ${isEn ? "State-accredited (2026-2027 list)" : "Agréé État (liste 2026-2027)"}`;
+      if (s.statut === "public" && s.agree == null) return isEn ? "Public university" : "Université publique";
+      return esc(s.agreeNote || (isEn ? "Not on the official list" : "Absent de la liste officielle"));
+    }
+
+    function renderTable(isEn) {
+      const cols = selected.map((id) => [id, SCHOOLS[id]]);
+      const statut = (k) => (isEn ? STATUT_LABELS_EN[k] : STATUT_LABELS[k]) || k;
+      const rows = [
+        [isEn ? "City" : "Ville", (s) => esc(s.ville.join(", "))],
+        [isEn ? "Status" : "Statut", (s) => esc(statut(s.statut))],
+        [isEn ? "State accreditation" : "Agrément de l'État", (s) => agreeText(s, isEn)],
+        [isEn ? "Levels" : "Niveaux", (s) => esc(s.niveaux.join(", "))],
+        [isEn ? "Programs" : "Filières", (s) => `<ul class="cmp-list">${s.filieres.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>`],
+        [isEn ? "Duration" : "Durée", (s) => esc(s.duree || "—")],
+        [isEn ? "Admission" : "Admission", (s) => esc(s.admission || "—")],
+        [isEn ? "Tuition fees" : "Frais de scolarité", (s) => esc(s.frais || "—")],
+        [isEn ? "Key dates" : "Dates clés", (s) => datesText(s, isEn)],
+        [isEn ? "Official site" : "Site officiel", (s) => (s.site ? `<a class="school-link" href="${esc(s.site)}" target="_blank" rel="noopener">${isEn ? "Visit →" : "Visiter →"}</a>` : "—")],
+      ];
+      tableWrap.innerHTML = `
+        <table class="school-compare-table">
+          <caption class="sr-only">${isEn ? "Side-by-side comparison of the selected schools" : "Comparaison côte à côte des écoles sélectionnées"}</caption>
+          <thead><tr>
+            <td></td>
+            ${cols.map(([id, s]) => `<th scope="col"><span class="cmp-school">${esc(s.name)}</span><button type="button" class="cmp-remove" data-id="${esc(id)}" aria-label="${isEn ? `Remove ${esc(s.name)} from the comparison` : `Retirer ${esc(s.name)} du comparatif`}">×</button></th>`).join("")}
+          </tr></thead>
+          <tbody>
+            ${rows.map(([label, fn]) => `<tr><th scope="row">${esc(label)}</th>${cols.map(([, s]) => `<td>${fn(s)}</td>`).join("")}</tr>`).join("")}
+          </tbody>
+        </table>`;
+    }
+
+    function render() {
+      const isEn = currentLang() === "en";
+      const full = selected.length >= COMPARE_MAX;
+      grid.querySelectorAll(".school-compare-btn").forEach((btn) => {
+        const on = selected.indexOf(btn.dataset.id) !== -1;
+        btn.setAttribute("aria-pressed", String(on));
+        btn.disabled = !on && full;
+        btn.textContent = on ? (isEn ? "✓ Selected" : "✓ Sélectionnée") : (isEn ? "+ Compare" : "+ Comparer");
+        btn.title = !on && full ? (isEn ? "3 schools maximum" : "3 écoles maximum") : "";
+      });
+
+      bar.hidden = selected.length === 0;
+      bar.setAttribute("aria-label", isEn ? "Schools selected for comparison" : "Écoles sélectionnées pour la comparaison");
+      document.body.classList.toggle("has-compare-bar", selected.length > 0);
+      bar.innerHTML = `
+        <p class="compare-bar-label">${isEn ? "Your selection" : "Ta sélection"} <span>${selected.length}/${COMPARE_MAX}</span></p>
+        <ul class="compare-bar-chips">${selected.map((id) => `<li>${esc(schoolShortName(SCHOOLS[id].name))}<button type="button" class="cmp-remove" data-id="${esc(id)}" aria-label="${isEn ? `Remove ${esc(SCHOOLS[id].name)}` : `Retirer ${esc(SCHOOLS[id].name)}`}">×</button></li>`).join("")}</ul>
+        <div class="compare-bar-actions">
+          <button type="button" class="compare-bar-clear" data-action="clear">${isEn ? "Clear" : "Vider"}</button>
+          <button type="button" class="btn-primary compare-bar-go" data-action="compare"${selected.length < 2 ? " disabled" : ""}>${selected.length < 2 ? (isEn ? "Pick at least 2" : "Choisis-en au moins 2") : (isEn ? "Compare →" : "Comparer →")}</button>
+        </div>`;
+
+      const showTable = open && selected.length >= 2;
+      section.hidden = !showTable;
+      if (showTable) renderTable(isEn);
+
+      const share = document.getElementById("school-compare-share");
+      const close = document.getElementById("school-compare-close");
+      const wa = document.getElementById("school-compare-whatsapp");
+      if (share) share.textContent = isEn ? "Share" : "Partager";
+      if (close) close.textContent = isEn ? "Close" : "Fermer";
+      if (wa) {
+        const text = (isEn ? "School comparison on WIYAO: " : "Comparatif d'écoles sur WIYAO : ") + window.location.href;
+        wa.href = "https://wa.me/?text=" + encodeURIComponent(text);
+      }
+    }
+
+    function update() {
+      syncUrl();
+      render();
+    }
+
+    function remove(id) {
+      selected = selected.filter((x) => x !== id);
+      if (selected.length < 2) open = false;
+      update();
+    }
+
+    grid.querySelectorAll(".school-card").forEach((card) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "school-compare-btn";
+      btn.dataset.id = card.dataset.id;
+      card.querySelector(".card-body").appendChild(btn);
+    });
+
+    grid.addEventListener("click", (e) => {
+      const btn = e.target.closest(".school-compare-btn");
+      if (!btn) return;
+      const id = btn.dataset.id;
+      if (selected.indexOf(id) !== -1) remove(id);
+      else if (selected.length < COMPARE_MAX) {
+        selected.push(id);
+        update();
+      }
+    });
+
+    function goToTable() {
+      open = true;
+      update();
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      section.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      const heading = document.getElementById("school-compare-title");
+      if (heading) heading.focus({ preventScroll: true });
+    }
+
+    bar.addEventListener("click", (e) => {
+      const rm = e.target.closest(".cmp-remove");
+      if (rm) return remove(rm.dataset.id);
+      const action = e.target.closest("[data-action]");
+      if (!action) return;
+      if (action.dataset.action === "clear") {
+        selected = [];
+        open = false;
+        update();
+      } else if (action.dataset.action === "compare" && selected.length >= 2) {
+        goToTable();
+      }
+    });
+
+    section.addEventListener("click", async (e) => {
+      const rm = e.target.closest(".cmp-remove");
+      if (rm) return remove(rm.dataset.id);
+      if (e.target.closest("#school-compare-close")) {
+        open = false;
+        update();
+        const go = bar.querySelector(".compare-bar-go");
+        if (go) go.focus();
+        return;
+      }
+      const shareBtn = e.target.closest("#school-compare-share");
+      if (!shareBtn) return;
+      const isEn = currentLang() === "en";
+      const url = window.location.href;
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: isEn ? "School comparison - WIYAO" : "Comparatif d'écoles - WIYAO", url });
+          return;
+        } catch (err) {
+          if (err && err.name === "AbortError") return;
+        }
+      }
+      try {
+        await navigator.clipboard.writeText(url);
+        shareBtn.textContent = isEn ? "Link copied ✓" : "Lien copié ✓";
+        setTimeout(render, 2000);
+      } catch (err) {
+        const field = document.getElementById("school-compare-link");
+        if (field) {
+          field.hidden = false;
+          field.value = url;
+          field.select();
+        }
+      }
+    });
+
+    // Nettoie aussi l'adresse d'un lien partagé (doublons, identifiants inconnus).
+    update();
+    new MutationObserver(() => { render(); renderSchoolStats(); })
+      .observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
   }
 
   // ---- Test d'orientation ----
@@ -1709,10 +1971,9 @@
     return new DOMParser().parseFromString(String(html), "text/html").body.textContent.replace(/\s+/g, " ").trim();
   }
 
-  function initHome() {
-    const hero = document.getElementById("home-hero");
-    if (!hero) return;
-
+  // Chiffres [data-stat] (accueil, frise de la page À propos) : calculés
+  // depuis data.js pour ne jamais diverger du contenu réel.
+  function fillStats() {
     document.querySelectorAll("[data-stat]").forEach((el) => {
       if (el.dataset.stat === "roadmaps" && typeof ROLES !== "undefined" && typeof SKILLS !== "undefined") {
         el.textContent = Object.keys(ROLES).length + Object.keys(SKILLS).length;
@@ -1720,6 +1981,11 @@
         el.textContent = Object.keys(SCHOOLS).length;
       }
     });
+  }
+
+  function initHome() {
+    const hero = document.getElementById("home-hero");
+    if (!hero) return;
 
     const input = document.getElementById("home-search-input");
     const submit = document.getElementById("home-search-btn");
@@ -1899,8 +2165,8 @@
 
     function loadNews() {
       if (!newsGrid || !window.fetch || !window.DOMParser) return;
-      fetch("actualites.html")
-        .then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status)))))
+      // Requête déjà lancée par js/nav.js pour le bandeau d'annonce, si présente.
+      (window.WIYAO_ACTUALITES_HTML || fetch("actualites.html").then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status))))))
         .then((html) => {
           const doc = new DOMParser().parseFromString(html, "text/html");
           const pick = (a, sel) => { const el = a.querySelector(sel); return el ? el.textContent.trim() : ""; };
@@ -2085,6 +2351,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    fillStats();
     initHome();
     renderGrid();
     renderDomainPrimer();
@@ -2094,6 +2361,8 @@
     renderRoadmap();
     renderSchools();
     initSchoolFilters();
+    renderSchoolStats();
+    initSchoolCompare();
     initQuiz();
     renderAcademicTimeline();
     renderSchoolDates();
