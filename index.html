@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="WIYAO - Le guide qui accompagne ton parcours tech au Togo">
 <meta name="twitter:description" content="WIYAO est le guide qui accompagne le bachelier togolais à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses, stages et emploi.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=184">
+<link rel="stylesheet" href="css/style.css?v=185">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -119,12 +119,39 @@
     </button>
   </section>
 
+  <nav class="home-toc" aria-labelledby="home-toc-label">
+    <span class="home-toc-label" id="home-toc-label" data-i18n-key="home.toc.label">Sur cette page</span>
+    <ul class="home-toc-list">
+      <li><a href="#intention" data-i18n-key="home.toc.intent">Par où commencer</a></li>
+      <li><a href="#parcours" data-i18n-key="home.toc.journey">Le parcours</a></li>
+      <li><a href="#domaines" data-i18n-key="home.toc.domains">Domaines</a></li>
+      <li><a href="#villes" data-i18n-key="home.toc.cities">Villes</a></li>
+      <li><a href="#actus" data-i18n-key="home.toc.news">Actus</a></li>
+      <li><a href="#pourquoi" data-i18n-key="home.toc.why">Pourquoi WIYAO</a></li>
+      <li><a href="#rejoindre" data-i18n-key="home.toc.join">Rejoindre</a></li>
+      <li><a href="#application" data-i18n-key="home.toc.app">Application</a></li>
+      <li><a href="#faq" data-i18n-key="home.toc.faq">FAQ</a></li>
+    </ul>
+  </nav>
+
   <section class="home-stats">
     <h2 class="sr-only" data-i18n-key="home.stats.title">WIYAO en chiffres</h2>
     <div class="home-stat"><span class="home-stat-num" data-stat="roadmaps">89</span><span class="home-stat-label" data-i18n-key="home.stat.roadmaps">roadmaps métiers et compétences</span></div>
     <div class="home-stat"><span class="home-stat-num" data-stat="ecoles">32</span><span class="home-stat-label" data-i18n-key="home.stat.ecoles">écoles et universités comparées</span></div>
     <div class="home-stat"><span class="home-stat-num">14</span><span class="home-stat-label" data-i18n-key="home.stat.quiz">questions pour trouver ta voie</span></div>
     <div class="home-stat"><span class="home-stat-num">100 %</span><span class="home-stat-label" data-i18n-key="home.stat.free">gratuit, sans inscription</span></div>
+  </section>
+
+  <section class="home-intent" id="intention">
+    <h2 class="home-eyebrow" data-i18n-key="home.intent.eyebrow">Par où commencer</h2>
+    <div class="home-intent-sentence">
+      <label for="home-intent-select" data-i18n-key="home.intent.label">Je suis ici pour</label>
+      <span class="home-intent-select-wrap">
+        <select class="home-intent-select" id="home-intent-select"></select>
+        <svg class="home-intent-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </div>
+    <div class="home-intent-result" id="home-intent-result" aria-live="polite"></div>
   </section>
 
   <section class="home-features" id="parcours">
@@ -215,6 +242,17 @@
     <div class="home-map" id="home-map" aria-hidden="true"></div>
   </section>
 
+  <section class="home-news" id="actus">
+    <div class="home-news-head">
+      <div>
+        <p class="home-eyebrow" data-i18n-key="home.news.eyebrow">À la une</p>
+        <h2 class="home-h2" data-i18n-key="home.news.title">Actualités et mises à jour</h2>
+      </div>
+      <a class="btn-ghost" href="actualites.html" data-i18n-key="home.news.all">Tout afficher →</a>
+    </div>
+    <div class="home-news-grid" id="home-news-grid"></div>
+  </section>
+
   <section class="home-market">
     <div class="home-section-head">
       <p class="home-eyebrow" data-i18n-key="home.market.eyebrow">Pourquoi la tech</p>
@@ -260,6 +298,56 @@
     </div>
   </section>
 
+  <section class="home-compare" id="pourquoi">
+    <div class="home-section-head">
+      <p class="home-eyebrow" data-i18n-key="home.compare.eyebrow">Pourquoi WIYAO</p>
+      <h2 class="home-h2" data-i18n-key="home.compare.title">Ton orientation, avec ou sans WIYAO</h2>
+      <p class="home-lead" data-i18n-key="home.compare.desc">Choisir un domaine ou une école sans guide, c'est souvent avancer à l'aveugle. Voici ce qui change quand tout est réuni au même endroit.</p>
+    </div>
+    <table class="home-compare-table" role="table">
+      <caption class="sr-only" data-i18n-key="home.compare.caption">Comparaison&nbsp;: t'orienter avec WIYAO ou sans guide</caption>
+      <thead role="rowgroup">
+        <tr role="row">
+          <td role="cell"></td>
+          <th scope="col" role="columnheader" class="is-wiyao"><img src="icons/logo-white.png?v=1" alt="WIYAO" class="home-compare-logo"></th>
+          <th scope="col" role="columnheader" data-i18n-key="home.compare.without">Sans guide</th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        <tr role="row">
+          <th scope="row" role="rowheader" data-i18n-key="home.compare.r1.h">Choisir un domaine</th>
+          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r1.yes">Un test de 14 questions, puis la roadmap du métier</span></td>
+          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r1.no">Au feeling, ou sur le conseil d'un proche</span></td>
+        </tr>
+        <tr role="row">
+          <th scope="row" role="rowheader" data-i18n-key="home.compare.r2.h">Comparer les écoles</th>
+          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r2.yes">32 écoles et universités au même endroit</span></td>
+          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r2.no">Des infos éparpillées entre sites, réseaux sociaux et bouche-à-oreille</span></td>
+        </tr>
+        <tr role="row">
+          <th scope="row" role="rowheader" data-i18n-key="home.compare.r3.h">Frais de scolarité</th>
+          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r3.yes">Affichés quand l'école les publie, sinon signalés comme non communiqués</span></td>
+          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r3.no">Souvent découverts au moment de s'inscrire</span></td>
+        </tr>
+        <tr role="row">
+          <th scope="row" role="rowheader" data-i18n-key="home.compare.r4.h">Dates à ne pas rater</th>
+          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r4.yes">Concours, clôtures et rentrées réunis dans un calendrier</span></td>
+          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r4.no">Une date limite apprise trop tard</span></td>
+        </tr>
+        <tr role="row">
+          <th scope="row" role="rowheader" data-i18n-key="home.compare.r5.h">Bourses</th>
+          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r5.yes">Bourses, réductions et financements vérifiés, sur une seule page</span></td>
+          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r5.no">On ne sait pas toujours qu'elles existent</span></td>
+        </tr>
+        <tr role="row">
+          <th scope="row" role="rowheader" data-i18n-key="home.compare.r6.h">Ce que ça coûte</th>
+          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r6.yes">Gratuit, sans compte, sans publicité</span></td>
+          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r6.no">Des heures de recherches, sans garantie que l'info soit à jour</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
   <section class="home-sources">
     <div class="home-section-head">
       <p class="home-eyebrow" data-i18n-key="home.sources.eyebrow">Nos sources</p>
@@ -301,7 +389,88 @@
     <p class="home-sources-note"><span data-i18n-key="home.sources.note">Quand une information ne peut pas être confirmée, WIYAO l'indique clairement plutôt que d'inventer un chiffre.</span> <a class="home-feature-link" href="about.html" data-i18n-key="home.sources.link">Notre méthodologie →</a></p>
   </section>
 
-  <section class="home-app">
+  <section class="home-join" id="rejoindre">
+    <div class="home-section-head">
+      <p class="home-eyebrow" data-i18n-key="home.join.eyebrow">Communauté</p>
+      <h2 class="home-h2" data-i18n-key="home.join.title">Rejoins le mouvement</h2>
+      <p class="home-lead" data-i18n-key="home.join.desc">WIYAO grandit grâce à celles et ceux qui partagent une info vérifiable. Choisis ton profil.</p>
+    </div>
+    <div class="home-join-grid">
+      <article class="home-join-card home-join-card--1">
+        <div class="home-join-body">
+          <span class="home-join-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span>
+          <h3 class="home-join-title" data-i18n-key="home.join.c1.t">Tu viens d'avoir ton bac</h3>
+          <p class="home-join-desc" data-i18n-key="home.join.c1.p">Ou tu le passes cette année&nbsp;: commence par le test d'orientation, puis suis la roadmap du métier qui te correspond.</p>
+          <a class="home-join-link" href="test-orientation.html" data-i18n-key="home.join.c1.link">Faire le test →</a>
+        </div>
+        <div class="home-join-art" aria-hidden="true">
+          <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <path class="join-blob" d="M-20 160 C 0 110 40 96 62 112 S 98 150 118 122 S 150 92 168 160 Z"></path>
+            <path class="join-blob" d="M300 160 C 300 120 330 98 352 110 S 390 92 420 120 V 160 Z"></path>
+            <polygon class="join-ink" points="200,34 270,62 200,90 130,62"></polygon>
+            <path class="join-ink" d="M160 74 V 100 C 160 116 240 116 240 100 V 74 L 200 90 Z"></path>
+            <polyline class="join-tassel" points="200,62 256,74 256,104"></polyline>
+            <circle class="join-gold" cx="256" cy="108" r="6"></circle>
+            <path class="join-gold" d="M92 40 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z"></path>
+            <path class="join-light" d="M318 30 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z"></path>
+            <circle class="join-light" cx="120" cy="22" r="3"></circle>
+            <circle class="join-gold" cx="300" cy="66" r="3"></circle>
+          </svg>
+        </div>
+      </article>
+      <article class="home-join-card home-join-card--2">
+        <div class="home-join-body">
+          <span class="home-join-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
+          <h3 class="home-join-title" data-i18n-key="home.join.c2.t">Tu représentes une école</h3>
+          <p class="home-join-desc" data-i18n-key="home.join.c2.p">Frais, filières ou dates ont changé&nbsp;? Signale-le avec un lien vers la source officielle&nbsp;: chaque info est vérifiée avant d'être publiée.</p>
+          <a class="home-join-link" href="proposer.html?type=%C3%89tablissement" data-i18n-key="home.join.c2.link">Signaler une mise à jour →</a>
+        </div>
+        <div class="home-join-art" aria-hidden="true">
+          <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <path class="join-blob" d="M-20 160 C -10 118 30 104 54 120 S 96 146 112 160 Z"></path>
+            <path class="join-blob" d="M286 160 C 296 126 326 116 344 128 S 384 104 420 132 V 160 Z"></path>
+            <line class="join-line" x1="200" y1="34" x2="200" y2="12"></line>
+            <polygon class="join-gold" points="200,12 224,18 200,24"></polygon>
+            <polygon class="join-ink" points="200,34 272,62 128,62"></polygon>
+            <rect class="join-ink" x="140" y="62" width="120" height="66"></rect>
+            <rect class="join-light" x="152" y="72" width="10" height="46" rx="2"></rect>
+            <rect class="join-light" x="172" y="72" width="10" height="46" rx="2"></rect>
+            <rect class="join-light" x="218" y="72" width="10" height="46" rx="2"></rect>
+            <rect class="join-light" x="238" y="72" width="10" height="46" rx="2"></rect>
+            <rect class="join-gold" x="191" y="94" width="18" height="34" rx="2"></rect>
+            <rect class="join-ink" x="126" y="126" width="148" height="10" rx="2"></rect>
+            <path class="join-light" d="M86 46 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z"></path>
+            <circle class="join-gold" cx="318" cy="44" r="4"></circle>
+          </svg>
+        </div>
+      </article>
+      <article class="home-join-card home-join-card--3">
+        <div class="home-join-body">
+          <span class="home-join-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></span>
+          <h3 class="home-join-title" data-i18n-key="home.join.c3.t">Tu travailles dans la tech</h3>
+          <p class="home-join-desc" data-i18n-key="home.join.c3.p">Un stage, un emploi, un événement ou une communauté à faire connaître aux bacheliers togolais&nbsp;? Propose-le, on vérifie et on ajoute.</p>
+          <a class="home-join-link" href="proposer.html" data-i18n-key="home.join.c3.link">Proposer une opportunité →</a>
+        </div>
+        <div class="home-join-art" aria-hidden="true">
+          <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <path class="join-blob" d="M-20 160 C -4 120 34 112 52 126 S 90 150 104 160 Z"></path>
+            <path class="join-blob" d="M296 160 C 300 122 334 106 356 120 S 394 112 420 128 V 160 Z"></path>
+            <rect class="join-ink" x="138" y="26" width="124" height="80" rx="8"></rect>
+            <rect class="join-screen" x="148" y="36" width="104" height="60" rx="4"></rect>
+            <text class="join-code" x="200" y="75" text-anchor="middle">&lt;/&gt;</text>
+            <path class="join-ink" d="M118 110 H 282 L 270 126 H 130 Z"></path>
+            <path class="join-light" d="M300 34 h40 a8 8 0 0 1 8 8 v16 a8 8 0 0 1 -8 8 h-26 l-10 9 v-9 h-4 a8 8 0 0 1 -8 -8 v-16 a8 8 0 0 1 8 -8 z"></path>
+            <circle class="join-ink" cx="310" cy="50" r="3"></circle>
+            <circle class="join-ink" cx="320" cy="50" r="3"></circle>
+            <circle class="join-ink" cx="330" cy="50" r="3"></circle>
+            <path class="join-gold" d="M84 36 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z"></path>
+          </svg>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-app" id="application">
     <div class="home-phone" aria-hidden="true">
       <div class="home-phone-screen" id="home-phone-screen"></div>
     </div>
@@ -319,10 +488,18 @@
         <li><strong>Android</strong> <span data-i18n-key="home.app.android">(Chrome) : menu ⋮ puis « Installer l'application » ou « Ajouter à l'écran d'accueil ».</span></li>
         <li><strong>iPhone</strong> <span data-i18n-key="home.app.ios">(Safari) : bouton Partager puis « Sur l'écran d'accueil ».</span></li>
       </ol>
+      <div class="home-qr">
+        <svg class="home-qr-code" viewBox="-2 -2 29 29" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="home-qr-label"><title id="home-qr-label">QR code : wiyao.vercel.app</title><rect x="-2" y="-2" width="29" height="29" fill="#ffffff"></rect><path stroke="#0a0d1c" d="M0 0.5h7m2 0h4m3 0h1m1 0h7M0 1.5h1m5 0h1m2 0h1m2 0h2m1 0h1m2 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h5m1 0h1m3 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h5m1 0h3m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m2 0h1m1 0h3M0 8.5h1m1 0h5m2 0h1m1 0h5m2 0h5M0 9.5h3m4 0h5m1 0h1m2 0h1m2 0h1m3 0h1M0 10.5h5m1 0h2m2 0h1m3 0h2m3 0h3m1 0h2M0 11.5h2m1 0h1m3 0h1m2 0h2m4 0h4m4 0h1M0 12.5h1m2 0h1m2 0h4m2 0h2m1 0h6m1 0h3M0 13.5h3m1 0h1m2 0h1m1 0h2m2 0h1m2 0h2m1 0h1m1 0h1m1 0h1M0 14.5h1m2 0h4m2 0h1m1 0h5m3 0h3m1 0h2M0 15.5h1m7 0h2m1 0h1m4 0h5m3 0h1M0 16.5h1m5 0h1m1 0h1m1 0h5m1 0h5m1 0h1M8 17.5h2m2 0h1m2 0h2m3 0h2M0 18.5h7m2 0h2m5 0h1m1 0h1m1 0h1m1 0h3M0 19.5h1m5 0h1m1 0h1m1 0h2m2 0h3m3 0h2m1 0h2M0 20.5h1m1 0h3m1 0h1m1 0h1m2 0h10m1 0h1M0 21.5h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h3m1 0h5M0 22.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m4 0h2m1 0h1M0 23.5h1m5 0h1m2 0h2m1 0h1m2 0h2m1 0h4m2 0h1M0 24.5h7m1 0h2m3 0h2m2 0h8"></path></svg>
+        <div>
+          <p class="home-qr-title" data-i18n-key="home.qr.title">Tu es sur ordinateur&nbsp;?</p>
+          <p class="home-qr-desc" data-i18n-key="home.qr.desc">Scanne ce code avec l'appareil photo de ton téléphone pour ouvrir WIYAO dessus.</p>
+          <span class="home-qr-url">wiyao.vercel.app</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="home-faq">
+  <section class="home-faq" id="faq">
     <div class="home-faq-head">
       <p class="home-eyebrow">FAQ</p>
       <h2 class="home-h2" data-i18n-key="home.faq.title">Des questions&nbsp;? On a les réponses.</h2>
@@ -346,6 +523,7 @@
         <p data-i18n-key="faq.c2.a4">Non, et c'est assumé : 14 questions ne peuvent pas connaître quelqu'un parfaitement. Le résultat est un point de départ solide, pas un verdict définitif. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu'un du métier et explore la roadmap correspondante avant de t'engager dans une école.</p>
       </details>
     </div>
+    <div class="home-faq-split" id="home-faq-split" hidden></div>
   </section>
 
   <section class="home-final">
@@ -406,9 +584,9 @@
 </footer>
 
 <script src="js/data.js?v=52"></script>
-<script src="js/app.js?v=48"></script>
+<script src="js/app.js?v=49"></script>
 <script src="js/nav.js?v=6"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=101"></script>
+<script src="js/i18n.js?v=102"></script>
 </body>
 </html>

@@ -124,6 +124,75 @@
     "home.app.install": { fr: "Installer WIYAO", en: "Install WIYAO" },
     "home.app.android": { fr: "(Chrome) : menu ⋮ puis « Installer l'application » ou « Ajouter à l'écran d'accueil ».", en: "(Chrome): ⋮ menu, then “Install app” or “Add to Home screen”." },
     "home.app.ios": { fr: "(Safari) : bouton Partager puis « Sur l'écran d'accueil ».", en: "(Safari): Share button, then “Add to Home Screen”." },
+    "home.qr.title": { fr: "Tu es sur ordinateur&nbsp;?", en: "On a computer?" },
+    "home.qr.desc": { fr: "Scanne ce code avec l'appareil photo de ton téléphone pour ouvrir WIYAO dessus.", en: "Scan this code with your phone's camera to open WIYAO on it." },
+
+    "home.toc.label": { fr: "Sur cette page", en: "On this page" },
+    "home.toc.intent": { fr: "Par où commencer", en: "Where to start" },
+    "home.toc.journey": { fr: "Le parcours", en: "The journey" },
+    "home.toc.domains": { fr: "Domaines", en: "Fields" },
+    "home.toc.cities": { fr: "Villes", en: "Cities" },
+    "home.toc.news": { fr: "Actus", en: "News" },
+    "home.toc.why": { fr: "Pourquoi WIYAO", en: "Why WIYAO" },
+    "home.toc.join": { fr: "Rejoindre", en: "Get involved" },
+    "home.toc.app": { fr: "Application", en: "App" },
+    "home.toc.faq": { fr: "FAQ", en: "FAQ" },
+
+    "home.intent.eyebrow": { fr: "Par où commencer", en: "Where to start" },
+    "home.intent.label": { fr: "Je suis ici pour", en: "I'm here to" },
+
+    "home.news.eyebrow": { fr: "À la une", en: "Top stories" },
+    "home.news.title": { fr: "Actualités et mises à jour", en: "News and updates" },
+    "home.news.all": { fr: "Tout afficher →", en: "See all →" },
+
+    "home.compare.eyebrow": { fr: "Pourquoi WIYAO", en: "Why WIYAO" },
+    "home.compare.title": { fr: "Ton orientation, avec ou sans WIYAO", en: "Choosing your path, with or without WIYAO" },
+    "home.compare.desc": {
+      fr: "Choisir un domaine ou une école sans guide, c'est souvent avancer à l'aveugle. Voici ce qui change quand tout est réuni au même endroit.",
+      en: "Choosing a field or a school without a guide often means moving forward blind. Here's what changes when everything is in one place.",
+    },
+    "home.compare.caption": { fr: "Comparaison&nbsp;: t'orienter avec WIYAO ou sans guide", en: "Comparison: choosing your path with WIYAO or without a guide" },
+    "home.compare.without": { fr: "Sans guide", en: "Without a guide" },
+    "home.compare.r1.h": { fr: "Choisir un domaine", en: "Choosing a field" },
+    "home.compare.r1.yes": { fr: "Un test de 14 questions, puis la roadmap du métier", en: "A 14-question test, then the career roadmap" },
+    "home.compare.r1.no": { fr: "Au feeling, ou sur le conseil d'un proche", en: "Gut feeling, or a relative's advice" },
+    "home.compare.r2.h": { fr: "Comparer les écoles", en: "Comparing schools" },
+    "home.compare.r2.yes": { fr: "32 écoles et universités au même endroit", en: "32 schools and universities in one place" },
+    "home.compare.r2.no": { fr: "Des infos éparpillées entre sites, réseaux sociaux et bouche-à-oreille", en: "Information scattered across websites, social media and word of mouth" },
+    "home.compare.r3.h": { fr: "Frais de scolarité", en: "Tuition fees" },
+    "home.compare.r3.yes": { fr: "Affichés quand l'école les publie, sinon signalés comme non communiqués", en: "Shown when the school publishes them, otherwise flagged as not disclosed" },
+    "home.compare.r3.no": { fr: "Souvent découverts au moment de s'inscrire", en: "Often discovered at enrollment" },
+    "home.compare.r4.h": { fr: "Dates à ne pas rater", en: "Dates not to miss" },
+    "home.compare.r4.yes": { fr: "Concours, clôtures et rentrées réunis dans un calendrier", en: "Entrance exams, deadlines and start dates in one calendar" },
+    "home.compare.r4.no": { fr: "Une date limite apprise trop tard", en: "A deadline you hear about too late" },
+    "home.compare.r5.h": { fr: "Bourses", en: "Scholarships" },
+    "home.compare.r5.yes": { fr: "Bourses, réductions et financements vérifiés, sur une seule page", en: "Verified scholarships, discounts and funding, on a single page" },
+    "home.compare.r5.no": { fr: "On ne sait pas toujours qu'elles existent", en: "You don't always know they exist" },
+    "home.compare.r6.h": { fr: "Ce que ça coûte", en: "What it costs" },
+    "home.compare.r6.yes": { fr: "Gratuit, sans compte, sans publicité", en: "Free, no account, no ads" },
+    "home.compare.r6.no": { fr: "Des heures de recherches, sans garantie que l'info soit à jour", en: "Hours of searching, with no guarantee the information is current" },
+
+    "home.join.eyebrow": { fr: "Communauté", en: "Community" },
+    "home.join.title": { fr: "Rejoins le mouvement", en: "Join the movement" },
+    "home.join.desc": { fr: "WIYAO grandit grâce à celles et ceux qui partagent une info vérifiable. Choisis ton profil.", en: "WIYAO grows thanks to everyone who shares verifiable information. Pick your profile." },
+    "home.join.c1.t": { fr: "Tu viens d'avoir ton bac", en: "You just passed your bac" },
+    "home.join.c1.p": {
+      fr: "Ou tu le passes cette année&nbsp;: commence par le test d'orientation, puis suis la roadmap du métier qui te correspond.",
+      en: "Or you're taking it this year: start with the orientation test, then follow the roadmap of the career that fits you.",
+    },
+    "home.join.c1.link": { fr: "Faire le test →", en: "Take the test →" },
+    "home.join.c2.t": { fr: "Tu représentes une école", en: "You represent a school" },
+    "home.join.c2.p": {
+      fr: "Frais, filières ou dates ont changé&nbsp;? Signale-le avec un lien vers la source officielle&nbsp;: chaque info est vérifiée avant d'être publiée.",
+      en: "Fees, programs or dates have changed? Report it with a link to the official source: every piece of information is checked before it's published.",
+    },
+    "home.join.c2.link": { fr: "Signaler une mise à jour →", en: "Report an update →" },
+    "home.join.c3.t": { fr: "Tu travailles dans la tech", en: "You work in tech" },
+    "home.join.c3.p": {
+      fr: "Un stage, un emploi, un événement ou une communauté à faire connaître aux bacheliers togolais&nbsp;? Propose-le, on vérifie et on ajoute.",
+      en: "An internship, a job, an event or a community Togolese graduates should know about? Suggest it: we check it and add it.",
+    },
+    "home.join.c3.link": { fr: "Proposer une opportunité →", en: "Suggest an opportunity →" },
     "home.faq.title": { fr: "Des questions&nbsp;? On a les réponses.", en: "Questions? We have answers." },
     "home.faq.all": { fr: "Toutes les questions →", en: "All questions →" },
     "home.final.title": { fr: "Prêt·e à tracer ton parcours&nbsp;?", en: "Ready to chart your path?" },
@@ -1572,4 +1641,13 @@
     initLangSwitch();
     applyLang(getLang());
   });
+
+  // Exposé pour js/app.js : le contenu inséré après coup (actus de l'accueil,
+  // lues depuis actualites.html) est traduit avec ce même dictionnaire.
+  window.WIYAO_I18N = {
+    t(key, lang) {
+      const entry = PAGE_CONTENT[key];
+      return entry ? (lang === "en" ? entry.en : entry.fr) : null;
+    },
+  };
 })();

@@ -1167,6 +1167,14 @@
     const form = document.getElementById("proposer-form");
     if (!form) return;
 
+    // ?type=Établissement (lien "Signaler une mise à jour" de l'accueil) :
+    // présélectionne le type, seulement s'il existe dans la liste.
+    const wantedType = new URLSearchParams(window.location.search).get("type");
+    const typeSelect = form.elements["type"];
+    if (wantedType && typeSelect && [...typeSelect.options].some((o) => o.value === wantedType)) {
+      typeSelect.value = wantedType;
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       const name = form.elements["name"].value.trim();
@@ -1601,6 +1609,106 @@
     },
   };
 
+  const ICONS = {
+    compass: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>',
+    route: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>',
+    school: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg>',
+    cap: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>',
+    coins: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="6" ry="3"></ellipse><path d="M3 7v5c0 1.66 2.69 3 6 3s6-1.34 6-3V7"></path><path d="M9 18c0 1.66 2.69 3 6 3s6-1.34 6-3v-5c0-1.66-2.69-3-6-3"></path></svg>',
+    calendar: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
+    briefcase: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
+    rocket: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>',
+    shield: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',
+  };
+
+  // "Je suis ici pour…" (façon Duplo) : chaque intention renvoie vers la page
+  // qui y répond ; les descriptions reprennent ce que disent ces pages.
+  const HOME_INTENTS = [
+    {
+      icon: "compass",
+      label: { fr: "trouver ma voie dans la tech", en: "find my path in tech" },
+      title: { fr: "Commence par le test d'orientation", en: "Start with the orientation test" },
+      desc: {
+        fr: "14 questions pour identifier le domaine tech, et le métier précis, qui te correspond. Le résultat te renvoie vers la roadmap de ce métier.",
+        en: "14 questions to identify the tech field, and the specific career, that fits you. The result points you to that career's roadmap.",
+      },
+      href: "test-orientation.html",
+      cta: { fr: "Faire le test →", en: "Take the test →" },
+      more: [["temoignages.html", { fr: "Lire des parcours réels", en: "Read real stories" }], ["roadmaps.html", { fr: "Parcourir les métiers", en: "Browse careers" }]],
+    },
+    {
+      icon: "route",
+      label: { fr: "apprendre un métier pas à pas", en: "learn a career step by step" },
+      title: { fr: "Suis une roadmap", en: "Follow a roadmap" },
+      desc: {
+        fr: "Pour chaque métier ou compétence, la roadmap te montre quoi apprendre, et dans quel ordre. Ta progression reste enregistrée sur ton appareil.",
+        en: "For each career or skill, the roadmap shows you what to learn, and in what order. Your progress stays saved on your device.",
+      },
+      href: "roadmaps.html",
+      cta: { fr: "Voir les roadmaps →", en: "See the roadmaps →" },
+      more: [["ecosysteme.html", { fr: "Ressources et communautés", en: "Resources and communities" }], ["test-orientation.html", { fr: "Pas sûr·e du métier ? Fais le test", en: "Not sure which career? Take the test" }]],
+    },
+    {
+      icon: "school",
+      label: { fr: "choisir mon école", en: "choose my school" },
+      title: { fr: "Compare les écoles et universités", en: "Compare schools and universities" },
+      desc: {
+        fr: "{n} écoles et universités togolaises comparées : filières, niveaux, admission, frais de scolarité quand ils sont publiés, et dates clés.",
+        en: "{n} Togolese schools and universities compared: programs, levels, admission, tuition fees when published, and key dates.",
+      },
+      href: "ecoles.html",
+      cta: { fr: "Comparer les écoles →", en: "Compare schools →" },
+      more: [["calendrier.html", { fr: "Dates des concours", en: "Entrance exam dates" }], ["bourses-financement.html", { fr: "Bourses disponibles", en: "Available scholarships" }]],
+    },
+    {
+      icon: "coins",
+      label: { fr: "financer mes études", en: "fund my studies" },
+      title: { fr: "Trouve une bourse ou une aide", en: "Find a scholarship or aid" },
+      desc: {
+        fr: "Bourses, réductions et solutions de financement vérifiées, accessibles à un·e bachelier·ère togolais·e, écoles comprises.",
+        en: "Verified scholarships, discounts and funding options open to Togolese high-school graduates, schools included.",
+      },
+      href: "bourses-financement.html",
+      cta: { fr: "Voir les bourses →", en: "See scholarships →" },
+      more: [["ecoles.html", { fr: "Comparer les frais des écoles", en: "Compare school fees" }], ["calendrier.html", { fr: "Dates à ne pas rater", en: "Dates not to miss" }]],
+    },
+    {
+      icon: "calendar",
+      label: { fr: "ne rater aucune date", en: "never miss a deadline" },
+      title: { fr: "Garde un œil sur le calendrier", en: "Keep an eye on the calendar" },
+      desc: {
+        fr: "Le calendrier type d'une candidature au Togo, puis les dates connues école par école : concours, clôtures, rentrées.",
+        en: "The typical application calendar in Togo, then known dates school by school: entrance exams, deadlines, start dates.",
+      },
+      href: "calendrier.html",
+      cta: { fr: "Voir le calendrier →", en: "See the calendar →" },
+      more: [["actualites.html", { fr: "Dernières actualités", en: "Latest news" }], ["ecoles.html", { fr: "Comparer les écoles", en: "Compare schools" }]],
+    },
+    {
+      icon: "briefcase",
+      label: { fr: "trouver un stage ou un emploi", en: "find an internship or a job" },
+      title: { fr: "Prépare ton entrée dans la vie pro", en: "Get ready for working life" },
+      desc: {
+        fr: "Où chercher un stage ou un premier emploi tech au Togo, les employeurs qui recrutent des profils tech, et comment mettre toutes les chances de ton côté.",
+        en: "Where to look for an internship or a first tech job in Togo, employers hiring tech profiles, and how to give yourself the best chance.",
+      },
+      href: "stages-emploi.html",
+      cta: { fr: "Voir stages & emploi →", en: "See internships & jobs →" },
+      more: [["ecosysteme.html", { fr: "Communautés et hubs", en: "Communities and hubs" }], ["roadmaps.html", { fr: "Renforcer tes compétences", en: "Build your skills" }]],
+    },
+  ];
+
+  // Catégories des actus (texte FR de actualites.html) → teinte + icône.
+  const NEWS_TONES = {
+    "Formation": ["1", "cap"], "Éducation": ["1", "cap"], "Événement": ["2", "calendar"],
+    "Startups": ["3", "rocket"], "Écosystème": ["3", "rocket"], "Cybersécurité": ["4", "shield"], "Gouvernement": ["5", "school"],
+  };
+
+  // Texte brut d'une chaîne HTML, sans rien exécuter ni charger.
+  function plainText(html) {
+    return new DOMParser().parseFromString(String(html), "text/html").body.textContent.replace(/\s+/g, " ").trim();
+  }
+
   function initHome() {
     const hero = document.getElementById("home-hero");
     if (!hero) return;
@@ -1713,6 +1821,160 @@
         <div class="phone-cards"><span></span><span></span></div>`;
     }
 
+    const intentSelect = document.getElementById("home-intent-select");
+    const intentResult = document.getElementById("home-intent-result");
+    let activeIntent = 0;
+
+    function renderIntent(isEn, withOptions = true) {
+      if (!intentSelect || !intentResult) return;
+      const L = isEn ? "en" : "fr";
+      const nSchools = typeof SCHOOLS !== "undefined" ? Object.keys(SCHOOLS).length : 32;
+      if (withOptions) {
+        intentSelect.innerHTML = HOME_INTENTS.map((it, i) =>
+          `<option value="${i}"${i === activeIntent ? " selected" : ""}>${esc(it.label[L])}</option>`
+        ).join("");
+      }
+      const it = HOME_INTENTS[activeIntent];
+      intentResult.innerHTML = `
+        <div class="home-intent-card">
+          <span class="home-intent-icon" aria-hidden="true">${ICONS[it.icon]}</span>
+          <div class="home-intent-body">
+            <h3 class="home-intent-title">${esc(it.title[L])}</h3>
+            <p class="home-intent-desc">${esc(it.desc[L].replace("{n}", nSchools))}</p>
+            <ul class="home-intent-more">${it.more.map(([href, t]) => `<li><a href="${href}">${esc(t[L])}</a></li>`).join("")}</ul>
+          </div>
+          <a class="btn-primary home-intent-cta" href="${it.href}">${esc(it.cta[L])}</a>
+        </div>`;
+    }
+
+    if (intentSelect) {
+      intentSelect.addEventListener("change", () => {
+        activeIntent = Math.min(HOME_INTENTS.length - 1, Math.max(0, Number(intentSelect.value) || 0));
+        renderIntent(currentLang() === "en", false);
+      });
+    }
+
+    // Actualités : les 4 premières cartes de actualites.html (l'ordre choisi
+    // sur cette page), relues à chaque visite : rien à ressaisir ici.
+    const newsSection = document.getElementById("actus");
+    const newsGrid = document.getElementById("home-news-grid");
+    let newsItems = null;
+
+    // Champ de la carte → suffixe de sa clé i18n (actu.t19.h3, actu.t19.p…).
+    const NEWS_KEYS = { title: "h3", desc: "p", date: "date", cat: "cat" };
+
+    function newsText(item, field, isEn) {
+      const tr = window.WIYAO_I18N && item.key ? window.WIYAO_I18N.t(`${item.key}.${NEWS_KEYS[field]}`, isEn ? "en" : "fr") : null;
+      return plainText(tr == null ? item[field] : tr);
+    }
+
+    function renderNews(isEn) {
+      if (!newsGrid || !newsItems || !newsItems.length) return;
+      const view = newsItems.map((n) => {
+        const [tone, icon] = NEWS_TONES[n.cat] || ["1", "cap"];
+        return { n, tone, icon, title: newsText(n, "title", isEn), desc: newsText(n, "desc", isEn), date: newsText(n, "date", isEn), cat: newsText(n, "cat", isEn) };
+      });
+      const [f, ...rest] = view;
+      const href = (v) => `actualites.html${v.n.id ? `#${encodeURIComponent(v.n.id)}` : ""}`;
+      const source = /^https?:\/\//.test(f.n.source)
+        ? `<a class="home-news-source" href="${esc(f.n.source)}" target="_blank" rel="noopener">${isEn ? "Source ↗" : "Source ↗"}</a>`
+        : "";
+      newsGrid.innerHTML = `
+        <article class="home-news-feature">
+          <div class="home-news-cover home-news-tone-${f.tone}" aria-hidden="true">${ICONS[f.icon]}<span class="home-news-cover-cat">${esc(f.cat)}</span></div>
+          <div class="home-news-body">
+            <h3 class="home-news-title"><a href="${href(f)}">${esc(f.title)}</a></h3>
+            <p class="home-news-desc">${esc(f.desc)}</p>
+            <p class="home-news-date">${ICONS.calendar}<span>${esc(f.date)}</span></p>
+            <p class="home-news-links"><a class="home-feature-link" href="${href(f)}">${isEn ? "Read on WIYAO →" : "Lire sur WIYAO →"}</a>${source}</p>
+          </div>
+        </article>
+        <ul class="home-news-list">${rest.map((v) => `
+          <li><a class="home-news-item" href="${href(v)}">
+            <span class="home-news-thumb home-news-tone-${v.tone}" aria-hidden="true">${ICONS[v.icon]}</span>
+            <span class="home-news-item-text"><span class="home-news-item-title">${esc(v.title)}</span><span class="home-news-item-date">${esc(v.date)}</span></span>
+          </a></li>`).join("")}
+        </ul>`;
+    }
+
+    function loadNews() {
+      if (!newsGrid || !window.fetch || !window.DOMParser) return;
+      fetch("actualites.html")
+        .then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status)))))
+        .then((html) => {
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          const pick = (a, sel) => { const el = a.querySelector(sel); return el ? el.textContent.trim() : ""; };
+          newsItems = [...doc.querySelectorAll("article.actu-card")].slice(0, 4).map((a) => {
+            const h3 = a.querySelector(".actu-card-title");
+            const src = a.querySelector(".actu-card-btn");
+            return {
+              id: a.id || "",
+              key: h3 && h3.dataset.i18nKey ? h3.dataset.i18nKey.replace(/\.h3$/, "") : "",
+              title: h3 ? h3.textContent.trim() : "",
+              desc: pick(a, ".actu-card-desc"),
+              date: pick(a, '.actu-meta-value[data-i18n-key$=".date"]'),
+              cat: pick(a, '.actu-meta-value[data-i18n-key$=".cat"]'),
+              source: src ? src.getAttribute("href") || "" : "",
+            };
+          }).filter((n) => n.title);
+          if (!newsItems.length) throw new Error("empty");
+          renderNews(currentLang() === "en");
+        })
+        .catch(() => { if (newsSection) newsSection.hidden = true; });
+    }
+
+    // FAQ question / réponse (façon Chowdeck) : sur grand écran, questions à
+    // gauche et réponse dans un panneau à droite ; l'accordéon reste la
+    // version mobile et sans JavaScript. Contenu relu depuis les <details>
+    // (donc déjà traduit par i18n.js).
+    const faqSection = document.querySelector(".home-faq");
+    const faqSplit = document.getElementById("home-faq-split");
+    let activeFaq = 0;
+
+    function renderFaq(isEn) {
+      if (!faqSection || !faqSplit) return;
+      const items = [...faqSection.querySelectorAll(".home-faq-list .faq-item")];
+      if (!items.length) return;
+      const num = (i) => String(i + 1).padStart(2, "0");
+      const part = (d, sel) => { const el = d.querySelector(sel); return el ? el.innerHTML : ""; };
+      faqSplit.innerHTML = `
+        <div class="home-faq-tabs" role="tablist" aria-orientation="vertical" aria-label="${isEn ? "Frequently asked questions" : "Questions fréquentes"}">
+          ${items.map((d, i) => `<button type="button" role="tab" class="home-faq-tab" id="home-faq-tab-${i}" aria-controls="home-faq-panel" aria-selected="${i === activeFaq}" tabindex="${i === activeFaq ? 0 : -1}"><span class="home-faq-num" aria-hidden="true">${num(i)}</span><span class="home-faq-q">${part(d, "summary")}</span></button>`).join("")}
+        </div>
+        <div class="home-faq-panel" id="home-faq-panel" role="tabpanel" aria-labelledby="home-faq-tab-${activeFaq}" tabindex="0">
+          <span class="home-faq-mark" aria-hidden="true">${num(activeFaq)}</span>
+          <p class="home-faq-answer">${part(items[activeFaq], "p")}</p>
+        </div>`;
+      faqSplit.hidden = false;
+      faqSection.classList.add("is-split");
+    }
+
+    function selectFaq(i) {
+      activeFaq = i;
+      renderFaq(currentLang() === "en");
+      const tab = document.getElementById(`home-faq-tab-${i}`);
+      if (tab) tab.focus();
+    }
+
+    if (faqSplit) {
+      faqSplit.addEventListener("click", (e) => {
+        const btn = e.target.closest('[role="tab"]');
+        if (btn) selectFaq(Number(btn.id.replace("home-faq-tab-", "")));
+      });
+      faqSplit.addEventListener("keydown", (e) => {
+        if (!e.target.closest('[role="tab"]')) return;
+        const n = faqSplit.querySelectorAll('[role="tab"]').length;
+        let i = activeFaq;
+        if (e.key === "ArrowDown") i = (i + 1) % n;
+        else if (e.key === "ArrowUp") i = (i - 1 + n) % n;
+        else if (e.key === "Home") i = 0;
+        else if (e.key === "End") i = n - 1;
+        else return;
+        e.preventDefault();
+        selectFaq(i);
+      });
+    }
+
     function selectDomain(i) {
       activeDomain = domainNames[i];
       renderDomains(currentLang() === "en");
@@ -1756,9 +2018,12 @@
         const build = HOME_MOCKS[el.dataset.mock];
         el.innerHTML = build ? build(isEn) : "";
       });
+      renderIntent(isEn);
       renderDomains(isEn);
       renderCities(isEn);
+      renderNews(isEn);
       renderPhone(isEn);
+      renderFaq(isEn);
     }
 
     // Bouton "Installer WIYAO" : affiché seulement si le navigateur propose
@@ -1782,6 +2047,7 @@
     }
 
     render();
+    loadNews();
     // i18n.js change l'attribut lang de <html> à chaque bascule FR/EN.
     new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
 
