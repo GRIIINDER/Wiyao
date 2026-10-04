@@ -680,20 +680,37 @@
     subtitle.textContent = school.description;
     body.appendChild(subtitle);
 
+    // Carte plus lisible (façon cartes d'espaces Gozem) : une ligne de
+    // repères, une pastille frais, 3 filières, et le reste dépliable.
+    const isEn = currentLang() === "en";
+    const nNiv = school.niveaux.length;
+    const nFil = school.filieres.length;
+    const feesHidden = FEES_UNPUBLISHED.test(school.frais || "");
+    const facts = document.createElement("div");
+    facts.className = "school-facts";
+    facts.innerHTML =
+      `<span>${nNiv} ${isEn ? (nNiv > 1 ? "levels" : "level") : (nNiv > 1 ? "niveaux" : "niveau")} · ${nFil} ${isEn ? (nFil > 1 ? "programs" : "program") : (nFil > 1 ? "filières" : "filière")}</span>` +
+      `<span class="fee-pill ${feesHidden ? "fee-pill--hidden" : "fee-pill--shown"}">${feesHidden ? (isEn ? "Fees not disclosed" : "Frais non communiqués") : (isEn ? "Fees shown" : "Frais indiqués")}</span>`;
+    body.appendChild(facts);
+
+    const SHOWN = 3;
     const filieres = document.createElement("ul");
     filieres.className = "school-filieres";
-    filieres.innerHTML = school.filieres.map((f) => `<li>${f}</li>`).join("");
+    filieres.innerHTML = school.filieres.slice(0, SHOWN).map((f) => `<li>${f}</li>`).join("") +
+      (nFil > SHOWN ? `<li class="school-filieres-more">+${nFil - SHOWN} ${isEn ? "more" : (nFil - SHOWN > 1 ? "autres" : "autre")}</li>` : "");
     body.appendChild(filieres);
 
-    const meta = document.createElement("div");
-    meta.className = "school-meta";
-    let metaHtml = `<span><strong>Niveaux :</strong> ${school.niveaux.join(", ")}</span>`;
+    const details = document.createElement("details");
+    details.className = "school-details";
+    let metaHtml = "";
+    if (nFil > SHOWN) metaHtml += `<span><strong>${isEn ? "All programs" : "Toutes les filières"} :</strong> ${school.filieres.join(" · ")}</span>`;
+    metaHtml += `<span><strong>Niveaux :</strong> ${school.niveaux.join(", ")}</span>`;
     if (school.duree) metaHtml += `<span><strong>Durée :</strong> ${school.duree}</span>`;
     if (school.admission) metaHtml += `<span><strong>Admission :</strong> ${school.admission}</span>`;
     if (school.frais) metaHtml += `<span><strong>Frais :</strong> ${school.frais}</span>`;
     if (school.agreeNote) metaHtml += `<span>ℹ️ ${school.agreeNote}</span>`;
-    meta.innerHTML = metaHtml;
-    body.appendChild(meta);
+    details.innerHTML = `<summary>${isEn ? "See details" : "Voir le détail"} <span class="school-details-hint">${isEn ? "admission, fees, duration" : "admission, frais, durée"}</span></summary><div class="school-meta">${metaHtml}</div>`;
+    body.appendChild(details);
 
     if (school.site) {
       const link = document.createElement("a");
@@ -1545,36 +1562,61 @@
   // (window.WIYAO_AGENDA, défini par js/actualites.js).
   const PIN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
 
+  // Événements datés et à venir des cartes de actualites.html, traduits,
+  // triés par date de début. Partagé par le Calendrier et l'accueil.
+  function collectUpcoming(cards) {
+    const agenda = window.WIYAO_AGENDA;
+    if (!agenda) return [];
+    const base = new URL("actualites.html", window.location.href).href;
+    const tr = (key, fallback) => {
+      const v = window.WIYAO_I18N && key ? window.WIYAO_I18N.t(key, currentLang()) : null;
+      return plainText(v == null ? fallback : v);
+    };
+    return cards.map((card) => {
+      const h3 = card.querySelector(".actu-card-title");
+      const key = h3 && h3.dataset.i18nKey ? h3.dataset.i18nKey.replace(/\.h3$/, "") : "";
+      const descEl = card.querySelector(".actu-card-desc");
+      const catEl = card.querySelector('.actu-meta-value[data-i18n-key$=".cat"]');
+      const catFr = catEl ? catEl.textContent.trim() : "";
+      const ev = agenda.eventOf(card, {
+        base,
+        title: tr(key && key + ".h3", h3 ? h3.textContent : ""),
+        desc: tr(key && key + ".p", descEl ? descEl.textContent : ""),
+      });
+      return ev && { ev, id: card.id, catFr, cat: tr(key && key + ".cat", catFr) };
+    }).filter(Boolean).sort((a, b) => (a.ev.dtStart < b.ev.dtStart ? -1 : a.ev.dtStart > b.ev.dtStart ? 1 : 0));
+  }
+
+  // Cartes datées de actualites.html (requête partagée avec nav.js).
+  function loadDatedActus() {
+    return (window.WIYAO_ACTUALITES_HTML || fetch("actualites.html").then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status))))))
+      .then((html) => [...new DOMParser().parseFromString(html, "text/html").querySelectorAll("article.actu-card[data-start]")]);
+  }
+
+  // « 24 », « 5–8 » ou « 30 » (événement sur deux mois) + mois abrégé.
+  function eventDay(ev, isEn) {
+    const s = ev.start;
+    const e = ev.end;
+    const sameDay = s.y === e.y && s.mo === e.mo && s.d === e.d;
+    const sameMonth = s.y === e.y && s.mo === e.mo;
+    const month = new Intl.DateTimeFormat(isEn ? "en-GB" : "fr-FR", { timeZone: "UTC", month: "short" })
+      .format(new Date(Date.UTC(s.y, s.mo - 1, s.d))).replace(".", "");
+    return { day: sameDay || !sameMonth ? String(s.d) : `${s.d}–${e.d}`, month, sameDay, sameMonth };
+  }
+
   function initUpcomingEvents() {
     const section = document.getElementById("a-venir");
     const row = document.getElementById("upcoming-row");
     if (!section || !row || !window.DOMParser || !window.WIYAO_AGENDA) return;
     const agenda = window.WIYAO_AGENDA;
-    const base = new URL("actualites.html", window.location.href).href;
     let cards = [];
     let events = [];
 
-    const tr = (key, fallback) => {
-      const v = window.WIYAO_I18N && key ? window.WIYAO_I18N.t(key, currentLang()) : null;
-      return plainText(v == null ? fallback : v);
-    };
     const hm = (p, isEn) => (isEn ? `${p.h}:${String(p.mi).padStart(2, "0")}` : `${p.h}h${p.mi ? String(p.mi).padStart(2, "0") : ""}`);
 
     function render() {
       const isEn = currentLang() === "en";
-      events = cards.map((card) => {
-        const h3 = card.querySelector(".actu-card-title");
-        const key = h3 && h3.dataset.i18nKey ? h3.dataset.i18nKey.replace(/\.h3$/, "") : "";
-        const descEl = card.querySelector(".actu-card-desc");
-        const catEl = card.querySelector('.actu-meta-value[data-i18n-key$=".cat"]');
-        const catFr = catEl ? catEl.textContent.trim() : "";
-        const ev = agenda.eventOf(card, {
-          base,
-          title: tr(key && key + ".h3", h3 ? h3.textContent : ""),
-          desc: tr(key && key + ".p", descEl ? descEl.textContent : ""),
-        });
-        return ev && { ev, id: card.id, catFr, cat: tr(key && key + ".cat", catFr) };
-      }).filter(Boolean).sort((a, b) => (a.ev.dtStart < b.ev.dtStart ? -1 : a.ev.dtStart > b.ev.dtStart ? 1 : 0));
+      events = collectUpcoming(cards);
 
       section.hidden = events.length === 0;
       if (!events.length) return;
@@ -1620,13 +1662,45 @@
       if (found) agenda.download(found.ev);
     });
 
-    (window.WIYAO_ACTUALITES_HTML || fetch("actualites.html").then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status))))))
-      .then((html) => {
-        const doc = new DOMParser().parseFromString(html, "text/html");
-        cards = [...doc.querySelectorAll("article.actu-card[data-start]")];
+    loadDatedActus()
+      .then((list) => {
+        cards = list;
         render();
       })
       .catch(() => { section.hidden = true; });
+
+    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  }
+
+  // ---- Accueil : prochains événements (façon Sneakerness « Upcoming events ») ----
+  // Tuiles colorées sous les actus, cliquables vers l'actu correspondante.
+  function initHomeUpcoming() {
+    const box = document.getElementById("home-upcoming");
+    const row = document.getElementById("home-upcoming-row");
+    if (!box || !row || !window.DOMParser || !window.WIYAO_AGENDA) return;
+    let cards = [];
+
+    function render() {
+      const isEn = currentLang() === "en";
+      const events = collectUpcoming(cards).slice(0, 4);
+      box.hidden = events.length === 0;
+      row.innerHTML = events.map(({ ev, id, catFr }) => {
+        const [tone] = NEWS_TONES[catFr] || ["1"];
+        const d = eventDay(ev, isEn);
+        return `<a class="upcoming-tile home-news-tone-${tone}" href="actualites.html#${encodeURIComponent(id)}">
+          <span class="upcoming-tile-date"><span class="upcoming-tile-day">${esc(d.day)}</span><span class="upcoming-tile-month">${esc(d.month)}</span></span>
+          <span class="upcoming-tile-title">${esc(ev.title)}</span>
+          ${ev.lieu ? `<span class="upcoming-tile-place">${PIN_SVG}${esc(ev.lieu)}</span>` : ""}
+        </a>`;
+      }).join("");
+    }
+
+    loadDatedActus()
+      .then((list) => {
+        cards = list;
+        render();
+      })
+      .catch(() => { box.hidden = true; });
 
     new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
   }
@@ -2224,7 +2298,10 @@
 
   // Texte brut d'une chaîne HTML, sans rien exécuter ni charger.
   function plainText(html) {
-    return new DOMParser().parseFromString(String(html), "text/html").body.textContent.replace(/\s+/g, " ").trim();
+    // Espace insécable avant « : ; ! ? » (typographie française) : évite
+    // qu'un deux-points se retrouve seul en début de ligne.
+    return new DOMParser().parseFromString(String(html), "text/html").body.textContent
+      .replace(/\s+/g, " ").trim().replace(/ ([:;!?»])/g, " $1");
   }
 
   // Chiffres [data-stat] (accueil, frise de la page À propos) : calculés
@@ -2633,6 +2710,7 @@
     renderAcademicTimeline();
     renderSchoolDates();
     initUpcomingEvents();
+    initHomeUpcoming();
     initQuizHowto();
     initGuideExplorer();
     initContactForm();

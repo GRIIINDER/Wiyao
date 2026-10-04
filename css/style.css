@@ -4631,6 +4631,192 @@ body.has-compare-bar .wiyao-assistant-toggle {
   }
 }
 
+/* Écosystème : filtres par type (façon Gozem), activés par ecosysteme.js.
+   .eco-list est en grille : l'attribut hidden doit primer explicitement. */
+.eco-section[hidden],
+.eco-list[hidden],
+.eco-subheading[hidden] {
+  display: none !important;
+}
+
+.eco-jump-nav.eco-filters {
+  gap: 8px;
+}
+
+/* Écoles : cartes plus lisibles (façon cartes d'espaces Gozem). */
+.school-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  margin: 0 0 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.fee-pill {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fee-pill--shown {
+  background: #e3f7ee;
+  color: #0b6b45;
+}
+
+.fee-pill--hidden {
+  background: #fff4dc;
+  color: #8a5a00;
+}
+
+.school-filieres .school-filieres-more {
+  border-style: dashed;
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.school-details {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+}
+
+.school-details > summary {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  padding: 12px 0 4px;
+  color: var(--accent);
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.school-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.school-details > summary::after {
+  content: "+";
+  margin-left: auto;
+  font-weight: 800;
+}
+
+.school-details[open] > summary::after {
+  content: "−";
+}
+
+.school-details-hint {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.school-details .school-meta {
+  margin-top: 8px;
+  padding-top: 4px;
+  border-top: 0;
+}
+
+/* Accueil : prochains événements (façon Sneakerness « Upcoming events »). */
+.home-upcoming {
+  margin-top: 28px;
+}
+
+.home-upcoming-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 14px;
+}
+
+.home-upcoming-title {
+  margin: 0;
+  color: var(--tk-text);
+  font-weight: 800;
+}
+
+.home-upcoming-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.upcoming-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 170px;
+  padding: 20px 22px;
+  border-radius: 18px;
+  color: #ffffff;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.upcoming-tile:hover,
+.upcoming-tile:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+}
+
+.upcoming-tile-date {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.upcoming-tile-day {
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.upcoming-tile-month {
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.upcoming-tile-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.upcoming-tile-place {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: auto;
+  opacity: 0.9;
+}
+
+.upcoming-tile-place svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .upcoming-tile,
+  .upcoming-tile:hover,
+  .upcoming-tile:focus-visible {
+    transform: none;
+    transition: none;
+  }
+}
+
 @media print {
   .announce-bar,
   .compare-bar,
@@ -7497,6 +7683,37 @@ main .poster-google,
 main .howto-chips li,
 main .upcoming-lead,
 main .upcoming-all {
+  font-size: 13px !important;
+}
+
+main .school-details > summary,
+main .school-details > summary * {
+  font-size: 14px !important;
+}
+
+main .school-facts,
+main .school-facts * {
+  font-size: 13px !important;
+}
+
+.page-home main .upcoming-tile-day {
+  font-size: 2.4rem !important;
+}
+
+.page-home main .home-upcoming-title {
+  font-size: 22px !important;
+}
+
+.page-home main .upcoming-tile-title {
+  font-size: 17px !important;
+}
+
+.page-home main .upcoming-tile-month {
+  font-size: 14px !important;
+}
+
+.page-home main .upcoming-tile-place,
+.page-home main .upcoming-tile-place * {
   font-size: 13px !important;
 }
 
