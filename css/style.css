@@ -3986,14 +3986,16 @@ body.has-compare-bar .wiyao-assistant-toggle {
   position: relative;
 }
 
+/* Reste dans la marge basse du bandeau (56px, 40px sous 900px) pour ne
+   jamais chevaucher le titre. */
 .banner-scroll {
   position: absolute;
   right: 24px;
-  bottom: 18px;
+  bottom: 10px;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 4px;
+  gap: 8px;
+  padding: 0;
   border: 0;
   background: none;
   color: var(--tk-text-muted);
@@ -4011,19 +4013,19 @@ body.has-compare-bar .wiyao-assistant-toggle {
 
 .banner-scroll-mouse {
   position: relative;
-  width: 18px;
-  height: 28px;
+  width: 14px;
+  height: 22px;
   border: 2px solid currentColor;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .banner-scroll-mouse span {
   position: absolute;
-  top: 5px;
+  top: 4px;
   left: 50%;
-  width: 3px;
-  height: 6px;
-  margin-left: -1.5px;
+  width: 2px;
+  height: 5px;
+  margin-left: -1px;
   border-radius: 2px;
   background: currentColor;
   animation: banner-wheel 1.6s ease-in-out infinite;
@@ -4602,11 +4604,9 @@ body.has-compare-bar .wiyao-assistant-toggle {
   .banner-stat:nth-child(2n) {
     border-left: 1px solid var(--tk-border);
   }
+  /* Sur mobile, on fait défiler au doigt, et le bandeau a trop peu de
+     marge pour l'indicateur sans chevaucher la fin du titre. */
   .banner-scroll {
-    right: 14px;
-    bottom: 12px;
-  }
-  .banner-scroll-text {
     display: none;
   }
   .quiz-howto-panel {
