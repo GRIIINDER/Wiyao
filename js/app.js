@@ -1869,6 +1869,103 @@
     new MutationObserver(() => render(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
   }
 
+  // ---- À propos : « Pour qui ? » par public (façon SPI-BCEAO) ----
+  // Chaque public renvoie vers ce qui existe déjà sur le site, rien de plus.
+  const ABOUT_AUDIENCES = [
+    {
+      icon: "cap",
+      tab: { fr: "Bachelier·e", en: "High-school graduate" },
+      lead: { fr: "Tu viens d'avoir ton bac, ou tu le passes cette année.", en: "You just passed your bac, or you're taking it this year." },
+      items: [
+        ["test-orientation.html", { fr: "Le test d'orientation pour trouver ton domaine et un métier précis", en: "The orientation test to find your field and a specific career" }],
+        ["roadmaps.html", { fr: "La roadmap du métier : quoi apprendre, et dans quel ordre", en: "The career roadmap: what to learn, and in what order" }],
+        ["ecoles.html", { fr: "Le comparateur d'écoles, avec les frais quand ils sont publiés", en: "The school comparison tool, with fees when they're published" }],
+        ["calendrier.html", { fr: "Les dates de candidature à ne pas rater", en: "Application dates not to miss" }],
+      ],
+    },
+    {
+      icon: "compass",
+      tab: { fr: "Parents", en: "Parents" },
+      lead: { fr: "Tu veux être sûr·e que la tech est un vrai débouché pour ton enfant.", en: "You want to be sure tech is a real career path for your child." },
+      items: [
+        ["temoignages.html", { fr: "Des repères chiffrés et sourcés sur le secteur", en: "Sourced figures about the sector" }],
+        ["temoignages.html#portraits", { fr: "Des parcours réels de professionnels togolais", en: "Real stories of Togolese professionals" }],
+        ["ecoles.html", { fr: "Les écoles agréées par l'État, frais et admission comparés", en: "State-accredited schools, with fees and admission compared" }],
+        ["bourses-financement.html", { fr: "Les bourses et solutions de financement vérifiées", en: "Verified scholarships and funding options" }],
+      ],
+    },
+    {
+      icon: "route",
+      tab: { fr: "En reconversion", en: "Changing careers" },
+      lead: { fr: "Tu es déjà étudiant·e ou en poste, et tu veux passer à la tech.", en: "You're already studying or working, and want to move into tech." },
+      items: [
+        ["roadmaps.html#par-competence", { fr: "Les roadmaps par compétence, pour monter en niveau", en: "Skill roadmaps, to level up" }],
+        ["ecoles.html", { fr: "Des écoles avec cours du soir, du week-end ou des formats courts", en: "Schools with evening, weekend or short formats" }],
+        ["ecosysteme.html?type=ressources", { fr: "Des ressources francophones gratuites en ligne", en: "Free French-language online resources" }],
+        ["faq.html", { fr: "La FAQ : « je pense m'être trompé de filière »", en: "The FAQ: “I think I chose the wrong program”" }],
+      ],
+    },
+    {
+      icon: "school",
+      tab: { fr: "Écoles", en: "Schools" },
+      lead: { fr: "Tu représentes une école ou un centre de formation.", en: "You represent a school or a training center." },
+      items: [
+        ["ecoles.html", { fr: "Vérifie ta fiche : filières, frais, admission, dates", en: "Check your profile: programs, fees, admission, dates" }],
+        ["proposer.html?type=%C3%89tablissement", { fr: "Signale une mise à jour avec un lien vers la source officielle", en: "Report an update with a link to the official source" }],
+        ["#verif-title", { fr: "Comment chaque info est vérifiée avant publication", en: "How each piece of information is checked before publication" }],
+        ["calendrier.html", { fr: "Les dates de ton concours dans le calendrier", en: "Your entrance exam dates in the calendar" }],
+      ],
+    },
+  ];
+
+  function initAudienceTabs() {
+    const tabs = document.getElementById("audience-tabs");
+    const panel = document.getElementById("audience-panel");
+    if (!tabs || !panel) return;
+    let active = 0;
+
+    function render(focus) {
+      const isEn = currentLang() === "en";
+      const L = isEn ? "en" : "fr";
+      tabs.setAttribute("aria-label", isEn ? "Audiences" : "Publics");
+      tabs.innerHTML = ABOUT_AUDIENCES.map((a, i) =>
+        `<button type="button" role="tab" class="audience-tab" id="audience-tab-${i}" aria-controls="audience-panel" aria-selected="${i === active}" tabindex="${i === active ? 0 : -1}">${esc(a.tab[L])}</button>`
+      ).join("");
+      const a = ABOUT_AUDIENCES[active];
+      panel.setAttribute("aria-labelledby", `audience-tab-${active}`);
+      panel.innerHTML = `
+        <span class="audience-icon" aria-hidden="true">${ICONS[a.icon]}</span>
+        <div class="audience-body">
+          <p class="audience-who">${esc(a.lead[L])}</p>
+          <ul class="audience-list">${a.items.map(([href, t]) => `<li><a href="${href}">${esc(t[L])}<span aria-hidden="true"> →</span></a></li>`).join("")}</ul>
+        </div>`;
+      if (focus) {
+        const tab = document.getElementById(`audience-tab-${active}`);
+        if (tab) tab.focus();
+      }
+    }
+
+    tabs.addEventListener("click", (e) => {
+      const btn = e.target.closest('[role="tab"]');
+      if (!btn) return;
+      active = Number(btn.id.replace("audience-tab-", ""));
+      render(true);
+    });
+    tabs.addEventListener("keydown", (e) => {
+      const n = ABOUT_AUDIENCES.length;
+      if (e.key === "ArrowRight") active = (active + 1) % n;
+      else if (e.key === "ArrowLeft") active = (active - 1 + n) % n;
+      else if (e.key === "Home") active = 0;
+      else if (e.key === "End") active = n - 1;
+      else return;
+      e.preventDefault();
+      render(true);
+    });
+
+    render(false);
+    new MutationObserver(() => render(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  }
+
   // ---- Recherche transversale (page recherche.html) ----
   // Indexe roadmaps/écoles depuis js/data.js, et scanne les .eco-item / .timeline-item
   // des autres pages via fetch + DOMParser pour rester la seule source de vérité
@@ -2721,6 +2818,7 @@
     renderSchoolDates();
     initUpcomingEvents();
     initHomeUpcoming();
+    initAudienceTabs();
     initQuizHowto();
     initGuideExplorer();
     initContactForm();

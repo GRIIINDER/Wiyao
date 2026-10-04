@@ -26,6 +26,8 @@ Zéro dépendance, zéro build. HTML/CSS/JS vanilla servis tels quels :
 
 **Test avant commit.** Ajouter temporairement une deuxième entrée à `.claude/launch.json` (port libre, ex. `wiyao-static-fresh`) pour tester sur un cache vraiment vierge via le navigateur, puis **la retirer avant de committer** — vérifier avec `git diff .claude/launch.json` que le fichier revient à son état d'origine.
 
+**Quoi de neuf.** La section « Quoi de neuf sur WIYAO » d'`about.html` liste les nouveautés visibles, datées d'après l'historique Git (clés `about.changelog.cN.*` dans `i18n.js`, FR et EN). À chaque nouveauté visible mise en ligne, ajouter une entrée en tête et retirer la plus ancienne pour en garder six.
+
 **Commit + push.** Committer et pousser sur `origin/main` après chaque changement vérifié, sans demander confirmation à chaque fois (sauf action destructrice/inhabituelle : force-push, réécriture d'historique, suppression de fichiers).
 
 **CSP.** `vercel.json` applique une Content-Security-Policy stricte sur `script-src` (liste blanche par hash SHA-256, pas de `unsafe-inline`). Si le contenu du JSON-LD d'`index.html` (seul script inline restant sur le site) change, il faut recalculer son hash SHA-256 et mettre à jour `vercel.json`, sinon le script sera silencieusement bloqué en production. `style-src` autorise `unsafe-inline` (nécessaire pour les barres de progression, dont la largeur est appliquée en style inline par `app.js`).

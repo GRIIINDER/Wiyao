@@ -4527,6 +4527,208 @@ body.has-compare-bar .wiyao-assistant-toggle {
   }
 }
 
+/* À propos : « Pour qui ? » (façon SPI-BCEAO), onglets remplis par app.js. */
+.audience-lead {
+  margin: 0 0 16px;
+  color: var(--tk-text-muted);
+}
+
+.audience-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--tk-border);
+}
+
+.audience-tab {
+  position: relative;
+  padding: 10px 16px;
+  border: 0;
+  background: none;
+  color: var(--tk-text-muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.audience-tab:hover {
+  color: var(--tk-text);
+}
+
+.audience-tab[aria-selected="true"] {
+  color: var(--tk-text);
+}
+
+.audience-tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: -1px;
+  left: 12px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--tk-primary);
+}
+
+.audience-panel {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface);
+}
+
+.audience-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(102, 196, 255, 0.12);
+  color: var(--tk-primary);
+}
+
+.audience-who {
+  margin: 0 0 12px;
+  color: var(--tk-text);
+  font-weight: 700;
+}
+
+.audience-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.audience-list a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-surface-soft);
+  color: var(--tk-text-reading);
+  line-height: 1.45;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.audience-list a:hover,
+.audience-list a:focus-visible {
+  border-color: var(--tk-primary);
+  color: var(--tk-primary);
+}
+
+/* À propos : « Quoi de neuf » (façon changelog de Cursor), daté d'après
+   l'historique Git ; à compléter à chaque nouveauté visible. */
+.changelog {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.changelog-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 4px 20px;
+  padding: 14px 0;
+  border-top: 1px solid var(--tk-border);
+}
+
+.changelog-item:last-child {
+  border-bottom: 1px solid var(--tk-border);
+}
+
+.changelog-item time {
+  color: var(--tk-text-subtle);
+  font-weight: 700;
+}
+
+.changelog-item h3 {
+  margin: 0 0 4px;
+  color: var(--tk-text);
+  font-weight: 800;
+}
+
+.changelog-item p {
+  margin: 0;
+  color: var(--tk-text-reading);
+}
+
+.changelog-more {
+  margin: 14px 0 0;
+}
+
+.changelog-more a {
+  color: var(--tk-primary);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Accueil : trait dessiné sous le métier qui défile (façon Djanta), qui se
+   redessine à chaque nouveau métier. */
+.home-rotator-word {
+  position: relative;
+}
+
+.home-rotator-word::after {
+  content: "";
+  position: absolute;
+  right: 1%;
+  bottom: -0.06em;
+  left: 1%;
+  height: 0.16em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8.5 C 45 3.5, 110 2.5, 197 6' fill='none' stroke='%2366c4ff' stroke-width='3.2' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  transform-origin: left center;
+  animation: rotator-underline 0.6s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.home-rotator-word.is-leaving::after,
+.home-rotator-word.is-entering::after {
+  animation: none;
+  transform: scaleX(0);
+}
+
+@keyframes rotator-underline {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (max-width: 600px) {
+  .audience-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .audience-tab {
+    white-space: nowrap;
+  }
+  .audience-panel {
+    grid-template-columns: 1fr;
+    padding: 18px 16px;
+  }
+  .changelog-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-rotator-word::after,
+  .home-rotator-word.is-leaving::after,
+  .home-rotator-word.is-entering::after {
+    animation: none;
+    transform: none;
+  }
+}
+
 /* Écosystème : filtres par type (façon Gozem), activés par ecosysteme.js.
    .eco-list est en grille : l'attribut hidden doit primer explicitement. */
 .eco-section[hidden],
@@ -7575,8 +7777,19 @@ main .upcoming-all {
 }
 
 main .school-details > summary,
-main .school-details > summary * {
+main .school-details > summary *,
+main .audience-tab,
+main .audience-list a,
+main .audience-list a * {
   font-size: 14px !important;
+}
+
+main .audience-who {
+  font-size: 15px !important;
+}
+
+main .changelog-item time {
+  font-size: 13px !important;
 }
 
 main .school-facts,
