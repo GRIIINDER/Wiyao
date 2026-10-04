@@ -2848,30 +2848,6 @@ html:has(body.page-home) {
   outline: none;
 }
 
-.home-join-art {
-  height: 150px;
-  border-top: 2px solid var(--tk-border);
-}
-
-.home-join-art svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.home-join-card--1 .home-join-art { --join-blob: #66c4ff; background: linear-gradient(140deg, #0a3c86, #1557ff); }
-.home-join-card--2 .home-join-art { --join-blob: #b9b0ff; background: linear-gradient(140deg, #3b2f99, #6a5cff); }
-.home-join-card--3 .home-join-art { --join-blob: #7fe3d5; background: linear-gradient(140deg, #0b5d6b, #14b8a6); }
-
-.join-blob { fill: var(--join-blob); stroke: #0a0d1c; stroke-width: 3; }
-.join-ink { fill: #0a0d1c; }
-.join-line { fill: none; stroke: #0a0d1c; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-.join-tassel { fill: none; stroke: #ffd166; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-.join-gold { fill: #ffd166; }
-.join-light { fill: #f3f7f9; }
-.join-screen { fill: #0f2a44; }
-.join-code { fill: #66c4ff; font-family: inherit; font-weight: 800; }
-
 /* QR code (façon Uber) : ouvrir WIYAO sur son téléphone depuis un
    ordinateur ; inutile sur mobile, donc masqué. */
 .home-qr {
@@ -3245,83 +3221,6 @@ html:has(body.page-home) {
 .actu-card:target {
   outline: 2px solid var(--tk-primary);
   outline-offset: 4px;
-}
-
-/* Bande à motif géométrique (façon African Tech Journal), aux couleurs de
-   WIYAO : sous le bandeau d'annonce et au-dessus du pied de page. */
-:root {
-  --pattern-band: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='16' viewBox='0 0 64 16'%3E%3Crect width='64' height='16' fill='%230a1f4a'/%3E%3Cpath d='M0 16 8 0 16 16Z' fill='%2366c4ff'/%3E%3Cpath d='M16 0 24 16 32 0Z' fill='%231557ff'/%3E%3Cpath d='M32 16 40 0 48 16Z' fill='%2314b8a6'/%3E%3Cpath d='M48 0 56 16 64 0Z' fill='%23ffd166'/%3E%3Cpath d='M8 7 10 10 8 13 6 10Z' fill='%230a1f4a'/%3E%3Cpath d='M40 7 42 10 40 13 38 10Z' fill='%230a1f4a'/%3E%3C/svg%3E");
-}
-
-footer.site-footer::before {
-  content: "";
-  display: block;
-  height: 12px;
-  background: var(--pattern-band) repeat-x left center / 48px 12px;
-}
-
-/* Bandeau d'annonce (façon African Tech Journal) : la dernière actu, au-
-   dessus de l'en-tête de toutes les pages (rempli par js/nav.js). */
-.announce-bar {
-  background: var(--tk-surface);
-}
-
-.announce-bar::after {
-  content: "";
-  display: block;
-  height: 6px;
-  background: var(--pattern-band) repeat-x left center / 24px 6px;
-}
-
-.announce-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 8px 16px;
-  color: var(--tk-text-reading);
-  font-size: 13px;
-  line-height: 1.4;
-}
-
-.announce-tag {
-  flex: none;
-  padding: 2px 9px;
-  border-radius: 999px;
-  background: var(--tk-primary);
-  color: var(--tk-canvas);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.announce-text {
-  min-width: 0;
-  overflow: hidden;
-  color: var(--tk-text);
-  font-weight: 700;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.announce-date {
-  flex: none;
-  color: var(--tk-text-subtle);
-}
-
-.announce-arrow {
-  flex: none;
-  color: var(--tk-primary);
-  font-weight: 800;
-}
-
-.announce-link:hover .announce-text,
-.announce-link:focus-visible .announce-text {
-  color: var(--tk-primary);
-  text-decoration: underline;
 }
 
 /* Curseur « _ » (façon Push CI) après les grands titres, dans l'esprit de la
@@ -3914,9 +3813,6 @@ body.has-compare-bar .wiyao-assistant-toggle {
   }
   body.has-compare-bar .wiyao-assistant-toggle {
     bottom: 214px;
-  }
-  .announce-date {
-    display: none;
   }
 }
 
@@ -4818,7 +4714,6 @@ body.has-compare-bar .wiyao-assistant-toggle {
 }
 
 @media print {
-  .announce-bar,
   .compare-bar,
   .school-compare-btn,
   .school-compare-actions,
@@ -4984,9 +4879,6 @@ body.has-compare-bar .wiyao-assistant-toggle {
   }
   .home-join-body {
     padding: 24px 20px;
-  }
-  .home-join-art {
-    height: 120px;
   }
 }
 
@@ -7597,10 +7489,6 @@ main .domain-primer-icon {
 
 .page-home main .home-faq-mark {
   font-size: 4rem !important;
-}
-
-.page-home main .home-join-art .join-code {
-  font-size: 30px !important;
 }
 
 /* Écoles (chiffres + comparaison), Actualités (à la une, agenda) et frise

@@ -1589,7 +1589,7 @@
 
   // Cartes datées de actualites.html (requête partagée avec nav.js).
   function loadDatedActus() {
-    return (window.WIYAO_ACTUALITES_HTML || fetch("actualites.html").then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status))))))
+    return actualitesHtml()
       .then((html) => [...new DOMParser().parseFromString(html, "text/html").querySelectorAll("article.actu-card[data-start]")]);
   }
 
@@ -2297,6 +2297,16 @@
   };
 
   // Texte brut d'une chaîne HTML, sans rien exécuter ni charger.
+  // actualites.html, chargée une seule fois par page (actus de l'accueil,
+  // prochains événements, rangée « À venir » du Calendrier).
+  let actualitesPromise = null;
+  function actualitesHtml() {
+    if (!actualitesPromise) {
+      actualitesPromise = fetch("actualites.html").then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status)))));
+    }
+    return actualitesPromise;
+  }
+
   function plainText(html) {
     // Espace insécable avant « : ; ! ? » (typographie française) : évite
     // qu'un deux-points se retrouve seul en début de ligne.
@@ -2509,7 +2519,7 @@
     function loadNews() {
       if (!newsGrid || !window.fetch || !window.DOMParser) return;
       // Requête déjà lancée par js/nav.js pour le bandeau d'annonce, si présente.
-      (window.WIYAO_ACTUALITES_HTML || fetch("actualites.html").then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status))))))
+      actualitesHtml()
         .then((html) => {
           const doc = new DOMParser().parseFromString(html, "text/html");
           const pick = (a, sel) => { const el = a.querySelector(sel); return el ? el.textContent.trim() : ""; };

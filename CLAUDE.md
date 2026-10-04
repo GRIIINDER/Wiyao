@@ -8,7 +8,7 @@ Zéro dépendance, zéro build. HTML/CSS/JS vanilla servis tels quels :
 - `js/data.js` — source de vérité du contenu : `ROLES`, `SKILLS`, `SCHOOLS`, `DOMAINS`.
 - `js/app.js` — rendu (roadmaps, écoles, recherche, quiz d'orientation, formulaire contact) + enregistrement du service worker.
 - `js/i18n.js` — toutes les chaînes FR/EN, indexées par `data-i18n-key`.
-- `js/nav.js` — menu mobile (chargé sur les 19 pages, contrairement à `app.js`) + bandeau d'annonce (première actu de `actualites.html`) + compteurs `data-count-of="sélecteur"` des bandes de chiffres sous les titres + indicateur « Défiler » + boutons `data-copy`.
+- `js/nav.js` — menu mobile (chargé sur les 19 pages, contrairement à `app.js`) + compteurs `data-count-of="sélecteur"` des bandes de chiffres sous les titres + indicateur « Défiler » + boutons `data-copy`.
 - `js/ecosysteme.js` — page Écosystème uniquement : transforme la rangée de liens `.eco-jump-nav` en filtres par type (nombre compté sur la page, lien partageable `?type=`).
 - `js/actualites.js` — expose `window.WIYAO_AGENDA` (fichier .ics, lien Google Agenda), aussi chargé sur `calendrier.html` pour la rangée « À venir » ; sur la page Actualités : filtres par catégorie, actu « À la une », bouton « Ajouter à mon agenda ». Ce bouton n'apparaît que sur les cartes portant `data-start` / `data-end` (`AAAA-MM-JJ` ou `AAAA-MM-JJTHH:MM`, heure de Lomé = UTC) et `data-lieu`, à poser à la main d'après le texte vérifié de la carte quand on ajoute un événement daté ; il disparaît tout seul une fois l'événement passé.
 - `js/assistant.js` — widget d'assistant.
