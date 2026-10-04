@@ -1539,6 +1539,262 @@
     });
   }
 
+  // ---- Calendrier : « À venir dans l'écosystème » (façon Tikattou) ----
+  // Les événements datés et à venir de actualites.html (data-start), en
+  // affiches, avec le même bouton agenda que la page Actualités
+  // (window.WIYAO_AGENDA, défini par js/actualites.js).
+  const PIN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
+
+  function initUpcomingEvents() {
+    const section = document.getElementById("a-venir");
+    const row = document.getElementById("upcoming-row");
+    if (!section || !row || !window.DOMParser || !window.WIYAO_AGENDA) return;
+    const agenda = window.WIYAO_AGENDA;
+    const base = new URL("actualites.html", window.location.href).href;
+    let cards = [];
+    let events = [];
+
+    const tr = (key, fallback) => {
+      const v = window.WIYAO_I18N && key ? window.WIYAO_I18N.t(key, currentLang()) : null;
+      return plainText(v == null ? fallback : v);
+    };
+    const hm = (p, isEn) => (isEn ? `${p.h}:${String(p.mi).padStart(2, "0")}` : `${p.h}h${p.mi ? String(p.mi).padStart(2, "0") : ""}`);
+
+    function render() {
+      const isEn = currentLang() === "en";
+      events = cards.map((card) => {
+        const h3 = card.querySelector(".actu-card-title");
+        const key = h3 && h3.dataset.i18nKey ? h3.dataset.i18nKey.replace(/\.h3$/, "") : "";
+        const descEl = card.querySelector(".actu-card-desc");
+        const catEl = card.querySelector('.actu-meta-value[data-i18n-key$=".cat"]');
+        const catFr = catEl ? catEl.textContent.trim() : "";
+        const ev = agenda.eventOf(card, {
+          base,
+          title: tr(key && key + ".h3", h3 ? h3.textContent : ""),
+          desc: tr(key && key + ".p", descEl ? descEl.textContent : ""),
+        });
+        return ev && { ev, id: card.id, catFr, cat: tr(key && key + ".cat", catFr) };
+      }).filter(Boolean).sort((a, b) => (a.ev.dtStart < b.ev.dtStart ? -1 : a.ev.dtStart > b.ev.dtStart ? 1 : 0));
+
+      section.hidden = events.length === 0;
+      if (!events.length) return;
+      const locale = isEn ? "en-GB" : "fr-FR";
+      const fmt = (p, opt) => new Intl.DateTimeFormat(locale, Object.assign({ timeZone: "UTC" }, opt)).format(new Date(Date.UTC(p.y, p.mo - 1, p.d)));
+      row.innerHTML = events.map(({ ev, id, cat, catFr }) => {
+        const [tone] = NEWS_TONES[catFr] || ["1"];
+        const s = ev.start;
+        const e = ev.end;
+        const sameDay = s.y === e.y && s.mo === e.mo && s.d === e.d;
+        const sameMonth = s.y === e.y && s.mo === e.mo;
+        const day = sameDay || !sameMonth ? String(s.d) : `${s.d}–${e.d}`;
+        let when = sameDay
+          ? fmt(s, { weekday: "long" })
+          : sameMonth
+            ? `${fmt(s, { weekday: "long" })} → ${fmt(e, { weekday: "long" })}`
+            : `${isEn ? "until" : "jusqu'au"} ${fmt(e, { day: "numeric", month: "long" })}`;
+        if (!ev.allDay) when += ` · ${hm(s, isEn)}–${hm(e, isEn)}`;
+        return `
+          <article class="poster">
+            <div class="poster-top home-news-tone-${tone}">
+              <span class="poster-month">${esc(fmt(s, { month: "short" }).replace(".", ""))}</span>
+              <span class="poster-day">${esc(day)}</span>
+              <span class="poster-when">${esc(when)}</span>
+            </div>
+            <div class="poster-body">
+              <span class="poster-cat">${esc(cat)}</span>
+              <h3 class="poster-title"><a href="actualites.html#${encodeURIComponent(id)}">${esc(ev.title)}</a></h3>
+              ${ev.lieu ? `<p class="poster-place">${PIN_SVG}<span>${esc(ev.lieu)}</span></p>` : ""}
+              <div class="poster-actions">
+                <button type="button" class="poster-ics" data-id="${esc(id)}">📅 ${isEn ? "Add to calendar" : "Ajouter à l'agenda"}</button>
+                <a class="poster-google" href="${esc(agenda.googleUrl(ev))}" target="_blank" rel="noopener">Google ↗</a>
+              </div>
+            </div>
+          </article>`;
+      }).join("");
+    }
+
+    row.addEventListener("click", (e) => {
+      const btn = e.target.closest(".poster-ics");
+      if (!btn) return;
+      const found = events.find((x) => x.id === btn.dataset.id);
+      if (found) agenda.download(found.ev);
+    });
+
+    (window.WIYAO_ACTUALITES_HTML || fetch("actualites.html").then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status))))))
+      .then((html) => {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        cards = [...doc.querySelectorAll("article.actu-card[data-start]")];
+        render();
+      })
+      .catch(() => { section.hidden = true; });
+
+    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  }
+
+  // ---- Test d'orientation : « Comment se passe le test » (façon Superpower) ----
+  // Les nombres de questions viennent de QUIZ_QUESTIONS / ROLE_QUESTIONS, les
+  // éléments du résultat reprennent les titres de l'écran de résultat.
+  function initQuizHowto() {
+    const tabs = document.getElementById("quiz-howto-tabs");
+    const panel = document.getElementById("quiz-howto-panel");
+    if (!tabs || !panel || typeof QUIZ_QUESTIONS === "undefined") return;
+    let active = 0;
+    const PRACTICAL = { niveau: ["Niveau visé", "Target level"], ville: ["Ville", "City"], statut: ["Budget", "Budget"], priorite: ["Priorité", "Priority"] };
+
+    function steps(isEn) {
+      const domainQ = QUIZ_QUESTIONS.filter((q) => q.type === "domain").length;
+      const practical = QUIZ_QUESTIONS.filter((q) => q.type !== "domain");
+      const roleQ = typeof ROLE_QUESTIONS !== "undefined" ? Math.max(...Object.values(ROLE_QUESTIONS).map((l) => l.length)) : 0;
+      const nRoles = typeof ROLES !== "undefined" ? Object.keys(ROLES).length : 0;
+      const domains = typeof DOMAINS !== "undefined" ? Object.keys(DOMAINS).map(domainLabel) : [];
+      const total = domainQ + roleQ + practical.length;
+      const q = (n) => (isEn ? `${n} question${n > 1 ? "s" : ""}` : `${n} question${n > 1 ? "s" : ""}`);
+      return [
+        {
+          icon: "compass", tab: isEn ? "What you enjoy" : "Ce que tu aimes", count: q(domainQ),
+          title: isEn ? "What you enjoy doing" : "Ce que tu aimes faire",
+          desc: isEn
+            ? `${domainQ} questions about what you like doing. Your answers score the ${domains.length} major tech fields:`
+            : `${domainQ} questions sur ce que tu aimes faire. Tes réponses départagent les ${domains.length} grands domaines de la tech :`,
+          chips: domains,
+        },
+        {
+          icon: "route", tab: isEn ? "The career" : "Le métier", count: q(roleQ),
+          title: isEn ? "Narrowing down the career" : "Le métier, plus précisément",
+          desc: isEn
+            ? `Once your leading field is known, ${roleQ} questions specific to that field point you to a precise career among the ${nRoles} on WIYAO.`
+            : `Une fois ton domaine dominant identifié, ${roleQ} questions propres à ce domaine t'orientent vers un métier précis parmi les ${nRoles} de WIYAO.`,
+          chips: [],
+        },
+        {
+          icon: "school", tab: isEn ? "Your situation" : "Ta situation", count: q(practical.length),
+          title: isEn ? "Your practical situation" : "Ta situation concrète",
+          desc: isEn
+            ? `${practical.length} practical questions so the schools suggested to you match your situation:`
+            : `${practical.length} questions pratiques pour que les écoles proposées collent à ta situation :`,
+          chips: practical.map((x) => (PRACTICAL[x.type] || [x.type, x.type])[isEn ? 1 : 0]),
+        },
+        {
+          icon: "cap", tab: isEn ? "Your result" : "Ton résultat", count: isEn ? `after ${total}` : `après ${total}`,
+          title: isEn ? "Your result" : "Ton résultat",
+          desc: isEn
+            ? `After ${total} questions: a solid starting point, not a final verdict. Compare it with real stories and the roadmap before committing to a school.`
+            : `Après ${total} questions : un point de départ solide, pas un verdict définitif. Confronte-le à des parcours réels et à la roadmap avant de t'engager dans une école.`,
+          chips: isEn
+            ? ["Your profile", "Recommended careers", "Recommended schools", "Breakdown of your answers"]
+            : ["Ton profil", "Métiers recommandés", "Écoles recommandées", "Répartition de tes réponses"],
+        },
+      ];
+    }
+
+    function render(focus) {
+      const isEn = currentLang() === "en";
+      const list = steps(isEn);
+      const num = (i) => String(i + 1).padStart(2, "0");
+      tabs.setAttribute("aria-label", isEn ? "Steps of the test" : "Étapes du test");
+      tabs.innerHTML = list.map((s, i) =>
+        `<button type="button" role="tab" class="howto-tab" id="howto-tab-${i}" aria-controls="quiz-howto-panel" aria-selected="${i === active}" tabindex="${i === active ? 0 : -1}"><span class="howto-num">${num(i)}</span><span class="howto-tab-text">${esc(s.tab)}<small>${esc(s.count)}</small></span></button>`
+      ).join("");
+      const s = list[active];
+      panel.setAttribute("aria-labelledby", `howto-tab-${active}`);
+      panel.innerHTML = `
+        <div class="howto-text">
+          <h3 class="howto-title">${esc(s.title)}</h3>
+          <p class="howto-desc">${esc(s.desc)}</p>
+          ${s.chips.length ? `<ul class="howto-chips">${s.chips.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
+          <a class="howto-cta" href="#quiz-section">${isEn ? "Start the test ↓" : "Commencer le test ↓"}</a>
+        </div>
+        <div class="howto-visual" aria-hidden="true">
+          <span class="howto-big">${num(active)}</span>
+          <span class="howto-icon">${ICONS[s.icon]}</span>
+        </div>`;
+      if (focus) {
+        const tab = document.getElementById(`howto-tab-${active}`);
+        if (tab) tab.focus();
+      }
+    }
+
+    tabs.addEventListener("click", (e) => {
+      const btn = e.target.closest('[role="tab"]');
+      if (!btn) return;
+      active = Number(btn.id.replace("howto-tab-", ""));
+      render(true);
+    });
+    tabs.addEventListener("keydown", (e) => {
+      const n = tabs.querySelectorAll('[role="tab"]').length;
+      if (e.key === "ArrowRight") active = (active + 1) % n;
+      else if (e.key === "ArrowLeft") active = (active - 1 + n) % n;
+      else if (e.key === "Home") active = 0;
+      else if (e.key === "End") active = n - 1;
+      else return;
+      e.preventDefault();
+      render(true);
+    });
+
+    render(false);
+    new MutationObserver(() => render(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  }
+
+  // ---- Stages & emploi : le guide en explorateur (façon Tikattou) ----
+  // Sur grand écran, conseils numérotés à droite et détail à gauche ; la
+  // liste d'origine reste la version mobile et sans JavaScript. Contenu
+  // relu depuis la liste (donc déjà traduit par i18n.js).
+  function initGuideExplorer() {
+    const guide = document.getElementById("guide");
+    const list = guide && guide.querySelector(".journey-steps");
+    if (!list) return;
+    const box = document.createElement("div");
+    box.className = "guide-explorer";
+    list.insertAdjacentElement("afterend", box);
+    guide.classList.add("has-explorer");
+    let active = 0;
+
+    function render(focus) {
+      const isEn = currentLang() === "en";
+      const steps = [...list.querySelectorAll(".journey-step")].map((li) => ({
+        title: li.querySelector("h3") ? li.querySelector("h3").innerHTML : "",
+        desc: li.querySelector("p") ? li.querySelector("p").innerHTML : "",
+      }));
+      if (!steps.length) return;
+      const num = (i) => String(i + 1).padStart(2, "0");
+      box.innerHTML = `
+        <div class="guide-tabs" role="tablist" aria-orientation="vertical" aria-label="${isEn ? "Tips" : "Conseils"}">
+          ${steps.map((s, i) => `<button type="button" role="tab" class="guide-tab" id="guide-tab-${i}" aria-controls="guide-panel" aria-selected="${i === active}" tabindex="${i === active ? 0 : -1}"><span class="guide-num">${num(i)}</span><span class="guide-tab-title">${s.title}</span><span class="guide-arrow" aria-hidden="true">→</span></button>`).join("")}
+        </div>
+        <div class="guide-panel" id="guide-panel" role="tabpanel" aria-labelledby="guide-tab-${active}" tabindex="0">
+          <p class="guide-kicker">${isEn ? "Selected tip" : "Conseil sélectionné"}</p>
+          <span class="guide-panel-num" aria-hidden="true">${num(active)}</span>
+          <h3 class="guide-panel-title">${steps[active].title}</h3>
+          <p class="guide-panel-desc">${steps[active].desc}</p>
+        </div>`;
+      if (focus) {
+        const tab = document.getElementById(`guide-tab-${active}`);
+        if (tab) tab.focus();
+      }
+    }
+
+    box.addEventListener("click", (e) => {
+      const btn = e.target.closest('[role="tab"]');
+      if (!btn) return;
+      active = Number(btn.id.replace("guide-tab-", ""));
+      render(true);
+    });
+    box.addEventListener("keydown", (e) => {
+      if (!e.target.closest('[role="tab"]')) return;
+      const n = box.querySelectorAll('[role="tab"]').length;
+      if (e.key === "ArrowDown") active = (active + 1) % n;
+      else if (e.key === "ArrowUp") active = (active - 1 + n) % n;
+      else if (e.key === "Home") active = 0;
+      else if (e.key === "End") active = n - 1;
+      else return;
+      e.preventDefault();
+      render(true);
+    });
+
+    render(false);
+    new MutationObserver(() => render(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  }
+
   // ---- Recherche transversale (page recherche.html) ----
   // Indexe roadmaps/écoles depuis js/data.js, et scanne les .eco-item / .timeline-item
   // des autres pages via fetch + DOMParser pour rester la seule source de vérité
@@ -1974,11 +2230,21 @@
   // Chiffres [data-stat] (accueil, frise de la page À propos) : calculés
   // depuis data.js pour ne jamais diverger du contenu réel.
   function fillStats() {
+    const counts = {
+      roadmaps: () => Object.keys(ROLES).length + Object.keys(SKILLS).length,
+      ecoles: () => Object.keys(SCHOOLS).length,
+      metiers: () => Object.keys(ROLES).length,
+      competences: () => Object.keys(SKILLS).length,
+      domaines: () => Object.keys(DOMAINS).length,
+      togo: () => Object.values(ROLES).filter((r) => r.togoVerified).length,
+    };
     document.querySelectorAll("[data-stat]").forEach((el) => {
-      if (el.dataset.stat === "roadmaps" && typeof ROLES !== "undefined" && typeof SKILLS !== "undefined") {
-        el.textContent = Object.keys(ROLES).length + Object.keys(SKILLS).length;
-      } else if (el.dataset.stat === "ecoles" && typeof SCHOOLS !== "undefined") {
-        el.textContent = Object.keys(SCHOOLS).length;
+      const count = counts[el.dataset.stat];
+      if (!count) return;
+      try {
+        el.textContent = count();
+      } catch (e) {
+        // data.js absent de la page : on garde le chiffre écrit dans le HTML.
       }
     });
   }
@@ -2366,6 +2632,9 @@
     initQuiz();
     renderAcademicTimeline();
     renderSchoolDates();
+    initUpcomingEvents();
+    initQuizHowto();
+    initGuideExplorer();
     initContactForm();
     initProposerForm();
   });

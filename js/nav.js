@@ -234,3 +234,100 @@
   // i18n.js change l'attribut lang de <html> à chaque bascule FR/EN.
   new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
 })();
+
+// Chiffres sous les titres, « Défiler » et boutons « Copier » - WIYAO
+(function () {
+  "use strict";
+
+  function isEn() {
+    return document.documentElement.lang === "en";
+  }
+
+  // 1) Bandes de chiffres (façon IT Foundation) : data-count-of="sélecteur"
+  //    compte les éléments réellement présents sur la page, jamais à la main.
+  function fillCounts() {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-count-of]"), function (el) {
+      var n = document.querySelectorAll(el.getAttribute("data-count-of")).length;
+      if (n) el.textContent = n;
+    });
+  }
+
+  // 2) « Défiler » sous le bandeau de titre des pages internes (pas
+  //    l'accueil ni la 404) : descend vers le contenu, sous l'en-tête collant.
+  var banner = document.querySelector(".page-title-banner:not(.home-hero)");
+  var scrollBtn = null;
+  if (banner && !banner.querySelector(".error-code")) {
+    scrollBtn = document.createElement("button");
+    scrollBtn.type = "button";
+    scrollBtn.className = "banner-scroll";
+    banner.appendChild(scrollBtn);
+    scrollBtn.addEventListener("click", function () {
+      var target = banner.nextElementSibling;
+      while (target && (target.hidden || target.classList.contains("banner-stats"))) target = target.nextElementSibling;
+      if (!target) return;
+      var header = document.querySelector("header.site-header");
+      var offset = header ? header.offsetHeight + 12 : 0;
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: reduce ? "auto" : "smooth" });
+    });
+  }
+
+  function renderScroll() {
+    if (!scrollBtn) return;
+    scrollBtn.innerHTML =
+      '<span class="banner-scroll-mouse" aria-hidden="true"><span></span></span><span class="banner-scroll-text">' +
+      (isEn() ? "Scroll" : "Défiler") + "</span>";
+    scrollBtn.setAttribute("aria-label", isEn() ? "Scroll down to the content" : "Descendre vers le contenu");
+  }
+
+  // 3) Boutons « Copier » (façon UI UX Pro Max) : data-copy="valeur", utile
+  //    sur un téléphone sans application e-mail configurée.
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      ta.remove();
+      if (ok) resolve(); else reject(new Error("copy"));
+    });
+  }
+
+  function renderCopy() {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-copy]"), function (btn) {
+      if (btn.classList.contains("is-copied")) return;
+      var email = btn.getAttribute("data-copy-what") === "email";
+      btn.textContent = isEn() ? "Copy" : "Copier";
+      btn.setAttribute("aria-label",
+        (isEn() ? (email ? "Copy the email address " : "Copy the number ") : (email ? "Copier l'adresse e-mail " : "Copier le numéro ")) +
+        btn.getAttribute("data-copy"));
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest("[data-copy]") : null;
+    if (!btn) return;
+    copyText(btn.getAttribute("data-copy")).then(function () {
+      btn.classList.add("is-copied");
+      btn.textContent = isEn() ? "Copied ✓" : "Copié ✓";
+      setTimeout(function () {
+        btn.classList.remove("is-copied");
+        renderCopy();
+      }, 2000);
+    }).catch(function () {});
+  });
+
+  renderScroll();
+  renderCopy();
+  document.addEventListener("DOMContentLoaded", fillCounts);
+  new MutationObserver(function () {
+    renderScroll();
+    renderCopy();
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+})();

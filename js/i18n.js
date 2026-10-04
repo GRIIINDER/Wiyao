@@ -193,6 +193,59 @@
       en: "An internship, a job, an event or a community Togolese graduates should know about? Suggest it: we check it and add it.",
     },
     "home.join.c3.link": { fr: "Proposer une opportunité →", en: "Suggest an opportunity →" },
+
+    "stats.roadmaps.metiers": { fr: "métiers", en: "careers" },
+    "stats.roadmaps.competences": { fr: "compétences", en: "skills" },
+    "stats.roadmaps.domaines": { fr: "domaines", en: "fields" },
+    "stats.roadmaps.togo": { fr: "métiers «&nbsp;Vérifié Togo&nbsp;»", en: "“Togo-verified” careers" },
+    "stats.eco.total": { fr: "acteurs et ressources recensés", en: "players and resources listed" },
+    "stats.eco.communautes": { fr: "communautés actives", en: "active communities" },
+    "stats.eco.evenements": { fr: "événements annuels ou ponctuels", en: "annual or one-off events" },
+    "stats.eco.hubs": { fr: "hubs et incubateurs", en: "hubs and incubators" },
+    "stats.bourses.total": { fr: "pistes de financement vérifiées", en: "verified funding options" },
+    "stats.bourses.ecoles": { fr: "écoles qui proposent des bourses", en: "schools offering scholarships" },
+    "stats.bourses.international": { fr: "bourses internationales et régionales", en: "international and regional scholarships" },
+    "stats.bourses.gratuit": { fr: "façons de se former sans frais de scolarité", en: "ways to train without tuition fees" },
+    "stats.stages.plateformes": { fr: "plateformes d'emploi et de stage", en: "job and internship platforms" },
+    "stats.stages.employeurs": { fr: "employeurs qui recrutent des profils tech", en: "employers hiring tech profiles" },
+    "stats.stages.guide": { fr: "conseils pour décrocher ta place", en: "tips to land a position" },
+    "stats.temoin.portraits": { fr: "parcours de pros togolais, sourcés", en: "sourced stories of Togolese professionals" },
+    "stats.temoin.secteurs": { fr: "secteurs qui recrutent", en: "sectors that are hiring" },
+
+    "upcoming.title": { fr: "À venir dans l'écosystème", en: "Coming up in the ecosystem" },
+    "upcoming.lead": {
+      fr: "Les prochains événements tech datés, repris des Actualités&nbsp;: ajoute-les à ton agenda en un clic.",
+      en: "The next dated tech events, taken from the News page: add them to your calendar in one click.",
+    },
+    "upcoming.all": { fr: "Toutes les actus →", en: "All news →" },
+
+    "quiz.howto.title": { fr: "Comment se passe le test", en: "How the test works" },
+
+    "verif.h2": { fr: "Comment une info arrive sur WIYAO", en: "How information gets onto WIYAO" },
+    "verif.h2.proposer": { fr: "Ce qui se passe après ton envoi", en: "What happens after you send it" },
+    "verif.lead": { fr: "Le circuit que suit chaque information avant d'apparaître sur le site.", en: "The path every piece of information follows before it appears on the site." },
+    "verif.s1.t": { fr: "Une piste", en: "A lead" },
+    "verif.s1.p": {
+      fr: "Une info repérée par WIYAO (site d'école, presse, publication officielle) ou envoyée via le formulaire Proposer.",
+      en: "Information spotted by WIYAO (school website, press, official publication) or sent through the Suggest form.",
+    },
+    "verif.s2.t": { fr: "La source officielle", en: "The official source" },
+    "verif.s2.p": {
+      fr: "On remonte jusqu'à la source&nbsp;: site officiel, document signé, affiche de l'école, page gouvernementale ou article de presse.",
+      en: "We trace it back to the source: official website, signed document, school poster, government page or press article.",
+    },
+    "verif.s3.t": { fr: "Le recoupement", en: "Cross-checking" },
+    "verif.s3.p": {
+      fr: "Si l'info ne peut pas être confirmée, elle n'est pas publiée, ou elle est signalée «&nbsp;non communiquée&nbsp;» ou «&nbsp;à reconfirmer&nbsp;»&nbsp;: jamais devinée.",
+      en: "If the information can't be confirmed, it isn't published, or it's flagged “not disclosed” or “to be reconfirmed”: never guessed.",
+    },
+    "verif.s4.t": { fr: "La publication", en: "Publication" },
+    "verif.s4.p": { fr: "Elle est mise en ligne avec le lien de sa source et une date de mise à jour.", en: "It goes online with a link to its source and an update date." },
+    "verif.s5.t": { fr: "Le contrôle quotidien", en: "The daily check" },
+    "verif.s5.p": {
+      fr: "Chaque jour, un contrôle automatique vérifie que les liens du site répondent toujours&nbsp;; ceux qui ne répondent plus sont revus à la main.",
+      en: "Every day, an automatic check verifies that the site's links still respond; those that no longer do are reviewed by hand.",
+    },
     "home.faq.title": { fr: "Des questions&nbsp;? On a les réponses.", en: "Questions? We have answers." },
     "home.faq.all": { fr: "Toutes les questions →", en: "All questions →" },
     "home.final.title": { fr: "Prêt·e à tracer ton parcours&nbsp;?", en: "Ready to chart your path?" },
@@ -503,7 +556,7 @@
       en: "Browse by category",
     },
 
-    "error404.title": { fr: "Page introuvable", en: "Page not found" },
+    "error404.title": { fr: 'Page <span class="hero-accent">introuvable</span>', en: 'Page <span class="hero-accent">not found</span>' },
     "error404.subtitle": {
       fr: "Cette page n'existe pas, plus, ou l'adresse contient une faute de frappe.",
       en: "This page doesn't exist, no longer exists, or the address has a typo.",
