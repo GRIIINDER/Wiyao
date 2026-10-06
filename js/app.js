@@ -479,6 +479,10 @@
       <span class="progress-label" id="global-label"></span>
     `;
     container.appendChild(header);
+    // Boutons Imprimer / Réinitialiser sous le titre (fil d'Ariane, titre,
+    // puis actions), au lieu d'être isolés au-dessus de la page.
+    const toolbar = document.querySelector(".roadmap-toolbar");
+    if (toolbar) header.appendChild(toolbar);
 
     function updateGlobal() {
       const done = (loadProgress().get(id) || []).length;

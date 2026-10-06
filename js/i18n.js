@@ -585,40 +585,40 @@
     "about.changelog.h2": { fr: "Quoi de neuf sur WIYAO", en: "What's new on WIYAO" },
     "about.changelog.all": { fr: "Tout l'historique sur GitHub ↗", en: "Full history on GitHub ↗" },
     "about.changelog.c1.d": { fr: "6 oct. 2026", en: "Oct 6, 2026" },
-    "about.changelog.c1.t": { fr: "Une info, une seule page", en: "One piece of information, one page" },
+    "about.changelog.c1.t": { fr: "Un site plus lisible", en: "A more readable site" },
     "about.changelog.c1.p": {
+      fr: "Nouvelle police pour le texte, tailles agrandies (16 px au lieu de 12), lignes plus courtes, FAQ classée par catégories et menu plus clair sur tablette.",
+      en: "A new font for body text, larger sizes (16 px instead of 12), shorter lines, an FAQ sorted by category and a clearer menu on tablets.",
+    },
+    "about.changelog.c2.d": { fr: "6 oct. 2026", en: "Oct 6, 2026" },
+    "about.changelog.c2.t": { fr: "Une info, une seule page", en: "One piece of information, one page" },
+    "about.changelog.c2.p": {
       fr: "Chaque contenu n'apparaît plus qu'à un seul endroit&nbsp;; ailleurs, un lien y renvoie. L'accueil devient un aiguillage vers les pages.",
       en: "Each piece of content now appears in a single place; elsewhere, a link points to it. The home page becomes a signpost to the pages.",
     },
-    "about.changelog.c2.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
-    "about.changelog.c2.t": { fr: "Écosystème, écoles et témoignages", en: "Ecosystem, schools and testimonials" },
-    "about.changelog.c2.p": {
+    "about.changelog.c3.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
+    "about.changelog.c3.t": { fr: "Écosystème, écoles et témoignages", en: "Ecosystem, schools and testimonials" },
+    "about.changelog.c3.p": {
       fr: "Filtres par type sur l'Écosystème, cartes d'écoles plus lisibles, et deux chiffres de la page Témoignages remplacés par des données sourcées.",
       en: "Type filters on the Ecosystem page, easier-to-read school cards, and two figures on the Testimonials page replaced with sourced data.",
     },
-    "about.changelog.c3.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
-    "about.changelog.c3.t": { fr: "Des repères sur chaque page", en: "Landmarks on every page" },
-    "about.changelog.c3.p": {
+    "about.changelog.c4.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
+    "about.changelog.c4.t": { fr: "Des repères sur chaque page", en: "Landmarks on every page" },
+    "about.changelog.c4.p": {
       fr: "Chiffres clés sous les titres, événements à venir sur le Calendrier, étapes du test d'orientation expliquées et méthode de vérification détaillée.",
       en: "Key figures under page titles, upcoming events on the Calendar, the orientation test's steps explained, and the verification method in detail.",
     },
-    "about.changelog.c4.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
-    "about.changelog.c4.t": { fr: "Comparer des écoles côte à côte", en: "Compare schools side by side" },
-    "about.changelog.c4.p": {
+    "about.changelog.c5.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
+    "about.changelog.c5.t": { fr: "Comparer des écoles côte à côte", en: "Compare schools side by side" },
+    "about.changelog.c5.p": {
       fr: "Jusqu'à 3 écoles dans un même tableau, avec un lien à partager&nbsp;; actualités filtrables et événements à ajouter à son agenda.",
       en: "Up to 3 schools in one table, with a shareable link; filterable news and events you can add to your calendar.",
     },
-    "about.changelog.c5.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
-    "about.changelog.c5.t": { fr: "Une nouvelle page d'accueil", en: "A new home page" },
-    "about.changelog.c5.p": {
+    "about.changelog.c6.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
+    "about.changelog.c6.t": { fr: "Une nouvelle page d'accueil", en: "A new home page" },
+    "about.changelog.c6.p": {
       fr: "«&nbsp;Je suis ici pour…&nbsp;», les dernières actualités, la comparaison avec ou sans WIYAO, et un QR code pour ouvrir le site sur son téléphone.",
       en: "“I'm here to…”, the latest news, the with-or-without-WIYAO comparison, and a QR code to open the site on your phone.",
-    },
-    "about.changelog.c6.d": { fr: "2 oct. 2026", en: "Oct 2, 2026" },
-    "about.changelog.c6.t": { fr: "ESA Togo et ESIG à jour", en: "ESA Togo and ESIG updated" },
-    "about.changelog.c6.p": {
-      fr: "Frais, filières et rentrée 2026-2027 mis à jour à partir des documents officiels des deux écoles.",
-      en: "Fees, programs and the 2026-2027 start date updated from both schools' official documents.",
     },
     "about.history.h2": { fr: "L'histoire de WIYAO", en: "The story of WIYAO" },
     "about.history.e1.t": { fr: "Le bac, et des choix faits par d'autres", en: "The bac, and choices made by others" },
@@ -926,6 +926,7 @@
       en: 'For any question about these Terms of Use, write to us via the <a href="contact.html">Contact</a> page or by email at <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
     },
 
+    "faq.cats.label": { fr: "Catégories", en: "Categories" },
     "faq.cat1.h2": { fr: "Sur WIYAO", en: "About WIYAO" },
     "faq.c1.q1": { fr: "C'est gratuit ?", en: "Is it free?" },
     "faq.c1.a1": { fr: "Oui, entièrement. Pas de compte à créer, pas d'abonnement, pas de publicité.", en: "Yes, entirely. No account to create, no subscription, no ads." },

@@ -48,7 +48,13 @@
   --tk-primary-soft: #082c5e;
   /* Largeur de la colonne de contenu, calée sur le catalogue Codecademy (~1240 px). */
   --content-max: 1240px;
-  font-family: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
+  /* Texte courant : police système (Segoe UI, Roboto, San Francisco…),
+     rien à télécharger et conçue pour la lecture à l'écran. La police à
+     chasse fixe reste l'accent de la marque (grands titres, chiffres,
+     étiquettes), pas la police de lecture. */
+  --font-text: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-family: var(--font-text);
 }
 
 * {
@@ -273,7 +279,7 @@ a {
   color: var(--tk-text-muted);
   border-radius: 999px;
   padding: 6px 12px;
-  font-size: 0.78rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
@@ -435,7 +441,7 @@ nav.site-nav {
   background: var(--tk-primary);
   color: var(--tk-canvas);
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   padding: 10px 18px;
   border-radius: 999px;
   transition: filter 0.15s ease, transform 0.15s ease;
@@ -459,7 +465,7 @@ nav.site-nav {
 nav.site-nav a {
   color: var(--tk-text-muted);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   text-transform: none;
   letter-spacing: normal;
   padding: 8px 16px;
@@ -505,9 +511,9 @@ nav.site-nav a.active {
   gap: 3px;
   color: var(--tk-text-muted);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-family: inherit;
-  text-transform: uppercase;
+  text-transform: none;
   padding: 8px 16px;
   border-radius: 999px;
   border: none;
@@ -565,7 +571,7 @@ nav.site-nav a.active {
 .nav-more-menu a {
   color: var(--tk-text-muted);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   padding: 10px 16px;
   border-radius: 10px;
   white-space: nowrap;
@@ -605,7 +611,7 @@ nav.site-nav a.active {
   border: none;
   background: transparent;
   color: var(--tk-text-subtle);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   padding: 6px 10px;
   border-radius: 999px;
@@ -1127,7 +1133,7 @@ main {
 .home-guide {
   margin: 22px auto 0;
   color: var(--tk-text-muted);
-  font-style: italic;
+  font-style: normal;
 }
 
 .home-guide a {
@@ -2446,6 +2452,61 @@ html:has(body.page-home) {
   color: var(--tk-primary);
   font-weight: 700;
   text-decoration: underline;
+}
+
+/* FAQ : les 5 catégories sont visibles et listées dans la colonne de
+   gauche (ancres), au lieu d'une liste plate de 30 questions. */
+.faq-list > .faq-cat-title {
+  margin: 0;
+  padding: 36px 0 12px;
+  border-bottom: 1px solid var(--tk-border);
+  color: var(--tk-primary);
+  scroll-margin-top: 110px;
+}
+
+.faq-list > .faq-cat-title:first-child {
+  padding-top: 8px;
+}
+
+.faq-list:has(> .faq-cat-title:first-child) {
+  border-top: 0;
+}
+
+.faq-cats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 24px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.faq-cats a {
+  display: block;
+  padding: 8px 12px;
+  border-left: 2px solid var(--tk-border);
+  color: var(--tk-text-muted);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.faq-cats a:hover,
+.faq-cats a:focus-visible {
+  border-left-color: var(--tk-primary);
+  color: var(--tk-text);
+}
+
+@media (max-width: 900px) {
+  .faq-cats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .faq-cats a {
+    border: 1px solid var(--tk-border);
+    border-radius: 999px;
+    padding: 6px 12px;
+  }
 }
 
 /* Curseur « _ » (façon Push CI) après les grands titres, dans l'esprit de la
@@ -3978,9 +4039,9 @@ body.has-compare-bar .wiyao-assistant-toggle {
   font-size: 1.05rem;
 }
 
-/* Sous-titre de la page d'accueil : prend toute la largeur du
-   contenu (comme les autres sites) plutôt qu'une colonne de lecture
-   étroite, lu de gauche à droite et justifié (pas centré). */
+/* Chapeau des pages : aligné à gauche, limité à ~70 caractères par ligne
+   (au-delà, l'œil perd la ligne suivante : la pleine largeur donnait plus
+   de 120 caractères par ligne). */
 .hero p[data-i18n-key="quiz.hero.subtitle"],
 .hero p[data-i18n-key="ecoles.hero.subtitle"],
 .hero p[data-i18n-key="calendrier.hero.subtitle"],
@@ -3994,7 +4055,7 @@ body.has-compare-bar .wiyao-assistant-toggle {
 .hero p[data-i18n-key="about.hero.subtitle"],
 .hero p[data-i18n-key="confidentialite.hero.subtitle"],
 .hero p[data-i18n-key="cgu.hero.subtitle"] {
-  max-width: none;
+  max-width: 70ch;
   text-align: left;
   line-height: 1.65;
   margin-top: 14px;
@@ -4009,17 +4070,9 @@ body.has-compare-bar .wiyao-assistant-toggle {
   max-width: 680px;
   margin: 14px 0 0;
   font-size: 0.88rem;
-  font-style: italic;
+  font-style: normal;
 }
 
-/* Lignes hero-guide dont le texte tient en moins de lignes sur toute
-   la largeur du contenu (mesuré page par page, pas systématique). */
-.hero-guide[data-i18n-key="stages.hero.propose"],
-.hero-guide[data-i18n-key="eco.hero.guide"],
-.hero-guide[data-i18n-key="eco.hero.propose"],
-.hero-guide[data-i18n-key="actu.hero.propose"] {
-  max-width: none;
-}
 
 /* Accueil : plus d'air entre le bouton d'orientation et la ligne
    « Nouveau·elle ici ?… » qui le suit. */
@@ -4516,7 +4569,7 @@ body.has-compare-bar .wiyao-assistant-toggle {
 .progress-bar.large {
   height: 10px;
   max-width: 480px;
-  margin: 16px auto 8px;
+  margin: 16px 0 8px;
 }
 
 .progress-fill {
@@ -4537,7 +4590,7 @@ body.has-compare-bar .wiyao-assistant-toggle {
 
 /* Roadmap detail */
 .roadmap-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
 }
 
@@ -4603,9 +4656,9 @@ body.has-compare-bar .wiyao-assistant-toggle {
 .roadmap-toolbar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
-  margin: 10px 0 30px;
+  margin: 20px 0 0;
 }
 
 .btn {
@@ -5562,7 +5615,7 @@ body.has-compare-bar .wiyao-assistant-toggle {
 .dates-note {
   color: var(--text-muted);
   font-size: 0.85rem;
-  font-style: italic;
+  font-style: normal;
   margin: 0 0 8px;
 }
 
@@ -5647,7 +5700,7 @@ body.has-compare-bar .wiyao-assistant-toggle {
 .eco-item .eco-contact {
   margin: 8px 0 0;
   font-size: 0.78rem;
-  font-style: italic;
+  font-style: normal;
   line-height: 1.5;
 }
 
@@ -5828,7 +5881,7 @@ footer.site-footer {
 
 .footer-links-col h5 {
   color: var(--tk-text);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -5837,10 +5890,10 @@ footer.site-footer {
 
 .footer-links-col a {
   color: var(--tk-text-muted);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  text-transform: none;
+  letter-spacing: normal;
   line-height: 1.4;
   padding: 2px 0;
   transition: color 0.2s;
@@ -5866,7 +5919,7 @@ footer.site-footer {
 
 .footer-bottom p {
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .footer-legal-links {
@@ -5879,7 +5932,7 @@ footer.site-footer {
 .footer-legal-links a {
   color: var(--tk-text-muted);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .footer-legal-links a:not(:last-child)::after {
@@ -5898,7 +5951,10 @@ footer.site-footer {
   color: var(--tk-primary);
 }
 
-@media (max-width: 768px) {
+/* Menu « hamburger » dès 1180 px : avec le texte du menu à 14 px, la barre
+   complète ne tient plus sur une ligne en dessous (tablettes, petits
+   portables). */
+@media (max-width: 1180px) {
   .nav-toggle {
     display: inline-flex;
   }
@@ -5937,6 +5993,9 @@ footer.site-footer {
     justify-content: flex-start;
     background: transparent;
     border: none;
+    /* Sans arrondi : le 999px de la barre desktop découpait le menu
+       ouvert en ovale. */
+    border-radius: 0;
     padding: 0;
     margin-top: 12px;
     gap: 4px;
@@ -5970,7 +6029,7 @@ footer.site-footer {
     justify-content: center;
     background: transparent;
     color: var(--tk-text-subtle);
-    font-size: 0.72rem;
+    font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     padding: 4px 0;
@@ -6005,6 +6064,9 @@ footer.site-footer {
     background: var(--tk-surface-soft);
     font-size: 0.85rem;
   }
+}
+
+@media (max-width: 768px) {
   .footer-card {
     width: 100%;
   }
@@ -6275,57 +6337,139 @@ footer.site-footer {
   }
 }
 
-/* ── Aplat total de l'échelle typographique du corps du site (tout ce
-   qui est dans <main>, pas le header/nav/footer) : SEULEMENT 3 tailles
-   possibles, sans exception. Par défaut 12px sur absolument tout texte
-   (main *), puis deux relevés explicites : 16px pour les titres, 14px
-   pour les éléments interactifs/proéminents (boutons, liens autonomes,
-   filtres, champs de formulaire, labels, sous-titres). Un défaut
-   universel plutôt qu'une liste de classes à "12px" garantit qu'aucune
-   4e taille ne peut se glisser via un composant non couvert ci-dessous ;
-   !important nécessaire pour primer sur les dizaines de sélecteurs
-   contextuels ci-dessus sans les éditer un par un. */
+/* ── Échelle typographique du contenu (<main>) : la lecture d'abord.
+   Remplace l'ancien « aplat » 16/14/12 px, illisible (70 à 80 % du texte des
+   pages de contenu était à 12 px, en police à chasse fixe). Un défaut
+   universel à 16 px garantit qu'aucun texte ne retombe sous la taille de
+   lecture ; les paliers ci-dessous ne descendent jamais sous 13 px.
+   !important : nécessaire pour primer sur les dizaines de sélecteurs
+   contextuels ci-dessus ; les exceptions plus bas (accueil, composants)
+   gardent la main grâce à leur spécificité plus forte. */
 main * {
-  font-size: 12px !important;
+  font-size: 16px !important;
 }
 
-main h1,
+main p,
+main li,
+main dd,
+main td {
+  line-height: 1.6;
+}
+
+/* Titre de page hors bandeau (ex. une roadmap). */
+main h1 {
+  font-size: 40px !important;
+  line-height: 1.15;
+}
+
+/* Titres en police de texte : graisse 700 (le 800 tombe sur une coupe
+   « Black » trop lourde en Segoe UI / Roboto). Les grands titres en chasse
+   fixe (bandeaux) gardent leur graisse. */
 main h2,
 main h3,
 main h4,
 main h5,
 main h6,
-main summary {
-  font-size: 16px !important;
+main summary,
+main .home-h2,
+main .home-feature-title,
+main .home-intent-sentence,
+main .home-intent-select,
+main .home-intent-title,
+main .home-join-title {
+  font-weight: 700 !important;
 }
 
-main .hero p,
-main .hero-guide,
-main .category-desc,
-main .domain-group-desc,
-main .contact-intro-desc,
-main .school-subtitle,
-main .subtitle,
-main .btn-primary,
+/* Titres de section. */
+main h2 {
+  font-size: 24px !important;
+  line-height: 1.25;
+}
+
+/* Titres de carte, questions de FAQ. */
+main h3,
+main h4,
+main h5,
+main h6,
+main summary {
+  font-size: 18px !important;
+  line-height: 1.35;
+}
+
+/* Chapeau d'introduction sous le bandeau de titre. */
+main .hero > p:first-child,
+main .roadmap-header .subtitle {
+  font-size: 18px !important;
+}
+
+/* Éléments secondaires : boutons, filtres, liens de carte, métadonnées. */
 main .btn,
+main .btn-primary,
+main .btn-ghost,
 main .domain-chip,
-main .journey-step-number,
+main .eco-jump-nav a,
 main .eco-link,
 main .school-link,
 main .actu-card-btn,
 main .actu-meta-value,
-main label,
-main option,
-main input,
-main textarea,
-main select,
-main .quiz-option,
-main .portrait-name,
+main .breadcrumb,
+main .breadcrumb *,
+main .school-filieres li,
+main .dates-ref-note,
+main .eco-contact,
+main .quiz-match-checklist span,
+main .progress-label,
+main #quiz-progress-label,
+main .hero-guide,
+main .hero-guide *,
+main .hero-legal-meta span,
+main .portrait-role,
+main .portrait-source,
+main .portrait-source *,
 main .founder-links a,
-main .eco-jump-nav a,
-main .school-meta span,
-main .hero-legal-meta span {
+main .eco-subheading {
   font-size: 14px !important;
+}
+
+/* Étiquettes en capitales : le plus petit palier autorisé. */
+main .badge,
+main .actu-meta-label,
+main .filter-group-label,
+main .faq-badge,
+main .timeline-period,
+main .search-result-category,
+main .contact-detail-label {
+  font-size: 13px !important;
+}
+
+/* Longueur de ligne : 60 à 75 caractères, la plage de lecture confortable. */
+main .hero p,
+main .hero-guide,
+main .category-desc,
+main .about-section > p,
+main .about-section li,
+main .faq-item p,
+main .dates-note,
+main .timeline-content p,
+main .roadmap-header .subtitle,
+main .verif-lead {
+  max-width: 70ch;
+}
+
+/* Accents de la marque en chasse fixe. */
+.page-title-banner h1,
+.page-title-banner h1 *,
+.page-title-banner p.error-code,
+.home-title,
+.home-title *,
+.home-eyebrow,
+.home-stat-num,
+.banner-stat-num,
+.school-stat-num,
+.home-feature-text::before,
+.howto-big,
+.roadmap-header h1 {
+  font-family: var(--font-mono);
 }
 
 /* Le "404" reste un gros chiffre décoratif, pas un paragraphe de texte
@@ -6346,14 +6490,6 @@ main .domain-primer-icon {
   font-size: 1.8rem !important;
 }
 
-/* Page Roadmaps : titres de section et noms de domaine ramenés à 14px (au
-   lieu du 16px de l'aplat ci-dessus) ; !important nécessaire pour primer
-   sur l'aplat, qui utilise déjà !important. */
-#par-metier h2,
-#par-competence h2,
-#par-metier .domain-group-title {
-  font-size: 14px !important;
-}
 
 /* Accueil uniquement : exception à l'aplat validée par l'utilisateur
    (refonte façon Synthesia/Handshake/BetterUp). Grands titres et texte
@@ -6603,7 +6739,7 @@ main .school-compare-note {
 }
 
 main .actu-featured-badge {
-  font-size: 11px !important;
+  font-size: 12px !important;
 }
 
 main .history-body h3 * {
@@ -6636,6 +6772,8 @@ main .guide-panel-desc * {
 }
 
 main .howto-tab-text,
+main .howto-tab-text small,
+main .howto-chips li,
 main .howto-num,
 main .howto-cta,
 main .guide-tab,
@@ -6651,7 +6789,6 @@ main .poster-when,
 main .poster-place,
 main .poster-place *,
 main .poster-google,
-main .howto-chips li,
 main .upcoming-lead,
 main .upcoming-all {
   font-size: 13px !important;
@@ -6675,7 +6812,7 @@ main .changelog-item time {
 
 main .school-facts,
 main .school-facts * {
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
 
 .page-home main .upcoming-tile-day {
@@ -6701,10 +6838,9 @@ main .school-facts * {
 
 main .banner-scroll,
 main .banner-scroll *,
-main .howto-tab-text small,
 main .poster-cat,
 main .guide-kicker {
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 
 main .actu-card--featured .actu-card-title {
