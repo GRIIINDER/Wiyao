@@ -68,50 +68,6 @@
     "home.step4.eyebrow": { fr: "Calendrier", en: "Calendar" },
     "home.step5.eyebrow": { fr: "Stages &amp; emploi", en: "Internships &amp; jobs" },
     "home.step6.eyebrow": { fr: "Écosystème", en: "Ecosystem" },
-    "home.domains.eyebrow": { fr: "Explorer par domaine", en: "Explore by field" },
-    "home.domains.title": { fr: "Quel domaine tech t'attire&nbsp;?", en: "Which tech field draws you in?" },
-    "home.domains.desc": { fr: "Choisis un domaine pour découvrir ses métiers et la roadmap de chacun.", en: "Pick a field to discover its careers and the roadmap for each one." },
-    "home.story.source": { fr: "Source :", en: "Source:" },
-    "home.story.more": { fr: "Fondateurs, ingénieures, inventeurs : découvre d'autres parcours de la tech togolaise, tous sourcés.", en: "Founders, engineers, inventors: discover more journeys from Togolese tech, all sourced." },
-    "home.story.cta": { fr: "Voir tous les parcours →", en: "See all the journeys →" },
-    "home.cities.eyebrow": { fr: "Où étudier", en: "Where to study" },
-    "home.cities.title": { fr: "Où étudier au Togo&nbsp;?", en: "Where to study in Togo?" },
-    "home.cities.desc": { fr: "Les écoles du comparateur, ville par ville, du sud au nord. Choisis une ville pour voir ses écoles.", en: "The schools in our comparison, city by city, from south to north. Pick a city to see its schools." },
-    "home.market.eyebrow": { fr: "Pourquoi la tech", en: "Why tech" },
-    "home.market.title": { fr: "La tech togolaise en chiffres", en: "Togolese tech in numbers" },
-    "home.market.desc": { fr: "Un secteur soutenu par l'État et par les bailleurs internationaux : de quoi rassurer tes parents.", en: "A sector backed by the government and international donors: enough to reassure your parents." },
-    "home.market.m1.num": { fr: "100 M$", en: "$100M" },
-    "home.market.m1.p": {
-      fr: "Environ 62 milliards de FCFA approuvés par la Banque mondiale en décembre 2024 pour accélérer la transformation numérique du Togo : croissance, emplois, compétitivité.",
-      en: "About 62 billion CFA francs approved by the World Bank in December 2024 to speed up Togo's digital transformation: growth, jobs, competitiveness.",
-    },
-    "home.market.m2.num": { fr: "8 000", en: "8,000" },
-    "home.market.m2.p": {
-      fr: "Institutions publiques à connecter au haut débit, et plus d'un million de personnes à l'Internet, grâce à ce même financement.",
-      en: "Public institutions to be connected to broadband, and more than a million people to the Internet, through that same funding.",
-    },
-    "home.market.m3.num": { fr: "4&nbsp;%&nbsp;→ 10&nbsp;%", en: "4%&nbsp;→ 10%" },
-    "home.market.m3.p": {
-      fr: "Part du numérique dans le PIB togolais en 2022, et objectif affiché par le pays pour les prochaines années.",
-      en: "Share of digital in Togo's GDP in 2022, and the target the country has set for the coming years.",
-    },
-    "home.sources.eyebrow": { fr: "Nos sources", en: "Our sources" },
-    "home.sources.title": { fr: "Vérifié, jamais deviné", en: "Verified, never guessed" },
-    "home.sources.desc": { fr: "Les informations de WIYAO sont sourcées activement. Voici d'où elles viennent.", en: "WIYAO's information is actively sourced. Here is where it comes from." },
-    "home.sources.s1.t": { fr: "Sites officiels", en: "Official websites" },
-    "home.sources.s1.p": { fr: "Frais, filières et dates repris des pages des écoles et des organismes, avec le lien.", en: "Fees, tracks and dates taken from the schools' and organizations' own pages, with the link." },
-    "home.sources.s2.t": { fr: "Documents signés", en: "Signed documents" },
-    "home.sources.s2.p": { fr: "Échéanciers de frais et calendriers académiques officiels des écoles.", en: "Schools' official fee schedules and academic calendars." },
-    "home.sources.s3.t": { fr: "Affiches officielles", en: "Official posters" },
-    "home.sources.s3.p": { fr: "Annonces de rentrée ou d'inscriptions publiées par les écoles elles-mêmes.", en: "Start-of-term or registration announcements published by the schools themselves." },
-    "home.sources.s4.t": { fr: "Presse togolaise et africaine", en: "Togolese and African press" },
-    "home.sources.s4.p": { fr: "Togo First, CIO Mag, WeAreTech Africa… pour les portraits et les chiffres du secteur.", en: "Togo First, CIO Mag, WeAreTech Africa… for the portraits and the sector's figures." },
-    "home.sources.s5.t": { fr: "Institutions publiques", en: "Public institutions" },
-    "home.sources.s5.p": { fr: "Ministères, agences publiques et bailleurs internationaux comme la Banque mondiale.", en: "Ministries, public agencies and international donors such as the World Bank." },
-    "home.sources.s6.t": { fr: "Liens revérifiés chaque jour", en: "Links rechecked every day" },
-    "home.sources.s6.p": { fr: "Un contrôle automatique teste chaque jour les liens du site ; ceux qui ne répondent plus sont revus à la main.", en: "An automatic check tests the site's links every day; the ones that stop responding are reviewed by hand." },
-    "home.sources.note": { fr: "Quand une information ne peut pas être confirmée, WIYAO l'indique clairement plutôt que d'inventer un chiffre.", en: "When a piece of information can't be confirmed, WIYAO says so clearly rather than making up a number." },
-    "home.sources.link": { fr: "Notre méthodologie →", en: "Our methodology →" },
     "home.app.eyebrow": { fr: "Application", en: "App" },
     "home.app.title": { fr: "WIYAO dans ta poche", en: "WIYAO in your pocket" },
     "home.app.desc": {
@@ -130,22 +86,13 @@
     "home.toc.label": { fr: "Sur cette page", en: "On this page" },
     "home.toc.intent": { fr: "Par où commencer", en: "Where to start" },
     "home.toc.journey": { fr: "Le parcours", en: "The journey" },
-    "home.toc.domains": { fr: "Domaines", en: "Fields" },
-    "home.toc.cities": { fr: "Villes", en: "Cities" },
-    "home.toc.news": { fr: "Actus", en: "News" },
     "home.toc.why": { fr: "Pourquoi WIYAO", en: "Why WIYAO" },
     "home.toc.join": { fr: "Rejoindre", en: "Get involved" },
     "home.toc.app": { fr: "Application", en: "App" },
-    "home.toc.faq": { fr: "FAQ", en: "FAQ" },
 
     "home.intent.eyebrow": { fr: "Par où commencer", en: "Where to start" },
     "home.intent.label": { fr: "Je suis ici pour", en: "I'm here to" },
 
-    "home.news.eyebrow": { fr: "À la une", en: "Top stories" },
-    "home.news.title": { fr: "Actualités et mises à jour", en: "News and updates" },
-    "home.news.all": { fr: "Tout afficher →", en: "See all →" },
-    "home.upcoming.title": { fr: "Prochains événements", en: "Upcoming events" },
-    "home.upcoming.all": { fr: "Voir le calendrier →", en: "See the calendar →" },
 
     "home.compare.eyebrow": { fr: "Pourquoi WIYAO", en: "Why WIYAO" },
     "home.compare.title": { fr: "Ton orientation, avec ou sans WIYAO", en: "Choosing your path, with or without WIYAO" },
@@ -177,12 +124,18 @@
     "home.join.eyebrow": { fr: "Communauté", en: "Community" },
     "home.join.title": { fr: "Rejoins le mouvement", en: "Join the movement" },
     "home.join.desc": { fr: "WIYAO grandit grâce à celles et ceux qui partagent une info vérifiable. Choisis ton profil.", en: "WIYAO grows thanks to everyone who shares verifiable information. Pick your profile." },
-    "home.join.c1.t": { fr: "Tu viens d'avoir ton bac", en: "You just passed your bac" },
-    "home.join.c1.p": {
-      fr: "Ou tu le passes cette année&nbsp;: commence par le test d'orientation, puis suis la roadmap du métier qui te correspond.",
-      en: "Or you're taking it this year: start with the orientation test, then follow the roadmap of the career that fits you.",
+    "home.join.c1.t": {
+      fr: "Tu as repéré une erreur&nbsp;?",
+      en: "Spotted a mistake?",
     },
-    "home.join.c1.link": { fr: "Faire le test →", en: "Take the test →" },
+    "home.join.c1.p": {
+      fr: "Une info dépassée, un lien cassé, une faute&nbsp;? Écris-nous&nbsp;: on corrige après vérification.",
+      en: "Outdated information, a broken link, a typo? Write to us: we fix it after checking.",
+    },
+    "home.join.c1.link": {
+      fr: "Signaler une erreur →",
+      en: "Report a mistake →",
+    },
     "home.join.c2.t": { fr: "Tu représentes une école", en: "You represent a school" },
     "home.join.c2.p": {
       fr: "Frais, filières ou dates ont changé&nbsp;? Signale-le avec un lien vers la source officielle&nbsp;: chaque info est vérifiée avant d'être publiée.",
@@ -214,17 +167,18 @@
     "stats.temoin.portraits": { fr: "parcours de pros togolais, sourcés", en: "sourced stories of Togolese professionals" },
     "stats.temoin.secteurs": { fr: "secteurs qui recrutent", en: "sectors that are hiring" },
 
-    "upcoming.title": { fr: "À venir dans l'écosystème", en: "Coming up in the ecosystem" },
-    "upcoming.lead": {
-      fr: "Les prochains événements tech datés, repris des Actualités&nbsp;: ajoute-les à ton agenda en un clic.",
-      en: "The next dated tech events, taken from the News page: add them to your calendar in one click.",
-    },
-    "upcoming.all": { fr: "Toutes les actus →", en: "All news →" },
 
+    "quiz.primer.link": {
+      fr: "Envie de découvrir les 7 grands domaines avant de répondre&nbsp;? Ils sont décrits sur la page <a href=\"roadmaps.html#par-metier\">Roadmaps</a>.",
+      en: "Want to discover the 7 major fields before answering? They're described on the <a href=\"roadmaps.html#par-metier\">Roadmaps</a> page.",
+    },
     "quiz.howto.title": { fr: "Comment se passe le test", en: "How the test works" },
 
+    "verif.link": {
+      fr: "Ce qui se passe après ton envoi&nbsp;: <a href=\"about.html#verif-title\">la méthode de vérification</a>, sur la page À propos.",
+      en: "What happens after you send it: <a href=\"about.html#verif-title\">the verification method</a>, on the About page.",
+    },
     "verif.h2": { fr: "Comment une info arrive sur WIYAO", en: "How information gets onto WIYAO" },
-    "verif.h2.proposer": { fr: "Ce qui se passe après ton envoi", en: "What happens after you send it" },
     "verif.lead": { fr: "Le circuit que suit chaque information avant d'apparaître sur le site.", en: "The path every piece of information follows before it appears on the site." },
     "verif.s1.t": { fr: "Une piste", en: "A lead" },
     "verif.s1.p": {
@@ -248,8 +202,6 @@
       fr: "Chaque jour, un contrôle automatique vérifie que les liens du site répondent toujours&nbsp;; ceux qui ne répondent plus sont revus à la main.",
       en: "Every day, an automatic check verifies that the site's links still respond; those that no longer do are reviewed by hand.",
     },
-    "home.faq.title": { fr: "Des questions&nbsp;? On a les réponses.", en: "Questions? We have answers." },
-    "home.faq.all": { fr: "Toutes les questions →", en: "All questions →" },
     "home.final.title": { fr: "Prêt·e à tracer ton parcours&nbsp;?", en: "Ready to chart your path?" },
     "home.final.desc": {
       fr: "Gratuit, sans compte, sans publicité. Commence par le test d'orientation : 14 questions pour trouver ta voie.",
@@ -269,11 +221,6 @@
     },
     "roadmap.print": { fr: "🖨️ Imprimer / PDF", en: "🖨️ Print / PDF" },
     "roadmap.reset": { fr: "Réinitialiser la progression", en: "Reset progress" },
-    "quiz.primer.title": { fr: "L'informatique, en 7 grands domaines", en: "Tech, in 7 major domains" },
-    "quiz.primer.desc": {
-      fr: "Un aperçu rapide avant de répondre : pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver. Chaque domaine est une catégorie mondiale du secteur tech ; la mention 🇹🇬 précise sa présence concrète sur le marché togolais.",
-      en: "A quick overview before you answer : no need to know it all by heart, that's exactly what the test is here to help you sort out. Each domain is a worldwide tech-sector category; the 🇹🇬 note points to its concrete presence on the Togolese market.",
-    },
     "roadmaps.hero.title": {
       fr: 'Choisis ta <span class="hero-accent">roadmap</span>',
       en: 'Choose your <span class="hero-accent">roadmap</span>',
@@ -635,45 +582,43 @@
       fr: 'Le site est gratuit, utilisable sans inscription, et hébergé par Vercel : détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
       en: 'The site is free, usable without registration, and hosted by Vercel: full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
     },
-    "about.audience.h2": { fr: "Pour qui&nbsp;?", en: "Who is it for?" },
-    "about.audience.lead": { fr: "Ce que WIYAO t'apporte concrètement, selon qui tu es.", en: "What WIYAO concretely offers you, depending on who you are." },
     "about.changelog.h2": { fr: "Quoi de neuf sur WIYAO", en: "What's new on WIYAO" },
     "about.changelog.all": { fr: "Tout l'historique sur GitHub ↗", en: "Full history on GitHub ↗" },
-    "about.changelog.c1.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
-    "about.changelog.c1.t": { fr: "Écosystème, écoles et témoignages", en: "Ecosystem, schools and testimonials" },
+    "about.changelog.c1.d": { fr: "6 oct. 2026", en: "Oct 6, 2026" },
+    "about.changelog.c1.t": { fr: "Une info, une seule page", en: "One piece of information, one page" },
     "about.changelog.c1.p": {
+      fr: "Chaque contenu n'apparaît plus qu'à un seul endroit&nbsp;; ailleurs, un lien y renvoie. L'accueil devient un aiguillage vers les pages.",
+      en: "Each piece of content now appears in a single place; elsewhere, a link points to it. The home page becomes a signpost to the pages.",
+    },
+    "about.changelog.c2.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
+    "about.changelog.c2.t": { fr: "Écosystème, écoles et témoignages", en: "Ecosystem, schools and testimonials" },
+    "about.changelog.c2.p": {
       fr: "Filtres par type sur l'Écosystème, cartes d'écoles plus lisibles, et deux chiffres de la page Témoignages remplacés par des données sourcées.",
       en: "Type filters on the Ecosystem page, easier-to-read school cards, and two figures on the Testimonials page replaced with sourced data.",
     },
-    "about.changelog.c2.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
-    "about.changelog.c2.t": { fr: "Des repères sur chaque page", en: "Landmarks on every page" },
-    "about.changelog.c2.p": {
+    "about.changelog.c3.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
+    "about.changelog.c3.t": { fr: "Des repères sur chaque page", en: "Landmarks on every page" },
+    "about.changelog.c3.p": {
       fr: "Chiffres clés sous les titres, événements à venir sur le Calendrier, étapes du test d'orientation expliquées et méthode de vérification détaillée.",
       en: "Key figures under page titles, upcoming events on the Calendar, the orientation test's steps explained, and the verification method in detail.",
     },
-    "about.changelog.c3.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
-    "about.changelog.c3.t": { fr: "Comparer des écoles côte à côte", en: "Compare schools side by side" },
-    "about.changelog.c3.p": {
+    "about.changelog.c4.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
+    "about.changelog.c4.t": { fr: "Comparer des écoles côte à côte", en: "Compare schools side by side" },
+    "about.changelog.c4.p": {
       fr: "Jusqu'à 3 écoles dans un même tableau, avec un lien à partager&nbsp;; actualités filtrables et événements à ajouter à son agenda.",
       en: "Up to 3 schools in one table, with a shareable link; filterable news and events you can add to your calendar.",
     },
-    "about.changelog.c4.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
-    "about.changelog.c4.t": { fr: "Une nouvelle page d'accueil", en: "A new home page" },
-    "about.changelog.c4.p": {
+    "about.changelog.c5.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
+    "about.changelog.c5.t": { fr: "Une nouvelle page d'accueil", en: "A new home page" },
+    "about.changelog.c5.p": {
       fr: "«&nbsp;Je suis ici pour…&nbsp;», les dernières actualités, la comparaison avec ou sans WIYAO, et un QR code pour ouvrir le site sur son téléphone.",
       en: "“I'm here to…”, the latest news, the with-or-without-WIYAO comparison, and a QR code to open the site on your phone.",
     },
-    "about.changelog.c5.d": { fr: "2 oct. 2026", en: "Oct 2, 2026" },
-    "about.changelog.c5.t": { fr: "ESA Togo et ESIG à jour", en: "ESA Togo and ESIG updated" },
-    "about.changelog.c5.p": {
+    "about.changelog.c6.d": { fr: "2 oct. 2026", en: "Oct 2, 2026" },
+    "about.changelog.c6.t": { fr: "ESA Togo et ESIG à jour", en: "ESA Togo and ESIG updated" },
+    "about.changelog.c6.p": {
       fr: "Frais, filières et rentrée 2026-2027 mis à jour à partir des documents officiels des deux écoles.",
       en: "Fees, programs and the 2026-2027 start date updated from both schools' official documents.",
-    },
-    "about.changelog.c6.d": { fr: "28 sept. 2026", en: "Sep 28, 2026" },
-    "about.changelog.c6.t": { fr: "Les roadmaps ont leur page", en: "Roadmaps get their own page" },
-    "about.changelog.c6.p": {
-      fr: "Les roadmaps métiers et compétences sont regroupées sur une page dédiée.",
-      en: "Career and skill roadmaps are grouped on a dedicated page.",
     },
     "about.history.h2": { fr: "L'histoire de WIYAO", en: "The story of WIYAO" },
     "about.history.e1.t": { fr: "Le bac, et des choix faits par d'autres", en: "The bac, and choices made by others" },
@@ -1177,7 +1122,10 @@
     "temoin.s1.i2.h4": { fr: "37 000 emplois visés", en: "37,000 jobs targeted" },
     "temoin.s1.i2.p": { fr: 'Objectif de la stratégie nationale « Togo Digital » (2022-2025) grâce au numérique : aucun bilan chiffré final trouvé pour cette période, et une nouvelle stratégie « Togo Digital 2025-2030 » est en préparation.', en: 'Target of the national "Togo Digital" strategy (2022-2025) through digital tech : no final results have been found for this period, and a new "Togo Digital 2025-2030" strategy is in preparation.' },
     "temoin.s1.i3.h4": { fr: "100 millions $ de la Banque mondiale", en: "$100 million from the World Bank" },
-    "temoin.s1.i3.p": { fr: "Financement accordé en décembre 2024 pour soutenir la transformation numérique togolaise (création d'emplois, compétitivité).", en: "Funding granted in December 2024 to support Togo's digital transformation (job creation, competitiveness)." },
+    "temoin.s1.i3.p": {
+      fr: "Environ 62 milliards de FCFA approuvés en décembre 2024 pour la transformation numérique du Togo&nbsp;: connecter 8 000 institutions publiques au haut débit et plus d'un million de personnes à Internet.",
+      en: "About 62 billion FCFA approved in December 2024 for Togo's digital transformation: connecting 8,000 public institutions to broadband and more than a million people to the Internet.",
+    },
     "temoin.s1.i4.h4": { fr: "106 000 à 325 000 FCFA/mois", en: "106,000 to 325,000 FCFA/month" },
     "temoin.s1.i4.p": {
       fr: "Fourchette indicative 2026 pour un concepteur de sites internet et multimédia au Togo, selon WageIndicator. C'est une estimation&nbsp;: aucune grille officielle par métier n'est publiée, compare toujours avec les offres réelles.",
@@ -1186,7 +1134,10 @@
     "temoin.s1.i5.h4": { fr: "2 milliards+ FCFA de revenus cumulés", en: "2 billion+ FCFA in combined revenue" },
     "temoin.s1.i5.p": { fr: "Revenus déjà générés par les startups numériques togolaises fédérées par TogoTech (Gozem, Semoa, Édolé, MiaPay, Clinicaa...), avec une centaine d'emplois directs créés.", en: "Revenue already generated by the Togolese digital startups united under TogoTech (Gozem, Semoa, Édolé, MiaPay, Clinicaa...), with around a hundred direct jobs created." },
     "temoin.s1.i6.h4": { fr: "Des recruteurs togolais réels", en: "Real Togolese employers" },
-    "temoin.s1.i6.p": { fr: "L'Agence Togo Digital recrute régulièrement développeurs, architectes, UX/UI, QA, Scrum Master et data : pas besoin de partir à l'étranger pour trouver un poste.", en: "Agence Togo Digital regularly hires developers, architects, UX/UI, QA, Scrum Masters and data profiles : no need to move abroad to find a job." },
+    "temoin.s1.i6.p": {
+      fr: "Agence Togo Digital, Cyber Defense Africa, Yas Togo, Gozem…&nbsp;: les employeurs qui recrutent des profils tech sont sur la page <a href=\"stages-emploi.html#employeurs\">Stages &amp; emploi</a>.",
+      en: "Agence Togo Digital, Cyber Defense Africa, Yas Togo, Gozem…: employers hiring tech profiles are on the <a href=\"stages-emploi.html#employeurs\">Internships &amp; jobs</a> page.",
+    },
     "temoin.s2.h2": { fr: "Les secteurs qui recrutent", en: "Sectors that are hiring" },
     "temoin.s2.desc": {
       fr: "Le numérique togolais ne se limite pas au développement web : ces secteurs embauchent activement.",
@@ -1388,12 +1339,12 @@
 
     "stages.s2.h2": { fr: "Employeurs qui recrutent des profils tech", en: "Employers hiring tech profiles" },
     "stages.s2.i1.p": {
-      fr: "Agence publique pilotant la digitalisation de l'État togolais. Les postes publiés varient dans le temps et ne sont pas toujours techniques ; la candidature spontanée reste une option pour les profils développeur, UX/UI ou data.",
-      en: "Public agency leading the digitalization of the Togolese State. Posted roles vary over time and aren't always technical; a spontaneous application remains an option for developer, UX/UI or data profiles.",
+      fr: "Recrute sur des postes tech variés (développeurs, architectes, UX/UI, QA, Scrum Master, data). Les postes publiés varient dans le temps&nbsp;: la candidature spontanée reste une option. <a href=\"ecosysteme.html?type=institutions\">Son rôle dans l'écosystème</a>.",
+      en: "Hires for a range of tech roles (developers, architects, UX/UI, QA, Scrum Master, data). Published openings change over time: an unsolicited application is still an option. <a href=\"ecosysteme.html?type=institutions\">Its role in the ecosystem</a>.",
     },
     "stages.s2.i2.p": {
-      fr: "Coentreprise entre l'État togolais et Asseco Data Systems, opère le CERT national et un SOC. Recrute analystes SOC, consultants et formateurs en cybersécurité.",
-      en: "Joint venture between the Togolese State and Asseco Data Systems, operates the national CERT and a SOC. Hires SOC analysts, consultants and cybersecurity trainers.",
+      fr: "Recrute analystes SOC, consultants et formateurs en cybersécurité. <a href=\"ecosysteme.html?type=cybersecurite\">Son rôle dans l'écosystème</a>.",
+      en: "Hires SOC analysts, consultants and cybersecurity trainers. <a href=\"ecosysteme.html?type=cybersecurite\">Its role in the ecosystem</a>.",
     },
     "stages.s2.i3.p": {
       fr: "Deuxième opérateur télécom du pays. Page carrière active, sous forme de candidature spontanée plutôt que d'offres détaillées en permanence ; profils réseaux, télécoms et systèmes concernés.",
@@ -1428,8 +1379,8 @@
       en: "Central bank of the eight UEMOA countries, with a national agency in Lomé. Regularly hires IT profiles (information systems security analyst, technicians and engineers) for its headquarters and national agencies.",
     },
     "stages.s2.i11.p": {
-      fr: "Agence publique togolaise de régulation et de réponse à incident en cybersécurité (CERT.tg). Recrute régulièrement (auditeurs SSI, analystes) et a lancé un appel national pour référencer les talents togolais en cybersécurité (pentest, sécurité applicative, DevSecOps, réponse à incident).",
-      en: "Togolese public cybersecurity regulation and incident-response agency (CERT.tg). Regularly hires (IS security auditors, analysts) and launched a national call to register Togolese cybersecurity talent (pentesting, application security, DevSecOps, incident response).",
+      fr: "Recrute régulièrement (auditeurs SSI, analystes) et a lancé un appel national pour référencer les talents togolais en cybersécurité. <a href=\"ecosysteme.html?type=cybersecurite\">Son rôle dans l'écosystème</a>.",
+      en: "Hires regularly (information security auditors, analysts) and launched a national call to list Togolese cybersecurity talent. <a href=\"ecosysteme.html?type=cybersecurite\">Its role in the ecosystem</a>.",
     },
     "stages.s2.i12.p": {
       fr: "Fintech togolaise fondée à Lomé en 2016, spécialisée dans le paiement digital et la digitalisation du cash (solution Cashpay), présente dans 13 pays d'Afrique. Pas de portail carrières dédié identifié : leur page LinkedIn reste la meilleure piste pour candidater ou suivre leurs annonces.",
@@ -1505,14 +1456,14 @@
       fr: 'La majorité des écoles privées togolaises proposent leurs propres réductions ou concours de bourses :\n      souvent la piste la plus accessible, mais la moins visible. Détails complets (filières, frais, contact) sur la page\n      <a href="ecoles.html">Écoles &amp; universités</a>.',
       en: 'Most Togolese private schools offer their own discounts or scholarship competitions : often the most accessible option, but the least visible. Full details (programs, fees, contact) on the <a href="ecoles.html">Schools &amp; universities</a> page.',
     },
-    "bourses.s1.i1.p": { fr: "Bourses sociales et au mérite, avec possibilité de payer les frais en 3 fois.", en: "Need-based and merit scholarships, with the option to pay fees in 3 installments." },
+    "bourses.s1.i1.p": { fr: "Bourses sociales et au mérite.", en: "Need-based and merit scholarships." },
     "bourses.s1.i2.p": { fr: "Bourses FONAP, bourses de mobilité (Le Havre, Belgique) et bourses au mérite scolaire (source : esig.tg/faq).", en: "FONAP scholarships, mobility scholarships (Le Havre, Belgium) and academic merit scholarships (source: esig.tg/faq)." },
     "bourses.s1.i3.p": { fr: "Concours de bourses togolais donnant droit à une réduction de 15 à 75 % sur les frais de scolarité.", en: "Togolese scholarship competition offering a 15 to 75% discount on tuition fees." },
     "bourses.s1.i4.p": {
       fr: 'Bourse « Étoile Scientifique » de 200 000 FCFA/an réservée aux étudiantes en informatique, plus une réduction fratrie de 50 000 FCFA/an (source : ucao-uut.tg/admissions).',
       en: '"Étoile Scientifique" scholarship of 200,000 FCFA/year reserved for female computer science students, plus a 50,000 FCFA/year sibling discount (source: ucao-uut.tg/admissions).',
     },
-    "bourses.s1.i5.p": { fr: "Concours de bourses chaque année en septembre (réduction sur les frais de scolarité, montant variable).", en: "Scholarship competition every September (discount on tuition fees, variable amount)." },
+    "bourses.s1.i5.p": { fr: "Concours de bourses annuel (réduction sur les frais de scolarité, montant variable)&nbsp;: sa date est dans le <a href=\"calendrier.html\">Calendrier</a>.", en: "Annual scholarship competition (tuition discount, variable amount): its date is in the <a href=\"calendrier.html\">Calendar</a>." },
     "bourses.s1.i6.p": { fr: "Accès à la bourse d'État togolaise comme toute université publique, ainsi qu'à des bourses internationales (France, Inde) pour les meilleurs dossiers.", en: "Access to the Togolese State scholarship like any public university, as well as international scholarships (France, India) for the strongest applications." },
     "bourses.s1.i7.p": { fr: "Bourses ponctuelles attribuées par tirage au sort à la rentrée : non garanties chaque année.", en: "One-off scholarships awarded by lottery at the start of the year : not guaranteed annually." },
     "bourses.s1.i8.p": { fr: "Bourses disponibles de 50 000 à 250 000 FCFA selon le niveau (Licence/Master).", en: "Scholarships available from 50,000 to 250,000 FCFA depending on level (Bachelor's/Master's)." },
@@ -1549,7 +1500,10 @@
 
     "bourses.s5.h2": { fr: "Se former sans payer de frais de scolarité", en: "Training without paying tuition fees" },
     "bourses.s5.desc": { fr: "Une alternative ou un complément à un cursus classique, surtout pour démarrer ou tester un domaine avant de s'engager financièrement.", en: "An alternative or complement to a traditional program, especially for getting started or testing out a field before committing financially." },
-    "bourses.s5.i1.p": { fr: "Formation en ligne entièrement gratuite à Adidogomé (Lomé) : blockchain, communication digitale, design graphique, IA et marketing digital.", en: "Entirely free online training in Adidogomé (Lomé): blockchain, digital communication, graphic design, AI and digital marketing." },
+    "bourses.s5.i1.p": {
+      fr: "Formation en ligne entièrement gratuite à Adidogomé (Lomé)&nbsp;: blockchain, communication digitale, design graphique, IA et marketing digital. 500+ étudiants formés.",
+      en: "Entirely free online training in Adidogomé (Lomé): blockchain, digital communication, graphic design, AI and digital marketing. 500+ students trained.",
+    },
     "bourses.s5.i2.p": {
       fr: "Programme gratuit du Ministère de la Transformation Numérique, ouvert à tous les étudiants des universités et écoles togolaises (pas seulement en informatique) : plateforme d'apprentissage avec IA, assistant pédagogique disponible 24h/24, tutorat humain par des enseignants universitaires, format hybride en ligne et présentiel.",
       en: "Free program from the Ministry of Digital Transformation, open to all Togolese university and school students (not just computer science): AI-powered learning platform, teaching assistant available 24/7, human tutoring by university lecturers, hybrid online and in-person format.",
@@ -1584,8 +1538,6 @@
     "eco.c12.p": { fr: "Communauté togolaise autour du Bitcoin et des cryptomonnaies, référencée au registre officiel de l'écosystème numérique togolais.", en: "Togolese community around Bitcoin and cryptocurrencies, listed in the official registry of the Togolese digital ecosystem." },
     "eco.c13.h4": { fr: "Chapitre Togolais d'Internet Society (ISOC Togo)", en: "Togolese Chapter of Internet Society (ISOC Togo)" },
     "eco.c13.p": { fr: "Chapitre national actif depuis 2008 (600+ membres), organise le Forum togolais sur la gouvernance de l'Internet et déploie des réseaux communautaires locaux pour l'accès à Internet.", en: "National chapter active since 2008 (600+ members), organizes the Togolese Forum on Internet Governance and deploys local community networks for Internet access." },
-    "eco.c14.h4": { fr: "ACAN : Académie Numérique", en: "ACAN : Digital Academy" },
-    "eco.c14.p": { fr: "Académie de formation en ligne gratuite à Adidogomé (Lomé) : blockchain, communication digitale, design graphique, intelligence artificielle et marketing digital. 500+ étudiants formés.", en: "Free online training academy in Adidogomé (Lomé): blockchain, digital communication, graphic design, artificial intelligence and digital marketing. 500+ students trained." },
     "eco.c16.p": { fr: "Chapitre togolais du programme mondial Microsoft pour étudiants : apprentissage des technologies Microsoft (Azure, IA, GitHub, Copilot), organisation d'événements techniques et mentorat, avec un parcours de progression (Alpha, Beta, Gold MLSA).", en: "Togolese chapter of Microsoft's global student program: learning Microsoft technologies (Azure, AI, GitHub, Copilot), organizing technical events and mentoring, with a progression path (Alpha, Beta, Gold MLSA)." },
     "eco.c17.p": { fr: "Chapitre étudiant Google Developer Student Club à l'Université de Lomé : ateliers réguliers (ex. développement web HTML/CSS/JS) et développement de solutions numériques pour la communauté universitaire.", en: "Google Developer Student Club chapter at the University of Lomé: regular workshops (e.g. HTML/CSS/JS web development) and building digital solutions for the university community." },
     "eco.c18.p": { fr: "Chapitre étudiant Google Developer Student Club à Lomé Business School : ateliers pratiques (ex. contribution à l'IA de Google via Google Crowdsource).", en: "Google Developer Student Club chapter at Lomé Business School: hands-on workshops (e.g. contributing to Google's AI via Google Crowdsource)." },
@@ -1675,7 +1627,10 @@
     "eco.s6.p": { fr: "Plateforme d'e-santé développée en 2018 avec le Ministère de la Santé et l'UNFPA : suivi du cycle menstruel, de la grossesse et consultation en ligne, plus de 10 000 abonnées.", en: "E-health platform developed in 2018 with the Ministry of Health and UNFPA: menstrual cycle and pregnancy tracking and online consultations, with over 10,000 subscribers." },
 
     "eco.inst.h2": { fr: "Institutions publiques et employeurs numériques", en: "Public institutions and digital employers" },
-    "eco.i1.p": { fr: "Agence publique pilotant la digitalisation des démarches administratives au Togo. Recrute régulièrement sur des postes tech variés : développeurs, architectes, UX/UI, QA, Scrum Master, data.", en: "Public agency leading the digitalization of administrative processes in Togo. Regularly hires for a range of tech roles: developers, architects, UX/UI, QA, Scrum Master, data." },
+    "eco.i1.p": {
+      fr: "Agence publique pilotant la digitalisation des démarches administratives au Togo. Ses recrutements tech sont sur la page <a href=\"stages-emploi.html#employeurs\">Stages &amp; emploi</a>.",
+      en: "Public agency driving the digitization of administrative procedures in Togo. Its tech hiring is on the <a href=\"stages-emploi.html#employeurs\">Internships &amp; jobs</a> page.",
+    },
     "eco.i2.p": {
       fr: "Partenariat entre le Ministère togolais de la Transformation Numérique et CEGA (UC Berkeley), avec le soutien de Google.org : science des données et IA au service des politiques publiques (santé, agriculture, sécurité routière). A notamment recruté des data scientists repérés via un défi organisé sur Zindi (plateforme panafricaine de compétitions de data science) pour prédire la demande en connectivité internet dans les zones mal desservies.",
       en: "Partnership between the Togolese Ministry of Digital Transformation and CEGA (UC Berkeley), with support from Google.org: data science and AI in service of public policy (health, agriculture, road safety). Notably recruited data scientists spotted through a challenge run on Zindi (pan-African data science competition platform) to predict internet connectivity demand in underserved areas.",

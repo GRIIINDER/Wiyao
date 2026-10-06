@@ -4733,6 +4733,7 @@ const ALL_ROADMAPS = Object.assign({}, ROLES, SKILLS);
 // null = non applicable ou statut particulier.
 const SCHOOLS = {
   "ipnet": {
+    bourses: true,
     name: "IPNET Institute of Technology",
     ville: ["Lomé"],
     statut: "prive",
@@ -4741,7 +4742,7 @@ const SCHOOLS = {
     filieres: ["Intelligence Artificielle", "Science des Données", "Génie Logiciel", "Cybersécurité", "Développement Web & Mobile", "Réseaux, Systèmes & Sécurité"],
     duree: "Licence : 3 ans · Master : 2 ans",
     admission: "Concours d'entrée post-BAC (dossier + épreuves écrites), ouvert aux séries A4, C, D, E, F1/F2/F3, G2/G3 ; Licence en informatique requise pour le Master.",
-    frais: "800 000 FCFA (L1) · 900 000 (L2) · 1 000 000 (L3) : exemple filière Cybersécurité, + inscription (50 000 FCFA puis 30 000 FCFA/an) et frais de dossier. Bourses sociales/mérite et paiement en 3 fois (source : ipnetuniversity.com, 2025).",
+    frais: "800 000 FCFA (L1) · 900 000 (L2) · 1 000 000 (L3) : exemple filière Cybersécurité, + inscription (50 000 FCFA puis 30 000 FCFA/an) et frais de dossier. Paiement en 3 fois (source : ipnetuniversity.com, 2025).",
     site: "https://ipnetuniversity.com",
     description: "Institut privé fondé en 2003, très orienté pratique (80+ partenariats entreprises tech), élu « université la plus innovante du Togo » en 2022.",
     datesCles: {
@@ -4776,6 +4777,7 @@ const SCHOOLS = {
     }
   },
   "esgis": {
+    bourses: true,
     name: "ESGIS Togo (École Supérieure de Gestion, d'Informatique et des Sciences)",
     ville: ["Lomé"],
     statut: "prive",
@@ -4793,6 +4795,7 @@ const SCHOOLS = {
     }
   },
   "esig": {
+    bourses: true,
     name: "ESIG Global Success (École Supérieure d'Informatique et de Gestion)",
     ville: ["Lomé"],
     statut: "prive",
@@ -4801,7 +4804,7 @@ const SCHOOLS = {
     filieres: ["Administrateur Réseaux", "Développeur d'Application", "Systèmes et Réseaux Informatiques", "Sécurité Informatique", "Intelligence Artificielle et Big Data", "Réseaux et Télécommunications", "Électronique et Système Embarqué"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "Pré-inscription en ligne ; le BTS est accessible directement après le Bac",
-    frais: "350 000-450 000 FCFA/an (BTS) · 400 000-550 000 (Licence) · 550 000-750 000 (Master), paiement en 2-3 fois. Bourses FONAP, mobilité (Le Havre/Belgique) et mérite scolaire (source : esig.tg/faq).",
+    frais: "350 000-450 000 FCFA/an (BTS) · 400 000-550 000 (Licence) · 550 000-750 000 (Master), paiement en 2-3 fois (source : esig.tg/faq).",
     site: "https://esig.tg/",
     description: "École fondée à Lomé en 2008, 66 formations diplômantes du BTS au Master réparties en cinq domaines, accréditation Cisco Networking Academy, partenariats avec Sorbonne Paris Nord, UPEC, Le Havre Normandie et l'University of Alberta pour la mobilité internationale.",
     datesCles: {
@@ -4813,6 +4816,7 @@ const SCHOOLS = {
     }
   },
   "esiba": {
+    bourses: true,
     name: "ESIBA (École Supérieure d'Informatique, de Business et d'Administration)",
     ville: ["Lomé"],
     statut: "prive",
@@ -4821,7 +4825,7 @@ const SCHOOLS = {
     filieres: ["Systèmes Informatiques et Logiciels", "Développement d'Application", "Sécurité des Réseaux et Télécommunications", "Informatique et Réseaux (Master)"],
     duree: "Licence : 3 ans · Master : 2 ans",
     admission: "Dossier d'inscription ; Licence en informatique ou domaine connexe requise pour le Master",
-    frais: "Licence Systèmes Informatiques & Logiciels : 395 000 FCFA/an (L1-L2), 530 000 (L3). Master Informatique & Réseaux : 680 000 FCFA pour les 2 ans + 15 000 de dossier. Concours de bourses togolais (15 à 75 % de réduction).",
+    frais: "Licence Systèmes Informatiques & Logiciels : 395 000 FCFA/an (L1-L2), 530 000 (L3). Master Informatique & Réseaux : 680 000 FCFA pour les 2 ans + 15 000 de dossier.",
     site: "https://www.esiba.tg/",
     description: "École agréée par l'État togolais, membre de l'Agence Universitaire de la Francophonie (AUF), plus de 36 ans d'expérience en gestion et technologie.",
     datesCles: {
@@ -4852,6 +4856,7 @@ const SCHOOLS = {
     }
   },
   "ucao-uut": {
+    bourses: true,
     name: "UCAO-UUT : Département de Génie Informatique",
     ville: ["Lomé"],
     statut: "prive",
@@ -4860,7 +4865,7 @@ const SCHOOLS = {
     filieres: ["Développement d'Applications", "Mathématiques et Informatique", "Réseaux Informatiques et Télécommunication", "Cybersécurité", "Big Data", "Intelligence Artificielle", "Génie Logiciel"],
     duree: "Licence : 3 ans · Cycle ingénieur : 5 ans",
     admission: "Bac séries C, D, E ou F (ou équivalent) ; sélection sur dossier — notes de mathématiques (2ⁿᵈᵉ, 1ʳᵉ, Tˡᵉ, Bac) et niveau d'anglais, avec audition ou entretien possible.",
-    frais: "Tarifs 2026-2027 « Jubilé 20 ans » (remise réservée aux 1ʳᵉˢ années) : Licence 595 000 FCFA en L1 puis 758 000 FCFA en L2-L3 ; cycle ingénieur / Master 858 000 FCFA la 1ʳᵉ année puis 958 000 FCFA. Frais d'étude de dossier : 8 000 FCFA (licence) ou 12 000 FCFA (master/ingénieur). Bourse « Étoile Scientifique » (200 000 FCFA/an, étudiantes en informatique) et réduction « même parent » (50 000 FCFA/an) non cumulables : une étudiante en filière scientifique paie 558 000 FCFA/an sur tout le cycle licence (source : ucao-uut.tg/admissions).",
+    frais: "Tarifs 2026-2027 « Jubilé 20 ans » (remise réservée aux 1ʳᵉˢ années) : Licence 595 000 FCFA en L1 puis 758 000 FCFA en L2-L3 ; cycle ingénieur / Master 858 000 FCFA la 1ʳᵉ année puis 958 000 FCFA. Frais d'étude de dossier : 8 000 FCFA (licence) ou 12 000 FCFA (master/ingénieur) (source : ucao-uut.tg/admissions).",
     site: "https://ucao-uut.tg/formation-recherche/formations/institut-ecole/dgi/",
     description: "Université catholique reconnue par l'État togolais et le CAMES. Le Département de Génie Informatique (DGI) relève de l'École Supérieure d'Ingénieurs, créée en 2024, et a succédé à l'ISTIN (fondé en 2007) ; la formation vise le diplôme d'ingénieur avec équivalence Master Recherche, dans le respect des normes du CAMES et de la Commission des Titres d'Ingénieur (CTI). Le 2ᵉ cycle ingénieur et les masters se déroulent en cours du soir (13 h – 21 h 30).",
     datesCles: {
@@ -4914,6 +4919,7 @@ const SCHOOLS = {
     }
   },
   "ecole-des-cadres": {
+    bourses: true,
     name: "École des Cadres",
     ville: ["Lomé"],
     statut: "prive",
@@ -4922,7 +4928,7 @@ const SCHOOLS = {
     filieres: ["Informatique de Gestion", "Systèmes et Réseaux Informatiques", "Développement d'Application", "Sécurité Informatique"],
     duree: null,
     admission: "BAC II requis pour le BTS et la Licence informatique",
-    frais: "Non communiqué publiquement. Un concours de bourses a lieu chaque année en septembre (réduction sur les frais de scolarité, montant non précisé).",
+    frais: "Non communiqué publiquement.",
     site: "https://ecoledescadres.com/",
     description: "Une des premières écoles professionnelles du Togo (1997), diplômes en partenariat avec l'Université du Littoral Côte d'Opale (France), accréditée CAMES.",
     datesCles: {
@@ -4934,6 +4940,7 @@ const SCHOOLS = {
     }
   },
   "universite-kara": {
+    bourses: true,
     name: "Université de Kara",
     ville: ["Kara"],
     statut: "public",
@@ -4942,7 +4949,7 @@ const SCHOOLS = {
     filieres: ["Mathématiques et Informatique Appliquées", "Sécurité Informatique et Cybersécurité", "Développement Web et Mobile", "Métiers du Multimédia et de l'Internet"],
     duree: "Licences en 3 ans, avec stage professionnel et soutenance en fin de cycle",
     admission: "Bac C, D ou E (session récente), sélection sur dossier",
-    frais: "Master : de 176 500 FCFA/an (recherche, étudiants togolais/UEMOA) à plus d'1 000 000 FCFA (professionnel, étranger) : arrêté officiel 2026-2027. Licence non communiquée publiquement. Bourses d'État togolaises et bourses internationales (France, Inde) existantes.",
+    frais: "Master : de 176 500 FCFA/an (recherche, étudiants togolais/UEMOA) à plus d'1 000 000 FCFA (professionnel, étranger) : arrêté officiel 2026-2027. Licence non communiquée publiquement.",
     site: "https://univkara.tg/",
     description: "2e université publique du Togo ; la Faculté des Sciences et Techniques (FAST) porte plusieurs licences professionnelles tech.",
     datesCles: {
@@ -4955,6 +4962,7 @@ const SCHOOLS = {
     }
   },
   "esa-togo": {
+    bourses: true,
     name: "ESA Togo (École Supérieure des Affaires)",
     ville: ["Lomé", "Kara"],
     statut: "prive",
@@ -4963,12 +4971,12 @@ const SCHOOLS = {
     filieres: ["Génie Logiciel", "Réseaux et Télécommunications", "Informatique de Gestion (Développeur d'application)", "Informatique de Gestion (Administrateur Réseaux locaux d'entreprises)", "Maintenance Informatique et Réseaux", "Sécurité Informatique, Cybersécurité et Cybercriminalité", "Informatique Industrielle", "Marketing Digital & E-Business", "Modélisation Économétrique et Analyse des Données"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "Inscriptions continues (critères détaillés non publiés en ligne)",
-    frais: "449 999 FCFA/an (BTS/Licence 1-2, cours du jour ou du soir) · 549 999 (Licence 3) · 669 999 (Master 1) · 799 999 (Master 2), payables en 10 mensualités de septembre à juin (45 000 FCFA/mois en BTS/Licence 1-2) + 50 000 FCFA d'inscription, réduits de 20 % pour les 200 premiers inscrits. Inscription et scolarité non remboursables (source : échéancier officiel 2026-2027 du 8 juin 2026). Bourses ponctuelles par tirage au sort à la rentrée, non garanties chaque année.",
+    frais: "449 999 FCFA/an (BTS/Licence 1-2, cours du jour ou du soir) · 549 999 (Licence 3) · 669 999 (Master 1) · 799 999 (Master 2), payables en 10 mensualités de septembre à juin (45 000 FCFA/mois en BTS/Licence 1-2) + 50 000 FCFA d'inscription, réduits de 20 % pour les 200 premiers inscrits. Inscription et scolarité non remboursables (source : échéancier officiel 2026-2027 du 8 juin 2026).",
     site: "https://www.esatogo.com/",
     description: "École pluridisciplinaire fondée en 2010, plus de 33 filières, 1ère école togolaise certifiée ISO 9001. Selon sa brochure 2026, la Licence en Génie Logiciel et la Licence en Réseaux Télécommunications sont reconnues par le CAMES. Soins de santé gratuits pour ses étudiants et aide au logement pour ceux qui viennent de l'intérieur du pays ou de l'étranger.",
     datesCles: {
       mode: "continue",
-      note: "Admission continue, avis sous 48 à 72h après étude du dossier : pas de date limite. Réduction de 20 % sur les frais d'inscription pour les 200 premiers inscrits (brochure et échéancier 2026-2027).",
+      note: "Admission continue, avis sous 48 à 72h après étude du dossier : pas de date limite.",
       rentree: "5 octobre 2026, 8h (campus Agoè et Super Taco, confirmé)",
       anneeReference: "2026-2027",
       contact: "+228 91 04 82 07 / 90 89 45 70 · esatogo2024@gmail.com"
@@ -5238,6 +5246,7 @@ const SCHOOLS = {
     }
   },
   "hest": {
+    bourses: true,
     name: "École des Hautes Études de Sciences et Technologies (HEST)",
     ville: ["Lomé"],
     statut: "prive",
@@ -5246,7 +5255,7 @@ const SCHOOLS = {
     filieres: ["Systèmes et Réseaux Informatiques", "Développement d'Application", "Maintenance Informatique", "Informatique Industrielle", "Robotique et Intelligence Artificielle", "Cybersécurité", "UX/UI Design", "Génie Logiciel", "Ingénierie Informatique Mobile et Web"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "BTS : Bac toutes séries · Licence : Bac série scientifique ou équivalent · Master : Licence en sciences et technologies ou équivalent",
-    frais: "Scolarité non communiquée publiquement (le premier versement se fait directement à la banque). Frais d'inscription connus : 25 000 FCFA (Licence, non remboursable) · 50 000 FCFA (Master, non remboursable), source : hest-edu.net/inscription/. Bourses disponibles de 50 000 à 250 000 FCFA (Licence/Master).",
+    frais: "Scolarité non communiquée publiquement (le premier versement se fait directement à la banque). Frais d'inscription connus : 25 000 FCFA (Licence, non remboursable) · 50 000 FCFA (Master, non remboursable), source : hest-edu.net/inscription/.",
     site: "https://www.hest-edu.net/",
     description: "Une des offres informatique les plus complètes du comparatif (BTS à Master), à Tokoin Wuiti, propose aussi économie/gestion et sciences de l'information et de la communication.",
     datesCles: {

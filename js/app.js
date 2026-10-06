@@ -261,43 +261,6 @@
     }
   }
 
-  // ---- Primer "l'informatique en 7 domaines" (page test d'orientation) ----
-  function renderDomainPrimer() {
-    const container = document.getElementById("domain-primer-grid");
-    if (!container || typeof DOMAINS === "undefined") return;
-
-    Object.keys(DOMAINS).forEach((domainName) => {
-      const meta = DOMAINS[domainName];
-      const domainLabel = currentLang() === "en" && meta.nameEn ? meta.nameEn : domainName;
-      const item = document.createElement("div");
-      item.className = "domain-primer-item";
-
-      if (meta.icon) {
-        const icon = document.createElement("div");
-        icon.className = "domain-primer-icon";
-        icon.textContent = meta.icon;
-        item.appendChild(icon);
-      }
-
-      const heading = document.createElement("h4");
-      heading.textContent = domainLabel;
-      item.appendChild(heading);
-
-      const desc = document.createElement("p");
-      desc.textContent = tField(meta, "description");
-      item.appendChild(desc);
-
-      if (meta.presenceTogo) {
-        const presence = document.createElement("p");
-        presence.className = "domain-primer-presence";
-        presence.textContent = `🇹🇬 ${tField(meta, "presenceTogo")}`;
-        item.appendChild(presence);
-      }
-
-      container.appendChild(item);
-    });
-  }
-
   // ---- Recherche + filtres par domaine (page d'accueil) ----
   function applyFilters() {
     const searchInput = document.getElementById("roadmap-search");
@@ -708,6 +671,8 @@
     if (school.duree) metaHtml += `<span><strong>Durée :</strong> ${school.duree}</span>`;
     if (school.admission) metaHtml += `<span><strong>Admission :</strong> ${school.admission}</span>`;
     if (school.frais) metaHtml += `<span><strong>Frais :</strong> ${school.frais}</span>`;
+    // Les bourses de l'école sont détaillées une seule fois, sur la page Bourses.
+    if (school.bourses) metaHtml += `<span><strong>${isEn ? "Scholarships" : "Bourses"} :</strong> <a href="bourses-financement.html#ecoles">${isEn ? "see Scholarships & funding" : "voir Bourses & financement"}</a></span>`;
     if (school.agreeNote) metaHtml += `<span>ℹ️ ${school.agreeNote}</span>`;
     details.innerHTML = `<summary>${isEn ? "See details" : "Voir le détail"} <span class="school-details-hint">${isEn ? "admission, fees, duration" : "admission, frais, durée"}</span></summary><div class="school-meta">${metaHtml}</div>`;
     body.appendChild(details);
@@ -862,25 +827,6 @@
       window.history.replaceState(null, "", window.location.pathname + (qs ? "?" + qs : "") + window.location.hash);
     }
 
-    function datesText(s, isEn) {
-      const dc = s.datesCles;
-      if (!dc) return isEn ? "Dates not published online" : "Dates non publiées en ligne";
-      const fields = [
-        [isEn ? "Applications open" : "Ouverture des candidatures", dc.ouverture],
-        [isEn ? "Deadline" : "Clôture", dc.cloture],
-        [isEn ? "Entrance exam" : "Concours", dc.concours],
-        [isEn ? "Results" : "Résultats", dc.resultats],
-        [isEn ? "Start of term" : "Rentrée", dc.rentree],
-      ].filter(([, v]) => !!v);
-      const lines = fields.length
-        ? `<ul class="cmp-list">${fields.map(([l, v]) => `<li><strong>${esc(l)} :</strong> ${esc(v)}</li>`).join("")}</ul>`
-        : (dc.note ? `<p>${esc(dc.note)}</p>` : "");
-      const ref = dc.anneeReference
-        ? `<p class="cmp-muted">${isEn ? `Reference: ${dc.anneeReference}` : `Repère : ${dc.anneeReference}`}${dc.aVerifier ? (isEn ? " : reconfirm with the school" : " : à reconfirmer auprès de l'école") : ""}</p>`
-        : "";
-      return lines + ref;
-    }
-
     function agreeText(s, isEn) {
       if (s.agree === true) return `🏛️ ${isEn ? "State-accredited (2026-2027 list)" : "Agréé État (liste 2026-2027)"}`;
       if (s.statut === "public" && s.agree == null) return isEn ? "Public university" : "Université publique";
@@ -899,7 +845,9 @@
         [isEn ? "Duration" : "Durée", (s) => esc(s.duree || "—")],
         [isEn ? "Admission" : "Admission", (s) => esc(s.admission || "—")],
         [isEn ? "Tuition fees" : "Frais de scolarité", (s) => esc(s.frais || "—")],
-        [isEn ? "Key dates" : "Dates clés", (s) => datesText(s, isEn)],
+        // Dates et bourses vivent sur leur propre page : ici, un renvoi.
+        [isEn ? "Key dates" : "Dates clés", () => `<a class="school-link" href="calendrier.html">${isEn ? "In the Calendar →" : "Dans le Calendrier →"}</a>`],
+        [isEn ? "Scholarships" : "Bourses", (s) => (s.bourses ? `<a class="school-link" href="bourses-financement.html#ecoles">${isEn ? "Scholarships page →" : "Page Bourses →"}</a>` : "—")],
         [isEn ? "Official site" : "Site officiel", (s) => (s.site ? `<a class="school-link" href="${esc(s.site)}" target="_blank" rel="noopener">${isEn ? "Visit →" : "Visiter →"}</a>` : "—")],
       ];
       tableWrap.innerHTML = `
@@ -1556,155 +1504,6 @@
     });
   }
 
-  // ---- Calendrier : « À venir dans l'écosystème » (façon Tikattou) ----
-  // Les événements datés et à venir de actualites.html (data-start), en
-  // affiches, avec le même bouton agenda que la page Actualités
-  // (window.WIYAO_AGENDA, défini par js/actualites.js).
-  const PIN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
-
-  // Événements datés et à venir des cartes de actualites.html, traduits,
-  // triés par date de début. Partagé par le Calendrier et l'accueil.
-  function collectUpcoming(cards) {
-    const agenda = window.WIYAO_AGENDA;
-    if (!agenda) return [];
-    const base = new URL("actualites.html", window.location.href).href;
-    const tr = (key, fallback) => {
-      const v = window.WIYAO_I18N && key ? window.WIYAO_I18N.t(key, currentLang()) : null;
-      return plainText(v == null ? fallback : v);
-    };
-    return cards.map((card) => {
-      const h3 = card.querySelector(".actu-card-title");
-      const key = h3 && h3.dataset.i18nKey ? h3.dataset.i18nKey.replace(/\.h3$/, "") : "";
-      const descEl = card.querySelector(".actu-card-desc");
-      const catEl = card.querySelector('.actu-meta-value[data-i18n-key$=".cat"]');
-      const catFr = catEl ? catEl.textContent.trim() : "";
-      const ev = agenda.eventOf(card, {
-        base,
-        title: tr(key && key + ".h3", h3 ? h3.textContent : ""),
-        desc: tr(key && key + ".p", descEl ? descEl.textContent : ""),
-      });
-      return ev && { ev, id: card.id, catFr, cat: tr(key && key + ".cat", catFr) };
-    }).filter(Boolean).sort((a, b) => (a.ev.dtStart < b.ev.dtStart ? -1 : a.ev.dtStart > b.ev.dtStart ? 1 : 0));
-  }
-
-  // Cartes datées de actualites.html (requête partagée avec nav.js).
-  function loadDatedActus() {
-    return actualitesHtml()
-      .then((html) => [...new DOMParser().parseFromString(html, "text/html").querySelectorAll("article.actu-card[data-start]")]);
-  }
-
-  // « 24 », « 5–8 » ou « 30 » (événement sur deux mois) + mois abrégé.
-  function eventDay(ev, isEn) {
-    const s = ev.start;
-    const e = ev.end;
-    const sameDay = s.y === e.y && s.mo === e.mo && s.d === e.d;
-    const sameMonth = s.y === e.y && s.mo === e.mo;
-    const month = new Intl.DateTimeFormat(isEn ? "en-GB" : "fr-FR", { timeZone: "UTC", month: "short" })
-      .format(new Date(Date.UTC(s.y, s.mo - 1, s.d))).replace(".", "");
-    return { day: sameDay || !sameMonth ? String(s.d) : `${s.d}–${e.d}`, month, sameDay, sameMonth };
-  }
-
-  function initUpcomingEvents() {
-    const section = document.getElementById("a-venir");
-    const row = document.getElementById("upcoming-row");
-    if (!section || !row || !window.DOMParser || !window.WIYAO_AGENDA) return;
-    const agenda = window.WIYAO_AGENDA;
-    let cards = [];
-    let events = [];
-
-    const hm = (p, isEn) => (isEn ? `${p.h}:${String(p.mi).padStart(2, "0")}` : `${p.h}h${p.mi ? String(p.mi).padStart(2, "0") : ""}`);
-
-    function render() {
-      const isEn = currentLang() === "en";
-      events = collectUpcoming(cards);
-
-      section.hidden = events.length === 0;
-      if (!events.length) return;
-      const locale = isEn ? "en-GB" : "fr-FR";
-      const fmt = (p, opt) => new Intl.DateTimeFormat(locale, Object.assign({ timeZone: "UTC" }, opt)).format(new Date(Date.UTC(p.y, p.mo - 1, p.d)));
-      row.innerHTML = events.map(({ ev, id, cat, catFr }) => {
-        const [tone] = NEWS_TONES[catFr] || ["1"];
-        const s = ev.start;
-        const e = ev.end;
-        const sameDay = s.y === e.y && s.mo === e.mo && s.d === e.d;
-        const sameMonth = s.y === e.y && s.mo === e.mo;
-        const day = sameDay || !sameMonth ? String(s.d) : `${s.d}–${e.d}`;
-        let when = sameDay
-          ? fmt(s, { weekday: "long" })
-          : sameMonth
-            ? `${fmt(s, { weekday: "long" })} → ${fmt(e, { weekday: "long" })}`
-            : `${isEn ? "until" : "jusqu'au"} ${fmt(e, { day: "numeric", month: "long" })}`;
-        if (!ev.allDay) when += ` · ${hm(s, isEn)}–${hm(e, isEn)}`;
-        return `
-          <article class="poster">
-            <div class="poster-top home-news-tone-${tone}">
-              <span class="poster-month">${esc(fmt(s, { month: "short" }).replace(".", ""))}</span>
-              <span class="poster-day">${esc(day)}</span>
-              <span class="poster-when">${esc(when)}</span>
-            </div>
-            <div class="poster-body">
-              <span class="poster-cat">${esc(cat)}</span>
-              <h3 class="poster-title"><a href="actualites.html#${encodeURIComponent(id)}">${esc(ev.title)}</a></h3>
-              ${ev.lieu ? `<p class="poster-place">${PIN_SVG}<span>${esc(ev.lieu)}</span></p>` : ""}
-              <div class="poster-actions">
-                <button type="button" class="poster-ics" data-id="${esc(id)}">📅 ${isEn ? "Add to calendar" : "Ajouter à l'agenda"}</button>
-                <a class="poster-google" href="${esc(agenda.googleUrl(ev))}" target="_blank" rel="noopener">Google ↗</a>
-              </div>
-            </div>
-          </article>`;
-      }).join("");
-    }
-
-    row.addEventListener("click", (e) => {
-      const btn = e.target.closest(".poster-ics");
-      if (!btn) return;
-      const found = events.find((x) => x.id === btn.dataset.id);
-      if (found) agenda.download(found.ev);
-    });
-
-    loadDatedActus()
-      .then((list) => {
-        cards = list;
-        render();
-      })
-      .catch(() => { section.hidden = true; });
-
-    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
-  }
-
-  // ---- Accueil : prochains événements (façon Sneakerness « Upcoming events ») ----
-  // Tuiles colorées sous les actus, cliquables vers l'actu correspondante.
-  function initHomeUpcoming() {
-    const box = document.getElementById("home-upcoming");
-    const row = document.getElementById("home-upcoming-row");
-    if (!box || !row || !window.DOMParser || !window.WIYAO_AGENDA) return;
-    let cards = [];
-
-    function render() {
-      const isEn = currentLang() === "en";
-      const events = collectUpcoming(cards).slice(0, 4);
-      box.hidden = events.length === 0;
-      row.innerHTML = events.map(({ ev, id, catFr }) => {
-        const [tone] = NEWS_TONES[catFr] || ["1"];
-        const d = eventDay(ev, isEn);
-        return `<a class="upcoming-tile home-news-tone-${tone}" href="actualites.html#${encodeURIComponent(id)}">
-          <span class="upcoming-tile-date"><span class="upcoming-tile-day">${esc(d.day)}</span><span class="upcoming-tile-month">${esc(d.month)}</span></span>
-          <span class="upcoming-tile-title">${esc(ev.title)}</span>
-          ${ev.lieu ? `<span class="upcoming-tile-place">${PIN_SVG}${esc(ev.lieu)}</span>` : ""}
-        </a>`;
-      }).join("");
-    }
-
-    loadDatedActus()
-      .then((list) => {
-        cards = list;
-        render();
-      })
-      .catch(() => { box.hidden = true; });
-
-    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
-  }
-
   // ---- Test d'orientation : « Comment se passe le test » (façon Superpower) ----
   // Les nombres de questions viennent de QUIZ_QUESTIONS / ROLE_QUESTIONS, les
   // éléments du résultat reprennent les titres de l'écran de résultat.
@@ -1858,103 +1657,6 @@
       const n = box.querySelectorAll('[role="tab"]').length;
       if (e.key === "ArrowDown") active = (active + 1) % n;
       else if (e.key === "ArrowUp") active = (active - 1 + n) % n;
-      else if (e.key === "Home") active = 0;
-      else if (e.key === "End") active = n - 1;
-      else return;
-      e.preventDefault();
-      render(true);
-    });
-
-    render(false);
-    new MutationObserver(() => render(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
-  }
-
-  // ---- À propos : « Pour qui ? » par public (façon SPI-BCEAO) ----
-  // Chaque public renvoie vers ce qui existe déjà sur le site, rien de plus.
-  const ABOUT_AUDIENCES = [
-    {
-      icon: "cap",
-      tab: { fr: "Bachelier·e", en: "High-school graduate" },
-      lead: { fr: "Tu viens d'avoir ton bac, ou tu le passes cette année.", en: "You just passed your bac, or you're taking it this year." },
-      items: [
-        ["test-orientation.html", { fr: "Le test d'orientation pour trouver ton domaine et un métier précis", en: "The orientation test to find your field and a specific career" }],
-        ["roadmaps.html", { fr: "La roadmap du métier : quoi apprendre, et dans quel ordre", en: "The career roadmap: what to learn, and in what order" }],
-        ["ecoles.html", { fr: "Le comparateur d'écoles, avec les frais quand ils sont publiés", en: "The school comparison tool, with fees when they're published" }],
-        ["calendrier.html", { fr: "Les dates de candidature à ne pas rater", en: "Application dates not to miss" }],
-      ],
-    },
-    {
-      icon: "compass",
-      tab: { fr: "Parents", en: "Parents" },
-      lead: { fr: "Tu veux être sûr·e que la tech est un vrai débouché pour ton enfant.", en: "You want to be sure tech is a real career path for your child." },
-      items: [
-        ["temoignages.html", { fr: "Des repères chiffrés et sourcés sur le secteur", en: "Sourced figures about the sector" }],
-        ["temoignages.html#portraits", { fr: "Des parcours réels de professionnels togolais", en: "Real stories of Togolese professionals" }],
-        ["ecoles.html", { fr: "Les écoles agréées par l'État, frais et admission comparés", en: "State-accredited schools, with fees and admission compared" }],
-        ["bourses-financement.html", { fr: "Les bourses et solutions de financement vérifiées", en: "Verified scholarships and funding options" }],
-      ],
-    },
-    {
-      icon: "route",
-      tab: { fr: "En reconversion", en: "Changing careers" },
-      lead: { fr: "Tu es déjà étudiant·e ou en poste, et tu veux passer à la tech.", en: "You're already studying or working, and want to move into tech." },
-      items: [
-        ["roadmaps.html#par-competence", { fr: "Les roadmaps par compétence, pour monter en niveau", en: "Skill roadmaps, to level up" }],
-        ["ecoles.html", { fr: "Des écoles avec cours du soir, du week-end ou des formats courts", en: "Schools with evening, weekend or short formats" }],
-        ["ecosysteme.html?type=ressources", { fr: "Des ressources francophones gratuites en ligne", en: "Free French-language online resources" }],
-        ["faq.html", { fr: "La FAQ : « je pense m'être trompé de filière »", en: "The FAQ: “I think I chose the wrong program”" }],
-      ],
-    },
-    {
-      icon: "school",
-      tab: { fr: "Écoles", en: "Schools" },
-      lead: { fr: "Tu représentes une école ou un centre de formation.", en: "You represent a school or a training center." },
-      items: [
-        ["ecoles.html", { fr: "Vérifie ta fiche : filières, frais, admission, dates", en: "Check your profile: programs, fees, admission, dates" }],
-        ["proposer.html?type=%C3%89tablissement", { fr: "Signale une mise à jour avec un lien vers la source officielle", en: "Report an update with a link to the official source" }],
-        ["#verif-title", { fr: "Comment chaque info est vérifiée avant publication", en: "How each piece of information is checked before publication" }],
-        ["calendrier.html", { fr: "Les dates de ton concours dans le calendrier", en: "Your entrance exam dates in the calendar" }],
-      ],
-    },
-  ];
-
-  function initAudienceTabs() {
-    const tabs = document.getElementById("audience-tabs");
-    const panel = document.getElementById("audience-panel");
-    if (!tabs || !panel) return;
-    let active = 0;
-
-    function render(focus) {
-      const isEn = currentLang() === "en";
-      const L = isEn ? "en" : "fr";
-      tabs.setAttribute("aria-label", isEn ? "Audiences" : "Publics");
-      tabs.innerHTML = ABOUT_AUDIENCES.map((a, i) =>
-        `<button type="button" role="tab" class="audience-tab" id="audience-tab-${i}" aria-controls="audience-panel" aria-selected="${i === active}" tabindex="${i === active ? 0 : -1}">${esc(a.tab[L])}</button>`
-      ).join("");
-      const a = ABOUT_AUDIENCES[active];
-      panel.setAttribute("aria-labelledby", `audience-tab-${active}`);
-      panel.innerHTML = `
-        <span class="audience-icon" aria-hidden="true">${ICONS[a.icon]}</span>
-        <div class="audience-body">
-          <p class="audience-who">${esc(a.lead[L])}</p>
-          <ul class="audience-list">${a.items.map(([href, t]) => `<li><a href="${href}">${esc(t[L])}<span aria-hidden="true"> →</span></a></li>`).join("")}</ul>
-        </div>`;
-      if (focus) {
-        const tab = document.getElementById(`audience-tab-${active}`);
-        if (tab) tab.focus();
-      }
-    }
-
-    tabs.addEventListener("click", (e) => {
-      const btn = e.target.closest('[role="tab"]');
-      if (!btn) return;
-      active = Number(btn.id.replace("audience-tab-", ""));
-      render(true);
-    });
-    tabs.addEventListener("keydown", (e) => {
-      const n = ABOUT_AUDIENCES.length;
-      if (e.key === "ArrowRight") active = (active + 1) % n;
-      else if (e.key === "ArrowLeft") active = (active - 1 + n) % n;
       else if (e.key === "Home") active = 0;
       else if (e.key === "End") active = n - 1;
       else return;
@@ -2205,16 +1907,6 @@
   const HOME_COMMUNITIES = ["GDG Lomé", "TDEV", "CoTIA", "Women Techmakers", "Djanta Tech Hub", "UniPod"];
   const ARROW_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="8 7 17 7 17 16"></polyline></svg>';
 
-  // Latitude / longitude des villes où le comparateur recense des écoles :
-  // place les points du sud au nord sur l'accueil (aucune frontière tracée).
-  const CITY_COORDS = {
-    "Lomé": [6.13, 1.22],
-    "Atakpamé": [7.53, 1.13],
-    "Sokodé": [8.98, 1.13],
-    "Bassar": [9.25, 0.78],
-    "Kara": [9.55, 1.19],
-  };
-
   function esc(str) {
     return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
@@ -2310,106 +2002,83 @@
     shield: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',
   };
 
-  // "Je suis ici pour…" (façon Duplo) : chaque intention renvoie vers la page
-  // qui y répond ; les descriptions reprennent ce que disent ces pages.
+  // "Je suis ici pour…" (façon Duplo) : l'aiguillage de l'accueil. Une
+  // phrase par destination, sans recopier le contenu de la page visée (règle
+  // « une information = une seule page »).
   const HOME_INTENTS = [
     {
       icon: "compass",
       label: { fr: "trouver ma voie dans la tech", en: "find my path in tech" },
       title: { fr: "Commence par le test d'orientation", en: "Start with the orientation test" },
-      desc: {
-        fr: "14 questions pour identifier le domaine tech, et le métier précis, qui te correspond. Le résultat te renvoie vers la roadmap de ce métier.",
-        en: "14 questions to identify the tech field, and the specific career, that fits you. The result points you to that career's roadmap.",
-      },
+      desc: { fr: "Il t'oriente vers un domaine et un métier.", en: "It points you to a field and a career." },
       href: "test-orientation.html",
       cta: { fr: "Faire le test →", en: "Take the test →" },
-      more: [["temoignages.html", { fr: "Lire des parcours réels", en: "Read real stories" }], ["roadmaps.html", { fr: "Parcourir les métiers", en: "Browse careers" }]],
+      more: [["temoignages.html#portraits", { fr: "Parcours réels", en: "Real stories" }]],
     },
     {
       icon: "route",
       label: { fr: "apprendre un métier pas à pas", en: "learn a career step by step" },
       title: { fr: "Suis une roadmap", en: "Follow a roadmap" },
-      desc: {
-        fr: "Pour chaque métier ou compétence, la roadmap te montre quoi apprendre, et dans quel ordre. Ta progression reste enregistrée sur ton appareil.",
-        en: "For each career or skill, the roadmap shows you what to learn, and in what order. Your progress stays saved on your device.",
-      },
+      desc: { fr: "Quoi apprendre, dans quel ordre.", en: "What to learn, in what order." },
       href: "roadmaps.html",
       cta: { fr: "Voir les roadmaps →", en: "See the roadmaps →" },
-      more: [["ecosysteme.html", { fr: "Ressources et communautés", en: "Resources and communities" }], ["test-orientation.html", { fr: "Pas sûr·e du métier ? Fais le test", en: "Not sure which career? Take the test" }]],
+      more: [["ecosysteme.html?type=ressources", { fr: "Ressources en ligne", en: "Online resources" }]],
     },
     {
       icon: "school",
       label: { fr: "choisir mon école", en: "choose my school" },
-      title: { fr: "Compare les écoles et universités", en: "Compare schools and universities" },
-      desc: {
-        fr: "{n} écoles et universités togolaises comparées : filières, niveaux, admission, frais de scolarité quand ils sont publiés, et dates clés.",
-        en: "{n} Togolese schools and universities compared: programs, levels, admission, tuition fees when published, and key dates.",
-      },
+      title: { fr: "Compare les écoles", en: "Compare schools" },
+      desc: { fr: "Jusqu'à 3 écoles côte à côte.", en: "Up to 3 schools side by side." },
       href: "ecoles.html",
       cta: { fr: "Comparer les écoles →", en: "Compare schools →" },
-      more: [["calendrier.html", { fr: "Dates des concours", en: "Entrance exam dates" }], ["bourses-financement.html", { fr: "Bourses disponibles", en: "Available scholarships" }]],
+      more: [],
     },
     {
       icon: "coins",
       label: { fr: "financer mes études", en: "fund my studies" },
       title: { fr: "Trouve une bourse ou une aide", en: "Find a scholarship or aid" },
-      desc: {
-        fr: "Bourses, réductions et solutions de financement vérifiées, accessibles à un·e bachelier·ère togolais·e, écoles comprises.",
-        en: "Verified scholarships, discounts and funding options open to Togolese high-school graduates, schools included.",
-      },
+      desc: { fr: "Bourses, réductions et formations gratuites.", en: "Scholarships, discounts and free training." },
       href: "bourses-financement.html",
       cta: { fr: "Voir les bourses →", en: "See scholarships →" },
-      more: [["ecoles.html", { fr: "Comparer les frais des écoles", en: "Compare school fees" }], ["calendrier.html", { fr: "Dates à ne pas rater", en: "Dates not to miss" }]],
+      more: [],
     },
     {
       icon: "calendar",
       label: { fr: "ne rater aucune date", en: "never miss a deadline" },
       title: { fr: "Garde un œil sur le calendrier", en: "Keep an eye on the calendar" },
-      desc: {
-        fr: "Le calendrier type d'une candidature au Togo, puis les dates connues école par école : concours, clôtures, rentrées.",
-        en: "The typical application calendar in Togo, then known dates school by school: entrance exams, deadlines, start dates.",
-      },
+      desc: { fr: "Concours, clôtures et rentrées.", en: "Entrance exams, deadlines and start dates." },
       href: "calendrier.html",
       cta: { fr: "Voir le calendrier →", en: "See the calendar →" },
-      more: [["actualites.html", { fr: "Dernières actualités", en: "Latest news" }], ["ecoles.html", { fr: "Comparer les écoles", en: "Compare schools" }]],
+      more: [["actualites.html", { fr: "Événements tech", en: "Tech events" }]],
     },
     {
       icon: "briefcase",
       label: { fr: "trouver un stage ou un emploi", en: "find an internship or a job" },
       title: { fr: "Prépare ton entrée dans la vie pro", en: "Get ready for working life" },
-      desc: {
-        fr: "Où chercher un stage ou un premier emploi tech au Togo, les employeurs qui recrutent des profils tech, et comment mettre toutes les chances de ton côté.",
-        en: "Where to look for an internship or a first tech job in Togo, employers hiring tech profiles, and how to give yourself the best chance.",
-      },
+      desc: { fr: "Où chercher, et qui recrute.", en: "Where to look, and who's hiring." },
       href: "stages-emploi.html",
       cta: { fr: "Voir stages & emploi →", en: "See internships & jobs →" },
-      more: [["ecosysteme.html", { fr: "Communautés et hubs", en: "Communities and hubs" }], ["roadmaps.html", { fr: "Renforcer tes compétences", en: "Build your skills" }]],
+      more: [["ecosysteme.html?type=communautes", { fr: "Communautés", en: "Communities" }]],
+    },
+    {
+      icon: "cap",
+      label: { fr: "rassurer mes parents", en: "reassure my parents" },
+      title: { fr: "Montre-leur que c'est un vrai métier", en: "Show them it's a real career" },
+      desc: { fr: "Des chiffres sourcés et des parcours réels.", en: "Sourced figures and real stories." },
+      href: "temoignages.html",
+      cta: { fr: "Voir les témoignages →", en: "See the testimonials →" },
+      more: [],
+    },
+    {
+      icon: "rocket",
+      label: { fr: "me reconvertir dans la tech", en: "switch to a tech career" },
+      title: { fr: "Monte en compétences", en: "Build your skills" },
+      desc: { fr: "Commence par une roadmap par compétence.", en: "Start with a skill roadmap." },
+      href: "roadmaps.html#par-competence",
+      cta: { fr: "Voir les compétences →", en: "See the skills →" },
+      more: [["faq.html", { fr: "Déjà en études ? La FAQ", en: "Already studying? The FAQ" }]],
     },
   ];
-
-  // Catégories des actus (texte FR de actualites.html) → teinte + icône.
-  const NEWS_TONES = {
-    "Formation": ["1", "cap"], "Éducation": ["1", "cap"], "Événement": ["2", "calendar"],
-    "Startups": ["3", "rocket"], "Écosystème": ["3", "rocket"], "Cybersécurité": ["4", "shield"], "Gouvernement": ["5", "school"],
-  };
-
-  // Texte brut d'une chaîne HTML, sans rien exécuter ni charger.
-  // actualites.html, chargée une seule fois par page (actus de l'accueil,
-  // prochains événements, rangée « À venir » du Calendrier).
-  let actualitesPromise = null;
-  function actualitesHtml() {
-    if (!actualitesPromise) {
-      actualitesPromise = fetch("actualites.html").then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status)))));
-    }
-    return actualitesPromise;
-  }
-
-  function plainText(html) {
-    // Espace insécable avant « : ; ! ? » (typographie française) : évite
-    // qu'un deux-points se retrouve seul en début de ligne.
-    return new DOMParser().parseFromString(String(html), "text/html").body.textContent
-      .replace(/\s+/g, " ").trim().replace(/ ([:;!?»])/g, " $1");
-  }
 
   // Chiffres [data-stat] (accueil, frise de la page À propos) : calculés
   // depuis data.js pour ne jamais diverger du contenu réel.
@@ -2448,80 +2117,6 @@
 
     const roleLabel = () => (roles.length ? (currentLang() === "en" ? roles[current].en : roles[current].fr) : "");
 
-    // Onglets "Explorer par domaine" (modèle ARIA tablist : clic, flèches,
-    // Début/Fin). Contenu tiré de DOMAINS et ROLES, jamais figé.
-    const tabsEl = document.getElementById("home-domain-tabs");
-    const panelEl = document.getElementById("home-domain-panel");
-    const domainNames = typeof DOMAINS !== "undefined" ? Object.keys(DOMAINS) : [];
-    let activeDomain = domainNames[0];
-
-    function renderDomains(isEn) {
-      if (!tabsEl || !panelEl || !domainNames.length || typeof ROLES === "undefined") return;
-      tabsEl.setAttribute("aria-label", isEn ? "Tech fields" : "Domaines tech");
-      tabsEl.innerHTML = domainNames.map((name, i) => {
-        const sel = name === activeDomain;
-        return `<button type="button" role="tab" class="home-tab" id="home-tab-${i}" aria-controls="home-domain-panel" aria-selected="${sel}" tabindex="${sel ? 0 : -1}" data-domain="${esc(name)}"><span class="home-tab-icon" aria-hidden="true">${DOMAINS[name].icon}</span><span>${esc(domainLabel(name))}</span></button>`;
-      }).join("");
-
-      const meta = DOMAINS[activeDomain];
-      const ids = Object.keys(ROLES).filter((id) => ROLES[id].domain === activeDomain);
-      const cards = ids.slice(0, 6).map((id) => {
-        const r = ROLES[id];
-        const verified = r.togoVerified ? ` · ✓ ${isEn ? "Togo-verified" : "Vérifié Togo"}` : "";
-        return `<a class="home-role-card" href="roadmap.html?id=${encodeURIComponent(id)}"><span class="home-role-icon" aria-hidden="true">${r.icon}</span><span class="home-role-body"><span class="home-role-title">${esc(tField(r, "title"))}</span><span class="home-role-meta">${esc(levelLabel(r.level))} · ${countItems(r)} ${isEn ? "steps" : "étapes"}${verified}</span></span></a>`;
-      }).join("");
-      panelEl.setAttribute("aria-labelledby", `home-tab-${domainNames.indexOf(activeDomain)}`);
-      panelEl.className = `home-tabpanel home-tabpanel--${domainSlug(activeDomain)}`;
-      panelEl.innerHTML = `
-        <div class="home-domain-intro">
-          <p class="home-domain-name"><span class="home-domain-icon" aria-hidden="true">${meta.icon}</span>${esc(domainLabel(activeDomain))}</p>
-          <p class="home-domain-desc">${esc(tField(meta, "description"))}</p>
-          ${meta.presenceTogo ? `<p class="home-domain-presence">🇹🇬 ${esc(tField(meta, "presenceTogo"))}</p>` : ""}
-          <a class="home-feature-link" href="roadmaps.html?domaine=${encodeURIComponent(activeDomain)}#par-metier">${isEn ? `See the ${ids.length} roadmaps →` : `Voir les ${ids.length} roadmaps →`}</a>
-        </div>
-        <div class="home-role-grid">${cards}</div>`;
-    }
-
-    function renderCities(isEn) {
-      const list = document.getElementById("home-city-list");
-      const map = document.getElementById("home-map");
-      if (!list || !map || typeof SCHOOLS === "undefined") return;
-      const counts = {};
-      Object.values(SCHOOLS).forEach((s) => (s.ville || []).forEach((v) => { counts[v] = (counts[v] || 0) + 1; }));
-      const lat = (c) => (CITY_COORDS[c] ? CITY_COORDS[c][0] : 99);
-      const cities = Object.keys(counts).sort((a, b) => lat(a) - lat(b));
-      const word = (n) => (isEn ? (n > 1 ? "schools" : "school") : (n > 1 ? "écoles" : "école"));
-      list.innerHTML = cities.map((c) =>
-        `<li><a href="ecoles.html?ville=${encodeURIComponent(c)}"><span class="home-city-name">${esc(c)}</span><span class="home-city-count">${counts[c]} ${word(counts[c])} →</span></a></li>`
-      ).join("");
-
-      const W = 360, H = 460, PAD = 52, LAT = [5.8, 10.0], LON = [0.4, 1.6];
-      const pts = cities.filter((c) => CITY_COORDS[c]).map((c) => {
-        const [la, lo] = CITY_COORDS[c];
-        return {
-          c, n: counts[c], r: 8 + 6 * Math.sqrt(counts[c]),
-          x: PAD + ((lo - LON[0]) / (LON[1] - LON[0])) * (W - 2 * PAD),
-          y: PAD + ((LAT[1] - la) / (LAT[1] - LAT[0])) * (H - 2 * PAD),
-        };
-      });
-      // Étiquette à droite du point, sauf si elle chevaucherait un autre point.
-      const labels = pts.map((p) => {
-        const width = (p.c.length + String(p.n).length + 3) * 8.4;
-        const clash = pts.some((q) => q !== p && q.x - q.r < p.x + p.r + 8 + width && q.x + q.r > p.x && Math.abs(q.y - p.y) < q.r + 10);
-        return clash
-          ? `<text class="map-label" x="${(p.x - p.r - 8).toFixed(1)}" y="${(p.y + 5).toFixed(1)}" text-anchor="end">${esc(p.c)} <tspan class="map-count">${p.n}</tspan></text>`
-          : `<text class="map-label" x="${(p.x + p.r + 8).toFixed(1)}" y="${(p.y + 5).toFixed(1)}">${esc(p.c)} <tspan class="map-count">${p.n}</tspan></text>`;
-      });
-      map.innerHTML = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
-        <line class="map-axis" x1="22" y1="${PAD - 14}" x2="22" y2="${H - PAD + 14}"></line>
-        <text class="map-axis-label" x="22" y="${PAD - 22}" text-anchor="middle">N ↑</text>
-        <text class="map-axis-label" x="22" y="${H - PAD + 30}" text-anchor="middle">S</text>
-        ${pts.map((p) => `<circle class="map-halo" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${(p.r * 1.7).toFixed(1)}"></circle><circle class="map-pin" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.r.toFixed(1)}"></circle>`).join("")}
-        ${labels.join("")}
-        <text class="map-coast" x="${W / 2}" y="${H - 14}" text-anchor="middle">${isEn ? "Gulf of Guinea" : "Golfe de Guinée"}</text>
-      </svg>`;
-    }
-
     function renderPhone(isEn) {
       const screen = document.getElementById("home-phone-screen");
       if (!screen) return;
@@ -2544,7 +2139,6 @@
     function renderIntent(isEn, withOptions = true) {
       if (!intentSelect || !intentResult) return;
       const L = isEn ? "en" : "fr";
-      const nSchools = typeof SCHOOLS !== "undefined" ? Object.keys(SCHOOLS).length : 32;
       if (withOptions) {
         intentSelect.innerHTML = HOME_INTENTS.map((it, i) =>
           `<option value="${i}"${i === activeIntent ? " selected" : ""}>${esc(it.label[L])}</option>`
@@ -2556,8 +2150,8 @@
           <span class="home-intent-icon" aria-hidden="true">${ICONS[it.icon]}</span>
           <div class="home-intent-body">
             <h3 class="home-intent-title">${esc(it.title[L])}</h3>
-            <p class="home-intent-desc">${esc(it.desc[L].replace("{n}", nSchools))}</p>
-            <ul class="home-intent-more">${it.more.map(([href, t]) => `<li><a href="${href}">${esc(t[L])}</a></li>`).join("")}</ul>
+            <p class="home-intent-desc">${esc(it.desc[L])}</p>
+            ${it.more.length ? `<ul class="home-intent-more">${it.more.map(([href, t]) => `<li><a href="${href}">${esc(t[L])}</a></li>`).join("")}</ul>` : ""}
           </div>
           <a class="btn-primary home-intent-cta" href="${it.href}">${esc(it.cta[L])}</a>
         </div>`;
@@ -2567,152 +2161,6 @@
       intentSelect.addEventListener("change", () => {
         activeIntent = Math.min(HOME_INTENTS.length - 1, Math.max(0, Number(intentSelect.value) || 0));
         renderIntent(currentLang() === "en", false);
-      });
-    }
-
-    // Actualités : les 4 premières cartes de actualites.html (l'ordre choisi
-    // sur cette page), relues à chaque visite : rien à ressaisir ici.
-    const newsSection = document.getElementById("actus");
-    const newsGrid = document.getElementById("home-news-grid");
-    let newsItems = null;
-
-    // Champ de la carte → suffixe de sa clé i18n (actu.t19.h3, actu.t19.p…).
-    const NEWS_KEYS = { title: "h3", desc: "p", date: "date", cat: "cat" };
-
-    function newsText(item, field, isEn) {
-      const tr = window.WIYAO_I18N && item.key ? window.WIYAO_I18N.t(`${item.key}.${NEWS_KEYS[field]}`, isEn ? "en" : "fr") : null;
-      return plainText(tr == null ? item[field] : tr);
-    }
-
-    function renderNews(isEn) {
-      if (!newsGrid || !newsItems || !newsItems.length) return;
-      const view = newsItems.map((n) => {
-        const [tone, icon] = NEWS_TONES[n.cat] || ["1", "cap"];
-        return { n, tone, icon, title: newsText(n, "title", isEn), desc: newsText(n, "desc", isEn), date: newsText(n, "date", isEn), cat: newsText(n, "cat", isEn) };
-      });
-      const [f, ...rest] = view;
-      const href = (v) => `actualites.html${v.n.id ? `#${encodeURIComponent(v.n.id)}` : ""}`;
-      const source = /^https?:\/\//.test(f.n.source)
-        ? `<a class="home-news-source" href="${esc(f.n.source)}" target="_blank" rel="noopener">${isEn ? "Source ↗" : "Source ↗"}</a>`
-        : "";
-      newsGrid.innerHTML = `
-        <article class="home-news-feature">
-          <div class="home-news-cover home-news-tone-${f.tone}" aria-hidden="true">${ICONS[f.icon]}<span class="home-news-cover-cat">${esc(f.cat)}</span></div>
-          <div class="home-news-body">
-            <h3 class="home-news-title"><a href="${href(f)}">${esc(f.title)}</a></h3>
-            <p class="home-news-desc">${esc(f.desc)}</p>
-            <p class="home-news-date">${ICONS.calendar}<span>${esc(f.date)}</span></p>
-            <p class="home-news-links"><a class="home-feature-link" href="${href(f)}">${isEn ? "Read on WIYAO →" : "Lire sur WIYAO →"}</a>${source}</p>
-          </div>
-        </article>
-        <ul class="home-news-list">${rest.map((v) => `
-          <li><a class="home-news-item" href="${href(v)}">
-            <span class="home-news-thumb home-news-tone-${v.tone}" aria-hidden="true">${ICONS[v.icon]}</span>
-            <span class="home-news-item-text"><span class="home-news-item-title">${esc(v.title)}</span><span class="home-news-item-date">${esc(v.date)}</span></span>
-          </a></li>`).join("")}
-        </ul>`;
-    }
-
-    function loadNews() {
-      if (!newsGrid || !window.fetch || !window.DOMParser) return;
-      // Requête déjà lancée par js/nav.js pour le bandeau d'annonce, si présente.
-      actualitesHtml()
-        .then((html) => {
-          const doc = new DOMParser().parseFromString(html, "text/html");
-          const pick = (a, sel) => { const el = a.querySelector(sel); return el ? el.textContent.trim() : ""; };
-          newsItems = [...doc.querySelectorAll("article.actu-card")].slice(0, 4).map((a) => {
-            const h3 = a.querySelector(".actu-card-title");
-            const src = a.querySelector(".actu-card-btn");
-            return {
-              id: a.id || "",
-              key: h3 && h3.dataset.i18nKey ? h3.dataset.i18nKey.replace(/\.h3$/, "") : "",
-              title: h3 ? h3.textContent.trim() : "",
-              desc: pick(a, ".actu-card-desc"),
-              date: pick(a, '.actu-meta-value[data-i18n-key$=".date"]'),
-              cat: pick(a, '.actu-meta-value[data-i18n-key$=".cat"]'),
-              source: src ? src.getAttribute("href") || "" : "",
-            };
-          }).filter((n) => n.title);
-          if (!newsItems.length) throw new Error("empty");
-          renderNews(currentLang() === "en");
-        })
-        .catch(() => { if (newsSection) newsSection.hidden = true; });
-    }
-
-    // FAQ question / réponse (façon Chowdeck) : sur grand écran, questions à
-    // gauche et réponse dans un panneau à droite ; l'accordéon reste la
-    // version mobile et sans JavaScript. Contenu relu depuis les <details>
-    // (donc déjà traduit par i18n.js).
-    const faqSection = document.querySelector(".home-faq");
-    const faqSplit = document.getElementById("home-faq-split");
-    let activeFaq = 0;
-
-    function renderFaq(isEn) {
-      if (!faqSection || !faqSplit) return;
-      const items = [...faqSection.querySelectorAll(".home-faq-list .faq-item")];
-      if (!items.length) return;
-      const num = (i) => String(i + 1).padStart(2, "0");
-      const part = (d, sel) => { const el = d.querySelector(sel); return el ? el.innerHTML : ""; };
-      faqSplit.innerHTML = `
-        <div class="home-faq-tabs" role="tablist" aria-orientation="vertical" aria-label="${isEn ? "Frequently asked questions" : "Questions fréquentes"}">
-          ${items.map((d, i) => `<button type="button" role="tab" class="home-faq-tab" id="home-faq-tab-${i}" aria-controls="home-faq-panel" aria-selected="${i === activeFaq}" tabindex="${i === activeFaq ? 0 : -1}"><span class="home-faq-num" aria-hidden="true">${num(i)}</span><span class="home-faq-q">${part(d, "summary")}</span></button>`).join("")}
-        </div>
-        <div class="home-faq-panel" id="home-faq-panel" role="tabpanel" aria-labelledby="home-faq-tab-${activeFaq}" tabindex="0">
-          <span class="home-faq-mark" aria-hidden="true">${num(activeFaq)}</span>
-          <p class="home-faq-answer">${part(items[activeFaq], "p")}</p>
-        </div>`;
-      faqSplit.hidden = false;
-      faqSection.classList.add("is-split");
-    }
-
-    function selectFaq(i) {
-      activeFaq = i;
-      renderFaq(currentLang() === "en");
-      const tab = document.getElementById(`home-faq-tab-${i}`);
-      if (tab) tab.focus();
-    }
-
-    if (faqSplit) {
-      faqSplit.addEventListener("click", (e) => {
-        const btn = e.target.closest('[role="tab"]');
-        if (btn) selectFaq(Number(btn.id.replace("home-faq-tab-", "")));
-      });
-      faqSplit.addEventListener("keydown", (e) => {
-        if (!e.target.closest('[role="tab"]')) return;
-        const n = faqSplit.querySelectorAll('[role="tab"]').length;
-        let i = activeFaq;
-        if (e.key === "ArrowDown") i = (i + 1) % n;
-        else if (e.key === "ArrowUp") i = (i - 1 + n) % n;
-        else if (e.key === "Home") i = 0;
-        else if (e.key === "End") i = n - 1;
-        else return;
-        e.preventDefault();
-        selectFaq(i);
-      });
-    }
-
-    function selectDomain(i) {
-      activeDomain = domainNames[i];
-      renderDomains(currentLang() === "en");
-      const tab = document.getElementById(`home-tab-${i}`);
-      if (tab) tab.focus();
-    }
-
-    if (tabsEl) {
-      tabsEl.addEventListener("click", (e) => {
-        const btn = e.target.closest('[role="tab"]');
-        if (btn) selectDomain(domainNames.indexOf(btn.dataset.domain));
-      });
-      tabsEl.addEventListener("keydown", (e) => {
-        const n = domainNames.length;
-        let i = domainNames.indexOf(activeDomain);
-        if (e.key === "ArrowRight") i = (i + 1) % n;
-        else if (e.key === "ArrowLeft") i = (i - 1 + n) % n;
-        else if (e.key === "Home") i = 0;
-        else if (e.key === "End") i = n - 1;
-        else return;
-        e.preventDefault();
-        selectDomain(i);
       });
     }
 
@@ -2735,11 +2183,7 @@
         el.innerHTML = build ? build(isEn) : "";
       });
       renderIntent(isEn);
-      renderDomains(isEn);
-      renderCities(isEn);
-      renderNews(isEn);
       renderPhone(isEn);
-      renderFaq(isEn);
     }
 
     // Bouton "Installer WIYAO" : affiché seulement si le navigateur propose
@@ -2763,7 +2207,6 @@
     }
 
     render();
-    loadNews();
     // i18n.js change l'attribut lang de <html> à chaque bascule FR/EN.
     new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
 
@@ -2804,7 +2247,6 @@
     fillStats();
     initHome();
     renderGrid();
-    renderDomainPrimer();
     initFilters();
     initGlobalSearch();
     initSearchSuggestions();
@@ -2816,9 +2258,6 @@
     initQuiz();
     renderAcademicTimeline();
     renderSchoolDates();
-    initUpcomingEvents();
-    initHomeUpcoming();
-    initAudienceTabs();
     initQuizHowto();
     initGuideExplorer();
     initContactForm();

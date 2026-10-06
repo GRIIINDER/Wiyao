@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="WIYAO - Le guide qui accompagne ton parcours tech au Togo">
 <meta name="twitter:description" content="WIYAO est le guide qui accompagne le bachelier togolais à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses, stages et emploi.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=191">
+<link rel="stylesheet" href="css/style.css?v=192">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -124,13 +124,9 @@
     <ul class="home-toc-list">
       <li><a href="#intention" data-i18n-key="home.toc.intent">Par où commencer</a></li>
       <li><a href="#parcours" data-i18n-key="home.toc.journey">Le parcours</a></li>
-      <li><a href="#domaines" data-i18n-key="home.toc.domains">Domaines</a></li>
-      <li><a href="#villes" data-i18n-key="home.toc.cities">Villes</a></li>
-      <li><a href="#actus" data-i18n-key="home.toc.news">Actus</a></li>
       <li><a href="#pourquoi" data-i18n-key="home.toc.why">Pourquoi WIYAO</a></li>
       <li><a href="#rejoindre" data-i18n-key="home.toc.join">Rejoindre</a></li>
       <li><a href="#application" data-i18n-key="home.toc.app">Application</a></li>
-      <li><a href="#faq" data-i18n-key="home.toc.faq">FAQ</a></li>
     </ul>
   </nav>
 
@@ -222,89 +218,6 @@
     </article>
   </section>
 
-  <section class="home-domains" id="domaines">
-    <div class="home-section-head">
-      <p class="home-eyebrow" data-i18n-key="home.domains.eyebrow">Explorer par domaine</p>
-      <h2 class="home-h2" data-i18n-key="home.domains.title">Quel domaine tech t'attire&nbsp;?</h2>
-      <p class="home-lead" data-i18n-key="home.domains.desc">Choisis un domaine pour découvrir ses métiers et la roadmap de chacun.</p>
-    </div>
-    <div class="home-tabs" id="home-domain-tabs" role="tablist"></div>
-    <div class="home-tabpanel" id="home-domain-panel" role="tabpanel" tabindex="0"></div>
-  </section>
-
-  <section class="home-cities" id="villes">
-    <div class="home-cities-text">
-      <p class="home-eyebrow" data-i18n-key="home.cities.eyebrow">Où étudier</p>
-      <h2 class="home-h2" data-i18n-key="home.cities.title">Où étudier au Togo&nbsp;?</h2>
-      <p class="home-lead" data-i18n-key="home.cities.desc">Les écoles du comparateur, ville par ville, du sud au nord. Choisis une ville pour voir ses écoles.</p>
-      <ul class="home-city-list" id="home-city-list"></ul>
-    </div>
-    <div class="home-map" id="home-map" aria-hidden="true"></div>
-  </section>
-
-  <section class="home-news" id="actus">
-    <div class="home-news-head">
-      <div>
-        <p class="home-eyebrow" data-i18n-key="home.news.eyebrow">À la une</p>
-        <h2 class="home-h2" data-i18n-key="home.news.title">Actualités et mises à jour</h2>
-      </div>
-      <a class="btn-ghost" href="actualites.html" data-i18n-key="home.news.all">Tout afficher →</a>
-    </div>
-    <div class="home-news-grid" id="home-news-grid"></div>
-    <div class="home-upcoming" id="home-upcoming" hidden>
-      <div class="home-upcoming-head">
-        <h3 class="home-upcoming-title" data-i18n-key="home.upcoming.title">Prochains événements</h3>
-        <a class="home-feature-link" href="calendrier.html#a-venir" data-i18n-key="home.upcoming.all">Voir le calendrier →</a>
-      </div>
-      <div class="home-upcoming-row" id="home-upcoming-row"></div>
-    </div>
-  </section>
-
-  <section class="home-market">
-    <div class="home-section-head">
-      <p class="home-eyebrow" data-i18n-key="home.market.eyebrow">Pourquoi la tech</p>
-      <h2 class="home-h2" data-i18n-key="home.market.title">La tech togolaise en chiffres</h2>
-      <p class="home-lead" data-i18n-key="home.market.desc">Un secteur soutenu par l'État et par les bailleurs internationaux : de quoi rassurer tes parents.</p>
-    </div>
-    <div class="home-market-grid">
-      <div class="home-market-item">
-        <span class="home-market-num" data-i18n-key="home.market.m1.num">100 M$</span>
-        <p class="home-market-desc" data-i18n-key="home.market.m1.p">Environ 62 milliards de FCFA approuvés par la Banque mondiale en décembre 2024 pour accélérer la transformation numérique du Togo : croissance, emplois, compétitivité.</p>
-        <p class="home-market-source"><span data-i18n-key="home.story.source">Source :</span> <a href="https://www.banquemondiale.org/fr/news/press-release/2024/12/19/togo-100-million-in-funding-to-accelerate-digital-transformation" target="_blank" rel="noopener">banquemondiale.org</a></p>
-      </div>
-      <div class="home-market-item">
-        <span class="home-market-num" data-i18n-key="home.market.m2.num">8 000</span>
-        <p class="home-market-desc" data-i18n-key="home.market.m2.p">Institutions publiques à connecter au haut débit, et plus d'un million de personnes à l'Internet, grâce à ce même financement.</p>
-        <p class="home-market-source"><span data-i18n-key="home.story.source">Source :</span> <a href="https://www.banquemondiale.org/fr/news/press-release/2024/12/19/togo-100-million-in-funding-to-accelerate-digital-transformation" target="_blank" rel="noopener">banquemondiale.org</a></p>
-      </div>
-      <div class="home-market-item">
-        <span class="home-market-num" data-i18n-key="home.market.m3.num">4&nbsp;%&nbsp;→ 10&nbsp;%</span>
-        <p class="home-market-desc" data-i18n-key="home.market.m3.p">Part du numérique dans le PIB togolais en 2022, et objectif affiché par le pays pour les prochaines années.</p>
-        <p class="home-market-source"><span data-i18n-key="home.story.source">Source :</span> <a href="https://www.wearetech.africa/fr/fils/actualites/tech/togo-une-nouvelle-strategie-numerique-en-preparation-pour-la-periode-2025-2030" target="_blank" rel="noopener">wearetech.africa</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-story">
-    <div class="home-story-card">
-      <p class="home-eyebrow" data-i18n-key="temoin.s3.h2">Ils l'ont fait</p>
-      <p class="home-story-text" data-i18n-key="temoin.s3.p2.p">Géographe de formation, sans parcours informatique initial. En 2013, à WoeLab, il construit en six mois W.Afate : la première imprimante 3D africaine fabriquée à partir de déchets électroniques récupérés dans les décharges de Lomé. Premier prix de l'innovation technologique à la conférence internationale FabLab (Barcelone, 2014).</p>
-      <div class="home-story-person">
-        <span class="home-story-avatar" aria-hidden="true">KG</span>
-        <div>
-          <span class="home-story-name">Kodjo Afate Gnikou</span>
-          <span class="home-story-role" data-i18n-key="temoin.s3.p2.role">Inventeur de l'imprimante 3D W.Afate</span>
-        </div>
-      </div>
-      <p class="home-story-source"><span data-i18n-key="home.story.source">Source :</span> <a href="https://face2faceafrica.com/article/meet-kodjo-afate-gnikou-who-built-a-3d-printer-from-electronic-waste" target="_blank" rel="noopener">face2faceafrica.com</a></p>
-    </div>
-    <div class="home-story-side">
-      <div class="home-story-avatars" aria-hidden="true"><span>SA</span><span>EA</span><span>EK</span><span>IG</span><span>RT</span></div>
-      <p class="home-story-more" data-i18n-key="home.story.more">Fondateurs, ingénieures, inventeurs : découvre d'autres parcours de la tech togolaise, tous sourcés.</p>
-      <a class="btn-ghost" href="temoignages.html#portraits" data-i18n-key="home.story.cta">Voir tous les parcours →</a>
-    </div>
-  </section>
-
   <section class="home-compare" id="pourquoi">
     <div class="home-section-head">
       <p class="home-eyebrow" data-i18n-key="home.compare.eyebrow">Pourquoi WIYAO</p>
@@ -355,47 +268,6 @@
     </table>
   </section>
 
-  <section class="home-sources">
-    <div class="home-section-head">
-      <p class="home-eyebrow" data-i18n-key="home.sources.eyebrow">Nos sources</p>
-      <h2 class="home-h2" data-i18n-key="home.sources.title">Vérifié, jamais deviné</h2>
-      <p class="home-lead" data-i18n-key="home.sources.desc">Les informations de WIYAO sont sourcées activement. Voici d'où elles viennent.</p>
-    </div>
-    <div class="home-sources-grid">
-      <div class="home-source">
-        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></span>
-        <h3 class="home-source-title" data-i18n-key="home.sources.s1.t">Sites officiels</h3>
-        <p class="home-source-desc" data-i18n-key="home.sources.s1.p">Frais, filières et dates repris des pages des écoles et des organismes, avec le lien.</p>
-      </div>
-      <div class="home-source">
-        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15l2 2 4-4"></path></svg></span>
-        <h3 class="home-source-title" data-i18n-key="home.sources.s2.t">Documents signés</h3>
-        <p class="home-source-desc" data-i18n-key="home.sources.s2.p">Échéanciers de frais et calendriers académiques officiels des écoles.</p>
-      </div>
-      <div class="home-source">
-        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></span>
-        <h3 class="home-source-title" data-i18n-key="home.sources.s3.t">Affiches officielles</h3>
-        <p class="home-source-desc" data-i18n-key="home.sources.s3.p">Annonces de rentrée ou d'inscriptions publiées par les écoles elles-mêmes.</p>
-      </div>
-      <div class="home-source">
-        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><line x1="10" y1="7" x2="18" y2="7"></line><line x1="10" y1="11" x2="18" y2="11"></line><line x1="10" y1="15" x2="15" y2="15"></line></svg></span>
-        <h3 class="home-source-title" data-i18n-key="home.sources.s4.t">Presse togolaise et africaine</h3>
-        <p class="home-source-desc" data-i18n-key="home.sources.s4.p">Togo First, CIO Mag, WeAreTech Africa… pour les portraits et les chiffres du secteur.</p>
-      </div>
-      <div class="home-source">
-        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
-        <h3 class="home-source-title" data-i18n-key="home.sources.s5.t">Institutions publiques</h3>
-        <p class="home-source-desc" data-i18n-key="home.sources.s5.p">Ministères, agences publiques et bailleurs internationaux comme la Banque mondiale.</p>
-      </div>
-      <div class="home-source">
-        <span class="home-source-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg></span>
-        <h3 class="home-source-title" data-i18n-key="home.sources.s6.t">Liens revérifiés chaque jour</h3>
-        <p class="home-source-desc" data-i18n-key="home.sources.s6.p">Un contrôle automatique teste chaque jour les liens du site ; ceux qui ne répondent plus sont revus à la main.</p>
-      </div>
-    </div>
-    <p class="home-sources-note"><span data-i18n-key="home.sources.note">Quand une information ne peut pas être confirmée, WIYAO l'indique clairement plutôt que d'inventer un chiffre.</span> <a class="home-feature-link" href="about.html" data-i18n-key="home.sources.link">Notre méthodologie →</a></p>
-  </section>
-
   <section class="home-join" id="rejoindre">
     <div class="home-section-head">
       <p class="home-eyebrow" data-i18n-key="home.join.eyebrow">Communauté</p>
@@ -405,10 +277,10 @@
     <div class="home-join-grid">
       <article class="home-join-card home-join-card--1">
         <div class="home-join-body">
-          <span class="home-join-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span>
-          <h3 class="home-join-title" data-i18n-key="home.join.c1.t">Tu viens d'avoir ton bac</h3>
-          <p class="home-join-desc" data-i18n-key="home.join.c1.p">Ou tu le passes cette année&nbsp;: commence par le test d'orientation, puis suis la roadmap du métier qui te correspond.</p>
-          <a class="home-join-link" href="test-orientation.html" data-i18n-key="home.join.c1.link">Faire le test →</a>
+          <span class="home-join-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></span>
+          <h3 class="home-join-title" data-i18n-key="home.join.c1.t">Tu as repéré une erreur&nbsp;?</h3>
+          <p class="home-join-desc" data-i18n-key="home.join.c1.p">Une info dépassée, un lien cassé, une faute&nbsp;? Écris-nous&nbsp;: on corrige après vérification.</p>
+          <a class="home-join-link" href="contact.html" data-i18n-key="home.join.c1.link">Signaler une erreur →</a>
         </div>
       </article>
       <article class="home-join-card home-join-card--2">
@@ -457,33 +329,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="home-faq" id="faq">
-    <div class="home-faq-head">
-      <p class="home-eyebrow">FAQ</p>
-      <h2 class="home-h2" data-i18n-key="home.faq.title">Des questions&nbsp;? On a les réponses.</h2>
-      <a class="home-feature-link" href="faq.html" data-i18n-key="home.faq.all">Toutes les questions →</a>
-    </div>
-    <div class="home-faq-list">
-      <details class="faq-item">
-        <summary data-i18n-key="faq.c1.q1">C'est gratuit ?</summary>
-        <p data-i18n-key="faq.c1.a1">Oui, entièrement. Pas de compte à créer, pas d'abonnement, pas de publicité.</p>
-      </details>
-      <details class="faq-item">
-        <summary data-i18n-key="faq.c1.q2">Il faut créer un compte pour utiliser le site ?</summary>
-        <p data-i18n-key="faq.c1.a2">Non. Tout le site (roadmaps, test d'orientation, comparateur d'écoles, calendrier) s'utilise sans compte ni inscription.</p>
-      </details>
-      <details class="faq-item">
-        <summary data-i18n-key="faq.c1.q6">Les informations du site sont-elles vérifiées ?</summary>
-        <p data-i18n-key="faq.c1.a6">Oui : sourcées activement (sites officiels, presse togolaise, documents signés). Quand une information ne peut pas être confirmée (par exemple des frais de scolarité), le site l'indique clairement plutôt que d'inventer un chiffre. Le marché évolue vite : vérifie toujours en direct auprès de l'établissement ou l'organisme concerné avant de t'engager.</p>
-      </details>
-      <details class="faq-item">
-        <summary data-i18n-key="faq.c2.q4">Le test d'orientation est-il fiable à 100 % ?</summary>
-        <p data-i18n-key="faq.c2.a4">Non, et c'est assumé : 14 questions ne peuvent pas connaître quelqu'un parfaitement. Le résultat est un point de départ solide, pas un verdict définitif. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu'un du métier et explore la roadmap correspondante avant de t'engager dans une école.</p>
-      </details>
-    </div>
-    <div class="home-faq-split" id="home-faq-split" hidden></div>
   </section>
 
   <section class="home-final">
@@ -543,11 +388,10 @@
   </div>
 </footer>
 
-<script src="js/data.js?v=52"></script>
-<script src="js/app.js?v=55"></script>
-<script src="js/actualites.js?v=2"></script>
+<script src="js/data.js?v=53"></script>
+<script src="js/app.js?v=56"></script>
 <script src="js/nav.js?v=9"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=106"></script>
+<script src="js/i18n.js?v=107"></script>
 </body>
 </html>
