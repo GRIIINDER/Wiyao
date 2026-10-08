@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="WIYAO - Le guide qui accompagne ton parcours tech au Togo">
 <meta name="twitter:description" content="WIYAO est le guide qui accompagne le bachelier togolais à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses, stages et emploi.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=194">
+<link rel="stylesheet" href="css/style.css?v=195">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -28,7 +28,7 @@
 <meta name="apple-mobile-web-app-title" content="WIYAO">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"WIYAO","url":"https://wiyao.vercel.app/","description":"WIYAO est le guide qui accompagne le bachelier togolais à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses, stages et emploi.","inLanguage":"fr","publisher":{"@type":"Organization","name":"WIYAO","url":"https://wiyao.vercel.app/","logo":"https://wiyao.vercel.app/icons/icon-512.png"}}</script>
 </head>
-<body class="page-home">
+<body>
 <a class="skip-link" href="#main-content">Aller au contenu</a>
 
 <header class="site-header">
@@ -84,260 +84,70 @@
 </header>
 
 <main id="main-content">
-  <section class="page-title-banner home-hero" id="home-hero">
-    <p class="home-badge"><span class="home-badge-dot" aria-hidden="true"></span><span data-i18n-key="home.badge">100 % gratuit · sans compte · sans pub</span></p>
-    <h1 class="home-title">
-      <span class="sr-only" data-i18n-key="home.title.sr">Deviens développeur·se web, data analyst, expert·e cyber, designer UX/UI, ingénieur·e DevOps ou spécialiste IA au Togo</span>
-      <span class="home-title-visual" aria-hidden="true">
-        <span class="home-title-line" data-i18n-key="home.title.pre">Deviens</span>
-        <span class="home-title-line home-rotator"><span class="home-rotator-word" id="home-rotator-word">développeur·se web</span></span>
-        <span class="home-title-line" data-i18n-key="home.title.post">au Togo</span>
-      </span>
-    </h1>
-    <p class="home-subtitle" data-i18n-key="hero.subtitle">Le guide qui t'accompagne à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses et stages, à Lomé et dans tout le Togo.</p>
-    <form class="home-search" action="recherche.html" method="get" role="search">
-      <label class="sr-only" for="home-search-input" data-i18n-key="home.search.label">Rechercher sur WIYAO</label>
-      <svg class="home-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-      <input class="home-search-input" id="home-search-input" name="q" type="search" placeholder="Cherche une école, un métier, une bourse…" autocomplete="off" maxlength="80">
-      <button class="home-search-btn" id="home-search-btn" type="submit" aria-label="Rechercher"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></button>
-    </form>
-    <ul class="home-chips">
-      <li><a href="recherche.html?q=cybers%C3%A9curit%C3%A9" data-i18n-key="home.chip.cyber">Cybersécurité</a></li>
-      <li><a href="recherche.html?q=data" data-i18n-key="home.chip.data">Data &amp; IA</a></li>
-      <li><a href="recherche.html?q=Kara" data-i18n-key="home.chip.kara">Écoles à Kara</a></li>
-      <li><a href="recherche.html?q=bourse" data-i18n-key="home.chip.bourses">Bourses</a></li>
-      <li><a href="recherche.html?q=stage" data-i18n-key="home.chip.stages">Stages</a></li>
-    </ul>
-    <div class="home-ctas">
-      <a class="btn-primary" href="test-orientation.html" data-i18n-key="hero.cta">Faire le test d'orientation →</a>
-      <a class="btn-ghost" href="roadmaps.html" data-i18n-key="home.cta2">Explorer les roadmaps</a>
-    </div>
-    <p class="home-guide" data-i18n-key="hero.guide">Nouveau·elle ici ? Découvre <a href="about.html">ce qu'est WIYAO</a> en 30 secondes.</p>
-    <button class="home-rotator-pause" id="home-rotator-pause" type="button" aria-pressed="false" hidden>
-      <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
-      <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M7 5v14l12-7z"></path></svg>
-    </button>
+  <section class="page-title-banner">
+    <h1 data-i18n-key="hero.title">Trace ton <span class="hero-accent">parcours tech</span> au Togo</h1>
   </section>
 
-  <nav class="home-toc" aria-labelledby="home-toc-label">
-    <span class="home-toc-label" id="home-toc-label" data-i18n-key="home.toc.label">Sur cette page</span>
-    <ul class="home-toc-list">
-      <li><a href="#intention" data-i18n-key="home.toc.intent">Par où commencer</a></li>
-      <li><a href="#parcours" data-i18n-key="home.toc.journey">Le parcours</a></li>
-      <li><a href="#pourquoi" data-i18n-key="home.toc.why">Pourquoi WIYAO</a></li>
-      <li><a href="#rejoindre" data-i18n-key="home.toc.join">Rejoindre</a></li>
-      <li><a href="#application" data-i18n-key="home.toc.app">Application</a></li>
-    </ul>
-  </nav>
-
-  <section class="home-stats">
-    <h2 class="sr-only" data-i18n-key="home.stats.title">WIYAO en chiffres</h2>
-    <div class="home-stat"><span class="home-stat-num" data-stat="roadmaps">89</span><span class="home-stat-label" data-i18n-key="home.stat.roadmaps">roadmaps métiers et compétences</span></div>
-    <div class="home-stat"><span class="home-stat-num" data-stat="ecoles">32</span><span class="home-stat-label" data-i18n-key="home.stat.ecoles">écoles et universités comparées</span></div>
-    <div class="home-stat"><span class="home-stat-num">14</span><span class="home-stat-label" data-i18n-key="home.stat.quiz">questions pour trouver ta voie</span></div>
-    <div class="home-stat"><span class="home-stat-num">100 %</span><span class="home-stat-label" data-i18n-key="home.stat.free">gratuit, sans inscription</span></div>
+  <section class="hero" id="home-hero">
+    <p data-i18n-key="hero.subtitle">Le guide qui t'accompagne à chaque étape : orientation, choix de domaine, de filière, d'université,
+       roadmaps métier, bourses et stages, à Lomé et dans tout le Togo.</p>
+    <a class="btn-primary" href="test-orientation.html" data-i18n-key="hero.cta">Faire le test d'orientation →</a>
+    <p class="hero-guide" data-i18n-key="hero.guide">Nouveau·elle ici ? Découvre <a href="about.html">ce qu'est WIYAO</a> en 30 secondes.</p>
   </section>
 
-  <section class="home-intent" id="intention">
-    <h2 class="home-eyebrow" data-i18n-key="home.intent.eyebrow">Par où commencer</h2>
-    <div class="home-intent-sentence">
-      <label for="home-intent-select" data-i18n-key="home.intent.label">Je suis ici pour</label>
-      <span class="home-intent-select-wrap">
-        <select class="home-intent-select" id="home-intent-select"></select>
-        <svg class="home-intent-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-      </span>
-    </div>
-    <div class="home-intent-result" id="home-intent-result" aria-live="polite"></div>
-  </section>
-
-  <section class="home-features" id="parcours">
-    <div class="home-section-head">
-      <p class="home-eyebrow" data-i18n-key="home.journey.eyebrow">Comment ça marche</p>
-      <h2 class="home-h2" data-i18n-key="journey.title">Le parcours WIYAO, dans l'ordre</h2>
-      <p class="home-lead" data-i18n-key="journey.desc">Pas besoin de tout faire d'un coup : voici dans quel ordre avancer, étape par étape.</p>
-    </div>
-
-    <article class="home-feature">
-      <div class="home-feature-text">
-        <p class="home-eyebrow"><span class="home-step-num">1</span><span data-i18n-key="home.step1.eyebrow">Orientation</span></p>
-        <h3 class="home-feature-title" data-i18n-key="journey.1.title">Découvre ton domaine</h3>
-        <p class="home-feature-desc" data-i18n-key="journey.1.desc">Pas sûr·e de ta voie ? Le test d'orientation identifie en 14 questions le domaine tech, et le métier précis, qui te correspond.</p>
-        <a class="home-feature-link" href="test-orientation.html" data-i18n-key="journey.1.link">Faire le test d'orientation →</a>
-      </div>
-      <div class="home-visual home-visual--1" data-mock="quiz" aria-hidden="true"></div>
-    </article>
-
-    <article class="home-feature">
-      <div class="home-feature-text">
-        <p class="home-eyebrow"><span class="home-step-num">2</span><span data-i18n-key="home.step2.eyebrow">Roadmaps</span></p>
-        <h3 class="home-feature-title" data-i18n-key="journey.2.title">Suis ta roadmap</h3>
-        <p class="home-feature-desc" data-i18n-key="journey.2.desc">Une fois le métier ou la compétence choisie, la roadmap te montre précisément quoi apprendre, dans quel ordre.</p>
-        <a class="home-feature-link" href="roadmaps.html" data-i18n-key="journey.2.link">Voir les roadmaps →</a>
-      </div>
-      <div class="home-visual home-visual--2" data-mock="roadmap" aria-hidden="true"></div>
-    </article>
-
-    <article class="home-feature">
-      <div class="home-feature-text">
-        <p class="home-eyebrow"><span class="home-step-num">3</span><span data-i18n-key="home.step3.eyebrow">Écoles</span></p>
-        <h3 class="home-feature-title" data-i18n-key="journey.3.title">Choisis ton école</h3>
-        <p class="home-feature-desc" data-i18n-key="journey.3.desc">Compare 32 écoles et universités togolaises : filières, niveaux, admission, frais de scolarité, et les <a href="bourses-financement.html">bourses disponibles</a> pour les alléger.</p>
-        <a class="home-feature-link" href="ecoles.html" data-i18n-key="journey.3.link">Comparer les écoles →</a>
-      </div>
-      <div class="home-visual home-visual--3" data-mock="ecoles" aria-hidden="true"></div>
-    </article>
-
-    <article class="home-feature">
-      <div class="home-feature-text">
-        <p class="home-eyebrow"><span class="home-step-num">4</span><span data-i18n-key="home.step4.eyebrow">Calendrier</span></p>
-        <h3 class="home-feature-title" data-i18n-key="journey.4.title">Vise les bonnes dates</h3>
-        <p class="home-feature-desc" data-i18n-key="journey.4.desc">Concours, inscriptions, rentrées : le calendrier te dit quand agir pour ne rien rater.</p>
-        <a class="home-feature-link" href="calendrier.html" data-i18n-key="journey.4.link">Voir le calendrier →</a>
-      </div>
-      <div class="home-visual home-visual--4" data-mock="calendrier" aria-hidden="true"></div>
-    </article>
-
-    <article class="home-feature">
-      <div class="home-feature-text">
-        <p class="home-eyebrow"><span class="home-step-num">5</span><span data-i18n-key="home.step5.eyebrow">Stages &amp; emploi</span></p>
-        <h3 class="home-feature-title" data-i18n-key="journey.5.title">Prépare ton stage ou ton premier emploi</h3>
-        <p class="home-feature-desc" data-i18n-key="journey.5.desc">Plateformes togolaises, employeurs qui recrutent des profils tech, et un guide pratique pour te démarquer.</p>
-        <a class="home-feature-link" href="stages-emploi.html" data-i18n-key="journey.5.link">Voir stages &amp; emploi →</a>
-      </div>
-      <div class="home-visual home-visual--5" data-mock="stages" aria-hidden="true"></div>
-    </article>
-
-    <article class="home-feature">
-      <div class="home-feature-text">
-        <p class="home-eyebrow"><span class="home-step-num">6</span><span data-i18n-key="home.step6.eyebrow">Écosystème</span></p>
-        <h3 class="home-feature-title" data-i18n-key="journey.6.title">Reste connecté·e à l'écosystème</h3>
-        <p class="home-feature-desc" data-i18n-key="journey.6.desc">Communautés, hubs et événements togolais : utile à chaque étape, pas seulement à la fin du parcours.</p>
-        <a class="home-feature-link" href="ecosysteme.html" data-i18n-key="journey.6.link">Découvrir l'écosystème togolais →</a>
-      </div>
-      <div class="home-visual home-visual--6" data-mock="ecosysteme" aria-hidden="true"></div>
-    </article>
-  </section>
-
-  <section class="home-compare" id="pourquoi">
-    <div class="home-section-head">
-      <p class="home-eyebrow" data-i18n-key="home.compare.eyebrow">Pourquoi WIYAO</p>
-      <h2 class="home-h2" data-i18n-key="home.compare.title">Ton orientation, avec ou sans WIYAO</h2>
-      <p class="home-lead" data-i18n-key="home.compare.desc">Choisir un domaine ou une école sans guide, c'est souvent avancer à l'aveugle. Voici ce qui change quand tout est réuni au même endroit.</p>
-    </div>
-    <table class="home-compare-table" role="table">
-      <caption class="sr-only" data-i18n-key="home.compare.caption">Comparaison&nbsp;: t'orienter avec WIYAO ou sans guide</caption>
-      <thead role="rowgroup">
-        <tr role="row">
-          <td role="cell"></td>
-          <th scope="col" role="columnheader" class="is-wiyao"><img src="icons/logo-white.png?v=1" alt="WIYAO" class="home-compare-logo"></th>
-          <th scope="col" role="columnheader" data-i18n-key="home.compare.without">Sans guide</th>
-        </tr>
-      </thead>
-      <tbody role="rowgroup">
-        <tr role="row">
-          <th scope="row" role="rowheader" data-i18n-key="home.compare.r1.h">Choisir un domaine</th>
-          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r1.yes">Un test de 14 questions, puis la roadmap du métier</span></td>
-          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r1.no">Au feeling, ou sur le conseil d'un proche</span></td>
-        </tr>
-        <tr role="row">
-          <th scope="row" role="rowheader" data-i18n-key="home.compare.r2.h">Comparer les écoles</th>
-          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r2.yes">32 écoles et universités au même endroit</span></td>
-          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r2.no">Des infos éparpillées entre sites, réseaux sociaux et bouche-à-oreille</span></td>
-        </tr>
-        <tr role="row">
-          <th scope="row" role="rowheader" data-i18n-key="home.compare.r3.h">Frais de scolarité</th>
-          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r3.yes">Affichés quand l'école les publie, sinon signalés comme non communiqués</span></td>
-          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r3.no">Souvent découverts au moment de s'inscrire</span></td>
-        </tr>
-        <tr role="row">
-          <th scope="row" role="rowheader" data-i18n-key="home.compare.r4.h">Dates à ne pas rater</th>
-          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r4.yes">Concours, clôtures et rentrées réunis dans un calendrier</span></td>
-          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r4.no">Une date limite apprise trop tard</span></td>
-        </tr>
-        <tr role="row">
-          <th scope="row" role="rowheader" data-i18n-key="home.compare.r5.h">Bourses</th>
-          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r5.yes">Bourses, réductions et financements vérifiés, sur une seule page</span></td>
-          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r5.no">On ne sait pas toujours qu'elles existent</span></td>
-        </tr>
-        <tr role="row">
-          <th scope="row" role="rowheader" data-i18n-key="home.compare.r6.h">Ce que ça coûte</th>
-          <td class="is-wiyao" role="cell"><span class="cmp-icon cmp-yes" aria-hidden="true"></span><span data-i18n-key="home.compare.r6.yes">Gratuit, sans compte, sans publicité</span></td>
-          <td role="cell"><span class="cmp-icon cmp-no" aria-hidden="true"></span><span data-i18n-key="home.compare.r6.no">Des heures de recherches, sans garantie que l'info soit à jour</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="home-join" id="rejoindre">
-    <div class="home-section-head">
-      <p class="home-eyebrow" data-i18n-key="home.join.eyebrow">Communauté</p>
-      <h2 class="home-h2" data-i18n-key="home.join.title">Rejoins le mouvement</h2>
-      <p class="home-lead" data-i18n-key="home.join.desc">WIYAO grandit grâce à celles et ceux qui partagent une info vérifiable. Choisis ton profil.</p>
-    </div>
-    <div class="home-join-grid">
-      <article class="home-join-card home-join-card--1">
-        <div class="home-join-body">
-          <span class="home-join-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></span>
-          <h3 class="home-join-title" data-i18n-key="home.join.c1.t">Tu as repéré une erreur&nbsp;?</h3>
-          <p class="home-join-desc" data-i18n-key="home.join.c1.p">Une info dépassée, un lien cassé, une faute&nbsp;? Écris-nous&nbsp;: on corrige après vérification.</p>
-          <a class="home-join-link" href="contact.html" data-i18n-key="home.join.c1.link">Signaler une erreur →</a>
-        </div>
-      </article>
-      <article class="home-join-card home-join-card--2">
-        <div class="home-join-body">
-          <span class="home-join-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
-          <h3 class="home-join-title" data-i18n-key="home.join.c2.t">Tu représentes une école</h3>
-          <p class="home-join-desc" data-i18n-key="home.join.c2.p">Frais, filières ou dates ont changé&nbsp;? Signale-le avec un lien vers la source officielle&nbsp;: chaque info est vérifiée avant d'être publiée.</p>
-          <a class="home-join-link" href="proposer.html?type=%C3%89tablissement" data-i18n-key="home.join.c2.link">Signaler une mise à jour →</a>
-        </div>
-      </article>
-      <article class="home-join-card home-join-card--3">
-        <div class="home-join-body">
-          <span class="home-join-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></span>
-          <h3 class="home-join-title" data-i18n-key="home.join.c3.t">Tu travailles dans la tech</h3>
-          <p class="home-join-desc" data-i18n-key="home.join.c3.p">Un stage, un emploi, un événement ou une communauté à faire connaître aux bacheliers togolais&nbsp;? Propose-le, on vérifie et on ajoute.</p>
-          <a class="home-join-link" href="proposer.html" data-i18n-key="home.join.c3.link">Proposer une opportunité →</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="home-app" id="application">
-    <div class="home-phone" aria-hidden="true">
-      <div class="home-phone-screen" id="home-phone-screen"></div>
-    </div>
-    <div class="home-app-text">
-      <p class="home-eyebrow" data-i18n-key="home.app.eyebrow">Application</p>
-      <h2 class="home-h2" data-i18n-key="home.app.title">WIYAO dans ta poche</h2>
-      <p class="home-lead" data-i18n-key="home.app.desc">Installe WIYAO sur ton écran d'accueil comme une application : rien à télécharger depuis un store, aucun compte à créer. Après une première visite, le site reste consultable même sans connexion (hors liens externes).</p>
-      <ul class="home-app-chips">
-        <li data-i18n-key="home.app.chip1">Gratuit</li>
-        <li data-i18n-key="home.app.chip2">Sans store</li>
-        <li data-i18n-key="home.app.chip3">Hors connexion</li>
-      </ul>
-      <button class="btn-primary home-install-btn" id="home-install-btn" type="button" hidden data-i18n-key="home.app.install">Installer WIYAO</button>
-      <ol class="home-app-steps">
-        <li><strong>Android</strong> <span data-i18n-key="home.app.android">(Chrome) : menu ⋮ puis « Installer l'application » ou « Ajouter à l'écran d'accueil ».</span></li>
-        <li><strong>iPhone</strong> <span data-i18n-key="home.app.ios">(Safari) : bouton Partager puis « Sur l'écran d'accueil ».</span></li>
-      </ol>
-      <div class="home-qr">
-        <svg class="home-qr-code" viewBox="-2 -2 29 29" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="home-qr-label"><title id="home-qr-label">QR code : wiyao.vercel.app</title><rect x="-2" y="-2" width="29" height="29" fill="#ffffff"></rect><path stroke="#0a0d1c" d="M0 0.5h7m2 0h4m3 0h1m1 0h7M0 1.5h1m5 0h1m2 0h1m2 0h2m1 0h1m2 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h5m1 0h1m3 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h5m1 0h3m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m2 0h1m1 0h3M0 8.5h1m1 0h5m2 0h1m1 0h5m2 0h5M0 9.5h3m4 0h5m1 0h1m2 0h1m2 0h1m3 0h1M0 10.5h5m1 0h2m2 0h1m3 0h2m3 0h3m1 0h2M0 11.5h2m1 0h1m3 0h1m2 0h2m4 0h4m4 0h1M0 12.5h1m2 0h1m2 0h4m2 0h2m1 0h6m1 0h3M0 13.5h3m1 0h1m2 0h1m1 0h2m2 0h1m2 0h2m1 0h1m1 0h1m1 0h1M0 14.5h1m2 0h4m2 0h1m1 0h5m3 0h3m1 0h2M0 15.5h1m7 0h2m1 0h1m4 0h5m3 0h1M0 16.5h1m5 0h1m1 0h1m1 0h5m1 0h5m1 0h1M8 17.5h2m2 0h1m2 0h2m3 0h2M0 18.5h7m2 0h2m5 0h1m1 0h1m1 0h1m1 0h3M0 19.5h1m5 0h1m1 0h1m1 0h2m2 0h3m3 0h2m1 0h2M0 20.5h1m1 0h3m1 0h1m1 0h1m2 0h10m1 0h1M0 21.5h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h3m1 0h5M0 22.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m4 0h2m1 0h1M0 23.5h1m5 0h1m2 0h2m1 0h1m2 0h2m1 0h4m2 0h1M0 24.5h7m1 0h2m3 0h2m2 0h8"></path></svg>
+  <section class="roadmap-category" id="parcours">
+    <h2 data-i18n-key="journey.title">Le parcours WIYAO, dans l'ordre</h2>
+    <p class="category-desc" data-i18n-key="journey.desc">Pas besoin de tout faire d'un coup : voici dans quel ordre avancer, étape par étape.</p>
+    <ol class="journey-steps">
+      <li class="journey-step">
+        <span class="journey-step-number">1</span>
         <div>
-          <p class="home-qr-title" data-i18n-key="home.qr.title">Tu es sur ordinateur&nbsp;?</p>
-          <p class="home-qr-desc" data-i18n-key="home.qr.desc">Scanne ce code avec l'appareil photo de ton téléphone pour ouvrir WIYAO dessus.</p>
-          <span class="home-qr-url">wiyao.vercel.app</span>
+          <h3 data-i18n-key="journey.1.title">Découvre ton domaine</h3>
+          <p data-i18n-key="journey.1.desc">Pas sûr·e de ta voie ? Le test d'orientation identifie en 14 questions le domaine tech, et le métier précis, qui te correspond.</p>
+          <a href="test-orientation.html" data-i18n-key="journey.1.link">Faire le test d'orientation →</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-final">
-    <h2 class="home-h2" data-i18n-key="home.final.title">Prêt·e à tracer ton parcours&nbsp;?</h2>
-    <p class="home-lead" data-i18n-key="home.final.desc">Gratuit, sans compte, sans publicité. Commence par le test d'orientation : 14 questions pour trouver ta voie.</p>
-    <div class="home-ctas">
-      <a class="btn-primary" href="test-orientation.html" data-i18n-key="hero.cta">Faire le test d'orientation →</a>
-      <a class="btn-ghost" href="roadmaps.html" data-i18n-key="home.cta2">Explorer les roadmaps</a>
-    </div>
+      </li>
+      <li class="journey-step">
+        <span class="journey-step-number">2</span>
+        <div>
+          <h3 data-i18n-key="journey.2.title">Suis ta roadmap</h3>
+          <p data-i18n-key="journey.2.desc">Une fois le métier ou la compétence choisie, la roadmap te montre précisément quoi apprendre, dans quel ordre.</p>
+          <a href="roadmaps.html" data-i18n-key="journey.2.link">Voir les roadmaps →</a>
+        </div>
+      </li>
+      <li class="journey-step">
+        <span class="journey-step-number">3</span>
+        <div>
+          <h3 data-i18n-key="journey.3.title">Choisis ton école</h3>
+          <p data-i18n-key="journey.3.desc">Compare 32 écoles et universités togolaises : filières, niveaux, admission, frais de scolarité, et les <a href="bourses-financement.html">bourses disponibles</a> pour les alléger.</p>
+          <a href="ecoles.html" data-i18n-key="journey.3.link">Comparer les écoles →</a>
+        </div>
+      </li>
+      <li class="journey-step">
+        <span class="journey-step-number">4</span>
+        <div>
+          <h3 data-i18n-key="journey.4.title">Vise les bonnes dates</h3>
+          <p data-i18n-key="journey.4.desc">Concours, inscriptions, rentrées : le calendrier te dit quand agir pour ne rien rater.</p>
+          <a href="calendrier.html" data-i18n-key="journey.4.link">Voir le calendrier →</a>
+        </div>
+      </li>
+      <li class="journey-step">
+        <span class="journey-step-number">5</span>
+        <div>
+          <h3 data-i18n-key="journey.5.title">Prépare ton stage ou ton premier emploi</h3>
+          <p data-i18n-key="journey.5.desc">Plateformes togolaises, employeurs qui recrutent des profils tech, et un guide pratique pour te démarquer.</p>
+          <a href="stages-emploi.html" data-i18n-key="journey.5.link">Voir stages &amp; emploi →</a>
+        </div>
+      </li>
+      <li class="journey-step">
+        <span class="journey-step-number">6</span>
+        <div>
+          <h3 data-i18n-key="journey.6.title">Reste connecté·e à l'écosystème</h3>
+          <p data-i18n-key="journey.6.desc">Communautés, hubs et événements togolais : utile à chaque étape, pas seulement à la fin du parcours.</p>
+          <a href="ecosysteme.html" data-i18n-key="journey.6.link">Découvrir l'écosystème togolais →</a>
+        </div>
+      </li>
+    </ol>
   </section>
 </main>
 
@@ -388,10 +198,10 @@
   </div>
 </footer>
 
-<script src="js/data.js?v=53"></script>
-<script src="js/app.js?v=57"></script>
-<script src="js/nav.js?v=10"></script>
+<script src="js/data.js?v=54"></script>
+<script src="js/app.js?v=58"></script>
+<script src="js/nav.js?v=11"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=109"></script>
+<script src="js/i18n.js?v=110"></script>
 </body>
 </html>

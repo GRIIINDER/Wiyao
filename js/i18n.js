@@ -36,176 +36,15 @@
     { selector: ".footer-card-top > .footer-links-col:nth-child(2) h5", fr: "Opportunités", en: "Opportunities" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(3) h5", fr: "Communauté", en: "Community" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(4) h5", fr: "Contact", en: "Contact" },
-    { selector: ".footer-bottom > p", fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
+    { selector: ".footer-bottom p:first-child", fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
   ];
 
   // Contenu propre à index.html (hero + parcours en 6 étapes), repéré par
   // data-i18n-key posé directement dans le HTML de cette page.
   const PAGE_CONTENT = {
-    "home.badge": { fr: "100 % gratuit · sans compte · sans pub", en: "100% free · no account · no ads" },
-    "home.title.pre": { fr: "Deviens", en: "Become" },
-    "home.title.post": { fr: "au Togo", en: "in Togo" },
-    "home.title.sr": {
-      fr: "Deviens développeur·se web, data analyst, expert·e cyber, designer UX/UI, ingénieur·e DevOps ou spécialiste IA au Togo",
-      en: "Become a web developer, data analyst, cyber expert, UX/UI designer, DevOps engineer or AI specialist in Togo",
-    },
-    "home.search.label": { fr: "Rechercher sur WIYAO", en: "Search WIYAO" },
-    "home.chip.cyber": { fr: "Cybersécurité", en: "Cybersecurity" },
-    "home.chip.data": { fr: "Data &amp; IA", en: "Data &amp; AI" },
-    "home.chip.kara": { fr: "Écoles à Kara", en: "Schools in Kara" },
-    "home.chip.bourses": { fr: "Bourses", en: "Scholarships" },
-    "home.chip.stages": { fr: "Stages", en: "Internships" },
-    "home.cta2": { fr: "Explorer les roadmaps", en: "Explore the roadmaps" },
-    "home.stats.title": { fr: "WIYAO en chiffres", en: "WIYAO in numbers" },
-    "home.stat.roadmaps": { fr: "roadmaps métiers et compétences", en: "career and skill roadmaps" },
-    "home.stat.ecoles": { fr: "écoles et universités comparées", en: "schools and universities compared" },
-    "home.stat.quiz": { fr: "questions pour trouver ta voie", en: "questions to find your path" },
-    "home.stat.free": { fr: "gratuit, sans inscription", en: "free, no sign-up" },
-    "home.journey.eyebrow": { fr: "Comment ça marche", en: "How it works" },
-    "home.step1.eyebrow": { fr: "Orientation", en: "Orientation" },
-    "home.step2.eyebrow": { fr: "Roadmaps", en: "Roadmaps" },
-    "home.step3.eyebrow": { fr: "Écoles", en: "Schools" },
-    "home.step4.eyebrow": { fr: "Calendrier", en: "Calendar" },
-    "home.step5.eyebrow": { fr: "Stages &amp; emploi", en: "Internships &amp; jobs" },
-    "home.step6.eyebrow": { fr: "Écosystème", en: "Ecosystem" },
-    "home.app.eyebrow": { fr: "Application", en: "App" },
-    "home.app.title": { fr: "WIYAO dans ta poche", en: "WIYAO in your pocket" },
-    "home.app.desc": {
-      fr: "Installe WIYAO sur ton écran d'accueil comme une application : rien à télécharger depuis un store, aucun compte à créer. Après une première visite, le site reste consultable même sans connexion (hors liens externes).",
-      en: "Install WIYAO on your home screen like an app: nothing to download from a store, no account to create. After a first visit, the site stays available even offline (except external links).",
-    },
-    "home.app.chip1": { fr: "Gratuit", en: "Free" },
-    "home.app.chip2": { fr: "Sans store", en: "No app store" },
-    "home.app.chip3": { fr: "Hors connexion", en: "Works offline" },
-    "home.app.install": { fr: "Installer WIYAO", en: "Install WIYAO" },
-    "home.app.android": { fr: "(Chrome) : menu ⋮ puis « Installer l'application » ou « Ajouter à l'écran d'accueil ».", en: "(Chrome): ⋮ menu, then “Install app” or “Add to Home screen”." },
-    "home.app.ios": { fr: "(Safari) : bouton Partager puis « Sur l'écran d'accueil ».", en: "(Safari): Share button, then “Add to Home Screen”." },
-    "home.qr.title": { fr: "Tu es sur ordinateur&nbsp;?", en: "On a computer?" },
-    "home.qr.desc": { fr: "Scanne ce code avec l'appareil photo de ton téléphone pour ouvrir WIYAO dessus.", en: "Scan this code with your phone's camera to open WIYAO on it." },
-
-    "home.toc.label": { fr: "Sur cette page", en: "On this page" },
-    "home.toc.intent": { fr: "Par où commencer", en: "Where to start" },
-    "home.toc.journey": { fr: "Le parcours", en: "The journey" },
-    "home.toc.why": { fr: "Pourquoi WIYAO", en: "Why WIYAO" },
-    "home.toc.join": { fr: "Rejoindre", en: "Get involved" },
-    "home.toc.app": { fr: "Application", en: "App" },
-
-    "home.intent.eyebrow": { fr: "Par où commencer", en: "Where to start" },
-    "home.intent.label": { fr: "Je suis ici pour", en: "I'm here to" },
-
-
-    "home.compare.eyebrow": { fr: "Pourquoi WIYAO", en: "Why WIYAO" },
-    "home.compare.title": { fr: "Ton orientation, avec ou sans WIYAO", en: "Choosing your path, with or without WIYAO" },
-    "home.compare.desc": {
-      fr: "Choisir un domaine ou une école sans guide, c'est souvent avancer à l'aveugle. Voici ce qui change quand tout est réuni au même endroit.",
-      en: "Choosing a field or a school without a guide often means moving forward blind. Here's what changes when everything is in one place.",
-    },
-    "home.compare.caption": { fr: "Comparaison&nbsp;: t'orienter avec WIYAO ou sans guide", en: "Comparison: choosing your path with WIYAO or without a guide" },
-    "home.compare.without": { fr: "Sans guide", en: "Without a guide" },
-    "home.compare.r1.h": { fr: "Choisir un domaine", en: "Choosing a field" },
-    "home.compare.r1.yes": { fr: "Un test de 14 questions, puis la roadmap du métier", en: "A 14-question test, then the career roadmap" },
-    "home.compare.r1.no": { fr: "Au feeling, ou sur le conseil d'un proche", en: "Gut feeling, or a relative's advice" },
-    "home.compare.r2.h": { fr: "Comparer les écoles", en: "Comparing schools" },
-    "home.compare.r2.yes": { fr: "32 écoles et universités au même endroit", en: "32 schools and universities in one place" },
-    "home.compare.r2.no": { fr: "Des infos éparpillées entre sites, réseaux sociaux et bouche-à-oreille", en: "Information scattered across websites, social media and word of mouth" },
-    "home.compare.r3.h": { fr: "Frais de scolarité", en: "Tuition fees" },
-    "home.compare.r3.yes": { fr: "Affichés quand l'école les publie, sinon signalés comme non communiqués", en: "Shown when the school publishes them, otherwise flagged as not disclosed" },
-    "home.compare.r3.no": { fr: "Souvent découverts au moment de s'inscrire", en: "Often discovered at enrollment" },
-    "home.compare.r4.h": { fr: "Dates à ne pas rater", en: "Dates not to miss" },
-    "home.compare.r4.yes": { fr: "Concours, clôtures et rentrées réunis dans un calendrier", en: "Entrance exams, deadlines and start dates in one calendar" },
-    "home.compare.r4.no": { fr: "Une date limite apprise trop tard", en: "A deadline you hear about too late" },
-    "home.compare.r5.h": { fr: "Bourses", en: "Scholarships" },
-    "home.compare.r5.yes": { fr: "Bourses, réductions et financements vérifiés, sur une seule page", en: "Verified scholarships, discounts and funding, on a single page" },
-    "home.compare.r5.no": { fr: "On ne sait pas toujours qu'elles existent", en: "You don't always know they exist" },
-    "home.compare.r6.h": { fr: "Ce que ça coûte", en: "What it costs" },
-    "home.compare.r6.yes": { fr: "Gratuit, sans compte, sans publicité", en: "Free, no account, no ads" },
-    "home.compare.r6.no": { fr: "Des heures de recherches, sans garantie que l'info soit à jour", en: "Hours of searching, with no guarantee the information is current" },
-
-    "home.join.eyebrow": { fr: "Communauté", en: "Community" },
-    "home.join.title": { fr: "Rejoins le mouvement", en: "Join the movement" },
-    "home.join.desc": { fr: "WIYAO grandit grâce à celles et ceux qui partagent une info vérifiable. Choisis ton profil.", en: "WIYAO grows thanks to everyone who shares verifiable information. Pick your profile." },
-    "home.join.c1.t": {
-      fr: "Tu as repéré une erreur&nbsp;?",
-      en: "Spotted a mistake?",
-    },
-    "home.join.c1.p": {
-      fr: "Une info dépassée, un lien cassé, une faute&nbsp;? Écris-nous&nbsp;: on corrige après vérification.",
-      en: "Outdated information, a broken link, a typo? Write to us: we fix it after checking.",
-    },
-    "home.join.c1.link": {
-      fr: "Signaler une erreur →",
-      en: "Report a mistake →",
-    },
-    "home.join.c2.t": { fr: "Tu représentes une école", en: "You represent a school" },
-    "home.join.c2.p": {
-      fr: "Frais, filières ou dates ont changé&nbsp;? Signale-le avec un lien vers la source officielle&nbsp;: chaque info est vérifiée avant d'être publiée.",
-      en: "Fees, programs or dates have changed? Report it with a link to the official source: every piece of information is checked before it's published.",
-    },
-    "home.join.c2.link": { fr: "Signaler une mise à jour →", en: "Report an update →" },
-    "home.join.c3.t": { fr: "Tu travailles dans la tech", en: "You work in tech" },
-    "home.join.c3.p": {
-      fr: "Un stage, un emploi, un événement ou une communauté à faire connaître aux bacheliers togolais&nbsp;? Propose-le, on vérifie et on ajoute.",
-      en: "An internship, a job, an event or a community Togolese graduates should know about? Suggest it: we check it and add it.",
-    },
-    "home.join.c3.link": { fr: "Proposer une opportunité →", en: "Suggest an opportunity →" },
-
-    "stats.roadmaps.metiers": { fr: "métiers", en: "careers" },
-    "stats.roadmaps.competences": { fr: "compétences", en: "skills" },
-    "stats.roadmaps.domaines": { fr: "domaines", en: "fields" },
-    "stats.roadmaps.togo": { fr: "métiers «&nbsp;Vérifié Togo&nbsp;»", en: "“Togo-verified” careers" },
-    "stats.eco.total": { fr: "acteurs et ressources recensés", en: "players and resources listed" },
-    "stats.eco.communautes": { fr: "communautés actives", en: "active communities" },
-    "stats.eco.evenements": { fr: "événements annuels ou ponctuels", en: "annual or one-off events" },
-    "stats.eco.hubs": { fr: "hubs et incubateurs", en: "hubs and incubators" },
-    "stats.bourses.total": { fr: "pistes de financement vérifiées", en: "verified funding options" },
-    "stats.bourses.ecoles": { fr: "écoles qui proposent des bourses", en: "schools offering scholarships" },
-    "stats.bourses.international": { fr: "bourses internationales et régionales", en: "international and regional scholarships" },
-    "stats.bourses.gratuit": { fr: "façons de se former sans frais de scolarité", en: "ways to train without tuition fees" },
-    "stats.stages.plateformes": { fr: "plateformes d'emploi et de stage", en: "job and internship platforms" },
-    "stats.stages.employeurs": { fr: "employeurs qui recrutent des profils tech", en: "employers hiring tech profiles" },
-    "stats.stages.guide": { fr: "conseils pour décrocher ta place", en: "tips to land a position" },
-    "stats.temoin.portraits": { fr: "parcours de pros togolais, sourcés", en: "sourced stories of Togolese professionals" },
-    "stats.temoin.secteurs": { fr: "secteurs qui recrutent", en: "sectors that are hiring" },
-
-
-    "quiz.primer.link": {
-      fr: "Envie de découvrir les 7 grands domaines avant de répondre&nbsp;? Ils sont décrits sur la page <a href=\"roadmaps.html#par-metier\">Roadmaps</a>.",
-      en: "Want to discover the 7 major fields before answering? They're described on the <a href=\"roadmaps.html#par-metier\">Roadmaps</a> page.",
-    },
-    "quiz.howto.title": { fr: "Comment se passe le test", en: "How the test works" },
-
-    "verif.link": {
-      fr: "Ce qui se passe après ton envoi&nbsp;: <a href=\"about.html#verif-title\">la méthode de vérification</a>, sur la page À propos.",
-      en: "What happens after you send it: <a href=\"about.html#verif-title\">the verification method</a>, on the About page.",
-    },
-    "verif.h2": { fr: "Comment une info arrive sur WIYAO", en: "How information gets onto WIYAO" },
-    "verif.lead": { fr: "Le circuit que suit chaque information avant d'apparaître sur le site.", en: "The path every piece of information follows before it appears on the site." },
-    "verif.s1.t": { fr: "Une piste", en: "A lead" },
-    "verif.s1.p": {
-      fr: "Une info repérée par WIYAO (site d'école, presse, publication officielle) ou envoyée via le formulaire Proposer.",
-      en: "Information spotted by WIYAO (school website, press, official publication) or sent through the Suggest form.",
-    },
-    "verif.s2.t": { fr: "La source officielle", en: "The official source" },
-    "verif.s2.p": {
-      fr: "On remonte jusqu'à la source&nbsp;: site officiel, document signé, affiche de l'école, page gouvernementale ou article de presse.",
-      en: "We trace it back to the source: official website, signed document, school poster, government page or press article.",
-    },
-    "verif.s3.t": { fr: "Le recoupement", en: "Cross-checking" },
-    "verif.s3.p": {
-      fr: "Si l'info ne peut pas être confirmée, elle n'est pas publiée, ou elle est signalée «&nbsp;non communiquée&nbsp;» ou «&nbsp;à reconfirmer&nbsp;»&nbsp;: jamais devinée.",
-      en: "If the information can't be confirmed, it isn't published, or it's flagged “not disclosed” or “to be reconfirmed”: never guessed.",
-    },
-    "verif.s4.t": { fr: "La publication", en: "Publication" },
-    "verif.s4.p": { fr: "Elle est mise en ligne avec le lien de sa source et une date de mise à jour.", en: "It goes online with a link to its source and an update date." },
-    "verif.s5.t": { fr: "Le contrôle quotidien", en: "The daily check" },
-    "verif.s5.p": {
-      fr: "Chaque jour, un contrôle automatique vérifie que les liens du site répondent toujours&nbsp;; ceux qui ne répondent plus sont revus à la main.",
-      en: "Every day, an automatic check verifies that the site's links still respond; those that no longer do are reviewed by hand.",
-    },
-    "home.final.title": { fr: "Prêt·e à tracer ton parcours&nbsp;?", en: "Ready to chart your path?" },
-    "home.final.desc": {
-      fr: "Gratuit, sans compte, sans publicité. Commence par le test d'orientation : 14 questions pour trouver ta voie.",
-      en: "Free, no account, no ads. Start with the orientation test: 14 questions to find your path.",
+    "hero.title": {
+      fr: 'Trace ton <span class="hero-accent">parcours tech</span> au Togo',
+      en: 'Chart your <span class="hero-accent">tech path</span> in Togo',
     },
     "hero.subtitle": {
       fr: "Le guide qui t'accompagne à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses et stages, à Lomé et dans tout le Togo.",
@@ -221,6 +60,11 @@
     },
     "roadmap.print": { fr: "🖨️ Imprimer / PDF", en: "🖨️ Print / PDF" },
     "roadmap.reset": { fr: "Réinitialiser la progression", en: "Reset progress" },
+    "quiz.primer.title": { fr: "L'informatique, en 7 grands domaines", en: "Tech, in 7 major domains" },
+    "quiz.primer.desc": {
+      fr: "Un aperçu rapide avant de répondre : pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver. Chaque domaine est une catégorie mondiale du secteur tech ; la mention 🇹🇬 précise sa présence concrète sur le marché togolais.",
+      en: "A quick overview before you answer : no need to know it all by heart, that's exactly what the test is here to help you sort out. Each domain is a worldwide tech-sector category; the 🇹🇬 note points to its concrete presence on the Togolese market.",
+    },
     "roadmaps.hero.title": {
       fr: 'Choisis ta <span class="hero-accent">roadmap</span>',
       en: 'Choose your <span class="hero-accent">roadmap</span>',
@@ -299,17 +143,6 @@
     "ecoles.hero.propose": {
       fr: 'Une école togolaise qui manque ici ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
       en: 'A Togolese school missing here? <a href="proposer.html">Suggest it</a> : we verify and add it.',
-    },
-    "ecoles.stats.title": { fr: "Le comparateur en chiffres", en: "The comparison tool in numbers" },
-    "ecoles.stats.note": {
-      fr: "Calculé automatiquement à partir des fiches ci-dessous. Coche «&nbsp;+ Comparer&nbsp;» sur 2 ou 3 écoles pour les voir côte à côte.",
-      en: "Calculated automatically from the school profiles below. Tick “+ Compare” on 2 or 3 schools to see them side by side.",
-    },
-    "ecoles.compare.title": { fr: "Comparaison côte à côte", en: "Side-by-side comparison" },
-    "ecoles.compare.link": { fr: "Lien du comparatif", en: "Comparison link" },
-    "ecoles.compare.note": {
-      fr: "Infos reprises telles quelles des fiches vérifiées : confirme toujours frais et dates auprès de l'école avant de t'engager.",
-      en: "Information taken as-is from the verified school profiles: always confirm fees and dates with the school before committing.",
     },
 
     "calendrier.hero.title": {
@@ -505,7 +338,7 @@
       en: "Browse by category",
     },
 
-    "error404.title": { fr: 'Page <span class="hero-accent">introuvable</span>', en: 'Page <span class="hero-accent">not found</span>' },
+    "error404.title": { fr: "Page introuvable", en: "Page not found" },
     "error404.subtitle": {
       fr: "Cette page n'existe pas, plus, ou l'adresse contient une faute de frappe.",
       en: "This page doesn't exist, no longer exists, or the address has a typo.",
@@ -582,76 +415,6 @@
       fr: 'Le site est gratuit, utilisable sans inscription, et hébergé par Vercel : détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
       en: 'The site is free, usable without registration, and hosted by Vercel: full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
     },
-    "about.changelog.h2": { fr: "Quoi de neuf sur WIYAO", en: "What's new on WIYAO" },
-    "about.changelog.all": { fr: "Tout l'historique sur GitHub ↗", en: "Full history on GitHub ↗" },
-    "about.changelog.c1.d": { fr: "6 oct. 2026", en: "Oct 6, 2026" },
-    "about.changelog.c1.t": { fr: "Un site plus lisible", en: "A more readable site" },
-    "about.changelog.c1.p": {
-      fr: "Nouvelle police pour le texte, tailles agrandies (16 px au lieu de 12), lignes plus courtes, FAQ classée par catégories et menu plus clair sur tablette.",
-      en: "A new font for body text, larger sizes (16 px instead of 12), shorter lines, an FAQ sorted by category and a clearer menu on tablets.",
-    },
-    "about.changelog.c2.d": { fr: "6 oct. 2026", en: "Oct 6, 2026" },
-    "about.changelog.c2.t": { fr: "Une info, une seule page", en: "One piece of information, one page" },
-    "about.changelog.c2.p": {
-      fr: "Chaque contenu n'apparaît plus qu'à un seul endroit&nbsp;; ailleurs, un lien y renvoie. L'accueil devient un aiguillage vers les pages.",
-      en: "Each piece of content now appears in a single place; elsewhere, a link points to it. The home page becomes a signpost to the pages.",
-    },
-    "about.changelog.c3.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
-    "about.changelog.c3.t": { fr: "Écosystème, écoles et témoignages", en: "Ecosystem, schools and testimonials" },
-    "about.changelog.c3.p": {
-      fr: "Filtres par type sur l'Écosystème, cartes d'écoles plus lisibles, et deux chiffres de la page Témoignages remplacés par des données sourcées.",
-      en: "Type filters on the Ecosystem page, easier-to-read school cards, and two figures on the Testimonials page replaced with sourced data.",
-    },
-    "about.changelog.c4.d": { fr: "4 oct. 2026", en: "Oct 4, 2026" },
-    "about.changelog.c4.t": { fr: "Des repères sur chaque page", en: "Landmarks on every page" },
-    "about.changelog.c4.p": {
-      fr: "Chiffres clés sous les titres, événements à venir sur le Calendrier, étapes du test d'orientation expliquées et méthode de vérification détaillée.",
-      en: "Key figures under page titles, upcoming events on the Calendar, the orientation test's steps explained, and the verification method in detail.",
-    },
-    "about.changelog.c5.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
-    "about.changelog.c5.t": { fr: "Comparer des écoles côte à côte", en: "Compare schools side by side" },
-    "about.changelog.c5.p": {
-      fr: "Jusqu'à 3 écoles dans un même tableau, avec un lien à partager&nbsp;; actualités filtrables et événements à ajouter à son agenda.",
-      en: "Up to 3 schools in one table, with a shareable link; filterable news and events you can add to your calendar.",
-    },
-    "about.changelog.c6.d": { fr: "3 oct. 2026", en: "Oct 3, 2026" },
-    "about.changelog.c6.t": { fr: "Une nouvelle page d'accueil", en: "A new home page" },
-    "about.changelog.c6.p": {
-      fr: "«&nbsp;Je suis ici pour…&nbsp;», les dernières actualités, la comparaison avec ou sans WIYAO, et un QR code pour ouvrir le site sur son téléphone.",
-      en: "“I'm here to…”, the latest news, the with-or-without-WIYAO comparison, and a QR code to open the site on your phone.",
-    },
-    "about.history.h2": { fr: "L'histoire de WIYAO", en: "The story of WIYAO" },
-    "about.history.e1.t": { fr: "Le bac, et des choix faits par d'autres", en: "The bac, and choices made by others" },
-    "about.history.e1.p": {
-      fr: "Bac en poche, Crédo choisit l'informatique contre l'avis de sa famille, puis passe par l'UCAO, trois spécialisations et l'ESGIS. À chaque étape, il lui manque des informations comparables pour décider lui-même.",
-      en: "Bac in hand, Crédo chose computer science against his family's wishes, then went through UCAO, three specializations and ESGIS. At every step, he lacked comparable information to decide for himself.",
-    },
-    "about.history.e2.d": { fr: "2 juillet 2026", en: "July 2, 2026" },
-    "about.history.e2.t": { fr: "Premier prototype", en: "First prototype" },
-    "about.history.e2.p": { fr: "Les premières roadmaps par métier et par compétence voient le jour.", en: "The first career and skill roadmaps go live." },
-    "about.history.e3.d": { fr: "13 août 2026", en: "August 13, 2026" },
-    "about.history.e3.t": { fr: "Kpataa devient WIYAO", en: "Kpataa becomes WIYAO" },
-    "about.history.e3.p": { fr: "Le projet prend son nom actuel.", en: "The project takes its current name." },
-    "about.history.e4.d": { fr: "14 août 2026", en: "August 14, 2026" },
-    "about.history.e4.t": { fr: "Installable, même hors connexion", en: "Installable, even offline" },
-    "about.history.e4.p": {
-      fr: "WIYAO devient une application web : on l'ajoute à l'écran d'accueil du téléphone et il reste consultable sans connexion.",
-      en: "WIYAO becomes a web app: you add it to your phone's home screen and it stays available offline.",
-    },
-    "about.history.e5.d": { fr: "16 août 2026", en: "August 16, 2026" },
-    "about.history.e5.t": { fr: "Bourses, actualités et recherche", en: "Scholarships, news and search" },
-    "about.history.e5.p": { fr: "Trois nouvelles pages pour ne plus avoir à chercher ailleurs.", en: "Three new pages so you no longer have to look elsewhere." },
-    "about.history.e6.d": { fr: "17 août 2026", en: "August 17, 2026" },
-    "about.history.e6.t": { fr: "Une version anglaise", en: "An English version" },
-    "about.history.e6.p": { fr: "Une version anglaise s'ajoute au français.", en: "An English version is added alongside French." },
-    "about.history.now.d": { fr: "Aujourd'hui", en: "Today" },
-    "about.history.now.schools": { fr: "écoles", en: "schools" },
-    "about.history.now.roadmaps": { fr: "roadmaps", en: "roadmaps" },
-    "about.history.now.p": {
-      fr: "Et toujours le même objectif&nbsp;: que le prochain bachelier togolais ait, dès le départ, les informations qui ont manqué en 2017.",
-      en: "And still the same goal: that the next Togolese high-school graduate has, from day one, the information that was missing in 2017.",
-    },
-
     "about.s2.h2": { fr: "Roadmaps par métier", en: "Role-based roadmaps" },
     "about.s2.p.intro": {
       fr: "Les 60 roadmaps par métier s'appuient sur une recherche des offres d'emploi et fiches de poste réellement publiées sur des plateformes togolaises, afin d'identifier les compétences concrètement demandées par les employeurs locaux :",
@@ -926,7 +689,6 @@
       en: 'For any question about these Terms of Use, write to us via the <a href="contact.html">Contact</a> page or by email at <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
     },
 
-    "faq.cats.label": { fr: "Catégories", en: "Categories" },
     "faq.cat1.h2": { fr: "Sur WIYAO", en: "About WIYAO" },
     "faq.c1.q1": { fr: "C'est gratuit ?", en: "Is it free?" },
     "faq.c1.a1": { fr: "Oui, entièrement. Pas de compte à créer, pas d'abonnement, pas de publicité.", en: "Yes, entirely. No account to create, no subscription, no ads." },
@@ -1135,10 +897,7 @@
     "temoin.s1.i5.h4": { fr: "2 milliards+ FCFA de revenus cumulés", en: "2 billion+ FCFA in combined revenue" },
     "temoin.s1.i5.p": { fr: "Revenus déjà générés par les startups numériques togolaises fédérées par TogoTech (Gozem, Semoa, Édolé, MiaPay, Clinicaa...), avec une centaine d'emplois directs créés.", en: "Revenue already generated by the Togolese digital startups united under TogoTech (Gozem, Semoa, Édolé, MiaPay, Clinicaa...), with around a hundred direct jobs created." },
     "temoin.s1.i6.h4": { fr: "Des recruteurs togolais réels", en: "Real Togolese employers" },
-    "temoin.s1.i6.p": {
-      fr: "Agence Togo Digital, Cyber Defense Africa, Yas Togo, Gozem…&nbsp;: les employeurs qui recrutent des profils tech sont sur la page <a href=\"stages-emploi.html#employeurs\">Stages &amp; emploi</a>.",
-      en: "Agence Togo Digital, Cyber Defense Africa, Yas Togo, Gozem…: employers hiring tech profiles are on the <a href=\"stages-emploi.html#employeurs\">Internships &amp; jobs</a> page.",
-    },
+    "temoin.s1.i6.p": { fr: "L'Agence Togo Digital recrute régulièrement développeurs, architectes, UX/UI, QA, Scrum Master et data : pas besoin de partir à l'étranger pour trouver un poste.", en: "Agence Togo Digital regularly hires developers, architects, UX/UI, QA, Scrum Masters and data profiles : no need to move abroad to find a job." },
     "temoin.s2.h2": { fr: "Les secteurs qui recrutent", en: "Sectors that are hiring" },
     "temoin.s2.desc": {
       fr: "Le numérique togolais ne se limite pas au développement web : ces secteurs embauchent activement.",
@@ -1340,12 +1099,12 @@
 
     "stages.s2.h2": { fr: "Employeurs qui recrutent des profils tech", en: "Employers hiring tech profiles" },
     "stages.s2.i1.p": {
-      fr: "Recrute sur des postes tech variés (développeurs, architectes, UX/UI, QA, Scrum Master, data). Les postes publiés varient dans le temps&nbsp;: la candidature spontanée reste une option. <a href=\"ecosysteme.html?type=institutions\">Son rôle dans l'écosystème</a>.",
-      en: "Hires for a range of tech roles (developers, architects, UX/UI, QA, Scrum Master, data). Published openings change over time: an unsolicited application is still an option. <a href=\"ecosysteme.html?type=institutions\">Its role in the ecosystem</a>.",
+      fr: "Agence publique pilotant la digitalisation de l'État togolais. Les postes publiés varient dans le temps et ne sont pas toujours techniques ; la candidature spontanée reste une option pour les profils développeur, UX/UI ou data.",
+      en: "Public agency leading the digitalization of the Togolese State. Posted roles vary over time and aren't always technical; a spontaneous application remains an option for developer, UX/UI or data profiles.",
     },
     "stages.s2.i2.p": {
-      fr: "Recrute analystes SOC, consultants et formateurs en cybersécurité. <a href=\"ecosysteme.html?type=cybersecurite\">Son rôle dans l'écosystème</a>.",
-      en: "Hires SOC analysts, consultants and cybersecurity trainers. <a href=\"ecosysteme.html?type=cybersecurite\">Its role in the ecosystem</a>.",
+      fr: "Coentreprise entre l'État togolais et Asseco Data Systems, opère le CERT national et un SOC. Recrute analystes SOC, consultants et formateurs en cybersécurité.",
+      en: "Joint venture between the Togolese State and Asseco Data Systems, operates the national CERT and a SOC. Hires SOC analysts, consultants and cybersecurity trainers.",
     },
     "stages.s2.i3.p": {
       fr: "Deuxième opérateur télécom du pays. Page carrière active, sous forme de candidature spontanée plutôt que d'offres détaillées en permanence ; profils réseaux, télécoms et systèmes concernés.",
@@ -1380,8 +1139,8 @@
       en: "Central bank of the eight UEMOA countries, with a national agency in Lomé. Regularly hires IT profiles (information systems security analyst, technicians and engineers) for its headquarters and national agencies.",
     },
     "stages.s2.i11.p": {
-      fr: "Recrute régulièrement (auditeurs SSI, analystes) et a lancé un appel national pour référencer les talents togolais en cybersécurité. <a href=\"ecosysteme.html?type=cybersecurite\">Son rôle dans l'écosystème</a>.",
-      en: "Hires regularly (information security auditors, analysts) and launched a national call to list Togolese cybersecurity talent. <a href=\"ecosysteme.html?type=cybersecurite\">Its role in the ecosystem</a>.",
+      fr: "Agence publique togolaise de régulation et de réponse à incident en cybersécurité (CERT.tg). Recrute régulièrement (auditeurs SSI, analystes) et a lancé un appel national pour référencer les talents togolais en cybersécurité (pentest, sécurité applicative, DevSecOps, réponse à incident).",
+      en: "Togolese public cybersecurity regulation and incident-response agency (CERT.tg). Regularly hires (IS security auditors, analysts) and launched a national call to register Togolese cybersecurity talent (pentesting, application security, DevSecOps, incident response).",
     },
     "stages.s2.i12.p": {
       fr: "Fintech togolaise fondée à Lomé en 2016, spécialisée dans le paiement digital et la digitalisation du cash (solution Cashpay), présente dans 13 pays d'Afrique. Pas de portail carrières dédié identifié : leur page LinkedIn reste la meilleure piste pour candidater ou suivre leurs annonces.",
@@ -1457,14 +1216,14 @@
       fr: 'La majorité des écoles privées togolaises proposent leurs propres réductions ou concours de bourses :\n      souvent la piste la plus accessible, mais la moins visible. Détails complets (filières, frais, contact) sur la page\n      <a href="ecoles.html">Écoles &amp; universités</a>.',
       en: 'Most Togolese private schools offer their own discounts or scholarship competitions : often the most accessible option, but the least visible. Full details (programs, fees, contact) on the <a href="ecoles.html">Schools &amp; universities</a> page.',
     },
-    "bourses.s1.i1.p": { fr: "Bourses sociales et au mérite.", en: "Need-based and merit scholarships." },
+    "bourses.s1.i1.p": { fr: "Bourses sociales et au mérite, avec possibilité de payer les frais en 3 fois.", en: "Need-based and merit scholarships, with the option to pay fees in 3 installments." },
     "bourses.s1.i2.p": { fr: "Bourses FONAP, bourses de mobilité (Le Havre, Belgique) et bourses au mérite scolaire (source : esig.tg/faq).", en: "FONAP scholarships, mobility scholarships (Le Havre, Belgium) and academic merit scholarships (source: esig.tg/faq)." },
     "bourses.s1.i3.p": { fr: "Concours de bourses togolais donnant droit à une réduction de 15 à 75 % sur les frais de scolarité.", en: "Togolese scholarship competition offering a 15 to 75% discount on tuition fees." },
     "bourses.s1.i4.p": {
       fr: 'Bourse « Étoile Scientifique » de 200 000 FCFA/an réservée aux étudiantes en informatique, plus une réduction fratrie de 50 000 FCFA/an (source : ucao-uut.tg/admissions).',
       en: '"Étoile Scientifique" scholarship of 200,000 FCFA/year reserved for female computer science students, plus a 50,000 FCFA/year sibling discount (source: ucao-uut.tg/admissions).',
     },
-    "bourses.s1.i5.p": { fr: "Concours de bourses annuel (réduction sur les frais de scolarité, montant variable)&nbsp;: sa date est dans le <a href=\"calendrier.html\">Calendrier</a>.", en: "Annual scholarship competition (tuition discount, variable amount): its date is in the <a href=\"calendrier.html\">Calendar</a>." },
+    "bourses.s1.i5.p": { fr: "Concours de bourses chaque année en septembre (réduction sur les frais de scolarité, montant variable).", en: "Scholarship competition every September (discount on tuition fees, variable amount)." },
     "bourses.s1.i6.p": { fr: "Accès à la bourse d'État togolaise comme toute université publique, ainsi qu'à des bourses internationales (France, Inde) pour les meilleurs dossiers.", en: "Access to the Togolese State scholarship like any public university, as well as international scholarships (France, India) for the strongest applications." },
     "bourses.s1.i7.p": { fr: "Bourses ponctuelles attribuées par tirage au sort à la rentrée : non garanties chaque année.", en: "One-off scholarships awarded by lottery at the start of the year : not guaranteed annually." },
     "bourses.s1.i8.p": { fr: "Bourses disponibles de 50 000 à 250 000 FCFA selon le niveau (Licence/Master).", en: "Scholarships available from 50,000 to 250,000 FCFA depending on level (Bachelor's/Master's)." },
@@ -1501,10 +1260,7 @@
 
     "bourses.s5.h2": { fr: "Se former sans payer de frais de scolarité", en: "Training without paying tuition fees" },
     "bourses.s5.desc": { fr: "Une alternative ou un complément à un cursus classique, surtout pour démarrer ou tester un domaine avant de s'engager financièrement.", en: "An alternative or complement to a traditional program, especially for getting started or testing out a field before committing financially." },
-    "bourses.s5.i1.p": {
-      fr: "Formation en ligne entièrement gratuite à Adidogomé (Lomé)&nbsp;: blockchain, communication digitale, design graphique, IA et marketing digital. 500+ étudiants formés.",
-      en: "Entirely free online training in Adidogomé (Lomé): blockchain, digital communication, graphic design, AI and digital marketing. 500+ students trained.",
-    },
+    "bourses.s5.i1.p": { fr: "Formation en ligne entièrement gratuite à Adidogomé (Lomé) : blockchain, communication digitale, design graphique, IA et marketing digital.", en: "Entirely free online training in Adidogomé (Lomé): blockchain, digital communication, graphic design, AI and digital marketing." },
     "bourses.s5.i2.p": {
       fr: "Programme gratuit du Ministère de la Transformation Numérique, ouvert à tous les étudiants des universités et écoles togolaises (pas seulement en informatique) : plateforme d'apprentissage avec IA, assistant pédagogique disponible 24h/24, tutorat humain par des enseignants universitaires, format hybride en ligne et présentiel.",
       en: "Free program from the Ministry of Digital Transformation, open to all Togolese university and school students (not just computer science): AI-powered learning platform, teaching assistant available 24/7, human tutoring by university lecturers, hybrid online and in-person format.",
@@ -1539,6 +1295,8 @@
     "eco.c12.p": { fr: "Communauté togolaise autour du Bitcoin et des cryptomonnaies, référencée au registre officiel de l'écosystème numérique togolais.", en: "Togolese community around Bitcoin and cryptocurrencies, listed in the official registry of the Togolese digital ecosystem." },
     "eco.c13.h4": { fr: "Chapitre Togolais d'Internet Society (ISOC Togo)", en: "Togolese Chapter of Internet Society (ISOC Togo)" },
     "eco.c13.p": { fr: "Chapitre national actif depuis 2008 (600+ membres), organise le Forum togolais sur la gouvernance de l'Internet et déploie des réseaux communautaires locaux pour l'accès à Internet.", en: "National chapter active since 2008 (600+ members), organizes the Togolese Forum on Internet Governance and deploys local community networks for Internet access." },
+    "eco.c14.h4": { fr: "ACAN : Académie Numérique", en: "ACAN : Digital Academy" },
+    "eco.c14.p": { fr: "Académie de formation en ligne gratuite à Adidogomé (Lomé) : blockchain, communication digitale, design graphique, intelligence artificielle et marketing digital. 500+ étudiants formés.", en: "Free online training academy in Adidogomé (Lomé): blockchain, digital communication, graphic design, artificial intelligence and digital marketing. 500+ students trained." },
     "eco.c16.p": { fr: "Chapitre togolais du programme mondial Microsoft pour étudiants : apprentissage des technologies Microsoft (Azure, IA, GitHub, Copilot), organisation d'événements techniques et mentorat, avec un parcours de progression (Alpha, Beta, Gold MLSA).", en: "Togolese chapter of Microsoft's global student program: learning Microsoft technologies (Azure, AI, GitHub, Copilot), organizing technical events and mentoring, with a progression path (Alpha, Beta, Gold MLSA)." },
     "eco.c17.p": { fr: "Chapitre étudiant Google Developer Student Club à l'Université de Lomé : ateliers réguliers (ex. développement web HTML/CSS/JS) et développement de solutions numériques pour la communauté universitaire.", en: "Google Developer Student Club chapter at the University of Lomé: regular workshops (e.g. HTML/CSS/JS web development) and building digital solutions for the university community." },
     "eco.c18.p": { fr: "Chapitre étudiant Google Developer Student Club à Lomé Business School : ateliers pratiques (ex. contribution à l'IA de Google via Google Crowdsource).", en: "Google Developer Student Club chapter at Lomé Business School: hands-on workshops (e.g. contributing to Google's AI via Google Crowdsource)." },
@@ -1628,10 +1386,7 @@
     "eco.s6.p": { fr: "Plateforme d'e-santé développée en 2018 avec le Ministère de la Santé et l'UNFPA : suivi du cycle menstruel, de la grossesse et consultation en ligne, plus de 10 000 abonnées.", en: "E-health platform developed in 2018 with the Ministry of Health and UNFPA: menstrual cycle and pregnancy tracking and online consultations, with over 10,000 subscribers." },
 
     "eco.inst.h2": { fr: "Institutions publiques et employeurs numériques", en: "Public institutions and digital employers" },
-    "eco.i1.p": {
-      fr: "Agence publique pilotant la digitalisation des démarches administratives au Togo. Ses recrutements tech sont sur la page <a href=\"stages-emploi.html#employeurs\">Stages &amp; emploi</a>.",
-      en: "Public agency driving the digitization of administrative procedures in Togo. Its tech hiring is on the <a href=\"stages-emploi.html#employeurs\">Internships &amp; jobs</a> page.",
-    },
+    "eco.i1.p": { fr: "Agence publique pilotant la digitalisation des démarches administratives au Togo. Recrute régulièrement sur des postes tech variés : développeurs, architectes, UX/UI, QA, Scrum Master, data.", en: "Public agency leading the digitalization of administrative processes in Togo. Regularly hires for a range of tech roles: developers, architects, UX/UI, QA, Scrum Master, data." },
     "eco.i2.p": {
       fr: "Partenariat entre le Ministère togolais de la Transformation Numérique et CEGA (UC Berkeley), avec le soutien de Google.org : science des données et IA au service des politiques publiques (santé, agriculture, sécurité routière). A notamment recruté des data scientists repérés via un défi organisé sur Zindi (plateforme panafricaine de compétitions de data science) pour prédire la demande en connectivité internet dans les zones mal desservies.",
       en: "Partnership between the Togolese Ministry of Digital Transformation and CEGA (UC Berkeley), with support from Google.org: data science and AI in service of public policy (health, agriculture, road safety). Notably recruited data scientists spotted through a challenge run on Zindi (pan-African data science competition platform) to predict internet connectivity demand in underserved areas.",
@@ -1741,13 +1496,4 @@
     initLangSwitch();
     applyLang(getLang());
   });
-
-  // Exposé pour js/app.js : le contenu inséré après coup (actus de l'accueil,
-  // lues depuis actualites.html) est traduit avec ce même dictionnaire.
-  window.WIYAO_I18N = {
-    t(key, lang) {
-      const entry = PAGE_CONTENT[key];
-      return entry ? (lang === "en" ? entry.en : entry.fr) : null;
-    },
-  };
 })();

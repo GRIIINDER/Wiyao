@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Écosystème tech togolais - WIYAO</title>
-<link rel="stylesheet" href="css/style.css?v=194">
+<link rel="stylesheet" href="css/style.css?v=195">
 <link rel="manifest" href="manifest.json">
 <meta name="description" content="L'écosystème tech togolais complet : communautés, événements, hubs, incubateurs, institutions publiques, cybersécurité et ressources d'apprentissage francophones.">
 <link rel="canonical" href="https://wiyao.vercel.app/ecosysteme.html">
@@ -87,13 +87,6 @@
     <h1 data-i18n-key="eco.hero.title">Écosystème tech <span class="hero-accent">togolais</span></h1>
   </section>
 
-  <ul class="banner-stats">
-    <li class="banner-stat"><span class="banner-stat-num" data-count-of="main .eco-section .eco-item">89</span><span class="banner-stat-label" data-i18n-key="stats.eco.total">acteurs et ressources recensés</span></li>
-    <li class="banner-stat"><span class="banner-stat-num" data-count-of="[data-group=communautes] .eco-item">26</span><span class="banner-stat-label" data-i18n-key="stats.eco.communautes">communautés actives</span></li>
-    <li class="banner-stat"><span class="banner-stat-num" data-count-of="[data-group=evenements] .eco-item">12</span><span class="banner-stat-label" data-i18n-key="stats.eco.evenements">événements annuels ou ponctuels</span></li>
-    <li class="banner-stat"><span class="banner-stat-num" data-count-of="#hubs .eco-item">13</span><span class="banner-stat-label" data-i18n-key="stats.eco.hubs">hubs et incubateurs</span></li>
-  </ul>
-
   <section class="hero">
     <p data-i18n-key="eco.hero.subtitle">Écoles, communautés, hubs d'innovation et institutions à connaître pour construire une carrière tech au Togo.</p>
     <p class="hero-guide" data-i18n-key="eco.hero.guide">Étudiant·e à la recherche d'une école ? Direction la page « <a href="ecoles.html">Écoles &amp; universités</a> ». Développeur·se en quête d'un réseau ? Rejoins les « Communautés et événements ». Porteur·se de projet en recherche d'accompagnement ? Regarde du côté des « Hubs et incubateurs ».</p>
@@ -115,7 +108,7 @@
     <p class="category-desc" data-i18n-key="eco.main.intro">Pas de programme de mentorat centralisé sur WIYAO : ces communautés en sont le meilleur substitut réel, la plupart accueillent les débutants et permettent de rencontrer des professionnels en personne. Deux proposent un mentorat structuré : MLSA Togo (parcours Alpha/Beta/Gold) et le Kara Digital Summit.</p>
 
     <h3 class="eco-subheading" data-i18n-key="eco.sub1">Communautés actives (à rejoindre toute l'année)</h3>
-    <div class="eco-list" data-group="communautes">
+    <div class="eco-list">
       <div class="eco-item">
         <h4>GDG Lomé</h4>
         <p data-i18n-key="eco.c1.p">Google Developer Group : meetups réguliers sur le web, le mobile et le cloud.</p>
@@ -179,6 +172,11 @@
         <a class="eco-link" href="http://www.internetsociety.tg" target="_blank" rel="noopener">internetsociety.tg</a>
       </div>
       <div class="eco-item">
+        <h4 data-i18n-key="eco.c14.h4">ACAN : Académie Numérique</h4>
+        <p data-i18n-key="eco.c14.p">Académie de formation en ligne gratuite à Adidogomé (Lomé) : blockchain, communication digitale, design graphique, intelligence artificielle et marketing digital. 500+ étudiants formés.</p>
+        <a class="eco-link" href="https://acanafrica.com/" target="_blank" rel="noopener">acanafrica.com</a>
+      </div>
+      <div class="eco-item">
         <h4>MLSA Togo : Microsoft Learn Student Ambassadors</h4>
         <p data-i18n-key="eco.c16.p">Chapitre togolais du programme mondial Microsoft pour étudiants : apprentissage des technologies Microsoft (Azure, IA, GitHub, Copilot), organisation d'événements techniques et mentorat, avec un parcours de progression (Alpha, Beta, Gold MLSA).</p>
         <a class="eco-link" href="https://mlsatogo.vercel.app/" target="_blank" rel="noopener">mlsatogo.vercel.app</a>
@@ -238,7 +236,7 @@
     </div>
 
     <h3 class="eco-subheading" data-i18n-key="eco.sub2">Événements annuels ou ponctuels</h3>
-    <div class="eco-list" data-group="evenements">
+    <div class="eco-list">
       <div class="eco-item">
         <h4>DevFest Lomé</h4>
         <p data-i18n-key="eco.e1.p">Conférence annuelle de GDG Lomé, l'un des plus grands rassemblements tech du pays.</p>
@@ -451,7 +449,7 @@
     <div class="eco-list">
       <div class="eco-item">
         <h4>Agence Togo Digital (ATD)</h4>
-        <p data-i18n-key="eco.i1.p">Agence publique pilotant la digitalisation des démarches administratives au Togo. Ses recrutements tech sont sur la page <a href="stages-emploi.html#employeurs">Stages &amp; emploi</a>.</p>
+        <p data-i18n-key="eco.i1.p">Agence publique pilotant la digitalisation des démarches administratives au Togo. Recrute régulièrement sur des postes tech variés : développeurs, architectes, UX/UI, QA, Scrum Master, data.</p>
         <a class="eco-link" href="https://digital.gouv.tg/recrutements" target="_blank" rel="noopener">digital.gouv.tg/recrutements</a>
       </div>
       <div class="eco-item">
@@ -591,15 +589,6 @@
       </div>
     </div>
   </section>
-
-  <section class="home-final">
-    <h2 class="home-h2" data-i18n-key="home.final.title">Prêt·e à tracer ton parcours ?</h2>
-    <p class="home-lead" data-i18n-key="home.final.desc">Gratuit, sans compte, sans publicité. Commence par le test d'orientation : 14 questions pour trouver ta voie.</p>
-    <div class="home-ctas">
-      <a class="btn-primary" href="test-orientation.html" data-i18n-key="hero.cta">Faire le test d'orientation →</a>
-      <a class="btn-ghost" href="roadmaps.html" data-i18n-key="home.cta2">Explorer les roadmaps</a>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer">
@@ -648,9 +637,8 @@
   </div>
 </footer>
 
-<script src="js/ecosysteme.js?v=1"></script>
-<script src="js/nav.js?v=10"></script>
+<script src="js/nav.js?v=11"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=109"></script>
+<script src="js/i18n.js?v=110"></script>
 </body>
 </html>

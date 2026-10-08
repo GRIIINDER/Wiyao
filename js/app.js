@@ -104,53 +104,29 @@
     return levelBadge + togoBadge;
   }
 
-  // Couleur de couverture des cartes roadmap et des onglets de l'accueil,
-  // une par domaine (voir .card-cover--* dans style.css).
-  const DOMAIN_SLUGS = {
-    "Développement": "dev",
-    "Data & IA": "data",
-    "Sécurité": "secu",
-    "Produit & Design": "design",
-    "Infrastructure & DevOps": "infra",
-    "Marketing digital": "marketing",
-    "Gestion & Management": "gestion",
-  };
-
-  function domainSlug(name) {
-    return DOMAIN_SLUGS[name] || "autre";
-  }
-
-  function domainLabel(name) {
-    const meta = typeof DOMAINS !== "undefined" ? DOMAINS[name] : null;
-    return meta && currentLang() === "en" && meta.nameEn ? meta.nameEn : name;
-  }
-
   function buildCard(id, rm, kind) {
     const total = countItems(rm);
     const done = getDoneCount(id);
     const pct = total ? Math.round((done / total) * 100) : 0;
-    const en = currentLang() === "en";
 
     const card = document.createElement("a");
     card.href = `roadmap.html?id=${id}`;
-    card.className = "card roadmap-card";
+    card.className = "card";
     card.dataset.title = rm.title.toLowerCase();
     if (rm.domain) card.dataset.domain = rm.domain;
     const badges = badgesHtml(rm);
-    const kindLabel = kind === "skill" ? (en ? "Skill roadmap" : "Roadmap · compétence") : (en ? "Role roadmap" : "Roadmap · métier");
+    const cardLabel = currentLang() === "en" ? "completed" : "complété";
+    const kindLabel = kind === "skill" ? "Roadmap · compétence" : "Roadmap · métier";
     card.innerHTML = `
-      <div class="card-cover card-cover--${domainSlug(rm.domain)}">
-        <span class="card-cover-kind">${kindLabel}</span>
-        <span class="card-icon" aria-hidden="true">${rm.icon}</span>
-      </div>
+      <div class="card-kind-bar">${kindLabel}</div>
       <div class="card-body">
+        <div class="card-icon">${rm.icon}</div>
         ${badges ? `<div class="card-badges">${badges}</div>` : ""}
         <h3>${tField(rm, "title")}</h3>
         <p>${tField(rm, "subtitle")}</p>
-        <div class="card-meta-row"><span>${total} ${en ? "steps" : "étapes"}</span><span>${rm.domain ? domainLabel(rm.domain) : ""}</span></div>
         <div class="card-meta-divider"></div>
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-        <span class="progress-label">${pct}% ${en ? "completed" : "complété"}</span>
+        <span class="progress-label">${pct}% ${cardLabel}</span>
       </div>
     `;
     return card;
@@ -261,6 +237,43 @@
     }
   }
 
+  // ---- Primer "l'informatique en 7 domaines" (page test d'orientation) ----
+  function renderDomainPrimer() {
+    const container = document.getElementById("domain-primer-grid");
+    if (!container || typeof DOMAINS === "undefined") return;
+
+    Object.keys(DOMAINS).forEach((domainName) => {
+      const meta = DOMAINS[domainName];
+      const domainLabel = currentLang() === "en" && meta.nameEn ? meta.nameEn : domainName;
+      const item = document.createElement("div");
+      item.className = "domain-primer-item";
+
+      if (meta.icon) {
+        const icon = document.createElement("div");
+        icon.className = "domain-primer-icon";
+        icon.textContent = meta.icon;
+        item.appendChild(icon);
+      }
+
+      const heading = document.createElement("h4");
+      heading.textContent = domainLabel;
+      item.appendChild(heading);
+
+      const desc = document.createElement("p");
+      desc.textContent = tField(meta, "description");
+      item.appendChild(desc);
+
+      if (meta.presenceTogo) {
+        const presence = document.createElement("p");
+        presence.className = "domain-primer-presence";
+        presence.textContent = `🇹🇬 ${tField(meta, "presenceTogo")}`;
+        item.appendChild(presence);
+      }
+
+      container.appendChild(item);
+    });
+  }
+
   // ---- Recherche + filtres par domaine (page d'accueil) ----
   function applyFilters() {
     const searchInput = document.getElementById("roadmap-search");
@@ -322,16 +335,6 @@
         btn.classList.add("active");
         applyFilters();
       });
-
-      // roadmaps.html?domaine=... (onglets de l'accueil) : préselectionne le
-      // filtre correspondant, uniquement s'il existe parmi les puces.
-      const wanted = new URLSearchParams(window.location.search).get("domaine");
-      const chip = wanted && Array.prototype.find.call(domainFilters.querySelectorAll(".domain-chip"), (b) => b.dataset.domain === wanted);
-      if (chip) {
-        domainFilters.querySelectorAll(".domain-chip").forEach((b) => b.classList.remove("active"));
-        chip.classList.add("active");
-        applyFilters();
-      }
     }
   }
 
@@ -479,10 +482,6 @@
       <span class="progress-label" id="global-label"></span>
     `;
     container.appendChild(header);
-    // Boutons Imprimer / Réinitialiser sous le titre (fil d'Ariane, titre,
-    // puis actions), au lieu d'être isolés au-dessus de la page.
-    const toolbar = document.querySelector(".roadmap-toolbar");
-    if (toolbar) header.appendChild(toolbar);
 
     function updateGlobal() {
       const done = (loadProgress().get(id) || []).length;
@@ -620,7 +619,6 @@
   function buildSchoolCard(id, school) {
     const card = document.createElement("div");
     card.className = "card school-card";
-    card.dataset.id = id;
     card.dataset.title = school.name.toLowerCase() + " " + school.filieres.join(" ").toLowerCase();
     card.dataset.ville = school.ville.join(",");
     card.dataset.statut = school.statut;
@@ -647,39 +645,20 @@
     subtitle.textContent = school.description;
     body.appendChild(subtitle);
 
-    // Carte plus lisible (façon cartes d'espaces Gozem) : une ligne de
-    // repères, une pastille frais, 3 filières, et le reste dépliable.
-    const isEn = currentLang() === "en";
-    const nNiv = school.niveaux.length;
-    const nFil = school.filieres.length;
-    const feesHidden = FEES_UNPUBLISHED.test(school.frais || "");
-    const facts = document.createElement("div");
-    facts.className = "school-facts";
-    facts.innerHTML =
-      `<span>${nNiv} ${isEn ? (nNiv > 1 ? "levels" : "level") : (nNiv > 1 ? "niveaux" : "niveau")} · ${nFil} ${isEn ? (nFil > 1 ? "programs" : "program") : (nFil > 1 ? "filières" : "filière")}</span>` +
-      `<span class="fee-pill ${feesHidden ? "fee-pill--hidden" : "fee-pill--shown"}">${feesHidden ? (isEn ? "Fees not disclosed" : "Frais non communiqués") : (isEn ? "Fees shown" : "Frais indiqués")}</span>`;
-    body.appendChild(facts);
-
-    const SHOWN = 3;
     const filieres = document.createElement("ul");
     filieres.className = "school-filieres";
-    filieres.innerHTML = school.filieres.slice(0, SHOWN).map((f) => `<li>${f}</li>`).join("") +
-      (nFil > SHOWN ? `<li class="school-filieres-more">+${nFil - SHOWN} ${isEn ? "more" : (nFil - SHOWN > 1 ? "autres" : "autre")}</li>` : "");
+    filieres.innerHTML = school.filieres.map((f) => `<li>${f}</li>`).join("");
     body.appendChild(filieres);
 
-    const details = document.createElement("details");
-    details.className = "school-details";
-    let metaHtml = "";
-    if (nFil > SHOWN) metaHtml += `<span><strong>${isEn ? "All programs" : "Toutes les filières"} :</strong> ${school.filieres.join(" · ")}</span>`;
-    metaHtml += `<span><strong>Niveaux :</strong> ${school.niveaux.join(", ")}</span>`;
+    const meta = document.createElement("div");
+    meta.className = "school-meta";
+    let metaHtml = `<span><strong>Niveaux :</strong> ${school.niveaux.join(", ")}</span>`;
     if (school.duree) metaHtml += `<span><strong>Durée :</strong> ${school.duree}</span>`;
     if (school.admission) metaHtml += `<span><strong>Admission :</strong> ${school.admission}</span>`;
     if (school.frais) metaHtml += `<span><strong>Frais :</strong> ${school.frais}</span>`;
-    // Les bourses de l'école sont détaillées une seule fois, sur la page Bourses.
-    if (school.bourses) metaHtml += `<span><strong>${isEn ? "Scholarships" : "Bourses"} :</strong> <a href="bourses-financement.html#ecoles">${isEn ? "see Scholarships & funding" : "voir Bourses & financement"}</a></span>`;
     if (school.agreeNote) metaHtml += `<span>ℹ️ ${school.agreeNote}</span>`;
-    details.innerHTML = `<summary>${isEn ? "See details" : "Voir le détail"} <span class="school-details-hint">${isEn ? "admission, fees, duration" : "admission, frais, durée"}</span></summary><div class="school-meta">${metaHtml}</div>`;
-    body.appendChild(details);
+    meta.innerHTML = metaHtml;
+    body.appendChild(meta);
 
     if (school.site) {
       const link = document.createElement("a");
@@ -742,261 +721,6 @@
         applySchoolFilters();
       });
     });
-
-    // ecoles.html?ville=... (carte des villes de l'accueil) : préselectionne
-    // la ville, uniquement si elle existe parmi les puces.
-    const villeGroup = document.getElementById("ville-filters");
-    const wantedVille = new URLSearchParams(window.location.search).get("ville");
-    const villeChip = wantedVille && villeGroup && Array.prototype.find.call(villeGroup.querySelectorAll(".domain-chip"), (b) => b.dataset.ville === wantedVille);
-    if (villeChip) {
-      villeGroup.querySelectorAll(".domain-chip").forEach((b) => b.classList.remove("active"));
-      villeChip.classList.add("active");
-      applySchoolFilters();
-    }
-  }
-
-  // Frais explicitement marqués « non communiqués » dans data.js (jamais
-  // devinés) : sert au décompte du bandeau "Le comparateur en chiffres".
-  const FEES_UNPUBLISHED = /^\s*(scolarité\s+)?non communiqu/i;
-
-  const STATUT_LABELS_EN = { "public": "Public", "prive": "Private", "inter-etats": "Inter-State" };
-
-  // "Le comparateur en chiffres" (façon La Ruche Health) : tout est calculé
-  // à partir de SCHOOLS, rien n'est saisi à la main.
-  function renderSchoolStats() {
-    const el = document.getElementById("school-stats-grid");
-    if (!el || typeof SCHOOLS === "undefined") return;
-    const isEn = currentLang() === "en";
-    const schools = Object.values(SCHOOLS);
-    const n = schools.length;
-    const villes = {};
-    const statuts = { prive: 0, public: 0, "inter-etats": 0 };
-    schools.forEach((s) => {
-      s.ville.forEach((v) => { villes[v] = (villes[v] || 0) + 1; });
-      statuts[s.statut] = (statuts[s.statut] || 0) + 1;
-    });
-    const nVilles = Object.keys(villes).length;
-    const lome = villes["Lomé"] || 0;
-    const agree = schools.filter((s) => s.agree === true).length;
-    const unpublished = schools.filter((s) => FEES_UNPUBLISHED.test(s.frais || "")).length;
-    const label = (k) => (isEn ? STATUT_LABELS_EN[k] : STATUT_LABELS[k]);
-    const bar = ["prive", "public", "inter-etats"].filter((k) => statuts[k]).map((k) =>
-      `<span class="school-stat-seg school-stat-seg--${k}" style="width:${((statuts[k] / n) * 100).toFixed(2)}%"></span>`
-    ).join("");
-    const legend = ["prive", "public", "inter-etats"].filter((k) => statuts[k]).map((k) =>
-      `<li><span class="school-stat-dot school-stat-seg--${k}"></span>${statuts[k]} ${esc(label(k).toLowerCase())}${isEn ? "" : (statuts[k] > 1 && k !== "inter-etats" ? "s" : "")}</li>`
-    ).join("");
-    el.innerHTML = `
-      <div class="school-stat">
-        <span class="school-stat-num">${n}</span>
-        <span class="school-stat-label">${isEn ? `schools and universities in ${nVilles} cities, ${lome} of them in Lomé` : `écoles et universités dans ${nVilles} villes, dont ${lome} à Lomé`}</span>
-      </div>
-      <div class="school-stat">
-        <span class="school-stat-num">${statuts.prive}<small>/${n}</small></span>
-        <span class="school-stat-label">${isEn ? "are private" : "sont privées"}</span>
-        <span class="school-stat-bar" aria-hidden="true">${bar}</span>
-        <ul class="school-stat-legend">${legend}</ul>
-      </div>
-      <div class="school-stat">
-        <span class="school-stat-num">${agree}<small>/${n}</small></span>
-        <span class="school-stat-label">${isEn ? "are on the Ministry's official list of accredited institutions (2026-2027)" : "figurent sur la liste officielle des établissements agréés par le Ministère (2026-2027)"}</span>
-      </div>
-      <div class="school-stat">
-        <span class="school-stat-num">${unpublished}<small>/${n}</small></span>
-        <span class="school-stat-label">${isEn ? "don't publish their tuition fees: ask them directly" : "ne publient pas leurs frais de scolarité : demande-les directement"}</span>
-      </div>`;
-  }
-
-  // "Comparer côte à côte" (façon Craydel) : jusqu'à 3 écoles, sélection
-  // gardée dans l'adresse (?comparer=iai-togo,esig) pour pouvoir partager le
-  // lien, sans rien enregistrer dans le navigateur.
-  const COMPARE_MAX = 3;
-
-  function initSchoolCompare() {
-    const grid = document.getElementById("school-grid");
-    const section = document.getElementById("comparatif");
-    const tableWrap = document.getElementById("school-compare-table");
-    const bar = document.getElementById("compare-bar");
-    if (!grid || !section || !tableWrap || !bar || typeof SCHOOLS === "undefined") return;
-
-    const wanted = (new URLSearchParams(window.location.search).get("comparer") || "").split(",");
-    let selected = wanted.filter((id, i) => SCHOOLS[id] && wanted.indexOf(id) === i).slice(0, COMPARE_MAX);
-    let open = selected.length >= 2;
-
-    function syncUrl() {
-      const params = new URLSearchParams(window.location.search);
-      params.delete("comparer");
-      let qs = params.toString();
-      if (selected.length) qs = (qs ? qs + "&" : "") + "comparer=" + selected.join(",");
-      window.history.replaceState(null, "", window.location.pathname + (qs ? "?" + qs : "") + window.location.hash);
-    }
-
-    function agreeText(s, isEn) {
-      if (s.agree === true) return `🏛️ ${isEn ? "State-accredited (2026-2027 list)" : "Agréé État (liste 2026-2027)"}`;
-      if (s.statut === "public" && s.agree == null) return isEn ? "Public university" : "Université publique";
-      return esc(s.agreeNote || (isEn ? "Not on the official list" : "Absent de la liste officielle"));
-    }
-
-    function renderTable(isEn) {
-      const cols = selected.map((id) => [id, SCHOOLS[id]]);
-      const statut = (k) => (isEn ? STATUT_LABELS_EN[k] : STATUT_LABELS[k]) || k;
-      const rows = [
-        [isEn ? "City" : "Ville", (s) => esc(s.ville.join(", "))],
-        [isEn ? "Status" : "Statut", (s) => esc(statut(s.statut))],
-        [isEn ? "State accreditation" : "Agrément de l'État", (s) => agreeText(s, isEn)],
-        [isEn ? "Levels" : "Niveaux", (s) => esc(s.niveaux.join(", "))],
-        [isEn ? "Programs" : "Filières", (s) => `<ul class="cmp-list">${s.filieres.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>`],
-        [isEn ? "Duration" : "Durée", (s) => esc(s.duree || "—")],
-        [isEn ? "Admission" : "Admission", (s) => esc(s.admission || "—")],
-        [isEn ? "Tuition fees" : "Frais de scolarité", (s) => esc(s.frais || "—")],
-        // Dates et bourses vivent sur leur propre page : ici, un renvoi.
-        [isEn ? "Key dates" : "Dates clés", () => `<a class="school-link" href="calendrier.html">${isEn ? "In the Calendar →" : "Dans le Calendrier →"}</a>`],
-        [isEn ? "Scholarships" : "Bourses", (s) => (s.bourses ? `<a class="school-link" href="bourses-financement.html#ecoles">${isEn ? "Scholarships page →" : "Page Bourses →"}</a>` : "—")],
-        [isEn ? "Official site" : "Site officiel", (s) => (s.site ? `<a class="school-link" href="${esc(s.site)}" target="_blank" rel="noopener">${isEn ? "Visit →" : "Visiter →"}</a>` : "—")],
-      ];
-      tableWrap.innerHTML = `
-        <table class="school-compare-table">
-          <caption class="sr-only">${isEn ? "Side-by-side comparison of the selected schools" : "Comparaison côte à côte des écoles sélectionnées"}</caption>
-          <thead><tr>
-            <td></td>
-            ${cols.map(([id, s]) => `<th scope="col"><span class="cmp-school">${esc(s.name)}</span><button type="button" class="cmp-remove" data-id="${esc(id)}" aria-label="${isEn ? `Remove ${esc(s.name)} from the comparison` : `Retirer ${esc(s.name)} du comparatif`}">×</button></th>`).join("")}
-          </tr></thead>
-          <tbody>
-            ${rows.map(([label, fn]) => `<tr><th scope="row">${esc(label)}</th>${cols.map(([, s]) => `<td>${fn(s)}</td>`).join("")}</tr>`).join("")}
-          </tbody>
-        </table>`;
-    }
-
-    function render() {
-      const isEn = currentLang() === "en";
-      const full = selected.length >= COMPARE_MAX;
-      grid.querySelectorAll(".school-compare-btn").forEach((btn) => {
-        const on = selected.indexOf(btn.dataset.id) !== -1;
-        btn.setAttribute("aria-pressed", String(on));
-        btn.disabled = !on && full;
-        btn.textContent = on ? (isEn ? "✓ Selected" : "✓ Sélectionnée") : (isEn ? "+ Compare" : "+ Comparer");
-        btn.title = !on && full ? (isEn ? "3 schools maximum" : "3 écoles maximum") : "";
-      });
-
-      bar.hidden = selected.length === 0;
-      bar.setAttribute("aria-label", isEn ? "Schools selected for comparison" : "Écoles sélectionnées pour la comparaison");
-      document.body.classList.toggle("has-compare-bar", selected.length > 0);
-      bar.innerHTML = `
-        <p class="compare-bar-label">${isEn ? "Your selection" : "Ta sélection"} <span>${selected.length}/${COMPARE_MAX}</span></p>
-        <ul class="compare-bar-chips">${selected.map((id) => `<li>${esc(schoolShortName(SCHOOLS[id].name))}<button type="button" class="cmp-remove" data-id="${esc(id)}" aria-label="${isEn ? `Remove ${esc(SCHOOLS[id].name)}` : `Retirer ${esc(SCHOOLS[id].name)}`}">×</button></li>`).join("")}</ul>
-        <div class="compare-bar-actions">
-          <button type="button" class="compare-bar-clear" data-action="clear">${isEn ? "Clear" : "Vider"}</button>
-          <button type="button" class="btn-primary compare-bar-go" data-action="compare"${selected.length < 2 ? " disabled" : ""}>${selected.length < 2 ? (isEn ? "Pick at least 2" : "Choisis-en au moins 2") : (isEn ? "Compare →" : "Comparer →")}</button>
-        </div>`;
-
-      const showTable = open && selected.length >= 2;
-      section.hidden = !showTable;
-      if (showTable) renderTable(isEn);
-
-      const share = document.getElementById("school-compare-share");
-      const close = document.getElementById("school-compare-close");
-      const wa = document.getElementById("school-compare-whatsapp");
-      if (share) share.textContent = isEn ? "Share" : "Partager";
-      if (close) close.textContent = isEn ? "Close" : "Fermer";
-      if (wa) {
-        const text = (isEn ? "School comparison on WIYAO: " : "Comparatif d'écoles sur WIYAO : ") + window.location.href;
-        wa.href = "https://wa.me/?text=" + encodeURIComponent(text);
-      }
-    }
-
-    function update() {
-      syncUrl();
-      render();
-    }
-
-    function remove(id) {
-      selected = selected.filter((x) => x !== id);
-      if (selected.length < 2) open = false;
-      update();
-    }
-
-    grid.querySelectorAll(".school-card").forEach((card) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "school-compare-btn";
-      btn.dataset.id = card.dataset.id;
-      card.querySelector(".card-body").appendChild(btn);
-    });
-
-    grid.addEventListener("click", (e) => {
-      const btn = e.target.closest(".school-compare-btn");
-      if (!btn) return;
-      const id = btn.dataset.id;
-      if (selected.indexOf(id) !== -1) remove(id);
-      else if (selected.length < COMPARE_MAX) {
-        selected.push(id);
-        update();
-      }
-    });
-
-    function goToTable() {
-      open = true;
-      update();
-      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      section.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-      const heading = document.getElementById("school-compare-title");
-      if (heading) heading.focus({ preventScroll: true });
-    }
-
-    bar.addEventListener("click", (e) => {
-      const rm = e.target.closest(".cmp-remove");
-      if (rm) return remove(rm.dataset.id);
-      const action = e.target.closest("[data-action]");
-      if (!action) return;
-      if (action.dataset.action === "clear") {
-        selected = [];
-        open = false;
-        update();
-      } else if (action.dataset.action === "compare" && selected.length >= 2) {
-        goToTable();
-      }
-    });
-
-    section.addEventListener("click", async (e) => {
-      const rm = e.target.closest(".cmp-remove");
-      if (rm) return remove(rm.dataset.id);
-      if (e.target.closest("#school-compare-close")) {
-        open = false;
-        update();
-        const go = bar.querySelector(".compare-bar-go");
-        if (go) go.focus();
-        return;
-      }
-      const shareBtn = e.target.closest("#school-compare-share");
-      if (!shareBtn) return;
-      const isEn = currentLang() === "en";
-      const url = window.location.href;
-      if (navigator.share) {
-        try {
-          await navigator.share({ title: isEn ? "School comparison - WIYAO" : "Comparatif d'écoles - WIYAO", url });
-          return;
-        } catch (err) {
-          if (err && err.name === "AbortError") return;
-        }
-      }
-      try {
-        await navigator.clipboard.writeText(url);
-        shareBtn.textContent = isEn ? "Link copied ✓" : "Lien copié ✓";
-        setTimeout(render, 2000);
-      } catch (err) {
-        const field = document.getElementById("school-compare-link");
-        if (field) {
-          field.hidden = false;
-          field.value = url;
-          field.select();
-        }
-      }
-    });
-
-    // Nettoie aussi l'adresse d'un lien partagé (doublons, identifiants inconnus).
-    update();
-    new MutationObserver(() => { render(); renderSchoolStats(); })
-      .observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
   }
 
   // ---- Test d'orientation ----
@@ -1398,14 +1122,6 @@
     const form = document.getElementById("proposer-form");
     if (!form) return;
 
-    // ?type=Établissement (lien "Signaler une mise à jour" de l'accueil) :
-    // présélectionne le type, seulement s'il existe dans la liste.
-    const wantedType = new URLSearchParams(window.location.search).get("type");
-    const typeSelect = form.elements["type"];
-    if (wantedType && typeSelect && [...typeSelect.options].some((o) => o.value === wantedType)) {
-      typeSelect.value = wantedType;
-    }
-
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       const name = form.elements["name"].value.trim();
@@ -1508,170 +1224,6 @@
     });
   }
 
-  // ---- Test d'orientation : « Comment se passe le test » (façon Superpower) ----
-  // Les nombres de questions viennent de QUIZ_QUESTIONS / ROLE_QUESTIONS, les
-  // éléments du résultat reprennent les titres de l'écran de résultat.
-  function initQuizHowto() {
-    const tabs = document.getElementById("quiz-howto-tabs");
-    const panel = document.getElementById("quiz-howto-panel");
-    if (!tabs || !panel || typeof QUIZ_QUESTIONS === "undefined") return;
-    let active = 0;
-    const PRACTICAL = { niveau: ["Niveau visé", "Target level"], ville: ["Ville", "City"], statut: ["Budget", "Budget"], priorite: ["Priorité", "Priority"] };
-
-    function steps(isEn) {
-      const domainQ = QUIZ_QUESTIONS.filter((q) => q.type === "domain").length;
-      const practical = QUIZ_QUESTIONS.filter((q) => q.type !== "domain");
-      const roleQ = typeof ROLE_QUESTIONS !== "undefined" ? Math.max(...Object.values(ROLE_QUESTIONS).map((l) => l.length)) : 0;
-      const nRoles = typeof ROLES !== "undefined" ? Object.keys(ROLES).length : 0;
-      const domains = typeof DOMAINS !== "undefined" ? Object.keys(DOMAINS).map(domainLabel) : [];
-      const total = domainQ + roleQ + practical.length;
-      const q = (n) => (isEn ? `${n} question${n > 1 ? "s" : ""}` : `${n} question${n > 1 ? "s" : ""}`);
-      return [
-        {
-          icon: "compass", tab: isEn ? "What you enjoy" : "Ce que tu aimes", count: q(domainQ),
-          title: isEn ? "What you enjoy doing" : "Ce que tu aimes faire",
-          desc: isEn
-            ? `${domainQ} questions about what you like doing. Your answers score the ${domains.length} major tech fields:`
-            : `${domainQ} questions sur ce que tu aimes faire. Tes réponses départagent les ${domains.length} grands domaines de la tech :`,
-          chips: domains,
-        },
-        {
-          icon: "route", tab: isEn ? "The career" : "Le métier", count: q(roleQ),
-          title: isEn ? "Narrowing down the career" : "Le métier, plus précisément",
-          desc: isEn
-            ? `Once your leading field is known, ${roleQ} questions specific to that field point you to a precise career among the ${nRoles} on WIYAO.`
-            : `Une fois ton domaine dominant identifié, ${roleQ} questions propres à ce domaine t'orientent vers un métier précis parmi les ${nRoles} de WIYAO.`,
-          chips: [],
-        },
-        {
-          icon: "school", tab: isEn ? "Your situation" : "Ta situation", count: q(practical.length),
-          title: isEn ? "Your practical situation" : "Ta situation concrète",
-          desc: isEn
-            ? `${practical.length} practical questions so the schools suggested to you match your situation:`
-            : `${practical.length} questions pratiques pour que les écoles proposées collent à ta situation :`,
-          chips: practical.map((x) => (PRACTICAL[x.type] || [x.type, x.type])[isEn ? 1 : 0]),
-        },
-        {
-          icon: "cap", tab: isEn ? "Your result" : "Ton résultat", count: isEn ? `after ${total}` : `après ${total}`,
-          title: isEn ? "Your result" : "Ton résultat",
-          desc: isEn
-            ? `After ${total} questions: a solid starting point, not a final verdict. Compare it with real stories and the roadmap before committing to a school.`
-            : `Après ${total} questions : un point de départ solide, pas un verdict définitif. Confronte-le à des parcours réels et à la roadmap avant de t'engager dans une école.`,
-          chips: isEn
-            ? ["Your profile", "Recommended careers", "Recommended schools", "Breakdown of your answers"]
-            : ["Ton profil", "Métiers recommandés", "Écoles recommandées", "Répartition de tes réponses"],
-        },
-      ];
-    }
-
-    function render(focus) {
-      const isEn = currentLang() === "en";
-      const list = steps(isEn);
-      const num = (i) => String(i + 1).padStart(2, "0");
-      tabs.setAttribute("aria-label", isEn ? "Steps of the test" : "Étapes du test");
-      tabs.innerHTML = list.map((s, i) =>
-        `<button type="button" role="tab" class="howto-tab" id="howto-tab-${i}" aria-controls="quiz-howto-panel" aria-selected="${i === active}" tabindex="${i === active ? 0 : -1}"><span class="howto-num">${num(i)}</span><span class="howto-tab-text">${esc(s.tab)}<small>${esc(s.count)}</small></span></button>`
-      ).join("");
-      const s = list[active];
-      panel.setAttribute("aria-labelledby", `howto-tab-${active}`);
-      panel.innerHTML = `
-        <div class="howto-text">
-          <h3 class="howto-title">${esc(s.title)}</h3>
-          <p class="howto-desc">${esc(s.desc)}</p>
-          ${s.chips.length ? `<ul class="howto-chips">${s.chips.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
-          <a class="howto-cta" href="#quiz-section">${isEn ? "Start the test ↓" : "Commencer le test ↓"}</a>
-        </div>
-        <div class="howto-visual" aria-hidden="true">
-          <span class="howto-big">${num(active)}</span>
-          <span class="howto-icon">${ICONS[s.icon]}</span>
-        </div>`;
-      if (focus) {
-        const tab = document.getElementById(`howto-tab-${active}`);
-        if (tab) tab.focus();
-      }
-    }
-
-    tabs.addEventListener("click", (e) => {
-      const btn = e.target.closest('[role="tab"]');
-      if (!btn) return;
-      active = Number(btn.id.replace("howto-tab-", ""));
-      render(true);
-    });
-    tabs.addEventListener("keydown", (e) => {
-      const n = tabs.querySelectorAll('[role="tab"]').length;
-      if (e.key === "ArrowRight") active = (active + 1) % n;
-      else if (e.key === "ArrowLeft") active = (active - 1 + n) % n;
-      else if (e.key === "Home") active = 0;
-      else if (e.key === "End") active = n - 1;
-      else return;
-      e.preventDefault();
-      render(true);
-    });
-
-    render(false);
-    new MutationObserver(() => render(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
-  }
-
-  // ---- Stages & emploi : le guide en explorateur (façon Tikattou) ----
-  // Sur grand écran, conseils numérotés à droite et détail à gauche ; la
-  // liste d'origine reste la version mobile et sans JavaScript. Contenu
-  // relu depuis la liste (donc déjà traduit par i18n.js).
-  function initGuideExplorer() {
-    const guide = document.getElementById("guide");
-    const list = guide && guide.querySelector(".journey-steps");
-    if (!list) return;
-    const box = document.createElement("div");
-    box.className = "guide-explorer";
-    list.insertAdjacentElement("afterend", box);
-    guide.classList.add("has-explorer");
-    let active = 0;
-
-    function render(focus) {
-      const isEn = currentLang() === "en";
-      const steps = [...list.querySelectorAll(".journey-step")].map((li) => ({
-        title: li.querySelector("h3") ? li.querySelector("h3").innerHTML : "",
-        desc: li.querySelector("p") ? li.querySelector("p").innerHTML : "",
-      }));
-      if (!steps.length) return;
-      const num = (i) => String(i + 1).padStart(2, "0");
-      box.innerHTML = `
-        <div class="guide-tabs" role="tablist" aria-orientation="vertical" aria-label="${isEn ? "Tips" : "Conseils"}">
-          ${steps.map((s, i) => `<button type="button" role="tab" class="guide-tab" id="guide-tab-${i}" aria-controls="guide-panel" aria-selected="${i === active}" tabindex="${i === active ? 0 : -1}"><span class="guide-num">${num(i)}</span><span class="guide-tab-title">${s.title}</span><span class="guide-arrow" aria-hidden="true">→</span></button>`).join("")}
-        </div>
-        <div class="guide-panel" id="guide-panel" role="tabpanel" aria-labelledby="guide-tab-${active}" tabindex="0">
-          <p class="guide-kicker">${isEn ? "Selected tip" : "Conseil sélectionné"}</p>
-          <span class="guide-panel-num" aria-hidden="true">${num(active)}</span>
-          <h3 class="guide-panel-title">${steps[active].title}</h3>
-          <p class="guide-panel-desc">${steps[active].desc}</p>
-        </div>`;
-      if (focus) {
-        const tab = document.getElementById(`guide-tab-${active}`);
-        if (tab) tab.focus();
-      }
-    }
-
-    box.addEventListener("click", (e) => {
-      const btn = e.target.closest('[role="tab"]');
-      if (!btn) return;
-      active = Number(btn.id.replace("guide-tab-", ""));
-      render(true);
-    });
-    box.addEventListener("keydown", (e) => {
-      if (!e.target.closest('[role="tab"]')) return;
-      const n = box.querySelectorAll('[role="tab"]').length;
-      if (e.key === "ArrowDown") active = (active + 1) % n;
-      else if (e.key === "ArrowUp") active = (active - 1 + n) % n;
-      else if (e.key === "Home") active = 0;
-      else if (e.key === "End") active = n - 1;
-      else return;
-      e.preventDefault();
-      render(true);
-    });
-
-    render(false);
-    new MutationObserver(() => render(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
-  }
-
   // ---- Recherche transversale (page recherche.html) ----
   // Indexe roadmaps/écoles depuis js/data.js, et scanne les .eco-item / .timeline-item
   // des autres pages via fetch + DOMParser pour rester la seule source de vérité
@@ -1689,7 +1241,7 @@
   // ouverture, clôture, rentrée) sans dupliquer la logique d'affichage
   // dédiée de calendrier.html.
   function flattenSchoolKeywords(school) {
-    const parts = [(school.filieres || []).join(" "), (school.niveaux || []).join(" "), (school.ville || []).join(" ")];
+    const parts = [(school.filieres || []).join(" "), (school.niveaux || []).join(" ")];
     const dc = school.datesCles;
     if (dc) {
       parts.push([dc.ouverture, dc.cloture, dc.concours, dc.resultats, dc.rentree, dc.note].filter(Boolean).join(" "));
@@ -1764,12 +1316,6 @@
     const results = document.getElementById("global-search-results");
     const status = document.getElementById("global-search-status");
     if (!input || !results || !status) return;
-
-    // Recherche lancée depuis l'accueil (formulaire GET ou raccourcis) :
-    // recherche.html?q=... pré-remplit le champ. Affecté via .value, jamais
-    // injecté en HTML.
-    const initialQuery = new URLSearchParams(window.location.search).get("q");
-    if (initialQuery) input.value = initialQuery.slice(0, 80);
 
     let index = null;
     buildGlobalIndex().then((idx) => {
@@ -1893,377 +1439,18 @@
     toggleSuggestions();
   }
 
-  // ---- Page d'accueil : métier qui tourne dans le titre, chiffres calculés
-  // depuis data.js (jamais figés dans le HTML) et mini-interfaces des 6
-  // étapes, construites à partir des vraies données du site. ----
-  // Libellés limités à 18 caractères : au-delà, le titre passe sur deux
-  // lignes sur mobile (voir .home-title dans style.css).
-  const HOME_ROLES = [
-    { id: "web-dev", fr: "développeur·se web", en: "a web developer" },
-    { id: "data-analyst", fr: "data analyst", en: "a data analyst" },
-    { id: "cyber", fr: "expert·e cyber", en: "a cyber expert" },
-    { id: "ux-ui", fr: "designer UX/UI", en: "a UX/UI designer" },
-    { id: "devops", fr: "ingénieur·e DevOps", en: "a DevOps engineer" },
-    { id: "data-ia", fr: "spécialiste IA", en: "an AI specialist" },
-  ];
-  // Noms repris des pages Stages & emploi et Écosystème.
-  const HOME_JOB_SITES = ["Emploi.tg", "Novojob (Togo)", "JobRelais", "ANPE"];
-  const HOME_COMMUNITIES = ["GDG Lomé", "TDEV", "CoTIA", "Women Techmakers", "Djanta Tech Hub", "UniPod"];
-  const ARROW_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="8 7 17 7 17 16"></polyline></svg>';
-
-  function esc(str) {
-    return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-  }
-
-  function schoolShortName(name) {
-    const m = name.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
-    if (!m) return name;
-    return m[2].length <= 14 ? m[2] : m[1];
-  }
-
-  const HOME_MOCKS = {
-    quiz(isEn) {
-      if (typeof QUIZ_QUESTIONS === "undefined" || !QUIZ_QUESTIONS.length) return "";
-      const q = QUIZ_QUESTIONS[0];
-      const options = q.options.slice(0, 3).map((o, i) =>
-        `<li class="mock-item${i === 0 ? " is-selected" : ""}"><span class="mock-radio"></span>${esc(isEn && o.labelEn ? o.labelEn : o.label)}</li>`
-      ).join("");
-      return `<div class="mock-card">
-        <div class="mock-row mock-muted"><span>${isEn ? "Question 1 of 14" : "Question 1 / 14"}</span><span>${isEn ? "Orientation test" : "Test d'orientation"}</span></div>
-        <div class="mock-bar"><span style="width:7%"></span></div>
-        <p class="mock-question">${esc(isEn && q.questionEn ? q.questionEn : q.question)}</p>
-        <ul class="mock-list">${options}</ul>
-      </div>`;
-    },
-    roadmap(isEn) {
-      const rm = typeof ROLES !== "undefined" ? ROLES["web-dev"] : null;
-      if (!rm) return "";
-      const total = rm.sections.reduce((n, s) => n + s.items.length, 0);
-      const done = 2;
-      const first = rm.sections[0];
-      const checks = first.items.slice(0, 4).map((it, i) =>
-        `<li class="mock-check${i < done ? " is-done" : ""}"><span class="mock-box"></span><span class="mock-ellipsis">${esc(tField(it, "label"))}</span></li>`
-      ).join("");
-      return `<div class="mock-card">
-        <div class="mock-row"><strong class="mock-title">${esc(tField(rm, "title"))}</strong><span class="mock-badge">${isEn ? "Role roadmap" : "Roadmap par métier"}</span></div>
-        <div class="mock-bar"><span style="width:${Math.max(4, Math.round((done / total) * 100))}%"></span></div>
-        <p class="mock-muted">${isEn ? `${done} / ${total} steps completed` : `${done} / ${total} étapes complétées`}</p>
-        <p class="mock-section">${esc(tField(first, "title"))}</p>
-        <ul class="mock-list">${checks}</ul>
-      </div>`;
-    },
-    ecoles(isEn) {
-      if (typeof SCHOOLS === "undefined") return "";
-      const statut = { public: isEn ? "Public" : "Publique", prive: isEn ? "Private" : "Privée", "inter-etats": isEn ? "Inter-State" : "Inter-États" };
-      const rows = ["iai-togo", "esig", "universite-kara"].filter((id) => SCHOOLS[id]).map((id) => {
-        const s = SCHOOLS[id];
-        const chips = [statut[s.statut] || s.statut, (s.ville || []).join(" · ")];
-        if (s.agree) chips.push(isEn ? "State-accredited" : "Agréé État");
-        const n = (s.filieres || []).length;
-        return `<li class="mock-item mock-school"><div><strong>${esc(schoolShortName(s.name))}</strong><span class="mock-chips">${chips.map((c) => `<span class="mock-chip">${esc(c)}</span>`).join("")}</span></div><span class="mock-count">${n} ${isEn ? (n > 1 ? "tracks" : "track") : (n > 1 ? "filières" : "filière")}</span></li>`;
-      }).join("");
-      return `<div class="mock-card">
-        <div class="mock-row mock-muted"><span>${isEn ? "School comparison" : "Comparateur d'écoles"}</span><span>${Object.keys(SCHOOLS).length} ${isEn ? "schools" : "écoles"}</span></div>
-        <ul class="mock-list" style="margin-top:14px">${rows}</ul>
-      </div>`;
-    },
-    calendrier(isEn) {
-      if (typeof ACADEMIC_TIMELINE === "undefined") return "";
-      const rows = ACADEMIC_TIMELINE.slice(0, 4).map((s) =>
-        `<li class="mock-date"><span class="mock-period">${esc(isEn ? s.periodeEn : s.periode)}</span><span class="mock-date-title">${esc(isEn ? s.titreEn : s.titre)}</span></li>`
-      ).join("");
-      return `<div class="mock-card">
-        <div class="mock-row mock-muted" style="margin-bottom:16px"><span>${isEn ? "Key dates" : "Dates clés"}</span><span>${isEn ? "Academic year" : "Année académique"}</span></div>
-        <ul class="mock-list mock-timeline">${rows}</ul>
-      </div>`;
-    },
-    stages(isEn) {
-      const rows = HOME_JOB_SITES.map((name) =>
-        `<li class="mock-item mock-link"><span class="mock-favicon">${esc(name.charAt(0))}</span><strong>${esc(name)}</strong>${ARROW_SVG}</li>`
-      ).join("");
-      return `<div class="mock-card">
-        <div class="mock-row mock-muted" style="margin-bottom:14px"><span>${isEn ? "Job platforms in Togo" : "Plateformes d'emploi au Togo"}</span></div>
-        <ul class="mock-list">${rows}</ul>
-      </div>`;
-    },
-    ecosysteme(isEn) {
-      return `<div class="mock-card">
-        <div class="mock-row mock-muted"><span>${isEn ? "Communities &amp; hubs" : "Communautés &amp; hubs"}</span><span>Togo</span></div>
-        <div class="mock-cloud">${HOME_COMMUNITIES.map((c) => `<span class="mock-pill">${esc(c)}</span>`).join("")}</div>
-      </div>`;
-    },
-  };
-
-  const ICONS = {
-    compass: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>',
-    route: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>',
-    school: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg>',
-    cap: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>',
-    coins: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="6" ry="3"></ellipse><path d="M3 7v5c0 1.66 2.69 3 6 3s6-1.34 6-3V7"></path><path d="M9 18c0 1.66 2.69 3 6 3s6-1.34 6-3v-5c0-1.66-2.69-3-6-3"></path></svg>',
-    calendar: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
-    briefcase: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
-    rocket: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>',
-    shield: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',
-  };
-
-  // "Je suis ici pour…" (façon Duplo) : l'aiguillage de l'accueil. Une
-  // phrase par destination, sans recopier le contenu de la page visée (règle
-  // « une information = une seule page »).
-  const HOME_INTENTS = [
-    {
-      icon: "compass",
-      label: { fr: "trouver ma voie dans la tech", en: "find my path in tech" },
-      title: { fr: "Commence par le test d'orientation", en: "Start with the orientation test" },
-      desc: { fr: "Il t'oriente vers un domaine et un métier.", en: "It points you to a field and a career." },
-      href: "test-orientation.html",
-      cta: { fr: "Faire le test →", en: "Take the test →" },
-      more: [["temoignages.html#portraits", { fr: "Parcours réels", en: "Real stories" }]],
-    },
-    {
-      icon: "route",
-      label: { fr: "apprendre un métier pas à pas", en: "learn a career step by step" },
-      title: { fr: "Suis une roadmap", en: "Follow a roadmap" },
-      desc: { fr: "Quoi apprendre, dans quel ordre.", en: "What to learn, in what order." },
-      href: "roadmaps.html",
-      cta: { fr: "Voir les roadmaps →", en: "See the roadmaps →" },
-      more: [["ecosysteme.html?type=ressources", { fr: "Ressources en ligne", en: "Online resources" }]],
-    },
-    {
-      icon: "school",
-      label: { fr: "choisir mon école", en: "choose my school" },
-      title: { fr: "Compare les écoles", en: "Compare schools" },
-      desc: { fr: "Jusqu'à 3 écoles côte à côte.", en: "Up to 3 schools side by side." },
-      href: "ecoles.html",
-      cta: { fr: "Comparer les écoles →", en: "Compare schools →" },
-      more: [],
-    },
-    {
-      icon: "coins",
-      label: { fr: "financer mes études", en: "fund my studies" },
-      title: { fr: "Trouve une bourse ou une aide", en: "Find a scholarship or aid" },
-      desc: { fr: "Bourses, réductions et formations gratuites.", en: "Scholarships, discounts and free training." },
-      href: "bourses-financement.html",
-      cta: { fr: "Voir les bourses →", en: "See scholarships →" },
-      more: [],
-    },
-    {
-      icon: "calendar",
-      label: { fr: "ne rater aucune date", en: "never miss a deadline" },
-      title: { fr: "Garde un œil sur le calendrier", en: "Keep an eye on the calendar" },
-      desc: { fr: "Concours, clôtures et rentrées.", en: "Entrance exams, deadlines and start dates." },
-      href: "calendrier.html",
-      cta: { fr: "Voir le calendrier →", en: "See the calendar →" },
-      more: [["actualites.html", { fr: "Événements tech", en: "Tech events" }]],
-    },
-    {
-      icon: "briefcase",
-      label: { fr: "trouver un stage ou un emploi", en: "find an internship or a job" },
-      title: { fr: "Prépare ton entrée dans la vie pro", en: "Get ready for working life" },
-      desc: { fr: "Où chercher, et qui recrute.", en: "Where to look, and who's hiring." },
-      href: "stages-emploi.html",
-      cta: { fr: "Voir stages & emploi →", en: "See internships & jobs →" },
-      more: [["ecosysteme.html?type=communautes", { fr: "Communautés", en: "Communities" }]],
-    },
-    {
-      icon: "cap",
-      label: { fr: "rassurer mes parents", en: "reassure my parents" },
-      title: { fr: "Montre-leur que c'est un vrai métier", en: "Show them it's a real career" },
-      desc: { fr: "Des chiffres sourcés et des parcours réels.", en: "Sourced figures and real stories." },
-      href: "temoignages.html",
-      cta: { fr: "Voir les témoignages →", en: "See the testimonials →" },
-      more: [],
-    },
-    {
-      icon: "rocket",
-      label: { fr: "me reconvertir dans la tech", en: "switch to a tech career" },
-      title: { fr: "Monte en compétences", en: "Build your skills" },
-      desc: { fr: "Commence par une roadmap par compétence.", en: "Start with a skill roadmap." },
-      href: "roadmaps.html#par-competence",
-      cta: { fr: "Voir les compétences →", en: "See the skills →" },
-      more: [["faq.html", { fr: "Déjà en études ? La FAQ", en: "Already studying? The FAQ" }]],
-    },
-  ];
-
-  // Chiffres [data-stat] (accueil, frise de la page À propos) : calculés
-  // depuis data.js pour ne jamais diverger du contenu réel.
-  function fillStats() {
-    const counts = {
-      roadmaps: () => Object.keys(ROLES).length + Object.keys(SKILLS).length,
-      ecoles: () => Object.keys(SCHOOLS).length,
-      metiers: () => Object.keys(ROLES).length,
-      competences: () => Object.keys(SKILLS).length,
-      domaines: () => Object.keys(DOMAINS).length,
-      togo: () => Object.values(ROLES).filter((r) => r.togoVerified).length,
-    };
-    document.querySelectorAll("[data-stat]").forEach((el) => {
-      const count = counts[el.dataset.stat];
-      if (!count) return;
-      try {
-        el.textContent = count();
-      } catch (e) {
-        // data.js absent de la page : on garde le chiffre écrit dans le HTML.
-      }
-    });
-  }
-
-  function initHome() {
-    const hero = document.getElementById("home-hero");
-    if (!hero) return;
-
-    const input = document.getElementById("home-search-input");
-    const submit = document.getElementById("home-search-btn");
-    const word = document.getElementById("home-rotator-word");
-    const pauseBtn = document.getElementById("home-rotator-pause");
-    const roles = HOME_ROLES.filter((r) => typeof ROLES === "undefined" || ROLES[r.id]);
-    let current = 0;
-    let paused = false;
-    let held = false;
-
-    const roleLabel = () => (roles.length ? (currentLang() === "en" ? roles[current].en : roles[current].fr) : "");
-
-    function renderPhone(isEn) {
-      const screen = document.getElementById("home-phone-screen");
-      if (!screen) return;
-      screen.innerHTML = `
-        <div class="phone-status"><span>9:41</span><span class="phone-notch"></span><span class="phone-bars"><i></i><i></i><i></i><i></i></span></div>
-        <div class="phone-header"><img src="icons/logo-white.png?v=1" alt=""><span class="phone-menu"></span></div>
-        <div class="phone-hero">
-          <span class="phone-badge">${isEn ? "100% free" : "100 % gratuit"}</span>
-          <p class="phone-title">${isEn ? "Become" : "Deviens"}<br><span class="phone-role">${esc(roleLabel())}</span><br>${isEn ? "in Togo" : "au Togo"}</p>
-          <div class="phone-search">${isEn ? "Search WIYAO…" : "Cherche sur WIYAO…"}</div>
-          <span class="phone-btn">${isEn ? "Take the test →" : "Faire le test →"}</span>
-        </div>
-        <div class="phone-cards"><span></span><span></span></div>`;
-    }
-
-    const intentSelect = document.getElementById("home-intent-select");
-    const intentResult = document.getElementById("home-intent-result");
-    let activeIntent = 0;
-
-    function renderIntent(isEn, withOptions = true) {
-      if (!intentSelect || !intentResult) return;
-      const L = isEn ? "en" : "fr";
-      if (withOptions) {
-        intentSelect.innerHTML = HOME_INTENTS.map((it, i) =>
-          `<option value="${i}"${i === activeIntent ? " selected" : ""}>${esc(it.label[L])}</option>`
-        ).join("");
-      }
-      const it = HOME_INTENTS[activeIntent];
-      intentResult.innerHTML = `
-        <div class="home-intent-card">
-          <span class="home-intent-icon" aria-hidden="true">${ICONS[it.icon]}</span>
-          <div class="home-intent-body">
-            <h3 class="home-intent-title">${esc(it.title[L])}</h3>
-            <p class="home-intent-desc">${esc(it.desc[L])}</p>
-            ${it.more.length ? `<ul class="home-intent-more">${it.more.map(([href, t]) => `<li><a href="${href}">${esc(t[L])}</a></li>`).join("")}</ul>` : ""}
-          </div>
-          <a class="btn-primary home-intent-cta" href="${it.href}">${esc(it.cta[L])}</a>
-        </div>`;
-    }
-
-    if (intentSelect) {
-      intentSelect.addEventListener("change", () => {
-        activeIntent = Math.min(HOME_INTENTS.length - 1, Math.max(0, Number(intentSelect.value) || 0));
-        renderIntent(currentLang() === "en", false);
-      });
-    }
-
-    function updatePauseLabel() {
-      if (!pauseBtn) return;
-      const isEn = currentLang() === "en";
-      pauseBtn.setAttribute("aria-label", paused
-        ? (isEn ? "Resume the animation" : "Relancer l'animation")
-        : (isEn ? "Pause the animation" : "Mettre l'animation en pause"));
-    }
-
-    function render() {
-      const isEn = currentLang() === "en";
-      if (input) input.placeholder = isEn ? "Search for a school, a career, a scholarship…" : "Cherche une école, un métier, une bourse…";
-      if (submit) submit.setAttribute("aria-label", isEn ? "Search" : "Rechercher");
-      if (word) word.textContent = roleLabel();
-      updatePauseLabel();
-      document.querySelectorAll(".home-visual[data-mock]").forEach((el) => {
-        const build = HOME_MOCKS[el.dataset.mock];
-        el.innerHTML = build ? build(isEn) : "";
-      });
-      renderIntent(isEn);
-      renderPhone(isEn);
-    }
-
-    // Bouton "Installer WIYAO" : affiché seulement si le navigateur propose
-    // l'installation (PWA) ; sinon les étapes manuelles restent visibles.
-    const installBtn = document.getElementById("home-install-btn");
-    let installPrompt = null;
-    window.addEventListener("beforeinstallprompt", (e) => {
-      e.preventDefault();
-      installPrompt = e;
-      if (installBtn) installBtn.hidden = false;
-    });
-    window.addEventListener("appinstalled", () => { if (installBtn) installBtn.hidden = true; });
-    if (installBtn) {
-      installBtn.addEventListener("click", async () => {
-        if (!installPrompt) return;
-        installPrompt.prompt();
-        await installPrompt.userChoice;
-        installPrompt = null;
-        installBtn.hidden = true;
-      });
-    }
-
-    render();
-    // i18n.js change l'attribut lang de <html> à chaque bascule FR/EN.
-    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
-
-    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!word || roles.length < 2 || reduceMotion) return;
-
-    if (pauseBtn) {
-      pauseBtn.hidden = false;
-      pauseBtn.addEventListener("click", () => {
-        paused = !paused;
-        pauseBtn.setAttribute("aria-pressed", String(paused));
-        pauseBtn.classList.toggle("is-paused", paused);
-        updatePauseLabel();
-      });
-    }
-    hero.addEventListener("mouseenter", () => { held = true; });
-    hero.addEventListener("mouseleave", () => { held = false; });
-    hero.addEventListener("focusin", (e) => { if (e.target !== pauseBtn) held = true; });
-    hero.addEventListener("focusout", () => { held = false; });
-
-    setInterval(() => {
-      if (paused || held || document.hidden) return;
-      word.classList.add("is-leaving");
-      setTimeout(() => {
-        current = (current + 1) % roles.length;
-        word.textContent = roleLabel();
-        const phoneRole = document.querySelector(".phone-role");
-        if (phoneRole) phoneRole.textContent = roleLabel();
-        word.classList.remove("is-leaving");
-        word.classList.add("is-entering");
-        void word.offsetWidth;
-        word.classList.remove("is-entering");
-      }, 320);
-    }, 2800);
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
-    fillStats();
-    initHome();
     renderGrid();
+    renderDomainPrimer();
     initFilters();
     initGlobalSearch();
     initSearchSuggestions();
     renderRoadmap();
     renderSchools();
     initSchoolFilters();
-    renderSchoolStats();
-    initSchoolCompare();
     initQuiz();
     renderAcademicTimeline();
     renderSchoolDates();
-    initQuizHowto();
-    initGuideExplorer();
     initContactForm();
     initProposerForm();
   });
