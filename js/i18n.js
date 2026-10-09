@@ -495,6 +495,8 @@
     },
     "conf.s2.h2": { fr: "2. Collecte de données personnelles", en: "2. Personal data collection" },
     // Pied de page (identique sur les 20 pages) et newsletter Buttondown.
+    "ecoles.list.h2": { fr: "Liste des écoles", en: "List of schools" },
+    "actu.list.h2": { fr: "Toutes les actualités", en: "All news" },
     "footer.news.title": {
       fr: 'Le <span class="footer-mark">résumé mensuel</span> de WIYAO, dans ta boîte mail',
       en: 'WIYAO\'s <span class="footer-mark">monthly digest</span>, straight to your inbox',

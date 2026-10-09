@@ -255,7 +255,7 @@
         item.appendChild(icon);
       }
 
-      const heading = document.createElement("h4");
+      const heading = document.createElement("h3");
       heading.textContent = domainLabel;
       item.appendChild(heading);
 
@@ -398,9 +398,9 @@
     items.forEach((c) => {
       const item = document.createElement("div");
       item.className = "eco-item";
-      const h4 = document.createElement("h4");
-      h4.textContent = c.name;
-      item.appendChild(h4);
+      const title = document.createElement("h3");
+      title.textContent = c.name;
+      item.appendChild(title);
       const p = document.createElement("p");
       p.innerHTML = isEn ? c.noteEn : c.note;
       item.appendChild(p);
@@ -482,6 +482,10 @@
       <span class="progress-label" id="global-label"></span>
     `;
     container.appendChild(header);
+    // Boutons Imprimer / Réinitialiser sous la barre de progression, au lieu
+    // de flotter seuls au-dessus de la page.
+    const toolbar = document.querySelector(".roadmap-toolbar");
+    if (toolbar) header.appendChild(toolbar);
 
     function updateGlobal() {
       const done = (loadProgress().get(id) || []).length;

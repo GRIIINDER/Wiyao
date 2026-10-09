@@ -596,15 +596,22 @@ nav.site-nav a.active {
 }
 
 .lang-btn {
+  position: relative;
   border: none;
   background: transparent;
   color: var(--tk-text-muted);
   font-size: 0.8125rem;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 6px 12px;
   border-radius: 999px;
   cursor: pointer;
   transition: color 0.15s ease, background 0.15s ease;
+}
+
+.lang-btn::after {
+  content: "";
+  position: absolute;
+  inset: -9px 0;
 }
 
 .lang-btn:hover {
@@ -1200,7 +1207,7 @@ main {
   margin-bottom: 8px;
 }
 
-.domain-primer-item h4 {
+.domain-primer-item :is(h3, h4) {
   margin: 0 0 6px;
 }
 
@@ -1436,6 +1443,8 @@ main {
 
 .roadmap-header .subtitle {
   color: var(--tk-text-muted);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .roadmap-header .type-badge {
@@ -1493,7 +1502,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin: 10px 0 30px;
+  margin: 20px 0 0;
 }
 
 .btn {
@@ -1559,6 +1568,7 @@ main {
 }
 
 .check {
+  position: relative;
   flex: 0 0 auto;
   width: 22px;
   height: 22px;
@@ -1573,6 +1583,12 @@ main {
   align-items: center;
   justify-content: center;
   margin-top: 2px;
+}
+
+.check::after {
+  content: "";
+  position: absolute;
+  inset: -11px;
 }
 
 .item.done .check {
@@ -2509,7 +2525,7 @@ main {
   color: var(--text);
 }
 
-.eco-item h4 {
+.eco-item :is(h3, h4) {
   margin: 0 0 6px;
   font-size: 1rem;
 }
@@ -2626,11 +2642,11 @@ main {
 
 .card h3,
 .school-card h3,
-.eco-item h4,
+.eco-item :is(h3, h4),
 .journey-step h3,
 .timeline-content h3,
 .search-result h3,
-.domain-primer-item h4,
+.domain-primer-item :is(h3, h4),
 .domain-group-title {
   font-size: 1.125rem;
   font-weight: 700;
@@ -2851,7 +2867,7 @@ footer.site-footer {
   align-items: start;
 }
 
-.footer-col h5 {
+.footer-col h3 {
   margin: 0 0 12px;
   color: var(--tk-text-muted);
   font-size: 0.8125rem;
@@ -3564,6 +3580,91 @@ main .domain-primer-icon {
    tokens --card-bg/--text/--border déjà clairs (cartes blanches sur fond
    sombre) en les propageant aussi aux tokens de page (--tk-canvas etc.),
    plutôt que de réécrire chaque sélecteur individuellement. */
+/* Focus clavier visible et aux couleurs de WIYAO : le contour par défaut
+   du navigateur se voyait mal sur le fond sombre. Les champs de saisie
+   gardent leur propre indicateur (bordure colorée). */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--tk-primary);
+  outline-offset: 2px;
+}
+
+/* Écrans tactiles : toute cible d'au moins 44 px de haut (doigt), sans
+   changer la mise en page sur ordinateur. Les liens en liste gardent leur
+   espacement visuel ; leur zone cliquable est prolongée par ::after. */
+@media (pointer: coarse) {
+  .eco-link,
+  .school-link,
+  .item-resource,
+  .contact-detail-value a,
+  .founder-links a,
+  .about-section li > a:only-child {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 0;
+  }
+  .brand,
+  .nav-more-toggle,
+  .nav-search-icon,
+  .header-cta,
+  .domain-chip,
+  .footer-big-link,
+  .actu-card-btn,
+  .eco-jump-nav a,
+  .btn {
+    min-height: 44px;
+  }
+  .eco-jump-nav a {
+    display: inline-flex;
+    align-items: center;
+  }
+  .search-bar {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .search-bar input[type="search"] {
+    min-height: 44px;
+  }
+  .header-cta,
+  .nav-search-icon {
+    height: 44px;
+  }
+  .header-cta-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .footer-contact li,
+  .footer-links-col li {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    margin: 0;
+  }
+  .footer-contact a,
+  .footer-links-col a {
+    position: relative;
+  }
+  .footer-contact a::after,
+  .footer-links-col a::after {
+    content: "";
+    position: absolute;
+    inset: -12px 0;
+  }
+}
+
+/* Réglage système « réduire les animations » : plus de mouvement décoratif
+   (survols qui bougent, défilement doux, lueur de l'accueil). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @media print {
   :root {
     --tk-canvas: #ffffff;
