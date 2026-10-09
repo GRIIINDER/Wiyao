@@ -3695,6 +3695,129 @@ main .primer-toggle * {
   margin-top: 0;
 }
 
+/* FAQ : encadré « Une autre question ? » (repris de la FAQ de Woudy) — dans
+   la colonne collante sur ordinateur, après la liste sur mobile. */
+.faq-ask {
+  margin-top: 28px;
+  padding: 20px;
+  border: 1px solid var(--tk-border);
+  border-radius: 16px;
+  background: var(--tk-surface);
+}
+
+.faq-ask--end {
+  display: none;
+}
+
+.faq-ask-title {
+  margin: 0;
+  color: var(--tk-text);
+  font-weight: 700;
+}
+
+main .faq-ask-text {
+  margin: 6px 0 16px;
+  color: var(--tk-text-muted);
+  font-size: 14px !important;
+}
+
+.faq-ask-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 999px;
+  background: var(--tk-primary);
+  color: var(--tk-canvas);
+  font-weight: 700;
+  transition: filter 0.15s ease;
+}
+
+.faq-ask-btn:hover {
+  filter: brightness(0.92);
+}
+
+.faq-ask-mail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 8px;
+  border: 1px solid var(--tk-border);
+  border-radius: 999px;
+  color: var(--tk-text-muted);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.faq-ask-mail:hover {
+  border-color: var(--tk-primary);
+  color: var(--tk-text);
+}
+
+main .faq-ask-btn,
+main .faq-ask-mail,
+main .faq-ask-mail * {
+  font-size: 14px !important;
+}
+
+@media (max-width: 768px) {
+  .faq-ask--side {
+    display: none;
+  }
+  .faq-ask--end {
+    display: block;
+  }
+}
+
+/* Accueil : trois repères rassurants sous le bouton du test (repris de la
+   ligne « Payez avec… » de Woudy). */
+.hero-reassure {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-reassure li {
+  display: inline-flex;
+  align-items: center;
+  color: var(--tk-text-muted);
+  font-weight: 600;
+}
+
+main .hero-reassure li,
+main .hero-reassure li * {
+  font-size: 14px !important;
+}
+
+.hero-reassure .ico {
+  color: var(--tk-primary);
+}
+
+.hero-reassure + .hero-guide {
+  margin-top: 24px;
+}
+
+/* Pages longues : titres de section numérotés 01, 02… (repris de XCompany et
+   LE JPEG). Numéro généré en CSS, masqué aux lecteurs d'écran. */
+main.numbered-sections {
+  counter-reset: wiyao-section;
+}
+
+main.numbered-sections > section:is(.eco-section, .about-section) > h2::before {
+  counter-increment: wiyao-section;
+  content: counter(wiyao-section, decimal-leading-zero);
+  content: counter(wiyao-section, decimal-leading-zero) / "";
+  display: inline-block;
+  margin-right: 12px;
+  color: var(--tk-primary);
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
 /* Appui : léger enfoncement de tout ce qui se clique, pour qu'on voie (au
    doigt surtout) que le geste a été pris en compte. Placé après les règles
    de survol pour l'emporter pendant l'appui. */
