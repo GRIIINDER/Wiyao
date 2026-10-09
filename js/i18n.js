@@ -548,6 +548,8 @@
     "ecoles.card.duree": { fr: "Durée :", en: "Duration:" },
     "ecoles.card.admission": { fr: "Admission :", en: "Admission:" },
     "ecoles.card.frais": { fr: "Frais :", en: "Fees:" },
+    "ecoles.card.filieres": { fr: "Filières :", en: "Programs:" },
+    "ecoles.card.details": { fr: "Admission, durée et frais", en: "Admission, duration and fees" },
     "ecoles.card.site": { fr: "Voir le site officiel →", en: "See official site →" },
     "ecoles.badge.agree": { fr: "Agréé État", en: "State-accredited" },
     "ecoles.noResults": { fr: "Aucune école ne correspond à ces filtres. Essaie « Tous » dans l'un d'eux, ou une autre ville.", en: "No school matches these filters. Try “All” in one of them, or another city." },

@@ -1625,7 +1625,7 @@ a.card:hover {
   display: inline-block;
   margin-left: 8px;
   font-size: 0.7rem;
-  padding: 2px 8px;
+  padding: 4px 10px;
   border-radius: 100px;
   background: var(--tint-yellow-bg);
   color: var(--tint-yellow-fg);
@@ -1863,7 +1863,7 @@ a.card:hover {
   background: var(--tk-surface-soft);
   border: 1px solid var(--border);
   border-radius: 100px;
-  padding: 4px 10px;
+  padding: 6px 12px;
   font-size: 0.78rem;
   color: var(--text);
 }
@@ -1880,6 +1880,65 @@ a.card:hover {
 }
 
 .school-meta strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Fiches écoles compactes : l'essentiel visible, le détail à un clic. */
+.school-filieres-line {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+}
+
+.school-filieres-line strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.school-details {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.school-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--tk-primary);
+  cursor: pointer;
+  list-style: none;
+}
+
+.school-details summary::-webkit-details-marker {
+  display: none;
+}
+
+main .school-details summary,
+main .school-details summary * {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.school-details summary .ico {
+  margin: 0;
+  transition: transform 0.2s ease;
+}
+
+.school-details[open] summary .ico {
+  transform: rotate(180deg);
+}
+
+.school-details-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 4px 0 8px;
+  color: var(--text-muted);
+}
+
+.school-details-body strong {
   color: var(--text);
   font-weight: 600;
 }

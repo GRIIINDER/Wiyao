@@ -255,6 +255,7 @@
     "clip": "<path d=\"M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48\"></path>",
     "clock": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline>",
     "pin": "<path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle>",
+    "chevron": "<polyline points=\"6 9 12 15 18 9\"></polyline>",
     "printer": "<polyline points=\"6 9 6 2 18 2 18 9\"></polyline><path d=\"M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2\"></path><rect x=\"6\" y=\"14\" width=\"12\" height=\"8\"></rect>"
   };
   const DOMAIN_ICON_KEYS = {
@@ -703,20 +704,32 @@
     subtitle.textContent = school.description;
     body.appendChild(subtitle);
 
-    const filieres = document.createElement("ul");
-    filieres.className = "school-filieres";
-    filieres.innerHTML = school.filieres.map((f) => `<li>${f}</li>`).join("");
+    // Filières en une ligne de texte plutôt qu'en pastilles : même
+    // information, trois fois moins de hauteur.
+    const filieres = document.createElement("p");
+    filieres.className = "school-filieres-line";
+    filieres.innerHTML = `<strong>${i18nLabel("ecoles.card.filieres", "Filières :", "Programs:")}</strong> ${school.filieres.join(" · ")}`;
     body.appendChild(filieres);
 
     const meta = document.createElement("div");
     meta.className = "school-meta";
     let metaHtml = `<span><strong>${i18nLabel("ecoles.card.niveaux", "Niveaux :", "Levels:")}</strong> ${school.niveaux.join(", ")}</span>`;
-    if (school.duree) metaHtml += `<span><strong>${i18nLabel("ecoles.card.duree", "Durée :", "Duration:")}</strong> ${school.duree}</span>`;
-    if (school.admission) metaHtml += `<span><strong>${i18nLabel("ecoles.card.admission", "Admission :", "Admission:")}</strong> ${school.admission}</span>`;
-    if (school.frais) metaHtml += `<span><strong>${i18nLabel("ecoles.card.frais", "Frais :", "Fees:")}</strong> ${school.frais}</span>`;
-    if (school.agreeNote) metaHtml += `<span>${icon("info")}${school.agreeNote}</span>`;
     meta.innerHTML = metaHtml;
     body.appendChild(meta);
+
+    // Fiche compacte : le détail (durée, admission, frais, notes) s'ouvre au
+    // clic, pour parcourir et comparer les 32 écoles sans pavés de texte.
+    let detailsHtml = "";
+    if (school.duree) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.duree", "Durée :", "Duration:")}</strong> ${school.duree}</span>`;
+    if (school.admission) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.admission", "Admission :", "Admission:")}</strong> ${school.admission}</span>`;
+    if (school.frais) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.frais", "Frais :", "Fees:")}</strong> ${school.frais}</span>`;
+    if (school.agreeNote) detailsHtml += `<span>${icon("info")}${school.agreeNote}</span>`;
+    if (detailsHtml) {
+      const details = document.createElement("details");
+      details.className = "school-details";
+      details.innerHTML = `<summary>${i18nLabel("ecoles.card.details", "Admission, durée et frais", "Admission, duration and fees")}${icon("chevron")}</summary><div class="school-details-body">${detailsHtml}</div>`;
+      body.appendChild(details);
+    }
 
     if (school.site) {
       const link = document.createElement("a");
