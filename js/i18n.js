@@ -55,9 +55,11 @@
     "roadmap.print": { fr: "Imprimer / PDF", en: "Print / PDF" },
     "roadmap.reset": { fr: "Réinitialiser la progression", en: "Reset progress" },
     "quiz.primer.title": { fr: "L'informatique, en 7 grands domaines", en: "Tech, in 7 major domains" },
+    "quiz.primer.show": { fr: "Voir les 7 domaines", en: "See the 7 domains" },
+    "quiz.primer.hide": { fr: "Masquer", en: "Hide" },
     "quiz.primer.desc": {
-      fr: "Un aperçu rapide avant de répondre : pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver. Chaque domaine est une catégorie mondiale du secteur tech  ; la dernière ligne de chaque carte, marquée d'un repère, précise sa présence concrète sur le marché togolais.",
-      en: "A quick overview before you answer : no need to know it all by heart, that's exactly what the test is here to help you sort out. Each domain is a worldwide tech-sector category; the last line of each card, marked with a pin, points to its concrete presence on the Togolese market.",
+      fr: "Un aperçu rapide si tu veux t'y repérer : pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver. Chaque domaine est une catégorie mondiale du secteur tech  ; la dernière ligne de chaque carte, marquée d'un repère, précise sa présence concrète sur le marché togolais.",
+      en: "A quick overview if you want your bearings: no need to know it all by heart, that's exactly what the test is here to help you sort out. Each domain is a worldwide tech-sector category; the last line of each card, marked with a pin, points to its concrete presence on the Togolese market.",
     },
     "roadmaps.hero.title": {
       fr: 'Choisis ta <span class="hero-accent">roadmap</span>',

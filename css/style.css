@@ -3618,6 +3618,71 @@ main .card-icon {
   margin: 0;
 }
 
+/* Test d'orientation : l'aperçu des 7 domaines, replié sous le test. */
+.primer-fold {
+  border: 1px solid var(--tk-border);
+  border-radius: 16px;
+  background: var(--tk-surface);
+}
+
+.primer-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.primer-summary::-webkit-details-marker {
+  display: none;
+}
+
+.primer-summary h2 {
+  margin: 0;
+}
+
+.primer-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--tk-primary);
+  font-weight: 600;
+}
+
+main .primer-toggle,
+main .primer-toggle * {
+  font-size: 14px !important;
+}
+
+.primer-toggle .ico {
+  margin: 0;
+  transition: transform 0.2s ease;
+}
+
+.primer-fold[open] .primer-chevron {
+  transform: rotate(180deg);
+}
+
+.primer-hide,
+.primer-fold[open] .primer-show {
+  display: none;
+}
+
+.primer-fold[open] .primer-hide {
+  display: inline;
+}
+
+.primer-body {
+  padding: 0 24px 24px;
+}
+
+.primer-body .category-desc {
+  margin-top: 0;
+}
+
 /* Focus clavier visible et aux couleurs de WIYAO : le contour par défaut
    du navigateur se voyait mal sur le fond sombre. Les champs de saisie
    gardent leur propre indicateur (bordure colorée). */
