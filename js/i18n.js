@@ -52,12 +52,12 @@
       fr: 'Nouveau·elle ici ? Découvre <a href="about.html">ce qu\'est WIYAO</a> en 30 secondes.',
       en: 'New here? See <a href="about.html">what WIYAO is</a> in 30 seconds.',
     },
-    "roadmap.print": { fr: "🖨️ Imprimer / PDF", en: "🖨️ Print / PDF" },
+    "roadmap.print": { fr: "Imprimer / PDF", en: "Print / PDF" },
     "roadmap.reset": { fr: "Réinitialiser la progression", en: "Reset progress" },
     "quiz.primer.title": { fr: "L'informatique, en 7 grands domaines", en: "Tech, in 7 major domains" },
     "quiz.primer.desc": {
-      fr: "Un aperçu rapide avant de répondre : pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver. Chaque domaine est une catégorie mondiale du secteur tech ; la mention 🇹🇬 précise sa présence concrète sur le marché togolais.",
-      en: "A quick overview before you answer : no need to know it all by heart, that's exactly what the test is here to help you sort out. Each domain is a worldwide tech-sector category; the 🇹🇬 note points to its concrete presence on the Togolese market.",
+      fr: "Un aperçu rapide avant de répondre : pas besoin de tout connaître par cœur, c'est justement le rôle du test de t'aider à t'y retrouver. Chaque domaine est une catégorie mondiale du secteur tech  ; la dernière ligne de chaque carte, marquée d'un repère, précise sa présence concrète sur le marché togolais.",
+      en: "A quick overview before you answer : no need to know it all by heart, that's exactly what the test is here to help you sort out. Each domain is a worldwide tech-sector category; the last line of each card, marked with a pin, points to its concrete presence on the Togolese market.",
     },
     "roadmaps.hero.title": {
       fr: 'Choisis ta <span class="hero-accent">roadmap</span>',
@@ -832,8 +832,8 @@
     "faq.cat3.h2": { fr: "Sur les écoles et les frais", en: "About schools and fees" },
     "faq.c3.q1": { fr: "Toutes les écoles listées sont-elles reconnues par l'État ?", en: "Are all the listed schools recognized by the State?" },
     "faq.c3.a1": {
-      fr: "Le badge « 🏛️ Agréé État » indique une présence sur la liste officielle du Ministère togolais de l'Enseignement Supérieur et de la Recherche (liste des établissements accrédités pour l'année académique 2026-2027, publiée le 24 juillet 2026, 111 établissements dont 13 publics).",
-      en: 'The "🏛️ State-accredited" badge indicates presence on the official list from the Togolese Ministry of Higher Education and Research (list of accredited institutions for the 2026-2027 academic year, published July 24, 2026, 111 institutions including 13 public ones).',
+      fr: "Le badge « Agréé État » indique une présence sur la liste officielle du Ministère togolais de l'Enseignement Supérieur et de la Recherche (liste des établissements accrédités pour l'année académique 2026-2027, publiée le 24 juillet 2026, 111 établissements dont 13 publics).",
+      en: 'The "State-accredited" badge indicates presence on the official list from the Togolese Ministry of Higher Education and Research (list of accredited institutions for the 2026-2027 academic year, published July 24, 2026, 111 institutions including 13 public ones).',
     },
     "faq.c3.q2": { fr: "Comment sont trouvés les frais de scolarité affichés ?", en: "How are the displayed tuition fees found?" },
     "faq.c3.a2": {

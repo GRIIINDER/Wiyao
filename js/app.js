@@ -202,7 +202,8 @@
         const domainLabel = meta && currentLang() === "en" && meta.nameEn ? meta.nameEn : domainName;
         const heading = document.createElement("h3");
         heading.className = "domain-group-title";
-        heading.textContent = meta && meta.icon ? `${meta.icon} ${domainLabel}` : domainLabel;
+        heading.textContent = domainLabel;
+        heading.insertAdjacentHTML("afterbegin", domainIcon(domainName));
         group.appendChild(heading);
 
         if (meta && meta.description) {
@@ -237,6 +238,45 @@
     }
   }
 
+  // ---- Icônes au trait (SVG, même famille que celles du menu) ----
+  // Remplacent les emoji d'interface, qui s'affichent différemment selon le
+  // téléphone (et en lettres « TG » / « GB » sous Windows). Les icônes des
+  // 89 roadmaps restent des emoji (données de js/data.js).
+  const ICON_PATHS = {
+    "code": "<polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline>",
+    "chart": "<line x1=\"12\" y1=\"20\" x2=\"12\" y2=\"10\"></line><line x1=\"18\" y1=\"20\" x2=\"18\" y2=\"4\"></line><line x1=\"6\" y1=\"20\" x2=\"6\" y2=\"16\"></line>",
+    "shield": "<path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"></path>",
+    "pen": "<path d=\"M12 19l7-7 3 3-7 7-3-3z\"></path><path d=\"M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z\"></path><path d=\"M2 2l7.586 7.586\"></path><circle cx=\"11\" cy=\"11\" r=\"2\"></circle>",
+    "cloud": "<path d=\"M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z\"></path>",
+    "megaphone": "<path d=\"m3 11 18-5v12L3 14v-3z\"></path><path d=\"M11.6 16.8a3 3 0 1 1-5.8-1.6\"></path>",
+    "briefcase": "<rect x=\"2\" y=\"7\" width=\"20\" height=\"14\" rx=\"2\" ry=\"2\"></rect><path d=\"M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16\"></path>",
+    "landmark": "<line x1=\"3\" y1=\"22\" x2=\"21\" y2=\"22\"></line><line x1=\"6\" y1=\"18\" x2=\"6\" y2=\"11\"></line><line x1=\"10\" y1=\"18\" x2=\"10\" y2=\"11\"></line><line x1=\"14\" y1=\"18\" x2=\"14\" y2=\"11\"></line><line x1=\"18\" y1=\"18\" x2=\"18\" y2=\"11\"></line><polygon points=\"12 2 20 7 4 7\"></polygon>",
+    "info": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" y1=\"16\" x2=\"12\" y2=\"12\"></line><line x1=\"12\" y1=\"8\" x2=\"12.01\" y2=\"8\"></line>",
+    "clip": "<path d=\"M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48\"></path>",
+    "clock": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline>",
+    "pin": "<path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle>",
+    "printer": "<polyline points=\"6 9 6 2 18 2 18 9\"></polyline><path d=\"M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2\"></path><rect x=\"6\" y=\"14\" width=\"12\" height=\"8\"></rect>"
+  };
+  const DOMAIN_ICON_KEYS = {
+    "Développement": "code",
+    "Data & IA": "chart",
+    "Sécurité": "shield",
+    "Produit & Design": "pen",
+    "Infrastructure & DevOps": "cloud",
+    "Marketing digital": "megaphone",
+    "Gestion & Management": "briefcase"
+  };
+
+  function icon(key) {
+    const paths = ICON_PATHS[key];
+    if (!paths) return "";
+    return `<svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${paths}</svg>`;
+  }
+
+  function domainIcon(domainName) {
+    return icon(DOMAIN_ICON_KEYS[domainName]);
+  }
+
   // ---- Primer "l'informatique en 7 domaines" (page test d'orientation) ----
   function renderDomainPrimer() {
     const container = document.getElementById("domain-primer-grid");
@@ -248,11 +288,11 @@
       const item = document.createElement("div");
       item.className = "domain-primer-item";
 
-      if (meta.icon) {
-        const icon = document.createElement("div");
-        icon.className = "domain-primer-icon";
-        icon.textContent = meta.icon;
-        item.appendChild(icon);
+      if (DOMAIN_ICON_KEYS[domainName]) {
+        const iconEl = document.createElement("div");
+        iconEl.className = "domain-primer-icon";
+        iconEl.innerHTML = domainIcon(domainName);
+        item.appendChild(iconEl);
       }
 
       const heading = document.createElement("h3");
@@ -266,7 +306,8 @@
       if (meta.presenceTogo) {
         const presence = document.createElement("p");
         presence.className = "domain-primer-presence";
-        presence.textContent = `🇹🇬 ${tField(meta, "presenceTogo")}`;
+        presence.textContent = tField(meta, "presenceTogo");
+        presence.insertAdjacentHTML("afterbegin", icon("pin"));
         item.appendChild(presence);
       }
 
@@ -557,7 +598,8 @@
           const link = document.createElement("a");
           link.className = "item-resource";
           link.href = item.resource.url;
-          link.textContent = "📎 " + item.resource.label;
+          link.textContent = item.resource.label;
+          link.insertAdjacentHTML("afterbegin", icon("clip"));
           if (!item.resource.url.startsWith("roadmap.html")) {
             link.target = "_blank";
             link.rel = "noopener";
@@ -637,7 +679,7 @@
     badges.innerHTML =
       `<span class="badge status-${school.statut}">${STATUT_LABELS[school.statut] || school.statut}</span>` +
       school.ville.map((v) => `<span class="badge ville-badge">${v}</span>`).join("") +
-      (school.agree === true ? `<span class="badge status-public">🏛️ Agréé État</span>` : "");
+      (school.agree === true ? `<span class="badge status-public">${icon("landmark")}Agréé État</span>` : "");
     body.appendChild(badges);
 
     const title = document.createElement("h3");
@@ -660,7 +702,7 @@
     if (school.duree) metaHtml += `<span><strong>Durée :</strong> ${school.duree}</span>`;
     if (school.admission) metaHtml += `<span><strong>Admission :</strong> ${school.admission}</span>`;
     if (school.frais) metaHtml += `<span><strong>Frais :</strong> ${school.frais}</span>`;
-    if (school.agreeNote) metaHtml += `<span>ℹ️ ${school.agreeNote}</span>`;
+    if (school.agreeNote) metaHtml += `<span>${icon("info")}${school.agreeNote}</span>`;
     meta.innerHTML = metaHtml;
     body.appendChild(meta);
 
@@ -972,7 +1014,7 @@
           ? 'This result is a starting point, not a verdict : 14 questions can\'t know you 100%. Compare it against a <a href="temoignages.html">real testimonial</a> from someone in the role, and try the roadmap before committing financially to a school.'
           : 'Ce résultat est un point de départ, pas un verdict : 14 questions ne peuvent pas te connaître à 100 %. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier, et teste la roadmap avant de t\'engager financièrement dans une école.'
       }</p>
-      <h2>${isEn ? "Your profile" : "Ton profil"} : ${topMeta.icon} ${topLabel}</h2>
+      <h2>${isEn ? "Your profile" : "Ton profil"} : ${domainIcon(top)}${topLabel}</h2>
       <p class="category-desc">${tField(topMeta, "description")}</p>
     `;
 
@@ -993,8 +1035,8 @@
       const secondLabel = isEn && secondMeta.nameEn ? secondMeta.nameEn : second;
       html += `<p class="quiz-secondary">${
         isEn
-          ? `Close call: <strong>${secondMeta.icon} ${secondLabel}</strong> suits you almost as much as ${topLabel}. Worth exploring both before choosing.`
-          : `Résultat serré : <strong>${secondMeta.icon} ${secondLabel}</strong> te correspond presque autant que ${topLabel}. Vaut le coup d'explorer les deux avant de choisir.`
+          ? `Close call: <strong>${domainIcon(second)}${secondLabel}</strong> suits you almost as much as ${topLabel}. Worth exploring both before choosing.`
+          : `Résultat serré : <strong>${domainIcon(second)}${secondLabel}</strong> te correspond presque autant que ${topLabel}. Vaut le coup d'explorer les deux avant de choisir.`
       }</p>`;
     }
 
@@ -1056,7 +1098,7 @@
       const row = document.createElement("div");
       row.className = "quiz-score-row";
       row.innerHTML = `
-        <span class="quiz-score-label">${meta.icon} ${domainLabel}</span>
+        <span class="quiz-score-label">${domainIcon(domain)}${domainLabel}</span>
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
         <span class="quiz-score-value">${score}/${totalAnswers}</span>
       `;
@@ -1176,7 +1218,7 @@
 
       let bodyHtml = "";
       if (dc && dc.urgent && dc.urgentNote) {
-        bodyHtml += `<p class="dates-urgent-note">⏰ ${dc.urgentNote}</p>`;
+        bodyHtml += `<p class="dates-urgent-note">${icon("clock")}${dc.urgentNote}</p>`;
       }
       if (dc && dc.note) {
         bodyHtml += `<p class="dates-note">${dc.note}</p>`;
@@ -1417,7 +1459,8 @@
         const chip = document.createElement("button");
         chip.type = "button";
         chip.className = "domain-chip";
-        chip.textContent = meta.icon ? `${meta.icon} ${label}` : label;
+        chip.textContent = label;
+        chip.insertAdjacentHTML("afterbegin", domainIcon(domainName));
         chip.addEventListener("click", () => {
           input.value = domainName;
           input.dispatchEvent(new Event("input", { bubbles: true }));

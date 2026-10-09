@@ -3571,8 +3571,7 @@ main .page-title-banner p.error-code {
 
 /* Icônes (émojis) dimensionnées par font-size, pas du texte de contenu :
    exclues elles aussi de l'aplat, sinon elles rétréciraient à 12px. */
-main .card-icon,
-main .domain-primer-icon {
+main .card-icon {
   font-size: 1.8rem !important;
 }
 
@@ -3580,6 +3579,45 @@ main .domain-primer-icon {
    tokens --card-bg/--text/--border déjà clairs (cartes blanches sur fond
    sombre) en les propageant aussi aux tokens de page (--tk-canvas etc.),
    plutôt que de réécrire chaque sélecteur individuellement. */
+/* Icônes au trait (remplacent les emoji d'interface) : taille du texte qui
+   les entoure, couleur héritée. */
+.ico {
+  display: inline-block;
+  flex: none;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: -0.15em;
+}
+
+.domain-chip .ico,
+.btn .ico {
+  margin-right: 6px;
+}
+
+.domain-group-title .ico {
+  color: var(--tk-primary);
+  margin-right: 0.5em;
+}
+
+/* Icône de domaine des cartes « 7 grands domaines » : pastille colorée. */
+.domain-primer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--tk-primary-soft);
+  color: var(--tk-primary);
+}
+
+.domain-primer-icon .ico {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+}
+
 /* Focus clavier visible et aux couleurs de WIYAO : le contour par défaut
    du navigateur se voyait mal sur le fond sombre. Les champs de saisie
    gardent leur propre indicateur (bordure colorée). */
