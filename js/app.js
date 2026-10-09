@@ -633,8 +633,8 @@
       resetBtn.addEventListener("click", () => {
         const confirmMsg =
           currentLang() === "en"
-            ? "Reset progress for this roadmap?"
-            : "Réinitialiser la progression pour cette roadmap ?";
+            ? "Clear your progress on this roadmap? All checked steps will be unchecked."
+            : "Effacer ta progression sur cette roadmap ? Toutes les étapes cochées seront décochées.";
         if (confirm(confirmMsg)) {
           const p = loadProgress();
           p.set(id, []);
