@@ -498,6 +498,23 @@
     "conf.s2.h2": { fr: "2. Collecte de données personnelles", en: "2. Personal data collection" },
     // Pied de page (identique sur les 20 pages) et newsletter Buttondown.
     "ecoles.list.h2": { fr: "Liste des écoles", en: "List of schools" },
+    "ecoles.filter.domaine": { fr: "Domaine", en: "Field" },
+    "ecoles.filter.ville": { fr: "Ville", en: "City" },
+    "ecoles.filter.statut": { fr: "Statut", en: "Status" },
+    "ecoles.filter.all": { fr: "Tous", en: "All" },
+    "ecoles.filter.allCities": { fr: "Toutes", en: "All" },
+    "ecoles.filter.public": { fr: "Publique", en: "Public" },
+    "ecoles.filter.prive": { fr: "Privée", en: "Private" },
+    "ecoles.filter.interetats": { fr: "Inter-États", en: "Inter-state" },
+    "ecoles.noResults": { fr: "Aucune école ne correspond à ta recherche.", en: "No school matches your search." },
+    // Noms des 7 domaines (mêmes traductions que DOMAINS[…].nameEn dans data.js).
+    "domain.dev": { fr: "Développement", en: "Development" },
+    "domain.data": { fr: "Data &amp; IA", en: "Data &amp; AI" },
+    "domain.secu": { fr: "Sécurité", en: "Security" },
+    "domain.design": { fr: "Produit &amp; Design", en: "Product &amp; Design" },
+    "domain.infra": { fr: "Infrastructure &amp; DevOps", en: "Infrastructure &amp; DevOps" },
+    "domain.marketing": { fr: "Marketing digital", en: "Digital Marketing" },
+    "domain.gestion": { fr: "Gestion &amp; Management", en: "Management" },
     "actu.list.h2": { fr: "Toutes les actualités", en: "All news" },
     "footer.news.title": {
       fr: 'Le <span class="footer-mark">résumé mensuel</span> de WIYAO, dans ta boîte mail',
