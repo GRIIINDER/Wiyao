@@ -51,7 +51,7 @@
   --tk-border: #222e63;
   --tk-text: #f3f7f9;
   --tk-text-reading: #d5dde2;
-  --tk-text-muted: #b4c0c8;
+  --tk-text-muted: #b6c3e0;
   --tk-text-subtle: #8b9aa5;
   --tk-primary: #66c4ff;
   --tk-primary-hover: #3388ff;
@@ -862,45 +862,6 @@ main {
   font-size: inherit !important;
 }
 
-/* Accueil uniquement : lueur de fond qui dérive lentement derrière le hero,
-   scopée à #home-hero (comme #parcours ailleurs) pour ne pas toucher le
-   .hero partagé par les 18 autres pages. */
-#home-hero {
-  position: relative;
-  overflow: hidden;
-}
-
-#home-hero::before {
-  content: "";
-  position: absolute;
-  top: -35%;
-  right: -8%;
-  width: 55%;
-  aspect-ratio: 1;
-  min-width: 360px;
-  background: radial-gradient(circle, var(--tk-primary) 0%, transparent 70%);
-  opacity: 0.16;
-  filter: blur(70px);
-  pointer-events: none;
-  z-index: 0;
-  animation: home-hero-glow-drift 20s ease-in-out infinite;
-}
-
-#home-hero > * {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes home-hero-glow-drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-8%, 10%) scale(1.08); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #home-hero::before {
-    animation: none;
-  }
-}
 
 .hero h1 {
   font-size: 2.75rem;
@@ -1208,11 +1169,6 @@ main {
 }
 
 
-
-.domain-primer-icon {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-}
 
 .domain-primer-item :is(h3, h4) {
   margin: 0 0 6px;
@@ -2866,32 +2822,6 @@ footer.site-footer {
   padding: 40px;
 }
 
-/* Deux halos discrets dans les coins, comme les cercles de Webattou. */
-.footer-card::before,
-.footer-card::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: var(--tk-primary);
-  opacity: 0.08;
-  filter: blur(30px);
-  pointer-events: none;
-}
-
-.footer-card::before {
-  width: 180px;
-  height: 180px;
-  top: -40px;
-  right: -40px;
-}
-
-.footer-card::after {
-  width: 150px;
-  height: 150px;
-  bottom: -50px;
-  left: -40px;
-}
-
 .footer-head,
 .footer-grid,
 .footer-bottom {
@@ -2984,10 +2914,8 @@ footer.site-footer {
    Webattou, que WIYAO n'a pas). */
 .footer-box {
   margin-top: 20px;
-  padding: 16px;
-  border: 1px solid var(--tk-border);
-  border-radius: 14px;
-  background: var(--tk-surface-soft);
+  padding-top: 20px;
+  border-top: 1px solid var(--tk-border);
 }
 
 .footer-box-label {
@@ -3671,22 +3599,10 @@ main .card-icon {
   margin-right: 0.5em;
 }
 
-/* Icône de domaine des cartes « 7 grands domaines » : pastille colorée. */
-.domain-primer-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--tk-primary-soft);
+/* Icône de domaine des cartes « 7 grands domaines » : sur la ligne du titre. */
+.domain-primer-item h3 .ico {
   color: var(--tk-primary);
-}
-
-.domain-primer-icon .ico {
-  width: 22px;
-  height: 22px;
-  margin: 0;
+  margin-right: 0.5em;
 }
 
 /* Test d'orientation : l'aperçu des 7 domaines, replié sous le test. */

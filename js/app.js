@@ -289,15 +289,11 @@
       const item = document.createElement("div");
       item.className = "domain-primer-item";
 
-      if (DOMAIN_ICON_KEYS[domainName]) {
-        const iconEl = document.createElement("div");
-        iconEl.className = "domain-primer-icon";
-        iconEl.innerHTML = domainIcon(domainName);
-        item.appendChild(iconEl);
-      }
-
+      // Icône sur la ligne du titre (une pastille au-dessus de chaque titre
+      // est le tic de gabarit relevé par la revue impeccable).
       const heading = document.createElement("h3");
       heading.textContent = domainLabel;
+      heading.insertAdjacentHTML("afterbegin", domainIcon(domainName));
       item.appendChild(heading);
 
       const desc = document.createElement("p");
