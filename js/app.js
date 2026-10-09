@@ -116,9 +116,7 @@
     if (rm.domain) card.dataset.domain = rm.domain;
     const badges = badgesHtml(rm);
     const cardLabel = currentLang() === "en" ? "completed" : "complété";
-    const kindLabel = kind === "skill" ? "Roadmap · compétence" : "Roadmap · métier";
     card.innerHTML = `
-      <div class="card-kind-bar">${kindLabel}</div>
       <div class="card-body">
         <div class="card-icon">${rm.icon}</div>
         ${badges ? `<div class="card-badges">${badges}</div>` : ""}

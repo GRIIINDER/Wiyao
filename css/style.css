@@ -52,7 +52,7 @@
   --tk-text: #f3f7f9;
   --tk-text-reading: #d5dde2;
   --tk-text-muted: #b6c3e0;
-  --tk-text-subtle: #8b9aa5;
+  --tk-text-subtle: #8d9ccb;
   --tk-primary: #66c4ff;
   --tk-primary-hover: #3388ff;
   --tk-primary-soft: #082c5e;
@@ -1245,19 +1245,6 @@ a.card:hover {
   transform: translateY(-2px);
 }
 
-/* Bandeau de type de carte, façon Codecademy ("Career path" /
-   "Free course") : le type réel déjà utilisé par la recherche
-   (Roadmap · métier / compétence), pas une catégorie inventée. */
-.card-kind-bar {
-  background: var(--tk-canvas);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 8px 24px;
-}
-
 .card-body {
   padding: 24px;
 }
@@ -1527,7 +1514,6 @@ a.card:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px 24px;
-  border-left: 4px solid var(--accent);
   color: var(--text);
 }
 
@@ -3513,10 +3499,12 @@ main summary {
   line-height: 1.35;
 }
 
-/* Chapeau d'introduction sous le bandeau de titre. */
+/* Chapeau d'introduction sous le bandeau de titre (18 px : ~60 ch pour rester
+   sous 70 caractères par ligne). */
 main .hero > p:first-child,
 main .roadmap-header .subtitle {
   font-size: 18px !important;
+  max-width: 60ch;
 }
 
 /* Éléments secondaires : boutons, filtres, liens de carte, métadonnées. */
@@ -3567,9 +3555,8 @@ main .about-section > p,
 main .about-section li,
 main .faq-item p,
 main .dates-note,
-main .timeline-content p,
-main .roadmap-header .subtitle {
-  max-width: 70ch;
+main .timeline-content p {
+  max-width: 65ch;
 }
 
 /* Accents de la marque en chasse fixe. */
@@ -3841,6 +3828,24 @@ main.numbered-sections > section:is(.eco-section, .about-section) > h2::before {
 a.card:active {
   transform: scale(0.97);
   transition: transform 0.08s ease;
+}
+
+/* Surfaces du navigateur (sélection de texte, curseur de saisie, cases et
+   boutons radio natifs, barre de défilement) aux couleurs du site plutôt que
+   celles par défaut du navigateur. */
+:root {
+  accent-color: var(--tk-primary);
+  scrollbar-color: var(--tk-border) var(--tk-canvas);
+}
+
+::selection {
+  background: var(--tk-primary);
+  color: var(--tk-canvas);
+}
+
+input,
+textarea {
+  caret-color: var(--tk-primary);
 }
 
 /* Focus clavier visible et aux couleurs de WIYAO : le contour par défaut
