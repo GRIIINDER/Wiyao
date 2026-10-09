@@ -345,10 +345,10 @@ header.site-header {
   z-index: 10;
 }
 
-/* En-tête façon Tikattou : une barre-pilule en trois zones, logo à gauche,
-   menus dans une pilule au centre, langue / recherche / test à droite. La
-   pilule est centrée dans l'espace libre entre les deux (un centrage strict
-   sur la barre demanderait ~1 320 px, plus large que la barre). */
+/* En-tête façon Tikattou : une barre-pilule en trois zones, menus dans une
+   pilule à gauche, logo WIYAO au centre (centré sur la barre : les deux
+   colonnes latérales ont la même largeur), langue / recherche / test à
+   droite. */
 .site-header-top {
   max-width: 1100px;
   width: 100%;
@@ -358,7 +358,7 @@ header.site-header {
   border-radius: 999px;
   padding: 12px 16px;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 16px;
   box-shadow: 0 1px 2px rgba(21, 35, 45, 0.05);
@@ -370,8 +370,8 @@ header.site-header {
   gap: 10px;
   font-weight: 700;
   font-size: 1.1rem;
-  justify-self: start;
-  order: 1;
+  justify-self: center;
+  order: 2;
 }
 
 .brand-logo {
@@ -395,8 +395,8 @@ nav.site-nav {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  justify-self: center;
-  order: 2;
+  justify-self: start;
+  order: 1;
   gap: 2px;
   background: var(--tk-surface-soft);
   border: 1px solid var(--tk-border);
@@ -413,8 +413,10 @@ nav.site-nav {
   order: 3;
 }
 
-.header-actions .lang-switch {
-  justify-self: auto;
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* Bouton icône, sans fond ni bordure (comme les icônes de Tikattou). */
@@ -514,7 +516,7 @@ nav.site-nav a.active {
   font-size: 0.875rem;
   font-family: inherit;
   text-transform: none;
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-radius: 999px;
   border: none;
   background: transparent;
@@ -2784,41 +2786,33 @@ footer.site-footer {
   color: var(--tk-primary);
 }
 
-/* Barre trop étroite pour le libellé du test : il ne garde que son icône
-   (le libellé reste lu par les lecteurs d'écran). */
-@media (max-width: 1100px) {
-  .header-cta {
-    width: 40px;
-    padding: 0;
-    gap: 0;
-    justify-content: center;
-  }
-  .header-cta-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-  }
-}
-
-/* Tablette et mobile : deux rangées dans une carte arrondie, logo et
-   actions puis la pilule des menus sur toute la largeur, comme Tikattou
-   (pas de menu « hamburger »). Les sous-menus s'ouvrent en panneau sous la
-   carte. L'en-tête n'y est plus collant, pour ne pas manger l'écran. */
-@media (max-width: 900px) {
+/* Tablette et mobile : deux rangées dans une carte arrondie, comme
+   Tikattou (pas de menu « hamburger ») : langue à gauche, logo au centre,
+   recherche et test à droite, puis la pilule des menus sur toute la
+   largeur. En dessous de 1 120 px, la pilule ne tient plus dans la moitié
+   gauche de la barre à côté du logo centré. Les sous-menus s'ouvrent en
+   panneau sous la carte ; l'en-tête n'y est plus collant, pour ne pas
+   manger l'écran. */
+@media (max-width: 1120px) {
   header.site-header {
     position: static;
   }
   .site-header-top {
     position: relative;
-    grid-template-columns: 1fr auto;
     border-radius: 28px;
     padding: 12px;
     gap: 12px;
   }
   .header-actions {
+    display: contents;
+  }
+  .lang-switch {
+    order: 1;
+    justify-self: start;
+  }
+  .header-tools {
+    order: 3;
+    justify-self: end;
     gap: 8px;
   }
   nav.site-nav {
@@ -2843,6 +2837,25 @@ footer.site-footer {
   }
 }
 
+/* Plus assez de place à droite du logo pour le libellé du test : il ne
+   garde que son icône (le libellé reste lu par les lecteurs d'écran). */
+@media (max-width: 800px) {
+  .header-cta {
+    width: 40px;
+    padding: 0;
+    gap: 0;
+    justify-content: center;
+  }
+  .header-cta-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
 /* Téléphone : quatre menus lisibles (14 px) ne tiennent pas sur une ligne,
    la pilule passe en grille 2 × 2. */
 @media (max-width: 560px) {
@@ -2862,7 +2875,7 @@ footer.site-footer {
   .brand-logo {
     height: 26px;
   }
-  .header-actions {
+  .header-tools {
     gap: 4px;
   }
   .lang-btn {
