@@ -538,6 +538,7 @@
     "ecoles.filter.public": { fr: "Publique", en: "Public" },
     "ecoles.filter.prive": { fr: "Privée", en: "Private" },
     "ecoles.filter.interetats": { fr: "Inter-États", en: "Inter-state" },
+    "ecoles.badge.agree": { fr: "Agréé État", en: "State-accredited" },
     "ecoles.noResults": { fr: "Aucune école ne correspond à ces filtres. Essaie « Tous » dans l'un d'eux, ou une autre ville.", en: "No school matches these filters. Try “All” in one of them, or another city." },
     // Noms des 7 domaines (mêmes traductions que DOMAINS[…].nameEn dans data.js).
     "domain.dev": { fr: "Développement", en: "Development" },

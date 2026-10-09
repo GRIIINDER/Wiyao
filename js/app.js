@@ -646,11 +646,23 @@
   }
 
   // ---- Page écoles & universités ----
+  // Badges des fiches écoles, traduits avec les mêmes clés que les filtres de
+  // la page : le libellé porte data-i18n-key pour suivre aussi un changement
+  // de langue sans recharger.
   const STATUT_LABELS = {
-    "public": "Publique",
-    "prive": "Privée",
-    "inter-etats": "Inter-États"
+    "public": { key: "ecoles.filter.public", fr: "Publique", en: "Public" },
+    "prive": { key: "ecoles.filter.prive", fr: "Privée", en: "Private" },
+    "inter-etats": { key: "ecoles.filter.interetats", fr: "Inter-États", en: "Inter-state" }
   };
+
+  function badgeLabel(key, fr, en) {
+    return `<span data-i18n-key="${key}">${currentLang() === "en" ? en : fr}</span>`;
+  }
+
+  function statutBadgeLabel(statut) {
+    const s = STATUT_LABELS[statut];
+    return s ? badgeLabel(s.key, s.fr, s.en) : statut;
+  }
 
   // Mêmes mots-clés que le rattachement écoles ↔ domaine du test d'orientation
   // (computeSchoolMatches) : une école peut correspondre à plusieurs domaines.
@@ -677,9 +689,9 @@
     const badges = document.createElement("div");
     badges.className = "card-badges school-badges";
     badges.innerHTML =
-      `<span class="badge status-${school.statut}">${STATUT_LABELS[school.statut] || school.statut}</span>` +
+      `<span class="badge status-${school.statut}">${statutBadgeLabel(school.statut)}</span>` +
       school.ville.map((v) => `<span class="badge ville-badge">${v}</span>`).join("") +
-      (school.agree === true ? `<span class="badge status-public">${icon("landmark")}Agréé État</span>` : "");
+      (school.agree === true ? `<span class="badge status-public">${icon("landmark")}${badgeLabel("ecoles.badge.agree", "Agréé État", "State-accredited")}</span>` : "");
     body.appendChild(badges);
 
     const title = document.createElement("h3");
