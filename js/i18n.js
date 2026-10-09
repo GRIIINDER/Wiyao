@@ -31,7 +31,6 @@
     { selector: "#nav-opportunites .nav-more-toggle", fr: "Opportunités ▾", en: "Opportunities ▾" },
     { selector: "#nav-communaute .nav-more-toggle", fr: "Communauté ▾", en: "Community ▾" },
     { selector: "#nav-contact .nav-more-toggle", fr: "Contact ▾", en: "Contact ▾" },
-    { selector: ".nav-search-text", fr: "Rechercher sur WIYAO...", en: "Search WIYAO..." },
     { selector: ".footer-card-top > .footer-links-col:nth-child(1) h5", fr: "Parcours", en: "Journey" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(2) h5", fr: "Opportunités", en: "Opportunities" },
     { selector: ".footer-card-top > .footer-links-col:nth-child(3) h5", fr: "Communauté", en: "Community" },
@@ -1458,12 +1457,11 @@
     document
       .querySelectorAll(".site-nav a[href], .footer-links-col a[href], .footer-legal-links a[href]")
       .forEach((el) => {
-        if (el.classList.contains("nav-search-link")) return;
         const entry = BY_HREF[el.getAttribute("href")];
         if (entry) el.textContent = lang === "en" ? entry.en : entry.fr;
       });
 
-    document.querySelectorAll(".nav-search-link").forEach((el) => {
+    document.querySelectorAll(".nav-search-icon").forEach((el) => {
       el.setAttribute("aria-label", lang === "en" ? "Search" : "Recherche");
     });
 

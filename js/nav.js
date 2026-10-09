@@ -12,45 +12,10 @@
   }
 })();
 
-// Menu mobile - WIYAO
-(function () {
-  "use strict";
-
-  var toggle = document.querySelector(".nav-toggle");
-  var nav = document.getElementById("site-nav");
-  if (!toggle || !nav) return;
-
-  var MENU_ICON =
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
-  var CLOSE_ICON =
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-
-  function setOpen(isOpen) {
-    nav.classList.toggle("is-open", isOpen);
-    toggle.setAttribute("aria-expanded", String(isOpen));
-    toggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
-    toggle.innerHTML = isOpen ? CLOSE_ICON : MENU_ICON;
-  }
-
-  toggle.innerHTML = MENU_ICON;
-
-  toggle.addEventListener("click", function () {
-    setOpen(!nav.classList.contains("is-open"));
-  });
-
-  nav.addEventListener("click", function (event) {
-    if (event.target.closest("a")) setOpen(false);
-  });
-
-  window.addEventListener("resize", function () {
-    if (window.innerWidth > 1180) setOpen(false);
-  });
-})();
-
-// Menus déroulants Parcours / Opportunités / Communauté (desktop) - WIYAO
-// Trois groupes indépendants dans la barre, un seul ouvert à la fois.
-// S'ouvrent au survol (hover) sans avoir besoin de cliquer ; le clic/Entrée
-// reste disponible (clavier, écrans tactiles sans vrai survol).
+// Menus déroulants Parcours / Opportunités / Communauté / Contact - WIYAO
+// Quatre groupes indépendants dans la barre, un seul ouvert à la fois, sur
+// ordinateur comme sur mobile (pas de menu hamburger). S'ouvrent au survol
+// de la souris ; le clic / Entrée reste disponible (clavier, écrans tactiles).
 (function () {
   "use strict";
 
@@ -59,6 +24,7 @@
 
   var CLOSE_DELAY = 200; // ms - laisse le temps de traverser l'espace entre le bouton et le menu
   var closeTimers = typeof WeakMap === "function" ? new WeakMap() : null;
+  var hoverOpenedAt = new Map();
 
   function setOpen(group, isOpen) {
     var toggle = group.querySelector(".nav-more-toggle");
@@ -91,18 +57,27 @@
     toggle.addEventListener("click", function (event) {
       event.stopPropagation();
       clearCloseTimer(group);
-      var willOpen = !group.classList.contains("is-open");
+      // Un clic juste après l'ouverture au survol garde le menu ouvert
+      // (sinon le survol l'ouvre et le clic le referme aussitôt).
+      var justHovered = Date.now() - (hoverOpenedAt.get(group) || 0) < 800;
+      var willOpen = justHovered || !group.classList.contains("is-open");
+      hoverOpenedAt.delete(group);
       closeAll(group);
       setOpen(group, willOpen);
     });
 
-    group.addEventListener("mouseenter", function () {
+    // Survol à la souris seulement : sur écran tactile, un appui déclenche
+    // aussi un « survol » juste avant le clic, qui refermait aussitôt le menu.
+    group.addEventListener("pointerenter", function (event) {
+      if (event.pointerType !== "mouse") return;
       clearCloseTimer(group);
       closeAll(group);
+      if (!group.classList.contains("is-open")) hoverOpenedAt.set(group, Date.now());
       setOpen(group, true);
     });
 
-    group.addEventListener("mouseleave", function () {
+    group.addEventListener("pointerleave", function (event) {
+      if (event.pointerType !== "mouse") return;
       if (!closeTimers) {
         setOpen(group, false);
         return;

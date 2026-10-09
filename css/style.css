@@ -345,6 +345,10 @@ header.site-header {
   z-index: 10;
 }
 
+/* En-tête façon Tikattou : une barre-pilule en trois zones, logo à gauche,
+   menus dans une pilule au centre, langue / recherche / test à droite. La
+   pilule est centrée dans l'espace libre entre les deux (un centrage strict
+   sur la barre demanderait ~1 320 px, plus large que la barre). */
 .site-header-top {
   max-width: 1100px;
   width: 100%;
@@ -352,12 +356,11 @@ header.site-header {
   background: var(--tk-surface);
   border: 1px solid var(--tk-border);
   border-radius: 999px;
-  padding: 10px 14px;
+  padding: 12px 16px;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  justify-content: start;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   box-shadow: 0 1px 2px rgba(21, 35, 45, 0.05);
 }
 
@@ -367,12 +370,12 @@ header.site-header {
   gap: 10px;
   font-weight: 700;
   font-size: 1.1rem;
-  justify-self: center;
-  order: 2;
+  justify-self: start;
+  order: 1;
 }
 
 .brand-logo {
-  height: 24px;
+  height: 32px;
   width: auto;
   display: block;
 }
@@ -389,11 +392,11 @@ header.site-header .brand {
 
 nav.site-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  justify-self: stretch;
-  order: 1;
+  justify-self: center;
+  order: 2;
   gap: 2px;
   background: var(--tk-surface-soft);
   border: 1px solid var(--tk-border);
@@ -405,7 +408,7 @@ nav.site-nav {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   justify-self: end;
   order: 3;
 }
@@ -414,46 +417,62 @@ nav.site-nav {
   justify-self: auto;
 }
 
+/* Bouton icône, sans fond ni bordure (comme les icônes de Tikattou). */
 .nav-search-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   flex: 0 0 auto;
   border-radius: 50%;
-  background: var(--tk-surface-soft);
-  border: 1px solid var(--tk-border);
-  color: var(--tk-text-subtle);
-  transition: color 0.15s ease, border-color 0.15s ease;
+  background: transparent;
+  color: var(--tk-text-muted);
+  transition: color 0.15s ease, background 0.15s ease;
 }
 
 .nav-search-icon:hover {
-  color: var(--tk-primary);
-  border-color: var(--tk-primary);
+  color: var(--tk-text);
+  background: var(--tk-surface-soft);
 }
 
+.nav-search-icon.active {
+  color: var(--tk-primary);
+  background: var(--tk-primary-soft);
+}
+
+/* Test d'orientation : pastille sombre avec une icône ronde en couleur,
+   comme la pastille de compte de Tikattou. */
 .header-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  height: 40px;
   white-space: nowrap;
-  background: var(--tk-primary);
-  color: var(--tk-canvas);
-  font-weight: 700;
+  background: var(--tk-surface-soft);
+  border: 1px solid var(--tk-border);
+  color: var(--tk-text);
+  font-weight: 600;
   font-size: 0.875rem;
-  padding: 10px 18px;
+  padding: 0 14px 0 4px;
   border-radius: 999px;
-  transition: filter 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease;
 }
 
 .header-cta:hover {
-  filter: brightness(0.92);
-  transform: translateY(-1px);
+  border-color: var(--tk-primary);
 }
 
-.header-cta--mobile {
-  display: none;
+.header-cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--tk-primary);
+  color: var(--tk-canvas);
 }
 
 /* roadmap.html : le test d'orientation est déjà dans le menu Parcours,
@@ -480,25 +499,6 @@ nav.site-nav a.active {
   color: var(--tk-primary);
   background: var(--tk-primary-soft);
   box-shadow: inset 0 0 0 1px rgba(102, 196, 255, 0.25);
-}
-
-.nav-search-link {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  flex: 1 1 200px;
-  max-width: 520px;
-  padding: 8px 16px;
-  background: var(--tk-surface);
-  border-radius: 999px;
-  color: var(--tk-text-subtle);
-}
-
-.nav-search-text {
-  display: inline;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .nav-more {
@@ -530,16 +530,6 @@ nav.site-nav a.active {
   color: var(--tk-primary);
   background: var(--tk-primary-soft);
   box-shadow: inset 0 0 0 1px rgba(102, 196, 255, 0.25);
-}
-
-/* Entre le seuil du menu mobile (768px) et un desktop confortable,
-   resserrer le padding des items pour que la barre tienne sur une
-   seule ligne sans passer par le menu hamburger. */
-@media (max-width: 900px) {
-  nav.site-nav a,
-  .nav-more-toggle {
-    padding: 8px 12px;
-  }
 }
 
 .nav-more-menu {
@@ -590,42 +580,38 @@ nav.site-nav a.active {
   color: var(--tk-primary);
 }
 
+/* Sélecteur de langue : petite pilule sombre, langue active en couleur. */
 .lang-switch {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0;
   flex: 0 0 auto;
   justify-self: end;
-  background: var(--card-bg);
-  border: 1px solid rgba(10, 13, 28, 0.3);
+  background: var(--tk-surface-soft);
+  border: 1px solid var(--tk-border);
   border-radius: 999px;
-  padding: 4px 10px;
-}
-
-.lang-switch-icon {
-  flex: none;
-  color: var(--tk-canvas);
+  padding: 4px;
 }
 
 .lang-btn {
   border: none;
   background: transparent;
-  color: var(--tk-text-subtle);
+  color: var(--tk-text-muted);
   font-size: 0.8125rem;
   font-weight: 700;
-  padding: 6px 10px;
+  padding: 4px 12px;
   border-radius: 999px;
   cursor: pointer;
   transition: color 0.15s ease, background 0.15s ease;
 }
 
 .lang-btn:hover {
-  color: var(--tk-canvas);
+  color: var(--tk-text);
 }
 
 .lang-btn.active {
-  color: var(--card-bg);
-  background: var(--tk-canvas);
+  color: var(--tk-canvas);
+  background: var(--tk-primary);
 }
 
 .i18n-notice {
@@ -639,25 +625,6 @@ nav.site-nav a.active {
   font-size: 0.85rem;
   text-align: center;
   line-height: 1.5;
-}
-
-.nav-toggle {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  flex: 0 0 auto;
-  border: 1px solid var(--tk-border);
-  border-radius: 50%;
-  background: var(--tk-surface-soft);
-  color: var(--tk-text);
-  cursor: pointer;
-  padding: 0;
-}
-
-.nav-toggle:hover {
-  color: var(--tk-primary);
 }
 
 .search-bar-wrap {
@@ -2817,118 +2784,89 @@ footer.site-footer {
   color: var(--tk-primary);
 }
 
-/* Menu « hamburger » dès 1180 px : avec le texte du menu à 14 px, la barre
-   complète ne tient plus sur une ligne en dessous (tablettes, petits
-   portables). */
-@media (max-width: 1180px) {
-  .nav-toggle {
-    display: inline-flex;
+/* Barre trop étroite pour le libellé du test : il ne garde que son icône
+   (le libellé reste lu par les lecteurs d'écran). */
+@media (max-width: 1100px) {
+  .header-cta {
+    width: 40px;
+    padding: 0;
+    gap: 0;
+    justify-content: center;
+  }
+  .header-cta-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* Tablette et mobile : deux rangées dans une carte arrondie, logo et
+   actions puis la pilule des menus sur toute la largeur, comme Tikattou
+   (pas de menu « hamburger »). Les sous-menus s'ouvrent en panneau sous la
+   carte. L'en-tête n'y est plus collant, pour ne pas manger l'écran. */
+@media (max-width: 900px) {
+  header.site-header {
+    position: static;
   }
   .site-header-top {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    position: relative;
+    grid-template-columns: 1fr auto;
     border-radius: 28px;
-  }
-  .brand {
-    order: 1;
-  }
-  .nav-toggle {
-    order: 2;
+    padding: 12px;
+    gap: 12px;
   }
   .header-actions {
-    order: 3;
-  }
-  .header-actions .nav-search-icon,
-  .header-actions .header-cta {
-    display: none;
-  }
-  .header-cta--mobile {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 6px;
+    gap: 8px;
   }
   nav.site-nav {
+    grid-column: 1 / -1;
     order: 4;
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    justify-content: flex-start;
-    background: transparent;
-    border: none;
-    /* Sans arrondi : le 999px de la barre desktop découpait le menu
-       ouvert en ovale. */
-    border-radius: 0;
-    padding: 0;
-    margin-top: 12px;
-    gap: 4px;
-  }
-  nav.site-nav.is-open {
-    display: flex;
-    max-height: calc(100vh - 110px);
-    overflow-y: auto;
-  }
-  nav.site-nav a {
-    text-align: center;
-    padding: 12px 16px;
-    border-radius: 12px;
-    background: var(--tk-surface-soft);
-    font-size: 0.85rem;
-  }
-  .nav-search-link {
-    display: flex;
-    flex: 0 1 auto;
-    width: 100%;
-    max-width: none;
-    justify-content: center;
+    justify-self: stretch;
   }
   .nav-more {
-    width: 100%;
+    flex: 1 1 0;
+    position: static;
   }
   .nav-more-toggle {
-    display: block;
     width: 100%;
-    text-align: center;
     justify-content: center;
-    background: transparent;
-    color: var(--tk-text-subtle);
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 4px 0;
-    margin-top: 10px;
-  }
-  .nav-more:first-of-type .nav-more-toggle {
-    margin-top: 0;
-  }
-  .nav-more-toggle.active {
-    color: var(--tk-primary);
-    background: transparent;
-    box-shadow: none;
+    padding: 8px 6px;
   }
   .nav-more-menu {
-    position: static;
-    width: 100%;
+    left: 12px;
+    right: 12px;
+    top: calc(100% + 8px);
     min-width: 0;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-    padding: 0;
-    gap: 4px;
-    margin-top: 6px;
   }
-  .nav-more-menu a {
-    text-align: center;
-    padding: 12px 16px;
-    border-radius: 12px;
-    background: var(--tk-surface-soft);
-    font-size: 0.85rem;
+}
+
+/* Téléphone : quatre menus lisibles (14 px) ne tiennent pas sur une ligne,
+   la pilule passe en grille 2 × 2. */
+@media (max-width: 560px) {
+  nav.site-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+  }
+  .nav-more-toggle {
+    border-radius: 16px;
+  }
+}
+
+/* Très petits écrans (moins de 360 px) : logo et actions resserrés pour
+   que la première rangée tienne. */
+@media (max-width: 359px) {
+  .brand-logo {
+    height: 26px;
+  }
+  .header-actions {
+    gap: 4px;
+  }
+  .lang-btn {
+    padding: 4px 9px;
   }
 }
 
