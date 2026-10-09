@@ -66,8 +66,8 @@
       en: 'Choose your <span class="hero-accent">roadmap</span>',
     },
     "roadmaps.hero.subtitle": {
-      fr: "89 roadmaps : 60 métiers et 29 compétences tech, avec les ressources vérifiées (togolaises et internationales) pour apprendre dans le bon ordre.",
-      en: "89 roadmaps: 60 roles and 29 tech skills, with verified resources (Togolese and international) to learn in the right order.",
+      fr: "Une roadmap, c'est le chemin pour apprendre un métier ou une compétence, étape par étape. 89 roadmaps : 60 métiers et 29 compétences tech, avec des ressources vérifiées (togolaises et internationales).",
+      en: "A roadmap is the path to learn a role or a skill, step by step. 89 roadmaps: 60 roles and 29 tech skills, with verified resources (Togolese and international).",
     },
     "roadmaps.hero.propose": {
       fr: 'Un métier ou une compétence qui manque ici ? <a href="proposer.html">Propose-le</a> : on vérifie et on ajoute.',

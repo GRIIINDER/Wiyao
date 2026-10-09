@@ -1039,6 +1039,16 @@ main {
   margin-bottom: 24px;
 }
 
+/* Aperçu : les cartes en plus restent cachées tant que le groupe est replié ;
+   le bouton « Voir les N autres » suit la grille. */
+.grid.is-collapsed > .card-extra {
+  display: none;
+}
+
+.grid + .domain-group-toggle {
+  margin-top: 16px;
+}
+
 .journey-steps {
   list-style: none;
   margin: 0;

@@ -144,17 +144,20 @@
       toggle.textContent = en ? "Show less ▴" : "Réduire ▴";
       return;
     }
+    const one = n === "1";
     if (toggle.dataset.kind === "skill") {
-      toggle.textContent = en ? `See ${n} skills ▾` : `Voir les ${n} compétences ▾`;
+      toggle.textContent = en
+        ? `See ${n} more skill${one ? "" : "s"} ▾`
+        : (one ? "Voir l'autre compétence ▾" : `Voir les ${n} autres compétences ▾`);
     } else {
       toggle.textContent = en
-        ? `See ${n} roadmap${n === "1" ? "" : "s"} ▾`
-        : `Voir ${n === "1" ? "la" : "les"} ${n} roadmap${n === "1" ? "" : "s"} ▾`;
+        ? `See ${n} more roadmap${one ? "" : "s"} ▾`
+        : (one ? "Voir l'autre roadmap ▾" : `Voir les ${n} autres roadmaps ▾`);
     }
   }
 
   function setGroupOpen(toggle, subGrid, isOpen) {
-    subGrid.hidden = !isOpen;
+    subGrid.classList.toggle("is-collapsed", !isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
     updateGroupToggleLabel(toggle);
   }
@@ -172,7 +175,12 @@
     return toggle;
   }
 
-  // ---- Page d'accueil : deux grilles, par métier et par compétence ----
+  // ---- Page Roadmaps : deux grilles, par métier et par compétence ----
+  // Aperçu visible avant « Voir les N autres » : une rangée de cartes par
+  // domaine, deux rangées de compétences.
+  const ROLE_PREVIEW = 3;
+  const SKILL_PREVIEW = 6;
+
   function renderGrid() {
     const roleGrid = document.getElementById("role-grid");
     const skillGrid = document.getElementById("skill-grid");
@@ -213,28 +221,42 @@
           group.appendChild(desc);
         }
 
+        // Les 3 premières roadmaps du domaine sont visibles dès le chargement
+        // (avant : 0, tout était replié derrière « Voir les N roadmaps »).
         const subGrid = document.createElement("div");
         subGrid.className = "grid";
         subGrid.id = `domain-grid-${index}`;
-        subGrid.hidden = true;
-        ids.forEach((id) => subGrid.appendChild(buildCard(id, ROLES[id], "role")));
-
-        const toggle = buildGroupToggle("roadmap", ids.length, subGrid.id);
-        toggle.addEventListener("click", () => setGroupOpen(toggle, subGrid, subGrid.hidden));
-        group.appendChild(toggle);
+        ids.forEach((id, i) => {
+          const card = buildCard(id, ROLES[id], "role");
+          if (i >= ROLE_PREVIEW) card.classList.add("card-extra");
+          subGrid.appendChild(card);
+        });
         group.appendChild(subGrid);
+
+        if (ids.length > ROLE_PREVIEW) {
+          subGrid.classList.add("is-collapsed");
+          const toggle = buildGroupToggle("roadmap", ids.length - ROLE_PREVIEW, subGrid.id);
+          toggle.addEventListener("click", () => setGroupOpen(toggle, subGrid, subGrid.classList.contains("is-collapsed")));
+          group.appendChild(toggle);
+        }
 
         roleGrid.appendChild(group);
       });
     }
     if (skillGrid && typeof SKILLS !== "undefined") {
       const skillIds = Object.keys(SKILLS);
-      skillIds.forEach((id) => skillGrid.appendChild(buildCard(id, SKILLS[id], "skill")));
-      skillGrid.hidden = true;
+      skillIds.forEach((id, i) => {
+        const card = buildCard(id, SKILLS[id], "skill");
+        if (i >= SKILL_PREVIEW) card.classList.add("card-extra");
+        skillGrid.appendChild(card);
+      });
 
-      const skillToggle = buildGroupToggle("skill", skillIds.length, "skill-grid");
-      skillToggle.addEventListener("click", () => setGroupOpen(skillToggle, skillGrid, skillGrid.hidden));
-      skillGrid.insertAdjacentElement("beforebegin", skillToggle);
+      if (skillIds.length > SKILL_PREVIEW) {
+        skillGrid.classList.add("is-collapsed");
+        const skillToggle = buildGroupToggle("skill", skillIds.length - SKILL_PREVIEW, "skill-grid");
+        skillToggle.addEventListener("click", () => setGroupOpen(skillToggle, skillGrid, skillGrid.classList.contains("is-collapsed")));
+        skillGrid.insertAdjacentElement("afterend", skillToggle);
+      }
     }
   }
 
@@ -342,10 +364,10 @@
           if (filtering && anyVisible) {
             const subGrid = group.querySelector(".grid");
             const toggle = group.querySelector(".domain-group-toggle");
-            if (subGrid && toggle && subGrid.hidden) setGroupOpen(toggle, subGrid, true);
+            if (subGrid && toggle && subGrid.classList.contains("is-collapsed")) setGroupOpen(toggle, subGrid, true);
           }
         });
-      } else if (filtering && visibleCount > 0 && grid.hidden) {
+      } else if (filtering && visibleCount > 0 && grid.classList.contains("is-collapsed")) {
         const toggle = document.querySelector(`.domain-group-toggle[aria-controls="${grid.id}"]`);
         if (toggle) setGroupOpen(toggle, grid, true);
       }
