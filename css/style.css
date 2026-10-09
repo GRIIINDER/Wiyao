@@ -26,14 +26,24 @@
   --yellow: #ffce00;
   --red: #d21034;
   /* Palette de marque inspirée de Codecademy : bleu, noir (navy), blanc */
-  --accent: #1557ff;
-  --accent-soft: #d3f2ff;
-  --accent-wash: #eaf3ff;
+  /* Jetons des cartes : alignés sur la palette sombre du site (les cartes
+     étaient blanches jusqu'au 2026-10-09). En impression, ils suivent les
+     jetons --tk-* que le bloc @media print repasse en clair. */
+  --accent: var(--tk-primary);
+  --accent-soft: var(--tk-primary-soft);
+  --accent-wash: rgba(102, 196, 255, 0.06);
   --bg: var(--tk-canvas);
-  --card-bg: #ffffff;
-  --text: #10162f;
-  --text-muted: #5b6572;
-  --border: #e0e0e0;
+  --card-bg: var(--tk-surface);
+  --text: var(--tk-text);
+  --text-muted: var(--tk-text-muted);
+  --border: var(--tk-border);
+  /* Teintes des badges sur fond sombre (vert / jaune / rouge). */
+  --tint-green-bg: rgba(52, 199, 123, 0.15);
+  --tint-green-fg: #7ee2a8;
+  --tint-yellow-bg: rgba(255, 206, 0, 0.14);
+  --tint-yellow-fg: #ffd666;
+  --tint-red-bg: rgba(255, 99, 99, 0.15);
+  --tint-red-fg: #ff9e9e;
   --radius: 18px;
   --tk-canvas: #0a0d1c;
   --tk-surface: #10162f;
@@ -1327,9 +1337,10 @@ main {
   align-items: center;
   margin-top: 20px;
   padding: 10px 18px;
+  border: 1px solid var(--tk-border);
   border-radius: 999px;
-  background: var(--tk-canvas);
-  color: #fff;
+  background: transparent;
+  color: var(--tk-text);
   font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;
@@ -1361,18 +1372,18 @@ main {
 }
 
 .level-badge.level-debutant {
-  background: #e6f4ef;
-  color: var(--green);
+  background: var(--tint-green-bg);
+  color: var(--tint-green-fg);
 }
 
 .level-badge.level-intermediaire {
-  background: #fff4d6;
-  color: #8a6300;
+  background: var(--tint-yellow-bg);
+  color: var(--tint-yellow-fg);
 }
 
 .level-badge.level-avance {
-  background: #fde8e8;
-  color: var(--red);
+  background: var(--tint-red-bg);
+  color: var(--tint-red-fg);
 }
 
 .badge.togo-badge {
@@ -1385,7 +1396,7 @@ main {
 .badge.best-match-badge {
   margin-left: 0;
   background: var(--accent);
-  color: #fff;
+  color: var(--tk-canvas);
   font-weight: 700;
 }
 
@@ -1578,7 +1589,7 @@ main {
   cursor: pointer;
   font-size: 0.85rem;
   line-height: 1;
-  color: #fff;
+  color: var(--tk-canvas);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1615,8 +1626,8 @@ main {
   font-size: 0.7rem;
   padding: 2px 8px;
   border-radius: 100px;
-  background: #fff4d6;
-  color: #8a6300;
+  background: var(--tint-yellow-bg);
+  color: var(--tint-yellow-fg);
   vertical-align: middle;
 }
 
@@ -1807,20 +1818,20 @@ main {
 }
 
 .badge.status-prive {
-  background: #eef1f5;
+  background: var(--tk-surface-soft);
   color: var(--text-muted);
   font-weight: 700;
 }
 
 .badge.status-inter-etats {
-  background: #e6f4ef;
-  color: var(--green);
+  background: var(--tint-green-bg);
+  color: var(--tint-green-fg);
   font-weight: 700;
 }
 
 .badge.ville-badge {
-  background: #fff4d6;
-  color: #8a6300;
+  background: var(--tint-yellow-bg);
+  color: var(--tint-yellow-fg);
   font-weight: 700;
 }
 
@@ -1848,7 +1859,7 @@ main {
 }
 
 .school-filieres li {
-  background: #eef1f5;
+  background: var(--tk-surface-soft);
   border: 1px solid var(--border);
   border-radius: 100px;
   padding: 4px 10px;
@@ -2230,7 +2241,7 @@ main {
 }
 
 .quiz-match-checklist .match-no {
-  background: #f0f1f3;
+  background: var(--tk-surface-soft);
   color: var(--text-muted);
 }
 
@@ -2435,12 +2446,12 @@ main {
 }
 
 .dates-row-urgent {
-  border-color: var(--red);
+  border-color: var(--tint-red-fg);
   border-width: 2px;
 }
 
 .dates-urgent-note {
-  color: var(--red);
+  color: var(--tint-red-fg);
   font-weight: 700;
   font-size: 0.88rem;
   margin: 0 0 8px;
@@ -2471,7 +2482,7 @@ main {
 }
 
 .dates-ref-note {
-  color: #8a6300;
+  color: var(--tint-yellow-fg);
   font-size: 0.78rem;
   margin: 0 0 8px;
 }
@@ -2587,7 +2598,7 @@ main {
   height: 42px;
   border-radius: 50%;
   background: var(--accent);
-  color: #fff;
+  color: var(--tk-canvas);
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -3770,6 +3781,12 @@ main .primer-toggle * {
 
 @media print {
   :root {
+    --tint-green-bg: #e6f4ef;
+    --tint-green-fg: #006a4e;
+    --tint-yellow-bg: #fff4d6;
+    --tint-yellow-fg: #8a6300;
+    --tint-red-bg: #fde8e8;
+    --tint-red-fg: #d21034;
     --tk-canvas: #ffffff;
     --tk-surface: #ffffff;
     --tk-surface-soft: #f0f0f0;
