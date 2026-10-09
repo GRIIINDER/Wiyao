@@ -107,6 +107,21 @@
   });
 })();
 
+// Newsletter du pied de page (Buttondown) - WIYAO
+// Le formulaire s'envoie à Buttondown dans un nouvel onglet (sans JS) ; on
+// affiche juste le message « vérifie ta boîte mail » sous le formulaire.
+(function () {
+  "use strict";
+
+  var form = document.querySelector(".footer-news-form");
+  var success = document.querySelector(".footer-news-success");
+  if (!form || !success) return;
+
+  form.addEventListener("submit", function () {
+    success.hidden = false;
+  });
+})();
+
 // Bouton retour en haut - WIYAO
 (function () {
   "use strict";

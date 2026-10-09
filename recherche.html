@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Recherche - WIYAO">
 <meta name="twitter:description" content="Recherche unique sur tout WIYAO : roadmaps, écoles, écosystème togolais, bourses, stages & emploi et actualités en un seul endroit.">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=197">
+<link rel="stylesheet" href="css/style.css?v=198">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -116,45 +116,84 @@
 
 <footer class="site-footer">
   <div class="footer-lower">
+    <section class="footer-news" aria-labelledby="footer-news-title">
+      <h2 class="footer-news-title" id="footer-news-title" data-i18n-key="footer.news.title">Le <span class="footer-mark">résumé mensuel</span> de WIYAO, dans ta boîte mail</h2>
+      <p class="footer-news-desc" data-i18n-key="footer.news.desc">Un e-mail par mois avec les nouveautés du site. Tu peux te désabonner à tout moment.</p>
+      <form class="footer-news-form" action="https://buttondown.com/api/emails/embed-subscribe/credo" method="post" target="popupwindow">
+        <label for="footer-news-email" class="sr-only" data-i18n-key="footer.newsletter.label">Ton adresse e-mail</label>
+        <input type="email" name="email" id="footer-news-email" class="footer-news-input" placeholder="ton@email.com" required autocomplete="email">
+        <input type="hidden" value="1" name="embed">
+        <button type="submit" class="footer-news-submit" data-i18n-key="footer.newsletter.submit">S'abonner</button>
+      </form>
+      <p class="footer-news-success" role="status" hidden data-i18n-key="footer.newsletter.success">Merci ! Vérifie ta boîte mail (et tes spams) pour confirmer ton inscription à la newsletter.</p>
+    </section>
+
     <div class="footer-card">
-      <div class="footer-card-top">
-        <div class="footer-links-col">
-          <h5>Parcours</h5>
-          <a href="roadmaps.html">Roadmaps</a>
-          <a href="test-orientation.html">Test d'orientation</a>
-          <a href="ecoles.html">Écoles &amp; universités</a>
-        </div>
+      <div class="footer-head">
+        <p class="footer-title"><span class="footer-title-mark" data-i18n-key="footer.title">Guide tech au Togo</span></p>
+        <p class="footer-tagline" data-i18n-key="footer.tagline">Orientation, écoles, roadmaps, bourses et stages pour les <strong>bacheliers du Togo</strong>.</p>
+      </div>
 
-        <div class="footer-links-col">
-          <h5>Opportunités</h5>
-          <a href="calendrier.html">Calendrier</a>
-          <a href="bourses-financement.html">Bourses &amp; financement</a>
-          <a href="stages-emploi.html">Stages &amp; emploi</a>
-        </div>
+      <div class="footer-grid">
+        <section class="footer-col">
+          <h5 data-i18n-key="footer.h.contact">Contact</h5>
+          <ul class="footer-contact">
+            <li><a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a></li>
+            <li><a class="footer-mark" href="tel:+22892236379">+228 92 23 63 79</a></li>
+            <li><a href="tel:+22899113199">+228 99 11 31 99</a></li>
+            <li data-i18n-key="footer.city">Lomé, Togo</li>
+          </ul>
+          <div class="footer-box">
+            <p class="footer-box-label" data-i18n-key="footer.box.label">Une erreur, un oubli ?</p>
+            <p class="footer-box-text" data-i18n-key="footer.box.text">Propose-le : on vérifie et on ajoute.</p>
+            <a class="footer-box-btn" href="proposer.html" data-i18n-key="footer.box.btn">Proposer un contenu</a>
+          </div>
+        </section>
 
-        <div class="footer-links-col">
-          <h5>Communauté</h5>
-          <a href="ecosysteme.html">Écosystème togolais</a>
-          <a href="actualites.html">Actualités</a>
-          <a href="temoignages.html">Témoignages</a>
-        </div>
+        <section class="footer-col">
+          <h5 data-i18n-key="footer.h.parcours">Parcours</h5>
+          <ul class="footer-big">
+            <li><a class="footer-big-link" href="roadmaps.html"><span class="footer-big-label">Roadmaps</span><span class="footer-chev" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg></span></a></li>
+            <li><a class="footer-big-link" href="test-orientation.html"><span class="footer-big-label">Test d'orientation</span><span class="footer-chev" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg></span></a></li>
+            <li><a class="footer-big-link" href="ecoles.html"><span class="footer-big-label">Écoles &amp; universités</span><span class="footer-chev" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg></span></a></li>
+          </ul>
+        </section>
 
-        <div class="footer-links-col">
-          <h5>Contact</h5>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-          <a href="proposer.html">Proposer un contenu</a>
-        </div>
+        <section class="footer-col footer-links-col">
+          <h5 data-i18n-key="footer.h.explorer">Explorer</h5>
+          <ul>
+            <li><a href="calendrier.html">Calendrier</a></li>
+            <li><a href="bourses-financement.html">Bourses &amp; financement</a></li>
+            <li><a href="stages-emploi.html">Stages &amp; emploi</a></li>
+            <li><a href="ecosysteme.html">Écosystème togolais</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </section>
+
+        <section class="footer-col footer-links-col">
+          <h5 data-i18n-key="footer.h.legal">Informations légales</h5>
+          <ul>
+            <li><a href="about.html">À propos &amp; méthodologie</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+            <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </section>
       </div>
 
       <div class="footer-bottom">
-        <div class="footer-legal-links">
-          <a href="about.html">À propos &amp; méthodologie</a>
-          <a href="mentions-legales.html">Mentions légales</a>
-          <a href="politique-confidentialite.html">Politique de confidentialité</a>
-          <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+        <div class="footer-credits">
+          <p data-i18n-key="footer.copyright">© 2026 WIYAO. Tous droits réservés.</p>
+          <p data-i18n-key="footer.credit">Créé par <a href="about.html">Crédo Ahiafor</a> · guide d'orientation tech au Togo</p>
         </div>
-        <p>© 2026 WIYAO. Tous droits réservés.</p>
+        <div class="footer-lang">
+          <span class="footer-lang-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg><span data-i18n-key="footer.lang">Langue</span></span>
+          <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
       </div>
     </div>
   </div>
@@ -162,8 +201,8 @@
 
 <script src="js/data.js?v=54"></script>
 <script src="js/app.js?v=58"></script>
-<script src="js/nav.js?v=12"></script>
+<script src="js/nav.js?v=13"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=111"></script>
+<script src="js/i18n.js?v=112"></script>
 </body>
 </html>
