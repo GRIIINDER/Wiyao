@@ -336,14 +336,28 @@ a {
   font-size: 1rem;
 }
 
-@media (max-width: 480px) {
+/* Téléphone : la bulle de l'assistant et le bouton « haut de page » côte à
+   côte tout en bas (au lieu d'être empilés à mi-hauteur sur le contenu), et
+   la bulle s'efface pendant qu'on répond au test d'orientation. */
+@media (max-width: 600px) {
   .wiyao-assistant-toggle {
     right: 14px;
-    bottom: 76px;
+    bottom: 14px;
+    width: 48px;
+    height: 48px;
+    transition: transform 0.15s ease, opacity 0.2s ease, visibility 0.2s;
   }
   .wiyao-assistant-panel {
     right: 14px;
-    bottom: 138px;
+    bottom: 74px;
+  }
+  .back-to-top {
+    right: 70px;
+    bottom: 16px;
+  }
+  body.quiz-in-view .wiyao-assistant-toggle {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

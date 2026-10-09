@@ -122,6 +122,18 @@
   });
 })();
 
+// Test d'orientation sur téléphone : la bulle de l'assistant s'efface
+// pendant qu'on répond (elle cachait la question) - WIYAO
+(function () {
+  "use strict";
+
+  var quiz = document.getElementById("quiz-section");
+  if (!quiz || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(function (entries) {
+    document.body.classList.toggle("quiz-in-view", entries[0].isIntersecting);
+  }, { threshold: 0.15 }).observe(quiz);
+})();
+
 // Bouton retour en haut - WIYAO
 (function () {
   "use strict";
