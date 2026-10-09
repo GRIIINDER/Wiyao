@@ -538,6 +538,11 @@
     "ecoles.filter.public": { fr: "Publique", en: "Public" },
     "ecoles.filter.prive": { fr: "Privée", en: "Private" },
     "ecoles.filter.interetats": { fr: "Inter-États", en: "Inter-state" },
+    "ecoles.card.niveaux": { fr: "Niveaux :", en: "Levels:" },
+    "ecoles.card.duree": { fr: "Durée :", en: "Duration:" },
+    "ecoles.card.admission": { fr: "Admission :", en: "Admission:" },
+    "ecoles.card.frais": { fr: "Frais :", en: "Fees:" },
+    "ecoles.card.site": { fr: "Voir le site officiel →", en: "See official site →" },
     "ecoles.badge.agree": { fr: "Agréé État", en: "State-accredited" },
     "ecoles.noResults": { fr: "Aucune école ne correspond à ces filtres. Essaie « Tous » dans l'un d'eux, ou une autre ville.", en: "No school matches these filters. Try “All” in one of them, or another city." },
     // Noms des 7 domaines (mêmes traductions que DOMAINS[…].nameEn dans data.js).

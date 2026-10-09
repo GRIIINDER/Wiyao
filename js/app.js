@@ -646,22 +646,22 @@
   }
 
   // ---- Page écoles & universités ----
-  // Badges des fiches écoles, traduits avec les mêmes clés que les filtres de
-  // la page : le libellé porte data-i18n-key pour suivre aussi un changement
-  // de langue sans recharger.
+  // Badges et libellés des fiches écoles, traduits (statuts : mêmes clés que
+  // les filtres de la page) : chaque libellé porte data-i18n-key pour suivre
+  // aussi un changement de langue sans recharger.
   const STATUT_LABELS = {
     "public": { key: "ecoles.filter.public", fr: "Publique", en: "Public" },
     "prive": { key: "ecoles.filter.prive", fr: "Privée", en: "Private" },
     "inter-etats": { key: "ecoles.filter.interetats", fr: "Inter-États", en: "Inter-state" }
   };
 
-  function badgeLabel(key, fr, en) {
+  function i18nLabel(key, fr, en) {
     return `<span data-i18n-key="${key}">${currentLang() === "en" ? en : fr}</span>`;
   }
 
   function statutBadgeLabel(statut) {
     const s = STATUT_LABELS[statut];
-    return s ? badgeLabel(s.key, s.fr, s.en) : statut;
+    return s ? i18nLabel(s.key, s.fr, s.en) : statut;
   }
 
   // Mêmes mots-clés que le rattachement écoles ↔ domaine du test d'orientation
@@ -691,7 +691,7 @@
     badges.innerHTML =
       `<span class="badge status-${school.statut}">${statutBadgeLabel(school.statut)}</span>` +
       school.ville.map((v) => `<span class="badge ville-badge">${v}</span>`).join("") +
-      (school.agree === true ? `<span class="badge status-public">${icon("landmark")}${badgeLabel("ecoles.badge.agree", "Agréé État", "State-accredited")}</span>` : "");
+      (school.agree === true ? `<span class="badge status-public">${icon("landmark")}${i18nLabel("ecoles.badge.agree", "Agréé État", "State-accredited")}</span>` : "");
     body.appendChild(badges);
 
     const title = document.createElement("h3");
@@ -710,10 +710,10 @@
 
     const meta = document.createElement("div");
     meta.className = "school-meta";
-    let metaHtml = `<span><strong>Niveaux :</strong> ${school.niveaux.join(", ")}</span>`;
-    if (school.duree) metaHtml += `<span><strong>Durée :</strong> ${school.duree}</span>`;
-    if (school.admission) metaHtml += `<span><strong>Admission :</strong> ${school.admission}</span>`;
-    if (school.frais) metaHtml += `<span><strong>Frais :</strong> ${school.frais}</span>`;
+    let metaHtml = `<span><strong>${i18nLabel("ecoles.card.niveaux", "Niveaux :", "Levels:")}</strong> ${school.niveaux.join(", ")}</span>`;
+    if (school.duree) metaHtml += `<span><strong>${i18nLabel("ecoles.card.duree", "Durée :", "Duration:")}</strong> ${school.duree}</span>`;
+    if (school.admission) metaHtml += `<span><strong>${i18nLabel("ecoles.card.admission", "Admission :", "Admission:")}</strong> ${school.admission}</span>`;
+    if (school.frais) metaHtml += `<span><strong>${i18nLabel("ecoles.card.frais", "Frais :", "Fees:")}</strong> ${school.frais}</span>`;
     if (school.agreeNote) metaHtml += `<span>${icon("info")}${school.agreeNote}</span>`;
     meta.innerHTML = metaHtml;
     body.appendChild(meta);
@@ -724,7 +724,7 @@
       link.href = school.site;
       link.target = "_blank";
       link.rel = "noopener";
-      link.textContent = "Voir le site officiel →";
+      link.innerHTML = i18nLabel("ecoles.card.site", "Voir le site officiel →", "See official site →");
       body.appendChild(link);
     }
 
