@@ -1207,10 +1207,7 @@ main {
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.domain-primer-item:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-  transform: translateY(-2px);
-}
+
 
 .domain-primer-icon {
   font-size: 1.8rem;
@@ -1252,15 +1249,19 @@ main {
   display: block;
   overflow: hidden;
   color: var(--text);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
 .card[hidden] {
   display: none;
 }
 
-.card:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+/* Survol réservé aux cartes cliquables (les roadmaps sont des liens) : une
+   bordure bleue, visible sur fond sombre (l'ancienne ombre noire ne
+   l'était plus). Les cartes d'école ou d'actualité ne bougent pas : elles
+   ne sont pas cliquables en entier. */
+a.card:hover {
+  border-color: var(--tk-primary);
   transform: translateY(-2px);
 }
 
@@ -3692,6 +3693,32 @@ main .primer-toggle * {
 
 .primer-body .category-desc {
   margin-top: 0;
+}
+
+/* Appui : léger enfoncement de tout ce qui se clique, pour qu'on voie (au
+   doigt surtout) que le geste a été pris en compte. Placé après les règles
+   de survol pour l'emporter pendant l'appui. */
+.btn:active,
+.btn-primary:active,
+.btn-send:active,
+.header-cta:active,
+.nav-search-icon:active,
+.nav-more-toggle:active,
+.lang-btn:active,
+.domain-chip:active,
+.quiz-option:active,
+.quiz-back:active,
+.actu-card-btn:active,
+.footer-news-submit:active,
+.footer-box-btn:active,
+.back-to-top:active,
+.wiyao-assistant-toggle:active,
+.eco-jump-nav a:active,
+.search-result:active,
+.check:active,
+a.card:active {
+  transform: scale(0.97);
+  transition: transform 0.08s ease;
 }
 
 /* Focus clavier visible et aux couleurs de WIYAO : le contour par défaut
