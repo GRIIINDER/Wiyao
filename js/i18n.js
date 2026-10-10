@@ -31,6 +31,10 @@
     { selector: "#nav-opportunites .nav-more-toggle", fr: "Opportunités ▾", en: "Opportunities ▾" },
     { selector: "#nav-communaute .nav-more-toggle", fr: "Communauté ▾", en: "Community ▾" },
     { selector: "#nav-contact .nav-more-toggle", fr: "Contact ▾", en: "Contact ▾" },
+    { selector: "#nav-parcours .nav-group-label", fr: "Parcours", en: "Journey" },
+    { selector: "#nav-opportunites .nav-group-label", fr: "Opportunités", en: "Opportunities" },
+    { selector: "#nav-communaute .nav-group-label", fr: "Communauté", en: "Community" },
+    { selector: "#nav-contact .nav-group-label", fr: "Contact", en: "Contact" },
   ];
 
   // Contenu propre à index.html (hero + parcours en 6 étapes), repéré par
@@ -565,6 +569,7 @@
     "footer.h.parcours": { fr: "Parcours", en: "Journey" },
     "footer.h.opportunites": { fr: "Opportunités", en: "Opportunities" },
     "footer.h.communaute": { fr: "Communauté", en: "Community" },
+    "header.cta": { fr: "Faire le test d'orientation", en: "Take the orientation test" },
     "footer.copyright": { fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
     "conf.s2.p1": {
       fr: "Aucune information personnelle n'est collectée pour naviguer sur WIYAO, répondre au test d'orientation, comparer des écoles ou consulter le calendrier : ces usages ne demandent ni nom, ni email, ni aucune autre donnée. Deux actions volontaires font exception, décrites ci-dessous.",

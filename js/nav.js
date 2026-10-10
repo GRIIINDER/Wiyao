@@ -13,9 +13,9 @@
 })();
 
 // Menus déroulants Parcours / Opportunités / Communauté / Contact - WIYAO
-// Quatre groupes indépendants dans la barre, un seul ouvert à la fois, sur
-// ordinateur comme sur mobile (pas de menu hamburger). S'ouvrent au survol
-// de la souris ; le clic / Entrée reste disponible (clavier, écrans tactiles).
+// Quatre groupes indépendants dans la barre, un seul ouvert à la fois. S'ouvrent
+// au survol de la souris ; le clic / Entrée reste disponible (clavier, écrans
+// tactiles). Sous 1 080 px, ils sont remplacés par le menu « hamburger ».
 (function () {
   "use strict";
 
@@ -105,6 +105,77 @@
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") closeAll();
   });
+})();
+
+// En-tête façon Woudy - WIYAO
+// La barre prend un fond dès qu'on défile, une fine barre bleue suit la
+// lecture, et sous 1 080 px le bouton « hamburger » ouvre le panneau des menus.
+(function () {
+  "use strict";
+
+  var header = document.querySelector("header.site-header");
+  if (!header) return;
+  var progress = document.querySelector(".scroll-progress");
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    var root = document.documentElement;
+    var y = window.pageYOffset || root.scrollTop;
+    header.classList.toggle("is-scrolled", y > 8);
+    if (progress) {
+      var max = root.scrollHeight - window.innerHeight;
+      progress.style.transform = "scaleX(" + (max > 0 ? Math.min(1, y / max) : 0) + ")";
+    }
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  }, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+
+  var burger = header.querySelector(".nav-burger");
+  var nav = header.querySelector(".site-nav");
+  if (!burger || !nav) return;
+
+  function setMenu(isOpen) {
+    header.classList.toggle("is-menu-open", isOpen);
+    burger.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  burger.addEventListener("click", function (event) {
+    event.stopPropagation();
+    setMenu(!header.classList.contains("is-menu-open"));
+  });
+
+  nav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      setMenu(false);
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    if (header.classList.contains("is-menu-open") && !nav.contains(event.target)) setMenu(false);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && header.classList.contains("is-menu-open")) {
+      setMenu(false);
+      burger.focus();
+    }
+  });
+
+  // Retour à la largeur d'ordinateur : le panneau n'a plus lieu d'être.
+  var wide = window.matchMedia("(min-width: 1080px)");
+  var onWide = function () {
+    if (wide.matches) setMenu(false);
+  };
+  if (wide.addEventListener) wide.addEventListener("change", onWide);
+  else if (wide.addListener) wide.addListener(onWide);
 })();
 
 // Test d'orientation sur téléphone : la bulle de l'assistant s'efface
