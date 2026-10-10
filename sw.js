@@ -1,4 +1,4 @@
-const CACHE_NAME = "wiyao-v361";
+const CACHE_NAME = "wiyao-v362";
 
 const PRECACHE_URLS = [
   "index.html",
