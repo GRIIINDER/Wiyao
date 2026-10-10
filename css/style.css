@@ -866,22 +866,25 @@ main {
   padding: 40px 0 30px;
 }
 
-/* Bandeau de titre plein cadre, façon julaya.co : bloc uni en couleur
-   d'accent (version foncée pour rester dark-only) avec le H1 en grand,
-   gras, casse normale (comme le reste du site). Le sous-titre / bouton
-   restent dans .hero, en dessous, hors du bandeau. */
-.page-title-banner {
-  background: var(--tk-primary-soft);
-  border-radius: var(--radius);
-  padding: 56px 48px;
-  /* Colle le bandeau contre le header : annule le padding-top de main (40px). */
-  margin: -40px 0 0;
+/* Grands titres des pages (bandeau .page-title-banner) masqués à l'écran
+   le 2026-10-10 à la demande de l'utilisateur. Le bandeau reste dans le HTML
+   pour garder un h1 par page (lecteurs d'écran, référencement) ; le
+   sélecteur « main » l'emporte sur les anciennes règles responsives. */
+main .page-title-banner {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-/* Si le bandeau i18n (visible seulement en EN) précède le titre, c'est lui
-   qui touche le header, pas le titre : espacement normal en dessous. */
-#i18n-notice:not([hidden]) + .page-title-banner {
-  margin-top: 32px;
+/* Sans le grand titre, l'introduction remonte sous l'en-tête. */
+main .page-title-banner + .hero {
+  padding-top: 8px;
 }
 
 /* Exclu de l'aplat total (voir plus bas dans ce fichier) : ce titre doit
