@@ -536,6 +536,12 @@
     "faq.ask.text": { fr: "Pose-la-nous directement, par la page Contact ou par e-mail.", en: "Ask us directly, through the Contact page or by email." },
     "faq.ask.btn": { fr: "Écrire à WIYAO", en: "Write to WIYAO" },
     "hero.reassure.free": { fr: "Gratuit", en: "Free" },
+    "legal.title": { fr: "Informations légales", en: "Legal information" },
+    "legal.close": { fr: "Fermer", en: "Close" },
+    "legal.tab.mentions": { fr: "Mentions légales", en: "Legal notice" },
+    "legal.tab.privacy": { fr: "Confidentialité", en: "Privacy" },
+    "legal.tab.terms": { fr: "Conditions d'utilisation", en: "Terms of use" },
+    "legal.tab.about": { fr: "À propos", en: "About" },
     "hero.reassure.account": { fr: "Sans compte", en: "No account" },
     "hero.reassure.questions": { fr: "14 questions", en: "14 questions" },
     "ecoles.list.h2": { fr: "Liste des écoles", en: "List of schools" },
@@ -1571,6 +1577,9 @@
       btn.addEventListener("click", () => setLang(btn.dataset.lang));
     });
   }
+
+  // Pour les contenus chargés après coup (fenêtre « Informations légales »).
+  window.wiyaoApplyLang = () => applyLang(getLang());
 
   document.addEventListener("DOMContentLoaded", () => {
     initLangSwitch();
