@@ -202,31 +202,7 @@
       });
       observers.push(fillIo);
 
-      // 4. Signature du pied de page : se dévoile et remonte au rythme du
-      //    défilement (et redescend si on remonte la page).
-      var mark = document.querySelector(".footer-wordmark");
-      var markTicking = false;
-      function markUpdate() {
-        markTicking = false;
-        var r = mark.getBoundingClientRect();
-        var vh = window.innerHeight;
-        var p = (vh - r.top) / (Math.min(r.height, vh) * 0.85);
-        p = Math.max(0, Math.min(1, p));
-        gsap.set(mark, p >= 1 ? { clipPath: "none", y: 0 } : { clipPath: "inset(" + ((1 - p) * 100).toFixed(2) + "% 0% 0% 0%)", y: Math.round((1 - p) * 24) });
-      }
-      function onMarkScroll() {
-        if (!markTicking) {
-          markTicking = true;
-          window.requestAnimationFrame(markUpdate);
-        }
-      }
-      if (mark && isShown(mark)) {
-        markUpdate();
-        listen(window, "scroll", onMarkScroll, { passive: true });
-        listen(window, "resize", onMarkScroll);
-      }
-
-      // 5. Interactions.
+      // 4. Interactions.
       var wide = window.matchMedia("(min-width: 1080px)");
 
       // Menus déroulants : les liens arrivent en cascade à l'ouverture.
@@ -325,8 +301,6 @@
         var rest = Array.from(pending);
         pending.clear();
         gsap.set(rest, { clearProps: CLEAR });
-        if (mark) gsap.set(mark, { clearProps: "clipPath,transform" });
-        window.removeEventListener("scroll", onMarkScroll);
       }
       listen(window, "beforeprint", showAll);
 
