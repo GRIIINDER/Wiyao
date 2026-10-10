@@ -107,21 +107,6 @@
   });
 })();
 
-// Newsletter du pied de page (Buttondown) - WIYAO
-// Le formulaire s'envoie à Buttondown dans un nouvel onglet (sans JS) ; on
-// affiche juste le message « vérifie ta boîte mail » sous le formulaire.
-(function () {
-  "use strict";
-
-  var form = document.querySelector(".footer-news-form");
-  var success = document.querySelector(".footer-news-success");
-  if (!form || !success) return;
-
-  form.addEventListener("submit", function () {
-    success.hidden = false;
-  });
-})();
-
 // Test d'orientation sur téléphone : la bulle de l'assistant s'efface
 // pendant qu'on répond (elle cachait la question) - WIYAO
 (function () {

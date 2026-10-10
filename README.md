@@ -23,8 +23,7 @@ Site statique sans dépendance ni étape de build : HTML/CSS/JS vanilla, déploy
 - Progressive Web App installable (`manifest.json` + `sw.js`, cache stale-while-revalidate).
 - Bilingue FR/EN (`js/i18n.js`).
 - Thème clair/sombre.
-- Aucune base de données : le contenu vit dans `js/data.js`, la progression de l'utilisateur reste en local (`localStorage`). Seule collecte : l'email des abonné·es à la newsletter (via [Buttondown](https://buttondown.com)), voir [politique-confidentialite.html](politique-confidentialite.html).
-- Newsletter mensuelle (formulaire dans le pied de page, service [Buttondown](https://buttondown.com)).
+- Aucune base de données, aucune collecte de données personnelles : le contenu vit dans `js/data.js`, la progression de l'utilisateur reste en local (`localStorage`) — voir [politique-confidentialite.html](politique-confidentialite.html).
 
 Pour les conventions de développement (versioning des assets, discipline de vérification des faits, service worker), voir [CLAUDE.md](CLAUDE.md).
 

@@ -2712,8 +2712,7 @@ main .school-details summary * {
 }
 
 /* Pied de page façon Woudy (2026-10-10) : bande pleine largeur ; en haut,
-   grand titre sur deux lignes (la seconde en bleu) et la newsletter à
-   droite ; quatre colonnes de liens sous des étiquettes en capitales ; la
+   grand titre sur deux lignes (la seconde en bleu) ; quatre colonnes de liens sous des étiquettes en capitales ; la
    signature WIYAO en très grand (logo vectorisé, icons/wordmark.svg) ; en
    bas, crédits et choix de langue. Les liens se soulignent de gauche à
    droite au survol. */
@@ -2737,22 +2736,15 @@ footer.site-footer {
 }
 
 .footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 40px 64px;
   padding-bottom: 64px;
   border-bottom: 1px solid var(--tk-border);
 }
 
 .footer-headline {
-  flex: 0 1 auto;
-  max-width: 14ch;
   margin: 0;
   color: var(--tk-text);
   font-family: var(--font-mono);
-  font-size: clamp(2.25rem, 5.2vw, 4rem);
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -2766,78 +2758,6 @@ footer.site-footer {
 .footer-headline-accent {
   margin-top: 0.08em;
   color: var(--tk-primary);
-}
-
-.footer-news {
-  flex: 0 1 420px;
-}
-
-.footer-news-title {
-  margin: 0;
-  color: var(--tk-text);
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-.footer-news-desc {
-  margin: 8px 0 0;
-  color: var(--tk-text-muted);
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.footer-news-form {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.footer-news-input {
-  flex: 1 1 auto;
-  min-width: 0;
-  height: 52px;
-  padding: 0 20px;
-  border: 1px solid var(--tk-border);
-  border-radius: 999px;
-  background: var(--tk-canvas);
-  color: var(--tk-text);
-  font: inherit;
-  font-size: 1rem;
-}
-
-.footer-news-input::placeholder {
-  color: var(--tk-text-subtle);
-}
-
-.footer-news-input:focus {
-  border-color: var(--tk-primary);
-  outline: none;
-}
-
-.footer-news-submit {
-  flex: none;
-  height: 52px;
-  padding: 0 24px;
-  border: none;
-  border-radius: 999px;
-  background: var(--tk-primary);
-  color: var(--tk-canvas);
-  font: inherit;
-  font-size: 0.875rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: filter 0.15s ease;
-}
-
-.footer-news-submit:hover {
-  filter: brightness(0.92);
-}
-
-.footer-news-success {
-  margin: 12px 0 0;
-  color: var(--tk-primary);
-  font-size: 0.875rem;
 }
 
 .footer-grid {
@@ -2984,11 +2904,7 @@ footer.site-footer {
     padding-right: 16px;
   }
   .footer-top {
-    gap: 32px;
     padding-bottom: 48px;
-  }
-  .footer-news-form {
-    flex-direction: column;
   }
   .footer-grid {
     gap: 36px 20px;
@@ -3731,7 +3647,6 @@ main.numbered-sections > section:is(.eco-section, .about-section) > h2::before {
 .quiz-option:active,
 .quiz-back:active,
 .actu-card-btn:active,
-.footer-news-submit:active,
 .back-to-top:active,
 .wiyao-assistant-toggle:active,
 .eco-jump-nav a:active,
