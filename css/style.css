@@ -1738,11 +1738,9 @@ a.card:hover {
   line-height: 1.2;
 }
 
-/* Ligne "Dernière mise à jour" sous le hero, façon anthropic.com/legal/*. */
+/* Ligne "Dernière mise à jour" sous le hero (sans trait de séparation, à la demande de l'utilisateur). */
 .hero-legal-meta {
   margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
   color: var(--tk-text-muted);
   font-size: 0.95rem;
 }
@@ -3053,8 +3051,6 @@ html.legal-open {
 
 .legal-panel .hero-legal-meta {
   margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid var(--tk-border);
   color: var(--tk-text-subtle);
   font-size: 0.875rem;
 }
