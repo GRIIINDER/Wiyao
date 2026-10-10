@@ -561,21 +561,11 @@
     "domain.marketing": { fr: "Marketing digital", en: "Digital Marketing" },
     "domain.gestion": { fr: "Gestion &amp; Management", en: "Management" },
     "actu.list.h2": { fr: "Toutes les actualités", en: "All news" },
-    "footer.headline": {
-      fr: '<span class="footer-headline-line">Après le bac&nbsp;?</span> <span class="footer-headline-line footer-headline-accent">Ta route dans&nbsp;la&nbsp;tech.</span>',
-      en: '<span class="footer-headline-line">After the bac?</span> <span class="footer-headline-line footer-headline-accent">Your path into&nbsp;tech.</span>',
-    },
     "footer.h.contact": { fr: "Contact", en: "Contact" },
     "footer.h.parcours": { fr: "Parcours", en: "Journey" },
-    "footer.h.explorer": { fr: "Explorer", en: "Explore" },
-    "footer.h.legal": { fr: "Informations légales", en: "Legal information" },
-    "footer.city": { fr: "Lomé, Togo", en: "Lomé, Togo" },
+    "footer.h.opportunites": { fr: "Opportunités", en: "Opportunities" },
+    "footer.h.communaute": { fr: "Communauté", en: "Community" },
     "footer.copyright": { fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
-    "footer.credit": {
-      fr: 'Créé par <a href="about.html">Crédo Ahiafor</a> · guide d\'orientation tech au Togo',
-      en: 'Created by <a href="about.html">Crédo Ahiafor</a> · tech orientation guide for Togo',
-    },
-    "footer.lang": { fr: "Langue", en: "Language" },
     "conf.s2.p1": {
       fr: "Aucune information personnelle n'est collectée pour naviguer sur WIYAO, répondre au test d'orientation, comparer des écoles ou consulter le calendrier : ces usages ne demandent ni nom, ni email, ni aucune autre donnée. Deux actions volontaires font exception, décrites ci-dessous.",
       en: "No personal information is collected to browse WIYAO, take the orientation test, compare schools or check the calendar: these uses ask for no name, no email, and no other data. Two voluntary actions are the exception, described below.",
