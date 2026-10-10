@@ -2750,6 +2750,7 @@ footer.site-footer {
 }
 
 .footer-inner,
+.footer-wordmark,
 .footer-bottom {
   max-width: 1100px;
   margin: 0 auto;
@@ -2814,13 +2815,8 @@ footer.site-footer {
   color: var(--tk-primary);
 }
 
-/* Signature WIYAO en très grand, en bleu (le logo sert de masque). */
-.footer-wordmark {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 12px;
-}
-
+/* Signature WIYAO en très grand, en bleu (le logo sert de masque), aussi
+   large que les quatre colonnes au-dessus (même conteneur que .footer-inner). */
 .footer-wordmark::before {
   content: "";
   display: block;
@@ -2874,6 +2870,7 @@ footer.site-footer {
 
 @media (max-width: 560px) {
   .footer-inner,
+  .footer-wordmark,
   .footer-bottom {
     padding-left: 16px;
     padding-right: 16px;
