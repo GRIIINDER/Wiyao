@@ -1971,33 +1971,26 @@ main .school-details summary * {
   text-align: left;
 }
 
-/* FAQ : sous-titre et questions 24 px, réponses 20 px. Le titre vit
-   désormais dans .page-title-banner (comme les autres pages), plus dans
-   cette colonne sticky. */
-.hero.faq-hero p {
-  font-size: 1.5rem;
-}
-
-/* Colonne de titre étroite (320px) : le justifié utilisé sur les autres
-   pages (pensé pour une colonne large) y crée de grands blancs entre
-   les mots, donc alignement à gauche ici plutôt que justifié. */
-.faq-sidebar p {
-  text-align: left;
-}
-
-/* Mise en page façon FAQ Composio : colonne de titre "collante" (sticky)
-   à gauche, questions à droite (même schéma que .calendrier-general-layout
-   / .calendrier-general-intro, réutilisé ici pour rester cohérent). */
+/* FAQ façon LottieFiles (2026-10-10, à la demande de l'utilisateur ;
+   remplace la mise en page à colonne collante façon Composio) : une seule
+   colonne centrée de 760 px, l'introduction centrée au-dessus, puis chaque
+   question dans sa propre carte arrondie (12 px), cartes espacées de 16 px,
+   chevron à droite qui pivote à l'ouverture. Cartes sombres (--tk-surface)
+   au lieu des cartes blanches de LottieFiles ; la question garde l'échelle
+   du site (18 px, graisse 700, règle « main summary » plus bas). */
 .faq-layout {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 48px;
-  align-items: start;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .faq-sidebar {
-  position: sticky;
-  top: 128px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.hero.faq-hero p {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .faq-badge {
@@ -2019,63 +2012,55 @@ main .school-details summary * {
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  border-top: 1px solid var(--tk-border);
+  gap: 16px;
 }
 
 .faq-item {
+  padding: 4px 24px;
   border: none;
-  border-bottom: 1px solid var(--tk-border);
-  border-radius: 0;
-  background: none;
-  padding: 0;
-}
-
-.faq-item:last-child {
-  border-bottom: none;
-}
-
-.faq-item[open] summary {
-  color: var(--tk-primary);
+  border-radius: 12px;
+  background: var(--tk-surface);
 }
 
 .faq-item summary {
-  padding: 22px 0;
-  font-weight: 700;
-  font-size: 1.5rem;
-  cursor: pointer;
-  list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  padding: 16px 0;
   color: var(--tk-text);
+  line-height: 1.4;
+  list-style: none;
+  cursor: pointer;
 }
 
 .faq-item summary::-webkit-details-marker {
   display: none;
 }
 
+/* Chevron (même tracé que l'icône « chevron-down » de LottieFiles), en
+   masque pour prendre la couleur du texte secondaire. */
 .faq-item summary::after {
-  content: "+";
-  flex: 0 0 auto;
-  color: var(--tk-text-subtle);
-  font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 1;
+  content: "";
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  background: var(--tk-text-subtle);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center / 24px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center / 24px no-repeat;
+  transition: transform 0.2s ease-out;
 }
 
 .faq-item[open] summary::after {
-  content: "\00d7";
-  color: var(--tk-primary);
-  font-size: 1.5rem;
+  transform: rotate(180deg);
 }
 
 .faq-item p {
-  margin: 0 0 18px;
+  margin: 0;
+  padding: 0 0 20px;
   color: var(--tk-text-muted);
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
   text-align: left;
 }
 
@@ -2084,13 +2069,12 @@ main .school-details summary * {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .faq-layout {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+@media (max-width: 560px) {
   .faq-sidebar {
-    position: static;
+    margin-bottom: 28px;
+  }
+  .faq-item {
+    padding: 2px 20px;
   }
 }
 
@@ -3656,18 +3640,15 @@ main .primer-toggle * {
   margin-top: 0;
 }
 
-/* FAQ : encadré « Une autre question ? » (repris de la FAQ de Woudy) — dans
-   la colonne collante sur ordinateur, après la liste sur mobile. */
+/* FAQ : encadré « Une autre question ? » (repris de la FAQ de Woudy), après
+   la liste, dans la colonne de la FAQ. */
 .faq-ask {
-  margin-top: 28px;
-  padding: 20px;
+  margin-top: 40px;
+  padding: 28px 24px;
   border: 1px solid var(--tk-border);
   border-radius: 16px;
   background: var(--tk-surface);
-}
-
-.faq-ask--end {
-  display: none;
+  text-align: center;
 }
 
 .faq-ask-title {
@@ -3677,17 +3658,25 @@ main .primer-toggle * {
 }
 
 main .faq-ask-text {
+  max-width: none;
   margin: 6px 0 16px;
   color: var(--tk-text-muted);
   font-size: 14px !important;
 }
 
-.faq-ask-btn {
-  display: flex;
+.faq-ask-btn,
+.faq-ask-mail {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   min-height: 44px;
+  margin: 4px;
+  padding: 0 22px;
   border-radius: 999px;
+}
+
+.faq-ask-btn {
   background: var(--tk-primary);
   color: var(--tk-canvas);
   font-weight: 700;
@@ -3699,13 +3688,7 @@ main .faq-ask-text {
 }
 
 .faq-ask-mail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  margin-top: 8px;
   border: 1px solid var(--tk-border);
-  border-radius: 999px;
   color: var(--tk-text-muted);
   transition: border-color 0.15s ease, color 0.15s ease;
 }
@@ -3719,15 +3702,6 @@ main .faq-ask-btn,
 main .faq-ask-mail,
 main .faq-ask-mail * {
   font-size: 14px !important;
-}
-
-@media (max-width: 768px) {
-  .faq-ask--side {
-    display: none;
-  }
-  .faq-ask--end {
-    display: block;
-  }
 }
 
 /* Accueil : trois repères rassurants sous le bouton du test (repris de la
