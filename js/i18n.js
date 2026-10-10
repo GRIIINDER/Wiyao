@@ -563,8 +563,8 @@
     "domain.gestion": { fr: "Gestion &amp; Management", en: "Management" },
     "actu.list.h2": { fr: "Toutes les actualités", en: "All news" },
     "footer.news.title": {
-      fr: 'Le <span class="footer-mark">résumé mensuel</span> de WIYAO, dans ta boîte mail',
-      en: 'WIYAO\'s <span class="footer-mark">monthly digest</span>, straight to your inbox',
+      fr: "Le résumé mensuel de WIYAO, dans ta boîte mail",
+      en: "WIYAO's monthly digest, straight to your inbox",
     },
     "footer.news.desc": {
       fr: "Un e-mail par mois avec les nouveautés du site. Tu peux te désabonner à tout moment.",
@@ -576,19 +576,15 @@
       fr: "Merci ! Vérifie ta boîte mail (et tes spams) pour confirmer ton inscription à la newsletter.",
       en: "Thanks! Check your inbox (and spam folder) to confirm your newsletter subscription.",
     },
-    "footer.title": { fr: "Guide tech au Togo", en: "Tech guide for Togo" },
-    "footer.tagline": {
-      fr: "Orientation, écoles, roadmaps, bourses et stages pour les <strong>bacheliers du Togo</strong>.",
-      en: "Orientation, schools, roadmaps, scholarships and internships for <strong>Togolese high-school graduates</strong>.",
+    "footer.headline": {
+      fr: '<span class="footer-headline-line">Après le bac&nbsp;?</span> <span class="footer-headline-line footer-headline-accent">Ta route dans&nbsp;la&nbsp;tech.</span>',
+      en: '<span class="footer-headline-line">After the bac?</span> <span class="footer-headline-line footer-headline-accent">Your path into&nbsp;tech.</span>',
     },
     "footer.h.contact": { fr: "Contact", en: "Contact" },
     "footer.h.parcours": { fr: "Parcours", en: "Journey" },
     "footer.h.explorer": { fr: "Explorer", en: "Explore" },
     "footer.h.legal": { fr: "Informations légales", en: "Legal information" },
     "footer.city": { fr: "Lomé, Togo", en: "Lomé, Togo" },
-    "footer.box.label": { fr: "Une erreur, un oubli ?", en: "A mistake, something missing?" },
-    "footer.box.text": { fr: "Propose-le : on vérifie et on ajoute.", en: "Suggest it: we verify and add it." },
-    "footer.box.btn": { fr: "Proposer un contenu", en: "Suggest content" },
     "footer.copyright": { fr: "© 2026 WIYAO. Tous droits réservés.", en: "© 2026 WIYAO. All rights reserved." },
     "footer.credit": {
       fr: 'Créé par <a href="about.html">Crédo Ahiafor</a> · guide d\'orientation tech au Togo',
@@ -1560,12 +1556,6 @@
         const entry = BY_HREF[el.getAttribute("href")];
         if (entry) el.textContent = lang === "en" ? entry.en : entry.fr;
       });
-
-    document.querySelectorAll(".footer-big-link").forEach((el) => {
-      const entry = BY_HREF[el.getAttribute("href")];
-      const label = el.querySelector(".footer-big-label");
-      if (entry && label) label.textContent = lang === "en" ? entry.en : entry.fr;
-    });
 
     document.querySelectorAll(".nav-search-icon").forEach((el) => {
       el.setAttribute("aria-label", lang === "en" ? "Search" : "Recherche");
