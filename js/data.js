@@ -4789,7 +4789,9 @@ const SCHOOLS = {
     description: "École privée accréditée CAMES, présente au Togo, au Bénin et au Gabon, plus de 20 000 étudiants formés en 30 ans.",
     datesCles: {
       mode: "continue",
-      note: "Pré-inscriptions conseillées dès la publication des résultats du Bac (juillet-août), places limitées en informatique. Sélection sur dossier et entretien, pas de concours à date fixe."
+      note: "Pré-inscriptions conseillées dès la publication des résultats du Bac (juillet-août), places limitées en informatique. Sélection sur dossier et entretien, pas de concours à date fixe.",
+      rentree: "26 octobre 2026 (Licence 1, 2 et 3 : nouvelle date, affiche officielle ESGIS)",
+      anneeReference: "2026-2027"
     }
   },
   "esig": {
