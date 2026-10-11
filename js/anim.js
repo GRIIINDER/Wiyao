@@ -31,7 +31,6 @@
     "main .dates-row",
     "main .domain-primer-item",
     "main .faq-item",
-    "main .faq-ask",
     "main .about-section",
     "main #roadmap-detail .section",
     "main .contact-card",
@@ -75,7 +74,7 @@
   function fromVars(el) {
     if (el.matches("h2, .domain-group-title, .filter-group, .eco-jump-nav")) return { opacity: 0, x: -28 };
     if (el.matches(".timeline-item, .dates-row, .faq-item, .footer-legal-links li")) return { opacity: 0, x: -18 };
-    if (el.matches(".card, .eco-item, .journey-step, .domain-primer-item, .contact-card, .faq-ask")) {
+    if (el.matches(".card, .eco-item, .journey-step, .domain-primer-item, .contact-card")) {
       return { opacity: 0, y: 40, scale: 0.96 };
     }
     return { opacity: 0, y: 26 };
