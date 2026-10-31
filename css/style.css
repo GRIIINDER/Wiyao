@@ -4278,11 +4278,36 @@ header.site-header.is-menu-open .site-header-top {
   text-decoration-thickness: 2px;
 }
 
+/* Chaque menu déroulant prend la couleur de sa rubrique. */
+#nav-parcours {
+  --menu: var(--ms-purple);
+  --menu-ink: #ffffff;
+  --menu-label: var(--ms-lilac);
+}
+
+#nav-opportunites {
+  --menu: var(--ms-teal);
+  --menu-ink: var(--ms-navy);
+  --menu-label: var(--ms-teal);
+}
+
+#nav-communaute {
+  --menu: var(--ms-pink);
+  --menu-ink: var(--ms-navy);
+  --menu-label: var(--ms-pink);
+}
+
+#nav-contact {
+  --menu: var(--ms-yellow);
+  --menu-ink: var(--ms-navy);
+  --menu-label: var(--ms-yellow);
+}
+
 .nav-more-menu {
   top: calc(100% + 14px);
   gap: 0;
   padding: 8px;
-  background: var(--ms-purple-deep);
+  background: var(--menu, var(--ms-purple-deep));
   border: 2px solid var(--ms-navy);
   border-radius: 2px;
   box-shadow: -4px 4px 0 var(--ms-navy);
@@ -4290,13 +4315,13 @@ header.site-header.is-menu-open .site-header-top {
 
 .nav-more-menu a,
 .nav-more-menu a.active {
-  color: #ffffff;
+  color: var(--menu-ink, #ffffff);
   border-radius: 2px;
 }
 
 .nav-more-menu a:hover {
-  color: var(--ms-navy);
-  background: var(--ms-teal);
+  color: #ffffff;
+  background: var(--ms-navy);
 }
 
 .nav-more-menu a.active {
@@ -4402,20 +4427,22 @@ header.site-header :focus-visible {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--ms-purple-deep);
+    background: var(--ms-navy);
     border: 2px solid var(--ms-navy);
     border-radius: 2px;
     box-shadow: -4px 4px 0 var(--ms-navy);
   }
   .nav-group-label {
-    color: var(--ms-teal);
+    color: var(--menu-label, var(--ms-teal));
   }
   .site-nav .nav-more-menu a {
-    color: #ffffff;
+    color: var(--menu-ink, #ffffff);
   }
   .nav-more-menu a:hover {
-    color: var(--ms-teal);
+    color: var(--menu-ink, #ffffff);
     background: none;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
   }
 }
 
@@ -4432,7 +4459,51 @@ header.site-header :focus-visible {
   }
 }
 
-/* ── Haut de page : l'introduction est une bande orange, texte blanc. */
+/* ── Une couleur par rubrique (2026-10-31, à la demande de l'utilisateur,
+   pour ne pas reprendre l'enchaînement de couleurs de MoonShot) : la
+   classe du <body> donne la couleur de la rubrique du menu. Parcours en
+   violet, Opportunités en turquoise, Communauté en rose, Contact en jaune ;
+   l'accueil et les pages hors menu (recherche, 404, pages légales) gardent
+   l'orange de la marque. --rubrique-ink est la couleur du texte posé
+   dessus (blanc sur violet 4,94:1 et orange 5,06:1 ; marine sur turquoise,
+   rose et jaune, 8:1 et plus). --rubrique-on-navy sert aux titres de
+   rubrique posés sur le marine (menu mobile, pied de page). */
+:root {
+  --ms-lilac: #b28ae8;
+}
+
+body {
+  --rubrique: var(--ms-orange-ink);
+  --rubrique-ink: #ffffff;
+  --rubrique-line: rgba(255, 255, 255, 0.5);
+}
+
+body.rubrique-parcours {
+  --rubrique: var(--ms-purple);
+  --rubrique-ink: #ffffff;
+  --rubrique-line: rgba(255, 255, 255, 0.5);
+}
+
+body.rubrique-opportunites {
+  --rubrique: var(--ms-teal);
+  --rubrique-ink: var(--ms-navy);
+  --rubrique-line: rgba(22, 27, 70, 0.4);
+}
+
+body.rubrique-communaute {
+  --rubrique: var(--ms-pink);
+  --rubrique-ink: var(--ms-navy);
+  --rubrique-line: rgba(22, 27, 70, 0.4);
+}
+
+body.rubrique-contact {
+  --rubrique: var(--ms-yellow);
+  --rubrique-ink: var(--ms-navy);
+  --rubrique-line: rgba(22, 27, 70, 0.4);
+}
+
+/* ── Haut de page : l'introduction est une bande de la couleur de la
+   rubrique. */
 main {
   padding-top: 0;
 }
@@ -4443,14 +4514,14 @@ main {
 
 :is(main, .faq-layout) > .hero,
 #roadmap-detail > :is(.breadcrumb, .roadmap-header) {
-  --band: var(--ms-orange-ink);
-  --tk-text: #ffffff;
-  --tk-text-reading: #ffffff;
-  --tk-text-muted: #fff4ee;
-  --tk-text-subtle: #ffe6da;
-  --tk-primary: #ffffff;
-  --tk-border: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  --band: var(--rubrique);
+  --tk-text: var(--rubrique-ink);
+  --tk-text-reading: var(--rubrique-ink);
+  --tk-text-muted: var(--rubrique-ink);
+  --tk-text-subtle: var(--rubrique-ink);
+  --tk-primary: var(--rubrique-ink);
+  --tk-border: var(--rubrique-line);
+  color: var(--rubrique-ink);
 }
 
 :is(main, .faq-layout) > .hero {
@@ -4466,13 +4537,13 @@ main .hero > p:first-child {
 
 :is(main, .faq-layout) > .hero a:not(.btn-primary),
 #roadmap-detail > :is(.breadcrumb, .roadmap-header) a {
-  color: #ffffff;
+  color: var(--rubrique-ink);
   text-decoration: underline;
   text-decoration-thickness: 2px;
 }
 
 main > .hero .hero-reassure li {
-  color: #ffffff;
+  color: var(--rubrique-ink);
 }
 
 #roadmap-detail > .breadcrumb {
@@ -4489,7 +4560,7 @@ main > .hero .hero-reassure li {
   font-family: var(--font-display) !important;
   font-weight: 800;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--rubrique-ink);
 }
 
 .roadmap-header .progress-bar {
@@ -4502,8 +4573,8 @@ main > .hero .hero-reassure li {
 }
 
 .faq-badge {
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid var(--rubrique-ink);
+  color: var(--rubrique-ink);
 }
 
 /* ── Bandeaux défilants : bande marine, mots crème, collée sous le haut
@@ -4531,8 +4602,8 @@ main .marquee-list li {
   background: var(--ms-teal);
 }
 
-/* ── Sections : bandes alternées crème / blanc, quelques bandes de
-   couleur (violet, rose, turquoise). */
+/* ── Sections : bandes alternées crème / blanc ; une section mise en avant
+   par page prend la couleur de sa rubrique. */
 main > :is(.roadmap-category, .eco-section, .related-section, .contact-section, .about-section),
 #roadmap-detail > .related-section {
   margin-top: 0;
@@ -4547,28 +4618,18 @@ main > :is(.roadmap-category, .eco-section):nth-of-type(even),
 }
 
 #par-competence,
-#portraits {
-  --band: var(--ms-purple);
-  --tk-text: #ffffff;
-  --tk-text-muted: #ffffff;
-  --tk-text-subtle: #ffffff;
-  --tk-primary: #ffffff;
-  color: #ffffff;
-}
-
-#femmes-tech,
 #bac,
-#secteurs-porteurs,
-#etat {
-  --band: var(--ms-pink);
-}
-
-#lexique,
-#chiffres,
+#etat,
 #ressources-locales,
-#hubs,
+#femmes-tech,
+#chiffres,
 .faq-content {
-  --band: var(--ms-teal);
+  --band: var(--rubrique);
+  --tk-text: var(--rubrique-ink);
+  --tk-text-muted: var(--rubrique-ink);
+  --tk-text-subtle: var(--rubrique-ink);
+  --tk-primary: var(--rubrique-ink);
+  color: var(--rubrique-ink);
 }
 
 main > .about-section:last-of-type {
@@ -4736,17 +4797,30 @@ a.card:hover {
 .journey-step-number {
   border: 2px solid var(--ms-navy);
   border-radius: 2px;
-  background: var(--ms-teal);
-  color: var(--ms-navy);
+  background: var(--rubrique);
+  color: var(--rubrique-ink);
   font-weight: 800;
   box-shadow: -3px 3px 0 var(--ms-navy);
 }
 
-.journey-step:nth-child(6n + 2) .journey-step-number { background: var(--ms-yellow); }
-.journey-step:nth-child(6n + 3) .journey-step-number { background: var(--ms-pink); }
-.journey-step:nth-child(6n + 4) .journey-step-number { background: var(--ms-orange-ink); color: #ffffff; }
-.journey-step:nth-child(6n + 5) .journey-step-number { background: var(--ms-green); }
-.journey-step:nth-child(6n) .journey-step-number { background: var(--ms-purple); color: #ffffff; }
+/* Sur l'accueil, chaque étape du parcours prend la couleur de la rubrique
+   où elle mène : test, roadmaps, écoles (Parcours) ; dates, stages
+   (Opportunités) ; écosystème (Communauté). */
+#parcours .journey-step:nth-child(-n + 3) .journey-step-number {
+  background: var(--ms-purple);
+  color: #ffffff;
+}
+
+#parcours .journey-step:nth-child(4) .journey-step-number,
+#parcours .journey-step:nth-child(5) .journey-step-number {
+  background: var(--ms-teal);
+  color: var(--ms-navy);
+}
+
+#parcours .journey-step:nth-child(6) .journey-step-number {
+  background: var(--ms-pink);
+  color: var(--ms-navy);
+}
 
 #parcours .journey-step:not(:last-child)::after {
   background: var(--ms-navy);
@@ -4844,21 +4918,28 @@ main .faq-item summary {
 }
 
 /* ── Pied de page façon MoonShot (mesuré sur sa page, 2026-10-31) : bande
-   violette (les rayures qui l'annonçaient ont été retirées à la demande de
+   marine depuis le passage à une couleur par rubrique (violette au départ ;
+   les rayures qui l'annonçaient ont été retirées à la demande de
    l'utilisateur le même jour) ; colonnes de liens sur toute
    la largeur (titres Urbanist 18 px gras, liens 14 px), liens légaux et
    copyright dessous. Pas de logo (retiré à la demande de l'utilisateur le
-   2026-10-31) ni de réseaux sociaux (WIYAO n'en a pas). Blanc sur violet :
-   4,94:1. */
+   2026-10-31) ni de réseaux sociaux (WIYAO n'en a pas). */
 footer.site-footer {
   --tk-text: #ffffff;
   --tk-text-muted: #ffffff;
   --tk-text-subtle: #ffffff;
   --tk-primary: #ffffff;
   border-top: 0;
-  background: var(--ms-purple);
+  background: var(--ms-navy);
   color: #ffffff;
 }
+
+/* Titres des colonnes dans la couleur de leur rubrique (lilas pour
+   Parcours : le violet est trop sombre sur le marine). */
+.footer-col:nth-child(1) h2 { color: var(--ms-lilac); }
+.footer-col:nth-child(2) h2 { color: var(--ms-teal); }
+.footer-col:nth-child(3) h2 { color: var(--ms-pink); }
+.footer-col:nth-child(4) h2 { color: var(--ms-yellow); }
 
 .footer-inner {
   padding-top: 80px;
