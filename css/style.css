@@ -4243,7 +4243,10 @@ header.site-header.is-menu-open .site-header-top {
   font-size: 28px;
   font-weight: 800;
   line-height: 34px;
-  letter-spacing: 0.02em;
+  /* Lettres espacées comme le logo MOONSHOT ; la marge négative retire
+     l'espace ajouté après la dernière lettre. */
+  letter-spacing: 0.18em;
+  margin-right: -0.18em;
   white-space: nowrap;
 }
 
@@ -4257,7 +4260,7 @@ header.site-header.is-menu-open .site-header-top {
 /* À 320 px, le logo plus étroit laisse tenir langue, recherche et menu. */
 @media (max-width: 359px) {
   .brand-mark {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -4875,8 +4878,8 @@ footer.site-footer {
 .footer-inner,
 .footer-bottom {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 680px);
-  column-gap: 64px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 640px);
+  column-gap: 48px;
 }
 
 .footer-inner {
@@ -4889,16 +4892,18 @@ footer.site-footer {
   align-self: start;
   color: #ffffff;
   font-family: var(--font-display);
-  font-size: clamp(56px, 3rem + 4vw, 104px);
+  /* Mesuré : « WIYAO » espacé fait 4,6 fois sa taille de police ; à 68 px
+     il tient dans la colonne de gauche (330 px au plus étroit, 1 081 px). */
+  font-size: 68px;
   font-weight: 800;
   line-height: 0.9;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.18em;
 }
 
 .footer-grid {
   grid-template-columns: repeat(4, auto);
   justify-content: space-between;
-  gap: 32px 40px;
+  gap: 32px;
   padding: 0 0 48px;
 }
 
@@ -4958,6 +4963,7 @@ footer.site-footer :focus-visible {
     grid-template-columns: minmax(0, 1fr);
   }
   .footer-inner::before {
+    font-size: clamp(52px, 2.4rem + 4vw, 96px);
     margin-bottom: 48px;
   }
   .footer-bottom > * {
