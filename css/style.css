@@ -4229,8 +4229,36 @@ header.site-header.is-menu-open .site-header-top {
   backdrop-filter: none;
 }
 
+/* Logo WIYAO écrit avec la police des titres du site (Argentum Sans), à
+   la demande de l'utilisateur (2026-10-31), au lieu du logo vectorisé
+   manuscrit. Hauteur de ligne de 34 px : l'en-tête garde ses 70 px. */
 .brand-mark {
-  background: #ffffff;
+  height: auto;
+  aspect-ratio: auto;
+  background: none;
+  -webkit-mask: none;
+  mask: none;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+  .brand-mark {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+/* À 320 px, le logo plus étroit laisse tenir langue, recherche et menu. */
+@media (max-width: 359px) {
+  .brand-mark {
+    font-size: 20px;
+  }
 }
 
 .nav-more-toggle,
@@ -4856,13 +4884,15 @@ footer.site-footer {
 }
 
 .footer-inner::before {
-  content: "";
+  content: "WIYAO";
+  content: "WIYAO" / "";
   align-self: start;
-  width: min(100%, 320px);
-  aspect-ratio: 856 / 325;
-  background: #ffffff;
-  -webkit-mask: url("../icons/wordmark.svg") left top / contain no-repeat;
-  mask: url("../icons/wordmark.svg") left top / contain no-repeat;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: clamp(56px, 3rem + 4vw, 104px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
 }
 
 .footer-grid {
@@ -4928,7 +4958,6 @@ footer.site-footer :focus-visible {
     grid-template-columns: minmax(0, 1fr);
   }
   .footer-inner::before {
-    width: min(100%, 240px);
     margin-bottom: 48px;
   }
   .footer-bottom > * {
@@ -4968,7 +4997,6 @@ footer.site-footer :focus-visible {
     padding-top: 56px;
   }
   .footer-inner::before {
-    width: min(100%, 200px);
     margin-bottom: 40px;
   }
 }
