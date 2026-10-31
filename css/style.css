@@ -4812,34 +4812,165 @@ main .faq-item summary {
   box-shadow: 0 0 0 3px rgba(36, 61, 204, 0.25);
 }
 
-/* ── Pied de page : bande marine, titres de colonne en turquoise. */
+/* ── Pied de page façon MoonShot (mesuré sur sa page, 2026-10-31) : bande
+   violette annoncée par des rayures horizontales de plus en plus épaisses
+   (recréées en CSS, pas l'image de MoonShot) ; grand logo WIYAO blanc à
+   gauche, colonnes de liens à droite (titres Urbanist 18 px gras, liens
+   14 px), copyright et liens légaux sous les colonnes. Pas de réseaux
+   sociaux : WIYAO n'en a pas. Le logo est décoratif (::before) : le lien
+   vers l'accueil reste celui de l'en-tête. Blanc sur violet : 4,94:1. */
 footer.site-footer {
-  background: var(--ms-navy);
-  border-top: 6px solid var(--ms-orange);
   --tk-text: #ffffff;
-  --tk-text-muted: #e9ecfb;
-  --tk-text-subtle: #c9cdf0;
-  --tk-primary: var(--ms-teal);
+  --tk-text-muted: #ffffff;
+  --tk-text-subtle: #ffffff;
+  --tk-primary: #ffffff;
+  --footer-stripes: 90px;
+  padding-top: var(--footer-stripes);
+  border-top: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0 10px, var(--ms-purple) 10px 12px,
+      transparent 12px 22px, var(--ms-purple) 22px 25px,
+      transparent 25px 34px, var(--ms-purple) 34px 38px,
+      transparent 38px 46px, var(--ms-purple) 46px 51px,
+      transparent 51px 58px, var(--ms-purple) 58px 64px,
+      transparent 64px 70px, var(--ms-purple) 70px 77px,
+      transparent 77px 82px, var(--ms-purple) 82px 90px
+    ) top / 100% var(--footer-stripes) no-repeat,
+    linear-gradient(var(--ms-purple), var(--ms-purple)) bottom / 100% calc(100% - var(--footer-stripes) + 1px) no-repeat;
+  color: #ffffff;
+}
+
+/* Même colonne de droite (largeur fixe) pour les liens et pour le bas du
+   pied de page, afin que tout s'aligne sur le même bord gauche. */
+.footer-inner,
+.footer-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 680px);
+  column-gap: 64px;
+}
+
+.footer-inner {
+  padding-top: 80px;
+}
+
+.footer-inner::before {
+  content: "";
+  align-self: start;
+  width: min(100%, 320px);
+  aspect-ratio: 856 / 325;
+  background: #ffffff;
+  -webkit-mask: url("../icons/wordmark.svg") left top / contain no-repeat;
+  mask: url("../icons/wordmark.svg") left top / contain no-repeat;
+}
+
+.footer-grid {
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
+  gap: 32px 40px;
+  padding: 0 0 48px;
 }
 
 .footer-col h2 {
-  color: var(--ms-teal);
-  font-size: 0.9375rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  color: #ffffff;
+  font-family: var(--font-text);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
-.footer-links-col a {
+.footer-col ul {
+  margin-top: 24px;
+}
+
+.footer-links-col li {
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.footer-links-col a,
+.footer-legal-links a,
+.footer-copy {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 400;
+}
+
+.footer-links-col a.active,
+.footer-legal-links a.active {
+  background-position: left bottom;
+  background-size: 100% 1px;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 0;
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+
+.footer-bottom > * {
+  grid-column: 2;
+}
+
+.footer-bottom .footer-copy {
+  order: 2;
+  margin-top: 12px;
 }
 
 footer.site-footer :focus-visible {
-  outline-color: var(--ms-teal);
+  outline-color: #ffffff;
+}
+
+@media (max-width: 1080px) {
+  .footer-inner,
+  .footer-bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .footer-inner::before {
+    width: min(100%, 240px);
+    margin-bottom: 48px;
+  }
+  .footer-bottom > * {
+    grid-column: 1;
+  }
+  /* Le copyright passe à gauche : il dégage le bouton flottant du test. */
+  .footer-bottom {
+    padding-bottom: 96px;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  footer.site-footer {
+    --footer-stripes: 64px;
+    background:
+      linear-gradient(
+        to bottom,
+        transparent 0 8px, var(--ms-purple) 8px 10px,
+        transparent 10px 18px, var(--ms-purple) 18px 21px,
+        transparent 21px 28px, var(--ms-purple) 28px 32px,
+        transparent 32px 38px, var(--ms-purple) 38px 43px,
+        transparent 43px 48px, var(--ms-purple) 48px 54px,
+        transparent 54px 58px, var(--ms-purple) 58px 64px
+      ) top / 100% var(--footer-stripes) no-repeat,
+      linear-gradient(var(--ms-purple), var(--ms-purple)) bottom / 100% calc(100% - var(--footer-stripes) + 1px) no-repeat;
+  }
+  .footer-inner {
+    padding-top: 56px;
+  }
+  .footer-inner::before {
+    width: min(100%, 200px);
+    margin-bottom: 40px;
+  }
 }
 
 /* ── Fenêtre « Informations légales » : voile marine, fenêtre blanche à
@@ -5017,6 +5148,12 @@ main > .hero.hero-compact {
    à gauche comme un panneau d'outils. */
 main > .roadmap-category > h2 ~ .domain-filters {
   justify-content: center;
+}
+
+/* Titre du test dans un <summary> en flex : sans min-width: 0, un mot
+   long (« L'INFORMATIQUE, ») ne peut pas passer à la ligne à 320 px. */
+.primer-summary > h2 {
+  min-width: 0;
 }
 
 /* Le sommaire de l'Écosystème se détache du bandeau défilant. */
