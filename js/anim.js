@@ -210,7 +210,7 @@
         var mo = new MutationObserver(function () {
           var open = group.classList.contains("is-open");
           if (open && !wasOpen && wide.matches) {
-            cascade(group.querySelectorAll(".nav-more-menu a"), { opacity: 0, x: -8 }, { duration: 0.22, stagger: 0.03 });
+            cascade(group.querySelectorAll(".nav-more-menu a"), { x: -8 }, { duration: 0.22, stagger: 0.03 });
           }
           wasOpen = open;
         });

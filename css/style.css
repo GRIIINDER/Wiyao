@@ -4278,6 +4278,12 @@ header.site-header.is-menu-open .site-header-top {
   text-decoration-thickness: 2px;
 }
 
+/* Le panneau s'ouvre sans fondu (il glisse seulement) : en fondu, la page
+   transparaissait à travers pendant l'ouverture. */
+.nav-more-menu {
+  transition: transform 0.15s ease, visibility 0.15s ease;
+}
+
 /* Chaque menu déroulant prend la couleur de sa rubrique. */
 #nav-parcours {
   --menu: var(--ms-purple);
@@ -5104,6 +5110,184 @@ main .faq-item summary {
   }
 }
 
+/* ── Composants restés à l'ancien style (relevé du 2026-10-31 sur les 20
+   pages : coins arrondis, traits clairs, pilules) ramenés au style du
+   site : coins droits, traits marine, couleur de la rubrique en accent. */
+
+/* Calendrier, « Dates par école » : fiches blanches à trait marine,
+   collées comme les lignes de la FAQ ; nom de l'école en Argentum Sans ;
+   chaque date précédée d'une case de la couleur de la rubrique. */
+.dates-row {
+  margin: 0 0 -2px;
+  padding: 28px 32px;
+  border: 2px solid var(--ms-navy);
+  border-radius: 0;
+  background: #ffffff;
+  color: var(--ms-navy);
+}
+
+.dates-row-urgent {
+  border-color: var(--ms-navy);
+  border-width: 2px;
+}
+
+.dates-urgent-note {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1.5px solid var(--ms-navy);
+  border-radius: 2px;
+  background: var(--tint-red-bg);
+  color: var(--tint-red-fg);
+  font-size: 14px;
+}
+
+.dates-row h3 {
+  margin: 0 0 10px;
+  color: var(--ms-navy);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+main .dates-note {
+  margin: 0 0 16px;
+  color: var(--tk-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.dates-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 16px;
+  font-size: 17px;
+  color: var(--ms-navy);
+}
+
+.dates-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+}
+
+.dates-list li::before {
+  content: "";
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--ms-navy);
+  background: var(--rubrique);
+  transform: translateY(1px);
+}
+
+main .dates-ref-note {
+  margin: 0 0 6px;
+  color: var(--tk-text-muted);
+  font-size: 14px;
+}
+
+.dates-row .school-link,
+.dates-row .school-link:hover {
+  margin-top: 12px;
+  color: var(--ms-navy);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.dates-row .school-link:hover {
+  text-decoration-thickness: 3px;
+}
+
+/* Calendrier type : frise à cases carrées marine remplies de la couleur
+   de la rubrique, trait marine. */
+#timeline-general .timeline-item::before {
+  border: 2px solid var(--ms-navy);
+  border-radius: 0;
+  background: var(--rubrique);
+}
+
+#timeline-general .timeline-item:not(:last-child)::after {
+  background: var(--ms-navy);
+}
+
+#timeline-general .timeline-content h3 {
+  color: var(--ms-navy);
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+/* Étapes d'une roadmap, encarts du test et du guide des stages. */
+.section,
+.primer-fold,
+.domain-primer-item,
+#guide .journey-step {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+/* Le formulaire de contact est déjà dans une carte : pas de carte dans la
+   carte. */
+.contact-card .contact-form-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Étiquettes, filtres et liens en pilule : coins droits, trait marine. */
+.badge {
+  border: 1.5px solid var(--ms-navy);
+  border-radius: 2px;
+}
+
+.domain-chip,
+#contact-mode-filters .domain-chip {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+}
+
+.eco-jump-nav a,
+#search-categories-group a {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  background: #ffffff;
+  color: var(--ms-navy);
+}
+
+.eco-jump-nav a:hover,
+#search-categories-group a:hover {
+  border-color: var(--ms-navy);
+  background: var(--rubrique);
+  color: var(--rubrique-ink);
+}
+
+.search-bar {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.search-bar:focus-within {
+  box-shadow: -4px 4px 0 var(--ms-navy);
+}
+
+@media (max-width: 600px) {
+  .dates-row {
+    padding: 22px 18px;
+  }
+  .dates-row h3 {
+    font-size: 19px;
+  }
+  .dates-list {
+    font-size: 16px;
+  }
+}
+
 /* ── Contact / Proposer : carte blanche à trait marine. */
 .contact-card {
   background: #ffffff;
@@ -5423,16 +5607,23 @@ main > .eco-jump-nav {
 
 main > :is(.roadmap-category, .eco-section, .related-section, .contact-section) > h2,
 main > .hero:not(.hero-legal) ~ .about-section > h2,
-#roadmap-detail > .related-section > h2,
-.calendrier-general-intro > h2 {
+#roadmap-detail > .related-section > h2 {
   text-align: center;
 }
 
-main > :is(.roadmap-category, .eco-section) > h2 + .category-desc,
-.calendrier-general-intro > h2 + .category-desc {
+main > :is(.roadmap-category, .eco-section) > h2 + .category-desc {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+/* « Le calendrier type » est dans une colonne étroite (320 px) à côté de
+   la frise : titre à gauche et plus petit, sinon « CALENDRIER » était
+   coupé en deux. */
+main .calendrier-general-intro > h2:not(.sr-only) {
+  font-size: clamp(30px, 1rem + 1.6vw, 40px) !important;
+  hyphens: manual;
+  text-align: left;
 }
 
 main > .hero-legal ~ .about-section {
