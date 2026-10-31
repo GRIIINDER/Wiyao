@@ -20,25 +20,26 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* Polices façon MoonShot (2026-10-31) : Outfit pour les titres, Urbanist
-   pour le texte. Polices libres (SIL OFL 1.1, licences dans fonts/),
-   récupérées sur Google Fonts et hébergées ici : aucun appel à Google. */
+/* Polices de MoonShot (2026-10-31) : Argentum Sans pour les titres,
+   boutons et bandeaux, Urbanist pour le texte. Polices libres (SIL OFL 1.1,
+   licences dans fonts/) : Argentum Sans vient de son dépôt officiel
+   (github.com/cssobral2013/Argentum-Sans), Urbanist de Google Fonts ;
+   toutes hébergées ici, aucun appel à un tiers. Seules les graisses 600 et
+   800 d'Argentum Sans sont chargées : 500 et 700 se rabattent dessus. */
 @font-face {
-  font-family: "Outfit";
+  font-family: "Argentum Sans";
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 600;
   font-display: swap;
-  src: url("../fonts/outfit-variable-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("../fonts/ArgentumSans-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Outfit";
+  font-family: "Argentum Sans";
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 800;
   font-display: swap;
-  src: url("../fonts/outfit-variable-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url("../fonts/ArgentumSans-ExtraBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -112,7 +113,7 @@
      chasse fixe reste l'accent de la marque (grands titres, chiffres),
      pas la police de lecture. */
   --font-text: "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --font-display: "Outfit", "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: "Argentum Sans", "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
   font-family: var(--font-text);
 }
@@ -4155,7 +4156,7 @@ main .marquee-list li {
    fond crème, texte et traits bleu marine, grandes bandes de couleur
    (orange en haut de page, marine pour les bandeaux, blanc / crème /
    violet / rose / turquoise pour les sections), titres très gras en
-   Outfit, texte en Urbanist. Seul le style est recréé : aucune image,
+   Argentum Sans, texte en Urbanist. Seul le style est recréé : aucune image,
    illustration ni logo de TechCabal. Placé en fin de feuille pour primer
    sur les règles du thème sombre. */
 body {
@@ -4164,8 +4165,15 @@ body {
   color: var(--tk-text);
 }
 
-:is(h1, h2, h3, h4, h5, h6, summary, .marquee-list, .btn-primary, .btn-send, .btn, .domain-group-toggle, .cta-float, .footer-col h2, .journey-step-number) {
+:is(h1, h2, h3, h4, h5, h6, summary, .marquee-list, .btn-primary, .btn-send, .btn, .domain-group-toggle, .journey-step-number) {
   font-family: var(--font-display);
+}
+
+/* Comme sur MoonShot, le bouton flottant et les titres du pied de page
+   restent en Urbanist gras. */
+.cta-float,
+.footer-col h2 {
+  font-family: var(--font-text);
 }
 
 main :is(h2, h3, h4) {
@@ -4547,7 +4555,7 @@ main > .about-section:last-of-type {
   --tk-border: #d6cbb8;
 }
 
-/* ── Cartes : blanches, traits marine, titres en capitales Outfit. Au
+/* ── Cartes : blanches, traits marine, titres en capitales Argentum Sans. Au
    survol, une carte cliquable passe au turquoise. */
 :root {
   --ink: var(--ms-navy);
@@ -4718,7 +4726,7 @@ a.card:hover {
 }
 
 /* ── FAQ : lignes blanches encadrées de marine, collées, sur bande
-   turquoise ; question en Outfit, flèche dans un rond à droite. */
+   turquoise ; question en Argentum Sans, flèche dans un rond à droite. */
 .faq-layout {
   max-width: none;
 }

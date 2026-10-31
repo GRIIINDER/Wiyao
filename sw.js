@@ -1,4 +1,4 @@
-const CACHE_NAME = "wiyao-v375";
+const CACHE_NAME = "wiyao-v376";
 
 const PRECACHE_URLS = [
   "index.html",
@@ -36,8 +36,8 @@ const PRECACHE_URLS = [
   "icons/credo-ahiafor.jpg",
   "fonts/jetbrains-mono-variable-latin.woff2",
   "fonts/jetbrains-mono-variable-latin-ext.woff2",
-  "fonts/outfit-variable-latin.woff2",
-  "fonts/outfit-variable-latin-ext.woff2",
+  "fonts/ArgentumSans-SemiBold.ttf",
+  "fonts/ArgentumSans-ExtraBold.ttf",
   "fonts/urbanist-variable-latin.woff2",
   "fonts/urbanist-variable-latin-ext.woff2",
 ];
