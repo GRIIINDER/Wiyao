@@ -438,7 +438,8 @@
     });
 
     function setSpeed() {
-      track.style.animationDuration = Math.max(20, track.scrollWidth / 2 / 45) + "s";
+      // 30 px par seconde (45 au départ, ralenti à la demande de l'utilisateur).
+      track.style.animationDuration = Math.max(20, track.scrollWidth / 2 / 30) + "s";
     }
     setSpeed();
     window.addEventListener("load", setSpeed);
