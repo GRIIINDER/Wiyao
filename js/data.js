@@ -4949,11 +4949,11 @@ const SCHOOLS = {
     description: "2e université publique du Togo ; la Faculté des Sciences et Techniques (FAST) porte plusieurs licences professionnelles tech.",
     datesCles: {
       mode: "campagne",
-      note: "Campagne annuelle publiée chaque année en août via le service DAAS (préinscription en ligne, puis dépôt physique du dossier).",
-      ouverture: "18 septembre – 27 octobre, préinscription en ligne (référence 2025-2026)",
-      cloture: "5 janvier, dépôt physique du dossier (référence 2025-2026)",
-      rentree: "14 septembre 2026 (confirmée)",
-      anneeReference: "2025-2026"
+      note: "Campagne annuelle via le service DAAS : préinscription en ligne sur le portail PAUL UK (etu.univkara.tg), paiement des droits par Mobile Money, puis dépôt du dossier complet au guichet de la DAAS (Campus Sud). Les appels à candidature des licences (dépôt du 18 août au 25 septembre 2026, prolongé au 9 octobre pour plusieurs licences) et des masters (jusqu'au 30 octobre 2026) sont clos.",
+      ouverture: "15 septembre 2026, inscriptions 2026-2027 (univkara.tg)",
+      cloture: "18 décembre 2026, date limite de dépôt du dossier selon la page Admission (la page d'accueil annonce des inscriptions jusqu'au 29 décembre : se fier à la date la plus proche)",
+      rentree: "21 septembre 2026, début des cours (univkara.tg)",
+      anneeReference: "2026-2027"
     }
   },
   "esa-togo": {
@@ -5129,7 +5129,7 @@ const SCHOOLS = {
     duree: null,
     admission: "Sur dossier (relevé de notes du Bac certifié, acte de naissance, photo, fiche d'inscription)",
     frais: "Tarif promotionnel constaté pour 2025-2026 : 350 000 FCFA (L1) · 450 000 (L2) · 600 000 (L3) · 700 000 (M1) · 800 000 (M2), lié à une opération portes ouvertes, à reconfirmer pour les tarifs standards (source : synergieplus.net).",
-    site: "https://www.ismadonai.net/fr/nos-formations/",
+    site: "https://www.ismadonai.net/",
     description: "École privée multi-pays certifiée ISO 9001:2015, fondée en 2005, présente aussi au Bénin et en Côte d'Ivoire, forte orientation professionnalisante.",
     datesCles: {
       mode: "continue",
