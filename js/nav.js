@@ -395,6 +395,56 @@
   }, { threshold: 0.15 }).observe(quiz);
 })();
 
+// Bandeau défilant (accueil, façon MoonShot) - WIYAO
+// La liste est recopiée jusqu'à couvrir l'écran le plus large, puis doublée :
+// la piste glisse de la moitié de sa largeur, en boucle sans à-coup. Vitesse
+// constante quelle que soit la langue. Le bouton pause garde le bandeau
+// immobile (clavier, tactile) ; le CSS l'arrête aussi au survol et avec le
+// réglage « réduire les animations ».
+(function () {
+  "use strict";
+
+  var marquees = document.querySelectorAll("[data-marquee]");
+  if (!marquees.length) return;
+
+  // Le bandeau occupe toute la largeur de la fenêtre, barre de défilement exclue.
+  function measureScrollbar() {
+    var width = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty("--scrollbar", Math.max(0, width) + "px");
+  }
+  measureScrollbar();
+  window.addEventListener("resize", measureScrollbar);
+  window.addEventListener("load", measureScrollbar);
+
+  Array.prototype.forEach.call(marquees, function (marquee) {
+    var track = marquee.querySelector(".marquee-track");
+    var list = track && track.querySelector(".marquee-list");
+    if (!list) return;
+
+    var target = Math.max(window.screen ? window.screen.width : 0, window.innerWidth, 1280);
+    var width = list.getBoundingClientRect().width || 1;
+    for (var i = 1; i < Math.ceil(target / width); i++) track.appendChild(list.cloneNode(true));
+    Array.prototype.slice.call(track.children).forEach(function (copy) {
+      track.appendChild(copy.cloneNode(true));
+    });
+
+    function setSpeed() {
+      track.style.animationDuration = Math.max(20, track.scrollWidth / 2 / 45) + "s";
+    }
+    setSpeed();
+    window.addEventListener("load", setSpeed);
+
+    var pause = marquee.querySelector(".marquee-pause");
+    if (pause) {
+      pause.addEventListener("click", function () {
+        var paused = pause.getAttribute("aria-pressed") !== "true";
+        pause.setAttribute("aria-pressed", String(paused));
+        marquee.classList.toggle("is-paused", paused);
+      });
+    }
+  });
+})();
+
 // Bouton retour en haut - WIYAO
 (function () {
   "use strict";

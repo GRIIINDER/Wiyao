@@ -3798,6 +3798,308 @@ textarea {
   }
 }
 
+/* ── Style graphique façon MoonShot by TechCabal (2026-10-31, à la demande
+   de l'utilisateur), transposé sur le fond sombre : boutons à trait épais
+   et ombre dure décalée, cartes en grille à bordures partagées, grands
+   titres de section en capitales, bandeau défilant sur l'accueil. Le trait
+   (« encre ») est la couleur du texte, comme le bleu marine de MoonShot
+   sur fond clair. Placé après les règles de survol et d'appui pour
+   l'emporter. */
+:root {
+  --ink: var(--tk-text);
+  --grid-line: #34447f;
+}
+
+/* Boutons principaux : aplat bleu, trait de 2 px, ombre dure en bas à
+   gauche, case flèche accolée à droite. Au survol, le bouton se soulève ;
+   à l'appui, il s'enfonce dans son ombre. */
+.btn-primary,
+.btn-send {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  min-height: 52px;
+  padding: 0 0 0 22px;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  background: var(--tk-primary);
+  color: var(--tk-canvas);
+  font-weight: 700;
+  text-align: left;
+  box-shadow: -4px 4px 0 var(--ink);
+  filter: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-primary::after,
+.btn-send::after {
+  content: "";
+  flex: none;
+  align-self: stretch;
+  width: 48px;
+  margin-left: 20px;
+  border-left: 2px solid var(--ink);
+  background: var(--tk-canvas) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f3f7f9' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 20px no-repeat;
+}
+
+/* Bouton de retour (404) : la case flèche passe à gauche. */
+.btn-primary.btn-back {
+  flex-direction: row-reverse;
+  padding: 0 22px 0 0;
+}
+
+.btn-primary.btn-back::after {
+  margin: 0 20px 0 0;
+  border-left: 0;
+  border-right: 2px solid var(--ink);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f3f7f9' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
+}
+
+/* Formulaires : bouton pleine largeur, libellé centré, case flèche à droite. */
+.btn-send {
+  display: flex;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 48px;
+}
+
+.btn-send::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+}
+
+.btn-primary:hover,
+.btn-send:hover {
+  filter: none;
+  background: var(--tk-primary);
+  transform: translate(2px, -2px);
+  box-shadow: -6px 6px 0 var(--ink);
+}
+
+.btn-primary:active,
+.btn-send:active {
+  transform: translate(-4px, 4px);
+  box-shadow: 0 0 0 var(--ink);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.error-btn-secondary,
+.error-btn-secondary:hover {
+  background: var(--tk-surface);
+  color: var(--tk-text);
+}
+
+main :is(.btn-primary, .btn-send) {
+  font-size: 16px !important;
+}
+
+/* Boutons secondaires : même trait et même ombre, sur aplat sombre. */
+.btn,
+.domain-group-toggle,
+.actu-card-btn {
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  background: var(--tk-surface);
+  color: var(--tk-text);
+  box-shadow: -3px 3px 0 var(--ink);
+  opacity: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover,
+.domain-group-toggle:hover,
+.actu-card-btn:hover {
+  border-color: var(--ink);
+  background: var(--tk-surface-soft);
+  color: var(--tk-text);
+  opacity: 1;
+  transform: translate(2px, -2px);
+  box-shadow: -5px 5px 0 var(--ink);
+}
+
+.btn:active,
+.domain-group-toggle:active,
+.actu-card-btn:active {
+  transform: translate(-3px, 3px);
+  box-shadow: 0 0 0 var(--ink);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+/* Cartes en grille : collées les unes aux autres, coins droits, bordures
+   partagées (la marge négative fait chevaucher les traits voisins, ce qui
+   garde une bordure complète à chaque carte, même seule sur sa ligne).
+   La carte survolée passe au-dessus de ses voisines pour montrer son trait
+   bleu en entier. */
+:is(.grid, .eco-list, .actu-grid) {
+  gap: 0;
+  padding: 0 1px 1px 0;
+}
+
+:is(.grid, .eco-list, .actu-grid) > :is(.card, .eco-item) {
+  margin: 0 -1px -1px 0;
+  border: 1px solid var(--grid-line);
+  border-radius: 0;
+}
+
+a.card:hover {
+  z-index: 1;
+  border-color: var(--tk-primary);
+  background: var(--tk-surface-soft);
+  transform: none;
+}
+
+/* Titres de carte en capitales, comme les « content tracks » de MoonShot.
+   Les titres d'actualité, qui sont des phrases, restent en casse normale. */
+.card h3:not(.actu-card-title),
+.eco-item :is(h3, h4) {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Grands titres de section en capitales. Les quatre pages de lecture
+   (mentions légales, confidentialité, conditions, à propos) gardent des
+   titres en casse normale : leurs titres sont longs et numérotés. */
+main h2:not(.sr-only, .quiz-question-title) {
+  font-size: clamp(26px, 0.9rem + 2.8vw, 48px) !important;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Page d'une roadmap : le nom de la roadmap (h1, 40 px) reste le plus grand
+   titre ; les étapes et les rubriques du bas restent en capitales, plus
+   petites. */
+.page-roadmap main h2:not(.sr-only) {
+  font-size: clamp(24px, 1rem + 1vw, 30px) !important;
+  line-height: 1.15;
+}
+
+main .hero-legal ~ * h2:not(.sr-only) {
+  font-size: 24px !important;
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.roadmap-category > h2,
+.eco-section > h2,
+.related-section > h2 {
+  margin-bottom: 14px;
+}
+
+/* Bandeau défilant (accueil) : bande bleue pleine largeur, mots en
+   capitales qui défilent en continu. Décoratif (aria-hidden), avec un
+   bouton pause pour le clavier et le tactile (critère WCAG 2.2.2) ; arrêté
+   au survol, et immobile avec le réglage « réduire les animations ». */
+body {
+  overflow-x: clip;
+}
+
+/* --scrollbar (largeur de la barre de défilement, posée par nav.js) : sans
+   elle, 100vw déborderait de cette largeur sous Windows. */
+.marquee {
+  position: relative;
+  width: calc(100vw - var(--scrollbar, 0px));
+  margin: 24px 0 8px calc(50% - 50vw + var(--scrollbar, 0px) / 2);
+  overflow: hidden;
+  background: var(--tk-primary);
+  color: var(--tk-canvas);
+  border-block: 2px solid var(--ink);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: wiyao-marquee 60s linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee.is-paused .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes wiyao-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-list {
+  display: flex;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main .marquee-list li {
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  font-size: clamp(26px, 1rem + 1.6vw, 40px) !important;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.marquee-list li::after {
+  content: "•";
+  margin: 0 0.5em;
+}
+
+.marquee-pause {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  background: var(--tk-canvas);
+  color: var(--tk-text);
+  box-shadow: -3px 3px 0 var(--ink);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.marquee-pause:hover {
+  background: var(--tk-surface-soft);
+}
+
+.marquee-pause:active {
+  transform: translate(-3px, calc(-50% + 3px));
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.marquee-pause .ico-play,
+.marquee-pause[aria-pressed="true"] .ico-pause {
+  display: none;
+}
+
+.marquee-pause[aria-pressed="true"] .ico-play {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .marquee-pause {
+    display: none;
+  }
+}
+
 /* Réglage système « réduire les animations » : plus de mouvement décoratif
    (survols qui bougent, défilement doux, lueur de l'accueil). */
 @media (prefers-reduced-motion: reduce) {

@@ -49,9 +49,18 @@
       en: "The guide that walks you through every step: orientation, choosing a domain, a track, a university, career roadmaps, scholarships and internships, in Lomé and across Togo.",
     },
     "hero.cta": {
-      fr: "Faire le test d'orientation →",
-      en: "Take the orientation test →",
+      fr: "Faire le test d'orientation",
+      en: "Take the orientation test",
     },
+    // Bandeau défilant de l'accueil (décoratif) et son bouton pause.
+    "marquee.orientation": { fr: "Orientation", en: "Guidance" },
+    "marquee.roadmaps": { fr: "Roadmaps", en: "Roadmaps" },
+    "marquee.ecoles": { fr: "Écoles", en: "Schools" },
+    "marquee.calendrier": { fr: "Calendrier", en: "Calendar" },
+    "marquee.bourses": { fr: "Bourses", en: "Scholarships" },
+    "marquee.stages": { fr: "Stages", en: "Internships" },
+    "marquee.ecosysteme": { fr: "Écosystème", en: "Ecosystem" },
+    "marquee.pause": { fr: "Mettre en pause le bandeau défilant", en: "Pause the scrolling banner" },
     "hero.guide": {
       fr: 'Nouveau·elle ici ? Découvre <a href="about.html">ce qu\'est WIYAO</a> en 30 secondes.',
       en: 'New here? See <a href="about.html">what WIYAO is</a> in 30 seconds.',
@@ -343,8 +352,8 @@
       fr: "Cette page n'existe pas, plus, ou l'adresse contient une faute de frappe.",
       en: "This page doesn't exist, no longer exists, or the address has a typo.",
     },
-    "error404.cta.home": { fr: "← Retour à l'accueil", en: "← Back to home" },
-    "error404.cta.search": { fr: "Rechercher sur WIYAO →", en: "Search WIYAO →" },
+    "error404.cta.home": { fr: "Retour à l'accueil", en: "Back to home" },
+    "error404.cta.search": { fr: "Rechercher sur WIYAO", en: "Search WIYAO" },
     "error404.note": {
       fr: 'Si tu penses qu\'un lien est cassé, dis-le-nous via la page <a href="contact.html">Contact</a>.',
       en: 'If you think a link is broken, let us know via the <a href="contact.html">Contact</a> page.',
