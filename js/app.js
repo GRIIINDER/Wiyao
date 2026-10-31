@@ -479,6 +479,36 @@
   }
 
   // ---- Page roadmap détail ----
+  // Bandeau défilant (même structure que ceux écrits dans les pages HTML).
+  function buildMarquee(words, isEn) {
+    const band = document.createElement("div");
+    band.className = "marquee";
+    band.setAttribute("data-marquee", "");
+    const track = document.createElement("div");
+    track.className = "marquee-track";
+    track.setAttribute("aria-hidden", "true");
+    const list = document.createElement("ul");
+    list.className = "marquee-list";
+    words.forEach((word) => {
+      const li = document.createElement("li");
+      li.textContent = word;
+      list.appendChild(li);
+    });
+    track.appendChild(list);
+    band.appendChild(track);
+    const pause = document.createElement("button");
+    pause.type = "button";
+    pause.className = "marquee-pause";
+    pause.setAttribute("aria-pressed", "false");
+    pause.setAttribute("data-i18n-aria-label", "marquee.pause");
+    pause.setAttribute("aria-label", isEn ? "Pause the scrolling banner" : "Mettre en pause le bandeau défilant");
+    pause.innerHTML =
+      '<svg class="ico-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg>' +
+      '<svg class="ico-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7 5v14l12-7z"></path></svg>';
+    band.appendChild(pause);
+    return band;
+  }
+
   function renderRoadmap() {
     const container = document.getElementById("roadmap-detail");
     if (!container) return;
@@ -544,6 +574,12 @@
     // de flotter seuls au-dessus de la page.
     const toolbar = document.querySelector(".roadmap-toolbar");
     if (toolbar) header.appendChild(toolbar);
+
+    // Bandeau défilant façon MoonShot : les étapes de cette roadmap, sans
+    // leur numéro (mise en mouvement par nav.js).
+    const marquee = buildMarquee(rm.sections.map((s) => s.title.replace(/^\d+\.\s*/, "")), isEn);
+    container.appendChild(marquee);
+    if (window.wiyaoMarquee) window.wiyaoMarquee(marquee);
 
     function updateGlobal() {
       const done = (loadProgress().get(id) || []).length;

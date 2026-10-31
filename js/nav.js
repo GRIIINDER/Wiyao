@@ -395,28 +395,33 @@
   }, { threshold: 0.15 }).observe(quiz);
 })();
 
-// Bandeau défilant (accueil, façon MoonShot) - WIYAO
+// Bandeaux défilants (façon MoonShot) - WIYAO
 // La liste est recopiée jusqu'à couvrir l'écran le plus large, puis doublée :
 // la piste glisse de la moitié de sa largeur, en boucle sans à-coup. Vitesse
 // constante quelle que soit la langue. Le bouton pause garde le bandeau
 // immobile (clavier, tactile) ; le CSS l'arrête aussi au survol et avec le
-// réglage « réduire les animations ».
+// réglage « réduire les animations ». window.wiyaoMarquee sert aux bandeaux
+// construits après coup (celui d'une roadmap, par app.js).
 (function () {
   "use strict";
 
-  var marquees = document.querySelectorAll("[data-marquee]");
-  if (!marquees.length) return;
-
   // Le bandeau occupe toute la largeur de la fenêtre, barre de défilement exclue.
+  var measuring = false;
   function measureScrollbar() {
     var width = window.innerWidth - document.documentElement.clientWidth;
     document.documentElement.style.setProperty("--scrollbar", Math.max(0, width) + "px");
   }
-  measureScrollbar();
-  window.addEventListener("resize", measureScrollbar);
-  window.addEventListener("load", measureScrollbar);
 
-  Array.prototype.forEach.call(marquees, function (marquee) {
+  function initMarquee(marquee) {
+    if (marquee.hasAttribute("data-marquee-ready")) return;
+    marquee.setAttribute("data-marquee-ready", "");
+    if (!measuring) {
+      measuring = true;
+      measureScrollbar();
+      window.addEventListener("resize", measureScrollbar);
+      window.addEventListener("load", measureScrollbar);
+    }
+
     var track = marquee.querySelector(".marquee-track");
     var list = track && track.querySelector(".marquee-list");
     if (!list) return;
@@ -424,7 +429,9 @@
     // Marge de 50 % : la liste est mesurée en français, la traduction
     // anglaise (appliquée ensuite) peut être plus courte.
     var target = 1.5 * Math.max(window.screen ? window.screen.width : 0, window.innerWidth, 1280);
-    var width = list.getBoundingClientRect().width || 1;
+    // Plancher de 200 px : une liste encore masquée (largeur nulle) ne doit
+    // pas déclencher des milliers de copies.
+    var width = Math.max(list.getBoundingClientRect().width, 200);
     for (var i = 1; i < Math.ceil(target / width); i++) track.appendChild(list.cloneNode(true));
     Array.prototype.slice.call(track.children).forEach(function (copy) {
       track.appendChild(copy.cloneNode(true));
@@ -444,7 +451,10 @@
         marquee.classList.toggle("is-paused", paused);
       });
     }
-  });
+  }
+
+  window.wiyaoMarquee = initMarquee;
+  Array.prototype.forEach.call(document.querySelectorAll("[data-marquee]"), initMarquee);
 })();
 
 // Bouton retour en haut - WIYAO

@@ -6,7 +6,7 @@
 <title>Page introuvable - WIYAO</title>
 <meta name="description" content="Cette page n'existe pas ou plus. Retourne à l'accueil ou cherche ce que tu voulais trouver sur WIYAO.">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="css/style.css?v=226">
+<link rel="stylesheet" href="css/style.css?v=227">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a0d1c">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -89,6 +89,16 @@
     </div>
     <p class="hero-guide" data-i18n-key="error404.note">Si tu penses qu'un lien est cassé, dis-le-nous via la page <a href="contact.html">Contact</a>.</p>
   </section>
+
+  <div class="marquee" data-marquee>
+    <div class="marquee-track" aria-hidden="true">
+      <ul class="marquee-list">
+        <li data-i18n-key="marquee.404.code">404</li>
+        <li data-i18n-key="error404.title">Page introuvable</li>
+      </ul>
+    </div>
+    <button type="button" class="marquee-pause" aria-pressed="false" data-i18n-aria-label="marquee.pause" aria-label="Mettre en pause le bandeau défilant"><svg class="ico-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg><svg class="ico-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7 5v14l12-7z"></path></svg></button>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -144,9 +154,9 @@
   </div>
 </footer>
 
-<script src="js/nav.js?v=20"></script>
+<script src="js/nav.js?v=21"></script>
 <script src="js/assistant.js?v=2"></script>
-<script src="js/i18n.js?v=130"></script>
+<script src="js/i18n.js?v=131"></script>
 <script src="js/vendor/gsap.min.js?v=3150"></script>
 <script src="js/anim.js?v=4"></script>
 </body>
