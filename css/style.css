@@ -20,49 +20,99 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+/* Polices façon MoonShot (2026-10-31) : Outfit pour les titres, Urbanist
+   pour le texte. Polices libres (SIL OFL 1.1, licences dans fonts/),
+   récupérées sur Google Fonts et hébergées ici : aucun appel à Google. */
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/outfit-variable-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/outfit-variable-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/urbanist-variable-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/urbanist-variable-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
   /* Couleurs du drapeau togolais (logo uniquement) et signalétique sémantique (niveaux, urgence) */
   --green: #006a4e;
   --yellow: #ffce00;
   --red: #d21034;
-  /* Palette de marque inspirée de Codecademy : bleu, noir (navy), blanc */
-  /* Jetons des cartes : alignés sur la palette sombre du site (les cartes
-     étaient blanches jusqu'au 2026-10-09). En impression, ils suivent les
-     jetons --tk-* que le bloc @media print repasse en clair. */
+  /* Palette façon MoonShot by TechCabal (2026-10-31, à la demande de
+     l'utilisateur ; remplace le thème sombre) : fond crème, texte et traits
+     bleu marine, bandes de couleur. L'orange des bandes portant du texte
+     blanc est foncé (--ms-orange-ink) pour tenir le contraste 4,5:1. */
+  --ms-navy: #161b46;
+  --ms-cream: #fdf4e8;
+  --ms-orange: #da5838;
+  --ms-orange-ink: #c4421f;
+  --ms-yellow: #e9a944;
+  --ms-purple: #8654d6;
+  --ms-purple-deep: #723dc4;
+  --ms-pink: #ffddff;
+  --ms-teal: #bbf7ff;
+  --ms-green: #86e588;
   --accent: var(--tk-primary);
   --accent-soft: var(--tk-primary-soft);
-  --accent-wash: rgba(102, 196, 255, 0.06);
+  --accent-wash: rgba(36, 61, 204, 0.06);
   --bg: var(--tk-canvas);
   --card-bg: var(--tk-surface);
   --text: var(--tk-text);
   --text-muted: var(--tk-text-muted);
   --border: var(--tk-border);
-  /* Teintes des badges sur fond sombre (vert / jaune / rouge). */
-  --tint-green-bg: rgba(52, 199, 123, 0.15);
-  --tint-green-fg: #7ee2a8;
-  --tint-yellow-bg: rgba(255, 206, 0, 0.14);
-  --tint-yellow-fg: #ffd666;
-  --tint-red-bg: rgba(255, 99, 99, 0.15);
-  --tint-red-fg: #ff9e9e;
+  /* Teintes des badges sur fond clair (vert / jaune / rouge). */
+  --tint-green-bg: #dcf7e0;
+  --tint-green-fg: #075f3c;
+  --tint-yellow-bg: #fdf0d5;
+  --tint-yellow-fg: #7a5200;
+  --tint-red-bg: #fde6e2;
+  --tint-red-fg: #9e1c10;
   --radius: 18px;
-  --tk-canvas: #0a0d1c;
-  --tk-surface: #10162f;
-  --tk-surface-soft: #1a244c;
-  --tk-border: #222e63;
-  --tk-text: #f3f7f9;
-  --tk-text-reading: #d5dde2;
-  --tk-text-muted: #b6c3e0;
-  --tk-text-subtle: #8d9ccb;
-  --tk-primary: #66c4ff;
-  --tk-primary-hover: #3388ff;
-  --tk-primary-soft: #082c5e;
+  --tk-canvas: var(--ms-cream);
+  --tk-surface: #ffffff;
+  --tk-surface-soft: #f6ead6;
+  --tk-border: #d6cbb8;
+  --tk-text: var(--ms-navy);
+  --tk-text-reading: #2a2a2d;
+  --tk-text-muted: #45475a;
+  --tk-text-subtle: #5e5f6b;
+  --tk-primary: #243dcc;
+  --tk-primary-hover: #1a2c99;
+  --tk-primary-soft: #e3e8ff;
   /* Largeur de la colonne de contenu, calée sur le catalogue Codecademy (~1240 px). */
   --content-max: 1240px;
   /* Texte courant : police système (Segoe UI, Roboto, San Francisco…),
      rien à télécharger et conçue pour la lecture à l'écran. La police à
      chasse fixe reste l'accent de la marque (grands titres, chiffres),
      pas la police de lecture. */
-  --font-text: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-text: "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-display: "Outfit", "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
   font-family: var(--font-text);
 }
@@ -4098,6 +4148,775 @@ main .marquee-list li {
   .marquee-pause {
     display: none;
   }
+}
+
+/* ══ Thème clair façon MoonShot by TechCabal (2026-10-31) ══
+   À la demande de l'utilisateur, WIYAO reprend tout le style de MoonShot :
+   fond crème, texte et traits bleu marine, grandes bandes de couleur
+   (orange en haut de page, marine pour les bandeaux, blanc / crème /
+   violet / rose / turquoise pour les sections), titres très gras en
+   Outfit, texte en Urbanist. Seul le style est recréé : aucune image,
+   illustration ni logo de TechCabal. Placé en fin de feuille pour primer
+   sur les règles du thème sombre. */
+body {
+  font-family: var(--font-text);
+  font-weight: 500;
+  color: var(--tk-text);
+}
+
+:is(h1, h2, h3, h4, h5, h6, summary, .marquee-list, .btn-primary, .btn-send, .btn, .domain-group-toggle, .cta-float, .footer-col h2, .journey-step-number) {
+  font-family: var(--font-display);
+}
+
+main :is(h2, h3, h4) {
+  color: var(--tk-text);
+}
+
+main h2:not(.sr-only, .quiz-question-title) {
+  font-weight: 800 !important;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+/* Bande pleine largeur derrière une section, sans changer sa largeur de
+   contenu : une ombre portée géante de la couleur de la bande, rognée en
+   haut et en bas. */
+.band,
+:is(main, .faq-layout) > .hero,
+#roadmap-detail > :is(.breadcrumb, .roadmap-header),
+main > :is(.roadmap-category, .eco-section, .related-section, .contact-section, .about-section),
+#roadmap-detail > .related-section,
+.faq-content {
+  box-shadow: 0 0 0 100vmax var(--band, transparent);
+  clip-path: inset(0 -100vmax);
+  background: var(--band, transparent);
+}
+
+/* ── En-tête : bande orange pleine largeur, logo et menus en blanc,
+   menus déroulants violets. Le bouton du test devient un bouton flottant
+   (comme « Get Tickets »). */
+.scroll-progress {
+  height: 4px;
+  background: var(--ms-teal);
+}
+
+header.site-header {
+  padding: 0;
+  background: var(--ms-orange-ink);
+  border-bottom: 2px solid var(--ms-navy);
+}
+
+.site-header-top,
+header.site-header.is-scrolled .site-header-top,
+header.site-header.is-menu-open .site-header-top {
+  max-width: 1100px;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.brand-mark {
+  background: #ffffff;
+}
+
+.nav-more-toggle,
+.nav-more-toggle:hover,
+.nav-more-toggle.active {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.nav-more-toggle:hover,
+.nav-more-toggle.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.nav-more-menu {
+  top: calc(100% + 14px);
+  gap: 0;
+  padding: 8px;
+  background: var(--ms-purple-deep);
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  box-shadow: -4px 4px 0 var(--ms-navy);
+}
+
+.nav-more-menu a,
+.nav-more-menu a.active {
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+.nav-more-menu a:hover {
+  color: var(--ms-navy);
+  background: var(--ms-teal);
+}
+
+.nav-more-menu a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.lang-switch {
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.lang-btn {
+  color: #ffffff;
+  border-radius: 0;
+}
+
+.lang-btn:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lang-btn.active {
+  color: var(--ms-navy);
+  background: #ffffff;
+}
+
+.nav-search-icon,
+.nav-search-icon:hover,
+.nav-search-icon.active {
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+.nav-search-icon:hover,
+.nav-search-icon.active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.nav-burger {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  background: #ffffff;
+  color: var(--ms-navy);
+  box-shadow: -3px 3px 0 var(--ms-navy);
+}
+
+header.site-header :focus-visible {
+  outline-color: #ffffff;
+}
+
+/* Le bouton du test quitte la barre : il flotte en bas à gauche. */
+.header-cta {
+  display: none !important;
+}
+
+.cta-float {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 55;
+  display: inline-flex;
+  align-items: stretch;
+  min-height: 48px;
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  background: var(--ms-yellow);
+  color: var(--ms-navy);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  box-shadow: -4px 4px 0 var(--ms-navy);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta-float-label {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.cta-float-arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  border-left: 2px solid var(--ms-navy);
+  background: #ffffff;
+}
+
+.cta-float:hover {
+  transform: translate(2px, -2px);
+  box-shadow: -6px 6px 0 var(--ms-navy);
+}
+
+.cta-float:active {
+  transform: translate(-4px, 4px);
+  box-shadow: 0 0 0 var(--ms-navy);
+}
+
+@media (max-width: 1079px) {
+  nav.site-nav {
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ms-purple-deep);
+    border: 2px solid var(--ms-navy);
+    border-radius: 2px;
+    box-shadow: -4px 4px 0 var(--ms-navy);
+  }
+  .nav-group-label {
+    color: var(--ms-teal);
+  }
+  .site-nav .nav-more-menu a {
+    color: #ffffff;
+  }
+  .nav-more-menu a:hover {
+    color: var(--ms-teal);
+    background: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .site-header-top,
+  header.site-header.is-scrolled .site-header-top,
+  header.site-header.is-menu-open .site-header-top {
+    padding: 10px 16px;
+  }
+  .cta-float {
+    left: 12px;
+    bottom: 12px;
+    font-size: 0.875rem;
+  }
+}
+
+/* ── Haut de page : l'introduction est une bande orange, texte blanc. */
+main {
+  padding-top: 0;
+}
+
+.page-roadmap main {
+  padding-top: 0;
+}
+
+:is(main, .faq-layout) > .hero,
+#roadmap-detail > :is(.breadcrumb, .roadmap-header) {
+  --band: var(--ms-orange-ink);
+  --tk-text: #ffffff;
+  --tk-text-reading: #ffffff;
+  --tk-text-muted: #fff4ee;
+  --tk-text-subtle: #ffe6da;
+  --tk-primary: #ffffff;
+  --tk-border: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+:is(main, .faq-layout) > .hero {
+  padding: 48px 0 56px;
+}
+
+:is(main, .faq-layout) > .hero p:first-of-type,
+main .hero > p:first-child {
+  font-size: 22px !important;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+:is(main, .faq-layout) > .hero a:not(.btn-primary),
+#roadmap-detail > :is(.breadcrumb, .roadmap-header) a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+main > .hero .hero-reassure li {
+  color: #ffffff;
+}
+
+#roadmap-detail > .breadcrumb {
+  margin: 0;
+  padding: 28px 0 0;
+}
+
+#roadmap-detail > .roadmap-header {
+  margin: 0;
+  padding: 16px 0 48px;
+}
+
+.roadmap-header h1 {
+  font-family: var(--font-display) !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.roadmap-header .progress-bar {
+  background: rgba(255, 255, 255, 0.35);
+  border: 2px solid var(--ms-navy);
+}
+
+.roadmap-header .progress-fill {
+  background: var(--ms-teal);
+}
+
+.faq-badge {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+/* ── Bandeaux défilants : bande marine, mots crème, collée sous le haut
+   de page orange. */
+.marquee {
+  margin-top: 0;
+  margin-bottom: 0;
+  background: var(--ms-navy);
+  color: var(--ms-cream);
+  border-block: 0;
+}
+
+main .marquee-list li {
+  font-weight: 800;
+}
+
+.marquee-pause {
+  border-color: var(--ms-navy);
+  background: #ffffff;
+  color: var(--ms-navy);
+  box-shadow: -3px 3px 0 var(--ms-teal);
+}
+
+.marquee-pause:hover {
+  background: var(--ms-teal);
+}
+
+/* ── Sections : bandes alternées crème / blanc, quelques bandes de
+   couleur (violet, rose, turquoise). */
+main > :is(.roadmap-category, .eco-section, .related-section, .contact-section, .about-section),
+#roadmap-detail > .related-section {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+main > :is(.roadmap-category, .eco-section):nth-of-type(even),
+#roadmap-detail > .related-section:nth-of-type(even) {
+  --band: #ffffff;
+}
+
+#par-competence,
+#portraits {
+  --band: var(--ms-purple);
+  --tk-text: #ffffff;
+  --tk-text-muted: #ffffff;
+  --tk-text-subtle: #ffffff;
+  --tk-primary: #ffffff;
+  color: #ffffff;
+}
+
+#femmes-tech,
+#bac,
+#secteurs-porteurs,
+#etat {
+  --band: var(--ms-pink);
+}
+
+#lexique,
+#chiffres,
+#ressources-locales,
+#hubs,
+.faq-content {
+  --band: var(--ms-teal);
+}
+
+main > .about-section:last-of-type {
+  padding-bottom: 72px;
+}
+
+/* Les cartes et blocs posés sur une bande gardent les couleurs d'une
+   surface claire, quelle que soit la couleur de la bande. */
+:is(.card, .eco-item, .faq-item, .contact-card, .search-result, .quiz-card, .togo-notice, .item, .dates-row, .timeline-item, .domain-primer-item) {
+  --tk-text: var(--ms-navy);
+  --tk-text-reading: #2a2a2d;
+  --tk-text-muted: #45475a;
+  --tk-text-subtle: #5e5f6b;
+  --tk-primary: #243dcc;
+  --tk-border: #d6cbb8;
+}
+
+/* ── Cartes : blanches, traits marine, titres en capitales Outfit. Au
+   survol, une carte cliquable passe au turquoise. */
+:root {
+  --ink: var(--ms-navy);
+  --grid-line: var(--ms-navy);
+}
+
+.card,
+.eco-item {
+  background: #ffffff;
+  color: var(--ms-navy);
+}
+
+:is(.grid, .eco-list, .actu-grid) > :is(.card, .eco-item) {
+  border-width: 1.5px;
+}
+
+.card h3:not(.actu-card-title),
+.eco-item :is(h3, h4) {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+a.card:hover {
+  background: var(--ms-teal);
+  border-color: var(--ms-navy);
+}
+
+.card p,
+.eco-item p {
+  color: var(--tk-text-muted);
+}
+
+.progress-bar {
+  background: var(--tk-surface-soft);
+  border: 1.5px solid var(--ms-navy);
+  border-radius: 0;
+}
+
+.progress-fill {
+  background: var(--ms-orange);
+}
+
+.badge.togo-badge,
+.roadmap-header .togo-badge {
+  background: var(--tk-primary-soft);
+  color: #243dcc;
+}
+
+.badge.best-match-badge {
+  background: var(--ms-navy);
+  color: #ffffff;
+}
+
+.roadmap-header .badge {
+  border: 1.5px solid var(--ms-navy);
+}
+
+.roadmap-header .type-badge,
+.roadmap-header .level-badge {
+  background: #ffffff;
+  color: var(--ms-navy);
+}
+
+/* ── Boutons : aplat turquoise (principal) ou blanc (secondaire), trait
+   et ombre marine, case flèche blanche. */
+.btn-primary,
+.btn-send {
+  background: var(--ms-teal);
+  color: var(--ms-navy);
+}
+
+.btn-primary:hover,
+.btn-send:hover {
+  background: var(--ms-teal);
+}
+
+.btn-primary::after,
+.btn-send::after {
+  background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161b46' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 20px no-repeat;
+}
+
+.btn-primary.btn-back::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161b46' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
+}
+
+.error-btn-secondary,
+.error-btn-secondary:hover {
+  background: #ffffff;
+  color: var(--ms-navy);
+}
+
+.btn,
+.domain-group-toggle,
+.actu-card-btn,
+.btn:hover,
+.domain-group-toggle:hover,
+.actu-card-btn:hover {
+  border-color: var(--ms-navy);
+  color: var(--ms-navy);
+}
+
+.btn,
+.domain-group-toggle,
+.actu-card-btn {
+  background: #ffffff;
+}
+
+.btn:hover,
+.domain-group-toggle:hover,
+.actu-card-btn:hover {
+  background: var(--ms-yellow);
+}
+
+.btn .ico {
+  color: var(--ms-navy);
+}
+
+/* Hors de la bande orange, la marge de 22 px du bouton d'accueil reste. */
+.hero .btn-primary {
+  margin-top: 28px;
+}
+
+/* ── Filtres en pastilles : trait marine, actif plein. */
+.domain-chip {
+  background: #ffffff;
+  border: 1.5px solid var(--ms-navy);
+  color: var(--ms-navy);
+  font-weight: 700;
+}
+
+.domain-chip:hover {
+  background: var(--ms-teal);
+  color: var(--ms-navy);
+}
+
+.domain-chip.active,
+.domain-chip.active:hover {
+  background: var(--ms-navy);
+  color: #ffffff;
+}
+
+#contact-mode-filters .domain-chip {
+  border: 2px solid var(--ms-navy);
+}
+
+/* ── Parcours de l'accueil : numéros en carrés de couleur, trait marine. */
+.journey-step-number {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  background: var(--ms-teal);
+  color: var(--ms-navy);
+  font-weight: 800;
+  box-shadow: -3px 3px 0 var(--ms-navy);
+}
+
+.journey-step:nth-child(6n + 2) .journey-step-number { background: var(--ms-yellow); }
+.journey-step:nth-child(6n + 3) .journey-step-number { background: var(--ms-pink); }
+.journey-step:nth-child(6n + 4) .journey-step-number { background: var(--ms-orange-ink); color: #ffffff; }
+.journey-step:nth-child(6n + 5) .journey-step-number { background: var(--ms-green); }
+.journey-step:nth-child(6n) .journey-step-number { background: var(--ms-purple); color: #ffffff; }
+
+#parcours .journey-step:not(:last-child)::after {
+  background: var(--ms-navy);
+}
+
+.journey-step a {
+  color: #243dcc;
+}
+
+/* ── FAQ : lignes blanches encadrées de marine, collées, sur bande
+   turquoise ; question en Outfit, flèche dans un rond à droite. */
+.faq-layout {
+  max-width: none;
+}
+
+.faq-layout > .hero {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.hero.faq-hero p {
+  margin: 0;
+  text-align: left;
+}
+
+.faq-content {
+  padding: 56px 0 72px;
+}
+
+.faq-list {
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin: 0 0 -2px;
+  padding: 0 24px;
+  border: 2px solid var(--ms-navy);
+  border-radius: 0;
+  background: #ffffff;
+}
+
+main .faq-item summary {
+  padding: 22px 0;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--ms-navy);
+}
+
+.faq-item summary::after {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23161b46' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='16' cy='16' r='14'/%3E%3Cpath d='M16 9v14M10 17l6 6 6-6'/%3E%3C/svg%3E") center / 32px no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+
+.faq-item[open] {
+  background: #ffffff;
+}
+
+.faq-item p {
+  color: var(--tk-text-muted);
+}
+
+@media (max-width: 560px) {
+  .faq-item {
+    padding: 0 16px;
+  }
+  main .faq-item summary {
+    font-size: 18px !important;
+  }
+}
+
+/* ── Contact / Proposer : carte blanche à trait marine. */
+.contact-card {
+  background: #ffffff;
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  box-shadow: -6px 6px 0 var(--ms-navy);
+}
+
+.contact-form-field input,
+.contact-form-field textarea,
+.contact-form-field select,
+.search-bar input[type="search"] {
+  background: #ffffff;
+  border: 1.5px solid var(--ms-navy);
+  border-radius: 2px;
+  color: var(--ms-navy);
+}
+
+.contact-form-field input:focus,
+.contact-form-field textarea:focus,
+.contact-form-field select:focus {
+  background: #ffffff;
+  border-color: #243dcc;
+  box-shadow: 0 0 0 3px rgba(36, 61, 204, 0.25);
+}
+
+/* ── Pied de page : bande marine, titres de colonne en turquoise. */
+footer.site-footer {
+  background: var(--ms-navy);
+  border-top: 6px solid var(--ms-orange);
+  --tk-text: #ffffff;
+  --tk-text-muted: #e9ecfb;
+  --tk-text-subtle: #c9cdf0;
+  --tk-primary: var(--ms-teal);
+}
+
+.footer-col h2 {
+  color: var(--ms-teal);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.footer-links-col a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer.site-footer :focus-visible {
+  outline-color: var(--ms-teal);
+}
+
+/* ── Fenêtre « Informations légales » : voile marine, fenêtre blanche à
+   trait marine et ombre dure. */
+.legal-modal {
+  background: rgba(22, 27, 70, 0.6);
+}
+
+.legal-dialog {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  box-shadow: -8px 8px 0 var(--ms-navy);
+}
+
+.legal-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.legal-close {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.legal-close:hover {
+  background: var(--ms-yellow);
+}
+
+.legal-tab {
+  border: 1.5px solid var(--ms-navy);
+  border-radius: 2px;
+  color: var(--ms-navy);
+}
+
+.legal-tab:hover {
+  background: var(--ms-teal);
+}
+
+.legal-tab[aria-selected="true"] {
+  background: var(--ms-navy);
+  color: #ffffff;
+}
+
+/* ── Petits éléments flottants. */
+.back-to-top {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  background: #ffffff;
+  color: var(--ms-navy);
+  box-shadow: -3px 3px 0 var(--ms-navy);
+}
+
+.wiyao-assistant-toggle {
+  border: 2px solid var(--ms-navy);
+  background: var(--ms-purple);
+  color: #ffffff;
+  box-shadow: -4px 4px 0 var(--ms-navy);
+}
+
+.wiyao-assistant-panel {
+  border: 2px solid var(--ms-navy);
+  border-radius: 2px;
+  box-shadow: -6px 6px 0 var(--ms-navy);
+}
+
+::selection {
+  background: var(--ms-orange-ink);
+  color: #ffffff;
+}
+
+:root {
+  accent-color: #243dcc;
+  scrollbar-color: var(--ms-navy) var(--ms-cream);
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline-color: #243dcc;
 }
 
 /* Réglage système « réduire les animations » : plus de mouvement décoratif

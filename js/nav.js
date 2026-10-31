@@ -458,6 +458,24 @@
   Array.prototype.forEach.call(document.querySelectorAll("[data-marquee]"), initMarquee);
 })();
 
+// Bouton flottant du test d'orientation (façon « Get Tickets » de MoonShot) - WIYAO
+// Remplace le bouton de l'en-tête : en bas à gauche de l'écran sur toutes les
+// pages, sauf le test lui-même et une roadmap (le test est dans le menu).
+(function () {
+  "use strict";
+
+  var page = location.pathname.split("/").pop() || "index.html";
+  if (page === "test-orientation.html" || document.body.classList.contains("page-roadmap")) return;
+
+  var link = document.createElement("a");
+  link.className = "cta-float";
+  link.href = "test-orientation.html";
+  link.innerHTML =
+    '<span class="cta-float-label" data-i18n-key="header.cta">Faire le test d\'orientation</span>' +
+    '<span class="cta-float-arrow" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>';
+  document.body.appendChild(link);
+})();
+
 // Bouton retour en haut - WIYAO
 (function () {
   "use strict";
