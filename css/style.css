@@ -4016,8 +4016,8 @@ a.card:hover {
    (mentions légales, confidentialité, conditions, à propos) gardent des
    titres en casse normale : leurs titres sont longs et numérotés. */
 main h2:not(.sr-only, .quiz-question-title) {
-  font-size: clamp(26px, 0.9rem + 2.8vw, 48px) !important;
-  line-height: 1.05;
+  font-size: clamp(30px, 1rem + 3.2vw, 56px) !important;
+  line-height: 1.02;
   text-transform: uppercase;
   letter-spacing: -0.01em;
   overflow-wrap: break-word;
@@ -4423,7 +4423,7 @@ main {
 }
 
 :is(main, .faq-layout) > .hero {
-  padding: 48px 0 56px;
+  padding: 96px 0;
 }
 
 :is(main, .faq-layout) > .hero p:first-of-type,
@@ -4446,12 +4446,12 @@ main > .hero .hero-reassure li {
 
 #roadmap-detail > .breadcrumb {
   margin: 0;
-  padding: 28px 0 0;
+  padding: 40px 0 0;
 }
 
 #roadmap-detail > .roadmap-header {
   margin: 0;
-  padding: 16px 0 48px;
+  padding: 24px 0 80px;
 }
 
 .roadmap-header h1 {
@@ -4506,8 +4506,8 @@ main > :is(.roadmap-category, .eco-section, .related-section, .contact-section, 
 #roadmap-detail > .related-section {
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 main > :is(.roadmap-category, .eco-section):nth-of-type(even),
@@ -4733,16 +4733,10 @@ a.card:hover {
 
 .faq-layout > .hero {
   margin-bottom: 0;
-  text-align: left;
-}
-
-.hero.faq-hero p {
-  margin: 0;
-  text-align: left;
 }
 
 .faq-content {
-  padding: 56px 0 72px;
+  padding: 96px 0;
 }
 
 .faq-list {
@@ -4925,6 +4919,86 @@ footer.site-footer :focus-visible {
 
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
   outline-color: #243dcc;
+}
+
+/* ── Espacement et centrage de MoonShot, mesurés sur sa page : sections
+   aérées (80 à 120 px), grands titres et introductions centrés. Les longs
+   textes, listes et grilles restent alignés à gauche ; les 4 pages de
+   lecture gardent un espacement plus serré et leurs titres à gauche. */
+:is(main, .faq-layout) > .hero {
+  text-align: center;
+}
+
+/* L'ancienne règle « l'introduction remonte sous l'en-tête » (8 px) ne
+   vaut plus : la bande orange a sa propre marge. */
+main > .page-title-banner + .hero {
+  padding-top: 96px;
+}
+
+:is(main, .faq-layout) > .hero > :is(p, .hero-legal-meta) {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+:is(main, .faq-layout) > .hero :is(.hero-reassure, .error-actions),
+.eco-jump-nav {
+  justify-content: center;
+}
+
+/* Les filtres posés juste sous un titre centré (Roadmaps) se centrent
+   aussi ; ceux d'Écoles et de Recherche, avec leurs étiquettes, restent
+   à gauche comme un panneau d'outils. */
+main > .roadmap-category > h2 ~ .domain-filters {
+  justify-content: center;
+}
+
+/* Le sommaire de l'Écosystème se détache du bandeau défilant. */
+main > .eco-jump-nav {
+  margin: 40px 0 0;
+}
+
+main > :is(.roadmap-category, .eco-section, .related-section, .contact-section) > h2,
+main > .hero:not(.hero-legal) ~ .about-section > h2,
+#roadmap-detail > .related-section > h2,
+.calendrier-general-intro > h2 {
+  text-align: center;
+}
+
+main > :is(.roadmap-category, .eco-section) > h2 + .category-desc,
+.calendrier-general-intro > h2 + .category-desc {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+main > .hero-legal ~ .about-section {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+@media (max-width: 640px) {
+  :is(main, .faq-layout) > .hero,
+  main > .page-title-banner + .hero {
+    padding: 64px 0 72px;
+  }
+  :is(main, .faq-layout) > .hero p:first-of-type,
+  main .hero > p:first-child {
+    font-size: 19px !important;
+  }
+  main > :is(.roadmap-category, .eco-section, .related-section, .contact-section, .about-section),
+  #roadmap-detail > .related-section,
+  .faq-content {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  main > .hero-legal ~ .about-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  #roadmap-detail > .roadmap-header {
+    padding-bottom: 56px;
+  }
 }
 
 /* Réglage système « réduire les animations » : plus de mouvement décoratif
