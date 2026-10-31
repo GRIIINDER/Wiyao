@@ -4161,7 +4161,7 @@ main .marquee-list li {
    sur les règles du thème sombre. */
 body {
   font-family: var(--font-text);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--tk-text);
 }
 
@@ -4935,6 +4935,36 @@ main > .page-title-banner + .hero {
   padding-top: 96px;
 }
 
+/* Comme sur MoonShot, l'introduction occupe tout le premier écran, son
+   contenu centré dans la hauteur ; le bandeau défilant qui la suit reste
+   visible en bas de l'écran, signe qu'il y a une suite. Hauteurs mesurées :
+   en-tête 70 px (66 px sous 640 px), bandeau 28 px + 1,1 × sa police. */
+:root {
+  --wiyao-header-h: 70px;
+  --wiyao-marquee-h: calc(28px + 1.1 * clamp(26px, 1rem + 1.6vw, 40px));
+}
+
+:is(main, .faq-layout) > .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--wiyao-header-h) - var(--wiyao-marquee-h));
+  min-height: calc(100svh - var(--wiyao-header-h) - var(--wiyao-marquee-h));
+}
+
+/* Sauf sur la Recherche : son champ (autofocus) doit rester dans le premier
+   écran, sinon le navigateur saute par-dessus l'introduction. */
+main > .hero.hero-compact {
+  min-height: 0;
+}
+
+@media print {
+  :is(main, .faq-layout) > .hero {
+    min-height: 0;
+  }
+}
+
 :is(main, .faq-layout) > .hero > :is(p, .hero-legal-meta) {
   margin-left: auto;
   margin-right: auto;
@@ -4975,6 +5005,12 @@ main > :is(.roadmap-category, .eco-section) > h2 + .category-desc,
 main > .hero-legal ~ .about-section {
   padding-top: 56px;
   padding-bottom: 56px;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --wiyao-header-h: 66px;
+  }
 }
 
 @media (max-width: 640px) {
