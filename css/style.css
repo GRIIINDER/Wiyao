@@ -4915,21 +4915,19 @@ footer.site-footer {
   background-size: 100% 1px;
 }
 
-/* Liens légaux puis copyright, l'un sous l'autre ; 96 px dessous pour que
-   le copyright dégage le bouton flottant du test, en bas à gauche. */
+/* Copyright et liens légaux sur une même ligne (à la demande de
+   l'utilisateur), qui passe sur deux lignes quand la place manque ; 96 px
+   dessous pour dégager le bouton flottant du test, en bas à gauche. */
 .footer-bottom {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
   border-top: 0;
   padding-top: 0;
   padding-bottom: 96px;
-}
-
-.footer-bottom .footer-copy {
-  order: 2;
 }
 
 footer.site-footer :focus-visible {
