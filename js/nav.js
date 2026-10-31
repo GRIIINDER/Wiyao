@@ -421,7 +421,9 @@
     var list = track && track.querySelector(".marquee-list");
     if (!list) return;
 
-    var target = Math.max(window.screen ? window.screen.width : 0, window.innerWidth, 1280);
+    // Marge de 50 % : la liste est mesurée en français, la traduction
+    // anglaise (appliquée ensuite) peut être plus courte.
+    var target = 1.5 * Math.max(window.screen ? window.screen.width : 0, window.innerWidth, 1280);
     var width = list.getBoundingClientRect().width || 1;
     for (var i = 1; i < Math.ceil(target / width); i++) track.appendChild(list.cloneNode(true));
     Array.prototype.slice.call(track.children).forEach(function (copy) {
