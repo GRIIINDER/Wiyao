@@ -4845,11 +4845,11 @@ main .faq-item summary {
 
 /* ── Pied de page façon MoonShot (mesuré sur sa page, 2026-10-31) : bande
    violette annoncée par des rayures horizontales de plus en plus épaisses
-   (recréées en CSS, pas l'image de MoonShot) ; grand logo WIYAO blanc à
-   gauche, colonnes de liens à droite (titres Urbanist 18 px gras, liens
-   14 px), copyright et liens légaux sous les colonnes. Pas de réseaux
-   sociaux : WIYAO n'en a pas. Le logo est décoratif (::before) : le lien
-   vers l'accueil reste celui de l'en-tête. Blanc sur violet : 4,94:1. */
+   (recréées en CSS, pas l'image de MoonShot) ; colonnes de liens sur toute
+   la largeur (titres Urbanist 18 px gras, liens 14 px), liens légaux et
+   copyright dessous. Pas de logo (retiré à la demande de l'utilisateur le
+   2026-10-31) ni de réseaux sociaux (WIYAO n'en a pas). Blanc sur violet :
+   4,94:1. */
 footer.site-footer {
   --tk-text: #ffffff;
   --tk-text-muted: #ffffff;
@@ -4873,31 +4873,8 @@ footer.site-footer {
   color: #ffffff;
 }
 
-/* Même colonne de droite (largeur fixe) pour les liens et pour le bas du
-   pied de page, afin que tout s'aligne sur le même bord gauche. */
-.footer-inner,
-.footer-bottom {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 640px);
-  column-gap: 48px;
-}
-
 .footer-inner {
   padding-top: 80px;
-}
-
-.footer-inner::before {
-  content: "WIYAO";
-  content: "WIYAO" / "";
-  align-self: start;
-  color: #ffffff;
-  font-family: var(--font-display);
-  /* Mesuré : « WIYAO » espacé fait 4,6 fois sa taille de police ; à 68 px
-     il tient dans la colonne de gauche (330 px au plus étroit, 1 081 px). */
-  font-size: 68px;
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: 0.18em;
 }
 
 .footer-grid {
@@ -4938,19 +4915,21 @@ footer.site-footer {
   background-size: 100% 1px;
 }
 
+/* Liens légaux puis copyright, l'un sous l'autre ; 96 px dessous pour que
+   le copyright dégage le bouton flottant du test, en bas à gauche. */
 .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
   border-top: 0;
   padding-top: 0;
-  padding-bottom: 32px;
-}
-
-.footer-bottom > * {
-  grid-column: 2;
+  padding-bottom: 96px;
 }
 
 .footer-bottom .footer-copy {
   order: 2;
-  margin-top: 12px;
 }
 
 footer.site-footer :focus-visible {
@@ -4958,21 +4937,6 @@ footer.site-footer :focus-visible {
 }
 
 @media (max-width: 1080px) {
-  .footer-inner,
-  .footer-bottom {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .footer-inner::before {
-    font-size: clamp(52px, 2.4rem + 4vw, 96px);
-    margin-bottom: 48px;
-  }
-  .footer-bottom > * {
-    grid-column: 1;
-  }
-  /* Le copyright passe à gauche : il dégage le bouton flottant du test. */
-  .footer-bottom {
-    padding-bottom: 96px;
-  }
   .footer-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -5001,9 +4965,6 @@ footer.site-footer :focus-visible {
   }
   .footer-inner {
     padding-top: 56px;
-  }
-  .footer-inner::before {
-    margin-bottom: 40px;
   }
 }
 
