@@ -20,26 +20,27 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* Polices de MoonShot (2026-10-31) : Argentum Sans pour les titres,
-   boutons et bandeaux, Urbanist pour le texte. Polices libres (SIL OFL 1.1,
-   licences dans fonts/) : Argentum Sans vient de son dépôt officiel
-   (github.com/cssobral2013/Argentum-Sans), Urbanist de Google Fonts ;
-   toutes hébergées ici, aucun appel à un tiers. Seules les graisses 600 et
-   800 d'Argentum Sans sont chargées : 500 et 700 se rabattent dessus. */
+/* Police des titres : Bricolage Grotesque (2026-10-31, à la demande de
+   l'utilisateur, à la place d'Argentum Sans, la police de MoonShot), police
+   libre (SIL OFL 1.1, licence dans fonts/) récupérée sur Google Fonts et
+   hébergée ici. Fichier variable : graisses 200 à 800 et taille optique
+   (opsz) réglée automatiquement par le navigateur. Texte en Urbanist. */
 @font-face {
-  font-family: "Argentum Sans";
+  font-family: "Bricolage Grotesque";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 200 800;
   font-display: swap;
-  src: url("../fonts/ArgentumSans-SemiBold.ttf") format("truetype");
+  src: url("../fonts/bricolage-grotesque-variable-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: "Argentum Sans";
+  font-family: "Bricolage Grotesque";
   font-style: normal;
-  font-weight: 800;
+  font-weight: 200 800;
   font-display: swap;
-  src: url("../fonts/ArgentumSans-ExtraBold.ttf") format("truetype");
+  src: url("../fonts/bricolage-grotesque-variable-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
@@ -65,23 +66,24 @@
   --green: #006a4e;
   --yellow: #ffce00;
   --red: #d21034;
-  /* Palette façon MoonShot by TechCabal (2026-10-31, à la demande de
-     l'utilisateur ; remplace le thème sombre) : fond crème, texte et traits
-     bleu marine, bandes de couleur. L'orange des bandes portant du texte
-     blanc est foncé (--ms-orange-ink) pour tenir le contraste 4,5:1. */
-  --ms-navy: #161b46;
-  --ms-cream: #fdf4e8;
-  --ms-orange: #da5838;
-  --ms-orange-ink: #c4421f;
-  --ms-yellow: #e9a944;
-  --ms-purple: #8654d6;
-  --ms-purple-deep: #723dc4;
-  --ms-pink: #ffddff;
-  --ms-teal: #bbf7ff;
-  --ms-green: #86e588;
+  /* Palette WIYAO « Couleurs du Togo » (2026-10-31, à la demande de
+     l'utilisateur, à la place des couleurs exactes de MoonShot) : vert
+     forêt de marque, jaune soleil pour les actions, fond sable, texte et
+     traits vert nuit ; bleu roi, vert menthe et terre cuite pour les
+     rubriques. Blanc sur vert forêt 6,5:1, sur bleu roi 5,9:1 ; vert nuit
+     sur terre cuite 5,2:1, sur jaune, menthe et sable 9:1 et plus. */
+  --w-ink: #13241d;
+  --w-sand: #f5f0e6;
+  --w-brand: #0f6b4f;
+  --w-sun: #ffcd2e;
+  --w-sun-pale: #fff1b8;
+  --w-blue: #2f5bd3;
+  --w-blue-light: #9db8ff;
+  --w-mint: #a8e6cf;
+  --w-clay: #e2725b;
   --accent: var(--tk-primary);
   --accent-soft: var(--tk-primary-soft);
-  --accent-wash: rgba(36, 61, 204, 0.06);
+  --accent-wash: rgba(36, 73, 184, 0.06);
   --bg: var(--tk-canvas);
   --card-bg: var(--tk-surface);
   --text: var(--tk-text);
@@ -95,16 +97,16 @@
   --tint-red-bg: #fde6e2;
   --tint-red-fg: #9e1c10;
   --radius: 18px;
-  --tk-canvas: var(--ms-cream);
+  --tk-canvas: var(--w-sand);
   --tk-surface: #ffffff;
-  --tk-surface-soft: #f6ead6;
+  --tk-surface-soft: #ebe4d5;
   --tk-border: #d6cbb8;
-  --tk-text: var(--ms-navy);
+  --tk-text: var(--w-ink);
   --tk-text-reading: #2a2a2d;
-  --tk-text-muted: #45475a;
-  --tk-text-subtle: #5e5f6b;
-  --tk-primary: #243dcc;
-  --tk-primary-hover: #1a2c99;
+  --tk-text-muted: #414b45;
+  --tk-text-subtle: #58625b;
+  --tk-primary: #2449b8;
+  --tk-primary-hover: #1b3891;
   --tk-primary-soft: #e3e8ff;
   /* Largeur de la colonne de contenu, calée sur le catalogue Codecademy (~1240 px). */
   --content-max: 1240px;
@@ -113,7 +115,7 @@
      chasse fixe reste l'accent de la marque (grands titres, chiffres),
      pas la police de lecture. */
   --font-text: "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --font-display: "Argentum Sans", "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: "Bricolage Grotesque", "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
   font-family: var(--font-text);
 }
@@ -3879,7 +3881,7 @@ textarea {
   color: var(--tk-canvas);
   font-weight: 700;
   text-align: left;
-  box-shadow: -4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
   filter: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
@@ -3928,13 +3930,13 @@ textarea {
 .btn-send:hover {
   filter: none;
   background: var(--tk-primary);
-  transform: translate(2px, -2px);
-  box-shadow: -6px 6px 0 var(--ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
 }
 
 .btn-primary:active,
 .btn-send:active {
-  transform: translate(-4px, 4px);
+  transform: translate(4px, 4px);
   box-shadow: 0 0 0 var(--ink);
   transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
@@ -3957,7 +3959,7 @@ main :is(.btn-primary, .btn-send) {
   border-radius: 2px;
   background: var(--tk-surface);
   color: var(--tk-text);
-  box-shadow: -3px 3px 0 var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
   opacity: 1;
   transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease, background-color 0.15s ease;
 }
@@ -3969,14 +3971,14 @@ main :is(.btn-primary, .btn-send) {
   background: var(--tk-surface-soft);
   color: var(--tk-text);
   opacity: 1;
-  transform: translate(2px, -2px);
-  box-shadow: -5px 5px 0 var(--ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
 }
 
 .btn:active,
 .domain-group-toggle:active,
 .actu-card-btn:active {
-  transform: translate(-3px, 3px);
+  transform: translate(3px, 3px);
   box-shadow: 0 0 0 var(--ink);
   transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
@@ -4119,7 +4121,7 @@ main .marquee-list li {
   border-radius: 2px;
   background: var(--tk-canvas);
   color: var(--tk-text);
-  box-shadow: -3px 3px 0 var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
   cursor: pointer;
   transform: translateY(-50%);
 }
@@ -4129,7 +4131,7 @@ main .marquee-list li {
 }
 
 .marquee-pause:active {
-  transform: translate(-3px, calc(-50% + 3px));
+  transform: translate(3px, calc(-50% + 3px));
   box-shadow: 0 0 0 var(--ink);
 }
 
@@ -4151,7 +4153,12 @@ main .marquee-list li {
   }
 }
 
-/* ══ Thème clair façon MoonShot by TechCabal (2026-10-31) ══
+/* ══ Thème clair WIYAO (2026-10-31) ══
+   Né d'une reprise du style de MoonShot by TechCabal, puis rendu propre à
+   WIYAO le même jour à la demande de l'utilisateur : palette « Couleurs du
+   Togo », titres en Bricolage Grotesque, ombres vers la droite, flèches en
+   pastille et losanges des bandeaux (voir « Signature WIYAO »).
+   Historique : 
    À la demande de l'utilisateur, WIYAO reprend tout le style de MoonShot :
    fond crème, texte et traits bleu marine, grandes bandes de couleur
    (orange en haut de page, marine pour les bandeaux, blanc / crème /
@@ -4207,13 +4214,13 @@ main > :is(.roadmap-category, .eco-section, .related-section, .contact-section, 
    (comme « Get Tickets »). */
 .scroll-progress {
   height: 4px;
-  background: var(--ms-teal);
+  background: var(--w-sun);
 }
 
 header.site-header {
   padding: 0;
-  background: var(--ms-orange-ink);
-  border-bottom: 2px solid var(--ms-navy);
+  background: var(--w-brand);
+  border-bottom: 2px solid var(--w-ink);
 }
 
 .site-header-top,
@@ -4229,7 +4236,7 @@ header.site-header.is-menu-open .site-header-top {
   backdrop-filter: none;
 }
 
-/* Logo WIYAO écrit avec la police des titres du site (Argentum Sans), à
+/* Logo WIYAO écrit avec la police des titres du site (Bricolage Grotesque), à
    la demande de l'utilisateur (2026-10-31), au lieu du logo vectorisé
    manuscrit. Hauteur de ligne de 34 px : l'en-tête garde ses 70 px. */
 .brand-mark {
@@ -4286,37 +4293,37 @@ header.site-header.is-menu-open .site-header-top {
 
 /* Chaque menu déroulant prend la couleur de sa rubrique. */
 #nav-parcours {
-  --menu: var(--ms-purple);
+  --menu: var(--w-blue);
   --menu-ink: #ffffff;
-  --menu-label: var(--ms-lilac);
+  --menu-label: var(--w-blue-light);
 }
 
 #nav-opportunites {
-  --menu: var(--ms-teal);
-  --menu-ink: var(--ms-navy);
-  --menu-label: var(--ms-teal);
+  --menu: var(--w-sun);
+  --menu-ink: var(--w-ink);
+  --menu-label: var(--w-sun);
 }
 
 #nav-communaute {
-  --menu: var(--ms-pink);
-  --menu-ink: var(--ms-navy);
-  --menu-label: var(--ms-pink);
+  --menu: var(--w-mint);
+  --menu-ink: var(--w-ink);
+  --menu-label: var(--w-mint);
 }
 
 #nav-contact {
-  --menu: var(--ms-yellow);
-  --menu-ink: var(--ms-navy);
-  --menu-label: var(--ms-yellow);
+  --menu: var(--w-clay);
+  --menu-ink: var(--w-ink);
+  --menu-label: var(--w-clay);
 }
 
 .nav-more-menu {
   top: calc(100% + 14px);
   gap: 0;
   padding: 8px;
-  background: var(--menu, var(--ms-purple-deep));
-  border: 2px solid var(--ms-navy);
+  background: var(--menu, var(--w-blue));
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
-  box-shadow: -4px 4px 0 var(--ms-navy);
+  box-shadow: 4px 4px 0 var(--w-ink);
 }
 
 .nav-more-menu a,
@@ -4328,7 +4335,7 @@ header.site-header.is-menu-open .site-header-top {
 /* Liens en casse normale (plus en petites capitales), lignes plus hautes
    séparées par un filet, comme les lignes de la FAQ. */
 #nav-parcours { --menu-line: rgba(255, 255, 255, 0.45); }
-:is(#nav-opportunites, #nav-communaute, #nav-contact) { --menu-line: rgba(22, 27, 70, 0.3); }
+:is(#nav-opportunites, #nav-communaute, #nav-contact) { --menu-line: rgba(19, 36, 29, 0.3); }
 
 @media (min-width: 1080px) {
   .nav-more-menu {
@@ -4349,7 +4356,7 @@ header.site-header.is-menu-open .site-header-top {
 
 .nav-more-menu a:hover {
   color: #ffffff;
-  background: var(--ms-navy);
+  background: var(--w-ink);
 }
 
 .nav-more-menu a.active {
@@ -4375,7 +4382,7 @@ header.site-header.is-menu-open .site-header-top {
 }
 
 .lang-btn.active {
-  color: var(--ms-navy);
+  color: var(--w-ink);
   background: #ffffff;
 }
 
@@ -4392,11 +4399,11 @@ header.site-header.is-menu-open .site-header-top {
 }
 
 .nav-burger {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
   background: #ffffff;
-  color: var(--ms-navy);
-  box-shadow: -3px 3px 0 var(--ms-navy);
+  color: var(--w-ink);
+  box-shadow: 3px 3px 0 var(--w-ink);
 }
 
 header.site-header :focus-visible {
@@ -4416,13 +4423,13 @@ header.site-header :focus-visible {
   display: inline-flex;
   align-items: stretch;
   min-height: 48px;
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
-  background: var(--ms-yellow);
-  color: var(--ms-navy);
+  background: var(--w-sun-pale);
+  color: var(--w-ink);
   font-size: 0.9375rem;
   font-weight: 700;
-  box-shadow: -4px 4px 0 var(--ms-navy);
+  box-shadow: 4px 4px 0 var(--w-ink);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -4436,18 +4443,18 @@ header.site-header :focus-visible {
   display: grid;
   place-items: center;
   width: 44px;
-  border-left: 2px solid var(--ms-navy);
+  border-left: 2px solid var(--w-ink);
   background: #ffffff;
 }
 
 .cta-float:hover {
-  transform: translate(2px, -2px);
-  box-shadow: -6px 6px 0 var(--ms-navy);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--w-ink);
 }
 
 .cta-float:active {
-  transform: translate(-4px, 4px);
-  box-shadow: 0 0 0 var(--ms-navy);
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--w-ink);
 }
 
 @media (max-width: 1079px) {
@@ -4455,13 +4462,13 @@ header.site-header :focus-visible {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--ms-navy);
-    border: 2px solid var(--ms-navy);
+    background: var(--w-ink);
+    border: 2px solid var(--w-ink);
     border-radius: 2px;
-    box-shadow: -4px 4px 0 var(--ms-navy);
+    box-shadow: 4px 4px 0 var(--w-ink);
   }
   .nav-group-label {
-    color: var(--menu-label, var(--ms-teal));
+    color: var(--menu-label, var(--w-sun));
   }
   .site-nav .nav-more-menu a {
     color: var(--menu-ink, #ffffff);
@@ -4496,38 +4503,34 @@ header.site-header :focus-visible {
    dessus (blanc sur violet 4,94:1 et orange 5,06:1 ; marine sur turquoise,
    rose et jaune, 8:1 et plus). --rubrique-on-navy sert aux titres de
    rubrique posés sur le marine (menu mobile, pied de page). */
-:root {
-  --ms-lilac: #b28ae8;
-}
-
 body {
-  --rubrique: var(--ms-orange-ink);
+  --rubrique: var(--w-brand);
   --rubrique-ink: #ffffff;
   --rubrique-line: rgba(255, 255, 255, 0.5);
 }
 
 body.rubrique-parcours {
-  --rubrique: var(--ms-purple);
+  --rubrique: var(--w-blue);
   --rubrique-ink: #ffffff;
   --rubrique-line: rgba(255, 255, 255, 0.5);
 }
 
 body.rubrique-opportunites {
-  --rubrique: var(--ms-teal);
-  --rubrique-ink: var(--ms-navy);
-  --rubrique-line: rgba(22, 27, 70, 0.4);
+  --rubrique: var(--w-sun);
+  --rubrique-ink: var(--w-ink);
+  --rubrique-line: rgba(19, 36, 29, 0.4);
 }
 
 body.rubrique-communaute {
-  --rubrique: var(--ms-pink);
-  --rubrique-ink: var(--ms-navy);
-  --rubrique-line: rgba(22, 27, 70, 0.4);
+  --rubrique: var(--w-mint);
+  --rubrique-ink: var(--w-ink);
+  --rubrique-line: rgba(19, 36, 29, 0.4);
 }
 
 body.rubrique-contact {
-  --rubrique: var(--ms-yellow);
-  --rubrique-ink: var(--ms-navy);
-  --rubrique-line: rgba(22, 27, 70, 0.4);
+  --rubrique: var(--w-clay);
+  --rubrique-ink: var(--w-ink);
+  --rubrique-line: rgba(19, 36, 29, 0.4);
 }
 
 /* ── Haut de page : l'introduction est une bande de la couleur de la
@@ -4593,11 +4596,11 @@ main > .hero .hero-reassure li {
 
 .roadmap-header .progress-bar {
   background: rgba(255, 255, 255, 0.35);
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
 }
 
 .roadmap-header .progress-fill {
-  background: var(--ms-teal);
+  background: var(--w-sun);
 }
 
 .faq-badge {
@@ -4610,8 +4613,8 @@ main > .hero .hero-reassure li {
 .marquee {
   margin-top: 0;
   margin-bottom: 0;
-  background: var(--ms-navy);
-  color: var(--ms-cream);
+  background: var(--w-ink);
+  color: var(--w-sand);
   border-block: 0;
 }
 
@@ -4620,14 +4623,14 @@ main .marquee-list li {
 }
 
 .marquee-pause {
-  border-color: var(--ms-navy);
+  border-color: var(--w-ink);
   background: #ffffff;
-  color: var(--ms-navy);
-  box-shadow: -3px 3px 0 var(--ms-teal);
+  color: var(--w-ink);
+  box-shadow: 3px 3px 0 var(--w-sun);
 }
 
 .marquee-pause:hover {
-  background: var(--ms-teal);
+  background: var(--w-sun);
 }
 
 /* ── Sections : bandes alternées crème / blanc ; une section mise en avant
@@ -4667,25 +4670,25 @@ main > .about-section:last-of-type {
 /* Les cartes et blocs posés sur une bande gardent les couleurs d'une
    surface claire, quelle que soit la couleur de la bande. */
 :is(.card, .eco-item, .faq-item, .contact-card, .search-result, .quiz-card, .togo-notice, .item, .dates-row, .timeline-item, .domain-primer-item) {
-  --tk-text: var(--ms-navy);
+  --tk-text: var(--w-ink);
   --tk-text-reading: #2a2a2d;
-  --tk-text-muted: #45475a;
-  --tk-text-subtle: #5e5f6b;
-  --tk-primary: #243dcc;
+  --tk-text-muted: #414b45;
+  --tk-text-subtle: #58625b;
+  --tk-primary: #2449b8;
   --tk-border: #d6cbb8;
 }
 
-/* ── Cartes : blanches, traits marine, titres en capitales Argentum Sans. Au
+/* ── Cartes : blanches, traits marine, titres en capitales Bricolage Grotesque. Au
    survol, une carte cliquable passe au turquoise. */
 :root {
-  --ink: var(--ms-navy);
-  --grid-line: var(--ms-navy);
+  --ink: var(--w-ink);
+  --grid-line: var(--w-ink);
 }
 
 .card,
 .eco-item {
   background: #ffffff;
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 :is(.grid, .eco-list, .actu-grid) > :is(.card, .eco-item) {
@@ -4699,8 +4702,8 @@ main > .about-section:last-of-type {
 }
 
 a.card:hover {
-  background: var(--ms-teal);
-  border-color: var(--ms-navy);
+  background: var(--w-sun-pale);
+  border-color: var(--w-ink);
 }
 
 .card p,
@@ -4710,61 +4713,61 @@ a.card:hover {
 
 .progress-bar {
   background: var(--tk-surface-soft);
-  border: 1.5px solid var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
   border-radius: 0;
 }
 
 .progress-fill {
-  background: var(--ms-orange);
+  background: var(--w-brand);
 }
 
 .badge.togo-badge,
 .roadmap-header .togo-badge {
   background: var(--tk-primary-soft);
-  color: #243dcc;
+  color: #2449b8;
 }
 
 .badge.best-match-badge {
-  background: var(--ms-navy);
+  background: var(--w-ink);
   color: #ffffff;
 }
 
 .roadmap-header .badge {
-  border: 1.5px solid var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
 }
 
 .roadmap-header .type-badge,
 .roadmap-header .level-badge {
   background: #ffffff;
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 /* ── Boutons : aplat turquoise (principal) ou blanc (secondaire), trait
    et ombre marine, case flèche blanche. */
 .btn-primary,
 .btn-send {
-  background: var(--ms-teal);
-  color: var(--ms-navy);
+  background: var(--w-sun);
+  color: var(--w-ink);
 }
 
 .btn-primary:hover,
 .btn-send:hover {
-  background: var(--ms-teal);
+  background: var(--w-sun);
 }
 
 .btn-primary::after,
 .btn-send::after {
-  background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161b46' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 20px no-repeat;
+  background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2313241d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 20px no-repeat;
 }
 
 .btn-primary.btn-back::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161b46' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2313241d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
 }
 
 .error-btn-secondary,
 .error-btn-secondary:hover {
   background: #ffffff;
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 .btn,
@@ -4773,8 +4776,8 @@ a.card:hover {
 .btn:hover,
 .domain-group-toggle:hover,
 .actu-card-btn:hover {
-  border-color: var(--ms-navy);
-  color: var(--ms-navy);
+  border-color: var(--w-ink);
+  color: var(--w-ink);
 }
 
 .btn,
@@ -4786,11 +4789,11 @@ a.card:hover {
 .btn:hover,
 .domain-group-toggle:hover,
 .actu-card-btn:hover {
-  background: var(--ms-yellow);
+  background: var(--w-sun-pale);
 }
 
 .btn .ico {
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 /* Hors de la bande orange, la marge de 22 px du bouton d'accueil reste. */
@@ -4801,65 +4804,65 @@ a.card:hover {
 /* ── Filtres en pastilles : trait marine, actif plein. */
 .domain-chip {
   background: #ffffff;
-  border: 1.5px solid var(--ms-navy);
-  color: var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
+  color: var(--w-ink);
   font-weight: 700;
 }
 
 .domain-chip:hover {
-  background: var(--ms-teal);
-  color: var(--ms-navy);
+  background: var(--w-sun-pale);
+  color: var(--w-ink);
 }
 
 .domain-chip.active,
 .domain-chip.active:hover {
-  background: var(--ms-navy);
+  background: var(--w-ink);
   color: #ffffff;
 }
 
 #contact-mode-filters .domain-chip {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
 }
 
 /* ── Parcours de l'accueil : numéros en carrés de couleur, trait marine. */
 .journey-step-number {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
   background: var(--rubrique);
   color: var(--rubrique-ink);
   font-weight: 800;
-  box-shadow: -3px 3px 0 var(--ms-navy);
+  box-shadow: 3px 3px 0 var(--w-ink);
 }
 
 /* Sur l'accueil, chaque étape du parcours prend la couleur de la rubrique
    où elle mène : test, roadmaps, écoles (Parcours) ; dates, stages
    (Opportunités) ; écosystème (Communauté). */
 #parcours .journey-step:nth-child(-n + 3) .journey-step-number {
-  background: var(--ms-purple);
+  background: var(--w-blue);
   color: #ffffff;
 }
 
 #parcours .journey-step:nth-child(4) .journey-step-number,
 #parcours .journey-step:nth-child(5) .journey-step-number {
-  background: var(--ms-teal);
-  color: var(--ms-navy);
+  background: var(--w-sun);
+  color: var(--w-ink);
 }
 
 #parcours .journey-step:nth-child(6) .journey-step-number {
-  background: var(--ms-pink);
-  color: var(--ms-navy);
+  background: var(--w-mint);
+  color: var(--w-ink);
 }
 
 #parcours .journey-step:not(:last-child)::after {
-  background: var(--ms-navy);
+  background: var(--w-ink);
 }
 
 .journey-step a {
-  color: #243dcc;
+  color: #2449b8;
 }
 
 /* ── FAQ : lignes blanches encadrées de marine, collées, sur bande
-   turquoise ; question en Argentum Sans, flèche dans un rond à droite. */
+   turquoise ; question en Bricolage Grotesque, flèche dans un rond à droite. */
 .faq-layout {
   max-width: none;
 }
@@ -4881,7 +4884,7 @@ a.card:hover {
 .faq-item {
   margin: 0 0 -2px;
   padding: 0 24px;
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 0;
   background: #ffffff;
 }
@@ -4890,14 +4893,14 @@ main .faq-item summary {
   padding: 22px 0;
   font-size: 20px !important;
   font-weight: 700 !important;
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 .faq-item summary::after {
   flex: 0 0 32px;
   width: 32px;
   height: 32px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23161b46' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='16' cy='16' r='14'/%3E%3Cpath d='M16 9v14M10 17l6 6 6-6'/%3E%3C/svg%3E") center / 32px no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%2313241d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='16' cy='16' r='14'/%3E%3Cpath d='M16 9v14M10 17l6 6 6-6'/%3E%3C/svg%3E") center / 32px no-repeat;
   -webkit-mask: none;
   mask: none;
 }
@@ -4921,7 +4924,7 @@ main .faq-item summary {
 
 /* ── Test d'orientation (2026-10-31, à la demande de l'utilisateur) :
    questionnaire au style du site. Progression en cases bordées de marine,
-   remplies de la couleur de la rubrique ; question en Argentum Sans ;
+   remplies de la couleur de la rubrique ; question en Bricolage Grotesque ;
    réponses en blocs blancs à trait marine, chacune précédée d'une lettre
    (A, B, C…) dans une case qui prend la couleur de la rubrique au survol,
    le bloc se soulevant sur son ombre comme les boutons. */
@@ -4937,7 +4940,7 @@ main .faq-item summary {
 }
 
 #quiz-progress-wrap .progress-seg {
-  border: 1.5px solid var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
   border-radius: 0;
   background: #ffffff;
 }
@@ -4947,7 +4950,7 @@ main .faq-item summary {
 }
 
 #quiz-progress-label {
-  color: var(--ms-navy);
+  color: var(--w-ink);
   font-size: 13px;
   letter-spacing: 0.14em;
 }
@@ -4955,7 +4958,7 @@ main .faq-item summary {
 .quiz-question-title {
   max-width: 720px;
   margin: 0 auto 32px;
-  color: var(--ms-navy);
+  color: var(--w-ink);
   font-family: var(--font-display);
   font-size: clamp(26px, 1rem + 1.6vw, 38px);
   font-weight: 800;
@@ -4974,10 +4977,10 @@ main .faq-item summary {
   gap: 16px;
   min-height: 64px;
   padding: 10px 20px 10px 10px;
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
   background: #ffffff;
-  color: var(--ms-navy);
+  color: var(--w-ink);
   font-size: 17px;
   font-weight: 500;
   line-height: 1.35;
@@ -4992,11 +4995,11 @@ main .faq-item summary {
   flex: 0 0 40px;
   width: 40px;
   height: 40px;
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
-  background: var(--ms-cream);
+  background: var(--w-sand);
   box-shadow: none;
-  color: var(--ms-navy);
+  color: var(--w-ink);
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 800;
@@ -5005,29 +5008,29 @@ main .faq-item summary {
 
 .quiz-option:hover,
 .quiz-option:focus-visible {
-  border-color: var(--ms-navy);
+  border-color: var(--w-ink);
   background: #ffffff;
-  transform: translate(2px, -2px);
-  box-shadow: -4px 4px 0 var(--ms-navy);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--w-ink);
 }
 
 .quiz-option:hover::before,
 .quiz-option:focus-visible::before {
-  border-color: var(--ms-navy);
+  border-color: var(--w-ink);
   background: var(--rubrique);
   box-shadow: none;
   color: var(--rubrique-ink);
 }
 
 .quiz-option:active {
-  transform: translate(-2px, 2px);
-  box-shadow: 0 0 0 var(--ms-navy);
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--w-ink);
 }
 
 .quiz-back,
 .quiz-back:hover {
   margin-top: 28px;
-  color: var(--ms-navy);
+  color: var(--w-ink);
   font-size: 15px;
   font-weight: 700;
   text-decoration: underline;
@@ -5041,7 +5044,7 @@ main .faq-item summary {
 
 .quiz-disclaimer {
   max-width: 720px;
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
   background: #ffffff;
   color: var(--tk-text-muted);
@@ -5066,12 +5069,12 @@ main .faq-item summary {
 
 .quiz-score-label,
 .quiz-score-value {
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 .quiz-score-row .progress-bar {
   height: 14px;
-  border: 1.5px solid var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
   border-radius: 0;
   background: #ffffff;
 }
@@ -5082,7 +5085,7 @@ main .faq-item summary {
 }
 
 .quiz-match-checklist span {
-  border: 1.5px solid var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
   border-radius: 2px;
   font-size: 13px;
 }
@@ -5093,7 +5096,7 @@ main .faq-item summary {
 }
 
 .quiz-match-checklist .match-no {
-  background: var(--ms-cream);
+  background: var(--w-sand);
   color: var(--tk-text-muted);
 }
 
@@ -5115,26 +5118,26 @@ main .faq-item summary {
    site : coins droits, traits marine, couleur de la rubrique en accent. */
 
 /* Calendrier, « Dates par école » : fiches blanches à trait marine,
-   collées comme les lignes de la FAQ ; nom de l'école en Argentum Sans ;
+   collées comme les lignes de la FAQ ; nom de l'école en Bricolage Grotesque ;
    chaque date précédée d'une case de la couleur de la rubrique. */
 .dates-row {
   margin: 0 0 -2px;
   padding: 28px 32px;
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 0;
   background: #ffffff;
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 .dates-row-urgent {
-  border-color: var(--ms-navy);
+  border-color: var(--w-ink);
   border-width: 2px;
 }
 
 .dates-urgent-note {
   display: inline-block;
   padding: 4px 10px;
-  border: 1.5px solid var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
   border-radius: 2px;
   background: var(--tint-red-bg);
   color: var(--tint-red-fg);
@@ -5143,7 +5146,7 @@ main .faq-item summary {
 
 .dates-row h3 {
   margin: 0 0 10px;
-  color: var(--ms-navy);
+  color: var(--w-ink);
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 800;
@@ -5162,7 +5165,7 @@ main .dates-note {
   gap: 8px;
   margin: 0 0 16px;
   font-size: 17px;
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 .dates-list li {
@@ -5177,7 +5180,7 @@ main .dates-note {
   flex: 0 0 12px;
   width: 12px;
   height: 12px;
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   background: var(--rubrique);
   transform: translateY(1px);
 }
@@ -5191,7 +5194,7 @@ main .dates-ref-note {
 .dates-row .school-link,
 .dates-row .school-link:hover {
   margin-top: 12px;
-  color: var(--ms-navy);
+  color: var(--w-ink);
   font-size: 15px;
   font-weight: 700;
   text-decoration: underline;
@@ -5206,17 +5209,17 @@ main .dates-ref-note {
 /* Calendrier type : frise à cases carrées marine remplies de la couleur
    de la rubrique, trait marine. */
 #timeline-general .timeline-item::before {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 0;
   background: var(--rubrique);
 }
 
 #timeline-general .timeline-item:not(:last-child)::after {
-  background: var(--ms-navy);
+  background: var(--w-ink);
 }
 
 #timeline-general .timeline-content h3 {
-  color: var(--ms-navy);
+  color: var(--w-ink);
   font-family: var(--font-display);
   font-weight: 800;
 }
@@ -5226,7 +5229,7 @@ main .dates-ref-note {
 .primer-fold,
 .domain-primer-item,
 #guide .journey-step {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
   background: #ffffff;
 }
@@ -5241,39 +5244,39 @@ main .dates-ref-note {
 
 /* Étiquettes, filtres et liens en pilule : coins droits, trait marine. */
 .badge {
-  border: 1.5px solid var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
   border-radius: 2px;
 }
 
 .domain-chip,
 #contact-mode-filters .domain-chip {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
 }
 
 .eco-jump-nav a,
 #search-categories-group a {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
   background: #ffffff;
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 .eco-jump-nav a:hover,
 #search-categories-group a:hover {
-  border-color: var(--ms-navy);
+  border-color: var(--w-ink);
   background: var(--rubrique);
   color: var(--rubrique-ink);
 }
 
 .search-bar {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
   background: #ffffff;
 }
 
 .search-bar:focus-within {
-  box-shadow: -4px 4px 0 var(--ms-navy);
+  box-shadow: 4px 4px 0 var(--w-ink);
 }
 
 @media (max-width: 600px) {
@@ -5288,12 +5291,107 @@ main .dates-ref-note {
   }
 }
 
+/* ── Signature WIYAO (2026-10-31, à la demande de l'utilisateur, pour se
+   distinguer de MoonShot) : ombres dures portées en bas à droite, flèche
+   des boutons dans une pastille ronde vert nuit qui glisse au survol (au
+   lieu d'une case accolée), bouton flottant vert forêt, bandeaux défilants
+   rythmés par des losanges jaune soleil. */
+.btn-primary,
+.btn-send {
+  gap: 16px;
+  padding: 0 8px 0 22px;
+  background: var(--w-sun);
+  color: var(--w-ink);
+}
+
+.btn-primary:hover,
+.btn-send:hover {
+  background: var(--w-sun);
+}
+
+.btn-primary::after,
+.btn-send::after {
+  flex: none;
+  align-self: center;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--w-ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffcd2e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 18px no-repeat;
+  transition: transform 0.15s ease;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(3px);
+}
+
+.btn-primary.btn-back {
+  padding: 0 22px 0 8px;
+}
+
+.btn-primary.btn-back::after {
+  margin: 0;
+  border: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffcd2e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
+}
+
+.btn-primary.btn-back:hover::after {
+  transform: translateX(-3px);
+}
+
+.btn-send {
+  padding: 0 56px;
+}
+
+.btn-send::after {
+  top: 50%;
+  right: 8px;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.btn-send:hover::after {
+  transform: translate(3px, -50%);
+}
+
+.cta-float {
+  background: var(--w-brand);
+  color: #ffffff;
+}
+
+.cta-float-arrow {
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--w-sun);
+  color: var(--w-ink);
+  transition: transform 0.15s ease;
+}
+
+.cta-float:hover .cta-float-arrow {
+  transform: translateX(3px);
+}
+
+.marquee-list li::after {
+  content: "";
+  flex: none;
+  width: 0.3em;
+  height: 0.3em;
+  margin: 0 0.75em;
+  background: var(--w-sun);
+  transform: rotate(45deg);
+}
+
 /* ── Contact / Proposer : carte blanche à trait marine. */
 .contact-card {
   background: #ffffff;
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
-  box-shadow: -6px 6px 0 var(--ms-navy);
+  box-shadow: 6px 6px 0 var(--w-ink);
 }
 
 .contact-form-field input,
@@ -5301,17 +5399,17 @@ main .dates-ref-note {
 .contact-form-field select,
 .search-bar input[type="search"] {
   background: #ffffff;
-  border: 1.5px solid var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
   border-radius: 2px;
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 .contact-form-field input:focus,
 .contact-form-field textarea:focus,
 .contact-form-field select:focus {
   background: #ffffff;
-  border-color: #243dcc;
-  box-shadow: 0 0 0 3px rgba(36, 61, 204, 0.25);
+  border-color: #2449b8;
+  box-shadow: 0 0 0 3px rgba(36, 73, 184, 0.25);
 }
 
 /* ── Pied de page façon MoonShot (mesuré sur sa page, 2026-10-31) : bande
@@ -5327,16 +5425,16 @@ footer.site-footer {
   --tk-text-subtle: #ffffff;
   --tk-primary: #ffffff;
   border-top: 0;
-  background: var(--ms-navy);
+  background: var(--w-ink);
   color: #ffffff;
 }
 
 /* Titres des colonnes dans la couleur de leur rubrique (lilas pour
    Parcours : le violet est trop sombre sur le marine). */
-.footer-col:nth-child(1) h2 { color: var(--ms-lilac); }
-.footer-col:nth-child(2) h2 { color: var(--ms-teal); }
-.footer-col:nth-child(3) h2 { color: var(--ms-pink); }
-.footer-col:nth-child(4) h2 { color: var(--ms-yellow); }
+.footer-col:nth-child(1) h2 { color: var(--w-blue-light); }
+.footer-col:nth-child(2) h2 { color: var(--w-sun); }
+.footer-col:nth-child(3) h2 { color: var(--w-mint); }
+.footer-col:nth-child(4) h2 { color: var(--w-clay); }
 
 .footer-inner {
   padding-top: 80px;
@@ -5420,13 +5518,13 @@ footer.site-footer :focus-visible {
 /* ── Fenêtre « Informations légales » : voile marine, fenêtre blanche à
    trait marine et ombre dure. */
 .legal-modal {
-  background: rgba(22, 27, 70, 0.6);
+  background: rgba(19, 36, 29, 0.6);
 }
 
 .legal-dialog {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
-  box-shadow: -8px 8px 0 var(--ms-navy);
+  box-shadow: 8px 8px 0 var(--w-ink);
 }
 
 .legal-title {
@@ -5436,64 +5534,64 @@ footer.site-footer :focus-visible {
 }
 
 .legal-close {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
   background: #ffffff;
 }
 
 .legal-close:hover {
-  background: var(--ms-yellow);
+  background: var(--w-sun-pale);
 }
 
 .legal-tab {
-  border: 1.5px solid var(--ms-navy);
+  border: 1.5px solid var(--w-ink);
   border-radius: 2px;
-  color: var(--ms-navy);
+  color: var(--w-ink);
 }
 
 .legal-tab:hover {
-  background: var(--ms-teal);
+  background: var(--w-sun-pale);
 }
 
 .legal-tab[aria-selected="true"] {
-  background: var(--ms-navy);
+  background: var(--w-ink);
   color: #ffffff;
 }
 
 /* ── Petits éléments flottants. */
 .back-to-top {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
   background: #ffffff;
-  color: var(--ms-navy);
-  box-shadow: -3px 3px 0 var(--ms-navy);
+  color: var(--w-ink);
+  box-shadow: 3px 3px 0 var(--w-ink);
 }
 
 .wiyao-assistant-toggle {
-  border: 2px solid var(--ms-navy);
-  background: var(--ms-purple);
+  border: 2px solid var(--w-ink);
+  background: var(--w-blue);
   color: #ffffff;
-  box-shadow: -4px 4px 0 var(--ms-navy);
+  box-shadow: 4px 4px 0 var(--w-ink);
 }
 
 .wiyao-assistant-panel {
-  border: 2px solid var(--ms-navy);
+  border: 2px solid var(--w-ink);
   border-radius: 2px;
-  box-shadow: -6px 6px 0 var(--ms-navy);
+  box-shadow: 6px 6px 0 var(--w-ink);
 }
 
 ::selection {
-  background: var(--ms-orange-ink);
+  background: var(--w-brand);
   color: #ffffff;
 }
 
 :root {
-  accent-color: #243dcc;
-  scrollbar-color: var(--ms-navy) var(--ms-cream);
+  accent-color: #2449b8;
+  scrollbar-color: var(--w-ink) var(--w-sand);
 }
 
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
-  outline-color: #243dcc;
+  outline-color: #2449b8;
 }
 
 /* ── Espacement et centrage de MoonShot, mesurés sur sa page : sections
