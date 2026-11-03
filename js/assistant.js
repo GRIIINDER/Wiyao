@@ -51,6 +51,14 @@
   const GREETINGS = ["bonjour", "salut", "hello", "hey", "coucou", "bonsoir"];
   const THANKS = ["merci", "thanks", "thank you"];
 
+  // Même filtre de liens que la page Recherche (app.js). Sans app.js, seuls
+  // les liens internes du site passent (les réponses toutes faites n'en ont
+  // pas d'autres).
+  function safeHref(url) {
+    if (window.WIYAO_SEARCH && window.WIYAO_SEARCH.safeUrl) return window.WIYAO_SEARCH.safeUrl(url);
+    return typeof url === "string" && /^[a-z0-9-]+\.html(#[a-z0-9-]+)?$/i.test(url) ? url : "";
+  }
+
   const CHIPS = [
     { fr: "Je sais pas quoi choisir", en: "I don't know what to choose", query: "sais pas quoi choisir" },
     { fr: "Trouve-moi une école", en: "Find me a school", query: "ecole" },
@@ -116,12 +124,14 @@
       const linkWrap = document.createElement("div");
       linkWrap.className = "wiyao-assistant-links";
       links.forEach((l) => {
+        const href = safeHref(l.url);
+        if (!href) return;
         const a = document.createElement("a");
-        a.href = l.url;
+        a.href = href;
         a.textContent = l.label;
         if (l.external) {
           a.target = "_blank";
-          a.rel = "noopener";
+          a.rel = "noopener noreferrer";
         }
         linkWrap.appendChild(a);
       });
@@ -168,7 +178,12 @@
         return;
       }
       const intro = isEn() ? "Here's what I found:" : "Voici ce que j'ai trouvé :";
-      const links = matches.map((m) => ({ label: m.title, url: m.externalUrl || m.url, external: !!m.externalUrl }));
+      // Lien externe s'il est sûr, sinon la page du site où vit l'élément
+      // (même repli que la page Recherche) : un résultat n'est jamais sans lien.
+      const links = matches.map((m) => {
+        const ext = safeHref(m.externalUrl);
+        return { label: m.title, url: ext || m.url, external: !!ext };
+      });
       addMessage(container, "bot", intro, links);
     });
   }
