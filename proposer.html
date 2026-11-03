@@ -112,17 +112,17 @@
 
   <section class="contact-section">
     <div class="contact-card contact-card--form-only">
-      <form id="proposer-form" class="contact-form contact-form-card">
+      <form id="proposer-form" class="contact-form contact-form-card" action="mailto:wiya.info@gmail.com" method="post" enctype="text/plain">
         <p class="contact-required-note" data-i18n-key="form.required">Tous les champs avec un <span class="required-mark">*</span> sont obligatoires.</p>
 
         <div class="contact-form-row">
           <div class="contact-form-field">
             <label for="proposer-name"><span data-i18n-key="form.name">Nom et prénom(s)</span> <span class="required-mark">*</span></label>
-            <input type="text" id="proposer-name" name="name" placeholder="Ex : Afi Mensah" data-i18n-placeholder="form.name.ph" autocomplete="name" required>
+            <input type="text" id="proposer-name" name="name" placeholder="Ex : Afi Mensah" data-i18n-placeholder="form.name.ph" autocomplete="name" required maxlength="100">
           </div>
           <div class="contact-form-field">
             <label for="proposer-email"><span data-i18n-key="form.email">E-mail</span> <span class="required-mark">*</span></label>
-            <input type="email" id="proposer-email" name="email" placeholder="ton@email.com" data-i18n-placeholder="form.email.ph" autocomplete="email" required>
+            <input type="email" id="proposer-email" name="email" placeholder="ton@email.com" data-i18n-placeholder="form.email.ph" autocomplete="email" required maxlength="254">
           </div>
         </div>
 
@@ -140,24 +140,24 @@
           </div>
           <div class="contact-form-field">
             <label for="proposal-ville"><span data-i18n-key="proposer.form.city">Ville</span></label>
-            <input type="text" id="proposal-ville" name="ville" placeholder="Ex : Lomé, Kara..." data-i18n-placeholder="proposer.form.city.ph">
+            <input type="text" id="proposal-ville" name="ville" placeholder="Ex : Lomé, Kara..." data-i18n-placeholder="proposer.form.city.ph" maxlength="80">
           </div>
         </div>
         <div class="contact-form-field">
           <label for="proposal-nom"><span data-i18n-key="proposer.form.name">Nom</span> <span class="required-mark">*</span></label>
-          <input type="text" id="proposal-nom" name="nom" placeholder="Ex : DevFest Lomé, GDG Lomé, ESGIS, Semoa..." data-i18n-placeholder="proposer.form.name.ph" required>
+          <input type="text" id="proposal-nom" name="nom" placeholder="Ex : DevFest Lomé, GDG Lomé, ESGIS, Semoa..." data-i18n-placeholder="proposer.form.name.ph" required maxlength="150">
         </div>
         <div class="contact-form-field">
           <label for="proposal-lien"><span data-i18n-key="proposer.form.link">Lien ou source de vérification</span> <span class="required-mark">*</span></label>
-          <input type="url" id="proposal-lien" name="lien" placeholder="Site web, page Facebook, groupe WhatsApp public..." data-i18n-placeholder="proposer.form.link.ph" required>
+          <input type="url" id="proposal-lien" name="lien" placeholder="Site web, page Facebook, groupe WhatsApp public..." data-i18n-placeholder="proposer.form.link.ph" required maxlength="500">
         </div>
         <div class="contact-form-field">
           <label for="proposal-date"><span data-i18n-key="proposer.form.date">Date (si applicable)</span></label>
-          <input type="text" id="proposal-date" name="date" placeholder="Ex : 15 novembre 2026, ou récurrent" data-i18n-placeholder="proposer.form.date.ph">
+          <input type="text" id="proposal-date" name="date" placeholder="Ex : 15 novembre 2026, ou récurrent" data-i18n-placeholder="proposer.form.date.ph" maxlength="80">
         </div>
         <div class="contact-form-field">
           <label for="proposal-description"><span data-i18n-key="proposer.form.desc">Description courte</span> <span class="required-mark">*</span></label>
-          <textarea id="proposal-description" name="description" rows="4" placeholder="En quelques phrases : quoi, pour qui, pourquoi ça a sa place sur WIYAO" data-i18n-placeholder="proposer.form.desc.ph" required></textarea>
+          <textarea id="proposal-description" name="description" rows="4" placeholder="En quelques phrases : quoi, pour qui, pourquoi ça a sa place sur WIYAO" data-i18n-placeholder="proposer.form.desc.ph" required maxlength="2000"></textarea>
         </div>
 
         <button type="submit" class="btn-send" id="proposer-submit-btn" data-i18n-key="form.submit">Ouvrir ma messagerie</button>
@@ -220,10 +220,10 @@
   </div>
 </footer>
 
-<script src="js/data.js?v=56"></script>
-<script src="js/app.js?v=68"></script>
+<script src="js/data.js?v=57"></script>
+<script src="js/app.js?v=69"></script>
 <script src="js/nav.js?v=23"></script>
-<script src="js/assistant.js?v=2"></script>
+<script src="js/assistant.js?v=3"></script>
 <script src="js/i18n.js?v=132"></script>
 <script src="js/vendor/gsap.min.js?v=3150"></script>
 <script src="js/anim.js?v=6"></script>

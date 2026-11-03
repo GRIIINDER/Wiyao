@@ -1,4 +1,4 @@
-const CACHE_NAME = "wiyao-v390";
+const CACHE_NAME = "wiyao-v391";
 
 const PRECACHE_URLS = [
   "index.html",
@@ -63,6 +63,19 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET" || !request.url.startsWith(self.location.origin)) return;
+
+  // Une page HTML avec paramètres (roadmap.html?id=…, ou un formulaire envoyé
+  // en GET sans JavaScript, nom et e-mail dans l'adresse) n'est jamais écrite
+  // dans le cache : réseau d'abord, et hors ligne la même page sans paramètres.
+  const url = new URL(request.url);
+  const isHtml = request.mode === "navigate" || url.pathname.endsWith(".html") || url.pathname === "/";
+  if (isHtml && url.search) {
+    const barePath = url.pathname === "/" ? "index.html" : url.pathname.replace(/^\//, "");
+    event.respondWith(
+      fetch(request).catch(() => caches.match(barePath).then((cached) => cached || caches.match("index.html")))
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(request).then((cached) => {

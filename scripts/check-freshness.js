@@ -20,10 +20,61 @@
 
 const fs = require("fs");
 const path = require("path");
+const dns = require("dns").promises;
+const net = require("net");
 
 const ROOT = path.resolve(__dirname, "..");
 const TIMEOUT_MS = 10000;
 const CONCURRENCY = 8;
+const MAX_REDIRECTS = 5;
+const FETCH_HEADERS = { "User-Agent": "Mozilla/5.0 (compatible; WiyaoFreshnessCheck/1.0)" };
+
+// ---- Garde anti-SSRF ----
+// Le script tourne sur un runner GitHub Actions : un lien (ou une redirection)
+// vers une adresse privée, locale ou de métadonnées cloud ne doit jamais être
+// contacté. net.BlockList compare aussi les adresses IPv4 écrites en IPv6
+// (::ffff:7f00:1 = 127.0.0.1), forme que l'analyseur d'URL produit toujours.
+const BLOCKED_HOSTS = new Set(["localhost", "metadata.google.internal", "metadata.goog"]);
+const BLOCKED_IPS = new net.BlockList();
+[
+  ["0.0.0.0", 8], ["10.0.0.0", 8], ["100.64.0.0", 10], ["127.0.0.0", 8],
+  ["169.254.0.0", 16], ["172.16.0.0", 12], ["192.0.0.0", 24], ["192.168.0.0", 16],
+  ["198.18.0.0", 15], ["224.0.0.0", 3],
+  ["168.63.129.16", 32], // service interne Azure, joignable depuis les runners GitHub
+].forEach(([addr, prefix]) => BLOCKED_IPS.addSubnet(addr, prefix, "ipv4"));
+[
+  ["::", 96], // ::, ::1 et IPv4 « compatibles » (::7f00:1)
+  ["64:ff9b::", 96], // NAT64
+  ["fc00::", 7], ["fe80::", 10], ["ff00::", 8],
+].forEach(([addr, prefix]) => BLOCKED_IPS.addSubnet(addr, prefix, "ipv6"));
+
+function isBlockedIp(ip) {
+  return BLOCKED_IPS.check(ip, net.isIPv6(ip) ? "ipv6" : "ipv4");
+}
+
+// "ok" : adresse publique ; "blocked" : privée, locale ou non http(s) ;
+// "dns" : nom introuvable. (Limite connue : fetch résout le nom une seconde
+// fois, un DNS piégé pourrait changer de réponse entre les deux.)
+async function gateUrl(urlStr) {
+  let parsed;
+  try {
+    parsed = new URL(urlStr);
+  } catch (e) {
+    return "blocked";
+  }
+  if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return "blocked";
+  if (parsed.username || parsed.password) return "blocked";
+  const host = parsed.hostname.replace(/^\[|\]$/g, "").replace(/\.$/, "").toLowerCase();
+  if (!host || BLOCKED_HOSTS.has(host) || /\.(localhost|local|internal)$/.test(host)) return "blocked";
+  if (net.isIP(host)) return isBlockedIp(host) ? "blocked" : "ok";
+  try {
+    const records = await dns.lookup(host, { all: true });
+    if (!records.length) return "dns";
+    return records.some((r) => isBlockedIp(r.address)) ? "blocked" : "ok";
+  } catch (e) {
+    return "dns";
+  }
+}
 
 // ---- 1. Collecte des fichiers à scanner ----
 function listHtmlFiles() {
@@ -56,31 +107,47 @@ function collectAllUrls() {
 }
 
 // ---- 3. Vérification HTTP d'une URL ----
+const REDIRECT_CODES = [301, 302, 303, 307, 308];
+
+// Suit les redirections à la main avec une seule méthode, pour repasser
+// chaque étape par la garde anti-SSRF. Une adresse refusée n'est jamais
+// contactée, mais le lien reste dans le rapport (« à vérifier
+// manuellement »), jamais écarté.
+async function followChain(url, method, signal) {
+  let current = url;
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+    const gate = await gateUrl(current);
+    if (gate === "blocked") {
+      return { url, status: null, ok: false, refused: true, error: hop === 0
+        ? "adresse privée, locale ou non http(s) : non vérifiée"
+        : "redirige vers une adresse privée, locale ou non http(s) : non suivie" };
+    }
+    if (gate === "dns") return { url, status: null, ok: false, refused: true, error: "résolution DNS impossible" };
+
+    const res = await fetch(current, { method, redirect: "manual", signal, headers: FETCH_HEADERS });
+    if (!REDIRECT_CODES.includes(res.status)) return { url, status: res.status, ok: res.ok };
+    const location = res.headers.get("location");
+    if (!location) return { url, status: res.status, ok: false };
+    current = new URL(location, current).href;
+  }
+  return { url, status: null, ok: false, error: "trop de redirections" };
+}
+
 async function checkUrl(url) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    let res = await fetch(url, {
-      method: "HEAD",
-      redirect: "follow",
-      signal: controller.signal,
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; WiyaoFreshnessCheck/1.0)" },
-    });
+    const head = await followChain(url, "HEAD", controller.signal);
+    if (head.ok || head.refused) return head;
     // Beaucoup de sites (Google, GitHub, Salesforce Trailhead vécu en 2026-09-27)
     // répondent au HEAD par un 404 sur des pages qui existent bien en GET, au
     // lieu du 405 attendu -- confirmé sur 11/11 liens signalés "probablement
     // morts" ce jour-là, tous vivants une fois rechargés en GET. On retente
     // donc en GET dès que HEAD n'est pas ok, pas seulement sur 405, avant de
     // conclure -- cohérent avec la prudence volontaire du reste du script.
-    if (!res.ok) {
-      res = await fetch(url, {
-        method: "GET",
-        redirect: "follow",
-        signal: controller.signal,
-        headers: { "User-Agent": "Mozilla/5.0 (compatible; WiyaoFreshnessCheck/1.0)" },
-      });
-    }
-    return { url, status: res.status, ok: res.ok };
+    // Le GET repart de l'adresse d'origine : Trailhead redirige le HEAD vers
+    // une page en 404 mais répond 200 au GET (vu le 2026-11-03).
+    return await followChain(url, "GET", controller.signal);
   } catch (err) {
     return { url, status: null, ok: false, error: err.message || String(err) };
   } finally {

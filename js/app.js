@@ -17,6 +17,34 @@
     return currentLang() === "en" && en ? en : obj[field];
   }
 
+  // Toute valeur de data.js insérée dans du HTML (innerHTML) passe par ici.
+  function escapeHtml(str) {
+    return String(str == null ? "" : str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  // Liens sûrs seulement : http(s), mailto, ou chemin relatif du site.
+  // Refuse javascript:, data:, etc. Les tabulations et retours à la ligne
+  // sont retirés d'abord, comme le fait le navigateur (sinon "/\t/site.com"
+  // passerait pour un chemin relatif et mènerait vers un autre site).
+  function safeUrl(url) {
+    if (!url || typeof url !== "string") return "";
+    const trimmed = url.replace(/[\t\n\r]/g, "").trim();
+    if (!trimmed || trimmed.startsWith("//") || trimmed.indexOf("\\") !== -1) return "";
+    if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(trimmed)) {
+      return trimmed.indexOf(":") === -1 ? trimmed : "";
+    }
+    try {
+      const parsed = new URL(trimmed);
+      if (parsed.protocol === "https:" || parsed.protocol === "http:" || parsed.protocol === "mailto:") return parsed.href;
+    } catch (e) {}
+    return "";
+  }
+
   // Minuscules + suppression des accents, pour un matching de recherche
   // insensible à la casse et aux accents (partagé par la recherche globale
   // et l'assistant).
@@ -96,7 +124,7 @@
 
   function badgesHtml(rm) {
     const levelBadge = rm.level
-      ? `<span class="badge level-badge level-${levelSlug(rm.level)}">${levelLabel(rm.level)}</span>`
+      ? `<span class="badge level-badge level-${levelSlug(rm.level)}">${escapeHtml(levelLabel(rm.level))}</span>`
       : "";
     const togoBadge = rm.togoVerified
       ? `<span class="badge togo-badge">✓ ${currentLang() === "en" ? "Togo-verified" : "Vérifié Togo"}</span>`
@@ -110,7 +138,7 @@
     const pct = total ? Math.round((done / total) * 100) : 0;
 
     const card = document.createElement("a");
-    card.href = `roadmap.html?id=${id}`;
+    card.href = `roadmap.html?id=${encodeURIComponent(id)}`;
     card.className = "card";
     card.dataset.title = rm.title.toLowerCase();
     if (rm.domain) card.dataset.domain = rm.domain;
@@ -118,10 +146,10 @@
     const cardLabel = currentLang() === "en" ? "completed" : "complété";
     card.innerHTML = `
       <div class="card-body">
-        <div class="card-icon">${rm.icon}</div>
+        <div class="card-icon">${escapeHtml(rm.icon)}</div>
         ${badges ? `<div class="card-badges">${badges}</div>` : ""}
-        <h3>${tField(rm, "title")}</h3>
-        <p>${tField(rm, "subtitle")}</p>
+        <h3>${escapeHtml(tField(rm, "title"))}</h3>
+        <p>${escapeHtml(tField(rm, "subtitle"))}</p>
         <div class="card-meta-divider"></div>
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
         <span class="progress-label">${pct}% ${cardLabel}</span>
@@ -460,15 +488,16 @@
       title.textContent = c.name;
       item.appendChild(title);
       const p = document.createElement("p");
-      p.innerHTML = isEn ? c.noteEn : c.note;
+      p.textContent = isEn ? c.noteEn : c.note;
       item.appendChild(p);
-      if (c.url) {
+      const href = safeUrl(c.url);
+      if (href) {
         const a = document.createElement("a");
         a.className = "eco-link";
-        a.href = c.url;
+        a.href = href;
         a.target = "_blank";
-        a.rel = "noopener";
-        a.textContent = c.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+        a.rel = "noopener noreferrer";
+        a.textContent = href.replace(/^https?:\/\//, "").replace(/\/$/, "");
         item.appendChild(a);
       }
       list.appendChild(item);
@@ -544,7 +573,7 @@
       <span class="breadcrumb-sep">›</span>
       <a href="${categoryHref}">${categoryLabel}</a>
       <span class="breadcrumb-sep">›</span>
-      <span class="breadcrumb-current">${tField(rm, "title")}</span>
+      <span class="breadcrumb-current">${escapeHtml(tField(rm, "title"))}</span>
     `;
     container.appendChild(breadcrumb);
 
@@ -563,8 +592,8 @@
     header.innerHTML = `
       <span class="badge type-badge">${typeLabel}</span>
       ${badges}
-      <h1>${rm.icon} ${tField(rm, "title")}</h1>
-      <p class="subtitle">${tField(rm, "subtitle")}</p>
+      <h1>${escapeHtml(rm.icon)} ${escapeHtml(tField(rm, "title"))}</h1>
+      <p class="subtitle">${escapeHtml(tField(rm, "subtitle"))}</p>
       ${togoNotice}
       <div class="progress-bar large"><div class="progress-fill" id="global-fill"></div></div>
       <span class="progress-label" id="global-label"></span>
@@ -647,15 +676,16 @@
           labelWrap.appendChild(note);
         }
 
-        if (item.resource) {
+        const resourceHref = item.resource ? safeUrl(item.resource.url) : "";
+        if (resourceHref) {
           const link = document.createElement("a");
           link.className = "item-resource";
-          link.href = item.resource.url;
+          link.href = resourceHref;
           link.textContent = item.resource.label;
           link.insertAdjacentHTML("afterbegin", icon("clip"));
-          if (!item.resource.url.startsWith("roadmap.html")) {
+          if (!resourceHref.startsWith("roadmap.html")) {
             link.target = "_blank";
-            link.rel = "noopener";
+            link.rel = "noopener noreferrer";
           }
           labelWrap.appendChild(link);
         }
@@ -714,7 +744,7 @@
 
   function statutBadgeLabel(statut) {
     const s = STATUT_LABELS[statut];
-    return s ? i18nLabel(s.key, s.fr, s.en) : statut;
+    return s ? i18nLabel(s.key, s.fr, s.en) : escapeHtml(statut);
   }
 
   // Mêmes mots-clés que le rattachement écoles ↔ domaine du test d'orientation
@@ -742,8 +772,8 @@
     const badges = document.createElement("div");
     badges.className = "card-badges school-badges";
     badges.innerHTML =
-      `<span class="badge status-${school.statut}">${statutBadgeLabel(school.statut)}</span>` +
-      school.ville.map((v) => `<span class="badge ville-badge">${v}</span>`).join("") +
+      `<span class="badge status-${escapeHtml(school.statut)}">${statutBadgeLabel(school.statut)}</span>` +
+      school.ville.map((v) => `<span class="badge ville-badge">${escapeHtml(v)}</span>`).join("") +
       (school.agree === true ? `<span class="badge status-public">${icon("landmark")}${i18nLabel("ecoles.badge.agree", "Agréé État", "State-accredited")}</span>` : "");
     body.appendChild(badges);
 
@@ -760,22 +790,22 @@
     // information, trois fois moins de hauteur.
     const filieres = document.createElement("p");
     filieres.className = "school-filieres-line";
-    filieres.innerHTML = `<strong>${i18nLabel("ecoles.card.filieres", "Filières :", "Programs:")}</strong> ${school.filieres.join(" · ")}`;
+    filieres.innerHTML = `<strong>${i18nLabel("ecoles.card.filieres", "Filières :", "Programs:")}</strong> ${escapeHtml(school.filieres.join(" · "))}`;
     body.appendChild(filieres);
 
     const meta = document.createElement("div");
     meta.className = "school-meta";
-    let metaHtml = `<span><strong>${i18nLabel("ecoles.card.niveaux", "Niveaux :", "Levels:")}</strong> ${school.niveaux.join(", ")}</span>`;
+    let metaHtml = `<span><strong>${i18nLabel("ecoles.card.niveaux", "Niveaux :", "Levels:")}</strong> ${escapeHtml(school.niveaux.join(", "))}</span>`;
     meta.innerHTML = metaHtml;
     body.appendChild(meta);
 
     // Fiche compacte : le détail (durée, admission, frais, notes) s'ouvre au
     // clic, pour parcourir et comparer les 32 écoles sans pavés de texte.
     let detailsHtml = "";
-    if (school.duree) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.duree", "Durée :", "Duration:")}</strong> ${school.duree}</span>`;
-    if (school.admission) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.admission", "Admission :", "Admission:")}</strong> ${school.admission}</span>`;
-    if (school.frais) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.frais", "Frais :", "Fees:")}</strong> ${school.frais}</span>`;
-    if (school.agreeNote) detailsHtml += `<span>${icon("info")}${school.agreeNote}</span>`;
+    if (school.duree) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.duree", "Durée :", "Duration:")}</strong> ${escapeHtml(school.duree)}</span>`;
+    if (school.admission) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.admission", "Admission :", "Admission:")}</strong> ${escapeHtml(school.admission)}</span>`;
+    if (school.frais) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.frais", "Frais :", "Fees:")}</strong> ${escapeHtml(school.frais)}</span>`;
+    if (school.agreeNote) detailsHtml += `<span>${icon("info")}${escapeHtml(school.agreeNote)}</span>`;
     if (detailsHtml) {
       const details = document.createElement("details");
       details.className = "school-details";
@@ -783,12 +813,13 @@
       body.appendChild(details);
     }
 
-    if (school.site) {
+    const siteHref = safeUrl(school.site);
+    if (siteHref) {
       const link = document.createElement("a");
       link.className = "school-link";
-      link.href = school.site;
+      link.href = siteHref;
       link.target = "_blank";
-      link.rel = "noopener";
+      link.rel = "noopener noreferrer";
       link.innerHTML = i18nLabel("ecoles.card.site", "Voir le site officiel →", "See official site →");
       body.appendChild(link);
     }
@@ -883,7 +914,7 @@
     if (progressLabel) progressLabel.textContent = `Question ${quizIndex + 1} / ${total}`;
 
     questionEl.innerHTML = `
-      <h2 class="quiz-question-title">${tField(q, "question")}</h2>
+      <h2 class="quiz-question-title">${escapeHtml(tField(q, "question"))}</h2>
       <div class="quiz-options"></div>
     `;
     const optionsWrap = questionEl.querySelector(".quiz-options");
@@ -1039,7 +1070,7 @@
     const checklist = document.createElement("div");
     checklist.className = "quiz-match-checklist";
     checklist.innerHTML = match.checks
-      .map((c) => `<span class="${c.ok ? "match-ok" : "match-no"}">${c.ok ? "✓" : "✗"} ${c.label}</span>`)
+      .map((c) => `<span class="${c.ok ? "match-ok" : "match-no"}">${c.ok ? "✓" : "✗"} ${escapeHtml(c.label)}</span>`)
       .join("");
     card.insertBefore(checklist, card.firstChild);
     return card;
@@ -1083,7 +1114,7 @@
       : [];
     const schoolMatches = computeSchoolMatches(top);
     const isEn = currentLang() === "en";
-    const topLabel = isEn && topMeta.nameEn ? topMeta.nameEn : top;
+    const topLabel = escapeHtml(isEn && topMeta.nameEn ? topMeta.nameEn : top);
 
     let html = `
       <p class="quiz-disclaimer">${
@@ -1092,7 +1123,7 @@
           : 'Ce résultat est un point de départ, pas un verdict : 14 questions ne peuvent pas te connaître à 100 %. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier, et teste la roadmap avant de t\'engager financièrement dans une école.'
       }</p>
       <h2>${isEn ? "Your profile" : "Ton profil"} : ${domainIcon(top)}${topLabel}</h2>
-      <p class="category-desc">${tField(topMeta, "description")}</p>
+      <p class="category-desc">${escapeHtml(tField(topMeta, "description"))}</p>
     `;
 
     if (matchingRoles.length) {
@@ -1109,7 +1140,7 @@
 
     if (isCloseCall) {
       const secondMeta = DOMAINS[second];
-      const secondLabel = isEn && secondMeta.nameEn ? secondMeta.nameEn : second;
+      const secondLabel = escapeHtml(isEn && secondMeta.nameEn ? secondMeta.nameEn : second);
       html += `<p class="quiz-secondary">${
         isEn
           ? `Close call: <strong>${domainIcon(second)}${secondLabel}</strong> suits you almost as much as ${topLabel}. Worth exploring both before choosing.`
@@ -1175,7 +1206,7 @@
       const row = document.createElement("div");
       row.className = "quiz-score-row";
       row.innerHTML = `
-        <span class="quiz-score-label">${domainIcon(domain)}${domainLabel}</span>
+        <span class="quiz-score-label">${domainIcon(domain)}${escapeHtml(domainLabel)}</span>
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
         <span class="quiz-score-value">${score}/${totalAnswers}</span>
       `;
@@ -1214,10 +1245,10 @@
       const item = document.createElement("div");
       item.className = "timeline-item";
       item.innerHTML = `
-        <div class="timeline-period">${tField(step, "periode")}</div>
+        <div class="timeline-period">${escapeHtml(tField(step, "periode"))}</div>
         <div class="timeline-content">
-          <h3>${tField(step, "titre")}</h3>
-          <p>${tField(step, "description")}</p>
+          <h3>${escapeHtml(tField(step, "titre"))}</h3>
+          <p>${escapeHtml(tField(step, "description"))}</p>
         </div>
       `;
       container.appendChild(item);
@@ -1295,10 +1326,10 @@
 
       let bodyHtml = "";
       if (dc && dc.urgent && dc.urgentNote) {
-        bodyHtml += `<p class="dates-urgent-note">${icon("clock")}${dc.urgentNote}</p>`;
+        bodyHtml += `<p class="dates-urgent-note">${icon("clock")}${escapeHtml(dc.urgentNote)}</p>`;
       }
       if (dc && dc.note) {
-        bodyHtml += `<p class="dates-note">${dc.note}</p>`;
+        bodyHtml += `<p class="dates-note">${escapeHtml(dc.note)}</p>`;
       }
 
       // Les libellés de champ sont traduits ; les valeurs elles-mêmes (dates,
@@ -1315,19 +1346,19 @@
         : [];
 
       if (fields.length) {
-        bodyHtml += `<ul class="dates-list">` + fields.map(([label, value]) => `<li><strong>${label} :</strong> ${value}</li>`).join("") + `</ul>`;
+        bodyHtml += `<ul class="dates-list">` + fields.map(([label, value]) => `<li><strong>${label} :</strong> ${escapeHtml(value)}</li>`).join("") + `</ul>`;
       }
 
       if (dc && dc.anneeReference) {
         bodyHtml += `<p class="dates-ref-note">${
           isEn
-            ? `Calendar reference (${dc.anneeReference})${dc.aVerifier ? " : reconfirm directly with the school" : ""}.`
-            : `Repère de calendrier (${dc.anneeReference})${dc.aVerifier ? " : à reconfirmer directement auprès de l'école" : ""}.`
+            ? `Calendar reference (${escapeHtml(dc.anneeReference)})${dc.aVerifier ? " : reconfirm directly with the school" : ""}.`
+            : `Repère de calendrier (${escapeHtml(dc.anneeReference)})${dc.aVerifier ? " : à reconfirmer directement auprès de l'école" : ""}.`
         }</p>`;
       }
 
       if (dc && dc.contact) {
-        bodyHtml += `<p class="dates-ref-note">${isEn ? "Direct contact" : "Contact direct"} : ${dc.contact}</p>`;
+        bodyHtml += `<p class="dates-ref-note">${isEn ? "Direct contact" : "Contact direct"} : ${escapeHtml(dc.contact)}</p>`;
       }
 
       if (!dc) {
@@ -1338,10 +1369,11 @@
         }</p>`;
       }
 
+      const siteHref = safeUrl(school.site);
       row.innerHTML = `
-        <h3>${school.name}</h3>
+        <h3>${escapeHtml(school.name)}</h3>
         ${bodyHtml}
-        ${school.site ? `<a class="school-link" href="${school.site}" target="_blank" rel="noopener">${isEn ? "See official site →" : "Voir le site officiel →"}</a>` : ""}
+        ${siteHref ? `<a class="school-link" href="${escapeHtml(siteHref)}" target="_blank" rel="noopener noreferrer">${isEn ? "See official site →" : "Voir le site officiel →"}</a>` : ""}
       `;
       container.appendChild(row);
     });
@@ -1378,13 +1410,13 @@
     if (typeof ROLES !== "undefined") {
       Object.keys(ROLES).forEach((id) => {
         const r = ROLES[id];
-        index.push({ title: r.title, description: r.description || "", category: "Roadmap · métier", url: `roadmap.html?id=${id}`, keywords: flattenRoadmapKeywords(r) });
+        index.push({ title: r.title, description: r.description || "", category: "Roadmap · métier", url: `roadmap.html?id=${encodeURIComponent(id)}`, keywords: flattenRoadmapKeywords(r) });
       });
     }
     if (typeof SKILLS !== "undefined") {
       Object.keys(SKILLS).forEach((id) => {
         const s = SKILLS[id];
-        index.push({ title: s.title, description: s.description || "", category: "Roadmap · compétence", url: `roadmap.html?id=${id}`, keywords: flattenRoadmapKeywords(s) });
+        index.push({ title: s.title, description: s.description || "", category: "Roadmap · compétence", url: `roadmap.html?id=${encodeURIComponent(id)}`, keywords: flattenRoadmapKeywords(s) });
       });
     }
     if (typeof SCHOOLS !== "undefined") {
@@ -1475,11 +1507,13 @@
       matches.slice(0, 60).forEach((item) => {
         const card = document.createElement("a");
         card.className = "search-result";
-        const targetUrl = item.externalUrl || item.url;
+        const externalHref = safeUrl(item.externalUrl);
+        const targetUrl = externalHref || safeUrl(item.url);
+        if (!targetUrl) return;
         card.href = targetUrl;
-        if (item.externalUrl) {
+        if (externalHref) {
           card.target = "_blank";
-          card.rel = "noopener";
+          card.rel = "noopener noreferrer";
         }
 
         const cat = document.createElement("span");
@@ -1581,5 +1615,5 @@
 
   // Exposé pour js/assistant.js : réutilise la même normalisation et le même
   // index de recherche que la page Recherche, pas de logique dupliquée.
-  window.WIYAO_SEARCH = { buildGlobalIndex, normalize, currentLang };
+  window.WIYAO_SEARCH = { buildGlobalIndex, normalize, currentLang, safeUrl };
 })();
