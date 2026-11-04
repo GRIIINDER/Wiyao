@@ -69,7 +69,7 @@
 ## 9. Vérification d'ensemble
 
 - [x] 9.1 Rejouer dans un navigateur, sur cache vierge, les scénarios de `security/browser-hardening` sur les 20 pages : `document.cookie` vide, aucune requête vers un autre domaine, `localStorage` limité aux clés de langue et de progression, en-têtes présents. Vérification : résultat chiffré consigné dans le registre.
-- [ ] 9.2 Ouvrir la PR « audit » et vérifier que tous les workflows DevSecOps, CodeQL et le contrôle d'hygiène passent. Vérification : tous les contrôles de la PR sont au vert.
+- [x] 9.2 Ouvrir la PR « audit » et vérifier que tous les workflows DevSecOps, CodeQL et le contrôle d'hygiène passent. Vérification : tous les contrôles de la PR sont au vert.
 - [x] 9.3 Lancer `openspec validate security-audit-owasp-pasta-stride --strict` et corriger tout écart entre les documents livrés et les specs. Vérification : la validation passe.
 
 ## Workflow follow-up
