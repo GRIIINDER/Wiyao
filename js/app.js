@@ -7,8 +7,27 @@
   // Traduction du contenu dynamique (data.js) : chaque objet peut porter un
   // champ "xxxEn" à côté de "xxx" ; tField renvoie la version anglaise si elle
   // existe et que la langue courante est "en", sinon la version française.
+  // Le navigateur peut refuser l'accès au stockage (données des sites
+  // bloquées) : le site doit alors s'afficher quand même, sans mémoriser la
+  // langue ni la progression.
+  function storageGet(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function storageSet(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {
+      // Stockage refusé ou plein : la progression n'est simplement pas gardée.
+    }
+  }
+
   function currentLang() {
-    return localStorage.getItem("wiyao-lang") === "en" ? "en" : "fr";
+    return storageGet("wiyao-lang") === "en" ? "en" : "fr";
   }
 
   function tField(obj, field) {
@@ -62,15 +81,17 @@
   // interagir avec Object.prototype (ex. "__proto__" via roadmap.html?id=...).
   function loadProgress() {
     try {
-      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      return new Map(Object.entries(parsed || {}));
+      const parsed = JSON.parse(storageGet(STORAGE_KEY));
+      // Seules les listes d'étapes sont reprises : une valeur d'un autre type
+      // (stockage modifié à la main) ferait échouer le clic sur une case.
+      return new Map(Object.entries(parsed || {}).filter(([, items]) => Array.isArray(items)));
     } catch (e) {
       return new Map();
     }
   }
 
   function saveProgress(progress) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.fromEntries(progress)));
+    storageSet(STORAGE_KEY, JSON.stringify(Object.fromEntries(progress)));
   }
 
   function toggleItem(roadmapId, itemKey) {

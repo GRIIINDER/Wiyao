@@ -1623,12 +1623,22 @@
     "eco.r8.p": { fr: "Première plateforme francophone de MOOC au monde, portée par des universités et écoles françaises : plus de 550 cours gratuits, dont plusieurs en informatique et programmation (introduction à Python, algorithmique, socle en informatique).", en: "The world's first French-language MOOC platform, backed by French universities and schools: over 550 free courses, including several in computer science and programming (intro to Python, algorithms, computing fundamentals)." },
   };
 
+  // Stockage refusé par le navigateur : la page reste en français et le
+  // changement de langue s'applique quand même à la page en cours.
   function getLang() {
-    return localStorage.getItem(STORAGE_KEY) === "en" ? "en" : "fr";
+    try {
+      return localStorage.getItem(STORAGE_KEY) === "en" ? "en" : "fr";
+    } catch (e) {
+      return "fr";
+    }
   }
 
   function setLang(lang) {
-    localStorage.setItem(STORAGE_KEY, lang);
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch (e) {
+      // Langue non mémorisée : elle vaut pour cette page seulement.
+    }
     applyLang(lang);
   }
 

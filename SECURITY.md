@@ -39,3 +39,15 @@ Do not exploit a finding beyond what is needed to demonstrate it, and give us ti
 Nous lisons les signalements et répondons dès que possible. Il n’y a pas de programme de bug bounty.
 
 We read reports and reply as soon as we can. There is no bug bounty program.
+
+## Modèle de menaces / Threat model
+
+Dernier audit / last audit : **2026-11-04** (PASTA, STRIDE, OWASP Top 10:2025), commit `1f4ccf5`.
+
+- [Modèle de menaces / threat model](docs/security/threat-model.md)
+- [Correspondance OWASP Top 10:2025 / OWASP mapping](docs/security/owasp-top10.md)
+- [Registre des constats / findings register](docs/security/findings.md)
+
+Toute modification d’une frontière de confiance (nouvel appel réseau, nouveau tiers, nouveau workflow ou permission, nouvelle donnée stockée ou envoyée) met à jour ce modèle dans la même PR.
+
+Any change to a trust boundary (new network call, third party, workflow or permission, or new stored or sent data) updates the threat model in the same pull request.
