@@ -4,10 +4,23 @@
 /**
  * Contrôles de sécurité locaux, sans dépendance npm.
  * À lancer via `node scripts/ci-security-hygiene.js` (CI DevSecOps + local).
+ *
+ * 1. Syntaxe JS              6. Actions épinglées sur un SHA
+ * 2. JSON de configuration   7. SECURITY.md et security.txt présents
+ * 3. En-têtes de sécurité    8. Empreinte de chaque script en ligne dans la CSP
+ *    et CSP des scripts      9. Intégrité des bibliothèques de js/vendor/
+ * 4. APIs JS dangereuses    10. `permissions` déclarées par chaque workflow
+ * 5. Ressources en HTTP clair
+ *
+ * Les empreintes (8, 9) sont calculées sur la forme à fins de ligne LF, celle
+ * que Git stocke et que Vercel sert : le résultat est le même sous Windows.
+ * Voir docs/security/threat-model.md pour les menaces que ces contrôles
+ * couvrent.
  */
 
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 const { execFileSync } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -74,7 +87,11 @@ const requiredHeaders = [
   "Permissions-Policy",
   "Strict-Transport-Security",
   "Content-Security-Policy",
+  "Cross-Origin-Opener-Policy",
+  "Cross-Origin-Resource-Policy",
 ];
+
+let scriptSrc = null; // directive script-src de la CSP, reprise au contrôle 8
 
 try {
   const vercel = JSON.parse(read(path.join(ROOT, "vercel.json")));
@@ -86,6 +103,15 @@ try {
   const csp = headerList.find((h) => h.key === "Content-Security-Policy");
   if (csp && /unsafe-eval/i.test(csp.value)) {
     errors.push("vercel.json : CSP contient 'unsafe-eval'");
+  }
+  if (csp) {
+    const directive = csp.value.split(";").map((d) => d.trim()).find((d) => /^script-src\s/i.test(d));
+    if (!directive) {
+      errors.push("vercel.json : CSP sans directive script-src");
+    } else {
+      scriptSrc = directive;
+      if (/'unsafe-inline'/i.test(directive)) errors.push("vercel.json : script-src contient 'unsafe-inline'");
+    }
   }
 } catch (err) {
   errors.push(`Impossible de valider vercel.json : ${err.message}`);
@@ -163,6 +189,68 @@ for (const file of workflowFiles) {
 for (const required of ["SECURITY.md", path.join(".well-known", "security.txt")]) {
   if (!fs.existsSync(path.join(ROOT, required))) {
     errors.push(`Fichier de divulgation manquant : ${required}`);
+  }
+}
+
+// Contenu d'un fichier texte sous sa forme LF (octet pour octet, sans
+// réinterpréter l'encodage), pour calculer la même empreinte que le serveur.
+function lfBytes(buffer) {
+  return Buffer.from(buffer.toString("latin1").replace(/\r\n/g, "\n"), "latin1");
+}
+
+// --- 8. Empreinte de chaque script en ligne présente dans la CSP -----------
+// Un script en ligne modifié sans mettre à jour son empreinte est bloqué en
+// silence par le navigateur en production.
+for (const file of htmlFiles) {
+  const html = lfBytes(fs.readFileSync(file)).toString("utf8");
+  // La balise fermante peut porter des espaces ou des attributs (« </script > ») :
+  // le navigateur l'accepte, le contrôle doit donc l'accepter aussi pour qu'aucun
+  // script en ligne n'y échappe.
+  for (const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\b[^>]*>/gi)) {
+    if (/\bsrc\s*=/i.test(m[1])) continue;
+    const hash = "sha256-" + crypto.createHash("sha256").update(m[2], "utf8").digest("base64");
+    if (scriptSrc && !scriptSrc.includes(`'${hash}'`)) {
+      errors.push(`${rel(file)} : empreinte du script en ligne absente de script-src (attendue : '${hash}')`);
+    }
+  }
+}
+
+// --- 9. Intégrité des bibliothèques copiées dans js/vendor/ ---------------
+// Mise à jour : télécharger l'archive npm, vérifier son empreinte `integrity`
+// publiée par le registre, remplacer le fichier, puis reporter ici la version,
+// la date et la nouvelle empreinte (procédure de CLAUDE.md, « Animations »).
+const VENDOR_FILES = {
+  "js/vendor/gsap.min.js": {
+    version: "gsap 3.15.0",
+    source: "https://registry.npmjs.org/gsap/-/gsap-3.15.0.tgz (package/dist/gsap.min.js)",
+    checked: "2026-11-04",
+    sha256: "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+  },
+};
+
+const vendorFiles = files.filter((f) => rel(f).split(path.sep).slice(0, 2).join("/") === "js/vendor");
+for (const file of vendorFiles) {
+  const key = rel(file).split(path.sep).join("/");
+  const ref = VENDOR_FILES[key];
+  if (!ref) {
+    errors.push(`${key} : bibliothèque sans empreinte de référence (à ajouter dans VENDOR_FILES)`);
+    continue;
+  }
+  const actual = crypto.createHash("sha256").update(lfBytes(fs.readFileSync(file))).digest("hex");
+  if (actual !== ref.sha256) {
+    errors.push(`${key} : empreinte ${actual} différente de la référence ${ref.sha256} (${ref.version})`);
+  }
+}
+for (const key of Object.keys(VENDOR_FILES)) {
+  if (!fs.existsSync(path.join(ROOT, key))) errors.push(`${key} : listé dans VENDOR_FILES mais absent du dépôt`);
+}
+
+// --- 10. Permissions déclarées au niveau de chaque workflow -----------------
+// Sans `permissions:` en tête, le jeton du workflow reçoit les droits par
+// défaut du dépôt, souvent en écriture.
+for (const file of workflowFiles) {
+  if (!/^permissions\s*:/m.test(read(file))) {
+    errors.push(`${rel(file)} : pas de « permissions: » au niveau du workflow`);
   }
 }
 
