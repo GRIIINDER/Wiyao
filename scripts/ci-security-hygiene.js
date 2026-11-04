@@ -203,7 +203,10 @@ function lfBytes(buffer) {
 // silence par le navigateur en production.
 for (const file of htmlFiles) {
   const html = lfBytes(fs.readFileSync(file)).toString("utf8");
-  for (const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+  // La balise fermante peut porter des espaces ou des attributs (« </script > ») :
+  // le navigateur l'accepte, le contrôle doit donc l'accepter aussi pour qu'aucun
+  // script en ligne n'y échappe.
+  for (const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\b[^>]*>/gi)) {
     if (/\bsrc\s*=/i.test(m[1])) continue;
     const hash = "sha256-" + crypto.createHash("sha256").update(m[2], "utf8").digest("base64");
     if (scriptSrc && !scriptSrc.includes(`'${hash}'`)) {
