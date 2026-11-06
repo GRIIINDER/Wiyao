@@ -4740,17 +4740,16 @@ const SCHOOLS = {
     niveaux: ["Licence", "Master", "Formations certifiantes"],
     filieres: ["Intelligence Artificielle", "Science des Données", "Génie Logiciel", "Cybersécurité", "Développement Web & Mobile", "Réseaux, Systèmes & Sécurité"],
     duree: "Licence : 3 ans · Master : 2 ans",
-    admission: "Concours d'entrée post-BAC (dossier + épreuves écrites), ouvert aux séries A4, C, D, E, F1/F2/F3, G2/G3 ; Licence en informatique requise pour le Master.",
+    admission: "Sur étude de dossier ou sur concours (BAC II séries A4, C, D, E, F1/F2/F3, G2/G3 ou équivalent) ; Licence en informatique ou discipline connexe pour le Master.",
     frais: "Licence (3 ans, toutes filières) : 800 000 FCFA en 1re année · 900 000 en 2e · 1 000 000 en 3e, + inscription 50 000 FCFA en 1re année puis 30 000 FCFA, kit vestimentaire 50 000 FCFA, étude de dossier 10 000 FCFA (25 000 pour les non-Togolais) et concours facultatif 5 000 FCFA ; paiement en 3 fois (50 % à la rentrée d'octobre, 30 % au 31 janvier, 20 % au 30 avril). Master : 1 100 000 FCFA en M1 (hors mise à niveau) · 1 300 000 en M2, + inscription 100 000 FCFA puis 30 000 FCFA (source : page « Procédure d'inscription » d'ipnetuniversity.com, consultée le 6 novembre 2026, sans année indiquée).",
     site: "https://ipnetuniversity.com",
     description: "Institut privé fondé en 2003, très orienté pratique (80+ partenariats entreprises tech), élu « université la plus innovante du Togo » en 2022.",
     datesCles: {
       mode: "campagne",
-      note: "Concours d'entrée écrit dans 5 centres (IPNET à Lomé, Collège Chaminade à Kara, LETP Atakpamé, LETP Sokodé, LETP Dapaong). Une admission sur étude de dossier reste possible en parallèle, jusqu'au 30 septembre 2026.",
-      concours: "4 septembre 2026",
-      cloture: "30 septembre 2026 (admission sur étude de dossier)",
+      note: "Concours d'entrée doté de bourse, ouvert à tous les bacheliers (acte de naissance, relevés du BAC I et du BAC II, 5 000 FCFA d'inscription) : 1er concours dans 5 centres (IPNET à Lomé, Collège Chaminade à Kara, LETP Atakpamé, LETP Sokodé, LETP Dapaong), 2e concours à IPNET Lomé seulement (page « Concours de bourse 2026 » d'ipnetuniversity.com). Admission sur étude de dossier possible en parallèle jusqu'au 30 septembre 2026 (flyer officiel).",
+      cloture: "4 septembre 2026 (1er concours) · 30 septembre 2026 (admission sur dossier) · 5 octobre 2026 (2e concours)",
+      concours: "4 septembre 2026 (5 centres) · 5 octobre 2026 (Lomé)",
       anneeReference: "2026-2027",
-      aVerifier: true,
       contact: "ipnet@ipnetinstitute.com"
     }
   },
@@ -4772,6 +4771,7 @@ const SCHOOLS = {
       note: "Campagne annuelle avec concours écrit (mathématiques, techniques d'expression, anglais). Campagne 2026-2027 close : résultats du concours du 1er septembre 2026 publiés (confirmé sur new.iai-togo.tg, rubrique informations urgentes).",
       cloture: "21 août 2026, 17h00",
       concours: "1er septembre 2026",
+      resultats: "8 septembre 2026 (note de service n°550 de l'IAI-Togo)",
       anneeReference: "2026-2027"
     }
   },
@@ -4849,8 +4849,9 @@ const SCHOOLS = {
     datesCles: {
       mode: "continue",
       note: "Inscription continue pour les cycles Licence/BTS ; vagues ponctuelles pour les formations courtes.",
-      rentree: "6 octobre (référence)",
-      anneeReference: "2025-2026"
+      rentree: "6 octobre 2025 (référence : aucune date 2026-2027 publiée sur formatec.tg)",
+      anneeReference: "2025-2026",
+      aVerifier: true
     }
   },
   "ucao-uut": {
@@ -4869,7 +4870,7 @@ const SCHOOLS = {
       mode: "continue",
       note: "Préinscription ouverte depuis le 1ᵉʳ juillet 2026 et jusqu'à la rentrée (pas de date limite stricte) : formulaire en ligne sur preinscription.ucao-uut.tg ou dossier numérique en PDF à scolarite@ucao-uut.tg, sinon dépôt physique sur les campus de Sanguéra ou Près Saint-Jo (Lomé).",
       ouverture: "1er juillet 2026 (confirmée)",
-      rentree: "12 octobre 2026 (rentrée des Licence, calendrier officiel 2026-2027)",
+      rentree: "19 octobre 2026, 7h30, campus de Sanguéra (Licence : reportée du 12 octobre, note d'information n°13/26 du 12 octobre 2026)",
       anneeReference: "2026-2027"
     }
   },
@@ -4888,8 +4889,8 @@ const SCHOOLS = {
     datesCles: {
       mode: "campagne",
       note: "Campagne annuelle avec test écrit (maths, français, culture générale ou logique selon le niveau) et entretien de motivation.",
-      ouverture: "4 juillet, journée portes ouvertes (référence)",
-      cloture: "26 septembre (référence)",
+      ouverture: "4 juillet 2026, journée portes ouvertes (flyer officiel)",
+      cloture: "26 septembre 2025 (référence du cycle précédent : aucune date 2026 publiée)",
       anneeReference: "2026-2027",
       aVerifier: true
     }
@@ -4910,8 +4911,8 @@ const SCHOOLS = {
     datesCles: {
       mode: "continue",
       note: "Admission sur dossier uniquement, pas de concours.",
-      rentree: "mi-octobre (référence 2024, non reconfirmée depuis)",
-      anneeReference: "2024-2025",
+      rentree: "16 octobre 2023 (rentrée 2023-2024, dernière date publiée sur defitech.tg)",
+      anneeReference: "2023-2024",
       aVerifier: true
     }
   },
@@ -4931,7 +4932,7 @@ const SCHOOLS = {
       mode: "continue",
       note: "Inscription continue ; un concours de bourses (réduction de frais, pas un concours d'entrée classique) s'est tenu le 18 septembre 2025, aucune date n'est annoncée pour 2026-2027.",
       concours: "18 septembre 2025, concours de bourses (référence)",
-      rentree: "29 septembre (référence)",
+      rentree: "29 septembre 2025 (référence)",
       anneeReference: "2025-2026"
     }
   },
@@ -4949,7 +4950,7 @@ const SCHOOLS = {
     description: "2e université publique du Togo ; la Faculté des Sciences et Techniques (FAST) porte plusieurs licences professionnelles tech.",
     datesCles: {
       mode: "campagne",
-      note: "Campagne annuelle via le service DAAS : préinscription en ligne sur le portail PAUL UK (etu.univkara.tg), paiement des droits par Mobile Money, puis dépôt du dossier complet au guichet de la DAAS (Campus Sud). Les appels à candidature des licences (dépôt du 18 août au 25 septembre 2026, prolongé au 9 octobre pour plusieurs licences) et des masters (jusqu'au 30 octobre 2026) sont clos.",
+      note: "Campagne annuelle via le service DAAS : préinscription en ligne sur le portail PAUL UK (etu.univkara.tg), paiement des droits par Mobile Money, puis dépôt du dossier complet au guichet de la DAAS (Campus Sud). Les appels à candidature des licences (dépôt du 18 août au 25 septembre 2026, prolongé au 9 octobre pour plusieurs licences) et des masters (jusqu'au 30 octobre 2026) sont clos. La page Admission indique « Fermée actuellement » pour les inscriptions 2026-2027 (consultée le 6 novembre 2026).",
       ouverture: "15 septembre 2026, inscriptions 2026-2027 (univkara.tg)",
       cloture: "18 décembre 2026, date limite de dépôt du dossier selon la page Admission (la page d'accueil annonce des inscriptions jusqu'au 29 décembre : se fier à la date la plus proche)",
       rentree: "21 septembre 2026, début des cours (univkara.tg)",
@@ -4992,7 +4993,7 @@ const SCHOOLS = {
     datesCles: {
       mode: "campagne",
       note: "Rentrée académique annoncée pour octobre 2026 (référence 2026-2027).",
-      rentree: "Octobre 2026 (référence)",
+      rentree: "Octobre 2026 (ascencia-keyce-togo.fr)",
       contact: "+228 93 23 64 28 / +228 96 19 56 04 / +33 1 47 34 39 39"
     }
   },
@@ -5034,7 +5035,7 @@ const SCHOOLS = {
     description: "École nationale d'ingénieurs publique (ENP), qui a remplacé en juillet 2026 l'École Polytechnique de Lomé : elle-même composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).",
     datesCles: {
       mode: "campagne",
-      note: "Concours écrit annuel réservé aux nouveaux bacheliers, dépôt possible à Lomé, Kara (DAAS) et dans les directions régionales (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong). Annonce officielle du Ministère, datée du 10 août 2026. Candidatures 2026-2027 closes : les dates ci-dessous servent de repère pour la prochaine campagne.",
+      note: "Concours écrit annuel réservé aux nouveaux bacheliers, dépôt possible à Lomé, Kara (DAAS) et dans les directions régionales (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong). Annonce officielle du Ministère (août 2026). Candidatures 2026-2027 closes : les dates ci-dessous servent de repère pour la prochaine campagne.",
       urgent: false,
       ouverture: "17 août 2026",
       cloture: "11 septembre 2026, 15h00",
@@ -5061,6 +5062,9 @@ const SCHOOLS = {
     datesCles: {
       mode: "inconnu",
       note: "Aucun calendrier publié : confirmation de dossier sous 48h ouvrées après un entretien téléphonique obligatoire.",
+      rentree: "13 octobre 2025 (référence : article « La Rentrée 2025-2026 à l'IAEC »)",
+      anneeReference: "2025-2026",
+      aVerifier: true,
       contact: "+228 93 90 66 66"
     }
   },
@@ -5132,9 +5136,8 @@ const SCHOOLS = {
     site: "https://www.ismadonai.net/",
     description: "École privée multi-pays certifiée ISO 9001:2015, fondée en 2005, présente aussi au Bénin et en Côte d'Ivoire, forte orientation professionnalisante.",
     datesCles: {
-      mode: "continue",
-      note: "Rentrée en septembre, calendrier précis non publié.",
-      aVerifier: true
+      mode: "inconnu",
+      note: "Aucun calendrier publié : le site indique que les inscriptions suivent le calendrier académique de chaque campus et renvoie à l'administration pour les dates exactes (ismadonai.net, consulté le 6 novembre 2026)."
     }
   },
   "istm": {
