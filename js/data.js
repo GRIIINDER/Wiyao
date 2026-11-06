@@ -4924,13 +4924,13 @@ const SCHOOLS = {
     filieres: ["Informatique de Gestion", "Systèmes et Réseaux Informatiques", "Développement d'Application", "Sécurité Informatique"],
     duree: null,
     admission: "BAC II requis pour le BTS et la Licence informatique",
-    frais: "Non communiqué publiquement. Un concours de bourses a lieu chaque année en septembre (réduction sur les frais de scolarité, montant non précisé).",
+    frais: "Non communiqué publiquement. L'école organise un concours de bourses donnant droit à une réduction sur les frais de scolarité (montant non précisé) : dernière édition le 18 septembre 2025, aucune date annoncée pour 2026-2027 (ecoledescadres.com, consulté le 6 novembre 2026).",
     site: "https://ecoledescadres.com/",
     description: "Une des premières écoles professionnelles du Togo (1997), diplômes en partenariat avec l'Université du Littoral Côte d'Opale (France), accréditée CAMES.",
     datesCles: {
       mode: "continue",
-      note: "Inscription continue ; un concours de bourses (réduction de frais, pas un concours d'entrée classique) a lieu chaque année en septembre.",
-      concours: "18 septembre, concours de bourses (référence)",
+      note: "Inscription continue ; un concours de bourses (réduction de frais, pas un concours d'entrée classique) s'est tenu le 18 septembre 2025, aucune date n'est annoncée pour 2026-2027.",
+      concours: "18 septembre 2025, concours de bourses (référence)",
       rentree: "29 septembre (référence)",
       anneeReference: "2025-2026"
     }
@@ -4944,7 +4944,7 @@ const SCHOOLS = {
     filieres: ["Mathématiques et Informatique Appliquées", "Sécurité Informatique et Cybersécurité", "Développement Web et Mobile", "Métiers du Multimédia et de l'Internet"],
     duree: "Licences en 3 ans, avec stage professionnel et soutenance en fin de cycle",
     admission: "Bac C, D ou E (session récente), sélection sur dossier",
-    frais: "Master : de 176 500 FCFA/an (recherche, étudiants togolais/UEMOA) à plus d'1 000 000 FCFA (professionnel, étranger) : arrêté officiel 2026-2027. Licence non communiquée publiquement. Bourses d'État togolaises et bourses internationales (France, Inde) existantes.",
+    frais: "Master : de 176 500 FCFA/an (recherche, étudiants togolais/UEMOA) à plus d'1 000 000 FCFA (professionnel, étranger) : arrêté officiel 2026-2027. Licence non communiquée publiquement. Bourses d'État, prix d'excellence et bourses de mobilité internationale : détail sur la page Bourses.",
     site: "https://univkara.tg/",
     description: "2e université publique du Togo ; la Faculté des Sciences et Techniques (FAST) porte plusieurs licences professionnelles tech.",
     datesCles: {
@@ -4965,7 +4965,7 @@ const SCHOOLS = {
     filieres: ["Génie Logiciel", "Réseaux et Télécommunications", "Informatique de Gestion (Développeur d'application)", "Informatique de Gestion (Administrateur Réseaux locaux d'entreprises)", "Maintenance Informatique et Réseaux", "Sécurité Informatique, Cybersécurité et Cybercriminalité", "Informatique Industrielle", "Marketing Digital & E-Business", "Modélisation Économétrique et Analyse des Données"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "Inscriptions continues (critères détaillés non publiés en ligne)",
-    frais: "449 999 FCFA/an (BTS/Licence 1-2, cours du jour ou du soir) · 549 999 (Licence 3) · 669 999 (Master 1) · 799 999 (Master 2), payables en 10 mensualités de septembre à juin (45 000 FCFA/mois en BTS/Licence 1-2) + 50 000 FCFA d'inscription, réduits de 20 % pour les 200 premiers inscrits. Inscription et scolarité non remboursables (source : échéancier officiel 2026-2027 du 8 juin 2026). Bourses ponctuelles par tirage au sort à la rentrée, non garanties chaque année.",
+    frais: "449 999 FCFA/an (BTS/Licence 1-2, cours du jour ou du soir) · 549 999 (Licence 3) · 669 999 (Master 1) · 799 999 (Master 2), payables en 10 mensualités de septembre à juin (45 000 FCFA/mois en BTS/Licence 1-2) + 50 000 FCFA d'inscription, avec 20 % de réduction sur ces frais d'inscription pour les 200 premiers inscrits. Inscription et scolarité non remboursables (source : échéancier officiel 2026-2027 du 8 juin 2026).",
     site: "https://www.esatogo.com/",
     description: "École pluridisciplinaire fondée en 2010, plus de 33 filières, 1ère école togolaise certifiée ISO 9001. Selon sa brochure 2026, la Licence en Génie Logiciel et la Licence en Réseaux Télécommunications sont reconnues par le CAMES. Soins de santé gratuits pour ses étudiants et aide au logement pour ceux qui viennent de l'intérieur du pays ou de l'étranger.",
     datesCles: {
