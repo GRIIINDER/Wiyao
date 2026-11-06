@@ -4741,7 +4741,7 @@ const SCHOOLS = {
     filieres: ["Intelligence Artificielle", "Science des Données", "Génie Logiciel", "Cybersécurité", "Développement Web & Mobile", "Réseaux, Systèmes & Sécurité"],
     duree: "Licence : 3 ans · Master : 2 ans",
     admission: "Concours d'entrée post-BAC (dossier + épreuves écrites), ouvert aux séries A4, C, D, E, F1/F2/F3, G2/G3 ; Licence en informatique requise pour le Master.",
-    frais: "800 000 FCFA (L1) · 900 000 (L2) · 1 000 000 (L3) : exemple filière Cybersécurité, + inscription (50 000 FCFA puis 30 000 FCFA/an) et frais de dossier. Bourses sociales/mérite et paiement en 3 fois (source : ipnetuniversity.com, 2025).",
+    frais: "Licence (3 ans, toutes filières) : 800 000 FCFA en 1re année · 900 000 en 2e · 1 000 000 en 3e, + inscription 50 000 FCFA en 1re année puis 30 000 FCFA, kit vestimentaire 50 000 FCFA, étude de dossier 10 000 FCFA (25 000 pour les non-Togolais) et concours facultatif 5 000 FCFA ; paiement en 3 fois (50 % à la rentrée d'octobre, 30 % au 31 janvier, 20 % au 30 avril). Master : 1 100 000 FCFA en M1 (hors mise à niveau) · 1 300 000 en M2, + inscription 100 000 FCFA puis 30 000 FCFA (source : page « Procédure d'inscription » d'ipnetuniversity.com, consultée le 6 novembre 2026, sans année indiquée).",
     site: "https://ipnetuniversity.com",
     description: "Institut privé fondé en 2003, très orienté pratique (80+ partenariats entreprises tech), élu « université la plus innovante du Togo » en 2022.",
     datesCles: {
@@ -4803,7 +4803,7 @@ const SCHOOLS = {
     filieres: ["Administrateur Réseaux", "Développeur d'Application", "Systèmes et Réseaux Informatiques", "Sécurité Informatique", "Intelligence Artificielle et Big Data", "Réseaux et Télécommunications", "Électronique et Système Embarqué"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "Pré-inscription en ligne ; le BTS est accessible directement après le Bac",
-    frais: "350 000-450 000 FCFA/an (BTS) · 400 000-550 000 (Licence) · 550 000-750 000 (Master), paiement en 2-3 fois. Bourses FONAP, mobilité (Le Havre/Belgique) et mérite scolaire (source : esig.tg/faq).",
+    frais: "Non communiqué sur le site officiel : la page FAQ d'esig.tg qui donnait des fourchettes de prix n'est plus en ligne (vérifié le 6 novembre 2026). Contacte l'école ou passe par sa plateforme admission.esig.tg.",
     site: "https://esig.tg/",
     description: "École fondée à Lomé en 2008, 66 formations diplômantes du BTS au Master réparties en cinq domaines, accréditation Cisco Networking Academy, partenariats avec Sorbonne Paris Nord, UPEC, Le Havre Normandie et l'University of Alberta pour la mobilité internationale.",
     datesCles: {
@@ -4823,7 +4823,7 @@ const SCHOOLS = {
     filieres: ["Systèmes Informatiques et Logiciels", "Développement d'Application", "Sécurité des Réseaux et Télécommunications", "Informatique et Réseaux (Master)"],
     duree: "Licence : 3 ans · Master : 2 ans",
     admission: "Dossier d'inscription ; Licence en informatique ou domaine connexe requise pour le Master",
-    frais: "Licence Systèmes Informatiques & Logiciels : 395 000 FCFA/an (L1-L2), 530 000 (L3). Master Informatique & Réseaux : 680 000 FCFA pour les 2 ans + 15 000 de dossier. Concours de bourses togolais (15 à 75 % de réduction).",
+    frais: "Licence (toutes filières, dont Systèmes Informatiques & Logiciels) : 395 000 FCFA/an en L1 et L2, 530 000 FCFA en L3, prix affichés comme réduits (au lieu de 545 000 et 680 000). Master (dont Informatique & Réseaux) : 680 000 FCFA/an en M1 et M2 (au lieu de 830 000) + 15 000 FCFA d'étude de dossier (source : catalogue des formations d'esiba.tg, consulté le 6 novembre 2026, sans année indiquée).",
     site: "https://www.esiba.tg/",
     description: "École agréée par l'État togolais, membre de l'Agence Universitaire de la Francophonie (AUF), plus de 36 ans d'expérience en gestion et technologie.",
     datesCles: {
@@ -5005,7 +5005,7 @@ const SCHOOLS = {
     filieres: ["Intelligence Artificielle", "Informatique et Systèmes d'Information", "Automatique et Informatique Industrielle"],
     duree: null,
     admission: "Concours d'entrée (1er concours organisé le 13 octobre 2025)",
-    frais: "750 000 FCFA (inclut supports pédagogiques, tenues, cantine et cours d'auto-école) : réduction spéciale pour les 30 premiers admis, dispositif de soutien pour les étudiantes (source : tdn.tg, septembre 2025).",
+    frais: "750 000 FCFA, tarif annoncé au lancement pour la rentrée 2025-2026 (inclut supports pédagogiques, tenues, cantine et cours d'auto-école) : réduction spéciale pour les 30 premiers admis, dispositif de soutien pour les étudiantes (source : tdn.tg, septembre 2025). Le site officiel n'affiche pas de tarif : à reconfirmer pour 2026-2027.",
     site: "https://institutaugustelegrand.com/",
     description: "Institut lancé le 11 septembre 2025 à Amadahomé (Lomé) par le promoteur Auguste Dogbo : l'un des établissements informatique les plus récents du pays. Partenariats annoncés avec CERGI et l'Université Esprit de Tunis.",
     datesCles: {
@@ -5095,7 +5095,7 @@ const SCHOOLS = {
     admission: "Bacheliers scientifiques et étudiants en réorientation, concours d'entrée (10 000 FCFA)",
     site: "https://www.ifnti.com/",
     description: "Institut associatif fondé en 2009 à Sokodé, entièrement dédié à l'informatique (licence LMD), encadrement par des enseignants de niveau ingénieur, groupes de 24 étudiants maximum.",
-    frais: "590 000 FCFA/an + 30 000 FCFA d'inscription (source : Edunews, 2022 : à reconfirmer, ces tarifs peuvent avoir changé).",
+    frais: "Aucun tarif affiché sur le site officiel (vérifié le 6 novembre 2026). Dernier montant public trouvé : 590 000 FCFA/an + 30 000 FCFA d'inscription (Edunews, 2022), sans doute plus à jour : confirme auprès de l'institut.",
     datesCles: {
       mode: "continue",
       note: "Inscriptions ouvertes chaque année après le Bac, concours d'entrée obligatoire, pas de date fixe publiée en ligne.",
@@ -5128,7 +5128,7 @@ const SCHOOLS = {
     filieres: ["Systèmes Informatiques et Logiciels", "Réseaux Informatiques et Télécommunication", "Cybersécurité", "Maintenance et Réseaux Informatiques", "Génie Logiciel", "Développement d'Application"],
     duree: null,
     admission: "Sur dossier (relevé de notes du Bac certifié, acte de naissance, photo, fiche d'inscription)",
-    frais: "Tarif promotionnel constaté pour 2025-2026 : 350 000 FCFA (L1) · 450 000 (L2) · 600 000 (L3) · 700 000 (M1) · 800 000 (M2), lié à une opération portes ouvertes, à reconfirmer pour les tarifs standards (source : synergieplus.net).",
+    frais: "Non affiché sur le site officiel, qui indique que les frais « varient selon la filière et le niveau » et renvoie au barème du campus (vérifié le 6 novembre 2026). Repère : tarif promotionnel 2025-2026 lié à une opération portes ouvertes : 350 000 FCFA (L1) · 450 000 (L2) · 600 000 (L3) · 700 000 (M1) · 800 000 (M2) (source : synergieplus.net).",
     site: "https://www.ismadonai.net/",
     description: "École privée multi-pays certifiée ISO 9001:2015, fondée en 2005, présente aussi au Bénin et en Côte d'Ivoire, forte orientation professionnalisante.",
     datesCles: {
@@ -5231,7 +5231,7 @@ const SCHOOLS = {
     filieres: ["Information Technology Management", "Computer and Software Engineering", "Artificial Intelligence & Robotics", "Computer Science", "Social Media & Digital Technology Management", "Telecommunication & Broadcasting Management"],
     duree: null,
     admission: "Diplôme secondaire pour le Bachelor ; diplôme Bachelor pour le Master (prérequis variables selon spécialité)",
-    frais: "250 000-300 000 FCFA/session (Bachelor) · 300 000-350 000 FCFA/session (Master) selon la filière, + frais de candidature (10 000), d'acceptation (10 000), d'examen (35 000/matière/semestre) et de pratique (25 000/semestre) (source : cugw.tg).",
+    frais: "250 000 FCFA par session (même tarif affiché pour tous les diplômes et certificats), + frais de candidature (10 000), d'acceptation (10 000), d'administration (10 000 par semestre), d'examen (35 000 par épreuve et par semestre) et, en santé, ingénierie et filières pratiques, de travaux pratiques (25 000 par semestre) (source : page « Tuition » de cugw.tg, consultée le 6 novembre 2026, sans année indiquée).",
     site: "https://cugw.tg/",
     description: "Fondée en 2012, propose des filières en anglais (Faculty of ICT et Faculty of Sciences), programmes IA/robotique et informatique.",
     datesCles: {
@@ -5248,7 +5248,7 @@ const SCHOOLS = {
     filieres: ["Systèmes et Réseaux Informatiques", "Développement d'Application", "Maintenance Informatique", "Informatique Industrielle", "Robotique et Intelligence Artificielle", "Cybersécurité", "UX/UI Design", "Génie Logiciel", "Ingénierie Informatique Mobile et Web"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans",
     admission: "BTS : Bac toutes séries · Licence : Bac série scientifique ou équivalent · Master : Licence en sciences et technologies ou équivalent",
-    frais: "Scolarité non communiquée publiquement (le premier versement se fait directement à la banque). Frais d'inscription connus : 25 000 FCFA (Licence, non remboursable) · 50 000 FCFA (Master, non remboursable), source : hest-edu.net/inscription/. Bourses disponibles de 50 000 à 250 000 FCFA (Licence/Master).",
+    frais: "Tarifs officiels 2026-2027, par an : BTS 325 000 FCFA + 25 000 d'inscription + 60 000 de tenues · Licence 575 000 FCFA + 25 000 d'inscription + 60 000 de tenues · Master 950 000 FCFA + 50 000 d'inscription (non remboursable). Paiement en 5 ou 6 versements, le premier à l'admission, à la banque. Ordinateur portable obligatoire (ou 300 000 FCFA pour un neuf remis par l'école). Réductions pour les premiers inscrits et les nouveaux bacheliers : voir la page Bourses (source : hest-edu.net/inscription, consulté le 6 novembre 2026).",
     site: "https://www.hest-edu.net/",
     description: "Une des offres informatique les plus complètes du comparatif (BTS à Master), à Tokoin Wuiti, propose aussi économie/gestion et sciences de l'information et de la communication.",
     datesCles: {
@@ -5268,7 +5268,7 @@ const SCHOOLS = {
     filieres: ["Intelligence Artificielle & Génie Logiciel"],
     duree: "Licence Pro : 3 ans (180 crédits, 6 semestres, système LMD)",
     admission: "Non précisée publiquement : à confirmer directement",
-    frais: "850 000 FCFA (Licence 1) : trouvé par recherche web, non recoupé sur une page officielle, à vérifier.",
+    frais: "Non communiqué sur le site officiel (vérifié le 6 novembre 2026) : contacte l'école directement.",
     site: "https://escen.university/",
     description: "Se présente comme la 1ère école supérieure d'économie numérique d'Afrique subsaharienne francophone, filière IA & Génie Logiciel en partenariat avec l'école d'ingénieurs ESTIA (Biarritz, France), présentiel et à distance.",
     datesCles: {
@@ -5335,9 +5335,9 @@ const SCHOOLS = {
     agreeNote: "Bootcamp accrédité ICDL, pas un cursus académique classique : aucun agrément d'État confirmé pour l'instant.",
     niveaux: ["Bootcamp / Formation courte"],
     filieres: ["Design UX/UI", "Développement Web & Mobile", "Marketing Digital", "Data Analytics & Power BI", "Product Management", "Intelligence Artificielle pour les professionnels", "Stratégie & Création de contenu"],
-    duree: "Bootcamps de 3 à 7 mois selon le programme (5 samedis à 12 semaines, 400h+ en présentiel)",
+    duree: "De 5 samedis à 12 semaines selon le programme",
     admission: "Ouvert aux débutants, étudiants, jeunes diplômés et professionnels en reconversion : formations adaptées au niveau du candidat",
-    frais: "90 000 FCFA (Stratégie & Création de contenu) · 180 000 (Design UX/UI) · 220 000 (IA pour les professionnels) · 350 000 (Data Analytics, Développement web & mobile, ou Marketing Digital) : source : lomedigitalschool.com.",
+    frais: "90 000 FCFA (Stratégie & Création de contenu) · 180 000 (Design UX/UI) · 220 000 (IA pour les professionnels ou Product management) · 350 000 (Data Analytics & Power BI, Développement web & mobile, ou Marketing digital) : source : lomedigitalschool.com, consulté le 6 novembre 2026.",
     site: "https://lomedigitalschool.com/",
     description: "Se présente comme le premier bootcamp numérique du Togo : formations courtes et pratiques (UX/UI, marketing digital, data, dev, IA), pensées pour une insertion professionnelle rapide plutôt qu'un diplôme académique long.",
     datesCles: {
