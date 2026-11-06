@@ -5253,7 +5253,7 @@ const SCHOOLS = {
     description: "Une des offres informatique les plus complètes du comparatif (BTS à Master), à Tokoin Wuiti, propose aussi économie/gestion et sciences de l'information et de la communication.",
     datesCles: {
       mode: "continue",
-      note: "Rentrée BTS/Licence début octobre, Master mi-novembre (référence 2024-2025, à reconfirmer).",
+      note: "Pour 2026-2027, l'école indique encore « Date à confirmer » pour la rentrée des cycles BTS/Licence et Master (hest-edu.net, consulté le 6 novembre 2026). Repère 2024-2025 : rentrée BTS/Licence début octobre, Master mi-novembre.",
       anneeReference: "2024-2025",
       aVerifier: true
     }
