@@ -3590,10 +3590,29 @@ main .page-title-banner p.error-code {
    déjà définie plus haut avec !important — pas de règle main ici pour ne
    pas prendre le pas sur ces paliers avec une spécificité plus élevée. */
 
-/* Icônes (émojis) dimensionnées par font-size, pas du texte de contenu :
-   exclues elles aussi de l'aplat, sinon elles rétréciraient à 12px. */
+/* Icônes des roadmaps : au trait depuis le 2026-11-07 (à la place des
+   emoji, qui arrivaient avec leurs propres couleurs), vertes sur les
+   cartes blanches, couleur du texte devant le titre d'une roadmap. */
 main .card-icon {
-  font-size: 1.8rem !important;
+  font-size: 1rem !important;
+  line-height: 0;
+}
+
+.card-icon .ico-roadmap {
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  color: var(--w-green);
+}
+
+/* En pixels, à 90 % du titre (26 à 40 px) : une taille en em suivrait la
+   taille de texte imposée aux éléments de main, pas celle du titre. */
+.roadmap-header h1 .ico-roadmap-title {
+  width: clamp(23px, 12.6px + 3.6vw, 36px);
+  height: clamp(23px, 12.6px + 3.6vw, 36px);
+  margin-right: 0.3em;
+  vertical-align: -0.1em;
+  color: currentColor;
 }
 
 /* Impression d'une roadmap (bouton "Imprimer / PDF") : réutilise les
