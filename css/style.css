@@ -5452,31 +5452,11 @@ footer.site-footer {
   color: #ffffff;
 }
 
-/* Titres des colonnes en blanc, précédés d'un carré de la couleur de
-   leur rubrique (le vert et le rouge seraient illisibles en texte sur le
-   vert nuit). */
+/* Titres des colonnes en blanc, sans marque de couleur (les carrés de
+   couleur de rubrique ont été retirés à la demande de l'utilisateur le
+   2026-11-07). */
 footer.site-footer {
   --focus: #ffffff;
-}
-
-.footer-col:nth-child(1) { --col: var(--w-green); }
-.footer-col:nth-child(2) { --col: var(--w-yellow); }
-.footer-col:nth-child(3) { --col: var(--w-red); }
-.footer-col:nth-child(4) { --col: var(--w-white); }
-
-footer.site-footer .footer-col h2 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-footer.site-footer .footer-col h2::before {
-  content: "";
-  flex: none;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #ffffff;
-  background: var(--col);
 }
 
 .footer-inner {
