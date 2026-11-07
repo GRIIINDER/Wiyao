@@ -1343,51 +1343,105 @@
     });
   }
 
-  // ---- Page Contact (message) ----
-  function initContactForm() {
-    const form = document.getElementById("contact-form");
-    if (!form) return;
+  // ---- Formulaires Contact et Proposer : envoi direct depuis la page ----
+  // Le message part vers la fonction /api/contact (Vercel), qui l'envoie
+  // par e-mail à WIYAO via Resend. Si l'envoi échoue (service pas encore
+  // configuré, réseau coupé), la page propose d'ouvrir la messagerie avec
+  // le même message, comme avant le 2026-11-07.
+  const CONTACT_INBOX = "wiya.info@gmail.com";
 
-    form.addEventListener("submit", function (e) {
+  function contactMailto(d) {
+    return `mailto:${CONTACT_INBOX}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(`${d.message}\n\n${d.name} (${d.email})`)}`;
+  }
+
+  function proposalMailto(d) {
+    const lines = [
+      `Type : ${d.type}`,
+      `Nom : ${d.nom}`,
+      `Ville : ${d.ville || "non précisée"}`,
+      `Lien / source : ${d.lien}`,
+      `Date (si applicable) : ${d.date || "non précisée"}`,
+      "",
+      "Description :",
+      d.description,
+      "",
+      `Proposé par ${d.name} (${d.email})`,
+    ];
+    return `mailto:${CONTACT_INBOX}?subject=${encodeURIComponent(`[Proposition ${d.type}] ${d.nom}`)}&body=${encodeURIComponent(lines.join("\n"))}`;
+  }
+
+  function wireDirectForm(formId, kind, buildMailto, sent) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    const button = form.querySelector('button[type="submit"]');
+    const status = document.createElement("p");
+    status.className = "form-status";
+    status.setAttribute("role", "status");
+    status.hidden = true;
+    button.insertAdjacentElement("afterend", status);
+
+    // Les libellés passent par i18nLabel (textes fixes du site) ; le lien de
+    // secours est construit par le DOM, jamais en HTML avec les saisies.
+    function show(state, mailto) {
+      status.hidden = false;
+      status.dataset.state = state;
+      if (state === "sending") status.innerHTML = i18nLabel("form.status.sending", "Envoi en cours…", "Sending…");
+      else if (state === "sent") status.innerHTML = i18nLabel(sent.key, sent.fr, sent.en);
+      else if (state === "rate") status.innerHTML = i18nLabel("form.status.rate", "Tu as envoyé plusieurs messages en peu de temps : réessaie dans quelques minutes.", "You sent several messages in a short time: try again in a few minutes.");
+      else {
+        status.innerHTML = i18nLabel("form.status.error", "L'envoi n'a pas abouti. Réessaie dans un instant, ou", "Sending failed. Try again in a moment, or") + " ";
+        const link = document.createElement("a");
+        link.href = mailto;
+        link.innerHTML = i18nLabel("form.status.mailto", "ouvre ta messagerie avec ce message", "open your email app with this message");
+        status.appendChild(link);
+        status.appendChild(document.createTextNode("."));
+      }
+    }
+
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
-      const name = form.elements["name"].value.trim();
-      const email = form.elements["email"].value.trim();
-      const subject = form.elements["subject"].value.trim();
-      const message = form.elements["message"].value.trim();
-      const body = `${message}\n\n${name} (${email})`;
-      window.location.href = `mailto:wiya.info@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (form.dataset.sending === "1") return;
+      const data = { form: kind };
+      Array.from(form.elements).forEach((el) => {
+        if (el.name) data[el.name] = el.value.trim();
+      });
+      form.dataset.sending = "1";
+      button.disabled = true;
+      show("sending");
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        if (response.ok) {
+          form.reset();
+          show("sent");
+        } else {
+          show(response.status === 429 ? "rate" : "error", buildMailto(data));
+        }
+      } catch (err) {
+        show("error", buildMailto(data));
+      } finally {
+        form.dataset.sending = "";
+        button.disabled = false;
+      }
     });
   }
 
-  // ---- Page Proposer un contenu ----
-  function initProposerForm() {
-    const form = document.getElementById("proposer-form");
-    if (!form) return;
+  function initContactForm() {
+    wireDirectForm("contact-form", "contact", contactMailto, {
+      key: "form.status.sent.contact",
+      fr: "Merci, ton message est bien parti : on te répond à l'adresse e-mail que tu as indiquée.",
+      en: "Thanks, your message has been sent: we'll reply to the email address you entered.",
+    });
+  }
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = form.elements["name"].value.trim();
-      const email = form.elements["email"].value.trim();
-      const type = form.elements["type"].value.trim();
-      const ville = form.elements["ville"].value.trim();
-      const nom = form.elements["nom"].value.trim();
-      const lien = form.elements["lien"].value.trim();
-      const date = form.elements["date"].value.trim();
-      const description = form.elements["description"].value.trim();
-      const subject = `[Proposition ${type}] ${nom}`;
-      const bodyLines = [
-        `Type : ${type}`,
-        `Nom : ${nom}`,
-        `Ville : ${ville || "non précisée"}`,
-        `Lien / source : ${lien}`,
-        `Date (si applicable) : ${date || "non précisée"}`,
-        "",
-        "Description :",
-        description,
-        "",
-        `Proposé par ${name} (${email})`,
-      ];
-      window.location.href = `mailto:wiya.info@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+  function initProposerForm() {
+    wireDirectForm("proposer-form", "proposer", proposalMailto, {
+      key: "form.status.sent.proposer",
+      fr: "Merci, ta proposition est bien partie : on la vérifie avant de l'ajouter, et on te répond à l'adresse e-mail que tu as indiquée.",
+      en: "Thanks, your suggestion has been sent: we'll check it before adding it, and reply to the email address you entered.",
     });
   }
 

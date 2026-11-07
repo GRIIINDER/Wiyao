@@ -613,8 +613,15 @@
     "form.name.ph": { fr: "Ex : Afi Mensah", en: "e.g. Afi Mensah" },
     "form.email": { fr: "E-mail", en: "Email" },
     "form.email.ph": { fr: "ton@email.com", en: "you@email.com" },
-    "form.submit": { fr: "Ouvrir ma messagerie", en: "Open my email app" },
-    "form.note": { fr: "Ton application e-mail s'ouvre avec le message prêt : il ne te reste qu'à l'envoyer. WIYAO n'a pas de serveur pour recevoir les messages.", en: "Your email app opens with the message ready: you just have to send it. WIYAO has no server to receive messages." },
+    "form.submit": { fr: "Envoyer le message", en: "Send message" },
+    "form.status.sending": { fr: "Envoi en cours…", en: "Sending…" },
+    "form.status.sent.contact": { fr: "Merci, ton message est bien parti : on te répond à l'adresse e-mail que tu as indiquée.", en: "Thanks, your message has been sent: we'll reply to the email address you entered." },
+    "form.status.sent.proposer": { fr: "Merci, ta proposition est bien partie : on la vérifie avant de l'ajouter, et on te répond à l'adresse e-mail que tu as indiquée.", en: "Thanks, your suggestion has been sent: we'll check it before adding it, and reply to the email address you entered." },
+    "form.status.rate": { fr: "Tu as envoyé plusieurs messages en peu de temps : réessaie dans quelques minutes.", en: "You sent several messages in a short time: try again in a few minutes." },
+    "form.status.error": { fr: "L'envoi n'a pas abouti. Réessaie dans un instant, ou", en: "Sending failed. Try again in a moment, or" },
+    "form.status.mailto": { fr: "ouvre ta messagerie avec ce message", en: "open your email app with this message" },
+    "form.trap": { fr: "Ne remplis pas ce champ", en: "Leave this field empty" },
+    "form.note": { fr: "Ton message arrive directement dans la boîte e-mail de WIYAO, et on te répond à l'adresse que tu as indiquée. Ce qu'il devient est expliqué dans la <a href=\"politique-confidentialite.html\">politique de confidentialité</a>.", en: "Your message goes straight to WIYAO's inbox, and we reply to the email address you entered. What happens to it is explained in the <a href=\"politique-confidentialite.html\">privacy policy</a>." },
     "contact.form.subject": { fr: "Ton sujet", en: "Subject" },
     "contact.form.subject.ph": { fr: "Ex : une erreur sur la fiche d'une école", en: "e.g. A mistake on a school's page" },
     "contact.form.message": { fr: "Ton message", en: "Your message" },
@@ -689,13 +696,13 @@
       en: 'Your progress on roadmaps is saved in your browser\'s local storage (localStorage). This data stays only on your device, is never sent to a server or to WIYAO, and you can erase it at any time via the "Reset progress" button on a roadmap, or by clearing your browser data.',
     },
     "conf.s2.p4": {
-      fr: 'Si tu utilises la page <a href="contact.html">Contact</a>, les informations que tu choisis d\'y saisir (nom, email, message) ne sont pas envoyées à un serveur : le bouton « Envoyer » ouvre ton client email habituel avec le message pré-rempli, à toi de l\'envoyer depuis là.',
-      en: 'If you use the <a href="contact.html">Contact</a> page, the information you choose to enter there (name, email, message) is not sent to a server: the "Send" button opens your usual email client with the message pre-filled, for you to send from there.',
+      fr: "Si tu écris à WIYAO avec le formulaire de la page <a href=\"contact.html\">Contact</a> ou de la page <a href=\"proposer.html\">Proposer un contenu</a>, les informations que tu y saisis (nom, email, message ou proposition) sont envoyées par email à l'adresse de WIYAO (wiya.info@gmail.com). Elles passent par une fonction d'envoi hébergée chez Vercel, l'hébergeur du site, puis par Resend, le service qui achemine l'email. WIYAO ne les enregistre dans aucune base de données et ne s'en sert que pour te répondre ou vérifier ta proposition.",
+      en: "If you write to WIYAO with the form on the <a href=\"contact.html\">Contact</a> page or the <a href=\"proposer.html\">Suggest content</a> page, the information you enter there (name, email, message or suggestion) is sent by email to WIYAO's address (wiya.info@gmail.com). It goes through a sending function hosted by Vercel, the site's host, then through Resend, the service that delivers the email. WIYAO does not save it in any database and only uses it to reply to you or check your suggestion.",
     },
     "conf.s3.h2": { fr: "3. Base légale du traitement", en: "3. Legal basis for processing" },
     "conf.s3.p": {
-      fr: "WIYAO ne traitant aucune donnée personnelle côté serveur, aucune base légale n'est nécessaire au sens de la loi n°2019-014 : ta progression sur les roadmaps reste sur ton appareil, et un email envoyé via la page Contact part directement de ton propre client email, sans jamais transiter par WIYAO.",
-      en: "Since WIYAO processes no personal data server-side, no legal basis is required under law n°2019-014: your progress on roadmaps stays on your device, and an email sent via the Contact page leaves directly from your own email client, without ever passing through WIYAO.",
+      fr: "Les seules données personnelles que WIYAO reçoit sont celles que tu envoies toi-même par les formulaires Contact et Proposer : ce traitement repose sur ton consentement, puisque c'est toi qui choisis d'envoyer le formulaire, et il se limite à te répondre ou à vérifier ta proposition. Ta progression sur les roadmaps, elle, reste sur ton appareil.",
+      en: "The only personal data WIYAO receives is what you send yourself through the Contact and Suggest forms: this processing is based on your consent, since you choose to send the form, and is limited to replying to you or checking your suggestion. Your progress on roadmaps stays on your device.",
     },
     "conf.s4.h2": { fr: "4. Droits de la personne dont les données font l'objet d'un traitement", en: "4. Rights of the person whose data is processed" },
     "conf.s4.p1": {
@@ -703,8 +710,8 @@
       en: "Togolese law n°2019-014 guarantees anyone whose data is processed a right to information (art. 35), a right of access (art. 39), a right to object, a right of rectification and deletion, as well as a right to erasure when the data has been made public.",
     },
     "conf.s4.p2": {
-      fr: "WIYAO ne traite aucune donnée personnelle côté serveur. La seule donnée qui existe, ta progression sur les roadmaps, reste sur ton appareil et sous ton contrôle exclusif : tu peux la consulter, la modifier ou la supprimer toi-même directement dans le navigateur, sans avoir à nous solliciter.",
-      en: "WIYAO processes no personal data server-side. The only data that exists, your progress on roadmaps, stays on your device under your exclusive control: you can view, edit or delete it yourself directly in the browser, without needing to contact us.",
+      fr: "Pour un message envoyé par les formulaires, tu peux à tout moment demander à y accéder, à le faire rectifier ou à le faire supprimer en écrivant à wiya.info@gmail.com. Ta progression sur les roadmaps reste sur ton appareil et sous ton contrôle exclusif : tu peux la consulter, la modifier ou la supprimer toi-même directement dans le navigateur, sans avoir à nous solliciter.",
+      en: "For a message sent through the forms, you can ask at any time to access it, correct it or have it deleted by writing to wiya.info@gmail.com. Your progress on roadmaps stays on your device under your exclusive control: you can view, edit or delete it yourself directly in the browser, without needing to contact us.",
     },
     "conf.s4.p3": {
       fr: 'Pour toute question sur ces droits, contacte-nous via la page <a href="contact.html">Contact</a> ou par email à <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
@@ -712,13 +719,13 @@
     },
     "conf.s5.h2": { fr: "5. Conservation des données", en: "5. Data retention" },
     "conf.s5.p": {
-      fr: "Ta progression sur les roadmaps reste dans le stockage local de ton navigateur tant que tu ne la supprimes pas toi-même : WIYAO n'a aucun moyen de la supprimer à distance, puisqu'elle ne lui est jamais transmise. WIYAO ne conserve aucune autre donnée.",
-      en: "Your progress on roadmaps stays in your browser's local storage until you delete it yourself: WIYAO has no way to remove it remotely, since it is never sent to WIYAO. WIYAO keeps no other data.",
+      fr: "Les messages envoyés par les formulaires sont conservés dans la boîte email de WIYAO ; tu peux demander leur suppression à tout moment. Ta progression sur les roadmaps reste dans le stockage local de ton navigateur tant que tu ne la supprimes pas toi-même : WIYAO n'a aucun moyen de la supprimer à distance, puisqu'elle ne lui est jamais transmise. WIYAO ne conserve aucune autre donnée.",
+      en: "Messages sent through the forms are kept in WIYAO's inbox; you can ask for them to be deleted at any time. Your progress on roadmaps stays in your browser's local storage until you delete it yourself: WIYAO has no way to remove it remotely, since it is never sent to WIYAO. WIYAO keeps no other data.",
     },
     "conf.s6.h2": { fr: "6. Sécurité", en: "6. Security" },
     "conf.s6.p": {
-      fr: "WIYAO ne stocke aucune donnée personnelle sur un serveur : il n'y a pas de base de données propre à protéger contre une fuite ou un accès non autorisé. La connexion au site est chiffrée (HTTPS), via l'hébergeur Vercel.",
-      en: "WIYAO stores no personal data on a server: there is no database of our own to protect against a leak or unauthorized access. The connection to the site is encrypted (HTTPS), via the host Vercel.",
+      fr: "WIYAO n'a pas de base de données : les messages des formulaires ne sont enregistrés nulle part sur le site, et leur contenu n'apparaît pas dans les journaux techniques de la fonction d'envoi. La connexion au site et l'envoi du formulaire sont chiffrés (HTTPS), via l'hébergeur Vercel.",
+      en: "WIYAO has no database: messages from the forms are not saved anywhere on the site, and their content does not appear in the technical logs of the sending function. The connection to the site and the sending of the form are encrypted (HTTPS), via the host Vercel.",
     },
     "conf.s7.h2": { fr: "7. Mineurs", en: "7. Minors" },
     "conf.s7.p": {
@@ -878,8 +885,8 @@
     "faq.c1.a3": { fr: "Uniquement dans le stockage local (localStorage) de ton navigateur, jamais envoyée à un serveur. Si tu changes d'appareil ou de navigateur, ou si tu vides les données de ton navigateur, ta progression est perdue.", en: "Only in your browser's local storage (localStorage), never sent to a server. If you switch device or browser, or clear your browser data, your progress is lost." },
     "faq.c1.q4": { fr: "Est-ce que WIYAO collecte mes données personnelles ?", en: "Does WIYAO collect my personal data?" },
     "faq.c1.a4": {
-      fr: 'Non : aucune collecte, aucun outil de suivi (analytics), aucune publicité. Pour naviguer, faire le test, comparer des écoles ou utiliser la page Contact, WIYAO ne demande ni ne transmet aucune donnée personnelle à un serveur. Détails dans la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
-      en: 'No: no collection, no tracking tools (analytics), no advertising. To browse, take the test, compare schools or use the Contact page, WIYAO never asks for or sends any personal data to a server. Details in the <a href="politique-confidentialite.html">privacy policy</a>.',
+      fr: "Non pour l'usage courant : aucun outil de suivi (analytics), aucune publicité, et rien n'est demandé pour naviguer, faire le test ou comparer des écoles. Seuls les formulaires Contact et Proposer envoient à WIYAO ce que tu y écris (nom, email, message), par email, pour te répondre. Détails dans la <a href=\"politique-confidentialite.html\">politique de confidentialité</a>.",
+      en: "Not for everyday use: no tracking tools (analytics), no advertising, and nothing is asked to browse, take the test or compare schools. Only the Contact and Suggest forms send WIYAO what you write in them (name, email, message), by email, so we can reply. Details in the <a href=\"politique-confidentialite.html\">privacy policy</a>.",
     },
     "faq.c1.q5": { fr: "Qui a créé WIYAO ?", en: "Who created WIYAO?" },
     "faq.c1.a5": {

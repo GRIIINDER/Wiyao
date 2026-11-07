@@ -5781,6 +5781,47 @@ main > .hero-legal ~ .about-section {
   }
 }
 
+/* ── Formulaires Contact et Proposer, envoi direct (2026-11-07) : champ
+   piège hors écran (un robot le remplit, une personne ne le voit pas) et
+   message de résultat sous le bouton. */
+.form-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form {
+  position: relative;
+}
+
+.form-status {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border: 2px solid var(--w-ink);
+  border-radius: 2px;
+  background: var(--w-white);
+  color: var(--w-ink);
+  font-weight: 600;
+}
+
+.form-status[data-state="sent"] {
+  background: var(--tint-green-bg);
+}
+
+.form-status[data-state="error"],
+.form-status[data-state="rate"] {
+  background: var(--tint-red-bg);
+  color: var(--tint-red-fg);
+}
+
+.form-status a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
 /* Réglage système « réduire les animations » : plus de mouvement décoratif
    (survols qui bougent, défilement doux, lueur de l'accueil). */
 @media (prefers-reduced-motion: reduce) {
