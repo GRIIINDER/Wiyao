@@ -696,8 +696,8 @@
       en: 'Your progress on roadmaps is saved in your browser\'s local storage (localStorage). This data stays only on your device, is never sent to a server or to WIYAO, and you can erase it at any time via the "Reset progress" button on a roadmap, or by clearing your browser data.',
     },
     "conf.s2.p4": {
-      fr: "Si tu écris à WIYAO avec le formulaire de la page <a href=\"contact.html\">Contact</a> ou de la page <a href=\"proposer.html\">Proposer un contenu</a>, les informations que tu y saisis (nom, email, message ou proposition) sont envoyées par email à l'adresse de WIYAO (wiya.info@gmail.com). Elles passent par une fonction d'envoi hébergée chez Vercel, l'hébergeur du site, puis par Resend, le service qui achemine l'email. WIYAO ne les enregistre dans aucune base de données et ne s'en sert que pour te répondre ou vérifier ta proposition.",
-      en: "If you write to WIYAO with the form on the <a href=\"contact.html\">Contact</a> page or the <a href=\"proposer.html\">Suggest content</a> page, the information you enter there (name, email, message or suggestion) is sent by email to WIYAO's address (wiya.info@gmail.com). It goes through a sending function hosted by Vercel, the site's host, then through Resend, the service that delivers the email. WIYAO does not save it in any database and only uses it to reply to you or check your suggestion.",
+      fr: "Si tu écris à WIYAO avec le formulaire de la page <a href=\"contact.html\">Contact</a> ou de la page <a href=\"proposer.html\">Proposer un contenu</a>, les informations que tu y saisis (nom, email, message ou proposition) sont envoyées par email à l'éditeur du site (voir les <a href=\"mentions-legales.html\">mentions légales</a>). Elles passent par une fonction d'envoi hébergée chez Vercel, l'hébergeur du site, puis par Resend, le service qui achemine l'email. WIYAO ne les enregistre dans aucune base de données et ne s'en sert que pour te répondre ou vérifier ta proposition.",
+      en: "If you write to WIYAO with the form on the <a href=\"contact.html\">Contact</a> page or the <a href=\"proposer.html\">Suggest content</a> page, the information you enter there (name, email, message or suggestion) is sent by email to the site's publisher (see the <a href=\"mentions-legales.html\">legal notice</a>). It goes through a sending function hosted by Vercel, the site's host, then through Resend, the service that delivers the email. WIYAO does not save it in any database and only uses it to reply to you or check your suggestion.",
     },
     "conf.s3.h2": { fr: "3. Base légale du traitement", en: "3. Legal basis for processing" },
     "conf.s3.p": {
@@ -719,8 +719,8 @@
     },
     "conf.s5.h2": { fr: "5. Conservation des données", en: "5. Data retention" },
     "conf.s5.p": {
-      fr: "Les messages envoyés par les formulaires sont conservés dans la boîte email de WIYAO ; tu peux demander leur suppression à tout moment. Ta progression sur les roadmaps reste dans le stockage local de ton navigateur tant que tu ne la supprimes pas toi-même : WIYAO n'a aucun moyen de la supprimer à distance, puisqu'elle ne lui est jamais transmise. WIYAO ne conserve aucune autre donnée.",
-      en: "Messages sent through the forms are kept in WIYAO's inbox; you can ask for them to be deleted at any time. Your progress on roadmaps stays in your browser's local storage until you delete it yourself: WIYAO has no way to remove it remotely, since it is never sent to WIYAO. WIYAO keeps no other data.",
+      fr: "Les messages envoyés par les formulaires sont conservés dans la boîte email de l'éditeur du site ; tu peux demander leur suppression à tout moment. Ta progression sur les roadmaps reste dans le stockage local de ton navigateur tant que tu ne la supprimes pas toi-même : WIYAO n'a aucun moyen de la supprimer à distance, puisqu'elle ne lui est jamais transmise. WIYAO ne conserve aucune autre donnée.",
+      en: "Messages sent through the forms are kept in the site publisher's inbox; you can ask for them to be deleted at any time. Your progress on roadmaps stays in your browser's local storage until you delete it yourself: WIYAO has no way to remove it remotely, since it is never sent to WIYAO. WIYAO keeps no other data.",
     },
     "conf.s6.h2": { fr: "6. Sécurité", en: "6. Security" },
     "conf.s6.p": {

@@ -8,9 +8,12 @@
  *
  * Variables d'environnement (réglages du projet Vercel) :
  *   RESEND_API_KEY  obligatoire, clé de l'API Resend (jamais dans le dépôt)
- *   CONTACT_TO      facultatif, destinataire (par défaut wiya.info@gmail.com)
+ *   CONTACT_TO      destinataire, réglé dans Vercel (boîte de l'éditeur,
+ *                   volontairement absente de ce dépôt public ; à défaut,
+ *                   wiya.info@gmail.com)
  *   CONTACT_FROM    facultatif, expéditeur (par défaut l'adresse de test
- *                   de Resend, qui n'écrit qu'à l'adresse du compte Resend)
+ *                   de Resend, qui n'écrit qu'à l'adresse du compte Resend :
+ *                   CONTACT_TO doit alors être cette même adresse)
  */
 
 const DEFAULT_TO = "wiya.info@gmail.com";
