@@ -145,7 +145,16 @@ module.exports = async function handler(req, res) {
       signal: controller.signal,
     });
     if (!r.ok) {
-      console.error(`Resend a refusé l'envoi (HTTP ${r.status})`);
+      // Motif renvoyé par Resend (clé invalide, destinataire refusé…) : il
+      // ne contient jamais le contenu du message.
+      let detail = "";
+      try {
+        const err = await r.json();
+        detail = [err.name, err.message].filter(Boolean).join(" : ").slice(0, 200);
+      } catch (e) {
+        detail = "";
+      }
+      console.error(`Resend a refusé l'envoi (HTTP ${r.status})${detail ? ` : ${detail}` : ""}`);
       return send(res, 502, { error: "send_failed" });
     }
     return send(res, 200, { ok: true });
