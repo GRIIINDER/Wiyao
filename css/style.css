@@ -66,48 +66,47 @@
   --green: #006a4e;
   --yellow: #ffce00;
   --red: #d21034;
-  /* Palette WIYAO « Couleurs du Togo » (2026-10-31, à la demande de
-     l'utilisateur, à la place des couleurs exactes de MoonShot) : vert
-     forêt de marque, jaune soleil pour les actions, fond sable, texte et
-     traits vert nuit ; bleu roi, vert menthe et terre cuite pour les
-     rubriques. Blanc sur vert forêt 6,5:1, sur bleu roi 5,9:1 ; vert nuit
-     sur terre cuite 5,2:1, sur jaune, menthe et sable 9:1 et plus. */
-  --w-ink: #13241d;
-  --w-sand: #f5f0e6;
-  --w-brand: #0f6b4f;
-  --w-sun: #ffcd2e;
-  --w-sun-pale: #fff1b8;
-  --w-blue: #2f5bd3;
-  --w-blue-light: #9db8ff;
-  --w-mint: #a8e6cf;
-  --w-clay: #e2725b;
+  /* Palette WIYAO : les 4 couleurs du drapeau togolais, vert, jaune,
+     rouge et blanc (2026-11-07, à la demande de l'utilisateur), avec leurs
+     nuances : vert nuit pour le texte et les traits, vert sourd pour les
+     textes secondaires, jaune pâle pour les survols. Rien d'autre (ni
+     sable, ni bleu, ni gris). Blanc sur vert 6,6:1, sur rouge 5,4:1 ;
+     vert nuit sur blanc 12,7:1, sur jaune 8,5:1. */
+  --w-ink: #0b3a2c;
+  --w-white: #ffffff;
+  --w-green: #006a4e;
+  --w-yellow: #ffce00;
+  --w-yellow-pale: #fff4c2;
+  --w-red: #d21034;
+  --w-green-soft: #e8f3ee;
+  --focus: var(--w-ink);
   --accent: var(--tk-primary);
   --accent-soft: var(--tk-primary-soft);
-  --accent-wash: rgba(36, 73, 184, 0.06);
+  --accent-wash: rgba(0, 106, 78, 0.06);
   --bg: var(--tk-canvas);
   --card-bg: var(--tk-surface);
   --text: var(--tk-text);
   --text-muted: var(--tk-text-muted);
   --border: var(--tk-border);
   /* Teintes des badges sur fond clair (vert / jaune / rouge). */
-  --tint-green-bg: #dcf7e0;
-  --tint-green-fg: #075f3c;
-  --tint-yellow-bg: #fdf0d5;
-  --tint-yellow-fg: #7a5200;
-  --tint-red-bg: #fde6e2;
-  --tint-red-fg: #9e1c10;
+  --tint-green-bg: var(--w-green-soft);
+  --tint-green-fg: var(--w-green);
+  --tint-yellow-bg: var(--w-yellow-pale);
+  --tint-yellow-fg: var(--w-ink);
+  --tint-red-bg: #fde7eb;
+  --tint-red-fg: #b00d2c;
   --radius: 18px;
-  --tk-canvas: var(--w-sand);
-  --tk-surface: #ffffff;
-  --tk-surface-soft: #ebe4d5;
-  --tk-border: #d6cbb8;
+  --tk-canvas: var(--w-white);
+  --tk-surface: var(--w-white);
+  --tk-surface-soft: var(--w-green-soft);
+  --tk-border: rgba(11, 58, 44, 0.28);
   --tk-text: var(--w-ink);
-  --tk-text-reading: #2a2a2d;
-  --tk-text-muted: #414b45;
-  --tk-text-subtle: #58625b;
-  --tk-primary: #2449b8;
-  --tk-primary-hover: #1b3891;
-  --tk-primary-soft: #e3e8ff;
+  --tk-text-reading: var(--w-ink);
+  --tk-text-muted: #2c5847;
+  --tk-text-subtle: #3d6655;
+  --tk-primary: var(--w-green);
+  --tk-primary-hover: var(--w-ink);
+  --tk-primary-soft: var(--w-green-soft);
   /* Largeur de la colonne de contenu, calée sur le catalogue Codecademy (~1240 px). */
   --content-max: 1240px;
   /* Texte courant : police système (Segoe UI, Roboto, San Francisco…),
@@ -176,7 +175,7 @@ a {
   border-radius: 50%;
   color: var(--tk-text);
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(11, 58, 44, 0.25);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -210,7 +209,7 @@ a {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(11, 58, 44, 0.3);
   transition: transform 0.15s ease;
 }
 
@@ -230,7 +229,7 @@ a {
   background: var(--tk-surface);
   border: 1px solid var(--tk-border);
   border-radius: 16px;
-  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 34px rgba(11, 58, 44, 0.35);
   overflow: hidden;
 }
 
@@ -458,9 +457,9 @@ header.site-header {
 
 header.site-header.is-scrolled .site-header-top,
 header.site-header.is-menu-open .site-header-top {
-  background: rgba(16, 22, 47, 0.9);
+  background: rgba(11, 58, 44, 0.9);
   border-color: var(--tk-border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(11, 58, 44, 0.35);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
@@ -647,7 +646,7 @@ nav.site-nav {
   border: 1px solid var(--tk-border);
   border-radius: 14px;
   padding: 6px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 28px rgba(11, 58, 44, 0.35);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4px);
@@ -762,7 +761,7 @@ nav.site-nav {
 
 .search-bar:focus-within {
   background: var(--tk-surface);
-  box-shadow: 0 0 0 3px rgba(102, 196, 255, 0.25);
+  box-shadow: 0 0 0 3px rgba(0, 106, 78, 0.25);
 }
 
 .search-icon {
@@ -1474,7 +1473,7 @@ a.card:hover {
 }
 
 .progress-fill {
-  background: linear-gradient(90deg, var(--accent), #1d2340);
+  background: var(--w-green);
   height: 100%;
   width: 0;
   transition: width 0.3s ease;
@@ -2925,7 +2924,7 @@ html.legal-open {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(5, 8, 20, 0.72);
+  background: rgba(11, 58, 44, 0.72);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
@@ -2946,7 +2945,7 @@ html.legal-open {
   border-radius: 28px;
   background: var(--tk-surface);
   color: var(--tk-text-muted);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 24px 60px rgba(11, 58, 44, 0.5);
 }
 
 .legal-close {
@@ -3140,7 +3139,7 @@ html.legal-open {
     background: var(--tk-surface);
     border: 1px solid var(--tk-border);
     border-radius: 24px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 16px 40px rgba(11, 58, 44, 0.4);
   }
   header.site-header.is-menu-open nav.site-nav {
     display: grid;
@@ -3402,7 +3401,7 @@ html.legal-open {
   outline: none;
   background: var(--tk-surface);
   border-color: var(--tk-primary);
-  box-shadow: 0 0 0 3px rgba(102, 196, 255, 0.25);
+  box-shadow: 0 0 0 3px rgba(0, 106, 78, 0.25);
 }
 
 .btn-send {
@@ -3860,7 +3859,7 @@ textarea {
    l'emporter. */
 :root {
   --ink: var(--tk-text);
-  --grid-line: #34447f;
+  --grid-line: var(--w-ink);
 }
 
 /* Boutons principaux : aplat bleu, trait de 2 px, ombre dure en bas à
@@ -3894,7 +3893,7 @@ textarea {
   width: 48px;
   margin-left: 20px;
   border-left: 2px solid var(--ink);
-  background: var(--tk-canvas) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f3f7f9' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 20px no-repeat;
+  background: var(--tk-canvas) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b3a2c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 20px no-repeat;
 }
 
 /* Bouton de retour (404) : la case flèche passe à gauche. */
@@ -3907,7 +3906,7 @@ textarea {
   margin: 0 20px 0 0;
   border-left: 0;
   border-right: 2px solid var(--ink);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f3f7f9' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b3a2c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
 }
 
 /* Formulaires : bouton pleine largeur, libellé centré, case flèche à droite. */
@@ -4214,12 +4213,12 @@ main > :is(.roadmap-category, .eco-section, .related-section, .contact-section, 
    (comme « Get Tickets »). */
 .scroll-progress {
   height: 4px;
-  background: var(--w-sun);
+  background: var(--w-yellow);
 }
 
 header.site-header {
   padding: 0;
-  background: var(--w-brand);
+  background: var(--w-green);
   border-bottom: 2px solid var(--w-ink);
 }
 
@@ -4293,34 +4292,34 @@ header.site-header.is-menu-open .site-header-top {
 
 /* Chaque menu déroulant prend la couleur de sa rubrique. */
 #nav-parcours {
-  --menu: var(--w-blue);
+  --menu: var(--w-green);
   --menu-ink: #ffffff;
-  --menu-label: var(--w-blue-light);
+  --menu-label: #ffffff;
 }
 
 #nav-opportunites {
-  --menu: var(--w-sun);
+  --menu: var(--w-yellow);
   --menu-ink: var(--w-ink);
-  --menu-label: var(--w-sun);
+  --menu-label: var(--w-yellow);
 }
 
 #nav-communaute {
-  --menu: var(--w-mint);
-  --menu-ink: var(--w-ink);
-  --menu-label: var(--w-mint);
+  --menu: var(--w-red);
+  --menu-ink: #ffffff;
+  --menu-label: #ffffff;
 }
 
 #nav-contact {
-  --menu: var(--w-clay);
+  --menu: var(--w-white);
   --menu-ink: var(--w-ink);
-  --menu-label: var(--w-clay);
+  --menu-label: #ffffff;
 }
 
 .nav-more-menu {
   top: calc(100% + 14px);
   gap: 0;
   padding: 8px;
-  background: var(--menu, var(--w-blue));
+  background: var(--menu, var(--w-green));
   border: 2px solid var(--w-ink);
   border-radius: 2px;
   box-shadow: 4px 4px 0 var(--w-ink);
@@ -4334,8 +4333,8 @@ header.site-header.is-menu-open .site-header-top {
 
 /* Liens en casse normale (plus en petites capitales), lignes plus hautes
    séparées par un filet, comme les lignes de la FAQ. */
-#nav-parcours { --menu-line: rgba(255, 255, 255, 0.45); }
-:is(#nav-opportunites, #nav-communaute, #nav-contact) { --menu-line: rgba(19, 36, 29, 0.3); }
+:is(#nav-parcours, #nav-communaute) { --menu-line: rgba(255, 255, 255, 0.45); }
+:is(#nav-opportunites, #nav-contact) { --menu-line: rgba(11, 58, 44, 0.3); }
 
 @media (min-width: 1080px) {
   .nav-more-menu {
@@ -4425,7 +4424,7 @@ header.site-header :focus-visible {
   min-height: 48px;
   border: 2px solid var(--w-ink);
   border-radius: 2px;
-  background: var(--w-sun-pale);
+  background: var(--w-yellow-pale);
   color: var(--w-ink);
   font-size: 0.9375rem;
   font-weight: 700;
@@ -4468,7 +4467,7 @@ header.site-header :focus-visible {
     box-shadow: 4px 4px 0 var(--w-ink);
   }
   .nav-group-label {
-    color: var(--menu-label, var(--w-sun));
+    color: var(--menu-label, var(--w-yellow));
   }
   .site-nav .nav-more-menu a {
     color: var(--menu-ink, #ffffff);
@@ -4495,42 +4494,43 @@ header.site-header :focus-visible {
 }
 
 /* ── Une couleur par rubrique (2026-10-31, à la demande de l'utilisateur,
-   pour ne pas reprendre l'enchaînement de couleurs de MoonShot) : la
-   classe du <body> donne la couleur de la rubrique du menu. Parcours en
-   violet, Opportunités en turquoise, Communauté en rose, Contact en jaune ;
-   l'accueil et les pages hors menu (recherche, 404, pages légales) gardent
-   l'orange de la marque. --rubrique-ink est la couleur du texte posé
-   dessus (blanc sur violet 4,94:1 et orange 5,06:1 ; marine sur turquoise,
-   rose et jaune, 8:1 et plus). --rubrique-on-navy sert aux titres de
-   rubrique posés sur le marine (menu mobile, pied de page). */
+   pour ne pas reprendre l'enchaînement de couleurs de MoonShot ; couleurs
+   du drapeau depuis le 2026-11-07) : la classe du <body> donne la couleur
+   de la rubrique du menu. Parcours en vert, Opportunités en jaune,
+   Communauté en rouge, Contact en blanc ; l'accueil et les pages hors menu
+   (recherche, 404, pages légales) sont en vert. --rubrique-ink est la
+   couleur du texte posé dessus (blanc sur vert 6,6:1 et rouge 5,4:1 ;
+   vert nuit sur jaune 8,5:1 et blanc 12,7:1). */
 body {
-  --rubrique: var(--w-brand);
+  --rubrique: var(--w-green);
   --rubrique-ink: #ffffff;
   --rubrique-line: rgba(255, 255, 255, 0.5);
 }
 
 body.rubrique-parcours {
-  --rubrique: var(--w-blue);
+  --rubrique: var(--w-green);
   --rubrique-ink: #ffffff;
   --rubrique-line: rgba(255, 255, 255, 0.5);
 }
 
 body.rubrique-opportunites {
-  --rubrique: var(--w-sun);
+  --rubrique: var(--w-yellow);
   --rubrique-ink: var(--w-ink);
-  --rubrique-line: rgba(19, 36, 29, 0.4);
+  --rubrique-line: rgba(11, 58, 44, 0.4);
 }
 
 body.rubrique-communaute {
-  --rubrique: var(--w-mint);
-  --rubrique-ink: var(--w-ink);
-  --rubrique-line: rgba(19, 36, 29, 0.4);
+  --rubrique: var(--w-red);
+  --rubrique-ink: #ffffff;
+  --rubrique-line: rgba(255, 255, 255, 0.5);
 }
 
+/* Contact en blanc : l'introduction se détache entre le filet vert nuit de
+   l'en-tête et le bandeau défilant vert nuit. */
 body.rubrique-contact {
-  --rubrique: var(--w-clay);
+  --rubrique: var(--w-white);
   --rubrique-ink: var(--w-ink);
-  --rubrique-line: rgba(19, 36, 29, 0.4);
+  --rubrique-line: rgba(11, 58, 44, 0.4);
 }
 
 /* ── Haut de page : l'introduction est une bande de la couleur de la
@@ -4552,6 +4552,7 @@ main {
   --tk-text-subtle: var(--rubrique-ink);
   --tk-primary: var(--rubrique-ink);
   --tk-border: var(--rubrique-line);
+  --focus: var(--rubrique-ink);
   color: var(--rubrique-ink);
 }
 
@@ -4600,7 +4601,7 @@ main > .hero .hero-reassure li {
 }
 
 .roadmap-header .progress-fill {
-  background: var(--w-sun);
+  background: var(--w-yellow);
 }
 
 .faq-badge {
@@ -4613,8 +4614,9 @@ main > .hero .hero-reassure li {
 .marquee {
   margin-top: 0;
   margin-bottom: 0;
+  --focus: #ffffff;
   background: var(--w-ink);
-  color: var(--w-sand);
+  color: #ffffff;
   border-block: 0;
 }
 
@@ -4626,11 +4628,11 @@ main .marquee-list li {
   border-color: var(--w-ink);
   background: #ffffff;
   color: var(--w-ink);
-  box-shadow: 3px 3px 0 var(--w-sun);
+  box-shadow: 3px 3px 0 var(--w-yellow);
 }
 
 .marquee-pause:hover {
-  background: var(--w-sun);
+  background: var(--w-yellow);
 }
 
 /* ── Sections : bandes alternées crème / blanc ; une section mise en avant
@@ -4660,6 +4662,7 @@ main > :is(.roadmap-category, .eco-section):nth-of-type(even),
   --tk-text-muted: var(--rubrique-ink);
   --tk-text-subtle: var(--rubrique-ink);
   --tk-primary: var(--rubrique-ink);
+  --focus: var(--rubrique-ink);
   color: var(--rubrique-ink);
 }
 
@@ -4671,11 +4674,12 @@ main > .about-section:last-of-type {
    surface claire, quelle que soit la couleur de la bande. */
 :is(.card, .eco-item, .faq-item, .contact-card, .search-result, .quiz-card, .togo-notice, .item, .dates-row, .timeline-item, .domain-primer-item) {
   --tk-text: var(--w-ink);
-  --tk-text-reading: #2a2a2d;
-  --tk-text-muted: #414b45;
-  --tk-text-subtle: #58625b;
-  --tk-primary: #2449b8;
-  --tk-border: #d6cbb8;
+  --tk-text-reading: var(--w-ink);
+  --tk-text-muted: #2c5847;
+  --tk-text-subtle: #3d6655;
+  --tk-primary: var(--w-green);
+  --tk-border: rgba(11, 58, 44, 0.28);
+  --focus: var(--w-ink);
 }
 
 /* ── Cartes : blanches, traits marine, titres en capitales Bricolage Grotesque. Au
@@ -4702,7 +4706,7 @@ main > .about-section:last-of-type {
 }
 
 a.card:hover {
-  background: var(--w-sun-pale);
+  background: var(--w-yellow-pale);
   border-color: var(--w-ink);
 }
 
@@ -4718,13 +4722,13 @@ a.card:hover {
 }
 
 .progress-fill {
-  background: var(--w-brand);
+  background: var(--w-green);
 }
 
 .badge.togo-badge,
 .roadmap-header .togo-badge {
   background: var(--tk-primary-soft);
-  color: #2449b8;
+  color: var(--w-green);
 }
 
 .badge.best-match-badge {
@@ -4746,22 +4750,22 @@ a.card:hover {
    et ombre marine, case flèche blanche. */
 .btn-primary,
 .btn-send {
-  background: var(--w-sun);
+  background: var(--w-yellow);
   color: var(--w-ink);
 }
 
 .btn-primary:hover,
 .btn-send:hover {
-  background: var(--w-sun);
+  background: var(--w-yellow);
 }
 
 .btn-primary::after,
 .btn-send::after {
-  background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2313241d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 20px no-repeat;
+  background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b3a2c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 20px no-repeat;
 }
 
 .btn-primary.btn-back::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2313241d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b3a2c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
 }
 
 .error-btn-secondary,
@@ -4789,7 +4793,7 @@ a.card:hover {
 .btn:hover,
 .domain-group-toggle:hover,
 .actu-card-btn:hover {
-  background: var(--w-sun-pale);
+  background: var(--w-yellow-pale);
 }
 
 .btn .ico {
@@ -4810,7 +4814,7 @@ a.card:hover {
 }
 
 .domain-chip:hover {
-  background: var(--w-sun-pale);
+  background: var(--w-yellow-pale);
   color: var(--w-ink);
 }
 
@@ -4838,19 +4842,19 @@ a.card:hover {
    où elle mène : test, roadmaps, écoles (Parcours) ; dates, stages
    (Opportunités) ; écosystème (Communauté). */
 #parcours .journey-step:nth-child(-n + 3) .journey-step-number {
-  background: var(--w-blue);
+  background: var(--w-green);
   color: #ffffff;
 }
 
 #parcours .journey-step:nth-child(4) .journey-step-number,
 #parcours .journey-step:nth-child(5) .journey-step-number {
-  background: var(--w-sun);
+  background: var(--w-yellow);
   color: var(--w-ink);
 }
 
 #parcours .journey-step:nth-child(6) .journey-step-number {
-  background: var(--w-mint);
-  color: var(--w-ink);
+  background: var(--w-red);
+  color: #ffffff;
 }
 
 #parcours .journey-step:not(:last-child)::after {
@@ -4858,7 +4862,7 @@ a.card:hover {
 }
 
 .journey-step a {
-  color: #2449b8;
+  color: var(--w-green);
 }
 
 /* ── FAQ : lignes blanches encadrées de marine, collées, sur bande
@@ -4900,7 +4904,7 @@ main .faq-item summary {
   flex: 0 0 32px;
   width: 32px;
   height: 32px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%2313241d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='16' cy='16' r='14'/%3E%3Cpath d='M16 9v14M10 17l6 6 6-6'/%3E%3C/svg%3E") center / 32px no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%230b3a2c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='16' cy='16' r='14'/%3E%3Cpath d='M16 9v14M10 17l6 6 6-6'/%3E%3C/svg%3E") center / 32px no-repeat;
   -webkit-mask: none;
   mask: none;
 }
@@ -4997,7 +5001,7 @@ main .faq-item summary {
   height: 40px;
   border: 2px solid var(--w-ink);
   border-radius: 2px;
-  background: var(--w-sand);
+  background: var(--w-white);
   box-shadow: none;
   color: var(--w-ink);
   font-family: var(--font-display);
@@ -5096,7 +5100,7 @@ main .faq-item summary {
 }
 
 .quiz-match-checklist .match-no {
-  background: var(--w-sand);
+  background: var(--w-white);
   color: var(--tk-text-muted);
 }
 
@@ -5300,13 +5304,13 @@ main .dates-ref-note {
 .btn-send {
   gap: 16px;
   padding: 0 8px 0 22px;
-  background: var(--w-sun);
+  background: var(--w-yellow);
   color: var(--w-ink);
 }
 
 .btn-primary:hover,
 .btn-send:hover {
-  background: var(--w-sun);
+  background: var(--w-yellow);
 }
 
 .btn-primary::after,
@@ -5318,7 +5322,7 @@ main .dates-ref-note {
   margin: 0;
   border: 0;
   border-radius: 50%;
-  background: var(--w-ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffcd2e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 18px no-repeat;
+  background: var(--w-ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffce00' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 18px no-repeat;
   transition: transform 0.15s ease;
 }
 
@@ -5333,7 +5337,7 @@ main .dates-ref-note {
 .btn-primary.btn-back::after {
   margin: 0;
   border: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffcd2e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffce00' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E");
 }
 
 .btn-primary.btn-back:hover::after {
@@ -5356,7 +5360,7 @@ main .dates-ref-note {
 }
 
 .cta-float {
-  background: var(--w-brand);
+  background: var(--w-green);
   color: #ffffff;
 }
 
@@ -5367,7 +5371,7 @@ main .dates-ref-note {
   margin-right: 8px;
   border: 0;
   border-radius: 50%;
-  background: var(--w-sun);
+  background: var(--w-yellow);
   color: var(--w-ink);
   transition: transform 0.15s ease;
 }
@@ -5382,7 +5386,7 @@ main .dates-ref-note {
   width: 0.3em;
   height: 0.3em;
   margin: 0 0.75em;
-  background: var(--w-sun);
+  background: var(--w-yellow);
   transform: rotate(45deg);
 }
 
@@ -5408,8 +5412,8 @@ main .dates-ref-note {
 .contact-form-field textarea:focus,
 .contact-form-field select:focus {
   background: #ffffff;
-  border-color: #2449b8;
-  box-shadow: 0 0 0 3px rgba(36, 73, 184, 0.25);
+  border-color: var(--w-green);
+  box-shadow: 0 0 0 3px rgba(0, 106, 78, 0.25);
 }
 
 /* ── Pied de page façon MoonShot (mesuré sur sa page, 2026-10-31) : bande
@@ -5429,12 +5433,32 @@ footer.site-footer {
   color: #ffffff;
 }
 
-/* Titres des colonnes dans la couleur de leur rubrique (lilas pour
-   Parcours : le violet est trop sombre sur le marine). */
-.footer-col:nth-child(1) h2 { color: var(--w-blue-light); }
-.footer-col:nth-child(2) h2 { color: var(--w-sun); }
-.footer-col:nth-child(3) h2 { color: var(--w-mint); }
-.footer-col:nth-child(4) h2 { color: var(--w-clay); }
+/* Titres des colonnes en blanc, précédés d'un carré de la couleur de
+   leur rubrique (le vert et le rouge seraient illisibles en texte sur le
+   vert nuit). */
+footer.site-footer {
+  --focus: #ffffff;
+}
+
+.footer-col:nth-child(1) { --col: var(--w-green); }
+.footer-col:nth-child(2) { --col: var(--w-yellow); }
+.footer-col:nth-child(3) { --col: var(--w-red); }
+.footer-col:nth-child(4) { --col: var(--w-white); }
+
+footer.site-footer .footer-col h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer.site-footer .footer-col h2::before {
+  content: "";
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffffff;
+  background: var(--col);
+}
 
 .footer-inner {
   padding-top: 80px;
@@ -5518,7 +5542,7 @@ footer.site-footer :focus-visible {
 /* ── Fenêtre « Informations légales » : voile marine, fenêtre blanche à
    trait marine et ombre dure. */
 .legal-modal {
-  background: rgba(19, 36, 29, 0.6);
+  background: rgba(11, 58, 44, 0.6);
 }
 
 .legal-dialog {
@@ -5540,7 +5564,7 @@ footer.site-footer :focus-visible {
 }
 
 .legal-close:hover {
-  background: var(--w-sun-pale);
+  background: var(--w-yellow-pale);
 }
 
 .legal-tab {
@@ -5550,7 +5574,7 @@ footer.site-footer :focus-visible {
 }
 
 .legal-tab:hover {
-  background: var(--w-sun-pale);
+  background: var(--w-yellow-pale);
 }
 
 .legal-tab[aria-selected="true"] {
@@ -5569,7 +5593,7 @@ footer.site-footer :focus-visible {
 
 .wiyao-assistant-toggle {
   border: 2px solid var(--w-ink);
-  background: var(--w-blue);
+  background: var(--w-green);
   color: #ffffff;
   box-shadow: 4px 4px 0 var(--w-ink);
 }
@@ -5581,17 +5605,17 @@ footer.site-footer :focus-visible {
 }
 
 ::selection {
-  background: var(--w-brand);
+  background: var(--w-green);
   color: #ffffff;
 }
 
 :root {
-  accent-color: #2449b8;
-  scrollbar-color: var(--w-ink) var(--w-sand);
+  accent-color: var(--w-green);
+  scrollbar-color: var(--w-ink) var(--w-white);
 }
 
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
-  outline-color: #2449b8;
+  outline-color: var(--focus);
 }
 
 /* ── Espacement et centrage de MoonShot, mesurés sur sa page : sections
@@ -5775,22 +5799,10 @@ main > .hero-legal ~ .about-section {
 
 @media print {
   :root {
-    --tint-green-bg: #e6f4ef;
-    --tint-green-fg: #006a4e;
-    --tint-yellow-bg: #fff4d6;
-    --tint-yellow-fg: #8a6300;
-    --tint-red-bg: #fde8e8;
-    --tint-red-fg: #d21034;
     --tk-canvas: #ffffff;
     --tk-surface: #ffffff;
-    --tk-surface-soft: #f0f0f0;
-    --tk-border: #cccccc;
-    --tk-text: #10162f;
-    --tk-text-reading: #10162f;
-    --tk-text-muted: #444444;
-    --tk-text-subtle: #666666;
-    --tk-primary: #1557ff;
-    --tk-primary-soft: #eaf3ff;
+    --tk-text: #0b3a2c;
+    --tk-text-reading: #0b3a2c;
   }
 
   header.site-header,
@@ -5826,7 +5838,7 @@ main > .hero-legal ~ .about-section {
   a.item-resource[target="_blank"]::after {
     content: " (" attr(href) ")";
     font-size: 0.7rem;
-    color: #555;
+    color: #2c5847;
     word-break: break-all;
   }
 }
