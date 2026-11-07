@@ -5317,8 +5317,8 @@ main .dates-ref-note {
 /* ── Signature WIYAO (2026-10-31, à la demande de l'utilisateur, pour se
    distinguer de MoonShot) : ombres dures portées en bas à droite, flèche
    des boutons dans une pastille ronde vert nuit qui glisse au survol (au
-   lieu d'une case accolée), bouton flottant vert forêt, bandeaux défilants
-   rythmés par des losanges jaune soleil. */
+   lieu d'une case accolée), bouton flottant vert (bandeaux défilants rythmés
+   par des losanges jaunes jusqu'au 2026-11-07, retirés depuis). */
 .btn-primary,
 .btn-send {
   gap: 16px;
@@ -5399,14 +5399,12 @@ main .dates-ref-note {
   transform: translateX(3px);
 }
 
+/* Mots séparés par un simple espace : les losanges jaunes ont été retirés à
+   la demande de l'utilisateur le 2026-11-07. */
 .marquee-list li::after {
   content: "";
   flex: none;
-  width: 0.3em;
-  height: 0.3em;
-  margin: 0 0.75em;
-  background: var(--w-yellow);
-  transform: rotate(45deg);
+  width: 1.2em;
 }
 
 /* ── Contact / Proposer : carte blanche à trait marine. */
