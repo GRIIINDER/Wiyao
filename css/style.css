@@ -5817,6 +5817,25 @@ main > .hero-legal ~ .about-section {
   }
 }
 
+/* Petits écrans de 700 px de haut ou moins (2026-11-08, à la demande de
+   l'utilisateur) : titre d'une roadmap à 22 px (au lieu de 26 à 29 px) et
+   marges de l'en-tête encore réduites, pour que même un long titre tienne
+   dans l'écran avec le bandeau défilant visible en entier. */
+@media (max-width: 640px) and (max-height: 700px) {
+  #roadmap-detail > .roadmap-header {
+    padding-top: 44px;
+    padding-bottom: 12px;
+  }
+  #roadmap-detail > .roadmap-header h1 {
+    font-size: 22px !important;
+    line-height: 1.1;
+  }
+  .roadmap-header h1 .ico-roadmap-title {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 /* ── Formulaires Contact et Proposer, envoi direct (2026-11-07) : champ
    piège hors écran (un robot le remplit, une personne ne le voit pas) et
    message de résultat sous le bouton. */
