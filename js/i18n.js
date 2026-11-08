@@ -299,13 +299,6 @@
     "actu.meta.date": { fr: "Date", en: "Date" },
     "actu.meta.category": { fr: "Catégorie", en: "Category" },
     "actu.readSource": { fr: "Lire la source", en: "Read source" },
-    "actu.t13.date": { fr: "25-26 septembre 2026", en: "September 25-26, 2026" },
-    "actu.t13.h3": { fr: "ESIG Tech Arena 2026 : hackathons, CTF et Code Racing", en: "ESIG Tech Arena 2026: hackathons, CTF and Code Racing" },
-    "actu.t13.p": {
-      fr: "Compétition tech de deux jours au Campus ESIG, organisée par le club ESIG TechSphere : hackathon\n             développement, hackathon réseau &amp; sécurité, Capture The Flag et Tech Quiz / Code Racing.\n             100 000 FCFA pour le premier groupe de chaque hackathon et du CTF, prix « Meilleure jeune fille »\n             de 25 000 FCFA dans chaque catégorie principale. Inscriptions compétiteurs closes ; billets\n             participants encore ouverts pour suivre panels et épreuves.",
-      en: 'Two-day tech competition at Campus ESIG, organized by the ESIG TechSphere club: development hackathon, network & security hackathon, Capture The Flag and Tech Quiz / Code Racing. 100,000 FCFA for the first-place group in each hackathon and the CTF, a "Best young woman" prize of 25,000 FCFA in each main category. Competitor registration is closed; participant tickets remain open to attend the panels and events.',
-    },
-    "actu.t13.cat": { fr: "Événement", en: "Event" },
     "actu.t14.date": { fr: "Inscriptions prolongées jusqu'au 30 septembre 2026", en: "Registration extended until September 30, 2026" },
     "actu.t14.h3": { fr: "Nana Tech Tour : une tournée nationale pour les jeunes femmes du numérique", en: "Nana Tech Tour: a national tour for young women in tech" },
     "actu.t14.p": {
@@ -1512,7 +1505,8 @@
     "eco.startups.intro": { fr: 'Un échantillon de startups tech togolaises actives et vérifiées, par secteur. Liste non exhaustive : le <a href="#institutions">portail officiel de l\'écosystème numérique</a> référence 170 startups togolaises au total.', en: 'A sample of active, verified Togolese tech startups, by sector. Non-exhaustive list: the <a href="#institutions">official digital ecosystem portal</a> lists 170 Togolese startups in total.' },
     "eco.s1.p": { fr: "Premier portail togolais de petites annonces automobiles, actif (annonces récentes confirmées).", en: "Togo's first classifieds portal for cars, active (recent listings confirmed)." },
     "eco.s2.p": { fr: "Plateforme numérique de communication entre écoles, familles et élèves, utilisée notamment pour la digitalisation des résultats d'examens.", en: "Digital communication platform between schools, families and students, used in particular to digitize exam results." },
-    "eco.s3.p": { fr: "Startup fondée en 2016 par Achille Noussia, spécialisée dans le recyclage de papier et la production d'emballages écologiques (sacs, cartons), plusieurs fois primée.", en: "Startup founded in 2016 by Achille Noussia, specializing in paper recycling and eco-friendly packaging (bags, cartons), award-winning." },
+    "eco.s3.p": { fr: "Marque d'ECO-PACKAGING HOUSE, entreprise enregistrée en 2018 à Agoè (Lomé) : elle recycle le papier des sacs de ciment en sacs réutilisables et produit des sacs et emballages en papier biodégradables pour les boutiques, les pharmacies et les boulangeries.", en: "Brand of ECO-PACKAGING HOUSE, a company registered in 2018 in Agoè (Lomé): it recycles cement-bag paper into reusable bags and makes biodegradable paper bags and packaging for shops, pharmacies and bakeries." },
+    "eco.s3.link": { fr: "civicbag.com (site archivé)", en: "civicbag.com (archived site)" },
     "eco.s4.p": { fr: "Plateforme fondée en 2015 qui met en relation les acteurs du secteur agricole togolais, plus de 6000 agriculteurs inscrits.", en: "Platform founded in 2015 that connects players in the Togolese agricultural sector, with over 6,000 registered farmers." },
     "eco.s5.p": { fr: "Coopérative fondée en 2014, production de chocolat bio togolais selon des méthodes traditionnelles, distinguée par plusieurs prix internationaux.", en: "Cooperative founded in 2014, producing organic Togolese chocolate using traditional methods, recognized with several international awards." },
     "eco.s6.p": { fr: "Plateforme d'e-santé développée en 2018 avec le Ministère de la Santé et l'UNFPA : suivi du cycle menstruel, de la grossesse et consultation en ligne, plus de 10 000 abonnées.", en: "E-health platform developed in 2018 with the Ministry of Health and UNFPA: menstrual cycle and pregnancy tracking and online consultations, with over 10,000 subscribers." },
