@@ -1050,8 +1050,8 @@
     },
     "temoin.s3.p2.role": { fr: "Inventeur d'une imprimante 3D en déchets électroniques", en: "Inventor of a 3D printer made from e-waste" },
     "temoin.s3.p2.p": {
-      fr: "Géographe de formation, sans bagage en informatique : il a fait des études de lettres. Avec le soutien de l'incubateur WoeLab, il met six mois à construire le premier prototype de la première imprimante 3D fabriquée en Afrique à partir de déchets électroniques, récupérés dans les décharges de Lomé. Récompensé en 2014 à FAB10, à Barcelone.",
-      en: "A trained geographer with no computer-science background: he studied literature. With support from the WoeLab incubator, he spent six months building the first prototype of the first 3D printer made in Africa from electronic waste, salvaged from Lomé's landfills. Awarded a prize in 2014 at FAB10 in Barcelona.",
+      fr: "Géographe de formation, sans bagage en informatique : il a fait des études de lettres. Avec le soutien de l'incubateur WoeLab, il met six mois à construire le premier prototype de la première imprimante 3D fabriquée en Afrique à partir de déchets électroniques, récupérés dans les décharges de Lomé. En 2013, le projet « W.AFATE to Mars », mené avec l'équipe de WoeLab et le FacLab (France), remporte la première place sur le site de Paris du NASA International Space Apps Challenge. Récompensé en 2014 à FAB10, à Barcelone.",
+      en: "A trained geographer with no computer-science background: he studied literature. With support from the WoeLab incubator, he spent six months building the first prototype of the first 3D printer made in Africa from electronic waste, salvaged from Lomé's landfills. In 2013, the \"W.AFATE to Mars\" project, carried out with the WoeLab team and FacLab (France), took first place at the Paris site of the NASA International Space Apps Challenge. Awarded a prize in 2014 at FAB10 in Barcelona.",
     },
     "temoin.s3.p3.role": { fr: "CEO et cofondateur de Semoa Group", en: "CEO and co-founder of Semoa Group" },
     "temoin.s3.p3.p": {
@@ -1650,6 +1650,7 @@
     "eco.h.funmooc": { fr: "FUN MOOC : France Université Numérique", en: "FUN MOOC: France Université Numérique" },
     "ecoles.bac.intro": { fr: "Un repère, pas une règle stricte : beaucoup d'écoles privées togolaises étudient chaque dossier au cas par cas, quelle que soit la série. Mais certaines filières (concours publics, cursus ingénieur) demandent une série précise.", en: "A guideline, not a strict rule: many Togolese private schools review each application case by case, whatever the series. But some programs (public entrance exams, engineering tracks) require a specific series." },
     "temoignages.source": { fr: "Source :", en: "Source:" },
+    "temoignages.sources": { fr: "Sources :", en: "Sources:" },
     "eco.jump.aria": { fr: "Aller à une section", en: "Jump to a section" },
   };
 
