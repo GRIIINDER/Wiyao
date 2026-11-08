@@ -109,12 +109,39 @@ function collectAllUrls() {
 // ---- 3. Vérification HTTP d'une URL ----
 const REDIRECT_CODES = [301, 302, 303, 307, 308];
 
+// Cookies reçus pendant une chaîne de redirections. Certains sites posent un
+// cookie de session puis redirigent vers la même page, et bouclent tant
+// qu'on ne le leur renvoie pas (page carrières d'Ecobank, signalée à tort
+// « trop de redirections » chaque jour jusqu'au 2026-11-08) ; un navigateur
+// le renvoie, d'où la fausse alerte. Le bocal ne vit que le temps d'une
+// chaîne (rien n'est gardé d'un lien à l'autre) et un cookie n'est renvoyé
+// qu'à l'hôte exact qui l'a posé.
+function storeCookies(jar, host, res) {
+  const lines = typeof res.headers.getSetCookie === "function" ? res.headers.getSetCookie() : [];
+  if (!lines.length) return;
+  const cookies = jar.get(host) || new Map();
+  for (const line of lines) {
+    const pair = line.split(";", 1)[0];
+    const eq = pair.indexOf("=");
+    if (eq <= 0) continue;
+    cookies.set(pair.slice(0, eq).trim(), pair.slice(eq + 1).trim());
+  }
+  jar.set(host, cookies);
+}
+
+function cookieHeader(jar, host) {
+  const cookies = jar.get(host);
+  if (!cookies || !cookies.size) return null;
+  return [...cookies].map(([name, value]) => `${name}=${value}`).join("; ");
+}
+
 // Suit les redirections à la main avec une seule méthode, pour repasser
 // chaque étape par la garde anti-SSRF. Une adresse refusée n'est jamais
 // contactée, mais le lien reste dans le rapport (« à vérifier
 // manuellement »), jamais écarté.
 async function followChain(url, method, signal) {
   let current = url;
+  const jar = new Map();
   for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
     const gate = await gateUrl(current);
     if (gate === "blocked") {
@@ -124,7 +151,11 @@ async function followChain(url, method, signal) {
     }
     if (gate === "dns") return { url, status: null, ok: false, refused: true, error: "résolution DNS impossible" };
 
-    const res = await fetch(current, { method, redirect: "manual", signal, headers: FETCH_HEADERS });
+    const host = new URL(current).hostname.toLowerCase();
+    const cookie = cookieHeader(jar, host);
+    const headers = cookie ? { ...FETCH_HEADERS, Cookie: cookie } : FETCH_HEADERS;
+    const res = await fetch(current, { method, redirect: "manual", signal, headers });
+    storeCookies(jar, host, res);
     if (!REDIRECT_CODES.includes(res.status)) return { url, status: res.status, ok: res.ok };
     const location = res.headers.get("location");
     if (!location) return { url, status: res.status, ok: false };
@@ -313,7 +344,13 @@ async function main() {
   console.log(report);
 }
 
-main().catch((err) => {
-  console.error("Échec du script de vérification :", err);
-  process.exit(1);
-});
+// Lancé directement (workflow quotidien) : vérifie tout. Chargé par
+// require() : expose seulement de quoi tester une URL, sans rien lancer.
+if (require.main === module) {
+  main().catch((err) => {
+    console.error("Échec du script de vérification :", err);
+    process.exit(1);
+  });
+} else {
+  module.exports = { checkUrl, storeCookies, cookieHeader };
+}
