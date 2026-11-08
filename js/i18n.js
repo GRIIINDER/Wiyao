@@ -1068,10 +1068,10 @@
       fr: "Licence en ingénierie informatique au Togo, puis masters en sécurité réseau (Reims, France) et cybersécurité (Florida Institute of Technology, États-Unis). A travaillé 5 ans à l'Office Togolais des Recettes avant de devenir consultante indépendante, notamment pour un audit sécurité de l'OIF.",
       en: "Bachelor's in computer engineering in Togo, followed by master's degrees in network security (Reims, France) and cybersecurity (Florida Institute of Technology, USA). Worked for 5 years at the Togolese Revenue Authority before becoming an independent consultant, including for an OIF security audit.",
     },
-    "temoin.s3.p6.role": { fr: "Développeuse mobile (Flutter)", en: "Mobile developer (Flutter)" },
+    "temoin.s3.p6.role": { fr: "Développeuse web et mobile", en: "Web and mobile developer" },
     "temoin.s3.p6.p": {
-      fr: "Développeuse web et mobile originaire de Niamtougou, spécialisée Flutter. Sélectionnée pour la prestigieuse Anzisha Prize Fellowship (2021) et invitée à la conférence Flutter Forward de Google à Nairobi (2023).",
-      en: "Web and mobile developer from Niamtougou, specialized in Flutter. Selected for the prestigious Anzisha Prize Fellowship (2021) and invited to Google's Flutter Forward conference in Nairobi (2023).",
+      fr: "Développeuse web et mobile originaire de Niamtougou, dans le nord du Togo. Sélectionnée en 2021, à 22 ans, pour l'Anzisha Prize Fellowship avec RBK Pearls, l'entreprise d'accessoires en perles qu'elle a fondée à Lomé en 2019.",
+      en: "Web and mobile developer from Niamtougou, in northern Togo. Selected in 2021, at 22, for the Anzisha Prize Fellowship with RBK Pearls, the beaded-accessories business she founded in Lomé in 2019.",
     },
     "temoin.s3.p7.role": { fr: "Cofondateur de Karaba", en: "Co-founder of Karaba" },
     "temoin.s3.p7.p": {
