@@ -91,7 +91,7 @@ const ROLES = {
       {
         title: "9. Écosystème togolais", titleEn: "9. Togolese ecosystem",
         items: [
-          { label: "IAI-Togo : licence pro informatique, formation continue", labelEn: "IAI-Togo: professional bachelor's in computer science, continuing education", level: "core", note: "Institut Africain d'Informatique, Lomé.", noteEn: "African Institute of Computer Science (Institut Africain d'Informatique), Lomé.", resource: { label: "iai-togo.tg", labelEn: "iai-togo.tg", url: "https://new.iai-togo.tg/" } },
+          { label: "IAI-Togo : licence pro informatique, formation continue", labelEn: "IAI-Togo: professional bachelor's in computer science, continuing education", level: "core", note: "Institut Africain d'Informatique, Lomé.", noteEn: "African Institute of Computer Science (IAI-Togo), Lomé.", resource: { label: "iai-togo.tg", labelEn: "iai-togo.tg", url: "https://new.iai-togo.tg/" } },
           { label: "ESGIS : licence Informatique Réseaux et Télécommunication", labelEn: "ESGIS: bachelor's in Computer Science, Networks and Telecommunications", level: "core" },
           { label: "HETEC (HEST) : licence/master développement d'applications", labelEn: "HETEC (HEST): bachelor's/master's in application development", level: "core" },
           { label: "GDG Lomé et DevFest Lomé : meetups et conférence annuelle", labelEn: "GDG Lomé and DevFest Lomé: meetups and annual conference", level: "core", note: "Communauté Google Developer Groups, ateliers réguliers.", noteEn: "Google Developer Groups community, regular workshops.", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
@@ -4757,6 +4757,7 @@ const SCHOOLS = {
   },
   "iai-togo": {
     name: "Institut Africain d'Informatique (IAI-Togo)",
+    nameEn: "African Institute of Computer Science (IAI-Togo)",
     ville: ["Lomé"],
     statut: "inter-etats",
     agree: true,
@@ -4781,6 +4782,7 @@ const SCHOOLS = {
   },
   "esgis": {
     name: "ESGIS Togo (École Supérieure de Gestion, d'Informatique et des Sciences)",
+    nameEn: "ESGIS Togo (Higher School of Management, Computer Science and Sciences)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -4802,6 +4804,7 @@ const SCHOOLS = {
   },
   "esig": {
     name: "ESIG Global Success (École Supérieure d'Informatique et de Gestion)",
+    nameEn: "ESIG Global Success (Higher School of Computer Science and Management)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -4824,6 +4827,7 @@ const SCHOOLS = {
   },
   "esiba": {
     name: "ESIBA (École Supérieure d'Informatique, de Business et d'Administration)",
+    nameEn: "ESIBA (Higher School of Computer Science, Business and Administration)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -4868,6 +4872,7 @@ const SCHOOLS = {
   },
   "ucao-uut": {
     name: "UCAO-UUT : Département de Génie Informatique",
+    nameEn: "UCAO-UUT: Computer Engineering Department",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -4913,6 +4918,7 @@ const SCHOOLS = {
   },
   "defitech": {
     name: "Institut Polytechnique DEFITECH",
+    nameEn: "DEFITECH Polytechnic Institute",
     ville: ["Lomé"],
     statut: "prive",
     agree: false,
@@ -4936,6 +4942,7 @@ const SCHOOLS = {
   },
   "ecole-des-cadres": {
     name: "École des Cadres",
+    nameEn: "School of Executives (École des Cadres)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -4958,6 +4965,7 @@ const SCHOOLS = {
   },
   "universite-kara": {
     name: "Université de Kara",
+    nameEn: "University of Kara",
     ville: ["Kara"],
     statut: "public",
     agree: null,
@@ -4981,6 +4989,7 @@ const SCHOOLS = {
   },
   "esa-togo": {
     name: "ESA Togo (École Supérieure des Affaires)",
+    nameEn: "ESA Togo (Higher School of Business)",
     ville: ["Lomé", "Kara"],
     statut: "prive",
     agree: true,
@@ -5003,6 +5012,7 @@ const SCHOOLS = {
   },
   "college-paris-togo": {
     name: "Ascencia · Keyce Togo (ex Collège de Paris Togo)",
+    nameEn: "Ascencia · Keyce Togo (formerly Collège de Paris Togo)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5025,6 +5035,7 @@ const SCHOOLS = {
   },
   "isbic-alg": {
     name: "ISBIC-ALG : Institut Supérieur Bilingue de l'Informatique et de Calcul « Auguste Le Grand »",
+    nameEn: "ISBIC-ALG: \"Auguste Le Grand\" Bilingual Higher Institute of Computer Science and Computing",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5050,10 +5061,11 @@ const SCHOOLS = {
   },
   "epl": {
     name: "École Nationale Polytechnique (ENP, ex-École Polytechnique de Lomé)",
+    nameEn: "National Polytechnic School (ENP, formerly the Lomé Polytechnic School)",
     ville: ["Lomé"],
     statut: "public",
     agree: true,
-    agreeNote: "Établissement public n°13 sur la liste officielle des établissements d'enseignement supérieur accrédités pour l'année académique 2026-2027 (edusup.gouv.tg, publiée le 24 juillet 2026). L'ENP a remplacé l'École Polytechnique de Lomé (EPL) en juillet 2026 (source : Togonews/AllAfrica, 23 juillet 2026) : les informations ci-dessous (frais, concours) datent de l'ère EPL et restent à recouper auprès de l'établissement.", agreeNoteEn: "Public institution no. 13 on the official list of accredited higher-education institutions for the 2026-2027 academic year (edusup.gouv.tg, published July 24, 2026). The ENP replaced the École Polytechnique de Lomé (EPL) in July 2026 (source: Togonews/AllAfrica, July 23, 2026): the information below (fees, entrance exam) dates from the EPL era and still needs to be cross-checked with the school.",
+    agreeNote: "Établissement public n°13 sur la liste officielle des établissements d'enseignement supérieur accrédités pour l'année académique 2026-2027 (edusup.gouv.tg, publiée le 24 juillet 2026). L'ENP a remplacé l'École Polytechnique de Lomé (EPL) en juillet 2026 (source : Togonews/AllAfrica, 23 juillet 2026) : les informations ci-dessous (frais, concours) datent de l'ère EPL et restent à recouper auprès de l'établissement.", agreeNoteEn: "Public institution no. 13 on the official list of accredited higher-education institutions for the 2026-2027 academic year (edusup.gouv.tg, published July 24, 2026). The ENP replaced the Lomé Polytechnic School (EPL) in July 2026 (source: Togonews/AllAfrica, July 23, 2026): the information below (fees, entrance exam) dates from the EPL era and still needs to be cross-checked with the school.",
     niveaux: ["Licence Fondamentale", "Licence Professionnelle", "Master", "Diplôme d'Ingénieur"],
     niveauxEn: ["General bachelor's", "Professional bachelor's", "Master's", "Engineering degree"],
     filieres: ["Informatique et Systèmes", "Intelligence Artificielle & Big Data", "Génie Logiciel", "Systèmes et Réseaux Informatiques"],
@@ -5062,7 +5074,7 @@ const SCHOOLS = {
     admission: "Concours d'entrée post-Bac (Bac C, D, E scientifique pour la licence fondamentale)", admissionEn: "Post-Bac entrance exam (science Bac C, D, E for the general bachelor's)",
     frais: "404 000 FCFA/an (étudiants togolais, inscription incluse) · 514 000 (salariés) · 754 000 (étrangers). Les 20% premiers au concours d'entrée ne paient que 50 000 FCFA de frais pédagogiques, le reste pris en charge par l'établissement (source : presse togolaise, recoupée sur 3 articles, sous l'ancien nom EPL : à confirmer que ces tarifs s'appliquent toujours sous l'ENP).", fraisEn: "404,000 FCFA/year (Togolese students, registration included) · 514,000 (employees) · 754,000 (foreign students). The top 20% in the entrance exam pay only 50,000 FCFA in tuition, the rest being covered by the school (source: Togolese press, cross-checked across 3 articles, under the former name EPL: still to be confirmed that these fees apply under the ENP).",
     site: "https://univ-lome.tg/",
-    description: "École nationale d'ingénieurs publique (ENP), qui a remplacé en juillet 2026 l'École Polytechnique de Lomé : elle-même composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).", descriptionEn: "Public national engineering school (ENP), which replaced the École Polytechnique de Lomé in July 2026; the latter had been part of the University of Lomé since 2022 (merger of ENSI and the Computing Center).",
+    description: "École nationale d'ingénieurs publique (ENP), qui a remplacé en juillet 2026 l'École Polytechnique de Lomé : elle-même composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).", descriptionEn: "Public national engineering school (ENP), which replaced the Lomé Polytechnic School (EPL) in July 2026; the latter had been part of the University of Lomé since 2022 (merger of ENSI and the Computing Center).",
     datesCles: {
       mode: "campagne",
       note: "Concours écrit annuel réservé aux nouveaux bacheliers, dépôt possible à Lomé, Kara (DAAS) et dans les directions régionales (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong). Annonce officielle du Ministère (août 2026). Candidatures 2026-2027 closes : les dates ci-dessous servent de repère pour la prochaine campagne.", noteEn: "Annual written exam reserved for new high-school graduates, applications accepted in Lomé, Kara (DAAS) and at the regional directorates (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong). Official Ministry announcement (August 2026). 2026-2027 applications closed: the dates below serve as a reference for the next round.",
@@ -5078,6 +5090,7 @@ const SCHOOLS = {
   },
   "iaec": {
     name: "IAEC (Institut Africain d'Administration et d'Études Commerciales)",
+    nameEn: "IAEC (African Institute of Administration and Business Studies)",
     ville: ["Lomé", "Kara"],
     statut: "prive",
     agree: true,
@@ -5102,6 +5115,7 @@ const SCHOOLS = {
   },
   "cifop": {
     name: "Centre Informatique de Formation et d'Orientation Professionnelle (CIFOP)",
+    nameEn: "Computer Training and Career Guidance Center (CIFOP)",
     ville: ["Lomé", "Sokodé", "Bassar"],
     statut: "prive",
     agree: true,
@@ -5124,6 +5138,7 @@ const SCHOOLS = {
   },
   "ifnti": {
     name: "Institut de Formation aux Normes et Technologies de l'Informatique (IFNTI)",
+    nameEn: "Institute for Training in Computing Standards and Technologies (IFNTI)",
     ville: ["Sokodé"],
     statut: "prive",
     agree: true,
@@ -5144,6 +5159,7 @@ const SCHOOLS = {
   },
   "isac": {
     name: "Institut Supérieur Agata Carelli (ISAC)",
+    nameEn: "Agata Carelli Higher Institute (ISAC)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5163,6 +5179,7 @@ const SCHOOLS = {
   },
   "ism-adonai": {
     name: "Institut Supérieur de Management Adonaï (ISM ADONAI)",
+    nameEn: "Adonaï Higher Institute of Management (ISM ADONAI)",
     ville: ["Lomé", "Atakpamé", "Kara"],
     statut: "prive",
     agree: true,
@@ -5182,6 +5199,7 @@ const SCHOOLS = {
   },
   "istm": {
     name: "Institut Supérieur de Technologies et de Management (ISTM)",
+    nameEn: "Higher Institute of Technology and Management (ISTM)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5201,6 +5219,7 @@ const SCHOOLS = {
   },
   "issec-kouvahey": {
     name: "Institut Supérieur des Sciences Économiques et Commerciales Kouvahey (ISSEC-KOUVAHEY)",
+    nameEn: "Kouvahey Higher Institute of Economic and Business Sciences (ISSEC-KOUVAHEY)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5220,6 +5239,7 @@ const SCHOOLS = {
   },
   "jumau-ita": {
     name: "Institut Supérieur des Technologies Avancées Jumau (JUMAU-ITA)",
+    nameEn: "Jumau Higher Institute of Advanced Technologies (JUMAU-ITA)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5239,6 +5259,7 @@ const SCHOOLS = {
   },
   "imast": {
     name: "Institut de Mathématiques, des Sciences et Technologies (IMaST)",
+    nameEn: "Institute of Mathematics, Sciences and Technologies (IMaST)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5258,6 +5279,7 @@ const SCHOOLS = {
   },
   "ecole-de-finance": {
     name: "École de Finance de Lomé (EFL, ex American Institute of Africa)",
+    nameEn: "Lomé School of Finance (EFL, formerly American Institute of Africa)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5277,6 +5299,7 @@ const SCHOOLS = {
   },
   "global-wealth": {
     name: "Global Wealth University (Institut Universitaire Global Wealth, ex-IITM)",
+    nameEn: "Global Wealth University (Global Wealth University Institute, formerly IITM)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5296,6 +5319,7 @@ const SCHOOLS = {
   },
   "hest": {
     name: "École des Hautes Études de Sciences et Technologies (HEST)",
+    nameEn: "School of Advanced Studies in Science and Technology (HEST)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5317,6 +5341,7 @@ const SCHOOLS = {
   },
   "escen": {
     name: "École Supérieure de Commerce et de l'Économie Numérique (ESCEN)",
+    nameEn: "Higher School of Commerce and Digital Economy (ESCEN)",
     ville: ["Lomé"],
     statut: "prive",
     agree: true,
@@ -5375,6 +5400,7 @@ const SCHOOLS = {
   },
   "bakpessi": {
     name: "Institut Supérieur de Management Mgr BAKPESSI",
+    nameEn: "Mgr BAKPESSI Higher Institute of Management",
     ville: ["Kara"],
     statut: "prive",
     agree: true,

@@ -888,7 +888,7 @@
     card.className = "card school-card";
     // Recherche dans les deux langues : un nom de filière tapé en anglais
     // trouve aussi l'école.
-    card.dataset.title = (school.name + " " + school.filieres.join(" ") + " " + (school.filieresEn || []).join(" ")).toLowerCase();
+    card.dataset.title = (school.name + " " + (school.nameEn || "") + " " + school.filieres.join(" ") + " " + (school.filieresEn || []).join(" ")).toLowerCase();
     card.dataset.ville = school.ville.join(",");
     card.dataset.statut = school.statut;
     card.dataset.domaine = matchSchoolDomains(school).join(",");
@@ -906,7 +906,7 @@
     body.appendChild(badges);
 
     const title = document.createElement("h3");
-    title.textContent = school.name;
+    title.textContent = tField(school, "name");
     body.appendChild(title);
 
     const subtitle = document.createElement("p");
@@ -1559,7 +1559,7 @@
 
       const siteHref = safeUrl(school.site);
       row.innerHTML = `
-        <h3>${escapeHtml(school.name)}</h3>
+        <h3>${escapeHtml(tField(school, "name"))}</h3>
         ${bodyHtml}
         ${siteHref ? `<a class="school-link" href="${escapeHtml(siteHref)}" target="_blank" rel="noopener noreferrer">${isEn ? "See official site →" : "Voir le site officiel →"}</a>` : ""}
       `;
@@ -1642,7 +1642,7 @@
         const sc = SCHOOLS[id];
         index.push(indexEntry(
           { title: sc.name, description: sc.description, category: "École" },
-          { title: sc.name, description: sc.descriptionEn, category: "School" },
+          { title: sc.nameEn || sc.name, description: sc.descriptionEn, category: "School" },
           { url: "ecoles.html", keywords: flattenSchoolKeywords(sc) }
         ));
       });
