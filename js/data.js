@@ -5372,7 +5372,10 @@ const SCHOOLS = {
     duree: null,
     admission: "Cours du jour, du soir, week-end, ou à distance avec séminaires mensuels", admissionEn: "Day, evening or weekend classes, or online with monthly seminars",
     frais: "Scolarité annuelle normale 2024-2025 (diplôme local, hors frais d'inscription) : 1 490 000 FCFA (BTS1/L1) à 1 770 000 FCFA (L3) · Master : 1 600 000 à 1 750 000 FCFA. + frais d'inscription annuels : 50 000 FCFA (BTS/Licence) ou 60 000 FCFA (Master). Tarifs réduits sur dossier d'aide financière (dès 480 000 FCFA). Grille datée 2024-2025, commune aux campus Togo/Mali/Niger, à reconfirmer pour l'année en cours (source : PDF officiel lucas-universities-colleges.net — site dont le certificat de sécurité est expiré depuis 2020, à visiter avec prudence).", fraisEn: "Standard 2024-2025 annual tuition (local diploma, excluding registration fees): 1,490,000 FCFA (BTS1/L1) to 1,770,000 FCFA (L3) · Master's: 1,600,000 to 1,750,000 FCFA. + annual registration fees: 50,000 FCFA (BTS/Bachelor's) or 60,000 FCFA (Master's). Reduced rates with a financial aid application (from 480,000 FCFA). Fee schedule dated 2024-2025, shared by the Togo/Mali/Niger campuses, to be reconfirmed for the current year (source: official PDF on lucas-universities-colleges.net — a site whose security certificate has been expired since 2020, visit with caution).",
-    site: "https://www.lucas-universities-colleges.net/",
+    // Lien retiré le 2026-11-08 : www.lucas-universities-colleges.net (https)
+    // ne s'ouvre pas dans un navigateur (certificat d'un émetteur non reconnu,
+    // ERR_CERT_AUTHORITY_INVALID). À remettre quand l'école l'aura réparé.
+    site: null,
     description: "Fondé en 2018, réseau panafricain (présent aussi au Ghana, Niger, Mali), partenariats pour doubles diplômes avec MBway et My Digital School (France) et Griffith College (Irlande), incubateur pour jeunes entrepreneurs.", descriptionEn: "Founded in 2018, a pan-African network (also present in Ghana, Niger and Mali), dual-degree partnerships with MBway and My Digital School (France) and Griffith College (Ireland), incubator for young entrepreneurs.",
     datesCles: {
       mode: "inconnu",
@@ -5411,7 +5414,10 @@ const SCHOOLS = {
     duree: null,
     admission: "Sur dossier (relevé de notes du Bac, diplôme, acte de naissance, photo, pièce d'identité, lettre de motivation, CV)", admissionEn: "On application (Bac transcript, diploma, birth certificate, photo, ID, cover letter, CV)",
     frais: "Non communiqué publiquement.", fraisEn: "Not made public.",
-    site: "https://institut-bakpessi.com/",
+    // Lien retiré le 2026-11-08 : institut-bakpessi.com (https) ne s'ouvre
+    // pas dans un navigateur (certificat établi pour une autre adresse,
+    // ERR_CERT_COMMON_NAME_INVALID). À remettre quand l'école l'aura réparé.
+    site: null,
     description: "Institut privé fondé en 2004 à Tomdè (Kara) par l'ex-Secrétaire Général de l'Université de Lomé, 1er institut privé du nord du Togo ; le pôle « Sciences Technologiques » couvre l'informatique parmi 8 pôles de formation (source : institut-bakpessi.com).", descriptionEn: "Private institute founded in 2004 in Tomdè (Kara) by the former Secretary General of the University of Lomé, the first private institute in northern Togo; its \"Technological Sciences\" department covers computer science among 8 training departments (source: institut-bakpessi.com).",
     datesCles: {
       mode: "inconnu",
