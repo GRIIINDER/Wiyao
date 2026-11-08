@@ -12,8 +12,8 @@ const ROLES = {
     togoVerified: true,
     title: "Développeur Web",
     titleEn: "Web Developer",
-    subtitle: "Du HTML au full-stack, avec les ressources disponibles au Togo",
-    subtitleEn: "From HTML to full-stack, with resources available in Togo",
+    subtitle: "Du HTML au développement full-stack, un parcours progressif adossé aux ressources accessibles au Togo.",
+    subtitleEn: "From HTML to full-stack development, a progressive path built on resources available in Togo.",
     icon: "globe",
     sections: [
       {
@@ -108,8 +108,8 @@ const ROLES = {
     togoVerified: true,
     title: "Développeur Backend",
     titleEn: "Backend Developer",
-    subtitle: "Langages, bases de données, architecture et sécurité",
-    subtitleEn: "Languages, databases, architecture and security",
+    subtitle: "Langages, bases de données, architecture et sécurité : l'ingénierie invisible qui fait fonctionner les applications.",
+    subtitleEn: "Languages, databases, architecture and security: the invisible engineering that keeps applications running.",
     icon: "server",
     sections: [
       {
@@ -191,8 +191,8 @@ const ROLES = {
     togoVerified: true,
     title: "DevOps & Cloud",
     titleEn: "DevOps & Cloud",
-    subtitle: "Infrastructure, automatisation et exploitation",
-    subtitleEn: "Infrastructure, automation and operations",
+    subtitle: "Infrastructure, automatisation et exploitation : mener le code de la conception à la production, de manière fiable.",
+    subtitleEn: "Infrastructure, automation and operations: taking code from design to production, reliably.",
     icon: "infinity",
     sections: [
       {
@@ -268,8 +268,8 @@ const ROLES = {
     togoVerified: true,
     title: "Cybersécurité & Réseaux",
     titleEn: "Cybersecurity & Networks",
-    subtitle: "Sécurité offensive, défensive et gouvernance",
-    subtitleEn: "Offensive security, defensive security and governance",
+    subtitle: "Sécurité offensive, défensive et gouvernance : protéger les systèmes d'information face à des menaces en constante évolution.",
+    subtitleEn: "Offensive security, defensive security and governance: protecting information systems against ever-evolving threats.",
     icon: "lock",
     sections: [
       {
@@ -356,8 +356,8 @@ const ROLES = {
     togoVerified: true,
     title: "Data & Intelligence Artificielle",
     titleEn: "Data & Artificial Intelligence",
-    subtitle: "Des statistiques au machine learning appliqué",
-    subtitleEn: "From statistics to applied machine learning",
+    subtitle: "Des statistiques au machine learning appliqué : faire parler les données et concevoir des systèmes intelligents.",
+    subtitleEn: "From statistics to applied machine learning: making data speak and designing intelligent systems.",
     icon: "cpu",
     sections: [
       {
@@ -428,8 +428,8 @@ const ROLES = {
     togoVerified: true,
     title: "Développement Mobile",
     titleEn: "Mobile Development",
-    subtitle: "Natif ou cross-platform, de l'idée au Play Store",
-    subtitleEn: "Native or cross-platform, from idea to the Play Store",
+    subtitle: "Natif ou multiplateforme : concevoir une application mobile, de l'idée à sa publication sur le Play Store.",
+    subtitleEn: "Native or cross-platform: building a mobile app, from the first idea to its release on the Play Store.",
     icon: "smartphone",
     sections: [
       {
@@ -504,8 +504,8 @@ const ROLES = {
     togoVerified: true,
     title: "Product Manager",
     titleEn: "Product Manager",
-    subtitle: "Piloter un produit numérique, de l'idée à la mise en marché",
-    subtitleEn: "Steering a digital product, from idea to market launch",
+    subtitle: "Piloter un produit numérique de l'idée à sa mise sur le marché, à la croisée des besoins, de la technique et du business.",
+    subtitleEn: "Steering a digital product from idea to market launch, at the crossroads of user needs, technology and business.",
     icon: "compass",
     sections: [
       {
@@ -572,8 +572,8 @@ const ROLES = {
     togoVerified: true,
     title: "UX/UI Designer",
     titleEn: "UX/UI Designer",
-    subtitle: "Concevoir des interfaces utiles, claires et agréables à utiliser",
-    subtitleEn: "Designing interfaces that are useful, clear and pleasant to use",
+    subtitle: "Concevoir des interfaces utiles, claires et agréables, fondées sur une compréhension fine des utilisateurs.",
+    subtitleEn: "Designing useful, clear and pleasant interfaces grounded in a close understanding of users.",
     icon: "layout",
     sections: [
       {
@@ -639,8 +639,8 @@ const ROLES = {
     togoVerified: true,
     title: "Data Analyst",
     titleEn: "Data Analyst",
-    subtitle: "Transformer des données brutes en décisions",
-    subtitleEn: "Turning raw data into decisions",
+    subtitle: "Transformer des données brutes en analyses claires qui éclairent la prise de décision.",
+    subtitleEn: "Turning raw data into clear analyses that inform decision-making.",
     icon: "trending-up",
     sections: [
       {
@@ -733,8 +733,8 @@ const ROLES = {
     togoVerified: true,
     title: "Support IT / Helpdesk",
     titleEn: "IT Support / Helpdesk",
-    subtitle: "Assister les utilisateurs et maintenir le parc informatique",
-    subtitleEn: "Assisting users and maintaining the IT equipment fleet",
+    subtitle: "Assister les utilisateurs et maintenir le parc informatique : la première ligne qui garde une organisation opérationnelle.",
+    subtitleEn: "Supporting users and maintaining IT equipment: the front line that keeps an organization running.",
     icon: "monitor",
     sections: [
       {
@@ -797,8 +797,8 @@ const ROLES = {
     togoVerified: true,
     title: "Chef de Projet IT",
     titleEn: "IT Project Manager",
-    subtitle: "Planifier, coordonner et livrer des projets informatiques",
-    subtitleEn: "Planning, coordinating and delivering IT projects",
+    subtitle: "Planifier, coordonner et livrer des projets informatiques dans le respect des délais, du budget et de la qualité.",
+    subtitleEn: "Planning, coordinating and delivering IT projects on time, on budget and to the expected quality.",
     icon: "clipboard",
     sections: [
       {
@@ -854,8 +854,8 @@ const ROLES = {
     togoVerified: true,
     title: "QA / Testeur Logiciel",
     titleEn: "QA / Software Tester",
-    subtitle: "Garantir la qualité et la fiabilité des logiciels avant leur mise en production",
-    subtitleEn: "Ensuring software quality and reliability before it goes into production",
+    subtitle: "Garantir, par des tests rigoureux, la qualité et la fiabilité d'un logiciel avant sa mise en production.",
+    subtitleEn: "Ensuring software quality and reliability before release, through rigorous testing.",
     icon: "check-square",
     sections: [
       {
@@ -922,8 +922,8 @@ const ROLES = {
     togoVerified: true,
     title: "Administrateur Systèmes et Réseaux",
     titleEn: "Systems and Network Administrator",
-    subtitle: "Maintenir et sécuriser l'infrastructure informatique d'une organisation",
-    subtitleEn: "Maintaining and securing an organization's IT infrastructure",
+    subtitle: "Maintenir, sécuriser et faire évoluer l'infrastructure informatique sur laquelle repose toute une organisation.",
+    subtitleEn: "Maintaining, securing and evolving the IT infrastructure an entire organization relies on.",
     icon: "hard-drive",
     sections: [
       {
@@ -989,8 +989,8 @@ const ROLES = {
     togoVerified: true,
     title: "Ingénieur Réseaux et Télécommunications",
     titleEn: "Network and Telecommunications Engineer",
-    subtitle: "Concevoir et exploiter les infrastructures de télécommunication",
-    subtitleEn: "Designing and operating telecommunications infrastructure",
+    subtitle: "Concevoir et exploiter les infrastructures de télécommunication qui relient les personnes et les systèmes.",
+    subtitleEn: "Designing and operating the telecommunications infrastructure that connects people and systems.",
     icon: "radio",
     sections: [
       {
@@ -1050,8 +1050,8 @@ const ROLES = {
     togoVerified: true,
     title: "Architecte Logiciel",
     titleEn: "Software Architect",
-    subtitle: "Concevoir la structure technique de systèmes complexes",
-    subtitleEn: "Designing the technical structure of complex systems",
+    subtitle: "Concevoir la structure technique de systèmes complexes et arbitrer les choix qui engagent leur avenir.",
+    subtitleEn: "Designing the technical structure of complex systems and making the choices that shape their future.",
     icon: "layers",
     sections: [
       {
@@ -1107,8 +1107,8 @@ const ROLES = {
     togoVerified: true,
     title: "Développeur ERP/CRM",
     titleEn: "ERP/CRM Developer",
-    subtitle: "Paramétrer et développer des solutions de gestion d'entreprise",
-    subtitleEn: "Configuring and developing business management solutions",
+    subtitle: "Paramétrer et développer les solutions de gestion qui structurent l'activité des entreprises.",
+    subtitleEn: "Configuring and developing the management software that structures how businesses operate.",
     icon: "grid",
     sections: [
       {
@@ -1165,8 +1165,8 @@ const ROLES = {
     togoVerified: true,
     title: "Ingénieur IoT / Systèmes Embarqués",
     titleEn: "IoT / Embedded Systems Engineer",
-    subtitle: "Concevoir des objets connectés et des systèmes électroniques intelligents",
-    subtitleEn: "Designing connected devices and smart electronic systems",
+    subtitle: "Concevoir des objets connectés et des systèmes électroniques intelligents, à la frontière du matériel et du logiciel.",
+    subtitleEn: "Designing connected devices and smart electronic systems, at the boundary between hardware and software.",
     icon: "wifi",
     sections: [
       {
@@ -1218,8 +1218,8 @@ const ROLES = {
     togoVerified: true,
     title: "Développeur Blockchain / Web3",
     titleEn: "Blockchain / Web3 Developer",
-    subtitle: "Construire des applications décentralisées et des smart contracts",
-    subtitleEn: "Building decentralized applications and smart contracts",
+    subtitle: "Construire des applications décentralisées et des smart contracts fiables et sécurisés.",
+    subtitleEn: "Building reliable, secure decentralized applications and smart contracts.",
     icon: "link",
     sections: [
       {
@@ -1283,8 +1283,8 @@ const ROLES = {
     togoVerified: true,
     title: "Marketing Digital",
     titleEn: "Digital Marketing",
-    subtitle: "Développer la présence et l'audience d'une marque en ligne",
-    subtitleEn: "Growing a brand's online presence and audience",
+    subtitle: "Développer la présence et l'audience d'une marque en ligne, en conjuguant stratégie, contenus et mesure des résultats.",
+    subtitleEn: "Growing a brand's online presence and audience by combining strategy, content and performance measurement.",
     icon: "megaphone",
     sections: [
       {
@@ -1343,8 +1343,8 @@ const ROLES = {
     togoVerified: true,
     title: "Community Manager",
     titleEn: "Community Manager",
-    subtitle: "Animer et développer une communauté de marque sur les réseaux sociaux",
-    subtitleEn: "Growing and animating a brand community on social media",
+    subtitle: "Animer et faire grandir une communauté de marque sur les réseaux sociaux, avec méthode et constance.",
+    subtitleEn: "Nurturing and growing a brand community on social media, with method and consistency.",
     icon: "message",
     sections: [
       {
@@ -1401,8 +1401,8 @@ const ROLES = {
     togoVerified: true,
     title: "Formateur en Informatique",
     titleEn: "IT Trainer",
-    subtitle: "Transmettre des compétences numériques à des apprenants",
-    subtitleEn: "Passing on digital skills to learners",
+    subtitle: "Transmettre des compétences numériques avec pédagogie, des fondamentaux aux usages avancés.",
+    subtitleEn: "Teaching digital skills with sound pedagogy, from the fundamentals to advanced uses.",
     icon: "book-open",
     sections: [
       {
@@ -1455,8 +1455,8 @@ const ROLES = {
     togoVerified: true,
     title: "Consultant en Transformation Digitale",
     titleEn: "Digital Transformation Consultant",
-    subtitle: "Accompagner les organisations dans leur passage au numérique",
-    subtitleEn: "Guiding organizations through their shift to digital",
+    subtitle: "Accompagner les organisations dans leur passage au numérique, de l'analyse des besoins à la conduite du changement.",
+    subtitleEn: "Guiding organizations through their digital shift, from needs analysis to change management.",
     icon: "shuffle",
     sections: [
       {
@@ -1508,8 +1508,8 @@ const ROLES = {
     togoVerified: true,
     title: "Data Engineer",
     titleEn: "Data Engineer",
-    subtitle: "Construire les pipelines qui collectent, transforment et livrent la donnée",
-    subtitleEn: "Building the pipelines that collect, transform and deliver data",
+    subtitle: "Construire les pipelines qui collectent, transforment et livrent une donnée fiable aux équipes qui l'exploitent.",
+    subtitleEn: "Building the pipelines that collect, transform and deliver reliable data to the teams that use it.",
     icon: "tool",
     sections: [
       {
@@ -1572,8 +1572,8 @@ const ROLES = {
     togoVerified: true,
     title: "Administrateur de Bases de Données (DBA)",
     titleEn: "Database Administrator (DBA)",
-    subtitle: "Garantir la performance, la disponibilité et la sécurité des bases de données",
-    subtitleEn: "Ensuring the performance, availability and security of databases",
+    subtitle: "Garantir la performance, la disponibilité et la sécurité des bases de données, patrimoine critique de toute organisation.",
+    subtitleEn: "Ensuring the performance, availability and security of databases, a critical asset for any organization.",
     icon: "database",
     sections: [
       {
@@ -1636,8 +1636,8 @@ const ROLES = {
     togoVerified: true,
     title: "Graphiste / Infographiste",
     titleEn: "Graphic Designer",
-    subtitle: "Créer les visuels et supports de communication d'une marque",
-    subtitleEn: "Creating a brand's visuals and communication materials",
+    subtitle: "Créer les visuels et supports qui donnent à une marque son identité et sa force de communication.",
+    subtitleEn: "Creating the visuals and materials that give a brand its identity and communicative power.",
     icon: "image",
     sections: [
       {
@@ -1687,8 +1687,8 @@ const ROLES = {
     togoVerified: true,
     title: "Webmaster",
     titleEn: "Webmaster",
-    subtitle: "Gérer et maintenir un site web au quotidien",
-    subtitleEn: "Managing and maintaining a website day to day",
+    subtitle: "Gérer et maintenir un site web au quotidien, pour qu'il reste fiable, rapide et à jour.",
+    subtitleEn: "Managing and maintaining a website day to day, so it stays reliable, fast and up to date.",
     icon: "sliders",
     sections: [
       {
@@ -1735,8 +1735,8 @@ const ROLES = {
     togoVerified: true,
     title: "E-commerce Manager",
     titleEn: "E-commerce Manager",
-    subtitle: "Piloter une boutique en ligne, de la mise en rayon à la vente",
-    subtitleEn: "Running an online store, from listing products to closing sales",
+    subtitle: "Piloter une boutique en ligne de bout en bout, de la mise en ligne des produits à la conclusion des ventes.",
+    subtitleEn: "Running an online store end to end, from listing products to closing sales.",
     icon: "cart",
     sections: [
       {
@@ -1788,8 +1788,8 @@ const ROLES = {
     togoVerified: true,
     title: "Responsable Informatique / DSI",
     titleEn: "IT Manager / CIO",
-    subtitle: "Piloter la stratégie et les ressources informatiques d'une organisation",
-    subtitleEn: "Steering an organization's IT strategy and resources",
+    subtitle: "Piloter la stratégie et les ressources informatiques d'une organisation au service de ses objectifs.",
+    subtitleEn: "Steering an organization's IT strategy and resources in service of its goals.",
     icon: "briefcase",
     sections: [
       {
@@ -1840,8 +1840,8 @@ const ROLES = {
     togoVerified: true,
     title: "Ingénieur en Informatique Industrielle",
     titleEn: "Industrial Computing Engineer",
-    subtitle: "Automatiser et superviser les processus industriels",
-    subtitleEn: "Automating and supervising industrial processes",
+    subtitle: "Automatiser, superviser et optimiser les processus industriels grâce à l'informatique.",
+    subtitleEn: "Automating, supervising and optimizing industrial processes through computing.",
     icon: "settings",
     sections: [
       {
@@ -1899,8 +1899,8 @@ const ROLES = {
     togoVerified: true,
     title: "RSSI / Responsable de la Sécurité des Systèmes d'Information",
     titleEn: "CISO / Information Systems Security Manager",
-    subtitle: "Piloter la stratégie de cybersécurité et la gestion des risques d'une organisation",
-    subtitleEn: "Steering an organization's cybersecurity strategy and risk management",
+    subtitle: "Définir la stratégie de cybersécurité d'une organisation et piloter la maîtrise de ses risques.",
+    subtitleEn: "Defining an organization's cybersecurity strategy and leading the management of its risks.",
     icon: "shield",
     sections: [
       {
@@ -1952,8 +1952,8 @@ const ROLES = {
     togoVerified: true,
     title: "Auditeur en Sécurité des Systèmes d'Information",
     titleEn: "Information Systems Security Auditor",
-    subtitle: "Évaluer la conformité et les vulnérabilités des systèmes d'une organisation",
-    subtitleEn: "Assessing an organization's systems for compliance and vulnerabilities",
+    subtitle: "Évaluer avec méthode la conformité et les vulnérabilités des systèmes d'une organisation.",
+    subtitleEn: "Methodically assessing an organization's systems for compliance and vulnerabilities.",
     icon: "search",
     sections: [
       {
@@ -2010,8 +2010,8 @@ const ROLES = {
     togoVerified: true,
     title: "Architecte d'Entreprise",
     titleEn: "Enterprise Architect",
-    subtitle: "Aligner les systèmes d'information sur la stratégie globale d'une organisation",
-    subtitleEn: "Aligning information systems with an organization's overall strategy",
+    subtitle: "Aligner les systèmes d'information sur la stratégie d'une organisation, pour une vision cohérente et durable.",
+    subtitleEn: "Aligning information systems with an organization's strategy, for a coherent and lasting vision.",
     icon: "landmark",
     sections: [
       {
@@ -2062,8 +2062,8 @@ const ROLES = {
     togoVerified: true,
     title: "Juriste IT / Droit du Numérique",
     titleEn: "IT Lawyer / Digital Law",
-    subtitle: "Sécuriser juridiquement les projets technologiques et la conformité numérique",
-    subtitleEn: "Providing legal security for tech projects and digital compliance",
+    subtitle: "Sécuriser juridiquement les projets technologiques et veiller à la conformité numérique, du contrat à la donnée personnelle.",
+    subtitleEn: "Securing tech projects legally and ensuring digital compliance, from contracts to personal data.",
     icon: "scale",
     sections: [
       {
@@ -2115,8 +2115,8 @@ const ROLES = {
     togoVerified: true,
     title: "Scrum Master",
     titleEn: "Scrum Master",
-    subtitle: "Faciliter l'application des méthodes agiles au sein d'une équipe produit",
-    subtitleEn: "Facilitating agile practices within a product team",
+    subtitle: "Faciliter la mise en œuvre des méthodes agiles et aider une équipe produit à progresser, itération après itération.",
+    subtitleEn: "Facilitating agile practices and helping a product team improve, one iteration after another.",
     icon: "refresh",
     sections: [
       {
@@ -2171,8 +2171,8 @@ const ROLES = {
     togoVerified: true,
     title: "Intégrateur Systèmes",
     titleEn: "Systems Integrator",
-    subtitle: "Assembler et faire communiquer différents systèmes et logiciels entre eux",
-    subtitleEn: "Assembling different systems and software and making them work together",
+    subtitle: "Assembler des systèmes et logiciels hétérogènes et les faire fonctionner ensemble de façon cohérente.",
+    subtitleEn: "Assembling heterogeneous systems and software and making them work together coherently.",
     icon: "workflow",
     sections: [
       {
@@ -2223,8 +2223,8 @@ const ROLES = {
     togoVerified: true,
     title: "UX Writer / Spécialiste en Microcopy",
     titleEn: "UX Writer / Microcopy Specialist",
-    subtitle: "Écrire les textes d'interface qui guident et rassurent l'utilisateur",
-    subtitleEn: "Writing the interface text that guides and reassures users",
+    subtitle: "Écrire les textes d'interface qui guident, rassurent et facilitent chaque action de l'utilisateur.",
+    subtitleEn: "Writing the interface text that guides, reassures and eases every user action.",
     icon: "edit",
     sections: [
       {
@@ -2275,8 +2275,8 @@ const ROLES = {
     togoVerified: false,
     title: "Site Reliability Engineer (SRE)",
     titleEn: "Site Reliability Engineer (SRE)",
-    subtitle: "Garantir la fiabilité, la disponibilité et la performance des systèmes en production",
-    subtitleEn: "Ensuring the reliability, availability and performance of production systems",
+    subtitle: "Garantir la fiabilité, la disponibilité et la performance des systèmes en production, en alliant ingénierie et exploitation.",
+    subtitleEn: "Ensuring the reliability, availability and performance of production systems, combining engineering and operations.",
     icon: "activity",
     sections: [
       {
@@ -2327,8 +2327,8 @@ const ROLES = {
     togoVerified: false,
     title: "Platform Engineer",
     titleEn: "Platform Engineer",
-    subtitle: "Construire les plateformes internes qui accélèrent le travail des équipes de développement",
-    subtitleEn: "Building the internal platforms that speed up development teams' work",
+    subtitle: "Construire les plateformes internes qui accélèrent et simplifient le travail des équipes de développement.",
+    subtitleEn: "Building the internal platforms that speed up and simplify development teams' work.",
     icon: "box",
     sections: [
       {
@@ -2375,8 +2375,8 @@ const ROLES = {
     togoVerified: false,
     title: "Solutions Engineer / Ingénieur Avant-Vente",
     titleEn: "Solutions Engineer / Pre-Sales Engineer",
-    subtitle: "Faire le lien technique entre un produit et les besoins d'un client",
-    subtitleEn: "Making the technical link between a product and a client's needs",
+    subtitle: "Faire le lien technique entre un produit et les besoins concrets d'un client, de la démonstration à l'intégration.",
+    subtitleEn: "Bridging a product and a client's concrete needs, from demonstration to integration.",
     icon: "presentation",
     sections: [
       {
@@ -2427,8 +2427,8 @@ const ROLES = {
     togoVerified: false,
     title: "Rédacteur Technique / Technical Writer",
     titleEn: "Technical Writer",
-    subtitle: "Documenter les produits et systèmes pour les rendre compréhensibles",
-    subtitleEn: "Documenting products and systems to make them understandable",
+    subtitle: "Documenter produits et systèmes avec clarté et précision, pour les rendre accessibles à tous leurs utilisateurs.",
+    subtitleEn: "Documenting products and systems clearly and precisely, to make them accessible to all their users.",
     icon: "file-text",
     sections: [
       {
@@ -2473,8 +2473,8 @@ const ROLES = {
     togoVerified: false,
     title: "Developer Advocate / DevRel Engineer",
     titleEn: "Developer Advocate / DevRel Engineer",
-    subtitle: "Créer le lien entre une entreprise tech et sa communauté de développeurs",
-    subtitleEn: "Building the link between a tech company and its developer community",
+    subtitle: "Tisser le lien entre une entreprise tech et sa communauté de développeurs, par le contenu, l'écoute et la pédagogie.",
+    subtitleEn: "Building the bridge between a tech company and its developer community through content, listening and teaching.",
     icon: "mic",
     sections: [
       {
@@ -2527,8 +2527,8 @@ const ROLES = {
     togoVerified: false,
     title: "Analyste SOC (Security Operations Center)",
     titleEn: "SOC Analyst (Security Operations Center)",
-    subtitle: "Surveiller, détecter et réagir aux menaces de sécurité en temps réel",
-    subtitleEn: "Monitoring, detecting and responding to security threats in real time",
+    subtitle: "Surveiller, détecter et répondre aux menaces de sécurité en temps réel, au cœur du dispositif de défense.",
+    subtitleEn: "Monitoring, detecting and responding to security threats in real time, at the heart of the defense system.",
     icon: "alert",
     sections: [
       {
@@ -2573,8 +2573,8 @@ const ROLES = {
     togoVerified: false,
     title: "Pentester / Ethical Hacker",
     titleEn: "Pentester / Ethical Hacker",
-    subtitle: "Simuler des attaques pour identifier les failles de sécurité avant les attaquants réels",
-    subtitleEn: "Simulating attacks to find security flaws before real attackers do",
+    subtitle: "Simuler des attaques réalistes pour révéler les failles de sécurité avant que des attaquants ne les exploitent.",
+    subtitleEn: "Simulating realistic attacks to uncover security flaws before real attackers exploit them.",
     icon: "crosshair",
     sections: [
       {
@@ -2619,8 +2619,8 @@ const ROLES = {
     togoVerified: false,
     title: "Data Protection Officer (DPO)",
     titleEn: "Data Protection Officer (DPO)",
-    subtitle: "Garantir la conformité d'une organisation en matière de protection des données",
-    subtitleEn: "Ensuring an organization's compliance with data protection requirements",
+    subtitle: "Garantir la conformité d'une organisation en matière de protection des données personnelles.",
+    subtitleEn: "Ensuring an organization's compliance with personal data protection requirements.",
     icon: "eye-off",
     sections: [
       {
@@ -2671,8 +2671,8 @@ const ROLES = {
     togoVerified: false,
     title: "Product Owner",
     titleEn: "Product Owner",
-    subtitle: "Porter la vision produit au sein d'une équipe agile et prioriser le backlog",
-    subtitleEn: "Carrying the product vision within an agile team and prioritizing the backlog",
+    subtitle: "Porter la vision produit au sein d'une équipe agile et prioriser le backlog pour maximiser la valeur livrée.",
+    subtitleEn: "Carrying the product vision within an agile team and prioritizing the backlog to maximize delivered value.",
     icon: "list",
     sections: [
       {
@@ -2725,8 +2725,8 @@ const ROLES = {
     togoVerified: false,
     title: "Engineering Manager",
     titleEn: "Engineering Manager",
-    subtitle: "Encadrer une équipe d'ingénieurs et faire le lien entre technique et organisation",
-    subtitleEn: "Leading a team of engineers and bridging the technical and organizational sides",
+    subtitle: "Encadrer une équipe d'ingénieurs et faire le lien entre exigences techniques et enjeux d'organisation.",
+    subtitleEn: "Leading a team of engineers and bridging technical requirements with organizational priorities.",
     icon: "users",
     sections: [
       {
@@ -2772,8 +2772,8 @@ const ROLES = {
     togoVerified: false,
     title: "CTO / Directeur Technique",
     titleEn: "CTO / Chief Technology Officer",
-    subtitle: "Définir et porter la vision technologique globale d'une organisation",
-    subtitleEn: "Defining and carrying an organization's overall technology vision",
+    subtitle: "Définir et porter la vision technologique d'une organisation, de la stratégie aux équipes qui la réalisent.",
+    subtitleEn: "Defining and championing an organization's technology vision, from strategy to the teams that deliver it.",
     icon: "flag",
     sections: [
       {
@@ -2823,8 +2823,8 @@ const ROLES = {
     togoVerified: false,
     title: "UX Researcher",
     titleEn: "UX Researcher",
-    subtitle: "Comprendre les utilisateurs en profondeur pour guider les décisions produit",
-    subtitleEn: "Deeply understanding users to guide product decisions",
+    subtitle: "Comprendre les utilisateurs en profondeur, par l'enquête et l'observation, pour éclairer les décisions produit.",
+    subtitleEn: "Understanding users in depth, through research and observation, to inform product decisions.",
     icon: "eye",
     sections: [
       {
@@ -2871,8 +2871,8 @@ const ROLES = {
     togoVerified: false,
     title: "Technical Program Manager (TPM)",
     titleEn: "Technical Program Manager (TPM)",
-    subtitle: "Coordonner des programmes techniques complexes impliquant plusieurs équipes",
-    subtitleEn: "Coordinating complex technical programs involving multiple teams",
+    subtitle: "Coordonner des programmes techniques complexes qui mobilisent plusieurs équipes, jusqu'à leur aboutissement.",
+    subtitleEn: "Coordinating complex technical programs across multiple teams, all the way to completion.",
     icon: "folder",
     sections: [
       {
@@ -2924,8 +2924,8 @@ const ROLES = {
     togoVerified: false,
     title: "Business Analyst IT",
     titleEn: "IT Business Analyst",
-    subtitle: "Traduire les besoins métier en exigences fonctionnelles pour les équipes techniques",
-    subtitleEn: "Translating business needs into functional requirements for technical teams",
+    subtitle: "Traduire les besoins métier en exigences fonctionnelles précises pour les équipes techniques.",
+    subtitleEn: "Translating business needs into precise functional requirements for technical teams.",
     icon: "pie-chart",
     sections: [
       {
@@ -2977,8 +2977,8 @@ const ROLES = {
     togoVerified: false,
     title: "Développeur de Jeux Vidéo",
     titleEn: "Video Game Developer",
-    subtitle: "Programmer la logique et les mécaniques d'un jeu vidéo",
-    subtitleEn: "Programming the logic and mechanics of a video game",
+    subtitle: "Programmer la logique et les mécaniques qui donnent vie à un jeu vidéo.",
+    subtitleEn: "Programming the logic and mechanics that bring a video game to life.",
     icon: "gamepad",
     sections: [
       {
@@ -3023,8 +3023,8 @@ const ROLES = {
     togoVerified: false,
     title: "Game Designer",
     titleEn: "Game Designer",
-    subtitle: "Concevoir les règles, la progression et l'expérience d'un jeu",
-    subtitleEn: "Designing a game's rules, progression and experience",
+    subtitle: "Concevoir les règles, la progression et l'expérience qui rendent un jeu captivant.",
+    subtitleEn: "Designing the rules, progression and experience that make a game captivating.",
     icon: "star",
     sections: [
       {
@@ -3075,8 +3075,8 @@ const ROLES = {
     togoVerified: false,
     title: "Développeur AR/VR",
     titleEn: "AR/VR Developer",
-    subtitle: "Créer des expériences immersives en réalité augmentée et virtuelle",
-    subtitleEn: "Creating immersive augmented and virtual reality experiences",
+    subtitle: "Créer des expériences immersives en réalité augmentée et virtuelle, entre programmation 3D et conception d'interaction.",
+    subtitleEn: "Creating immersive augmented and virtual reality experiences, combining 3D programming and interaction design.",
     icon: "glasses",
     sections: [
       {
@@ -3131,8 +3131,8 @@ const ROLES = {
     togoVerified: false,
     title: "Ingénieur Robotique",
     titleEn: "Robotics Engineer",
-    subtitle: "Concevoir et programmer des systèmes robotiques autonomes",
-    subtitleEn: "Designing and programming autonomous robotic systems",
+    subtitle: "Concevoir et programmer des systèmes robotiques autonomes, de la mécanique à l'intelligence embarquée.",
+    subtitleEn: "Designing and programming autonomous robotic systems, from mechanics to embedded intelligence.",
     icon: "bot",
     sections: [
       {
@@ -3177,8 +3177,8 @@ const ROLES = {
     togoVerified: false,
     title: "Administrateur Salesforce / CRM",
     titleEn: "Salesforce / CRM Administrator",
-    subtitle: "Paramétrer et faire évoluer une plateforme CRM au service des équipes commerciales",
-    subtitleEn: "Configuring and evolving a CRM platform to serve sales teams",
+    subtitle: "Paramétrer et faire évoluer une plateforme CRM au service de la performance des équipes commerciales.",
+    subtitleEn: "Configuring and evolving a CRM platform to support the performance of sales teams.",
     icon: "cloud",
     sections: [
       {
@@ -3228,8 +3228,8 @@ const ROLES = {
     togoVerified: false,
     title: "Consultant SAP",
     titleEn: "SAP Consultant",
-    subtitle: "Implémenter et paramétrer les modules SAP dans une organisation",
-    subtitleEn: "Implementing and configuring SAP modules within an organization",
+    subtitle: "Implémenter et paramétrer les modules SAP qui organisent les processus clés d'une organisation.",
+    subtitleEn: "Implementing and configuring the SAP modules that organize an organization's core processes.",
     icon: "calculator",
     sections: [
       {
@@ -3279,8 +3279,8 @@ const ROLES = {
     togoVerified: false,
     title: "Quant Developer / Analyste Quantitatif",
     titleEn: "Quant Developer / Quantitative Analyst",
-    subtitle: "Développer des modèles mathématiques et des systèmes pour la finance",
-    subtitleEn: "Developing mathematical models and systems for finance",
+    subtitle: "Développer les modèles mathématiques et les systèmes informatiques au service de la finance.",
+    subtitleEn: "Developing the mathematical models and computer systems that serve finance.",
     icon: "percent",
     sections: [
       {
@@ -3325,8 +3325,8 @@ const ROLES = {
     togoVerified: false,
     title: "Growth Hacker",
     titleEn: "Growth Hacker",
-    subtitle: "Expérimenter rapidement pour accélérer la croissance d'un produit",
-    subtitleEn: "Running fast experiments to accelerate a product's growth",
+    subtitle: "Expérimenter vite et mesurer avec rigueur pour accélérer la croissance d'un produit.",
+    subtitleEn: "Experimenting quickly and measuring rigorously to accelerate a product's growth.",
     icon: "rocket",
     sections: [
       {
@@ -3376,8 +3376,8 @@ const ROLES = {
     togoVerified: false,
     title: "Content Strategist",
     titleEn: "Content Strategist",
-    subtitle: "Définir la stratégie de contenu d'une marque sur le long terme",
-    subtitleEn: "Defining a brand's long-term content strategy",
+    subtitle: "Définir sur le long terme la stratégie de contenu d'une marque, au service de ses objectifs et de son public.",
+    subtitleEn: "Defining a brand's long-term content strategy, in service of its goals and its audience.",
     icon: "book",
     sections: [
       {
@@ -3422,8 +3422,8 @@ const ROLES = {
     togoVerified: false,
     title: "Traffic Manager",
     titleEn: "Traffic Manager",
-    subtitle: "Piloter les campagnes publicitaires payantes pour maximiser le retour sur investissement",
-    subtitleEn: "Running paid advertising campaigns to maximize return on investment",
+    subtitle: "Piloter les campagnes publicitaires payantes et optimiser chaque investissement pour en maximiser le rendement.",
+    subtitleEn: "Running paid advertising campaigns and optimizing every investment to maximize its return.",
     icon: "target",
     sections: [
       {
@@ -3509,8 +3509,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Git & GitHub",
     titleEn: "Git & GitHub",
-    subtitle: "Le contrôle de version, un incontournable pour tous les métiers tech",
-    subtitleEn: "Version control, essential for every tech role",
+    subtitle: "Le contrôle de version, socle indispensable de tous les métiers de la tech.",
+    subtitleEn: "Version control, the indispensable foundation of every tech role.",
     icon: "git-branch",
     sections: [
       {
@@ -3559,8 +3559,8 @@ const SKILLS = {
     domain: "Infrastructure & DevOps",
     title: "Linux & Ligne de commande",
     titleEn: "Linux & Command Line",
-    subtitle: "Administration système et manipulation en ligne de commande",
-    subtitleEn: "System administration and command-line skills",
+    subtitle: "Administrer un système et maîtriser la ligne de commande, compétence fondatrice de l'informatique professionnelle.",
+    subtitleEn: "Administering a system and mastering the command line, a foundational skill in professional computing.",
     icon: "terminal",
     sections: [
       {
@@ -3603,8 +3603,8 @@ const SKILLS = {
     domain: "Infrastructure & DevOps",
     title: "Docker & Conteneurisation",
     titleEn: "Docker & Containerization",
-    subtitle: "Empaqueter et exécuter des applications de façon reproductible",
-    subtitleEn: "Packaging and running applications reproducibly",
+    subtitle: "Empaqueter et exécuter des applications de manière reproductible, de la machine du développeur à la production.",
+    subtitleEn: "Packaging and running applications reproducibly, from the developer's machine to production.",
     icon: "package",
     sections: [
       {
@@ -3645,8 +3645,8 @@ const SKILLS = {
     domain: "Data & IA",
     title: "SQL & Bases de données relationnelles",
     titleEn: "SQL & Relational Databases",
-    subtitle: "Modéliser, interroger et optimiser des données structurées",
-    subtitleEn: "Modeling, querying and optimizing structured data",
+    subtitle: "Modéliser, interroger et optimiser des données structurées, langage commun de l'analyse et du développement.",
+    subtitleEn: "Modeling, querying and optimizing structured data, the common language of analysis and development.",
     icon: "table",
     sections: [
       {
@@ -3688,8 +3688,8 @@ const SKILLS = {
     domain: "Développement",
     title: "JavaScript",
     titleEn: "JavaScript",
-    subtitle: "Le langage du web, côté client comme côté serveur",
-    subtitleEn: "The language of the web, on both client and server",
+    subtitle: "Le langage du web, aussi bien côté client que côté serveur.",
+    subtitleEn: "The language of the web, on both the client and the server.",
     icon: "braces",
     sections: [
       {
@@ -3734,8 +3734,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Python",
     titleEn: "Python",
-    subtitle: "Un langage polyvalent : backend, data, automatisation",
-    subtitleEn: "A versatile language: backend, data, automation",
+    subtitle: "Un langage polyvalent et accessible, présent du backend à la data en passant par l'automatisation.",
+    subtitleEn: "A versatile, approachable language used from the backend to data and automation.",
     icon: "code",
     sections: [
       {
@@ -3777,8 +3777,8 @@ const SKILLS = {
     domain: "Infrastructure & DevOps",
     title: "Réseaux TCP/IP",
     titleEn: "TCP/IP Networking",
-    subtitle: "Les fondations de toute infrastructure et de la cybersécurité",
-    subtitleEn: "The foundations of all infrastructure and cybersecurity",
+    subtitle: "Les fondations de toute infrastructure informatique et de la cybersécurité.",
+    subtitleEn: "The foundations of every IT infrastructure and of cybersecurity.",
     icon: "share",
     sections: [
       {
@@ -3821,8 +3821,8 @@ const SKILLS = {
     domain: "Infrastructure & DevOps",
     title: "Cloud (AWS / Azure / GCP)",
     titleEn: "Cloud (AWS / Azure / GCP)",
-    subtitle: "Les fondamentaux communs aux principaux fournisseurs cloud",
-    subtitleEn: "The fundamentals common to the major cloud providers",
+    subtitle: "Les fondamentaux communs aux principaux fournisseurs de cloud, pour concevoir et déployer en ligne.",
+    subtitleEn: "The fundamentals shared by the major cloud providers, to design and deploy online.",
     icon: "cloud",
     sections: [
       {
@@ -3871,8 +3871,8 @@ const SKILLS = {
     domain: "Développement",
     title: "React",
     titleEn: "React",
-    subtitle: "La bibliothèque JavaScript la plus utilisée pour construire des interfaces",
-    subtitleEn: "The most widely used JavaScript library for building interfaces",
+    subtitle: "Une bibliothèque JavaScript incontournable pour construire des interfaces modernes et réactives.",
+    subtitleEn: "A leading JavaScript library for building modern, responsive interfaces.",
     icon: "atom",
     sections: [
       {
@@ -3913,8 +3913,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Vue.js",
     titleEn: "Vue.js",
-    subtitle: "Framework JavaScript progressif, apprécié pour sa courbe d'apprentissage douce",
-    subtitleEn: "A progressive JavaScript framework, valued for its gentle learning curve",
+    subtitle: "Un framework JavaScript progressif, apprécié pour sa clarté et sa courbe d'apprentissage douce.",
+    subtitleEn: "A progressive JavaScript framework, valued for its clarity and gentle learning curve.",
     icon: "vue",
     sections: [
       {
@@ -3953,8 +3953,8 @@ const SKILLS = {
     domain: "Développement",
     title: "TypeScript",
     titleEn: "TypeScript",
-    subtitle: "JavaScript typé pour des applications plus robustes et maintenables",
-    subtitleEn: "Typed JavaScript for more robust, maintainable applications",
+    subtitle: "Le JavaScript typé, pour des applications plus robustes et plus faciles à maintenir.",
+    subtitleEn: "Typed JavaScript, for more robust and more maintainable applications.",
     icon: "type",
     sections: [
       {
@@ -3993,8 +3993,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Node.js",
     titleEn: "Node.js",
-    subtitle: "Exécuter du JavaScript côté serveur pour construire des API et services",
-    subtitleEn: "Running JavaScript on the server to build APIs and services",
+    subtitle: "Exécuter JavaScript côté serveur pour construire des API et des services performants.",
+    subtitleEn: "Running JavaScript on the server to build efficient APIs and services.",
     icon: "hexagon",
     sections: [
       {
@@ -4033,8 +4033,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Java",
     titleEn: "Java",
-    subtitle: "Langage orienté objet incontournable dans les systèmes d'entreprise",
-    subtitleEn: "An essential object-oriented language in enterprise systems",
+    subtitle: "Un langage orienté objet éprouvé, pilier des systèmes d'entreprise.",
+    subtitleEn: "A proven object-oriented language, a pillar of enterprise systems.",
     icon: "coffee",
     sections: [
       {
@@ -4080,8 +4080,8 @@ const SKILLS = {
     domain: "Développement",
     title: "C++",
     titleEn: "C++",
-    subtitle: "Langage bas niveau pour la performance : jeux, systèmes, finance",
-    subtitleEn: "A low-level language for performance: games, systems, finance",
+    subtitle: "Un langage proche de la machine, taillé pour la performance : jeux, systèmes, finance.",
+    subtitleEn: "A language close to the machine, built for performance: games, systems, finance.",
     icon: "plus-square",
     sections: [
       {
@@ -4121,8 +4121,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Go (Golang)",
     titleEn: "Go (Golang)",
-    subtitle: "Langage simple et performant, très utilisé pour les services cloud et DevOps",
-    subtitleEn: "A simple, high-performance language widely used for cloud and DevOps services",
+    subtitle: "Un langage simple et performant, très présent dans les services cloud et l'outillage DevOps.",
+    subtitleEn: "A simple, high-performance language, widely used in cloud services and DevOps tooling.",
     icon: "zap",
     sections: [
       {
@@ -4160,8 +4160,8 @@ const SKILLS = {
     domain: "Développement",
     title: "PHP",
     titleEn: "PHP",
-    subtitle: "Langage serveur très répandu pour le développement web",
-    subtitleEn: "A widely used server-side language for web development",
+    subtitle: "Un langage serveur très répandu, solidement ancré dans le développement web.",
+    subtitleEn: "A widely used server-side language, firmly rooted in web development.",
     icon: "file-code",
     sections: [
       {
@@ -4199,8 +4199,8 @@ const SKILLS = {
     domain: "Infrastructure & DevOps",
     title: "Kubernetes",
     titleEn: "Kubernetes",
-    subtitle: "Orchestrer des conteneurs à grande échelle",
-    subtitleEn: "Orchestrating containers at scale",
+    subtitle: "Orchestrer des conteneurs à grande échelle, avec résilience et automatisation.",
+    subtitleEn: "Orchestrating containers at scale, with resilience and automation.",
     icon: "helm",
     sections: [
       {
@@ -4240,8 +4240,8 @@ const SKILLS = {
     domain: "Infrastructure & DevOps",
     title: "Terraform",
     titleEn: "Terraform",
-    subtitle: "Gérer son infrastructure comme du code, de façon reproductible",
-    subtitleEn: "Managing infrastructure as code, reproducibly",
+    subtitle: "Gérer son infrastructure comme du code, de manière déclarative et reproductible.",
+    subtitleEn: "Managing infrastructure as code, declaratively and reproducibly.",
     icon: "globe",
     sections: [
       {
@@ -4280,8 +4280,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Flutter",
     titleEn: "Flutter",
-    subtitle: "Créer des applications mobiles natives pour Android et iOS avec un seul code",
-    subtitleEn: "Building native mobile apps for Android and iOS from a single codebase",
+    subtitle: "Créer des applications mobiles pour Android et iOS à partir d'une seule base de code.",
+    subtitleEn: "Building mobile apps for Android and iOS from a single codebase.",
     icon: "feather",
     sections: [
       {
@@ -4320,8 +4320,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Kotlin & Android natif",
     titleEn: "Kotlin & Native Android",
-    subtitle: "Développer des applications Android natives modernes",
-    subtitleEn: "Building modern native Android applications",
+    subtitle: "Développer des applications Android natives et modernes avec Kotlin.",
+    subtitleEn: "Building modern native Android applications with Kotlin.",
     icon: "smartphone",
     sections: [
       {
@@ -4360,8 +4360,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Swift & iOS natif",
     titleEn: "Swift & Native iOS",
-    subtitle: "Développer des applications iOS natives avec Swift",
-    subtitleEn: "Building native iOS applications with Swift",
+    subtitle: "Développer des applications iOS natives avec Swift, dans l'écosystème Apple.",
+    subtitleEn: "Building native iOS applications with Swift, within the Apple ecosystem.",
     icon: "tablet",
     sections: [
       {
@@ -4399,8 +4399,8 @@ const SKILLS = {
     domain: "Data & IA",
     title: "MongoDB & NoSQL",
     titleEn: "MongoDB & NoSQL",
-    subtitle: "Bases de données orientées documents pour des besoins flexibles",
-    subtitleEn: "Document-oriented databases for flexible needs",
+    subtitle: "Des bases de données orientées documents, pensées pour des données souples et évolutives.",
+    subtitleEn: "Document-oriented databases, designed for flexible, evolving data.",
     icon: "leaf",
     sections: [
       {
@@ -4438,8 +4438,8 @@ const SKILLS = {
     domain: "Développement",
     title: "GraphQL",
     titleEn: "GraphQL",
-    subtitle: "Un langage de requête flexible pour les API",
-    subtitleEn: "A flexible query language for APIs",
+    subtitle: "Un langage de requête flexible pour des API qui livrent exactement les données demandées.",
+    subtitleEn: "A flexible query language for APIs that return exactly the data requested.",
     icon: "triangle",
     sections: [
       {
@@ -4477,8 +4477,8 @@ const SKILLS = {
     domain: "Data & IA",
     title: "Machine Learning",
     titleEn: "Machine Learning",
-    subtitle: "Entraîner des modèles capables d'apprendre à partir de données",
-    subtitleEn: "Training models that can learn from data",
+    subtitle: "Entraîner des modèles capables d'apprendre à partir des données, et en évaluer la fiabilité.",
+    subtitleEn: "Training models that learn from data, and assessing how reliable they are.",
     icon: "network",
     sections: [
       {
@@ -4524,8 +4524,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Solidity & Smart Contracts",
     titleEn: "Solidity & Smart Contracts",
-    subtitle: "Programmer des contrats intelligents sur la blockchain Ethereum",
-    subtitleEn: "Programming smart contracts on the Ethereum blockchain",
+    subtitle: "Programmer des contrats intelligents sur la blockchain Ethereum, avec la rigueur qu'exige leur sécurité.",
+    subtitleEn: "Programming smart contracts on the Ethereum blockchain, with the rigor their security demands.",
     icon: "link",
     sections: [
       {
@@ -4565,8 +4565,8 @@ const SKILLS = {
     domain: "Développement",
     title: "System Design",
     titleEn: "System Design",
-    subtitle: "Concevoir des systèmes logiciels à grande échelle",
-    subtitleEn: "Designing software systems at scale",
+    subtitle: "Concevoir des systèmes logiciels capables de tenir la charge à grande échelle.",
+    subtitleEn: "Designing software systems that hold up at scale.",
     icon: "map",
     sections: [
       {
@@ -4606,8 +4606,8 @@ const SKILLS = {
     domain: "Développement",
     title: "Data Structures & Algorithms",
     titleEn: "Data Structures & Algorithms",
-    subtitle: "Les fondamentaux algorithmiques utiles pour tout développeur",
-    subtitleEn: "The algorithmic fundamentals every developer needs",
+    subtitle: "Les fondamentaux algorithmiques qui structurent la pensée de tout développeur.",
+    subtitleEn: "The algorithmic fundamentals that shape every developer's thinking.",
     icon: "binary",
     sections: [
       {
@@ -4648,8 +4648,8 @@ const SKILLS = {
     domain: "Développement",
     title: "API Design (REST)",
     titleEn: "API Design (REST)",
-    subtitle: "Concevoir des API cohérentes, prévisibles et faciles à utiliser",
-    subtitleEn: "Designing APIs that are consistent, predictable and easy to use",
+    subtitle: "Concevoir des API cohérentes, prévisibles et agréables à utiliser.",
+    subtitleEn: "Designing APIs that are consistent, predictable and pleasant to use.",
     icon: "plug",
     sections: [
       {
@@ -4686,8 +4686,8 @@ const SKILLS = {
     domain: "Infrastructure & DevOps",
     title: "CI/CD",
     titleEn: "CI/CD",
-    subtitle: "Automatiser les tests et le déploiement du code",
-    subtitleEn: "Automating code testing and deployment",
+    subtitle: "Automatiser les tests et le déploiement du code, pour livrer plus souvent et plus sereinement.",
+    subtitleEn: "Automating code testing and deployment, to ship more often and with greater confidence.",
     icon: "repeat",
     sections: [
       {
