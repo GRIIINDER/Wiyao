@@ -70,10 +70,7 @@
       fr: 'Trace ton <span class="hero-accent">parcours tech</span> au Togo',
       en: 'Chart your <span class="hero-accent">tech path</span> in Togo',
     },
-    "hero.subtitle": {
-      fr: "Le guide qui t'accompagne à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps métier, bourses et stages, à Lomé et dans tout le Togo.",
-      en: "The guide that walks you through every step: orientation, choosing a domain, a track, a university, career roadmaps, scholarships and internships, in Lomé and across Togo.",
-    },
+    "hero.subtitle": { fr: "De l'orientation au premier emploi, WIYAO éclaire chaque étape de ton parcours dans le numérique : choix du domaine, de la filière et de l'établissement, roadmaps métier, bourses et stages, à Lomé comme dans tout le Togo.", en: "From orientation to your first job, WIYAO sheds light on every stage of your path into tech: choosing a field, a program and an institution, career roadmaps, scholarships and internships, in Lomé and across Togo." },
     "hero.cta": {
       fr: "Faire le test d'orientation",
       en: "Take the orientation test",
@@ -163,10 +160,7 @@
     "marquee.search.actu": { fr: "Actualités", en: "News" },
     "marquee.search.temoin": { fr: "Témoignages", en: "Testimonials" },
     "marquee.search.faq": { fr: "FAQ", en: "FAQ" },
-    "hero.guide": {
-      fr: 'Nouveau·elle ici ? Découvre <a href="about.html">ce qu\'est WIYAO</a> en 30 secondes.',
-      en: 'New here? See <a href="about.html">what WIYAO is</a> in 30 seconds.',
-    },
+    "hero.guide": { fr: "Première visite ? Découvre en trente secondes <a href=\"about.html\">ce qu'est WIYAO</a>.", en: "First visit? Discover <a href=\"about.html\">what WIYAO is</a> in thirty seconds." },
     "roadmap.print": { fr: "Imprimer / PDF", en: "Print / PDF" },
     "roadmap.reset": { fr: "Réinitialiser la progression", en: "Reset progress" },
     "quiz.primer.title": { fr: "L'informatique, en 7 grands domaines", en: "Tech, in 7 major domains" },
@@ -180,14 +174,8 @@
       fr: 'Choisis ta <span class="hero-accent">roadmap</span>',
       en: 'Choose your <span class="hero-accent">roadmap</span>',
     },
-    "roadmaps.hero.subtitle": {
-      fr: "Une roadmap, c'est le chemin pour apprendre un métier ou une compétence, étape par étape. 89 roadmaps : 60 métiers et 29 compétences tech, avec des ressources vérifiées (togolaises et internationales).",
-      en: "A roadmap is the path to learn a role or a skill, step by step. 89 roadmaps: 60 roles and 29 tech skills, with verified resources (Togolese and international).",
-    },
-    "roadmaps.hero.propose": {
-      fr: 'Un métier ou une compétence qui manque ici ? <a href="proposer.html">Propose-le</a> : on vérifie et on ajoute.',
-      en: 'A role or skill missing here? <a href="proposer.html">Suggest it</a>: we verify and add it.',
-    },
+    "roadmaps.hero.subtitle": { fr: "Une roadmap trace, étape par étape, le chemin d'apprentissage d'un métier ou d'une compétence. WIYAO en propose 89, 60 métiers et 29 compétences tech, chacune adossée à des ressources vérifiées, togolaises comme internationales.", en: "A roadmap charts, step by step, the learning path toward a role or a skill. WIYAO offers 89 of them, 60 roles and 29 tech skills, each grounded in verified resources, both Togolese and international." },
+    "roadmaps.hero.propose": { fr: "Un métier ou une compétence manque à l'appel ? <a href=\"proposer.html\">Propose-le</a> : nous le vérifions avant de l'ajouter.", en: "Is a role or a skill missing? <a href=\"proposer.html\">Suggest it</a>: we verify it before adding it." },
     "roadmaps.parmetier.h2": { fr: "Roadmaps par métier", en: "Roadmaps by role" },
     "roadmaps.parmetier.desc": { fr: "Le chemin complet à suivre pour viser un rôle donné.", en: "The full path to follow to aim for a given role." },
     "roadmaps.parcompetence.h2": { fr: "Roadmaps par compétence", en: "Roadmaps by skill" },
@@ -247,23 +235,14 @@
       fr: 'Trouve l\'<span class="hero-accent">école</span> qu\'il te faut',
       en: 'Find the <span class="hero-accent">school</span> that\'s right for you',
     },
-    "ecoles.hero.subtitle": {
-      fr: "32 écoles et universités togolaises qui forment à l'informatique et au numérique, avec leurs filières, niveaux et conditions d'admission.",
-      en: "32 Togolese schools and universities teaching computing and digital skills, with their programs, levels and admission requirements.",
-    },
-    "ecoles.hero.propose": {
-      fr: 'Une école togolaise qui manque ici ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
-      en: 'A Togolese school missing here? <a href="proposer.html">Suggest it</a>: we verify and add it.',
-    },
+    "ecoles.hero.subtitle": { fr: "32 écoles et universités togolaises qui forment à l'informatique et au numérique, présentées avec leurs filières, leurs niveaux d'études, leurs conditions d'admission et leurs frais, pour comparer en connaissance de cause.", en: "32 Togolese schools and universities that teach computing and digital technology, presented with their programs, levels of study, admission requirements and fees, so you can compare them with full knowledge." },
+    "ecoles.hero.propose": { fr: "Une école togolaise manque à l'appel ? <a href=\"proposer.html\">Propose-la</a> : nous la vérifions avant de l'ajouter.", en: "Is a Togolese school missing? <a href=\"proposer.html\">Suggest it</a>: we verify it before adding it." },
 
     "calendrier.hero.title": {
       fr: 'Ne rate pas ta <span class="hero-accent">date limite</span>',
       en: 'Don\'t miss your <span class="hero-accent">deadline</span>',
     },
-    "calendrier.hero.subtitle": {
-      fr: "Le calendrier type d'une candidature au Togo, puis les dates connues école par école.\n       Rater une inscription fait souvent perdre une année entière : vérifie toujours en direct\n       auprès de l'établissement avant de t'engager.",
-      en: "The typical application calendar in Togo, followed by known dates school by school. Missing a registration often means losing an entire year: always check directly with the school before committing.",
-    },
+    "calendrier.hero.subtitle": { fr: "Le calendrier type d'une candidature au Togo, suivi des dates connues établissement par établissement. Une inscription manquée coûte souvent une année entière : avant tout engagement, vérifie chaque date directement auprès de l'école.", en: "The typical application calendar in Togo, followed by the known dates for each institution. A missed registration often costs a full year: before committing, confirm every date directly with the school." },
     "calendrier.section1.title": { fr: "Le calendrier type", en: "The typical calendar" },
     "calendrier.section1.desc": {
       fr: "Un repère général : chaque établissement a son propre calendrier, parfois différent.",
@@ -279,53 +258,29 @@
       fr: 'Comment <span class="hero-accent">financer</span> tes études ?',
       en: 'How to <span class="hero-accent">fund</span> your studies?',
     },
-    "bourses.hero.subtitle": {
-      fr: "Les frais de scolarité ne doivent pas être ce qui t'arrête. Voici les bourses, réductions et solutions\n       de financement réelles et vérifiées accessibles à un·e bachelier·ère togolais·e : écoles comprises.",
-      en: "Tuition fees shouldn't be what stops you. Here are the real, verified scholarships, discounts and funding options available to a Togolese high-school graduate: schools included.",
-    },
+    "bourses.hero.subtitle": { fr: "Le coût des études ne devrait pas décider de ton avenir. Voici les bourses, réductions et solutions de financement réelles et vérifiées auxquelles peuvent prétendre les bacheliers et bachelières du Togo, y compris celles des écoles.", en: "The cost of studying should not decide your future. Here are the real, verified scholarships, discounts and funding options available to Togolese high-school graduates, including those offered by the schools themselves." },
 
     "stages.hero.title": {
       fr: 'Et après la <span class="hero-accent">formation</span> ?',
       en: 'What comes after <span class="hero-accent">training</span>?',
     },
-    "stages.hero.subtitle": {
-      fr: "Où chercher un stage ou un premier emploi tech au Togo, et comment mettre toutes les chances de ton côté.\n       Ceci est un annuaire de ressources durables, pas un fil d'offres : les offres du moment changent trop vite\n       pour être fiables ici, direction les plateformes ci-dessous pour ça.",
-      en: "Where to look for an internship or a first tech job in Togo, and how to give yourself the best chance. This is a directory of lasting resources, not a listings feed: current openings change too fast to be reliable here, head to the platforms below for that.",
-    },
-    "stages.hero.propose": {
-      fr: 'Une entreprise togolaise qui recrute et qui manque ici ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
-      en: 'A hiring Togolese company missing here? <a href="proposer.html">Suggest it</a>: we verify and add it.',
-    },
+    "stages.hero.subtitle": { fr: "Où chercher un stage ou un premier emploi dans la tech au Togo, et comment mettre toutes les chances de ton côté. Cette page recense des ressources durables plutôt que des offres ponctuelles, trop éphémères pour rester fiables : pour celles-ci, consulte les plateformes présentées ci-dessous.", en: "Where to look for an internship or a first tech job in Togo, and how to give yourself every chance of success. This page lists lasting resources rather than individual openings, which are too short-lived to stay reliable here: for those, turn to the platforms presented below." },
+    "stages.hero.propose": { fr: "Une entreprise togolaise qui recrute manque à l'appel ? <a href=\"proposer.html\">Propose-la</a> : nous la vérifions avant de l'ajouter.", en: "Is a hiring Togolese company missing? <a href=\"proposer.html\">Suggest it</a>: we verify it before adding it." },
 
     "quiz.hero.title": {
       fr: 'Pas sûr·e de ta <span class="hero-accent">voie</span> ?',
       en: 'Not sure about your <span class="hero-accent">path</span>?',
     },
-    "quiz.hero.subtitle": {
-      fr: "14 questions pour identifier le domaine tech qui te correspond, puis le métier précis, puis les écoles\n       togolaises adaptées à ton niveau, ta ville et ton budget : pas juste un domaine flou, un vrai point de départ.",
-      en: "14 questions to identify the tech field that suits you, then the specific role, then the Togolese schools matched to your level, city and budget: not just a vague field, a real starting point.",
-    },
-    "quiz.hero.faq": {
-      fr: 'Une question sur comment fonctionne l\'orientation ? Voir la <a href="faq.html#orientation">FAQ orientation &amp; roadmaps</a>.',
-      en: 'A question about how the orientation works? See the <a href="faq.html#orientation">orientation &amp; roadmaps FAQ</a>.',
-    },
+    "quiz.hero.subtitle": { fr: "En 14 questions, ce test identifie le domaine tech qui te correspond, puis le métier le plus cohérent avec tes réponses, et enfin les écoles togolaises adaptées à ton niveau, à ta ville et à ton budget : non pas une étiquette vague, mais un véritable point de départ.", en: "In 14 questions, this test identifies the tech field that suits you, then the role most consistent with your answers, and finally the Togolese schools matched to your level, city and budget: not a vague label, but a genuine starting point." },
+    "quiz.hero.faq": { fr: "Tu t'interroges sur la méthode d'orientation ? Consulte la <a href=\"faq.html#orientation\">FAQ orientation &amp; roadmaps</a>.", en: "Curious about how the orientation works? See the <a href=\"faq.html#orientation\">orientation &amp; roadmaps FAQ</a>." },
 
     "eco.hero.title": {
       fr: 'Écosystème tech <span class="hero-accent">togolais</span>',
       en: 'Togolese tech <span class="hero-accent">ecosystem</span>',
     },
-    "eco.hero.subtitle": {
-      fr: "Écoles, communautés, hubs d'innovation et institutions à connaître pour construire une carrière tech au Togo.",
-      en: "Schools, communities, innovation hubs and institutions to know to build a tech career in Togo.",
-    },
-    "eco.hero.guide": {
-      fr: 'Étudiant·e à la recherche d\'une école ? Direction la page « <a href="ecoles.html">Écoles &amp; universités</a> ». Développeur·se en quête d\'un réseau ? Rejoins les « Communautés et événements ». Porteur·se de projet en recherche d\'accompagnement ? Regarde du côté des « Hubs et incubateurs ».',
-      en: 'Student looking for a school? Head to the "<a href="ecoles.html">Schools &amp; universities</a>" page. Developer looking for a network? Join the "Communities and events". Founder looking for support? Check out the "Hubs and incubators".',
-    },
-    "eco.hero.propose": {
-      fr: 'Tu connais une communauté ou un événement tech togolais qui manque ici ? <a href="proposer.html">Propose-le</a> : on vérifie et on ajoute.',
-      en: 'Know a Togolese tech community or event that\'s missing here? <a href="proposer.html">Suggest it</a>: we verify and add it.',
-    },
+    "eco.hero.subtitle": { fr: "Écoles, communautés, pôles d'innovation et institutions : les acteurs à connaître pour bâtir une carrière dans la tech au Togo.", en: "Schools, communities, innovation hubs and institutions: the key players to know when building a tech career in Togo." },
+    "eco.hero.guide": { fr: "Tu cherches une école ? Consulte la page « <a href=\"ecoles.html\">Écoles &amp; universités</a> ». Tu développes et cherches un réseau ? Rejoins les « Communautés et événements ». Tu portes un projet et cherches un accompagnement ? Explore les « Hubs et incubateurs ».", en: "Looking for a school? Visit the \"<a href=\"ecoles.html\">Schools &amp; universities</a>\" page. A developer seeking a network? Join the \"Communities and events\". A founder seeking support? Explore the \"Hubs and incubators\"." },
+    "eco.hero.propose": { fr: "Une communauté ou un événement tech togolais manque à l'appel ? <a href=\"proposer.html\">Propose-le</a> : nous le vérifions avant de l'ajouter.", en: "Is a Togolese tech community or event missing? <a href=\"proposer.html\">Suggest it</a>: we verify it before adding it." },
     "eco.jump.communautes": { fr: "Communautés &amp; événements", en: "Communities &amp; events" },
     "eco.jump.femmes": { fr: "Femmes dans la tech", en: "Women in tech" },
     "eco.jump.hubs": { fr: "Hubs &amp; incubateurs", en: "Hubs &amp; incubators" },
@@ -338,15 +293,9 @@
       fr: 'Ce qui se passe dans la <span class="hero-accent">tech togolaise</span>',
       en: 'What\'s happening in <span class="hero-accent">Togolese tech</span>',
     },
-    "actu.hero.subtitle": {
-      fr: "Événements, lancements, startups, financements : les faits marquants récents de l'écosystème, sourcés\n       et datés. Pas un flux automatique : chaque entrée est vérifiée à la main, avec sa source.",
-      en: "Events, launches, startups, funding: recent highlights from the ecosystem, sourced and dated. Not an automated feed: every entry is hand-verified, with its source.",
-    },
+    "actu.hero.subtitle": { fr: "Événements, lancements, startups, financements : les faits marquants de l'écosystème, sourcés et datés. Aucun flux automatique ici : chaque entrée est vérifiée à la main et accompagnée de sa source.", en: "Events, launches, startups, funding: the ecosystem's notable developments, sourced and dated. No automated feed here: every entry is verified by hand and accompanied by its source." },
     "actu.hero.guide": { fr: "Dernière mise à jour : 2 octobre 2026.", en: "Last updated: October 2, 2026." },
-    "actu.hero.propose": {
-      fr: 'Un événement ou une actu tech togolaise qui manque ? <a href="proposer.html">Propose-la</a> : on vérifie et on ajoute.',
-      en: 'A Togolese tech event or news item missing? <a href="proposer.html">Suggest it</a>: we verify and add it.',
-    },
+    "actu.hero.propose": { fr: "Une actualité ou un événement tech togolais manque à l'appel ? <a href=\"proposer.html\">Propose-le</a> : nous le vérifions avant de l'ajouter.", en: "Is a Togolese tech event or news item missing? <a href=\"proposer.html\">Suggest it</a>: we verify it before adding it." },
     "actu.meta.date": { fr: "Date", en: "Date" },
     "actu.meta.category": { fr: "Catégorie", en: "Category" },
     "actu.readSource": { fr: "Lire la source", en: "Read source" },
@@ -421,46 +370,31 @@
       fr: 'Convaincs tes <span class="hero-accent">parents</span>',
       en: 'Convince your <span class="hero-accent">parents</span>',
     },
-    "temoignages.hero.subtitle": {
-      fr: "Les chiffres du numérique togolais, et des togolais qui l'ont fait avant toi : de quoi répondre à\n       « et si tu faisais plutôt... ».",
-      en: 'The numbers behind Togolese digital tech, and Togolese people who\'ve done it before you: enough to answer "what if you did X instead...".',
-    },
+    "temoignages.hero.subtitle": { fr: "Les chiffres du numérique togolais et le parcours de Togolais qui t'ont précédé : de quoi répondre, arguments à l'appui, à l'éternel « et si tu faisais plutôt… ».", en: "The figures behind Togo's digital sector and the journeys of Togolese people who came before you: everything you need to answer, with evidence, the familiar \"why not do something else instead…\"." },
 
     "faq.hero.title": {
       fr: 'Questions <span class="hero-accent">fréquentes</span>',
       en: 'Frequently asked <span class="hero-accent">questions</span>',
     },
-    "faq.hero.subtitle": {
-      fr: "Tout ce qu'on te demande le plus souvent sur WIYAO, en un seul endroit.",
-      en: "Everything you ask us most often about WIYAO, in one place.",
-    },
+    "faq.hero.subtitle": { fr: "Les questions les plus fréquentes sur WIYAO, et leurs réponses, réunies en un seul endroit.", en: "The most frequently asked questions about WIYAO, and their answers, gathered in one place." },
     "faq.badge": { fr: "Aide &amp; réponses", en: "Help &amp; answers" },
     "contact.hero.title": {
       fr: 'Contacte-<span class="hero-accent">nous</span>',
       en: 'Contact <span class="hero-accent">us</span>',
     },
-    "contact.hero.subtitle": {
-      fr: 'Une question ou une correction à signaler ? Écris-nous. Pour proposer une école, une entreprise ou un événement, direction la page <a href="proposer.html">Proposer un contenu</a>.',
-      en: 'A question or a correction to report? Write to us. To suggest a school, a company or an event, head to the <a href="proposer.html">Suggest content</a> page.',
-    },
+    "contact.hero.subtitle": { fr: "Une question, une remarque ou une correction à signaler ? Écris-nous. Pour suggérer une école, une entreprise ou un événement, rends-toi plutôt sur la page <a href=\"proposer.html\">Proposer un contenu</a>.", en: "A question, a comment or a correction to report? Write to us. To suggest a school, a company or an event, please use the <a href=\"proposer.html\">Suggest content</a> page instead." },
     "proposer.hero.title": {
       fr: 'Proposer <span class="hero-accent">un contenu</span>',
       en: 'Suggest <span class="hero-accent">content</span>',
     },
-    "proposer.hero.subtitle": {
-      fr: "Une école, une entreprise, une communauté ou un événement tech togolais qui manque sur WIYAO ? Propose-le : on vérifie et on ajoute.",
-      en: "A Togolese school, company, community or tech event missing from WIYAO? Suggest it: we verify and add it.",
-    },
+    "proposer.hero.subtitle": { fr: "Une école, une entreprise, une communauté ou un événement tech togolais manque sur WIYAO ? Propose-le : chaque suggestion est vérifiée à partir de sources fiables avant d'être publiée.", en: "Is a Togolese school, company, community or tech event missing from WIYAO? Suggest it: every suggestion is checked against reliable sources before it is published." },
 
 
     "recherche.hero.title": {
       fr: 'Cherche <span class="hero-accent">n\'importe quoi</span> sur WIYAO',
       en: 'Search for <span class="hero-accent">anything</span> on WIYAO',
     },
-    "recherche.hero.subtitle": {
-      fr: "Une seule recherche pour tout le site : roadmaps, écoles, écosystème togolais, bourses, stages &amp; emploi\n       et actualités.",
-      en: "One search for the entire site: roadmaps, schools, the Togolese ecosystem, scholarships, internships &amp; jobs, and news.",
-    },
+    "recherche.hero.subtitle": { fr: "Une seule recherche pour l'ensemble du site, en français comme en anglais : roadmaps, écoles, écosystème togolais, bourses, stages et emploi, actualités, témoignages et FAQ.", en: "A single search across the entire site, in English or French: roadmaps, schools, the Togolese ecosystem, scholarships, internships and jobs, news, testimonials and FAQ." },
     "recherche.suggestions.label": {
       fr: "Essaie par exemple",
       en: "Try for example",
@@ -471,34 +405,22 @@
     },
 
     "error404.title": { fr: "Page introuvable", en: "Page not found" },
-    "error404.subtitle": {
-      fr: "Cette page n'existe pas, plus, ou l'adresse contient une faute de frappe.",
-      en: "This page doesn't exist, no longer exists, or the address has a typo.",
-    },
+    "error404.subtitle": { fr: "Cette page n'existe pas ou n'existe plus, à moins que son adresse ne comporte une faute de frappe.", en: "This page does not exist or no longer exists, unless its address contains a typo." },
     "error404.cta.home": { fr: "Retour à l'accueil", en: "Back to home" },
     "error404.cta.search": { fr: "Rechercher sur WIYAO", en: "Search WIYAO" },
-    "error404.note": {
-      fr: 'Si tu penses qu\'un lien est cassé, dis-le-nous via la page <a href="contact.html">Contact</a>.',
-      en: 'If you think a link is broken, let us know via the <a href="contact.html">Contact</a> page.',
-    },
+    "error404.note": { fr: "Si tu penses qu'un lien est rompu, signale-le-nous depuis la page <a href=\"contact.html\">Contact</a>.", en: "If you believe a link is broken, please report it via the <a href=\"contact.html\">Contact</a> page." },
 
     "about.hero.title": {
       fr: 'À propos &amp; <span class="hero-accent">méthodologie</span>',
       en: 'About &amp; <span class="hero-accent">methodology</span>',
     },
-    "about.hero.subtitle": {
-      fr: "Comment le contenu de WIYAO est construit, vérifié et tenu à jour.",
-      en: "How WIYAO's content is built, verified and kept up to date.",
-    },
+    "about.hero.subtitle": { fr: "Comment le contenu de WIYAO est conçu, vérifié et tenu à jour : la méthode, les sources et les principes qui fondent sa fiabilité.", en: "How WIYAO's content is designed, verified and kept up to date: the method, the sources and the principles behind its reliability." },
 
     "mentions.hero.title": {
       fr: 'Mentions <span class="hero-accent">légales</span>',
       en: 'Legal <span class="hero-accent">notice</span>',
     },
-    "mentions.hero.subtitle": {
-      fr: "Qui édite WIYAO, où le site est hébergé, et dans quelles conditions son contenu peut être réutilisé.",
-      en: "Who publishes WIYAO, where the site is hosted, and under what conditions its content may be reused.",
-    },
+    "mentions.hero.subtitle": { fr: "L'éditeur de WIYAO, l'hébergement du site et les conditions dans lesquelles son contenu peut être réutilisé.", en: "WIYAO's publisher, the site's hosting, and the conditions under which its content may be reused." },
     "mentions.hero.updated": {
       fr: "Dernière mise à jour : septembre 2026",
       en: "Last updated: September 2026",
@@ -508,10 +430,7 @@
       fr: 'Politique de <span class="hero-accent">confidentialité</span>',
       en: 'Privacy <span class="hero-accent">policy</span>',
     },
-    "confidentialite.hero.subtitle": {
-      fr: "Ce que WIYAO fait, et surtout ne fait pas, avec ce que tu utilises sur le site.",
-      en: "What WIYAO does, and importantly, doesn't do, with what you use on the site.",
-    },
+    "confidentialite.hero.subtitle": { fr: "Ce que WIYAO fait, et surtout ce qu'il ne fait pas, des informations liées à ton utilisation du site.", en: "What WIYAO does, and above all what it does not do, with information related to your use of the site." },
     "confidentialite.hero.updated": {
       fr: "Dernière mise à jour : octobre 2026",
       en: "Last updated: October 2026",
@@ -521,10 +440,7 @@
       fr: 'Conditions <span class="hero-accent">d\'utilisation</span>',
       en: 'Terms of <span class="hero-accent">use</span>',
     },
-    "cgu.hero.subtitle": {
-      fr: "Les règles d'utilisation de WIYAO : à lire avant de naviguer sur le site.",
-      en: "WIYAO's usage rules: read before browsing the site.",
-    },
+    "cgu.hero.subtitle": { fr: "Les règles qui encadrent l'utilisation de WIYAO, à lire avant de parcourir le site.", en: "The rules governing the use of WIYAO, to be read before browsing the site." },
     "cgu.hero.updated": {
       fr: "Dernière mise à jour : septembre 2026",
       en: "Last updated: September 2026",
