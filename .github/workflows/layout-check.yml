@@ -1,0 +1,54 @@
+name: Contrôle de mise en page
+
+# Rend le site dans un Chrome sans interface (déjà installé sur le runner)
+# et vérifie ce que les sessions mesuraient à la main : haut des 89 roadmaps
+# dans le premier écran avec le bandeau défilant visible, bouton pause du
+# bandeau jamais recouvert, aucun débordement horizontal sur mobile.
+# Aucune dépendance npm : voir scripts/check-layout.js.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.html"
+      - "css/**"
+      - "js/**"
+      - "fonts/**"
+      - "sw.js"
+      - "scripts/check-layout.js"
+      - ".github/workflows/layout-check.yml"
+  pull_request:
+    paths:
+      - "**.html"
+      - "css/**"
+      - "js/**"
+      - "fonts/**"
+      - "sw.js"
+      - "scripts/check-layout.js"
+      - ".github/workflows/layout-check.yml"
+  workflow_dispatch: {}
+
+permissions: {}
+
+concurrency:
+  group: layout-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  layout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Vérifier la mise en page
+        run: node scripts/check-layout.js
