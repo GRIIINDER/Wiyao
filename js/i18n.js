@@ -1045,18 +1045,18 @@
     },
     "temoin.s3.p1.role": { fr: "Fondateur de WoeLab", en: "Founder of WoeLab" },
     "temoin.s3.p1.p": {
-      fr: "Architecte et anthropologue, il fonde WoeLab à Lomé en 2012 : le premier FabLab d'Afrique de l'Ouest. C'est sous son impulsion que WoeLab produit en 2013 la première imprimante 3D africaine fabriquée à partir de déchets électroniques (W.Afate), distinguée par la NASA. Ashoka Fellow depuis 2017.",
-      en: "An architect and anthropologist, he founded WoeLab in Lomé in 2012: West Africa's first FabLab. Under his leadership, WoeLab produced Africa's first 3D printer made from electronic waste (W.Afate) in 2013, recognized by NASA. Ashoka Fellow since 2017.",
+      fr: "Architecte et anthropologue, il fonde WoeLab, premier espace « africain de démocratie technologique » du Togo, où il défend le concept #LowHighTech : associer les plus modestes à l'innovation technologique. Il compte la W.Afate, première imprimante 3D africaine construite en déchets informatiques, parmi les meilleurs ambassadeurs de cette vision. Ashoka Fellow depuis 2017.",
+      en: "An architect and anthropologist, he founded WoeLab, Togo's first \"African technological democracy\" space, where he champions the #LowHighTech concept: involving the most modest communities in technological innovation. He counts the W.Afate, the first African 3D printer built from computer waste, among the best ambassadors of this vision. Ashoka Fellow since 2017.",
     },
-    "temoin.s3.p2.role": { fr: "Inventeur de l'imprimante 3D W.Afate", en: "Inventor of the W.Afate 3D printer" },
+    "temoin.s3.p2.role": { fr: "Inventeur d'une imprimante 3D en déchets électroniques", en: "Inventor of a 3D printer made from e-waste" },
     "temoin.s3.p2.p": {
-      fr: "Géographe de formation, sans parcours informatique initial. En 2013, à WoeLab, il construit en six mois W.Afate : la première imprimante 3D africaine fabriquée à partir de déchets électroniques récupérés dans les décharges de Lomé. Premier prix de l'innovation technologique à la conférence internationale FabLab (Barcelone, 2014).",
-      en: "Trained as a geographer, with no initial background in computing. In 2013, at WoeLab, he spent six months building W.Afate: Africa's first 3D printer made from electronic waste salvaged from Lomé's landfills. First prize for technological innovation at the international FabLab conference (Barcelona, 2014).",
+      fr: "Géographe de formation, sans bagage en informatique : il a fait des études de lettres. Avec le soutien de l'incubateur WoeLab, il met six mois à construire le premier prototype de la première imprimante 3D fabriquée en Afrique à partir de déchets électroniques, récupérés dans les décharges de Lomé. Récompensé en 2014 à FAB10, à Barcelone.",
+      en: "A trained geographer with no computer-science background: he studied literature. With support from the WoeLab incubator, he spent six months building the first prototype of the first 3D printer made in Africa from electronic waste, salvaged from Lomé's landfills. Awarded a prize in 2014 at FAB10 in Barcelona.",
     },
-    "temoin.s3.p3.role": { fr: "Fondateur &amp; CEO de Semoa", en: "Founder &amp; CEO of Semoa" },
+    "temoin.s3.p3.role": { fr: "CEO et cofondateur de Semoa Group", en: "CEO and co-founder of Semoa Group" },
     "temoin.s3.p3.p": {
-      fr: 'Ingénieur en Business Intelligence (Polytech Nantes), il fonde Semoa après avoir observé, en voyage, un système d\'achat de crédit téléphonique par borne. Semoa devient en janvier 2026 la première fintech togolaise agréée full-service PSP par la BCEAO. « J\'ai découvert que l\'achat de crédit de communication s\'y faisait depuis une borne et non, comme c\'est le cas au Togo, en grattant des recharges téléphoniques en papier. »',
-      en: 'A Business Intelligence engineer (Polytech Nantes), he founded Semoa after observing, while traveling, a kiosk-based system for buying phone credit. In January 2026, Semoa became the first Togolese fintech licensed as a full-service PSP by the BCEAO. "I discovered that buying phone credit there was done through a kiosk, rather than scratching paper phone top-up cards like in Togo."',
+      fr: "Ingénieur en Business Intelligence diplômé de Polytech Nantes (France), il débute dans le conseil en systèmes d'information pour de grands groupes en Europe, puis revient au Togo fonder Semoa Group, pour concevoir des solutions de paiement adaptées aux habitudes locales. En 2026, Semoa devient la toute première fintech togolaise agréée par la BCEAO comme établissement de paiement full service (PSP).",
+      en: "A Business Intelligence engineer who graduated from Polytech Nantes (France), he began in information-systems consulting for large groups in Europe, then returned to Togo to found Semoa Group and design payment solutions suited to local habits. In 2026, Semoa became the very first Togolese fintech licensed by the BCEAO as a full-service payment institution (PSP).",
     },
     "temoin.s3.p4.role": { fr: "Ingénieure logicielle &amp; cofondatrice de GDG Lomé", en: "Software engineer &amp; co-founder of GDG Lomé" },
     "temoin.s3.p4.p": {
@@ -1065,8 +1065,8 @@
     },
     "temoin.s3.p5.role": { fr: "Consultante en cybersécurité", en: "Cybersecurity consultant" },
     "temoin.s3.p5.p": {
-      fr: "Licence en ingénierie informatique au Togo, puis masters en sécurité réseau (Reims, France) et cybersécurité (Florida Institute of Technology, États-Unis). A travaillé 5 ans à l'Office Togolais des Recettes avant de devenir consultante indépendante, notamment pour un audit sécurité de l'OIF.",
-      en: "Bachelor's in computer engineering in Togo, followed by master's degrees in network security (Reims, France) and cybersecurity (Florida Institute of Technology, USA). Worked for 5 years at the Togolese Revenue Authority before becoming an independent consultant, including for an OIF security audit.",
+      fr: "Licence en ingénierie informatique, télécommunication et système, puis masters en administration et sécurité réseau (Université de Reims, France) et en assurance de l'information et cybersécurité (Florida Institute of Technology, États-Unis). De 2014 à 2019, elle gère les incidents informatiques à l'Office Togolais des Recettes, avant de devenir consultante indépendante, notamment pour l'audit sécurité de l'OIF à Paris.",
+      en: "Bachelor's in computer engineering, telecommunications and systems, then master's degrees in network administration and security (University of Reims, France) and in information assurance and cybersecurity (Florida Institute of Technology, USA). From 2014 to 2019 she handled IT incidents at the Togolese Revenue Office (OTR), before becoming an independent consultant, notably for the OIF's security audit in Paris.",
     },
     "temoin.s3.p6.role": { fr: "Développeuse web et mobile", en: "Web and mobile developer" },
     "temoin.s3.p6.p": {
@@ -1075,13 +1075,13 @@
     },
     "temoin.s3.p7.role": { fr: "Cofondateur de Karaba", en: "Co-founder of Karaba" },
     "temoin.s3.p7.p": {
-      fr: "Licence en sciences et technologies puis en transformation numérique, certificat en data intelligence (IMT Business School, France). Cofonde Karaba, une IA conversationnelle qui connecte recruteurs et candidats dans plus de 20 pays africains via WhatsApp.",
-      en: "Bachelor's in science and technology, then digital transformation, certificate in data intelligence (IMT Business School, France). Co-founded Karaba, a conversational AI that connects recruiters and candidates across more than 20 African countries via WhatsApp.",
+      fr: "Licence en sciences et technologies (Université de Lomé, 2022), puis licence en transformation numérique et certificat en data intelligence (Institut Mines-Télécom Business School, France). Cofondateur et directeur général de Karaba, une IA conversationnelle qui connecte recruteurs et talents dans plus de 20 pays africains ; les candidats y construisent leur profil directement sur WhatsApp.",
+      en: "Bachelor's in science and technology (University of Lomé, 2022), then a bachelor's in digital transformation and a certificate in data intelligence (Institut Mines-Télécom Business School, France). Co-founder and CEO of Karaba, a conversational AI that connects recruiters and talent in more than 20 African countries; candidates build their profile directly on WhatsApp.",
     },
-    "temoin.s3.p8.role": { fr: "Cofondatrice &amp; PDG de SOLIMI", en: "Co-founder &amp; CEO of SOLIMI" },
+    "temoin.s3.p8.role": { fr: "Ingénieure logicielle, à l'origine de SOLIMI", en: "Software engineer behind SOLIMI" },
     "temoin.s3.p8.p": {
-      fr: 'Ingénieure logicielle formée au Maroc, elle fonde SOLIMI en 2020 pour démocratiser l\'accès bancaire via des cartes prépayées Visa sans compte bancaire. Sélectionnée dans la cohorte 2022 de l\'Africa Prize for Engineering Innovation (Royal Academy of Engineering, Royaume-Uni). « Nous pensons que Solimi peut avoir un impact énorme sur les communautés non bancarisées et à faibles revenus. »',
-      en: 'A software engineer trained in Morocco, she founded SOLIMI in 2020 to democratize banking access through prepaid Visa cards requiring no bank account. Selected for the 2022 cohort of the Africa Prize for Engineering Innovation (Royal Academy of Engineering, UK). "We believe Solimi can have a huge impact on unbanked and low-income communities."',
+      fr: "Ingénieure logicielle, elle crée avec son équipe SOLIMI, une carte prépayée adossée à Visa qu'on peut acheter sans compte bancaire, pour améliorer l'inclusion financière. Finaliste 2022 de l'Africa Prize for Engineering Innovation (Royal Academy of Engineering, Royaume-Uni). « Nous pensons que Solimi peut avoir un impact énorme, à la fois sur les communautés non bancarisées et sur celles à faibles revenus. »",
+      en: "A software engineer, she and her team created SOLIMI, a Visa-backed prepaid card that can be bought without a bank account, to improve financial inclusion. 2022 finalist of the Africa Prize for Engineering Innovation (Royal Academy of Engineering, UK). \"We believe Solimi can have an enormous impact on both unbanked and low-income communities.\"",
     },
     "actu.t11.date": { fr: "3 septembre 2026", en: "September 3, 2026" },
     "actu.t11.h3": { fr: "L'ANCy lance un appel à talents en cybersécurité", en: "ANCy launches a call for cybersecurity talent" },
@@ -1481,7 +1481,7 @@
       en: "Togo's first startup incubator, run by the Businesswomen's Entrepreneurship Center (FEFA Togo), active since 2016: support in entrepreneurship, administrative and financial management, innovation, ICT, marketing, particularly aimed at young women aged 18-35 passionate about digital tech.",
     },
     "eco.h6.p": { fr: "Accélérateur de startups basé dans la région des Savanes, extension de l'incubateur de Lomé.", en: "Startup accelerator based in the Savanes region, an extension of the Lomé incubator." },
-    "eco.h7.p": { fr: "Premier FabLab togolais, créé en 2012 à Lomé. À l'origine de la première imprimante 3D africaine fabriquée à partir de déchets électroniques (W.Afate), distinguée par la NASA en 2013.", en: "Togo's first FabLab, created in 2012 in Lomé. Behind Africa's first 3D printer made from electronic waste (W.Afate), recognized by NASA in 2013." },
+    "eco.h7.p": { fr: "Laboratoire de fabrication numérique créé en août 2012 à Lomé, qui se présente comme « le premier espace africain de démocratie technologique ».", en: "Digital fabrication lab founded in August 2012 in Lomé, which describes itself as \"the first African space of Technology Democracy\"." },
     "eco.h8.p": { fr: "Incubateur public régional à Kara, lancé en 2021 pour accompagner les jeunes porteurs de projets, dans le même réseau que Nunya-Lab et Banm Lab.", en: "Regional public incubator in Kara, launched in 2021 to support young project leaders, part of the same network as Nunya-Lab and Banm Lab." },
     "eco.h9.p": { fr: "Premier incubateur de la région Centrale, ouvert en 2020 à Sokodé. Mentorat et formation en agriculture, artisanat et numérique.", en: "First incubator in the Centrale region, opened in 2020 in Sokodé. Mentoring and training in agriculture, crafts and digital skills." },
     "eco.h10.p": {
