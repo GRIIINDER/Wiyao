@@ -17,6 +17,42 @@
     return currentLang() === "en" && en ? en : obj[field];
   }
 
+  // Même chose pour une liste (filières, niveaux) : "filieresEn" à côté de
+  // "filieres". Pour l'affichage seulement : les correspondances (test
+  // d'orientation, domaines d'une école) lisent toujours la liste française.
+  function tList(obj, field) {
+    if (!obj) return [];
+    const en = obj[field + "En"];
+    return currentLang() === "en" && Array.isArray(en) && en.length ? en : obj[field] || [];
+  }
+
+  // Ressources des roadmaps : en anglais, un lien vers la version française
+  // d'une documentation multilingue mène à la même page en anglais
+  // (correspondances vérifiées le 2026-11-07). Les ressources qui n'existent
+  // qu'en français portent la mention "(in French)" dans leur libellé anglais.
+  const EN_URL_RULES = [
+    [/^https:\/\/developer\.mozilla\.org\/fr\//, "https://developer.mozilla.org/en-US/"],
+    [/^https:\/\/nodejs\.org\/fr\//, "https://nodejs.org/en/"],
+    [/^https:\/\/docs\.github\.com\/fr\//, "https://docs.github.com/en/"],
+    [/^https:\/\/kubernetes\.io\/fr\//, "https://kubernetes.io/"],
+    [/^(https:\/\/support\.google\.com\/[^?]*\?(?:.*&)?hl=)fr\b/, "$1en"],
+    [/^https:\/\/help\.tableau\.com\/(.*)\/fr-fr\//, "https://help.tableau.com/$1/en-us/"],
+    [/^https:\/\/www\.tableau\.com\/fr-fr\//, "https://www.tableau.com/"],
+    [/^https:\/\/git-scm\.com\/book\/fr\/v2\/.*$/, "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"],
+    [/^https:\/\/docs\.python\.org\/fr\//, "https://docs.python.org/"],
+    [/^https:\/\/expressjs\.com\/fr\//, "https://expressjs.com/en/"],
+    [/^https:\/\/www\.php\.net\/manual\/fr\//, "https://www.php.net/manual/en/"],
+    [/^https:\/\/fr\.khanacademy\.org\/math\/statistics-probability\//, "https://www.khanacademy.org/math/statistics-probability/"]
+  ];
+
+  function localizeUrl(url) {
+    if (!url || currentLang() !== "en") return url;
+    for (let i = 0; i < EN_URL_RULES.length; i++) {
+      if (EN_URL_RULES[i][0].test(url)) return url.replace(EN_URL_RULES[i][0], EN_URL_RULES[i][1]);
+    }
+    return url;
+  }
+
   // Toute valeur de data.js insérée dans du HTML (innerHTML) passe par ici.
   function escapeHtml(str) {
     return String(str == null ? "" : str)
@@ -573,10 +609,10 @@
       const item = document.createElement("div");
       item.className = "eco-item";
       const title = document.createElement("h3");
-      title.textContent = c.name;
+      title.textContent = tField(c, "name");
       item.appendChild(title);
       const p = document.createElement("p");
-      p.textContent = isEn ? c.noteEn : c.note;
+      p.textContent = tField(c, "note");
       item.appendChild(p);
       const href = safeUrl(c.url);
       if (href) {
@@ -638,7 +674,9 @@
         : null;
 
     if (!rm) {
-      container.innerHTML = `<p>Roadmap introuvable. <a href="index.html">Retour à l'accueil</a></p>`;
+      container.innerHTML = currentLang() === "en"
+        ? `<p>Roadmap not found. <a href="index.html">Back to home</a></p>`
+        : `<p>Roadmap introuvable. <a href="index.html">Retour à l'accueil</a></p>`;
       return;
     }
 
@@ -694,7 +732,7 @@
 
     // Bandeau défilant façon MoonShot : les étapes de cette roadmap, sans
     // leur numéro (mise en mouvement par nav.js).
-    const marquee = buildMarquee(rm.sections.map((s) => s.title.replace(/^\d+\.\s*/, "")), isEn);
+    const marquee = buildMarquee(rm.sections.map((s) => tField(s, "title").replace(/^\d+\.\s*/, "")), isEn);
     container.appendChild(marquee);
     if (window.wiyaoMarquee) window.wiyaoMarquee(marquee);
 
@@ -715,7 +753,7 @@
       sectionEl.className = "section";
 
       const titleEl = document.createElement("h2");
-      titleEl.textContent = section.title;
+      titleEl.textContent = tField(section, "title");
       sectionEl.appendChild(titleEl);
 
       const list = document.createElement("div");
@@ -747,7 +785,7 @@
 
         const label = document.createElement("span");
         label.className = "item-label";
-        label.textContent = item.label;
+        label.textContent = tField(item, "label");
         labelWrap.appendChild(label);
 
         if (item.level === "option") {
@@ -760,16 +798,16 @@
         if (item.note) {
           const note = document.createElement("div");
           note.className = "item-note";
-          note.textContent = item.note;
+          note.textContent = tField(item, "note");
           labelWrap.appendChild(note);
         }
 
-        const resourceHref = item.resource ? safeUrl(item.resource.url) : "";
+        const resourceHref = item.resource ? safeUrl(localizeUrl(item.resource.url)) : "";
         if (resourceHref) {
           const link = document.createElement("a");
           link.className = "item-resource";
           link.href = resourceHref;
-          link.textContent = item.resource.label;
+          link.textContent = tField(item.resource, "label");
           link.insertAdjacentHTML("afterbegin", icon("clip"));
           if (!resourceHref.startsWith("roadmap.html")) {
             link.target = "_blank";
@@ -848,7 +886,9 @@
   function buildSchoolCard(id, school) {
     const card = document.createElement("div");
     card.className = "card school-card";
-    card.dataset.title = school.name.toLowerCase() + " " + school.filieres.join(" ").toLowerCase();
+    // Recherche dans les deux langues : un nom de filière tapé en anglais
+    // trouve aussi l'école.
+    card.dataset.title = (school.name + " " + school.filieres.join(" ") + " " + (school.filieresEn || []).join(" ")).toLowerCase();
     card.dataset.ville = school.ville.join(",");
     card.dataset.statut = school.statut;
     card.dataset.domaine = matchSchoolDomains(school).join(",");
@@ -871,29 +911,29 @@
 
     const subtitle = document.createElement("p");
     subtitle.className = "school-subtitle";
-    subtitle.textContent = school.description;
+    subtitle.textContent = tField(school, "description");
     body.appendChild(subtitle);
 
     // Filières en une ligne de texte plutôt qu'en pastilles : même
     // information, trois fois moins de hauteur.
     const filieres = document.createElement("p");
     filieres.className = "school-filieres-line";
-    filieres.innerHTML = `<strong>${i18nLabel("ecoles.card.filieres", "Filières :", "Programs:")}</strong> ${escapeHtml(school.filieres.join(" · "))}`;
+    filieres.innerHTML = `<strong>${i18nLabel("ecoles.card.filieres", "Filières :", "Programs:")}</strong> ${escapeHtml(tList(school, "filieres").join(" · "))}`;
     body.appendChild(filieres);
 
     const meta = document.createElement("div");
     meta.className = "school-meta";
-    let metaHtml = `<span><strong>${i18nLabel("ecoles.card.niveaux", "Niveaux :", "Levels:")}</strong> ${escapeHtml(school.niveaux.join(", "))}</span>`;
+    let metaHtml = `<span><strong>${i18nLabel("ecoles.card.niveaux", "Niveaux :", "Levels:")}</strong> ${escapeHtml(tList(school, "niveaux").join(", "))}</span>`;
     meta.innerHTML = metaHtml;
     body.appendChild(meta);
 
     // Fiche compacte : le détail (durée, admission, frais, notes) s'ouvre au
     // clic, pour parcourir et comparer les 32 écoles sans pavés de texte.
     let detailsHtml = "";
-    if (school.duree) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.duree", "Durée :", "Duration:")}</strong> ${escapeHtml(school.duree)}</span>`;
-    if (school.admission) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.admission", "Admission :", "Admission:")}</strong> ${escapeHtml(school.admission)}</span>`;
-    if (school.frais) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.frais", "Frais :", "Fees:")}</strong> ${escapeHtml(school.frais)}</span>`;
-    if (school.agreeNote) detailsHtml += `<span>${icon("info")}${escapeHtml(school.agreeNote)}</span>`;
+    if (school.duree) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.duree", "Durée :", "Duration:")}</strong> ${escapeHtml(tField(school, "duree"))}</span>`;
+    if (school.admission) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.admission", "Admission :", "Admission:")}</strong> ${escapeHtml(tField(school, "admission"))}</span>`;
+    if (school.frais) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.frais", "Frais :", "Fees:")}</strong> ${escapeHtml(tField(school, "frais"))}</span>`;
+    if (school.agreeNote) detailsHtml += `<span>${icon("info")}${escapeHtml(tField(school, "agreeNote"))}</span>`;
     if (detailsHtml) {
       const details = document.createElement("details");
       details.className = "school-details";
@@ -1104,6 +1144,9 @@
   function computeSchoolMatches(topDomain) {
     if (typeof SCHOOLS === "undefined") return [];
     const keywords = (typeof DOMAIN_KEYWORDS !== "undefined" && DOMAIN_KEYWORDS[topDomain]) || [];
+    const isEn = currentLang() === "en";
+    const topMeta = typeof DOMAINS !== "undefined" ? DOMAINS[topDomain] : null;
+    const topName = isEn && topMeta && topMeta.nameEn ? topMeta.nameEn : topDomain;
 
     return Object.keys(SCHOOLS)
       .map((id) => {
@@ -1113,7 +1156,7 @@
 
         checks.push({
           ok: keywords.some((kw) => filieresText.indexOf(kw) !== -1),
-          label: `Filière liée à ${topDomain}`
+          label: isEn ? `Program related to ${topName}` : `Filière liée à ${topName}`
         });
 
         if (quizPractical.niveau && quizPractical.niveau !== "peu-importe") {
@@ -1122,17 +1165,19 @@
           if (quizPractical.niveau === "court") ok = /bts|brevet de technicien/.test(niveauText);
           if (quizPractical.niveau === "licence") ok = /licence/.test(niveauText);
           if (quizPractical.niveau === "long") ok = /master|ingénieur/.test(niveauText);
-          checks.push({ ok, label: "Niveau qui correspond" });
+          checks.push({ ok, label: isEn ? "Matching level" : "Niveau qui correspond" });
         }
 
         if (quizPractical.ville && quizPractical.ville !== "peu-importe") {
-          checks.push({ ok: school.ville.indexOf(quizPractical.ville) !== -1, label: `À ${quizPractical.ville}` });
+          checks.push({ ok: school.ville.indexOf(quizPractical.ville) !== -1, label: `${isEn ? "In" : "À"} ${quizPractical.ville}` });
         }
 
         if (quizPractical.statut && quizPractical.statut !== "peu-importe") {
           checks.push({
             ok: school.statut === quizPractical.statut,
-            label: quizPractical.statut === "public" ? "Statut public" : "Statut privé"
+            label: quizPractical.statut === "public"
+              ? (isEn ? "Public school" : "Statut public")
+              : (isEn ? "Private school" : "Statut privé")
           });
         }
 
@@ -1142,7 +1187,9 @@
           if (quizPractical.priorite === "pratique") ok = /pratique|stage/i.test(school.description);
           checks.push({
             ok,
-            label: quizPractical.priorite === "agree" ? "Diplôme agréé par l'État" : "Formation orientée pratique"
+            label: quizPractical.priorite === "agree"
+              ? (isEn ? "State-accredited degree" : "Diplôme agréé par l'État")
+              : (isEn ? "Hands-on training" : "Formation orientée pratique")
           });
         }
 
@@ -1207,10 +1254,10 @@
     let html = `
       <p class="quiz-disclaimer">${
         isEn
-          ? 'This result is a starting point, not a verdict : 14 questions can\'t know you 100%. Compare it against a <a href="temoignages.html">real testimonial</a> from someone in the role, and try the roadmap before committing financially to a school.'
+          ? 'This result is a starting point, not a verdict: 14 questions can\'t know you 100%. Compare it against a <a href="temoignages.html">real testimonial</a> from someone in the role, and try the roadmap before committing financially to a school.'
           : 'Ce résultat est un point de départ, pas un verdict : 14 questions ne peuvent pas te connaître à 100 %. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier, et teste la roadmap avant de t\'engager financièrement dans une école.'
       }</p>
-      <h2>${isEn ? "Your profile" : "Ton profil"} : ${domainIcon(top)}${topLabel}</h2>
+      <h2>${isEn ? "Your profile:" : "Ton profil :"} ${domainIcon(top)}${topLabel}</h2>
       <p class="category-desc">${escapeHtml(tField(topMeta, "description"))}</p>
     `;
 
@@ -1219,7 +1266,7 @@
         <h3 class="quiz-scores-title">${isEn ? "Recommended roles" : "Métiers recommandés"}</h3>
         ${bestRoleIds.length ? `<p class="category-desc" style="text-align:center;">${
           isEn
-            ? "The metier(s) below marked “Best match” fit your role-specific answers best; the others belong to the same field but scored lower."
+            ? "The role(s) below marked “Best match” fit your role-specific answers best; the others belong to the same field but scored lower."
             : "Le(s) métier(s) ci-dessous marqués « Meilleure correspondance » collent le mieux à tes réponses sur le métier précis ; les autres restent dans le même domaine mais ont obtenu un score plus faible."
         }</p>` : ""}
         <div class="grid" id="quiz-role-grid"></div>
@@ -1241,7 +1288,7 @@
         <h3 class="quiz-scores-title">${isEn ? "Schools recommended for you" : "Écoles recommandées pour toi"}</h3>
         <p class="category-desc" style="text-align:center;">${
           isEn
-            ? "Based on your domain and your answers about level, city and budget : every checked criterion is verified, not guessed."
+            ? "Based on your field and your answers about level, city and budget: every checked criterion is verified, not guessed."
             : "D'après ton domaine et tes réponses sur le niveau, la ville et le budget : chaque critère coché est vérifié, pas deviné."
         }</p>
         <div class="grid" id="quiz-school-grid"></div>
@@ -1272,7 +1319,7 @@
           if (badges) {
             const bestBadge = document.createElement("span");
             bestBadge.className = "badge best-match-badge";
-            bestBadge.textContent = isEn ? "\u{1F3AF} Best match" : "\u{1F3AF} Meilleure correspondance";
+            bestBadge.textContent = isEn ? "Best match" : "Meilleure correspondance";
             badges.insertBefore(bestBadge, badges.firstChild);
           }
         }
@@ -1468,45 +1515,44 @@
 
       let bodyHtml = "";
       if (dc && dc.urgent && dc.urgentNote) {
-        bodyHtml += `<p class="dates-urgent-note">${icon("clock")}${escapeHtml(dc.urgentNote)}</p>`;
+        bodyHtml += `<p class="dates-urgent-note">${icon("clock")}${escapeHtml(tField(dc, "urgentNote"))}</p>`;
       }
       if (dc && dc.note) {
-        bodyHtml += `<p class="dates-note">${escapeHtml(dc.note)}</p>`;
+        bodyHtml += `<p class="dates-note">${escapeHtml(tField(dc, "note"))}</p>`;
       }
 
-      // Les libellés de champ sont traduits ; les valeurs elles-mêmes (dates,
-      // notes) restent telles qu'écrites/vérifiées dans data.js — c'est ce que
-      // #i18n-notice signale honnêtement aux utilisateurs EN, pas une erreur.
+      // Libellés et valeurs traduits : chaque date de data.js porte sa
+      // version anglaise ("clotureEn" à côté de "cloture", etc.).
       const fields = dc
         ? [
-            [isEn ? "Applications open" : "Ouverture des candidatures", dc.ouverture],
-            [isEn ? "Deadline" : "Clôture", dc.cloture],
-            [isEn ? "Entrance exam" : "Concours", dc.concours],
-            [isEn ? "Results" : "Résultats", dc.resultats],
-            [isEn ? "Start of term" : "Rentrée", dc.rentree]
+            [isEn ? "Applications open" : "Ouverture des candidatures", tField(dc, "ouverture")],
+            [isEn ? "Deadline" : "Clôture", tField(dc, "cloture")],
+            [isEn ? "Entrance exam" : "Concours", tField(dc, "concours")],
+            [isEn ? "Results" : "Résultats", tField(dc, "resultats")],
+            [isEn ? "Start of term" : "Rentrée", tField(dc, "rentree")]
           ].filter(([, value]) => !!value)
         : [];
 
       if (fields.length) {
-        bodyHtml += `<ul class="dates-list">` + fields.map(([label, value]) => `<li><strong>${label} :</strong> ${escapeHtml(value)}</li>`).join("") + `</ul>`;
+        bodyHtml += `<ul class="dates-list">` + fields.map(([label, value]) => `<li><strong>${label}${isEn ? ":" : " :"}</strong> ${escapeHtml(value)}</li>`).join("") + `</ul>`;
       }
 
       if (dc && dc.anneeReference) {
         bodyHtml += `<p class="dates-ref-note">${
           isEn
-            ? `Calendar reference (${escapeHtml(dc.anneeReference)})${dc.aVerifier ? " : reconfirm directly with the school" : ""}.`
+            ? `Calendar reference (${escapeHtml(dc.anneeReference)})${dc.aVerifier ? ": reconfirm directly with the school" : ""}.`
             : `Repère de calendrier (${escapeHtml(dc.anneeReference)})${dc.aVerifier ? " : à reconfirmer directement auprès de l'école" : ""}.`
         }</p>`;
       }
 
       if (dc && dc.contact) {
-        bodyHtml += `<p class="dates-ref-note">${isEn ? "Direct contact" : "Contact direct"} : ${escapeHtml(dc.contact)}</p>`;
+        bodyHtml += `<p class="dates-ref-note">${isEn ? "Direct contact:" : "Contact direct :"} ${escapeHtml(tField(dc, "contact"))}</p>`;
       }
 
       if (!dc) {
         bodyHtml = `<p class="dates-note">${
           isEn
-            ? "Dates not published online : check directly on the school's website."
+            ? "Dates not published online: check directly on the school's website."
             : "Dates non publiées en ligne : vérifie directement sur le site de l'école."
         }</p>`;
       }
@@ -1528,9 +1574,17 @@
   // Aplatit le contenu détaillé d'une roadmap (titres de section + libellés
   // d'étapes) en un seul texte, pour que la recherche trouve une compétence
   // citée à l'intérieur d'une roadmap et pas seulement dans son titre.
+  // L'index est bilingue : titre, description et catégorie s'affichent dans
+  // la langue courante, mais le texte cherchable réunit le français et
+  // l'anglais, pour qu'un mot tapé dans l'une ou l'autre langue trouve le
+  // même contenu.
   function flattenRoadmapKeywords(rm) {
     return (rm.sections || [])
-      .map((section) => section.title + " " + (section.items || []).map((item) => item.label).join(" "))
+      .map((section) =>
+        [section.title, section.titleEn]
+          .concat((section.items || []).map((item) => item.label + " " + (item.labelEn || "")))
+          .join(" ")
+      )
       .join(" ");
   }
 
@@ -1538,43 +1592,69 @@
   // ouverture, clôture, rentrée) sans dupliquer la logique d'affichage
   // dédiée de calendrier.html.
   function flattenSchoolKeywords(school) {
-    const parts = [(school.filieres || []).join(" "), (school.niveaux || []).join(" ")];
+    const parts = ["filieres", "filieresEn", "niveaux", "niveauxEn"].map((f) => (school[f] || []).join(" "));
     const dc = school.datesCles;
     if (dc) {
-      parts.push([dc.ouverture, dc.cloture, dc.concours, dc.resultats, dc.rentree, dc.note].filter(Boolean).join(" "));
+      ["ouverture", "cloture", "concours", "resultats", "rentree", "note"].forEach((f) => {
+        parts.push(dc[f] || "", dc[f + "En"] || "");
+      });
     }
     return parts.join(" ");
+  }
+
+  // Texte d'une clé de js/i18n.js dans une langue, sans balises (pour les
+  // éléments des autres pages lus par fetch : leur HTML est en français).
+  function i18nText(el, lang) {
+    if (!el || !el.dataset || !el.dataset.i18nKey || typeof window.wiyaoText !== "function") return "";
+    const html = window.wiyaoText(el.dataset.i18nKey, lang);
+    if (!html) return "";
+    return new DOMParser().parseFromString(html, "text/html").body.textContent.trim();
+  }
+
+  function indexEntry(fr, en, extra) {
+    const isEn = currentLang() === "en";
+    const pick = (a, b) => (isEn && b ? b : a);
+    return Object.assign({}, extra, {
+      title: pick(fr.title, en.title),
+      description: pick(fr.description || "", en.description),
+      category: pick(fr.category, en.category),
+      keywords: [extra.keywords || "", isEn ? fr.title : en.title || "", isEn ? fr.description || "" : en.description || ""].join(" ")
+    });
   }
 
   function buildGlobalIndex() {
     const index = [];
 
-    if (typeof ROLES !== "undefined") {
-      Object.keys(ROLES).forEach((id) => {
-        const r = ROLES[id];
-        index.push({ title: r.title, description: r.description || "", category: "Roadmap · métier", url: `roadmap.html?id=${encodeURIComponent(id)}`, keywords: flattenRoadmapKeywords(r) });
+    [["ROLES", "Roadmap · métier", "Roadmap · career"], ["SKILLS", "Roadmap · compétence", "Roadmap · skill"]].forEach(([group, catFr, catEn]) => {
+      const list = group === "ROLES" ? (typeof ROLES !== "undefined" ? ROLES : null) : (typeof SKILLS !== "undefined" ? SKILLS : null);
+      if (!list) return;
+      Object.keys(list).forEach((id) => {
+        const r = list[id];
+        index.push(indexEntry(
+          { title: r.title, description: r.subtitle, category: catFr },
+          { title: r.titleEn, description: r.subtitleEn, category: catEn },
+          { url: `roadmap.html?id=${encodeURIComponent(id)}`, keywords: flattenRoadmapKeywords(r) }
+        ));
       });
-    }
-    if (typeof SKILLS !== "undefined") {
-      Object.keys(SKILLS).forEach((id) => {
-        const s = SKILLS[id];
-        index.push({ title: s.title, description: s.description || "", category: "Roadmap · compétence", url: `roadmap.html?id=${encodeURIComponent(id)}`, keywords: flattenRoadmapKeywords(s) });
-      });
-    }
+    });
     if (typeof SCHOOLS !== "undefined") {
       Object.keys(SCHOOLS).forEach((id) => {
         const sc = SCHOOLS[id];
-        index.push({ title: sc.name, description: sc.description || "", category: "École", url: "ecoles.html", keywords: flattenSchoolKeywords(sc) });
+        index.push(indexEntry(
+          { title: sc.name, description: sc.description, category: "École" },
+          { title: sc.name, description: sc.descriptionEn, category: "School" },
+          { url: "ecoles.html", keywords: flattenSchoolKeywords(sc) }
+        ));
       });
     }
 
     const pagesToScan = [
-      { url: "ecosysteme.html", category: "Écosystème togolais", itemSelector: ".eco-item" },
-      { url: "bourses-financement.html", category: "Bourses & financement", itemSelector: ".eco-item" },
-      { url: "stages-emploi.html", category: "Stages & emploi", itemSelector: ".eco-item" },
-      { url: "actualites.html", category: "Actualités", itemSelector: ".timeline-item" },
-      { url: "temoignages.html", category: "Témoignages", itemSelector: ".eco-item" },
-      { url: "faq.html", category: "FAQ", itemSelector: ".faq-item", headingSelector: "summary", linkSelector: null }
+      { url: "ecosysteme.html", category: "Écosystème togolais", categoryEn: "Togolese ecosystem", itemSelector: ".eco-item" },
+      { url: "bourses-financement.html", category: "Bourses & financement", categoryEn: "Scholarships & funding", itemSelector: ".eco-item" },
+      { url: "stages-emploi.html", category: "Stages & emploi", categoryEn: "Internships & jobs", itemSelector: ".eco-item" },
+      { url: "actualites.html", category: "Actualités", categoryEn: "News", itemSelector: ".timeline-item" },
+      { url: "temoignages.html", category: "Témoignages", categoryEn: "Testimonials", itemSelector: ".eco-item" },
+      { url: "faq.html", category: "FAQ", categoryEn: "FAQ", itemSelector: ".faq-item", headingSelector: "summary", linkSelector: null }
     ];
 
     const fetches = pagesToScan.map((page) =>
@@ -1593,13 +1673,11 @@
             // bourses-financement.html : une section par sous-thème).
             const section = item.closest("section[id]");
             const anchorId = item.id || (section && section.id);
-            index.push({
-              title: heading.textContent.trim(),
-              description: desc ? desc.textContent.trim() : "",
-              category: page.category,
-              url: anchorId ? `${page.url}#${anchorId}` : page.url,
-              externalUrl: link ? link.getAttribute("href") : null
-            });
+            index.push(indexEntry(
+              { title: heading.textContent.trim(), description: desc ? desc.textContent.trim() : "", category: page.category },
+              { title: i18nText(heading, "en"), description: i18nText(desc, "en"), category: page.categoryEn },
+              { url: anchorId ? `${page.url}#${anchorId}` : page.url, externalUrl: link ? link.getAttribute("href") : null }
+            ));
           });
         })
         .catch(function () {})
@@ -1753,6 +1831,27 @@
     renderSchoolDates();
     initContactForm();
     initProposerForm();
+  });
+
+  // Changement de langue (i18n.js) : les textes fixes se traduisent sur
+  // place, mais les contenus tirés de data.js (roadmaps, écoles, dates,
+  // recherche) sont construits une seule fois au chargement : la page se
+  // recharge pour les reconstruire dans la nouvelle langue. Le test
+  // d'orientation est redessiné sur place, pour ne pas perdre les réponses.
+  const DATA_ROOTS = ["role-grid", "skill-grid", "roadmap-detail", "school-grid", "school-dates-list", "timeline-general", "global-search-results"];
+  document.addEventListener("wiyao:langchange", function () {
+    if (document.getElementById("quiz-question")) {
+      const primer = document.getElementById("domain-primer-grid");
+      if (primer) {
+        primer.innerHTML = "";
+        renderDomainPrimer();
+      }
+      const results = document.getElementById("quiz-results");
+      if (results && !results.hidden) showQuizResults();
+      else renderQuizQuestion();
+      return;
+    }
+    if (DATA_ROOTS.some((id) => document.getElementById(id))) window.location.reload();
   });
 
   // Exposé pour js/assistant.js : réutilise la même normalisation et le même

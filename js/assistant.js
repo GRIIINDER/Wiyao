@@ -6,8 +6,14 @@
 (function () {
   "use strict";
 
+  // Même réglage que i18n.js : lu directement, car app.js (et donc
+  // WIYAO_SEARCH) n'est pas chargé sur toutes les pages.
   function isEn() {
-    return window.WIYAO_SEARCH ? window.WIYAO_SEARCH.currentLang() === "en" : false;
+    try {
+      return localStorage.getItem("wiyao-lang") === "en";
+    } catch (e) {
+      return false;
+    }
   }
 
   const INTENTS = [
@@ -93,24 +99,38 @@
     const root = document.createElement("div");
     root.className = "wiyao-assistant";
     root.innerHTML = `
-      <button type="button" class="wiyao-assistant-toggle" id="wiyao-assistant-toggle" aria-label="${isEn() ? "Open WIYAO assistant" : "Ouvrir l'assistant WIYAO"}">
+      <button type="button" class="wiyao-assistant-toggle" id="wiyao-assistant-toggle" aria-label="">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
       </button>
       <div class="wiyao-assistant-panel" id="wiyao-assistant-panel" hidden>
         <div class="wiyao-assistant-header">
-          <span>${isEn() ? "WIYAO Assistant" : "Assistant WIYAO"}</span>
-          <button type="button" class="wiyao-assistant-close" id="wiyao-assistant-close" aria-label="${isEn() ? "Close" : "Fermer"}">✕</button>
+          <span class="wiyao-assistant-title"></span>
+          <button type="button" class="wiyao-assistant-close" id="wiyao-assistant-close" aria-label="">✕</button>
         </div>
         <div class="wiyao-assistant-messages" id="wiyao-assistant-messages"></div>
         <div class="wiyao-assistant-chips" id="wiyao-assistant-chips"></div>
         <form class="wiyao-assistant-form" id="wiyao-assistant-form">
-          <input type="text" id="wiyao-assistant-input" autocomplete="off" placeholder="${isEn() ? "Type your question..." : "Écris ta question..."}" aria-label="${isEn() ? "Type your question" : "Écris ta question"}">
-          <button type="submit" aria-label="${isEn() ? "Send" : "Envoyer"}">➤</button>
+          <input type="text" id="wiyao-assistant-input" autocomplete="off">
+          <button type="submit" class="wiyao-assistant-send">➤</button>
         </form>
       </div>
     `;
     document.body.appendChild(root);
+    applyWidgetLang(root);
     return root;
+  }
+
+  // Libellés fixes du widget, posés à la création puis à chaque changement
+  // de langue (les messages déjà affichés gardent la leur).
+  function applyWidgetLang(root) {
+    const en = isEn();
+    root.querySelector(".wiyao-assistant-toggle").setAttribute("aria-label", en ? "Open WIYAO assistant" : "Ouvrir l'assistant WIYAO");
+    root.querySelector(".wiyao-assistant-title").textContent = en ? "WIYAO Assistant" : "Assistant WIYAO";
+    root.querySelector(".wiyao-assistant-close").setAttribute("aria-label", en ? "Close" : "Fermer");
+    const input = root.querySelector("#wiyao-assistant-input");
+    input.setAttribute("placeholder", en ? "Type your question..." : "Écris ta question...");
+    input.setAttribute("aria-label", en ? "Type your question" : "Écris ta question");
+    root.querySelector(".wiyao-assistant-send").setAttribute("aria-label", en ? "Send" : "Envoyer");
   }
 
   function addMessage(container, from, text, links) {
@@ -220,8 +240,8 @@
       if (!opened) {
         opened = true;
         addMessage(messagesEl, "bot", isEn()
-          ? "Hi! I'm the WIYAO assistant 👋 I'm not a free-form AI : I only point you to WIYAO's own verified content (roadmaps, schools, scholarships, FAQ...). What do you need?"
-          : "Salut ! Je suis l'assistant WIYAO 👋 Je ne suis pas une IA conversationnelle libre : je t'oriente uniquement vers le contenu déjà vérifié de WIYAO (roadmaps, écoles, bourses, FAQ...). Qu'est-ce qu'il te faut ?");
+          ? "Hi! I'm the WIYAO assistant. I'm not a free-form AI: I only point you to WIYAO's own verified content (roadmaps, schools, scholarships, FAQ...). What do you need?"
+          : "Salut ! Je suis l'assistant WIYAO. Je ne suis pas une IA conversationnelle libre : je t'oriente uniquement vers le contenu déjà vérifié de WIYAO (roadmaps, écoles, bourses, FAQ...). Qu'est-ce qu'il te faut ?");
         renderChips(chipsEl, messagesEl);
       }
       input.focus();
@@ -232,6 +252,12 @@
     }
 
     toggle.addEventListener("click", () => (panel.hidden ? open() : close()));
+
+    document.addEventListener("wiyao:langchange", () => {
+      applyWidgetLang(widget);
+      if (opened) renderChips(chipsEl, messagesEl);
+      searchIndexPromise = null;
+    });
     closeBtn.addEventListener("click", close);
 
     form.addEventListener("submit", (e) => {

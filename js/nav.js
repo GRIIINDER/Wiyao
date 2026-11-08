@@ -484,6 +484,7 @@
   button.className = "back-to-top";
   button.type = "button";
   button.setAttribute("aria-label", "Retour en haut de page");
+  button.setAttribute("data-i18n-aria-label", "backtotop");
   button.innerHTML =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>';
   document.body.appendChild(button);

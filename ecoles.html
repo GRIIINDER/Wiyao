@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Écoles &amp; universités - WIYAO">
 <meta name="twitter:description" content="Compare les écoles et universités togolaises qui forment à l'informatique et au numérique : filières, niveaux, admission et statut (public, privé, agréé par l'État).">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og-image.png">
-<link rel="stylesheet" href="css/style.css?v=248">
+<link rel="stylesheet" href="css/style.css?v=249">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#006a4e">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -87,7 +87,6 @@
 </header>
 
 <main id="main-content">
-  <p id="i18n-notice" class="i18n-notice" hidden>This page isn't fully translated yet: some sections below remain in French.</p>
   <section class="page-title-banner">
     <h1 data-i18n-key="ecoles.hero.title">Trouve l'<span class="hero-accent">école</span> qu'il te faut</h1>
   </section>
@@ -151,60 +150,58 @@
     <div id="school-grid" class="grid"></div>
     <p class="no-results" id="school-no-results" hidden data-i18n-key="ecoles.noResults">Aucune école ne correspond à ces filtres. Essaie « Tous » dans l'un d'eux, ou une autre ville.</p>
 
-    <p class="category-desc">Frais trop élevés ? La page <a href="bourses-financement.html">Bourses &amp; financement</a> recense les bourses proposées par ces écoles, la bourse d'État et d'autres solutions vérifiées. Une question sur l'agrément ou les frais ? Voir la <a href="faq.html#ecoles-frais">FAQ écoles &amp; frais</a>.</p>
+    <p class="category-desc" data-i18n-key="ecoles.fees.note">Frais trop élevés ? La page <a href="bourses-financement.html">Bourses &amp; financement</a> recense les bourses proposées par ces écoles, la bourse d'État et d'autres solutions vérifiées. Une question sur l'agrément ou les frais ? Voir la <a href="faq.html#ecoles-frais">FAQ écoles &amp; frais</a>.</p>
   </section>
 
   <section class="eco-section" id="bac">
-    <h2>Quelle série de bac pour quelle filière ?</h2>
-    <p class="category-desc">Un repère, pas une règle stricte : beaucoup d'écoles privées togolaises étudient chaque
-      dossier au cas par cas, quelle que soit la série. Mais certaines filières (concours publics, cursus ingénieur)
-      demandent une série précise.</p>
+    <h2 data-i18n-key="ecoles.bac.h2">Quelle série de bac pour quelle filière ?</h2>
+    <p class="category-desc" data-i18n-key="ecoles.bac.intro">Un repère, pas une règle stricte : beaucoup d'écoles privées togolaises étudient chaque dossier au cas par cas, quelle que soit la série. Mais certaines filières (concours publics, cursus ingénieur) demandent une série précise.</p>
     <div class="eco-list">
       <div class="eco-item">
-        <h3>Séries C et D (Mathématiques, Sciences Physiques / SVT)</h3>
-        <p>Les plus demandées pour l'informatique au sens large : développement, cybersécurité, data, infrastructure. C'est la série la plus « généraliste » pour entrer dans le tech togolais, y compris pour les concours publics (Université de Kara, École Nationale Polytechnique).</p>
+        <h3 data-i18n-key="ecoles.bac.cd.h">Séries C et D (Mathématiques, Sciences Physiques / SVT)</h3>
+        <p data-i18n-key="ecoles.bac.cd.p">Les plus demandées pour l'informatique au sens large : développement, cybersécurité, data, infrastructure. C'est la série la plus « généraliste » pour entrer dans le tech togolais, y compris pour les concours publics (Université de Kara, École Nationale Polytechnique).</p>
       </div>
       <div class="eco-item">
-        <h4>Série E (Mathématiques et Technique)</h4>
-        <p>Très recherchée pour les cursus ingénieur et les filières réseaux/systèmes : profil technique apprécié à l'IAI-Togo, UCAO-UUT et dans les écoles polytechniques.</p>
+        <h4 data-i18n-key="ecoles.bac.e.h">Série E (Mathématiques et Technique)</h4>
+        <p data-i18n-key="ecoles.bac.e.p">Très recherchée pour les cursus ingénieur et les filières réseaux/systèmes : profil technique apprécié à l'IAI-Togo, UCAO-UUT et dans les écoles polytechniques.</p>
       </div>
       <div class="eco-item">
-        <h4>Séries F1 à F4 (Bac technique : construction, électronique, électrotechnique, génie civil)</h4>
-        <p>Un bon point d'entrée pour l'infrastructure, les réseaux, l'IoT et les systèmes embarqués : les bases en électronique/systèmes se transposent bien vers ces filières.</p>
+        <h4 data-i18n-key="ecoles.bac.f.h">Séries F1 à F4 (Bac technique : construction, électronique, électrotechnique, génie civil)</h4>
+        <p data-i18n-key="ecoles.bac.f.p">Un bon point d'entrée pour l'infrastructure, les réseaux, l'IoT et les systèmes embarqués : les bases en électronique/systèmes se transposent bien vers ces filières.</p>
       </div>
       <div class="eco-item">
-        <h4>Série G (Techniques administratives et de gestion)</h4>
-        <p>Adaptée à l'informatique de gestion, à la gestion &amp; management et au marketing digital : moins aux filières très techniques (réseaux, cybersécurité).</p>
+        <h4 data-i18n-key="ecoles.bac.g.h">Série G (Techniques administratives et de gestion)</h4>
+        <p data-i18n-key="ecoles.bac.g.p">Adaptée à l'informatique de gestion, à la gestion &amp; management et au marketing digital : moins aux filières très techniques (réseaux, cybersécurité).</p>
       </div>
       <div class="eco-item">
-        <h4>Séries A et B (Littéraire, Économique)</h4>
-        <p>Ne ferment pas la porte à la tech : marketing digital, product management, UX writing et community management restent accessibles, parfois avec une remise à niveau en logique/maths selon l'école.</p>
+        <h4 data-i18n-key="ecoles.bac.ab.h">Séries A et B (Littéraire, Économique)</h4>
+        <p data-i18n-key="ecoles.bac.ab.p">Ne ferment pas la porte à la tech : marketing digital, product management, UX writing et community management restent accessibles, parfois avec une remise à niveau en logique/maths selon l'école.</p>
       </div>
     </div>
   </section>
 
   <section class="eco-section" id="lexique">
-    <h2>Lexique</h2>
-    <p class="category-desc">Les sigles qui reviennent sur ce site et sur les sites des écoles togolaises.</p>
+    <h2 data-i18n-key="ecoles.lex.h2">Lexique</h2>
+    <p class="category-desc" data-i18n-key="ecoles.lex.intro">Les sigles qui reviennent sur ce site et sur les sites des écoles togolaises.</p>
     <div class="eco-list">
-      <div class="eco-item"><h3>BT</h3><p>Brevet de Technicien : diplôme professionnalisant en 3 ans, accessible dès le BEPC (avant le Bac), distinct du BTS.</p></div>
-      <div class="eco-item"><h4>BTS</h4><p>Brevet de Technicien Supérieur : diplôme professionnalisant en 2 ans après le Bac.</p></div>
-      <div class="eco-item"><h4>Licence</h4><p>Diplôme en 3 ans après le Bac (Bac+3), académique ou professionnelle selon le parcours.</p></div>
-      <div class="eco-item"><h4>Master</h4><p>Diplôme en 2 ans après la Licence (Bac+5).</p></div>
-      <div class="eco-item"><h4>Bac+2 / Bac+3 / Bac+5</h4><p>Notation courante du niveau d'études : le chiffre indique le nombre d'années après le Bac (Bac+2 = BTS, Bac+3 = Licence, Bac+5 = Master ou diplôme d'ingénieur).</p></div>
-      <div class="eco-item"><h4>LMD</h4><p>Licence-Master-Doctorat : système d'organisation des études (en crédits et semestres) adopté par la plupart des universités togolaises et africaines francophones.</p></div>
-      <div class="eco-item"><h4>CAMES</h4><p>Conseil Africain et Malgache pour l'Enseignement Supérieur : reconnaît et harmonise la valeur des diplômes entre pays membres.</p></div>
-      <div class="eco-item"><h4>AUF</h4><p>Agence Universitaire de la Francophonie : réseau international d'universités francophones ; en être membre facilite les échanges et la mobilité.</p></div>
-      <div class="eco-item"><h4>MESR</h4><p>Ministère de l'Enseignement Supérieur et de la Recherche (Togo) : autorité qui délivre les agréments d'État et publie la liste annuelle des établissements accrédités.</p></div>
-      <div class="eco-item"><h4>Agrément d'État</h4><p>Reconnaissance officielle d'un établissement privé par le MESR : condition pour que le diplôme ait une pleine valeur légale.</p></div>
-      <div class="eco-item"><h4>DAAS</h4><p>Direction des Affaires Académiques et de la Scolarité : service qui gère les admissions dans les universités publiques comme l'Université de Kara.</p></div>
-      <div class="eco-item"><h4>VAP</h4><p>Validation des Acquis Professionnels : permet d'intégrer une formation (souvent un Master) sur la base de l'expérience plutôt que du seul diplôme.</p></div>
-      <div class="eco-item"><h4>Cursus ingénieur</h4><p>Formation longue (5 ans), encadrée par la Commission des Titres d'Ingénieur (CTI), menant à un diplôme d'ingénieur reconnu.</p></div>
-      <div class="eco-item"><h4>Concours</h4><p>Épreuve écrite compétitive d'admission, utilisée par les établissements à places limitées (universités publiques, IAI-Togo, certaines grandes écoles).</p></div>
-      <div class="eco-item"><h4>BEPC</h4><p>Brevet d'Études du Premier Cycle : diplôme de fin de collège, parfois utilisé comme condition d'entrée pour un BT (ex. FORMATEC).</p></div>
-      <div class="eco-item"><h4>ISO 9001</h4><p>Norme internationale de management de la qualité ; plusieurs écoles togolaises (FORMATEC, ESA Togo, ISM Adonaï) s'en prévalent comme gage de sérieux.</p></div>
-      <div class="eco-item"><h4>UEMOA</h4><p>Union Économique et Monétaire Ouest Africaine : les étudiants originaires des pays membres bénéficient parfois de frais réduits (ex. Université de Kara).</p></div>
-      <div class="eco-item"><h4>ICDL</h4><p>International Computer Driving Licence : certification internationale de compétences bureautiques et numériques de base, utilisée par certains bootcamps (ex. Lomé Digital School).</p></div>
+      <div class="eco-item"><h3>BT</h3><p data-i18n-key="ecoles.lex.bt">Brevet de Technicien : diplôme professionnalisant en 3 ans, accessible dès le BEPC (avant le Bac), distinct du BTS.</p></div>
+      <div class="eco-item"><h4>BTS</h4><p data-i18n-key="ecoles.lex.bts">Brevet de Technicien Supérieur : diplôme professionnalisant en 2 ans après le Bac.</p></div>
+      <div class="eco-item"><h4 data-i18n-key="ecoles.lex.licence.h">Licence</h4><p data-i18n-key="ecoles.lex.licence">Diplôme en 3 ans après le Bac (Bac+3), académique ou professionnelle selon le parcours.</p></div>
+      <div class="eco-item"><h4 data-i18n-key="ecoles.lex.master.h">Master</h4><p data-i18n-key="ecoles.lex.master">Diplôme en 2 ans après la Licence (Bac+5).</p></div>
+      <div class="eco-item"><h4>Bac+2 / Bac+3 / Bac+5</h4><p data-i18n-key="ecoles.lex.bacplus">Notation courante du niveau d'études : le chiffre indique le nombre d'années après le Bac (Bac+2 = BTS, Bac+3 = Licence, Bac+5 = Master ou diplôme d'ingénieur).</p></div>
+      <div class="eco-item"><h4>LMD</h4><p data-i18n-key="ecoles.lex.lmd">Licence-Master-Doctorat : système d'organisation des études (en crédits et semestres) adopté par la plupart des universités togolaises et africaines francophones.</p></div>
+      <div class="eco-item"><h4>CAMES</h4><p data-i18n-key="ecoles.lex.cames">Conseil Africain et Malgache pour l'Enseignement Supérieur : reconnaît et harmonise la valeur des diplômes entre pays membres.</p></div>
+      <div class="eco-item"><h4>AUF</h4><p data-i18n-key="ecoles.lex.auf">Agence Universitaire de la Francophonie : réseau international d'universités francophones ; en être membre facilite les échanges et la mobilité.</p></div>
+      <div class="eco-item"><h4>MESR</h4><p data-i18n-key="ecoles.lex.mesr">Ministère de l'Enseignement Supérieur et de la Recherche (Togo) : autorité qui délivre les agréments d'État et publie la liste annuelle des établissements accrédités.</p></div>
+      <div class="eco-item"><h4 data-i18n-key="ecoles.lex.agrement.h">Agrément d'État</h4><p data-i18n-key="ecoles.lex.agrement">Reconnaissance officielle d'un établissement privé par le MESR : condition pour que le diplôme ait une pleine valeur légale.</p></div>
+      <div class="eco-item"><h4>DAAS</h4><p data-i18n-key="ecoles.lex.daas">Direction des Affaires Académiques et de la Scolarité : service qui gère les admissions dans les universités publiques comme l'Université de Kara.</p></div>
+      <div class="eco-item"><h4>VAP</h4><p data-i18n-key="ecoles.lex.vap">Validation des Acquis Professionnels : permet d'intégrer une formation (souvent un Master) sur la base de l'expérience plutôt que du seul diplôme.</p></div>
+      <div class="eco-item"><h4 data-i18n-key="ecoles.lex.ingenieur.h">Cursus ingénieur</h4><p data-i18n-key="ecoles.lex.ingenieur">Formation longue (5 ans), encadrée par la Commission des Titres d'Ingénieur (CTI), menant à un diplôme d'ingénieur reconnu.</p></div>
+      <div class="eco-item"><h4 data-i18n-key="ecoles.lex.concours.h">Concours</h4><p data-i18n-key="ecoles.lex.concours">Épreuve écrite compétitive d'admission, utilisée par les établissements à places limitées (universités publiques, IAI-Togo, certaines grandes écoles).</p></div>
+      <div class="eco-item"><h4>BEPC</h4><p data-i18n-key="ecoles.lex.bepc">Brevet d'Études du Premier Cycle : diplôme de fin de collège, parfois utilisé comme condition d'entrée pour un BT (ex. FORMATEC).</p></div>
+      <div class="eco-item"><h4>ISO 9001</h4><p data-i18n-key="ecoles.lex.iso">Norme internationale de management de la qualité ; plusieurs écoles togolaises (FORMATEC, ESA Togo, ISM Adonaï) s'en prévalent comme gage de sérieux.</p></div>
+      <div class="eco-item"><h4>UEMOA</h4><p data-i18n-key="ecoles.lex.uemoa">Union Économique et Monétaire Ouest Africaine : les étudiants originaires des pays membres bénéficient parfois de frais réduits (ex. Université de Kara).</p></div>
+      <div class="eco-item"><h4>ICDL</h4><p data-i18n-key="ecoles.lex.icdl">International Computer Driving Licence : certification internationale de compétences bureautiques et numériques de base, utilisée par certains bootcamps (ex. Lomé Digital School).</p></div>
     </div>
   </section>
 </main>
@@ -262,11 +259,11 @@
   </div>
 </footer>
 
-<script src="js/data.js?v=62"></script>
-<script src="js/app.js?v=71"></script>
-<script src="js/nav.js?v=23"></script>
-<script src="js/assistant.js?v=3"></script>
-<script src="js/i18n.js?v=139"></script>
+<script src="js/data.js?v=63"></script>
+<script src="js/app.js?v=72"></script>
+<script src="js/nav.js?v=24"></script>
+<script src="js/assistant.js?v=4"></script>
+<script src="js/i18n.js?v=140"></script>
 <script src="js/vendor/gsap.min.js?v=3150"></script>
 <script src="js/anim.js?v=6"></script>
 </body>

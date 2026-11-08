@@ -35,7 +35,33 @@
     { selector: "#nav-opportunites .nav-group-label", fr: "Opportunités", en: "Opportunities" },
     { selector: "#nav-communaute .nav-group-label", fr: "Communauté", en: "Community" },
     { selector: "#nav-contact .nav-group-label", fr: "Contact", en: "Contact" },
+    { selector: ".skip-link", fr: "Aller au contenu", en: "Skip to content" },
   ];
+
+  // Titres d'onglet, repérés par leur texte français (la 404 s'affiche à
+  // n'importe quelle adresse). Celui d'une roadmap est posé par app.js.
+  const TITLES = {
+    "WIYAO - Le guide qui accompagne ton parcours tech au Togo": "WIYAO - The guide that walks you through your tech path in Togo",
+    "Roadmaps - WIYAO": "Roadmaps - WIYAO",
+    "Test d'orientation - WIYAO": "Orientation test - WIYAO",
+    "Écoles & universités - WIYAO": "Schools & universities - WIYAO",
+    "Calendrier des dates clés - WIYAO": "Key dates calendar - WIYAO",
+    "Bourses & financement - WIYAO": "Scholarships & funding - WIYAO",
+    "Stages & emploi - WIYAO": "Internships & jobs - WIYAO",
+    "Écosystème tech togolais - WIYAO": "Togolese tech ecosystem - WIYAO",
+    "Actualités - WIYAO": "News - WIYAO",
+    "Convaincs tes parents - WIYAO": "Convince your parents - WIYAO",
+    "FAQ - WIYAO": "FAQ - WIYAO",
+    "Contact - WIYAO": "Contact - WIYAO",
+    "Proposer un contenu - WIYAO": "Suggest content - WIYAO",
+    "Recherche - WIYAO": "Search - WIYAO",
+    "Page introuvable - WIYAO": "Page not found - WIYAO",
+    "À propos & méthodologie - WIYAO": "About & methodology - WIYAO",
+    "Mentions légales - WIYAO": "Legal notice - WIYAO",
+    "Politique de confidentialité - WIYAO": "Privacy policy - WIYAO",
+    "Conditions d'utilisation - WIYAO": "Terms of use - WIYAO",
+  };
+  let titleFr = null;
 
   // Contenu propre à index.html (hero + parcours en 6 étapes), repéré par
   // data-i18n-key posé directement dans le HTML de cette page.
@@ -622,6 +648,13 @@
     "form.status.mailto": { fr: "ouvre ta messagerie avec ce message", en: "open your email app with this message" },
     "form.trap": { fr: "Ne remplis pas ce champ", en: "Leave this field empty" },
     "form.note": { fr: "Ton message arrive directement dans la boîte e-mail de WIYAO, et on te répond à l'adresse que tu as indiquée. Ce qu'il devient est expliqué dans la <a href=\"politique-confidentialite.html\">politique de confidentialité</a>.", en: "Your message goes straight to WIYAO's inbox, and we reply to the email address you entered. What happens to it is explained in the <a href=\"politique-confidentialite.html\">privacy policy</a>." },
+    "contact.intro.title": { fr: "Nous laisser<br>un message", en: "Leave us<br>a message" },
+    "contact.intro.desc": { fr: "Une question ou une correction à signaler : écris-nous, on répond directement par email.", en: "A question or a correction to report? Write to us: we reply directly by email." },
+    "contact.detail.email": { fr: "E-mail", en: "Email" },
+    "contact.detail.phone": { fr: "Téléphone", en: "Phone" },
+    "contact.detail.address": { fr: "Adresse", en: "Address" },
+    "recherche.categories.aria": { fr: "Catégories du site", en: "Site sections" },
+    "backtotop": { fr: "Retour en haut de page", en: "Back to top" },
     "contact.form.subject": { fr: "Ton sujet", en: "Subject" },
     "contact.form.subject.ph": { fr: "Ex : une erreur sur la fiche d'une école", en: "e.g. A mistake on a school's page" },
     "contact.form.message": { fr: "Ton message", en: "Your message" },
@@ -1624,6 +1657,79 @@
     "eco.r6.p": { fr: "Plateforme associative et gratuite de partage de connaissances, avec une section importante dédiée à la programmation et à l'algorithmique.", en: "Free, community-run knowledge-sharing platform, with a large section dedicated to programming and algorithms." },
     "eco.r7.p": { fr: "Référence francophone depuis les années 2000 pour les tutoriels HTML, CSS, JavaScript et les standards du web.", en: "French-language reference since the 2000s for HTML, CSS, JavaScript tutorials and web standards." },
     "eco.r8.p": { fr: "Première plateforme francophone de MOOC au monde, portée par des universités et écoles françaises : plus de 550 cours gratuits, dont plusieurs en informatique et programmation (introduction à Python, algorithmique, socle en informatique).", en: "The world's first French-language MOOC platform, backed by French universities and schools: over 550 free courses, including several in computer science and programming (intro to Python, algorithms, computing fundamentals)." },
+    // Textes fixes traduits le 2026-11-07 (Écoles : série de bac et lexique ; titres de fiches).
+    "ecoles.fees.note": { fr: "Frais trop élevés ? La page <a href=\"bourses-financement.html\">Bourses &amp; financement</a> recense les bourses proposées par ces écoles, la bourse d'État et d'autres solutions vérifiées. Une question sur l'agrément ou les frais ? Voir la <a href=\"faq.html#ecoles-frais\">FAQ écoles &amp; frais</a>.", en: "Fees too high? The <a href=\"bourses-financement.html\">Scholarships &amp; funding</a> page lists the scholarships offered by these schools, the State scholarship and other verified options. A question about accreditation or fees? See the <a href=\"faq.html#ecoles-frais\">schools &amp; fees FAQ</a>." },
+    "ecoles.bac.h2": { fr: "Quelle série de bac pour quelle filière ?", en: "Which Bac series for which program?" },
+    "ecoles.bac.cd.h": { fr: "Séries C et D (Mathématiques, Sciences Physiques / SVT)", en: "Series C and D (Mathematics, Physical Sciences / Life and Earth Sciences)" },
+    "ecoles.bac.cd.p": { fr: "Les plus demandées pour l'informatique au sens large : développement, cybersécurité, data, infrastructure. C'est la série la plus « généraliste » pour entrer dans le tech togolais, y compris pour les concours publics (Université de Kara, École Nationale Polytechnique).", en: "The most sought-after for computing in the broad sense: development, cybersecurity, data, infrastructure. It's the most \"general\" series for getting into Togolese tech, including for public entrance exams (University of Kara, École Nationale Polytechnique)." },
+    "ecoles.bac.e.h": { fr: "Série E (Mathématiques et Technique)", en: "Series E (Mathematics and Technology)" },
+    "ecoles.bac.e.p": { fr: "Très recherchée pour les cursus ingénieur et les filières réseaux/systèmes : profil technique apprécié à l'IAI-Togo, UCAO-UUT et dans les écoles polytechniques.", en: "Highly valued for engineering tracks and networks/systems programs: a technical profile appreciated at IAI-Togo, UCAO-UUT and polytechnic schools." },
+    "ecoles.bac.f.h": { fr: "Séries F1 à F4 (Bac technique : construction, électronique, électrotechnique, génie civil)", en: "Series F1 to F4 (technical Bac: construction, electronics, electrical engineering, civil engineering)" },
+    "ecoles.bac.f.p": { fr: "Un bon point d'entrée pour l'infrastructure, les réseaux, l'IoT et les systèmes embarqués : les bases en électronique/systèmes se transposent bien vers ces filières.", en: "A good entry point for infrastructure, networks, IoT and embedded systems: the basics in electronics/systems carry over well to these programs." },
+    "ecoles.bac.g.h": { fr: "Série G (Techniques administratives et de gestion)", en: "Series G (Administrative and management techniques)" },
+    "ecoles.bac.g.p": { fr: "Adaptée à l'informatique de gestion, à la gestion &amp; management et au marketing digital : moins aux filières très techniques (réseaux, cybersécurité).", en: "Suited to business computing, management and digital marketing: less so to very technical programs (networks, cybersecurity)." },
+    "ecoles.bac.ab.h": { fr: "Séries A et B (Littéraire, Économique)", en: "Series A and B (Literature, Economics)" },
+    "ecoles.bac.ab.p": { fr: "Ne ferment pas la porte à la tech : marketing digital, product management, UX writing et community management restent accessibles, parfois avec une remise à niveau en logique/maths selon l'école.", en: "They don't close the door to tech: digital marketing, product management, UX writing and community management remain accessible, sometimes with a refresher in logic/math depending on the school." },
+    "ecoles.lex.h2": { fr: "Lexique", en: "Glossary" },
+    "ecoles.lex.intro": { fr: "Les sigles qui reviennent sur ce site et sur les sites des écoles togolaises.", en: "The acronyms that come up on this site and on Togolese schools' websites." },
+    "ecoles.lex.bt": { fr: "Brevet de Technicien : diplôme professionnalisant en 3 ans, accessible dès le BEPC (avant le Bac), distinct du BTS.", en: "Brevet de Technicien (technician certificate): a 3-year vocational diploma, open from the BEPC (before the Bac), distinct from the BTS." },
+    "ecoles.lex.bts": { fr: "Brevet de Technicien Supérieur : diplôme professionnalisant en 2 ans après le Bac.", en: "Brevet de Technicien Supérieur (higher technician certificate): a 2-year vocational diploma after the Bac." },
+    "ecoles.lex.licence.h": { fr: "Licence", en: "Licence (bachelor's)" },
+    "ecoles.lex.licence": { fr: "Diplôme en 3 ans après le Bac (Bac+3), académique ou professionnelle selon le parcours.", en: "A 3-year degree after the Bac (Bac+3), academic or professional depending on the track: the equivalent of a bachelor's degree." },
+    "ecoles.lex.master.h": { fr: "Master", en: "Master (master's)" },
+    "ecoles.lex.master": { fr: "Diplôme en 2 ans après la Licence (Bac+5).", en: "A 2-year degree after the Licence (Bac+5): the equivalent of a master's degree." },
+    "ecoles.lex.bacplus": { fr: "Notation courante du niveau d'études : le chiffre indique le nombre d'années après le Bac (Bac+2 = BTS, Bac+3 = Licence, Bac+5 = Master ou diplôme d'ingénieur).", en: "Common shorthand for the level of study: the number shows how many years after the Bac (Bac+2 = BTS, Bac+3 = Licence, Bac+5 = Master's or engineering degree)." },
+    "ecoles.lex.lmd": { fr: "Licence-Master-Doctorat : système d'organisation des études (en crédits et semestres) adopté par la plupart des universités togolaises et africaines francophones.", en: "Licence-Master-Doctorat (bachelor's-master's-doctorate): the system for organizing studies (in credits and semesters) adopted by most Togolese and French-speaking African universities." },
+    "ecoles.lex.cames": { fr: "Conseil Africain et Malgache pour l'Enseignement Supérieur : reconnaît et harmonise la valeur des diplômes entre pays membres.", en: "Conseil Africain et Malgache pour l'Enseignement Supérieur (African and Malagasy Council for Higher Education): recognizes and harmonizes the value of degrees across member countries." },
+    "ecoles.lex.auf": { fr: "Agence Universitaire de la Francophonie : réseau international d'universités francophones ; en être membre facilite les échanges et la mobilité.", en: "Agence Universitaire de la Francophonie: an international network of French-speaking universities; membership makes exchanges and mobility easier." },
+    "ecoles.lex.mesr": { fr: "Ministère de l'Enseignement Supérieur et de la Recherche (Togo) : autorité qui délivre les agréments d'État et publie la liste annuelle des établissements accrédités.", en: "Ministère de l'Enseignement Supérieur et de la Recherche (Togo's Ministry of Higher Education and Research): the authority that grants State accreditation and publishes the annual list of accredited institutions." },
+    "ecoles.lex.agrement.h": { fr: "Agrément d'État", en: "State accreditation (agrément d'État)" },
+    "ecoles.lex.agrement": { fr: "Reconnaissance officielle d'un établissement privé par le MESR : condition pour que le diplôme ait une pleine valeur légale.", en: "Official recognition of a private institution by the MESR: required for the degree to have full legal value." },
+    "ecoles.lex.daas": { fr: "Direction des Affaires Académiques et de la Scolarité : service qui gère les admissions dans les universités publiques comme l'Université de Kara.", en: "Direction des Affaires Académiques et de la Scolarité (Academic and Student Affairs Directorate): the office that handles admissions at public universities such as the University of Kara." },
+    "ecoles.lex.vap": { fr: "Validation des Acquis Professionnels : permet d'intégrer une formation (souvent un Master) sur la base de l'expérience plutôt que du seul diplôme.", en: "Validation des Acquis Professionnels (recognition of professional experience): lets you join a program (often a Master's) on the basis of experience rather than your degree alone." },
+    "ecoles.lex.ingenieur.h": { fr: "Cursus ingénieur", en: "Engineering track" },
+    "ecoles.lex.ingenieur": { fr: "Formation longue (5 ans), encadrée par la Commission des Titres d'Ingénieur (CTI), menant à un diplôme d'ingénieur reconnu.", en: "A long program (5 years), overseen by the Commission des Titres d'Ingénieur (CTI), leading to a recognized engineering degree." },
+    "ecoles.lex.concours.h": { fr: "Concours", en: "Concours (entrance exam)" },
+    "ecoles.lex.concours": { fr: "Épreuve écrite compétitive d'admission, utilisée par les établissements à places limitées (universités publiques, IAI-Togo, certaines grandes écoles).", en: "A competitive written admission exam, used by institutions with limited places (public universities, IAI-Togo, some grandes écoles)." },
+    "ecoles.lex.bepc": { fr: "Brevet d'Études du Premier Cycle : diplôme de fin de collège, parfois utilisé comme condition d'entrée pour un BT (ex. FORMATEC).", en: "Brevet d'Études du Premier Cycle: the end-of-middle-school diploma, sometimes required to enter a BT (e.g. FORMATEC)." },
+    "ecoles.lex.iso": { fr: "Norme internationale de management de la qualité ; plusieurs écoles togolaises (FORMATEC, ESA Togo, ISM Adonaï) s'en prévalent comme gage de sérieux.", en: "International quality management standard; several Togolese schools (FORMATEC, ESA Togo, ISM Adonaï) cite it as a sign of reliability." },
+    "ecoles.lex.uemoa": { fr: "Union Économique et Monétaire Ouest Africaine : les étudiants originaires des pays membres bénéficient parfois de frais réduits (ex. Université de Kara).", en: "Union Économique et Monétaire Ouest Africaine (West African Economic and Monetary Union, WAEMU): students from member countries sometimes pay reduced fees (e.g. University of Kara)." },
+    "ecoles.lex.icdl": { fr: "International Computer Driving Licence : certification internationale de compétences bureautiques et numériques de base, utilisée par certains bootcamps (ex. Lomé Digital School).", en: "International Computer Driving Licence: an international certification of basic office and digital skills, used by some bootcamps (e.g. Lomé Digital School)." },
+    "bourses.h.ucao": { fr: "UCAO-UUT : Génie Informatique", en: "UCAO-UUT: Computer Engineering" },
+    "bourses.h.kara": { fr: "Université de Kara", en: "University of Kara" },
+    "bourses.link.dbs": { fr: "dbs.tg : Direction des Bourses et Stages", en: "dbs.tg: Direction des Bourses et Stages (scholarships office)" },
+    "bourses.h.credit": { fr: "Crédit scolaire : Orabank Togo", en: "School loan: Orabank Togo" },
+    "bourses.link.credit": { fr: "orabank.net : crédit scolaire", en: "orabank.net: school loan" },
+    "bourses.h.pack": { fr: "Pack Étudiants : Orabank Togo", en: "Student pack: Orabank Togo" },
+    "bourses.link.pack": { fr: "orabank.net : pack étudiants", en: "orabank.net: student pack" },
+    "bourses.h.auf": { fr: "AUF : Agence Universitaire de la Francophonie", en: "AUF: Agence Universitaire de la Francophonie" },
+    "bourses.h.uemoa": { fr: "Bourses d'Excellence UEMOA", en: "WAEMU Excellence Scholarships" },
+    "bourses.h.france": { fr: "Bourses France Excellence (Campus France Togo)", en: "France Excellence Scholarships (Campus France Togo)" },
+    "bourses.link.france": { fr: "tg.diplomatie.gouv.fr : appel 2026-2027", en: "tg.diplomatie.gouv.fr: 2026-2027 call" },
+    "bourses.h.acan": { fr: "ACAN : Académie Numérique", en: "ACAN: Académie Numérique (Digital Academy)" },
+    "bourses.h.national": { fr: "Programme national IA, Programmation &amp; Anglais", en: "National AI, Programming &amp; English program" },
+    "bourses.h.dclic": { fr: "D-CLIC : OIF", en: "D-CLIC: OIF" },
+    "stages.h.anpe": { fr: "ANPE : Agence Nationale Pour l'Emploi", en: "ANPE: Agence Nationale Pour l'Emploi (national employment agency)" },
+    "stages.h.aggregators": { fr: "Agrégateurs internationaux (Indeed, Jooble)", en: "International aggregators (Indeed, Jooble)" },
+    "stages.h.yas": { fr: "Yas Togo (ex-Togocom)", en: "Yas Togo (formerly Togocom)" },
+    "stages.h.boad": { fr: "BOAD : Banque Ouest Africaine de Développement", en: "BOAD: West African Development Bank" },
+    "stages.h.bceao": { fr: "BCEAO (agence de Lomé)", en: "BCEAO (Lomé branch)" },
+    "stages.h.ancy": { fr: "ANCy : Agence Nationale de la Cybersécurité", en: "ANCy: National Cybersecurity Agency" },
+    "stages.link.coris": { fr: "Carrière Coris Bank International", en: "Coris Bank International careers" },
+    "stages.h.pal": { fr: "Port Autonome de Lomé (PAL)", en: "Autonomous Port of Lomé (PAL)" },
+    "stages.h.giz": { fr: "GIZ Togo : projet ProDigiT", en: "GIZ Togo: ProDigiT project" },
+    "eco.h.tcc": { fr: "Tech Communities Club : IAI-Togo (TCC)", en: "Tech Communities Club: IAI-Togo (TCC)" },
+    "eco.h.mlsa": { fr: "MLSA Togo : Microsoft Learn Student Ambassadors", en: "MLSA Togo: Microsoft Learn Student Ambassadors" },
+    "eco.h.gdscul": { fr: "GDSC Université de Lomé", en: "GDSC University of Lomé" },
+    "eco.h.ecommerce": { fr: "Semaine du E-commerce", en: "E-commerce Week (Semaine du E-commerce)" },
+    "eco.h.innovup": { fr: "INNOV'UP : FEFA Togo", en: "INNOV'UP: FEFA Togo" },
+    "eco.djanta.contact": { fr: "contact@djantatechhub.gouv.tg : 656 Avenue de la Nouvelle Marché, Quartier des Étoiles, 01 BP 2274, Lomé - Togo", en: "contact@djantatechhub.gouv.tg: 656 Avenue de la Nouvelle Marché, Quartier des Étoiles, 01 BP 2274, Lomé, Togo" },
+    "eco.h.togoailab": { fr: "Togo AI Lab (ex-Togo Data Lab)", en: "Togo AI Lab (formerly Togo Data Lab)" },
+    "eco.h.osca": { fr: "OSCA Lomé : Open Source Community Africa", en: "OSCA Lomé: Open Source Community Africa" },
+    "eco.h.funmooc": { fr: "FUN MOOC : France Université Numérique", en: "FUN MOOC: France Université Numérique" },
+    "ecoles.bac.intro": { fr: "Un repère, pas une règle stricte : beaucoup d'écoles privées togolaises étudient chaque dossier au cas par cas, quelle que soit la série. Mais certaines filières (concours publics, cursus ingénieur) demandent une série précise.", en: "A guideline, not a strict rule: many Togolese private schools review each application case by case, whatever the series. But some programs (public entrance exams, engineering tracks) require a specific series." },
+    "temoignages.source": { fr: "Source :", en: "Source:" },
+    "eco.jump.aria": { fr: "Aller à une section", en: "Jump to a section" },
   };
 
   function getLang() {
@@ -1631,12 +1737,21 @@
   }
 
   function setLang(lang) {
+    const changed = getLang() !== lang;
     localStorage.setItem(STORAGE_KEY, lang);
     applyLang(lang);
+    // app.js reconstruit alors les contenus tirés de data.js (roadmaps,
+    // écoles, dates, test d'orientation, recherche).
+    if (changed) document.dispatchEvent(new CustomEvent("wiyao:langchange", { detail: { lang: lang } }));
   }
 
   function applyLang(lang) {
     document.documentElement.lang = lang;
+
+    if (titleFr === null) titleFr = document.title;
+    if (Object.prototype.hasOwnProperty.call(TITLES, titleFr)) {
+      document.title = lang === "en" ? TITLES[titleFr] : titleFr;
+    }
 
     document
       .querySelectorAll(".site-nav a[href], .footer-links-col a[href], .footer-legal-links a[href]")
@@ -1673,9 +1788,6 @@
     document.querySelectorAll(".lang-btn").forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.lang === lang);
     });
-
-    const notice = document.getElementById("i18n-notice");
-    if (notice) notice.hidden = lang !== "en";
   }
 
   function initLangSwitch() {
@@ -1686,6 +1798,13 @@
 
   // Pour les contenus chargés après coup (fenêtre « Informations légales »).
   window.wiyaoApplyLang = () => applyLang(getLang());
+
+  // Pour la recherche (app.js) : texte d'une clé dans une langue donnée, car
+  // les pages qu'elle lit par fetch arrivent en français.
+  window.wiyaoText = (key, lang) => {
+    const entry = PAGE_CONTENT[key];
+    return entry ? entry[lang === "en" ? "en" : "fr"] : null;
+  };
 
   document.addEventListener("DOMContentLoaded", () => {
     initLangSwitch();
