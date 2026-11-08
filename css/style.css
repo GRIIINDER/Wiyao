@@ -5588,6 +5588,20 @@ footer.site-footer :focus-visible {
   box-shadow: 6px 6px 0 var(--w-ink);
 }
 
+/* La bulle de l'assistant et le bouton « haut de page » s'effacent tant
+   qu'ils recouvriraient le bouton pause d'un bandeau défilant (classe
+   is-yielding posée par nav.js, 2026-11-08) : sur téléphone, la bulle
+   tombait pile dessus au premier écran. */
+.wiyao-assistant-toggle {
+  transition: transform 0.15s ease, opacity 0.2s ease, visibility 0.2s;
+}
+
+.wiyao-assistant-toggle.is-yielding,
+.back-to-top.is-yielding {
+  opacity: 0;
+  visibility: hidden;
+}
+
 ::selection {
   background: var(--w-green);
   color: #ffffff;

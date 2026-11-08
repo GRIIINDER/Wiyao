@@ -452,6 +452,8 @@
         marquee.classList.toggle("is-paused", paused);
       });
     }
+    // Bandeau construit après coup (roadmap) : revoir les boutons flottants.
+    if (window.wiyaoFloatCheck) window.wiyaoFloatCheck();
   }
 
   window.wiyaoMarquee = initMarquee;
@@ -500,4 +502,60 @@
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
   });
+})();
+
+// Boutons flottants qui cèdent la place au bouton pause - WIYAO
+// Sur téléphone, le bandeau défilant est en bas du premier écran et son
+// bouton pause tombait pile sous la bulle de l'assistant : un appui ouvrait
+// l'assistant au lieu d'arrêter le bandeau (2026-11-08). La bulle et le
+// bouton « haut de page » s'effacent (classe is-yielding) tant qu'ils
+// recouvrent un bouton pause visible, et reviennent dès que le bandeau s'est
+// éloigné. Ils ne bougent pas : rien ne se décale sous le doigt.
+(function () {
+  "use strict";
+
+  var pending = false;
+
+  function overlaps(a, b) {
+    return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+  }
+
+  function update() {
+    pending = false;
+    var pauses = [];
+    Array.prototype.forEach.call(document.querySelectorAll(".marquee-pause"), function (pause) {
+      // Bouton masqué (« réduire les animations », impression) : ignoré.
+      if (pause.getClientRects().length) pauses.push(pause.getBoundingClientRect());
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".wiyao-assistant-toggle, .back-to-top"), function (el) {
+      // Assistant ouvert : sa bulle sert à le refermer, elle reste.
+      var open = el.getAttribute("aria-expanded") === "true";
+      var box = el.getBoundingClientRect();
+      var covers = !open && pauses.some(function (rect) { return overlaps(box, rect); });
+      el.classList.toggle("is-yielding", covers);
+    });
+  }
+
+  function schedule() {
+    if (pending) return;
+    pending = true;
+    window.requestAnimationFrame(update);
+    // Secours si l'affichage est suspendu (requestAnimationFrame en pause) :
+    // update est sans effet de bord, le lancer deux fois ne gêne pas.
+    window.setTimeout(function () {
+      if (pending) update();
+    }, 120);
+  }
+
+  window.wiyaoFloatCheck = schedule;
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule);
+  document.addEventListener("click", schedule, true);
+  document.addEventListener("DOMContentLoaded", schedule);
+  window.addEventListener("load", function () {
+    schedule();
+    // Après l'arrivée animée de l'introduction et du bandeau (anim.js).
+    window.setTimeout(schedule, 1500);
+  });
+  document.addEventListener("wiyao:langchange", schedule);
 })();
