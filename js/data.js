@@ -5379,7 +5379,13 @@ const SCHOOLS = {
     description: "Fondé en 2018, réseau panafricain (présent aussi au Ghana, Niger, Mali), partenariats pour doubles diplômes avec MBway et My Digital School (France) et Griffith College (Irlande), incubateur pour jeunes entrepreneurs.", descriptionEn: "Founded in 2018, a pan-African network (also present in Ghana, Niger and Mali), dual-degree partnerships with MBway and My Digital School (France) and Griffith College (Ireland), incubator for young entrepreneurs.",
     datesCles: {
       mode: "inconnu",
-      note: "Aucun calendrier publié en ligne : contacte l'établissement directement.", noteEn: "No calendar published online: contact the school directly."
+      note: "Aucun calendrier publié en ligne : contacte l'établissement directement.", noteEn: "No calendar published online: contact the school directly.",
+      // Contact du campus de Lomé : page Contact du site officiel (copie
+      // archivée du 23 avril 2026, Wayback Machine), identique à sa page
+      // « Adresses et plans » de 2024 ; le domaine a un serveur de
+      // messagerie actif (Microsoft 365) malgré son site web cassé.
+      contact: "Campus de Lomé, quartier Agoè (près de l'École Internationale Mariam) : +228 92 91 43 12 · +228 70 39 68 93 · info@lucas-universities-colleges.net",
+      contactEn: "Lomé campus, Agoè neighborhood (near École Internationale Mariam): +228 92 91 43 12 · +228 70 39 68 93 · info@lucas-universities-colleges.net"
     }
   },
   "knowbridge": {
