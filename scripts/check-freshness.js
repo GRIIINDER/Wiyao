@@ -265,6 +265,24 @@ function findUrgentSchools() {
 }
 
 // ---- 5. Rapport ----
+// Fausses alertes connues, vérifiées à la main : le lien reste listé (une
+// vraie panne doit rester visible), avec une note pour la personne qui
+// relit. Une nouvelle fausse alerte confirmée dans un navigateur s'ajoute ici.
+const KNOWN_QUIRKS = {
+  "tcc.hyver.org": "fausse alerte connue : le serveur répond 500 aux scripts, la page s'affiche normalement dans un navigateur",
+  "www.tcc.hyver.org": "fausse alerte connue : le serveur répond 500 aux scripts, la page s'affiche normalement dans un navigateur",
+  "www.rmo-jobcenter.com": "fausse alerte connue : son DNS annonce aussi une adresse IPv6 locale (fe80::), refusée par la garde anti-SSRF ; le site répond normalement",
+  "univ-lome.tg": "fausse alerte connue : injoignable depuis les serveurs de GitHub, le site répond normalement dans un navigateur (vérifié le 2026-11-09)",
+};
+
+function knownQuirk(url) {
+  try {
+    return KNOWN_QUIRKS[new URL(url).hostname] || null;
+  } catch (e) {
+    return null;
+  }
+}
+
 function buildReport(results, urgentSchools) {
   const dead = results.filter((r) => r.status === 404 || r.status === 410);
   const uncertain = results.filter(
@@ -293,7 +311,8 @@ function buildReport(results, urgentSchools) {
     md += `(vécu plusieurs fois avec des sites bien réels). Ne pas corriger sans vérifier soi-même dans un vrai navigateur.\n\n`;
     for (const r of uncertain) {
       const label = r.status ? `HTTP ${r.status}` : `erreur réseau (${r.error})`;
-      md += `- [ ] ${r.url} → ${label}\n`;
+      const quirk = knownQuirk(r.url);
+      md += `- [ ] ${r.url} → ${label}${quirk ? ` _(${quirk})_` : ""}\n`;
     }
     md += `\n`;
   }
@@ -352,5 +371,5 @@ if (require.main === module) {
     process.exit(1);
   });
 } else {
-  module.exports = { checkUrl, storeCookies, cookieHeader };
+  module.exports = { checkUrl, storeCookies, cookieHeader, knownQuirk, buildReport };
 }
