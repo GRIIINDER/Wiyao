@@ -1154,20 +1154,6 @@
       en: "National outreach campaign across about forty high schools in the Maritime, Plateaux Ouest and Centrale regions: the LMD system, programs, admission requirements, scholarships and student life, with dedicated Q&amp;A time for 11th and 12th grade students.",
     },
     "actu.t7.cat": { fr: "Éducation", en: "Education" },
-    "actu.t8.date": { fr: "24 octobre 2025", en: "October 24, 2025" },
-    "actu.t8.h3": { fr: "Lancement du collectif TogoTech", en: "Launch of the TogoTech collective" },
-    "actu.t8.p": {
-      fr: '13 startups tech togolaises (Gozem, Semoa, Édolé, Solimi, MiaPay, Kondjigbalé, Anaxar,\n             Clinicaa...) s\'unissent en collectif national : plus de 2 milliards FCFA de chiffre d\'affaires cumulé\n             et une centaine d\'emplois directs. Partenariats signés avec Cyber Defense Africa (cybersécurité) et\n             Acquereburu &amp; Partners (cadre juridique). La ministre Cina Lawson y voit « un acte de maturité »\n             pour le secteur.',
-      en: '13 Togolese tech startups (Gozem, Semoa, Édolé, Solimi, MiaPay, Kondjigbalé, Anaxar, Clinicaa...) join forces in a national collective: over 2 billion FCFA in combined revenue and around a hundred direct jobs. Partnerships signed with Cyber Defense Africa (cybersecurity) and Acquereburu &amp; Partners (legal framework). Minister Cina Lawson called it "an act of maturity" for the sector.',
-    },
-    "actu.t8.cat": { fr: "Startups", en: "Startups" },
-    "actu.t10.date": { fr: "Rentrée 2025-2026", en: "2025-2026 school year" },
-    "actu.t10.h3": { fr: "Une université américaine s'installe au Togo : GUST", en: "An American university sets up in Togo: GUST" },
-    "actu.t10.p": {
-      fr: 'La Global University of Science &amp; Technology (GUST), fédération académique déjà présente aux\n             États-Unis, au Canada et en France, ouvre son premier campus francophone d\'Afrique à Lomé (quartier\n             Agoè Anomé) : accréditée par le Ministère togolais de l\'Enseignement Supérieur et de la Recherche.',
-      en: 'Global University of Science &amp; Technology (GUST), an academic federation already present in the United States, Canada and France, opens its first French-speaking African campus in Lomé (Agoè Anomé district): accredited by the Togolese Ministry of Higher Education and Research.',
-    },
-    "actu.t10.cat": { fr: "Éducation", en: "Education" },
     "stages.s1.h2": { fr: "Plateformes d'emploi et de stage", en: "Job and internship platforms" },
     "stages.s1.i1.p": {
       fr: 'Agence publique togolaise de l\'emploi. Sa page « métiers porteurs » classe les métiers informatiques parmi les secteurs prioritaires (ingénieur systèmes/réseau, télécom, développeur, administrateur système, gestionnaire de projet IT...) et référence les écoles qui y forment.',
