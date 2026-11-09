@@ -5833,8 +5833,9 @@ const ACADEMIC_TIMELINE = [
     periodeEn: "June – July",
     titre: "Résultats du BAC",
     titreEn: "BAC results",
-    description: "Publication des résultats du baccalauréat togolais. C'est le point de départ : la plupart des dossiers de candidature demandent une attestation ou un relevé du BAC.",
-    descriptionEn: "Publication of Togolese baccalauréat results. This is the starting point: most application files require a BAC certificate or transcript."
+    description: "Publication des résultats du baccalauréat togolais. Depuis 2026, ils se consultent gratuitement avec ton numéro de table, sur la plateforme officielle des résultats d'examens ou par WhatsApp (envoie « Bonjour » au +228 92 14 38 38), à la place de l'ancien service SMS payant. C'est le point de départ : la plupart des dossiers de candidature demandent une attestation ou un relevé du BAC.",
+    descriptionEn: "Publication of Togolese baccalauréat results. Since 2026, they can be checked for free with your exam number, on the official exam results platform or by WhatsApp (send “Bonjour” to +228 92 14 38 38), replacing the old paid SMS service. This is the starting point: most application files require a BAC certificate or transcript.",
+    lien: { url: "https://resultats.service-public.gouv.tg/", label: "resultats.service-public.gouv.tg", labelEn: "resultats.service-public.gouv.tg" }
   },
   {
     periode: "Juillet – Septembre",

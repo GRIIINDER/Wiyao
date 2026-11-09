@@ -1386,6 +1386,17 @@
           <p>${escapeHtml(tField(step, "description"))}</p>
         </div>
       `;
+      // Lien facultatif sous la description (ex. plateforme officielle des résultats).
+      const href = step.lien ? safeUrl(step.lien.url) : "";
+      if (href) {
+        const a = document.createElement("a");
+        a.className = "eco-link";
+        a.href = href;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = tField(step.lien, "label");
+        item.querySelector(".timeline-content").appendChild(a);
+      }
       container.appendChild(item);
     });
   }
