@@ -1625,7 +1625,6 @@
     "stages.h.giz": { fr: "GIZ Togo : projet ProDigiT", en: "GIZ Togo: ProDigiT project" },
     "eco.h.tcc": { fr: "Tech Campus Clubs (TCC)", en: "Tech Campus Clubs (TCC)" },
     "eco.h.mlsa": { fr: "MSA Togo : Microsoft Student Ambassadors", en: "MSA Togo: Microsoft Student Ambassadors" },
-    "eco.h.ecommerce": { fr: "Semaine du E-commerce", en: "E-commerce Week" },
     "eco.h.innovup": { fr: "INNOV'UP : FEFA Togo", en: "INNOV'UP: FEFA Togo" },
     "eco.djanta.contact": { fr: "contact@djantatechhub.gouv.tg : 656 Avenue de la Nouvelle Marché, Quartier des Étoiles, 01 BP 2274, Lomé - Togo", en: "contact@djantatechhub.gouv.tg: 656 Avenue de la Nouvelle Marché, Quartier des Étoiles, 01 BP 2274, Lomé, Togo" },
     "eco.h.togoailab": { fr: "Togo AI Lab (ex-Togo Data Lab)", en: "Togo AI Lab (formerly Togo Data Lab)" },
