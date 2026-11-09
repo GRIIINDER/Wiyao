@@ -1246,32 +1246,32 @@
       en: "Mobility and super-app (rides, delivery, mobile payments) founded and launched in Lomé in 2018: one of the most visible tech success stories to come out of Togo, now present in several French-speaking African countries. Regularly hires tech profiles (development, data, product) via its careers portal.",
     },
     "stages.s2.i6.p": {
-      fr: "Institution financière régionale dont le siège se trouve à Lomé. Recrute régulièrement sur des postes IT (réseaux, systèmes, développement, cybersécurité, gestion de projets) ainsi que des stages.",
-      en: "Regional financial institution headquartered in Lomé. Regularly hires for IT roles (networks, systems, development, cybersecurity, project management) as well as internships.",
+      fr: "Institution financière régionale dont le siège se trouve à Lomé. Programme de stages annuel au siège, avec une filière informatique et cybersécurité (réseaux, systèmes, développement, exploitation et gestion de projets IT) : en 2026, stages du 1er septembre au 30 novembre, candidatures en ligne jusqu'au 10 juillet, réservées aux étudiants ressortissants d'un pays de l'UEMOA.",
+      en: "Regional financial institution headquartered in Lomé. Yearly internship program at headquarters, with an IT and cybersecurity track (networks, systems, development, IT operations and project management): in 2026, internships from September 1 to November 30, online applications until July 10, open to students who are nationals of a WAEMU country.",
     },
     "stages.s2.i7.p": {
       fr: "Groupe bancaire panafricain dont le siège social se trouve à Lomé. Recrute régulièrement sur des postes IT et réseaux, aux côtés des autres métiers de la banque, dans ses 33 pays d'opération.",
       en: "Pan-African banking group headquartered in Lomé. Regularly hires for IT and network roles, alongside other banking positions, across its 33 countries of operation.",
     },
     "stages.s2.i8.p": {
-      fr: "Filiale togolaise du groupe bancaire panafricain Orabank (12 filiales en Afrique de l'Ouest et Centrale). Recrute régulièrement des postes IT (Directeur des Systèmes d'Information, Administrateur Réseau et Systèmes).",
-      en: "Togolese subsidiary of the pan-African Orabank banking group (12 subsidiaries across West and Central Africa). Regularly hires for IT roles (Chief Information Officer, Network and Systems Administrator).",
+      fr: "Filiale togolaise du groupe bancaire panafricain Orabank (12 filiales en Afrique de l'Ouest et Centrale). A recruté en 2026 un directeur des systèmes d'information pour Lomé (Bac+4/5 et 10 ans d'expérience) ; les offres du groupe paraissent dans sa rubrique Carrière.",
+      en: "Togolese subsidiary of the pan-African Orabank banking group (12 subsidiaries across West and Central Africa). Hired a Chief Information Officer for Lomé in 2026 (Bac+4/5 and 10 years of experience); the group's openings appear in its Careers section.",
     },
     "stages.s2.i9.p": {
       fr: "Filiale togolaise du groupe bancaire panafricain Bank of Africa. Page carrière active avec des offres IT publiées directement (ex. Administrateur Réseau et Système).",
       en: "Togolese subsidiary of the pan-African Bank of Africa group. Active careers page with IT openings posted directly (e.g. Network and Systems Administrator).",
     },
     "stages.s2.i10.p": {
-      fr: "Banque centrale des huit pays de l'UEMOA, avec une agence nationale à Lomé. Recrute régulièrement des profils IT (analyste sécurité des systèmes d'information, techniciens et ingénieurs) pour son siège et ses agences nationales.",
-      en: "Central bank of the eight UEMOA countries, with a national agency in Lomé. Regularly hires IT profiles (information systems security analyst, technicians and engineers) for its headquarters and national agencies.",
+      fr: "Banque centrale des huit pays de l'UEMOA, avec une agence nationale à Lomé. Recrute régulièrement des profils informatiques, le plus souvent pour son siège à Dakar (en 2026 : administrateur de bases de données, analyste sécurité des systèmes d'information) : Bac+5 et au moins 2 ans d'expérience, candidats de 18 à 40 ans ressortissants de l'UMOA.",
+      en: "Central bank of the eight WAEMU countries, with a national agency in Lomé. Regularly hires IT profiles, most often for its headquarters in Dakar (in 2026: database administrator, information systems security analyst): Bac+5 and at least 2 years of experience, applicants aged 18 to 40 who are WAMU nationals.",
     },
     "stages.s2.i11.p": {
       fr: "Agence publique togolaise de régulation et de réponse à incident en cybersécurité (CERT.tg). Recrute régulièrement (auditeurs SSI, analystes) et a lancé un appel national pour référencer les talents togolais en cybersécurité (pentest, sécurité applicative, DevSecOps, réponse à incident).",
       en: "Togolese public cybersecurity regulation and incident-response agency (CERT.tg). Regularly hires (IS security auditors, analysts) and launched a national call to register Togolese cybersecurity talent (pentesting, application security, DevSecOps, incident response).",
     },
     "stages.s2.i12.p": {
-      fr: "Fintech togolaise fondée à Lomé en 2016, spécialisée dans le paiement digital et la digitalisation du cash (solution Cashpay), présente dans 13 pays d'Afrique. Pas de portail carrières dédié identifié : leur page LinkedIn reste la meilleure piste pour candidater ou suivre leurs annonces.",
-      en: "Togolese fintech founded in Lomé in 2016, specializing in digital payments and cash digitization (Cashpay solution), present in 13 African countries. No dedicated careers portal identified: their LinkedIn page remains the best way to apply or follow their announcements.",
+      fr: "Fintech togolaise fondée à Lomé en 2016, spécialisée dans le paiement digital et la digitalisation du cash (solution Cashpay), présente dans 14 pays d'Afrique. Ses offres sont publiées sur sa page JOIN : développeur·se fullstack Symfony en CDI à Lomé, et candidature spontanée.",
+      en: "Togolese fintech founded in Lomé in 2016, specializing in digital payments and cash digitization (Cashpay solution), present in 14 African countries. Its openings are posted on its JOIN page: a full-stack Symfony developer on a permanent contract in Lomé, and spontaneous applications.",
     },
     "stages.s2.i13.p": {
       fr: "Cabinet togolais d'expertise informatique et de management créé en 2001 à Lomé, présent dans 11 pays africains à travers ses filiales : éditeur de PERFECT (logiciel de gestion des institutions de microfinance), de solutions de finance digitale et de solutions pour l'État. Recrute régulièrement à Lomé : développeurs Java, Spring, Flutter ou Angular (novembre 2025, avril et septembre 2026) et technicien réseau et sécurité (avril 2026), au niveau Bac+3, le plus souvent avec de l'expérience. Pas d'offres sur son site : les annonces paraissent sur les sites d'emploi togolais, et les candidatures se font par e-mail.",
@@ -1282,16 +1282,8 @@
       en: "Togolese subsidiary of the pan-African banking group Coris Bank International. Active careers page with confirmed IT roles (monetics support, operational security, technical infrastructure), alongside the bank's other professions.",
     },
     "stages.s2.i15.p": {
-      fr: "Premier terminal à conteneurs d'Afrique de l'Ouest (filiale du groupe MSC), au Port autonome de Lomé. Recrutements confirmés de techniciens IT et d'administrateurs d'applications et bases de données. Pas de portail carrières dédié identifié : candidatures via les agrégateurs togolais.",
-      en: "West Africa's first container terminal (MSC group subsidiary), at the Port of Lomé. Confirmed hiring for IT technicians and application/database administrators. No dedicated careers portal identified: apply via Togolese job aggregators.",
-    },
-    "stages.s2.i16.p": {
-      fr: "Autorité portuaire publique togolaise, dotée d'une Direction des Systèmes d'Information qui recrute périodiquement des agents SI (dernier avis confirmé fin 2024, à surveiller pour de nouvelles ouvertures).",
-      en: "Togolese public port authority, with an Information Systems Department that periodically hires IS staff (last confirmed notice in late 2024 — worth watching for new openings).",
-    },
-    "stages.s2.i17.p": {
-      fr: "Concessionnaire automobile togolais du groupe panafricain CFAO. A recruté du support technique Windows/Linux/réseau ; le portail carrières du groupe couvre aussi des postes Infrastructure et Réseaux, Direction SI, filtrables par pays (peu d'offres Togo au même moment).",
-      en: "Togolese car dealership under the pan-African CFAO group. Has hired Windows/Linux/network technical support; the group's careers portal also covers Infrastructure & Networks and IT Management roles, filterable by country (few Togo listings at any given time).",
+      fr: "Premier terminal à conteneurs d'Afrique de l'Ouest (filiale du groupe MSC), au Port autonome de Lomé. Recrute régulièrement (en 2026 : planificateurs des opérations, contrôleur de gestion, directeur des ressources humaines adjoint) ; ses dernières offres en informatique repérées datent de 2022 (administrateur d'applications et de bases de données, technicien IT). Pas de portail carrières : les offres paraissent sur les sites d'emploi togolais.",
+      en: "West Africa's first container terminal (MSC group subsidiary), at the Port of Lomé. Hires regularly (in 2026: operations planners, management controller, deputy HR director); its latest IT openings we found date from 2022 (application and database administrator, IT technician). No careers portal: openings appear on Togolese job sites.",
     },
     "stages.s2.i18.p": {
       fr: "Coopération allemande au Togo : le projet ProDigiT (transformation digitale de l'économie togolaise, de juillet 2022 à avril 2028) appuie l'Agence Togo Digital, les startups et la digitalisation des petites entreprises. Ses offres sont des postes de conseil en économie numérique plutôt que de développement : conseiller·ère junior en compétences digitales (Bac+5, juin 2024), stage de trois mois (Bac+3, février 2025). Les avis de vacance de la GIZ au Togo paraissent sur les sites d'emploi togolais ; candidatures par e-mail.",
@@ -1625,7 +1617,6 @@
     "stages.h.bceao": { fr: "BCEAO (agence de Lomé)", en: "BCEAO (Lomé branch)" },
     "stages.h.ancy": { fr: "ANCy : Agence Nationale de la Cybersécurité", en: "ANCy: National Cybersecurity Agency" },
     "stages.link.coris": { fr: "Carrière Coris Bank International", en: "Coris Bank International careers" },
-    "stages.h.pal": { fr: "Port Autonome de Lomé (PAL)", en: "Autonomous Port of Lomé (PAL)" },
     "stages.h.giz": { fr: "GIZ Togo : projet ProDigiT", en: "GIZ Togo: ProDigiT project" },
     "eco.h.tcc": { fr: "Tech Campus Clubs (TCC)", en: "Tech Campus Clubs (TCC)" },
     "eco.h.mlsa": { fr: "MSA Togo : Microsoft Student Ambassadors", en: "MSA Togo: Microsoft Student Ambassadors" },
