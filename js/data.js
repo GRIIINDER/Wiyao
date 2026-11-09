@@ -5062,30 +5062,31 @@ const SCHOOLS = {
   "epl": {
     name: "École Nationale Polytechnique (ENP, ex-École Polytechnique de Lomé)",
     nameEn: "National Polytechnic School (ENP, formerly the Lomé Polytechnic School)",
-    ville: ["Lomé"],
+    ville: ["Lomé", "Kara"],
     statut: "public",
     agree: true,
-    agreeNote: "Établissement public n°13 sur la liste officielle des établissements d'enseignement supérieur accrédités pour l'année académique 2026-2027 (edusup.gouv.tg, publiée le 24 juillet 2026). L'ENP a remplacé l'École Polytechnique de Lomé (EPL) en juillet 2026 (source : Togonews/AllAfrica, 23 juillet 2026) : les informations ci-dessous (frais, concours) datent de l'ère EPL et restent à recouper auprès de l'établissement.", agreeNoteEn: "Public institution no. 13 on the official list of accredited higher-education institutions for the 2026-2027 academic year (edusup.gouv.tg, published July 24, 2026). The ENP replaced the Lomé Polytechnic School (EPL) in July 2026 (source: Togonews/AllAfrica, July 23, 2026): the information below (fees, entrance exam) dates from the EPL era and still needs to be cross-checked with the school.",
-    niveaux: ["Licence Fondamentale", "Licence Professionnelle", "Master", "Diplôme d'Ingénieur"],
-    niveauxEn: ["General bachelor's", "Professional bachelor's", "Master's", "Engineering degree"],
-    filieres: ["Informatique et Systèmes", "Intelligence Artificielle & Big Data", "Génie Logiciel", "Systèmes et Réseaux Informatiques"],
-    filieresEn: ["Computer Science and Systems", "Artificial Intelligence & Big Data", "Software Engineering", "Computer Systems and Networks"],
-    duree: null,
-    admission: "Concours d'entrée post-Bac (Bac C, D, E scientifique pour la licence fondamentale)", admissionEn: "Post-Bac entrance exam (science Bac C, D, E for the general bachelor's)",
-    frais: "404 000 FCFA/an (étudiants togolais, inscription incluse) · 514 000 (salariés) · 754 000 (étrangers). Les 20% premiers au concours d'entrée ne paient que 50 000 FCFA de frais pédagogiques, le reste pris en charge par l'établissement (source : presse togolaise, recoupée sur 3 articles, sous l'ancien nom EPL : à confirmer que ces tarifs s'appliquent toujours sous l'ENP).", fraisEn: "404,000 FCFA/year (Togolese students, registration included) · 514,000 (employees) · 754,000 (foreign students). The top 20% in the entrance exam pay only 50,000 FCFA in tuition, the rest being covered by the school (source: Togolese press, cross-checked across 3 articles, under the former name EPL: still to be confirmed that these fees apply under the ENP).",
-    site: "https://univ-lome.tg/",
-    description: "École nationale d'ingénieurs publique (ENP), qui a remplacé en juillet 2026 l'École Polytechnique de Lomé : elle-même composante de l'Université de Lomé depuis 2022 (fusion de l'ENSI et du Centre Informatique et de Calcul).", descriptionEn: "Public national engineering school (ENP), which replaced the Lomé Polytechnic School (EPL) in July 2026; the latter had been part of the University of Lomé since 2022 (merger of ENSI and the Computing Center).",
+    agreeNote: "Établissement public n°13 sur la liste officielle des établissements d'enseignement supérieur accrédités pour l'année académique 2026-2027 (edusup.gouv.tg, publiée le 24 juillet 2026). L'ENP a remplacé l'École Polytechnique de Lomé (EPL) en juillet 2026 (source : Togonews/AllAfrica, 23 juillet 2026).", agreeNoteEn: "Public institution no. 13 on the official list of accredited higher-education institutions for the 2026-2027 academic year (edusup.gouv.tg, published July 24, 2026). The ENP replaced the Lomé Polytechnic School (EPL) in July 2026 (source: Togonews/AllAfrica, July 23, 2026).",
+    niveaux: ["Technicien Supérieur (Licence Professionnelle, Bac+3)", "Diplôme d'Ingénieur (Bac+5)"],
+    niveauxEn: ["Senior technician (Professional bachelor's, Bac+3)", "Engineering degree (Bac+5)"],
+    filieres: ["Informatique et Systèmes (ingénieur, Lomé)", "Intelligence Artificielle et Big Data (ingénieur, Lomé)", "Sécurité Informatique et Cybersécurité (ingénieur, Kara)", "Génie Logiciel (technicien supérieur, Lomé et Kara)", "Systèmes et Réseaux Informatiques (technicien supérieur, Lomé)"],
+    filieresEn: ["Computer Science and Systems (engineer, Lomé)", "Artificial Intelligence and Big Data (engineer, Lomé)", "Computer Security and Cybersecurity (engineer, Kara)", "Software Engineering (senior technician, Lomé and Kara)", "Computer Systems and Networks (senior technician, Lomé)"],
+    duree: "Ingénieur : 5 ans (2 ans de classes préparatoires + 3 ans de spécialité) · Technicien supérieur : 3 ans", dureeEn: "Engineer: 5 years (2 preparatory years + 3 years of specialization) · Senior technician: 3 years",
+    admission: "Concours en trois étapes : présélection sur dossier, épreuve écrite (mathématiques, sciences physiques, test psychotechnique) sur le campus choisi, puis classement par ordre de mérite. Parcours ingénieur : bac C, D ou E ; parcours technicien supérieur : bac C, D, E, F1, F2, F3, F4 ou TI. Pour le concours 2026, bac obtenu en 2025 ou 2026. Frais de dossier : 10 000 FCFA.", admissionEn: "Three-step entrance exam: shortlisting on application, a written exam (mathematics, physical sciences, psychotechnical test) on the chosen campus, then ranking by merit. Engineer track: Bac C, D or E; senior technician track: Bac C, D, E, F1, F2, F3, F4 or TI. For the 2026 exam, Bac obtained in 2025 or 2026. Application fee: 10,000 FCFA.",
+    frais: "Pas encore publiés pour l'ENP. Repère : à l'ex-EPL (arrêté de juillet 2022), la Licence coûtait 404 000 FCFA/an pour un étudiant togolais (514 000 pour un salarié, 754 000 hors zone UEMOA) et le parcours ingénieur 604 000 FCFA/an (794 000 pour un salarié) ; les 20 % premiers au concours ne payaient que les frais pédagogiques (50 000 FCFA en Licence, 90 000 en ingénieur). Demande les tarifs à l'ENP avant de t'inscrire.", fraisEn: "Not yet published for the ENP. For reference: at the former EPL (July 2022 decree), the bachelor's cost 404,000 FCFA/year for a Togolese student (514,000 for an employee, 754,000 outside the WAEMU zone) and the engineering track 604,000 FCFA/year (794,000 for an employee); the top 20% in the entrance exam paid only the tuition fees (50,000 FCFA for the bachelor's, 90,000 for the engineering track). Ask the ENP for its fees before enrolling.",
+    site: "https://www.enp.tg/",
+    description: "École publique d'ingénieurs qui a succédé en juillet 2026 à l'École Polytechnique de Lomé (EPL) : ingénieurs (Bac+5) et techniciens supérieurs (Bac+3) en génie civil, électrique, mécanique et énergétique, en informatique, en intelligence artificielle et en logistique, sur deux campus, à Lomé (site du Lycée scientifique) et à Kara (campus nord de l'Université de Kara).", descriptionEn: "Public engineering school that succeeded the Lomé Polytechnic School (EPL) in July 2026: engineers (Bac+5) and senior technicians (Bac+3) in civil, electrical, mechanical and energy engineering, computer science, artificial intelligence and logistics, on two campuses, in Lomé (Lycée scientifique site) and in Kara (north campus of the University of Kara).",
     datesCles: {
       mode: "campagne",
-      note: "Concours écrit annuel réservé aux nouveaux bacheliers, dépôt possible à Lomé, Kara (DAAS) et dans les directions régionales (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong). Annonce officielle du Ministère (août 2026). Candidatures 2026-2027 closes : les dates ci-dessous servent de repère pour la prochaine campagne.", noteEn: "Annual written exam reserved for new high-school graduates, applications accepted in Lomé, Kara (DAAS) and at the regional directorates (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong). Official Ministry announcement (August 2026). 2026-2027 applications closed: the dates below serve as a reference for the next round.",
+      note: "Concours annuel réservé aux bacheliers récents : dossier déposé à Lomé, à Kara (DAAS) ou dans les directions régionales de l'éducation (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong), présélection puis écrit sur le campus choisi. Annonce officielle des ministères (août 2026). Concours 2026-2027 terminé, listes d'admis publiées sur enp.tg : les dates ci-dessous servent de repère pour la prochaine campagne.", noteEn: "Annual exam reserved for recent high-school graduates: application filed in Lomé, in Kara (DAAS) or at the regional education directorates (Tsévié, Atakpamé, Kpalimé, Sokodé, Dapaong), shortlisting, then a written exam on the chosen campus. Official ministries' announcement (August 2026). 2026-2027 exam over, admission lists published on enp.tg: the dates below serve as a reference for the next round.",
       urgent: false,
       ouverture: "17 août 2026", ouvertureEn: "August 17, 2026",
       cloture: "11 septembre 2026, 15h00", clotureEn: "September 11, 2026, 3:00 pm",
       concours: "30 septembre 2026 (présélection sur dossier le 18 septembre)", concoursEn: "September 30, 2026 (shortlisting on application on September 18)",
       resultats: "2 octobre 2026", resultatsEn: "October 2, 2026",
       anneeReference: "2026-2027",
-      aVerifier: true,
-      contact: "enp-togo@enp.tg"
+      aVerifier: false,
+      contact: "enp-togo@enp.tg · Lomé : +228 22 25 66 42 · Kara (DAAS) : +228 26 68 52 28",
+      contactEn: "enp-togo@enp.tg · Lomé: +228 22 25 66 42 · Kara (DAAS): +228 26 68 52 28"
     }
   },
   "iaec": {
@@ -5848,8 +5849,8 @@ const ACADEMIC_TIMELINE = [
     periodeEn: "August – September",
     titre: "Concours d'entrée",
     titreEn: "Entrance exams",
-    description: "Pour les établissements qui en organisent un (universités publiques, grandes écoles comme l'EPL ou l'IAI-Togo) : épreuves écrites, généralement sur cette fenêtre.",
-    descriptionEn: "For institutions that hold one (public universities, top schools like EPL or IAI-Togo): written exams, generally within this window."
+    description: "Pour les établissements qui en organisent un (universités publiques, grandes écoles comme l'ENP (ex-EPL) ou l'IAI-Togo) : épreuves écrites, généralement sur cette fenêtre.",
+    descriptionEn: "For institutions that hold one (public universities, top schools like the ENP (formerly EPL) or IAI-Togo): written exams, generally within this window."
   },
   {
     periode: "Septembre – Octobre",
