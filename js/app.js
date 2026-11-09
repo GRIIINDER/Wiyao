@@ -1652,7 +1652,7 @@
       { url: "ecosysteme.html", category: "Écosystème togolais", categoryEn: "Togolese ecosystem", itemSelector: ".eco-item" },
       { url: "bourses-financement.html", category: "Bourses & financement", categoryEn: "Scholarships & funding", itemSelector: ".eco-item" },
       { url: "stages-emploi.html", category: "Stages & emploi", categoryEn: "Internships & jobs", itemSelector: ".eco-item" },
-      { url: "actualites.html", category: "Actualités", categoryEn: "News", itemSelector: ".timeline-item" },
+      { url: "actualites.html", category: "Actualités", categoryEn: "News", itemSelector: ".actu-card", linkSelector: "a.actu-card-btn" },
       { url: "temoignages.html", category: "Témoignages", categoryEn: "Testimonials", itemSelector: ".eco-item" },
       { url: "faq.html", category: "FAQ", categoryEn: "FAQ", itemSelector: ".faq-item", headingSelector: "summary", linkSelector: null }
     ];
