@@ -3480,19 +3480,19 @@ const COMMUNITY_BY_DOMAIN = {
   "Développement": [
     { name: "GDG Lomé", url: "https://gdg.community.dev/gdg-lome/", note: "Meetups réguliers web, mobile, cloud.", noteEn: "Regular meetups on web, mobile and cloud." },
     { name: "Python Togo", url: "https://www.pytogo.org/", note: "Ateliers mensuels, organise le PyDay Togo.", noteEn: "Monthly workshops, organizes PyDay Togo." },
-    { name: "TDEV : Communauté des Développeurs Togolais", nameEn: "TDEV: Togolese Developers Community", url: "https://www.linkedin.com/company/tdev228/", note: "Talks, sessions de code, événement annuel Code Moment.", noteEn: "Talks, coding sessions, annual Code Moment event." },
+    { name: "TDEV : Communauté des Développeurs Togolais", nameEn: "TDEV: Togolese Developers Community", url: "https://www.linkedin.com/company/tdevorg/", note: "Talks, sessions de code, événement annuel Code Moment.", noteEn: "Talks, coding sessions, annual Code Moment event." },
   ],
   "Data & IA": [
     { name: "CoTIA : Communauté Togolaise d'Intelligence Artificielle", nameEn: "CoTIA: Togolese Artificial Intelligence Community", url: "https://cotia.tg/", note: "Organise IndabaX Togo depuis 2021.", noteEn: "Has organized IndabaX Togo since 2021." },
     { name: "Python Togo", url: "https://www.pytogo.org/", note: "Communauté Python, langage central en data/IA.", noteEn: "Python community, the core language for data/AI." },
   ],
   "Sécurité": [
-    { name: "Tech Communities Club (TCC), IAI-Togo", url: "https://www.linkedin.com/company/tech-communities-clubs-iai-togo", note: "Organise le hackathon/CTF Hack & Defend.", noteEn: "Organizes the Hack & Defend hackathon/CTF." },
+    { name: "Tech Campus Clubs (TCC)", url: "https://tcc.hyver.org/campus", note: "Clubs tech étudiants dans 14 établissements togolais ; sessions de cybersécurité (pentesting, « Hacking 101 ») au club IPNET en juillet 2026.", noteEn: "Student tech clubs in 14 Togolese institutions; cybersecurity sessions (pentesting, “Hacking 101”) at the IPNET club in July 2026." },
   ],
   "Produit & Design": [],
   "Infrastructure & DevOps": [
     { name: "GDG Lomé", url: "https://gdg.community.dev/gdg-lome/", note: "Ateliers Google Cloud.", noteEn: "Google Cloud workshops." },
-    { name: "MLSA Togo", url: "https://mlsatogo.vercel.app/", note: "Programme Microsoft (Azure, GitHub) avec parcours de mentorat intégré.", noteEn: "Microsoft program (Azure, GitHub) with a built-in mentorship track." },
+    { name: "MSA Togo", url: "https://mlsatogo.vercel.app/", note: "Programme Microsoft Student Ambassadors (Azure, GitHub), avec un parcours en trois paliers et du mentorat.", noteEn: "Microsoft Student Ambassadors program (Azure, GitHub), with a three-milestone path and mentoring." },
     { name: "Chapitre Togolais d'Internet Society (ISOC Togo)", nameEn: "Togolese Chapter of Internet Society (ISOC Togo)", url: "https://www.internetsociety.tg", note: "Réseaux communautaires locaux pour l'accès à Internet.", noteEn: "Local community networks for Internet access." },
   ],
   "Marketing digital": [
