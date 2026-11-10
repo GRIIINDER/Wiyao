@@ -1230,8 +1230,8 @@
 
     "stages.s2.h2": { fr: "Employeurs qui recrutent des profils tech", en: "Employers hiring tech profiles" },
     "stages.s2.i1.p": {
-      fr: "Agence publique pilotant la digitalisation de l'État togolais. Les postes publiés varient dans le temps et ne sont pas toujours techniques ; la candidature spontanée reste une option pour les profils développeur, UX/UI ou data.",
-      en: "Public agency leading the digitalization of the Togolese State. Posted roles vary over time and aren't always technical; a spontaneous application remains an option for developer, UX/UI or data profiles.",
+      fr: "Agence publique pilotant la digitalisation de l'État togolais. Sa dernière grande vague de recrutement, en juillet 2026 (candidatures jusqu'au 9 juillet), visait surtout des profils tech : développeurs full-stack, front-end, Rust et Odoo, architectes, intégrateurs systèmes, chefs de projet IT, Scrum Masters, UX/UI designer, responsables produit et stagiaires data analyst. Ses offres de novembre 2026 ne sont pas techniques (community manager, formateur, vidéaste…) ; on peut aussi s'inscrire dans sa base de candidats, sur son site.",
+      en: "Public agency leading the digitalization of the Togolese State. Its latest major hiring round, in July 2026 (applications until July 9), mostly targeted tech profiles: full-stack, front-end, Rust and Odoo developers, architects, systems integrators, IT project managers, Scrum Masters, a UX/UI designer, product managers and data analyst interns. Its November 2026 openings are not technical (community manager, trainer, videographer…); you can also sign up to its candidate database on its website.",
     },
     "stages.s2.i2.p": {
       fr: "Coentreprise entre l'État togolais et Asseco Data Systems, opère le CERT national et un SOC. Recrute analystes SOC, consultants et formateurs en cybersécurité.",

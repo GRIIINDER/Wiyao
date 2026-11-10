@@ -2050,7 +2050,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "Poste confirmé à l'Agence Togo Digital (ATD), agence publique pilotant la transformation numérique de l'État", labelEn: "A confirmed role at the Togo Digital Agency (ATD), the public agency leading the State's digital transformation", level: "core" },
+          { label: "Agence Togo Digital (ATD) : deux postes d'architecte d'entreprise ouverts en juillet 2026, dans son pôle Architecture et Conformité", labelEn: "Togo Digital Agency (ATD): two enterprise architect positions opened in July 2026, in its Architecture and Compliance unit", level: "core", resource: { label: "emploitogo.info - L'Agence Togo Digital recrute (juillet 2026)", labelEn: "emploitogo.info - The Togo Digital Agency is hiring (July 2026, in French)", url: "https://www.emploitogo.info/lagence-togo-digital-recrute/" } },
           { label: "Rôle senior, généralement accessible après plusieurs années en architecture logicielle ou conseil IT", labelEn: "A senior role, usually reached after several years in software architecture or IT consulting", level: "option" }
         ]
       }
@@ -2104,7 +2104,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "Poste confirmé à l'Agence Togo Digital (ATD)", labelEn: "A confirmed role at the Togo Digital Agency (ATD)", level: "core" }
+          { label: "Agence Togo Digital (ATD) : deux postes de juriste IT ouverts en juillet 2026", labelEn: "Togo Digital Agency (ATD): two IT lawyer positions opened in July 2026", level: "core", resource: { label: "emploitogo.info - L'Agence Togo Digital recrute (juillet 2026)", labelEn: "emploitogo.info - The Togo Digital Agency is hiring (July 2026, in French)", url: "https://www.emploitogo.info/lagence-togo-digital-recrute/" } }
         ]
       }
     ]
@@ -2160,7 +2160,7 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "Poste confirmé à l'Agence Togo Digital (ATD)", labelEn: "A confirmed role at the Togo Digital Agency (ATD)", level: "core" }
+          { label: "Agence Togo Digital (ATD) : trois postes de Scrum Master ouverts en juillet 2026, dans son pôle Produit", labelEn: "Togo Digital Agency (ATD): three Scrum Master positions opened in July 2026, in its Product unit", level: "core", resource: { label: "emploitogo.info - L'Agence Togo Digital recrute (juillet 2026)", labelEn: "emploitogo.info - The Togo Digital Agency is hiring (July 2026, in French)", url: "https://www.emploitogo.info/lagence-togo-digital-recrute/" } }
         ]
       }
     ]
@@ -2212,7 +2212,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "Poste confirmé à l'Agence Togo Digital (ATD)", labelEn: "A confirmed role at the Togo Digital Agency (ATD)", level: "core" }
+          { label: "Agence Togo Digital (ATD) : trois postes d'intégrateur systèmes ouverts en juillet 2026, dans sa Digital Factory", labelEn: "Togo Digital Agency (ATD): three systems integrator positions opened in July 2026, in its Digital Factory", level: "core", resource: { label: "emploitogo.info - L'Agence Togo Digital recrute (juillet 2026)", labelEn: "emploitogo.info - The Togo Digital Agency is hiring (July 2026, in French)", url: "https://www.emploitogo.info/lagence-togo-digital-recrute/" } }
         ]
       }
     ]
