@@ -92,7 +92,7 @@ const ROLES = {
         title: "9. Écosystème togolais", titleEn: "9. Togolese ecosystem",
         items: [
           { label: "IAI-Togo : licence pro informatique, formation continue", labelEn: "IAI-Togo: professional bachelor's in computer science, continuing education", level: "core", note: "Institut Africain d'Informatique, Lomé.", noteEn: "African Institute of Computer Science (IAI-Togo), Lomé.", resource: { label: "iai-togo.tg", labelEn: "iai-togo.tg", url: "https://new.iai-togo.tg/" } },
-          { label: "ESGIS : licence Informatique Réseaux et Télécommunication", labelEn: "ESGIS: bachelor's in Computer Science, Networks and Telecommunications", level: "core" },
+          { label: "ESGIS : licence Développement d'applications / Génie logiciel, master Architecture des logiciels", labelEn: "ESGIS: bachelor's in Application Development / Software Engineering, master's in Software Architecture", level: "core", resource: { label: "esgis.org - Offres de formation", labelEn: "esgis.org - Programs (in French)", url: "https://www.esgis.org/offres-de-formation/" } },
           { label: "HEST : BTS Développement d'application et master Ingénierie informatique mobile et web", labelEn: "HEST: BTS in Application Development and master's in Mobile and Web Computer Engineering", level: "core", resource: { label: "hest-edu.net - Formations", labelEn: "hest-edu.net - Programs (in French)", url: "https://www.hest-edu.net/formations" } },
           { label: "GDG Lomé et DevFest Lomé : meetups et conférence annuelle", labelEn: "GDG Lomé and DevFest Lomé: meetups and annual conference", level: "core", note: "Communauté Google Developer Groups, ateliers réguliers.", noteEn: "Google Developer Groups community, regular workshops.", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
           { label: "Djanta Tech Hub (Lomé) : espace de coworking ouvert à tous et ateliers pour les porteurs de projets tech", labelEn: "Djanta Tech Hub (Lomé): coworking space open to all and workshops for tech project founders", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
@@ -176,7 +176,7 @@ const ROLES = {
       {
         title: "8. Écosystème togolais", titleEn: "8. Togolese ecosystem",
         items: [
-          { label: "Centre Informatique de Calcul (CIC), Université de Lomé", labelEn: "Computing Center (CIC), University of Lomé", level: "core", note: "Licences pro réseaux/informatique, master sécurité réseaux.", noteEn: "Professional bachelor's in networks/computer science, master's in network security.", resource: { label: "univ-lome.tg", labelEn: "univ-lome.tg", url: "https://univ-lome.tg/course/informatique-et-systemes/" } },
+          { label: "Université de Lomé : licence fondamentale et master professionnel Informatique et systèmes, à l'École nationale polytechnique (ENP, ex-EPL)", labelEn: "University of Lomé: bachelor's and professional master's in Computer Science and Systems, at the National Polytechnic School (ENP, formerly EPL)", level: "core", resource: { label: "univ-lome.tg - Informatique et systèmes", labelEn: "univ-lome.tg - Computer Science and Systems (in French)", url: "https://univ-lome.tg/course/informatique-et-systemes/" } },
           { label: "PyCon Togo : conférence nationale Python", labelEn: "PyCon Togo: national Python conference", level: "core", resource: { label: "pycontg.pytogo.org", labelEn: "pycontg.pytogo.org", url: "https://pycontg.pytogo.org/" } },
           { label: "IAI-Togo (Génie logiciel & systèmes d'information) et HEST (master Génie logiciel et informatique technique)", labelEn: "IAI-Togo (Software Engineering & Information Systems) and HEST (master's in Software Engineering and Technical Computing)", level: "option", resource: { label: "hest-edu.net - Formations", labelEn: "hest-edu.net - Programs (in French)", url: "https://www.hest-edu.net/formations" } }
         ]
@@ -255,7 +255,7 @@ const ROLES = {
         items: [
           { label: "Djanta Tech Hub (Lomé) : espace de coworking ouvert à tous et ateliers pour les porteurs de projets tech", labelEn: "Djanta Tech Hub (Lomé): coworking space open to all and workshops for tech project founders", level: "core", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } },
           { label: "GDG Lomé : ateliers Google Cloud", labelEn: "GDG Lomé: Google Cloud workshops", level: "core", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
-          { label: "DevFest Lomé : conférence annuelle IA et cloud", labelEn: "DevFest Lomé: annual AI and cloud conference", level: "option" }
+          { label: "DevFest Lomé : conférence annuelle de GDG Lomé (IA, cloud et outils Google)", labelEn: "DevFest Lomé: GDG Lomé's annual conference (AI, cloud and Google tools)", level: "option", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } }
         ]
       }
     ]
@@ -343,7 +343,7 @@ const ROLES = {
           { label: "ANCy : Agence Nationale de la Cybersécurité du Togo", labelEn: "ANCy: Togo's National Cybersecurity Agency", level: "core", note: "Autorité nationale, organise des Capture The Flag et campagnes de sensibilisation.", noteEn: "National authority; runs Capture The Flag competitions and awareness campaigns.", resource: { label: "ancy.gouv.tg", labelEn: "ancy.gouv.tg", url: "https://ancy.gouv.tg/" } },
           { label: "CERT.tg : centre national de réponse aux incidents cyber", labelEn: "CERT.tg: national cyber incident response center", level: "core", note: "Opéré par Cyber Defense Africa pour le compte de l'ANCy.", noteEn: "Operated by Cyber Defense Africa on behalf of ANCy.", resource: { label: "cert.tg", labelEn: "cert.tg", url: "https://cert.tg/" } },
           { label: "Lomé Digital School : parcours cybersécurité", labelEn: "Lomé Digital School: cybersecurity track", level: "core", resource: { label: "lomedigitalschool.com", labelEn: "lomedigitalschool.com", url: "https://lomedigitalschool.com/cybersecurite/" } },
-          { label: "Master sécurité des réseaux, Université de Lomé", labelEn: "Master's in network security, University of Lomé", level: "option" }
+          { label: "ESGIS (licence Sécurité informatique, master Systèmes, réseaux et sécurité) et HEST (master Sécurité des systèmes, cybersécurité et protection des données)", labelEn: "ESGIS (bachelor's in IT Security, master's in Systems, Networks and Security) and HEST (master's in Systems Security, Cybersecurity and Data Protection)", level: "option", resource: { label: "esgis.org - Offres de formation", labelEn: "esgis.org - Programs (in French)", url: "https://www.esgis.org/offres-de-formation/" } }
         ]
       }
     ]
@@ -786,7 +786,7 @@ const ROLES = {
       {
         title: "7. Écosystème togolais", titleEn: "7. Togolese ecosystem",
         items: [
-          { label: "IAI-Togo et ESGIS : formations réseaux et systèmes", labelEn: "IAI-Togo and ESGIS: networks and systems training", level: "core" }
+          { label: "IAI-Togo et ESGIS : formations réseaux et systèmes", labelEn: "IAI-Togo and ESGIS: networks and systems training", level: "core", resource: { label: "esgis.org - Offres de formation", labelEn: "esgis.org - Programs (in French)", url: "https://www.esgis.org/offres-de-formation/" } }
         ]
       }
     ]
@@ -843,7 +843,7 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "CUBE et Djanta Tech Hub : accompagnement de projets numériques", labelEn: "CUBE and Djanta Tech Hub: support for digital projects", level: "core" }
+          { label: "CUBE et Djanta Tech Hub : accompagnement de projets numériques", labelEn: "CUBE and Djanta Tech Hub: support for digital projects", level: "core", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
     ]
@@ -911,7 +911,7 @@ const ROLES = {
       {
         title: "7. Écosystème togolais", titleEn: "7. Togolese ecosystem",
         items: [
-          { label: "IAI-Togo, ESGIS et HEST : bases en développement logiciel utiles au test", labelEn: "IAI-Togo, ESGIS and HEST: software development fundamentals useful for testing", level: "core" }
+          { label: "IAI-Togo, ESGIS et HEST : bases en développement logiciel utiles au test", labelEn: "IAI-Togo, ESGIS and HEST: software development fundamentals useful for testing", level: "core", resource: { label: "Fiches écoles WIYAO", labelEn: "WIYAO school profiles", url: "ecoles.html" } }
         ]
       }
     ]
@@ -978,7 +978,7 @@ const ROLES = {
       {
         title: "8. Écosystème togolais", titleEn: "8. Togolese ecosystem",
         items: [
-          { label: "ESGIS, ESSEYI, Université de Lomé (CIC) : formations réseaux et systèmes", labelEn: "ESGIS, ESSEYI, University of Lomé (CIC): networks and systems training", level: "core" }
+          { label: "ESGIS (licence Systèmes et réseaux informatiques), IAI-Togo (Administration des systèmes et réseaux) et HEST (BTS et licence Systèmes et réseaux informatiques)", labelEn: "ESGIS (bachelor's in Computer Systems and Networks), IAI-Togo (Systems and Network Administration) and HEST (BTS and bachelor's in Computer Systems and Networks)", level: "core", resource: { label: "esgis.org - Offres de formation", labelEn: "esgis.org - Programs (in French)", url: "https://www.esgis.org/offres-de-formation/" } }
         ]
       }
     ]
@@ -1037,8 +1037,8 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "ESGIS et ESSEYI : bachelor Informatique Réseaux et Télécommunication", labelEn: "ESGIS and ESSEYI: bachelor's in Computer Science, Networks and Telecommunications", level: "core" },
-          { label: "Yas Togo (ex-Togocom) et Moov Africa Togo : principaux employeurs du secteur télécom", labelEn: "Yas Togo (formerly Togocom) and Moov Africa Togo: the main employers in the telecom sector", level: "option" },
+          { label: "HEST (licence Réseaux et télécommunications) et ESGIS (licence Systèmes et réseaux informatiques, master Systèmes, réseaux et sécurité)", labelEn: "HEST (bachelor's in Networks and Telecommunications) and ESGIS (bachelor's in Computer Systems and Networks, master's in Systems, Networks and Security)", level: "core", resource: { label: "hest-edu.net - Formations", labelEn: "hest-edu.net - Programs (in French)", url: "https://www.hest-edu.net/formations" } },
+          { label: "Yas Togo (ex-Togocom) et Moov Africa Togo : les deux opérateurs mobiles du pays, qui recrutent des profils réseaux, télécoms et systèmes", labelEn: "Yas Togo (formerly Togocom) and Moov Africa Togo: the country's two mobile operators, which hire network, telecom and systems profiles", level: "option", resource: { label: "Stages & emploi (WIYAO)", labelEn: "Internships & jobs (WIYAO)", url: "stages-emploi.html" } },
           { label: "ARCEP : autorité togolaise de régulation des télécommunications", labelEn: "ARCEP: Togo's telecommunications regulatory authority", level: "option", resource: { label: "arcep.tg", labelEn: "arcep.tg", url: "https://arcep.tg/" } }
         ]
       }
@@ -1096,7 +1096,7 @@ const ROLES = {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
           { label: "Rôle senior, généralement accessible après plusieurs années en développement backend/DevOps", labelEn: "A senior role, usually reached after several years in backend development/DevOps", level: "core" },
-          { label: "GDG Lomé : échanges techniques avec la communauté", labelEn: "GDG Lomé: technical exchanges with the community", level: "option" }
+          { label: "GDG Lomé : échanges techniques avec la communauté", labelEn: "GDG Lomé: technical exchanges with the community", level: "option", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } }
         ]
       }
     ]
@@ -1154,7 +1154,7 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "Peu de filières spécialisées ERP au Togo à ce jour : les bases s'acquièrent via IAI-Togo, ESGIS puis en autoformation et en entreprise", labelEn: "Few specialized ERP programs in Togo so far: the basics come from IAI-Togo or ESGIS, then self-study and on-the-job experience", level: "core" }
+          { label: "Aucune des 32 écoles du comparateur n'affiche de filière ERP : les bases (génie logiciel, systèmes d'information) s'acquièrent à l'IAI-Togo ou à ESGIS. L'Agence Togo Digital recrutait trois développeurs Odoo en juillet 2026.", labelEn: "None of the 32 schools in the comparison lists an ERP program: the fundamentals (software engineering, information systems) are taught at IAI-Togo or ESGIS. The Togo Digital Agency was hiring three Odoo developers in July 2026.", level: "core", resource: { label: "emploitogo.info - L'Agence Togo Digital recrute (juillet 2026)", labelEn: "emploitogo.info - The Togo Digital Agency is hiring (July 2026, in French)", url: "https://www.emploitogo.info/lagence-togo-digital-recrute/" } }
         ]
       }
     ]
@@ -1332,7 +1332,7 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "CUBE et Djanta Tech Hub : formations et ateliers pour entrepreneurs du numérique", labelEn: "CUBE and Djanta Tech Hub: training and workshops for digital entrepreneurs", level: "core" }
+          { label: "CUBE et Djanta Tech Hub : formations et ateliers pour entrepreneurs du numérique", labelEn: "CUBE and Djanta Tech Hub: training and workshops for digital entrepreneurs", level: "core", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
     ]
@@ -1389,8 +1389,8 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "CUBE et Djanta Tech Hub : formations et ateliers pour entrepreneurs du numérique", labelEn: "CUBE and Djanta Tech Hub: training and workshops for digital entrepreneurs", level: "core" },
-          { label: "Réseau LinkedIn Local Togo : communauté active pour le networking professionnel", labelEn: "LinkedIn Local Togo network: an active community for professional networking", level: "option" }
+          { label: "CUBE et Djanta Tech Hub : formations et ateliers pour entrepreneurs du numérique", labelEn: "CUBE and Djanta Tech Hub: training and workshops for digital entrepreneurs", level: "core", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } },
+          { label: "LinkedIn Local Togo : réseautage professionnel togolais", labelEn: "LinkedIn Local Togo: Togolese professional networking", level: "option", resource: { label: "LinkedIn Local Togo (Facebook)", labelEn: "LinkedIn Local Togo (Facebook)", url: "https://www.facebook.com/people/Linkedln-Local-Togo/61557712180082/" } }
         ]
       }
     ]
@@ -1443,7 +1443,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "IAI-Togo, ESGIS et HEST : écoles employant des formateurs en informatique", labelEn: "IAI-Togo, ESGIS and HEST: schools that employ computer science trainers", level: "core" },
+          { label: "IAI-Togo, ESGIS et HEST : écoles employant des formateurs en informatique", labelEn: "IAI-Togo, ESGIS and HEST: schools that employ computer science trainers", level: "core", resource: { label: "Fiches écoles WIYAO", labelEn: "WIYAO school profiles", url: "ecoles.html" } },
           { label: "Programme national de formation en IA, programmation et anglais : gros besoin de formateurs à l'échelle nationale", labelEn: "National training program in AI, programming and English: a large nationwide need for trainers", level: "option", resource: { label: "numerique.gouv.tg", labelEn: "numerique.gouv.tg", url: "https://numerique.gouv.tg/projets/programme-national-de-formation-en-intelligence-artificielle-en-programmation-informatique-et-en-anglais" } }
         ]
       }
@@ -1496,7 +1496,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "Djanta Tech Hub et CUBE : contexte institutionnel de la transformation numérique togolaise", labelEn: "Djanta Tech Hub and CUBE: the institutional context of Togo's digital transformation", level: "core" },
+          { label: "Djanta Tech Hub et CUBE : contexte institutionnel de la transformation numérique togolaise", labelEn: "Djanta Tech Hub and CUBE: the institutional context of Togo's digital transformation", level: "core", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } },
           { label: "Agence Togo Digital : pilote de la stratégie de digitalisation de l'État togolais", labelEn: "Togo Digital Agency: leads the Togolese State's digitalization strategy", level: "option", resource: { label: "digital.gouv.tg", labelEn: "digital.gouv.tg", url: "https://digital.gouv.tg" } }
         ]
       }
@@ -1560,7 +1560,7 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "Postes réels observés sur le marché togolais (Data Engineer, apprentissage ou senior)", labelEn: "Actual job openings seen on the Togolese market (Data Engineer, apprenticeship or senior)", level: "core" },
+          { label: "Gozem, née à Lomé, a déjà publié des offres de data engineer (aujourd'hui closes) ; l'Agence Togo Digital recrutait deux stagiaires data analyst en juillet 2026", labelEn: "Gozem, born in Lomé, has posted data engineer openings in the past (now closed); the Togo Digital Agency was hiring two data analyst interns in July 2026", level: "core", resource: { label: "gozem.breezy.hr", labelEn: "gozem.breezy.hr", url: "https://gozem.breezy.hr/" } },
           { label: "PyCon Togo : communauté Python pertinente pour ce métier", labelEn: "PyCon Togo: a Python community relevant to this job", level: "option", resource: { label: "pycontg.pytogo.org", labelEn: "pycontg.pytogo.org", url: "https://pycontg.pytogo.org/" } }
         ]
       }
@@ -1624,8 +1624,8 @@ const ROLES = {
       {
         title: "7. Écosystème togolais", titleEn: "7. Togolese ecosystem",
         items: [
-          { label: "Profils DBA recherchés régulièrement sur les job boards togolais (SQL/NoSQL, big data)", labelEn: "DBA profiles regularly sought on Togolese job boards (SQL/NoSQL, big data)", level: "core" },
-          { label: "ESGIS, Université de Lomé (CIC) : bases en gestion de données", labelEn: "ESGIS, University of Lomé (CIC): data management basics", level: "option" }
+          { label: "BCEAO : poste d'administrateur de bases de données ouvert en 2026, pour son siège de Dakar (candidats ressortissants de l'UMOA, dont le Togo)", labelEn: "BCEAO: database administrator position opened in 2026, for its Dakar headquarters (applicants who are WAMU nationals, including Togo)", level: "core", resource: { label: "emploitogo.info - La BCEAO recrute (2026)", labelEn: "emploitogo.info - BCEAO is hiring (2026, in French)", url: "https://www.emploitogo.info/la-bceao-recrute-28-09-2026/" } },
+          { label: "ESGIS (licence et master Intelligence artificielle et Big Data) et HEST (master Business intelligence et informatique décisionnelle)", labelEn: "ESGIS (bachelor's and master's in Artificial Intelligence and Big Data) and HEST (master's in Business Intelligence and Decision Support Systems)", level: "option", resource: { label: "esgis.org - Offres de formation", labelEn: "esgis.org - Programs (in French)", url: "https://www.esgis.org/offres-de-formation/" } }
         ]
       }
     ]
@@ -1723,8 +1723,8 @@ const ROLES = {
       {
         title: "4. Écosystème togolais", titleEn: "4. Togolese ecosystem",
         items: [
-          { label: "Rôle courant dans les PME togolaises, souvent combiné avec design graphique et gestion des réseaux sociaux", labelEn: "A common role in Togolese SMEs, often combined with graphic design and social media management", level: "core" },
-          { label: "Go Africa Online et Wiijob : plateformes locales où ce profil est recherché", labelEn: "Go Africa Online and Wiijob: local platforms where this profile is in demand", level: "option" }
+          { label: "HEST : master Management de projets Web, Web Strategy", labelEn: "HEST: master's in Web Project Management, Web Strategy", level: "core", resource: { label: "hest-edu.net - Formations", labelEn: "hest-edu.net - Programs (in French)", url: "https://www.hest-edu.net/formations" } },
+          { label: "Go Africa Online et Emploi.tg : sites d'emploi togolais où paraissent des offres informatiques", labelEn: "Go Africa Online and Emploi.tg: Togolese job sites where IT openings appear", level: "option", resource: { label: "goafricaonline.com/tg/emploi", labelEn: "goafricaonline.com/tg/emploi", url: "https://www.goafricaonline.com/tg/emploi" } }
         ]
       }
     ]
@@ -1776,8 +1776,8 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "Catégorie e-commerce active sur les job boards togolais", labelEn: "An active e-commerce category on Togolese job boards", level: "core" },
-          { label: "Djanta Tech Hub et CUBE : incubation de projets numériques", labelEn: "Djanta Tech Hub and CUBE: incubation for digital projects", level: "option" }
+          { label: "Gozem recrute un(e) gestionnaire de comptes e-commerce à Lomé (novembre 2026)", labelEn: "Gozem is hiring an e-commerce account manager in Lomé (November 2026)", level: "core", resource: { label: "gozem.breezy.hr", labelEn: "gozem.breezy.hr", url: "https://gozem.breezy.hr/" } },
+          { label: "Djanta Tech Hub et CUBE : incubation de projets numériques", labelEn: "Djanta Tech Hub and CUBE: incubation for digital projects", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
     ]
@@ -1828,7 +1828,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "Poste recherché régulièrement via des cabinets comme AfricaWork au Togo", labelEn: "A role regularly recruited through firms such as AfricaWork in Togo", level: "core" },
+          { label: "Orabank Togo a recruté un directeur des systèmes d'information à Lomé en 2026 (Bac+4/5 et 10 ans d'expérience)", labelEn: "Orabank Togo hired a Chief Information Officer in Lomé in 2026 (Bac+4/5 and 10 years of experience)", level: "core", resource: { label: "emploitogo.info - Le groupe Orabank recrute (2026)", labelEn: "emploitogo.info - Orabank group is hiring (2026, in French)", url: "https://www.emploitogo.info/le-groupe-orabank-recrute-06-03-2026/" } },
           { label: "Accessible généralement après plusieurs années d'expérience technique", labelEn: "Usually reached after several years of technical experience", level: "option" }
         ]
       }
@@ -1887,8 +1887,8 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "Postes réguliers via AfricaWork Togo (Ingénieur et Technicien en Informatique Industrielle)", labelEn: "Regular openings via AfricaWork Togo (Industrial Computing Engineer and Technician)", level: "core" },
-          { label: "Filière disponible à HEST et à l'Institut Bakpessi (Informatique Industrielle), ainsi qu'à l'ISBIC-ALG (Automatique et Informatique Industrielle)", labelEn: "Program available at HEST and the Bakpessi Institute (Industrial Computing), and at ISBIC-ALG (Automation and Industrial Computing)", level: "option" }
+          { label: "ESGIS : licences Électromécanique, Génie électrique et Mécatronique (pôle Technologies industrielles)", labelEn: "ESGIS: bachelor's in Electromechanics, Electrical Engineering and Mechatronics (Industrial Technologies department)", level: "core", resource: { label: "esgis.org - Offres de formation", labelEn: "esgis.org - Programs (in French)", url: "https://www.esgis.org/offres-de-formation/" } },
+          { label: "Filière disponible à HEST et à l'Institut Bakpessi (Informatique Industrielle), ainsi qu'à l'ISBIC-ALG (Automatique et Informatique Industrielle)", labelEn: "Program available at HEST and the Bakpessi Institute (Industrial Computing), and at ISBIC-ALG (Automation and Industrial Computing)", level: "option", resource: { label: "Fiches écoles WIYAO", labelEn: "WIYAO school profiles", url: "ecoles.html" } }
         ]
       }
     ]
@@ -1940,7 +1940,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "Poste réel recherché au Togo (ex. BostonSolux Togo)", labelEn: "An actual role recruited in Togo (e.g. BostonSolux Togo)", level: "core" },
+          { label: "BCEAO : poste d'analyste sécurité des systèmes d'information ouvert en 2026 (siège de Dakar, candidats de l'UMOA)", labelEn: "BCEAO: information systems security analyst position opened in 2026 (Dakar headquarters, WAMU applicants)", level: "core", resource: { label: "emploitogo.info - La BCEAO recrute (2026)", labelEn: "emploitogo.info - BCEAO is hiring (2026, in French)", url: "https://www.emploitogo.info/la-bceao-recrute-28-09-2026/" } },
           { label: "ANCy et CERT.tg : interlocuteurs institutionnels de référence", labelEn: "ANCy and CERT.tg: the main institutional contacts", level: "core", resource: { label: "cert.tg", labelEn: "cert.tg", url: "https://cert.tg/" } }
         ]
       }
@@ -1998,7 +1998,7 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "Cyber Defense Africa (Togo) : recrute régulièrement des auditeurs SSI", labelEn: "Cyber Defense Africa (Togo): regularly hires IS security auditors", level: "core" },
+          { label: "Cyber Defense Africa (Lomé) : poste de consultant cybersécurité ouvert en novembre 2026 (évaluation de la posture de sécurité, gouvernance)", labelEn: "Cyber Defense Africa (Lomé): cybersecurity consultant position open in November 2026 (security posture assessment, governance)", level: "core", resource: { label: "cda.tg/fr/rejoignez-nous", labelEn: "cda.tg/fr/rejoignez-nous", url: "https://www.cda.tg/fr/rejoignez-nous/" } },
           { label: "ANCy : autorité nationale de référence en cybersécurité", labelEn: "ANCy: the national cybersecurity authority", level: "core", resource: { label: "ancy.gouv.tg", labelEn: "ancy.gouv.tg", url: "https://ancy.gouv.tg/" } }
         ]
       }
@@ -2515,7 +2515,7 @@ const ROLES = {
         title: "5. Écosystème", titleEn: "5. Ecosystem",
         items: [
           { label: "Participation à des meetups et conférences tech", labelEn: "Taking part in tech meetups and conferences", level: "option" },
-          { label: "Communautés locales comme relais (GDG Lomé, PyCon Togo)", labelEn: "Local communities as relays (GDG Lomé, PyCon Togo)", level: "option" },
+          { label: "Communautés locales comme relais (GDG Lomé, PyCon Togo)", labelEn: "Local communities as relays (GDG Lomé, PyCon Togo)", level: "option", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
           { label: "Présence sur les réseaux sociaux orientés développeurs (X, LinkedIn)", labelEn: "Presence on developer-focused social networks (X, LinkedIn)", level: "option" }
         ]
       }
