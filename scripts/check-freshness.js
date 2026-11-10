@@ -364,12 +364,14 @@ async function main() {
 }
 
 // Lancé directement (workflow quotidien) : vérifie tout. Chargé par
-// require() : expose seulement de quoi tester une URL, sans rien lancer.
+// require() : expose seulement de quoi tester une URL, sans rien lancer
+// (gateUrl est aussi utilisé par scripts/watch-sources.js, la veille
+// hebdomadaire, pour ne jamais contacter d'adresse privée ou locale).
 if (require.main === module) {
   main().catch((err) => {
     console.error("Échec du script de vérification :", err);
     process.exit(1);
   });
 } else {
-  module.exports = { checkUrl, storeCookies, cookieHeader, knownQuirk, buildReport };
+  module.exports = { checkUrl, gateUrl, storeCookies, cookieHeader, knownQuirk, buildReport };
 }

@@ -2,6 +2,13 @@
 # régénéré à chaque exécution, publié dans une issue GitHub, jamais commité.
 freshness-report.md
 
+# Générés par scripts/watch-sources.js (GitHub Action weekly-watch.yml) :
+# rapport publié dans une issue GitHub, jamais commité.
+watch-report.md
+watch-summary.txt
+watch-previous.md
+watch-issue.txt
+
 # Photo source du créateur (haute résolution, 800x800, 335 Ko) : la version
 # optimisée pour le web vit dans icons/credo-ahiafor.jpg (320x320, ~11 Ko).
 /credoahiafor.png

@@ -1,0 +1,61 @@
+name: Veille hebdomadaire des sources
+
+# Ne modifie jamais le contenu du site : relève les nouveautés de sources
+# publiques togolaises (flux RSS, pages publiques) et les liste comme
+# pistes à vérifier dans une issue GitHub persistante. Le rapport précédent
+# (corps de l'issue) sert de mémoire : seuls les liens jamais vus sont listés.
+on:
+  schedule:
+    - cron: "0 7 * * 1" # chaque lundi à 07h00 UTC (07h00 à Lomé)
+  workflow_dispatch: {} # déclenchement manuel depuis l'onglet Actions
+
+permissions: {}
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Récupérer le rapport précédent
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="📰 Veille hebdomadaire des sources"
+          ISSUE_NUMBER=$(gh issue list --search "$TITLE in:title" --state open --json number,title \
+            --jq ".[] | select(.title == \"$TITLE\") | .number" | head -n1)
+          echo "$ISSUE_NUMBER" > watch-issue.txt
+          if [ -n "$ISSUE_NUMBER" ]; then
+            gh issue view "$ISSUE_NUMBER" --json body --jq .body > watch-previous.md
+          else
+            : > watch-previous.md
+          fi
+
+      - name: Lancer la veille
+        run: node scripts/watch-sources.js watch-previous.md
+
+      - name: Publier le rapport dans une issue GitHub
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="📰 Veille hebdomadaire des sources"
+          ISSUE_NUMBER=$(cat watch-issue.txt)
+          COUNT=$(cat watch-summary.txt)
+          if [ -n "$ISSUE_NUMBER" ]; then
+            gh issue edit "$ISSUE_NUMBER" --body-file watch-report.md
+            gh issue comment "$ISSUE_NUMBER" --body "Veille du $(date -u +%Y-%m-%d) : $COUNT nouvelle(s) piste(s), voir la description de l'issue."
+          else
+            gh issue create --title "$TITLE" --body-file watch-report.md
+          fi
