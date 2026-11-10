@@ -1147,8 +1147,8 @@
     "actu.t5.date": { fr: "7 mai 2026", en: "May 7, 2026" },
     "actu.t5.h3": { fr: "Inauguration officielle du Djanta Tech Hub", en: "Official opening of Djanta Tech Hub" },
     "actu.t5.p": {
-      fr: 'Incubateur national financé par la Banque mondiale, avec Djanta Academy (formation), Djanta Start\n             (incubation), Nana Tech (entrepreneuriat féminin) et Djanta Lab (recherche). Accompagnera environ\n             72 startups togolaises entre juin 2026 et juillet 2027, et lance le fonds « Start » (subventions\n             moyennes de 15 000 € pour une trentaine d\'entrepreneurs).',
-      en: 'National incubator funded by the World Bank, with Djanta Academy (training), Djanta Start (incubation), Nana Tech (women\'s entrepreneurship) and Djanta Lab (research). Will support around 72 Togolese startups between June 2026 and July 2027, and launches the "Start" fund (average grants of €15,000 for around thirty entrepreneurs).',
+      fr: "Lancement officiel à Lomé, le 7 mai 2026, de cet incubateur national financé par la Banque mondiale (projet d'accélération de la transformation numérique, PANT), en partenariat avec un incubateur panafricain : incubation, accélération et mentorat pour les startups à composante technologique, via deux programmes, Idée-Action (pré-incubation) et Innov'Action (startups existantes). Environ 72 startups togolaises doivent être accompagnées entre juin 2026 et juillet 2027, et le fonds « Start » doit soutenir une trentaine de jeunes entrepreneurs (15 000 € par projet en moyenne).",
+      en: "Official launch in Lomé on May 7, 2026 of this national incubator funded by the World Bank (Digital Transformation Acceleration Project, PANT), in partnership with a pan-African incubator: incubation, acceleration and mentoring for startups with a technology component, through two programs, Idée-Action (pre-incubation) and Innov'Action (existing startups). Around 72 Togolese startups are to be supported between June 2026 and July 2027, and the \"Start\" fund is to back around thirty young entrepreneurs (€15,000 per project on average).",
     },
     "actu.t5.cat": { fr: "Écosystème", en: "Ecosystem" },
     "actu.t6.date": { fr: "26 avril 2026", en: "April 26, 2026" },
@@ -1299,8 +1299,8 @@
     "stages.s3.h2": { fr: "Ressources locales à ne pas négliger", en: "Local resources not to overlook" },
     "stages.s3.i1.h4": { fr: "Hubs et incubateurs", en: "Hubs and incubators" },
     "stages.s3.i1.p": {
-      fr: "Djanta Start, Nunya-Lab, CUBE et les autres incubateurs togolais accompagnent aussi bien la création de projet que l'accès à un premier stage pratique.",
-      en: "Djanta Start, Nunya-Lab, CUBE and other Togolese incubators support both starting a project and landing a first hands-on internship.",
+      fr: "Djanta Tech Hub, Nunya-Lab, CUBE et les autres incubateurs togolais accompagnent aussi bien la création de projet que l'accès à un premier stage pratique.",
+      en: "Djanta Tech Hub, Nunya-Lab, CUBE and other Togolese incubators support both starting a project and landing a first hands-on internship.",
     },
     "stages.s3.i1.link": { fr: "Voir les hubs et incubateurs", en: "See the hubs and incubators" },
     "stages.s3.i2.h4": { fr: "Communautés tech", en: "Tech communities" },
@@ -1453,8 +1453,8 @@
 
     "eco.hubs.h2": { fr: "Hubs et incubateurs", en: "Hubs and incubators" },
     "eco.h1.p": {
-      fr: 'Incubateur national inauguré le 7 mai 2026 (financement Banque mondiale), avec Djanta Academy (formation),\n           Djanta Start (incubation), Nana Tech (entrepreneuriat féminin) et Djanta Lab (recherche). Accompagnera\n           environ 72 startups togolaises entre juin 2026 et juillet 2027, et lance le fonds « Start » (subventions\n           d\'environ 15 000 € pour une trentaine d\'entrepreneurs).',
-      en: 'National incubator opened on May 7, 2026 (World Bank funded), with Djanta Academy (training), Djanta Start (incubation), Nana Tech (women\'s entrepreneurship) and Djanta Lab (research). Will support around 72 Togolese startups between June 2026 and July 2027, and launches the "Start" fund (grants of around €15,000 for about thirty entrepreneurs).',
+      fr: "Hub public de Lomé, inauguré le 7 mai 2026 : espace de coworking ouvert à tous, ateliers pour les porteurs de projets tech, pré-incubation de 3 mois (concours Idée-Action) et incubation de 6 mois (concours Innov'Action) assurées par l'incubateur panafricain CcHUB, en anglais, et micro-subventions du fonds « Start » (une vingtaine de projets retenus), cofinancé par l'Allemagne, le Luxembourg et l'Union européenne via le projet ProDigiT.",
+      en: "Public hub in Lomé, opened on May 7, 2026: a coworking space open to all, workshops for tech project founders, a 3-month pre-incubation (Idée-Action challenge) and a 6-month incubation (Innov'Action challenge) run by the pan-African incubator CcHUB, in English, and micro-grants from the \"Start\" fund (about twenty projects selected), co-funded by Germany, Luxembourg and the European Union through the ProDigiT project.",
     },
     "eco.h2.p": { fr: "Incubateur pour jeunes startups technologiques, inspiré du modèle rwandais K-Lab.", en: "Incubator for young tech startups, inspired by the Rwandan K-Lab model." },
     "eco.h3.p": { fr: "Incubateur formant des jeunes au numérique et à l'entrepreneuriat, en partenariat avec l'OIF.", en: "Incubator training young people in digital skills and entrepreneurship, in partnership with the OIF." },

@@ -95,7 +95,7 @@ const ROLES = {
           { label: "ESGIS : licence Informatique Réseaux et Télécommunication", labelEn: "ESGIS: bachelor's in Computer Science, Networks and Telecommunications", level: "core" },
           { label: "HETEC (HEST) : licence/master développement d'applications", labelEn: "HETEC (HEST): bachelor's/master's in application development", level: "core" },
           { label: "GDG Lomé et DevFest Lomé : meetups et conférence annuelle", labelEn: "GDG Lomé and DevFest Lomé: meetups and annual conference", level: "core", note: "Communauté Google Developer Groups, ateliers réguliers.", noteEn: "Google Developer Groups community, regular workshops.", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
-          { label: "Djanta Academy (Djanta Tech Hub) : formation aux compétences numériques", labelEn: "Djanta Academy (Djanta Tech Hub): digital skills training", level: "option" }
+          { label: "Djanta Tech Hub (Lomé) : espace de coworking ouvert à tous et ateliers pour les porteurs de projets tech", labelEn: "Djanta Tech Hub (Lomé): coworking space open to all and workshops for tech project founders", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
     ]
@@ -253,7 +253,7 @@ const ROLES = {
       {
         title: "8. Écosystème togolais", titleEn: "8. Togolese ecosystem",
         items: [
-          { label: "Djanta Tech Hub / Djanta Academy : formations compétences numériques", labelEn: "Djanta Tech Hub / Djanta Academy: digital skills training", level: "core", note: "Lancé en 2026, avec Djanta Lab pour la recherche et l'innovation.", noteEn: "Launched in 2026, with Djanta Lab for research and innovation.", resource: { label: "togofirst.com", labelEn: "togofirst.com (in French)", url: "https://www.togofirst.com/fr/tic/0805-18921-le-togo-inaugure-le-djanta-tech-hub-nouveau-levier-pour-les-startups-numeriques" } },
+          { label: "Djanta Tech Hub (Lomé) : espace de coworking ouvert à tous et ateliers pour les porteurs de projets tech", labelEn: "Djanta Tech Hub (Lomé): coworking space open to all and workshops for tech project founders", level: "core", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } },
           { label: "GDG Lomé : ateliers Google Cloud", labelEn: "GDG Lomé: Google Cloud workshops", level: "core", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
           { label: "DevFest Lomé : conférence annuelle IA et cloud", labelEn: "DevFest Lomé: annual AI and cloud conference", level: "option" }
         ]
@@ -414,7 +414,7 @@ const ROLES = {
         title: "7. Écosystème togolais", titleEn: "7. Togolese ecosystem",
         items: [
           { label: "PyCon Togo : conférence nationale de la communauté Python", labelEn: "PyCon Togo: national conference of the Python community", level: "core", resource: { label: "pycontg.pytogo.org", labelEn: "pycontg.pytogo.org", url: "https://pycontg.pytogo.org/" } },
-          { label: "Djanta Lab : laboratoire de recherche et innovation", labelEn: "Djanta Lab: research and innovation lab", level: "option" },
+          { label: "Djanta Tech Hub : pré-incubation (3 mois) et incubation (6 mois) de startups tech et IA, assurées par CcHUB, en anglais", labelEn: "Djanta Tech Hub: pre-incubation (3 months) and incubation (6 months) for tech and AI startups, run by CcHUB, in English", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } },
           { label: "HETEC : parcours intelligence artificielle", labelEn: "HETEC: artificial intelligence track", level: "option" }
         ]
       }
@@ -491,7 +491,7 @@ const ROLES = {
         items: [
           { label: "GDG Lomé : ateliers Android/Flutter", labelEn: "GDG Lomé: Android/Flutter workshops", level: "core", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
           { label: "IAI-Togo et HETEC : bootcamps développement mobile", labelEn: "IAI-Togo and HETEC: mobile development bootcamps", level: "option" },
-          { label: "Djanta Start : incubation pour startups mobiles", labelEn: "Djanta Start: incubation for mobile startups", level: "option" }
+          { label: "Djanta Tech Hub : pré-incubation (3 mois) et incubation (6 mois) de startups tech et IA, assurées par CcHUB, en anglais", labelEn: "Djanta Tech Hub: pre-incubation (3 months) and incubation (6 months) for tech and AI startups, run by CcHUB, in English", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
     ]
@@ -558,7 +558,7 @@ const ROLES = {
       {
         title: "7. Écosystème togolais", titleEn: "7. Togolese ecosystem",
         items: [
-          { label: "Djanta Start (Djanta Tech Hub) : accompagnement de startups", labelEn: "Djanta Start (Djanta Tech Hub): startup support", level: "core", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } },
+          { label: "Djanta Tech Hub : pré-incubation et incubation de startups tech (CcHUB) et micro-subventions du fonds Start", labelEn: "Djanta Tech Hub: pre-incubation and incubation for tech startups (CcHUB) and micro-grants from the Start fund", level: "core", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } },
           { label: "CUBE : incubateur et formation entrepreneuriat numérique", labelEn: "CUBE: incubator and digital entrepreneurship training", level: "option", resource: { label: "togofirst.com - L'incubateur CUBE", labelEn: "togofirst.com - The CUBE incubator (in French)", url: "https://www.togofirst.com/fr/tic/0801-15491-togo-l-incubateur-cube-et-l-oif-pour-former-300-jeunes-au-digital-et-a-lentrepreneuriat" } },
           { label: "Agence Togo Digital (ATD) : deux postes de responsable produit ouverts en juillet 2026", labelEn: "Togo Digital Agency (ATD): two product manager positions opened in July 2026", level: "option", resource: { label: "emploitogo.info - L'Agence Togo Digital recrute (juillet 2026)", labelEn: "emploitogo.info - The Togo Digital Agency is hiring (July 2026, in French)", url: "https://www.emploitogo.info/lagence-togo-digital-recrute/" } }
         ]
@@ -722,7 +722,7 @@ const ROLES = {
         title: "10. Écosystème togolais", titleEn: "10. Togolese ecosystem",
         items: [
           { label: "PyCon Togo : conférence nationale Python", labelEn: "PyCon Togo: national Python conference", level: "core", resource: { label: "pycontg.pytogo.org", labelEn: "pycontg.pytogo.org", url: "https://pycontg.pytogo.org/" } },
-          { label: "Djanta Lab : recherche et innovation", labelEn: "Djanta Lab: research and innovation", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
+          { label: "Djanta Tech Hub (Lomé) : espace de coworking ouvert à tous et ateliers pour les porteurs de projets tech", labelEn: "Djanta Tech Hub (Lomé): coworking space open to all and workshops for tech project founders", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
     ]
@@ -1207,7 +1207,7 @@ const ROLES = {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
           { label: "HETEC : parcours technologies numériques et IA", labelEn: "HETEC: digital technologies and AI track", level: "core" },
-          { label: "Djanta Lab : recherche et innovation, domaine émergent au Togo", labelEn: "Djanta Lab: research and innovation, an emerging field in Togo", level: "option" }
+          { label: "Djanta Tech Hub : pré-incubation (3 mois) et incubation (6 mois) de startups tech et IA, assurées par CcHUB, en anglais", labelEn: "Djanta Tech Hub: pre-incubation (3 months) and incubation (6 months) for tech and AI startups, run by CcHUB, in English", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
     ]
@@ -1332,7 +1332,7 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "Djanta Academy et CUBE : formations entrepreneuriat et compétences numériques", labelEn: "Djanta Academy and CUBE: entrepreneurship and digital skills training", level: "core" }
+          { label: "CUBE et Djanta Tech Hub : formations et ateliers pour entrepreneurs du numérique", labelEn: "CUBE and Djanta Tech Hub: training and workshops for digital entrepreneurs", level: "core" }
         ]
       }
     ]
@@ -1389,7 +1389,7 @@ const ROLES = {
       {
         title: "6. Écosystème togolais", titleEn: "6. Togolese ecosystem",
         items: [
-          { label: "Djanta Academy et CUBE : formations numériques accessibles", labelEn: "Djanta Academy and CUBE: accessible digital training", level: "core" },
+          { label: "CUBE et Djanta Tech Hub : formations et ateliers pour entrepreneurs du numérique", labelEn: "CUBE and Djanta Tech Hub: training and workshops for digital entrepreneurs", level: "core" },
           { label: "Réseau LinkedIn Local Togo : communauté active pour le networking professionnel", labelEn: "LinkedIn Local Togo network: an active community for professional networking", level: "option" }
         ]
       }
@@ -1443,7 +1443,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "IAI-Togo, ESGIS, HETEC et Djanta Academy : structures employant des formateurs en informatique", labelEn: "IAI-Togo, ESGIS, HETEC and Djanta Academy: organizations that employ computer science trainers", level: "core" },
+          { label: "IAI-Togo, ESGIS et HETEC : écoles employant des formateurs en informatique", labelEn: "IAI-Togo, ESGIS and HETEC: schools that employ computer science trainers", level: "core" },
           { label: "Programme national de formation en IA, programmation et anglais : gros besoin de formateurs à l'échelle nationale", labelEn: "National training program in AI, programming and English: a large nationwide need for trainers", level: "option", resource: { label: "numerique.gouv.tg", labelEn: "numerique.gouv.tg", url: "https://numerique.gouv.tg/projets/programme-national-de-formation-en-intelligence-artificielle-en-programmation-informatique-et-en-anglais" } }
         ]
       }
@@ -1777,7 +1777,7 @@ const ROLES = {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
           { label: "Catégorie e-commerce active sur les job boards togolais", labelEn: "An active e-commerce category on Togolese job boards", level: "core" },
-          { label: "Djanta Start et CUBE : accompagnement de projets e-commerce", labelEn: "Djanta Start and CUBE: support for e-commerce projects", level: "option" }
+          { label: "Djanta Tech Hub et CUBE : incubation de projets numériques", labelEn: "Djanta Tech Hub and CUBE: incubation for digital projects", level: "option" }
         ]
       }
     ]
