@@ -585,6 +585,8 @@
     "contact.detail.address": { fr: "Adresse", en: "Address" },
     "recherche.categories.aria": { fr: "Catégories du site", en: "Site sections" },
     "backtotop": { fr: "Retour en haut de page", en: "Back to top" },
+    "backtotop.sommaire": { fr: "Remonter au sommaire", en: "Back to the table of contents" },
+    "backtotop.contenu": { fr: "Remonter au début du contenu", en: "Back to the start of the content" },
     "contact.form.subject": { fr: "Ton sujet", en: "Subject" },
     "contact.form.subject.ph": { fr: "Ex : une erreur sur la fiche d'une école", en: "e.g. A mistake on a school's page" },
     "contact.form.message": { fr: "Ton message", en: "Your message" },
@@ -1654,7 +1656,12 @@
   function applyLang(lang) {
     document.documentElement.lang = lang;
 
-    if (titleFr === null) titleFr = document.title;
+    // Un titre posé entre-temps par un autre script (nom d'une roadmap,
+    // app.js) devient la référence : il ne doit pas être écrasé par le
+    // titre générique de la page.
+    if (titleFr === null || (document.title !== titleFr && document.title !== TITLES[titleFr])) {
+      titleFr = document.title;
+    }
     if (Object.prototype.hasOwnProperty.call(TITLES, titleFr)) {
       document.title = lang === "en" ? TITLES[titleFr] : titleFr;
     }
@@ -1711,6 +1718,13 @@
     const entry = PAGE_CONTENT[key];
     return entry ? entry[lang === "en" ? "en" : "fr"] : null;
   };
+
+  // En anglais, la page est traduite dès maintenant : ce script est le
+  // premier de la fin de page, tout le HTML est déjà là. lang-boot.js l'a
+  // masquée en attendant ; on la révèle (2026-11-10). La passe de
+  // DOMContentLoaded traduit ensuite ce que les autres scripts ont ajouté.
+  if (getLang() === "en") applyLang("en");
+  document.documentElement.classList.remove("i18n-pending");
 
   document.addEventListener("DOMContentLoaded", () => {
     initLangSwitch();

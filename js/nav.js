@@ -472,21 +472,37 @@
   var link = document.createElement("a");
   link.className = "cta-float";
   link.href = "test-orientation.html";
+  // i18n.js est chargé avant ce script : le bouton naît dans la langue
+  // affichée, sans passer par le français (2026-11-10).
+  var label = (window.wiyaoText && window.wiyaoText("header.cta", document.documentElement.lang === "en" ? "en" : "fr")) ||
+    "Faire le test d'orientation";
   link.innerHTML =
-    '<span class="cta-float-label" data-i18n-key="header.cta">Faire le test d\'orientation</span>' +
+    '<span class="cta-float-label" data-i18n-key="header.cta">' + label + "</span>" +
     '<span class="cta-float-arrow" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>';
   document.body.appendChild(link);
 })();
 
 // Bouton retour en haut - WIYAO
+// Chaque page s'ouvre sur une introduction plein écran : remonter tout en
+// haut obligeait à refaire défiler un écran entier pour retrouver le contenu.
+// Le bouton remonte donc au sommaire de la page s'il y en a un, sinon au
+// début du contenu, juste sous l'introduction et le bandeau défilant
+// (2026-11-10). L'en-tête, collé en haut, reste accessible.
 (function () {
   "use strict";
+
+  var main = document.querySelector("main");
+  var marquee = main && main.querySelector(".marquee");
+  var target = (main && main.querySelector(":scope > .eco-jump-nav")) || (marquee && marquee.nextElementSibling);
+  var key = target && target.matches(".eco-jump-nav") ? "backtotop.sommaire" : target ? "backtotop.contenu" : "backtotop";
+  var lang = document.documentElement.lang === "en" ? "en" : "fr";
+  var fallback = { "backtotop.sommaire": "Remonter au sommaire", "backtotop.contenu": "Remonter au début du contenu", backtotop: "Retour en haut de page" };
 
   var button = document.createElement("button");
   button.className = "back-to-top";
   button.type = "button";
-  button.setAttribute("aria-label", "Retour en haut de page");
-  button.setAttribute("data-i18n-aria-label", "backtotop");
+  button.setAttribute("aria-label", (window.wiyaoText && window.wiyaoText(key, lang)) || fallback[key]);
+  button.setAttribute("data-i18n-aria-label", key);
   button.innerHTML =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>';
   document.body.appendChild(button);
@@ -500,7 +516,16 @@
 
   button.addEventListener("click", function () {
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    if (!target) {
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      return;
+    }
+    // La marge de défilement globale (scroll-padding-top) garde la cible
+    // sous l'en-tête collé ; le focus suit, pour le clavier et les
+    // lecteurs d'écran.
+    target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
   });
 })();
 

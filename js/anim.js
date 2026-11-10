@@ -102,8 +102,26 @@
         cleanups.push(function () { target.removeEventListener(type, fn, opts); });
       }
 
+      // Sur un réseau lent, les scripts arrivent plusieurs secondes après
+      // l'affichage de la page : l'en-tête et l'introduction ont déjà été
+      // lus. Les masquer pour les faire revenir les ferait clignoter
+      // (constaté le 2026-11-10) : passé ce délai, ce qui est déjà à l'écran
+      // reste tel quel, seul ce qui arrive au défilement est animé. Repère :
+      // le premier affichage mesuré par le navigateur (first-contentful-
+      // paint) ; sans cette mesure, l'heure depuis le début du chargement.
+      var late = false;
+      try {
+        var types = window.PerformanceObserver && PerformanceObserver.supportedEntryTypes;
+        if (types && types.indexOf("paint") !== -1) {
+          var fcp = performance.getEntriesByName("first-contentful-paint")[0];
+          late = !!fcp && performance.now() - fcp.startTime > 500;
+        } else {
+          late = performance.now() > 1500;
+        }
+      } catch (e) {}
+
       // 1. En-tête au chargement : logo, menus, langue, recherche, test.
-      var head = filter(document.querySelectorAll(
+      var head = late ? [] : filter(document.querySelectorAll(
         ".site-header-top > .brand, nav.site-nav > .nav-more, .header-actions .lang-switch, " +
         ".header-actions .nav-search-icon, .header-actions .header-cta, .header-actions .nav-burger"
       ), isShown);
@@ -120,12 +138,13 @@
       function inIntro(el) {
         return intro.some(function (i) { return i === el || i.contains(el); });
       }
-      cascade(intro, { opacity: 0, y: 22 }, { duration: 0.8, stagger: 0.09, delay: 0.15 });
+      if (!late) cascade(intro, { opacity: 0, y: 22 }, { duration: 0.8, stagger: 0.09, delay: 0.15 });
 
       // 3. Révélations au défilement.
       var units = outermost(filter(document.querySelectorAll(UNITS), function (el) {
         if (!isShown(el) || el.classList.contains("sr-only")) return false;
         if (el.closest("#quiz-section, #quiz-results, #global-search-results")) return false;
+        if (late && inView(el)) return false;
         return !inIntro(el);
       }));
       var pending = new Set(units);

@@ -20,7 +20,8 @@
 <meta name="twitter:title" content="Écoles &amp; universités - WIYAO">
 <meta name="twitter:description" content="Compare les écoles et universités togolaises qui forment à l'informatique et au numérique : filières, niveaux, admission et statut (public, privé, agréé par l'État).">
 <meta name="twitter:image" content="https://wiyao.vercel.app/icons/og/ecoles.png">
-<link rel="stylesheet" href="css/style.css?v=256">
+<link rel="stylesheet" href="css/style.css?v=257">
+<script src="js/lang-boot.js?v=1"></script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#006a4e">
 <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
@@ -113,7 +114,13 @@
     <button type="button" class="marquee-pause" aria-pressed="false" data-i18n-aria-label="marquee.pause" aria-label="Mettre en pause le bandeau défilant"><svg class="ico-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg><svg class="ico-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7 5v14l12-7z"></path></svg></button>
   </div>
 
-  <section class="roadmap-category">
+  <nav class="eco-jump-nav" data-i18n-aria-label="eco.jump.aria" aria-label="Aller à une section">
+    <a href="#liste" data-i18n-key="ecoles.list.h2">Liste des écoles</a>
+    <a href="#bac" data-i18n-key="marquee.ecoles.bac">Série du bac</a>
+    <a href="#lexique" data-i18n-key="marquee.ecoles.lexique">Lexique</a>
+  </nav>
+
+  <section class="roadmap-category" id="liste">
     <div class="filter-group">
       <p class="filter-group-label" data-i18n-key="ecoles.filter.domaine">Domaine</p>
       <div class="domain-filters" id="domaine-filters">
@@ -261,12 +268,12 @@
   </div>
 </footer>
 
+<script src="js/i18n.js?v=171"></script>
 <script src="js/data.js?v=81"></script>
 <script src="js/app.js?v=77"></script>
-<script src="js/nav.js?v=26"></script>
+<script src="js/nav.js?v=27"></script>
 <script src="js/assistant.js?v=4"></script>
-<script src="js/i18n.js?v=170"></script>
 <script src="js/vendor/gsap.min.js?v=3150"></script>
-<script src="js/anim.js?v=6"></script>
+<script src="js/anim.js?v=7"></script>
 </body>
 </html>

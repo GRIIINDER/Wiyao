@@ -1,4 +1,4 @@
-const CACHE_NAME = "wiyao-v450";
+const CACHE_NAME = "wiyao-v451";
 
 const PRECACHE_URLS = [
   "index.html",
@@ -26,6 +26,7 @@ const PRECACHE_URLS = [
   "js/nav.js",
   "js/assistant.js",
   "js/i18n.js",
+  "js/lang-boot.js",
   "js/vendor/gsap.min.js",
   "js/anim.js",
   "manifest.json",
@@ -77,6 +78,12 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // Hors ligne, un fichier versionné (style.css?v=256, app.js?v=77…) absent
+  // du cache retombe sur sa copie précachée sans version : PRECACHE_URLS
+  // n'a pas les ?v=, et juste après une mise à jour du service worker le
+  // cache ne contient qu'elles, d'où des pages hors ligne sans CSS ni
+  // JavaScript (constaté le 2026-11-10). Avec réseau, rien ne change : la
+  // version exacte est toujours demandée.
   event.respondWith(
     caches.match(request).then((cached) => {
       const network = fetch(request)
@@ -87,7 +94,7 @@ self.addEventListener("fetch", (event) => {
           }
           return response;
         })
-        .catch(() => cached);
+        .catch(() => cached || (url.search ? caches.match(request, { ignoreSearch: true }) : undefined));
       return cached || network;
     })
   );
