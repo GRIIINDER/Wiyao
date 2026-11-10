@@ -662,6 +662,19 @@
     return band;
   }
 
+  // Partage sur WhatsApp (plan marketing, 2026-11-10) : un simple lien wa.me
+  // qui ouvre WhatsApp avec un message prêt à envoyer. Rien n'est collecté.
+  const SITE_URL = "https://wiyao.vercel.app/";
+  function whatsappLink(text, url, label, className) {
+    const a = document.createElement("a");
+    a.className = className || "btn btn-share";
+    a.href = "https://wa.me/?text=" + encodeURIComponent(text + "\n" + url);
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.innerHTML = icon("share") + "<span>" + escapeHtml(label) + "</span>";
+    return a;
+  }
+
   // Crée ou met à jour une balise du <head> : <link rel="key"> ou <meta name="key">.
   function setHeadTag(tag, key, attrs) {
     const selector = tag === "link" ? `link[rel="${key}"]` : `meta[name="${key}"]`;
@@ -697,7 +710,7 @@
     // (adresse canonique propre et description tirée de son sous-titre).
     setHeadTag("link", "canonical", {
       rel: "canonical",
-      href: "https://wiyao.vercel.app/roadmap.html?id=" + encodeURIComponent(id),
+      href: SITE_URL + "roadmap.html?id=" + encodeURIComponent(id),
     });
     if (tField(rm, "subtitle")) {
       setHeadTag("meta", "description", { name: "description", content: tField(rm, "subtitle") });
@@ -849,6 +862,25 @@
     container.appendChild(track);
     updateGlobal();
 
+    // Partage : après la lecture, pas dans l'en-tête, qui doit tenir dans le
+    // premier écran sur mobile.
+    const share = document.createElement("div");
+    share.className = "roadmap-share";
+    const shareIntro = document.createElement("p");
+    shareIntro.textContent = isEn
+      ? "Someone around you is still hesitating? Send them this roadmap."
+      : "Quelqu'un autour de toi hésite encore ? Envoie-lui cette roadmap.";
+    share.appendChild(shareIntro);
+    const rmTitle = tField(rm, "title");
+    share.appendChild(whatsappLink(
+      isEn
+        ? `Check out the “${rmTitle}” roadmap on WIYAO, the free guide to tech studies and careers in Togo:`
+        : `Regarde la roadmap « ${rmTitle} » sur WIYAO, le guide gratuit des études et des métiers de la tech au Togo :`,
+      SITE_URL + "roadmap.html?id=" + encodeURIComponent(id),
+      isEn ? "Share on WhatsApp" : "Partager sur WhatsApp"
+    ));
+    container.appendChild(share);
+
     const communitySection = buildCommunitySection(rm);
     if (communitySection) container.appendChild(communitySection);
 
@@ -907,6 +939,9 @@
   function buildSchoolCard(id, school) {
     const card = document.createElement("div");
     card.className = "card school-card";
+    // Adresse directe de la fiche (ecoles.html#ecole-<id>), utilisée par le
+    // partage sur WhatsApp.
+    card.id = "ecole-" + id;
     // Recherche dans les deux langues : un nom de filière tapé en anglais
     // trouve aussi l'école.
     card.dataset.title = (school.name + " " + (school.nameEn || "") + " " + school.filieres.join(" ") + " " + (school.filieresEn || []).join(" ")).toLowerCase();
@@ -973,6 +1008,20 @@
       body.appendChild(link);
     }
 
+    // Partage de la fiche, dans le détail pour garder les fiches compactes.
+    const isEn = currentLang() === "en";
+    const schoolName = tField(school, "name");
+    const share = whatsappLink(
+      isEn
+        ? `${schoolName} on WIYAO, the comparison of tech schools in Togo: programs, admission, duration and fees:`
+        : `${schoolName} sur WIYAO, le comparateur des écoles tech du Togo : filières, admission, durée et frais :`,
+      SITE_URL + "ecoles.html#ecole-" + encodeURIComponent(id),
+      isEn ? "Share this school on WhatsApp" : "Partager cette fiche sur WhatsApp",
+      "school-link school-share"
+    );
+    const detailsBody = body.querySelector(".school-details-body");
+    (detailsBody || body).appendChild(share);
+
     return card;
   }
 
@@ -980,6 +1029,25 @@
     const grid = document.getElementById("school-grid");
     if (!grid || typeof SCHOOLS === "undefined") return;
     Object.keys(SCHOOLS).forEach((id) => grid.appendChild(buildSchoolCard(id, SCHOOLS[id])));
+
+    // Arrivée par un lien direct vers une fiche : elle s'ouvre et vient à
+    // l'écran (le navigateur ne peut pas y sauter seul, les fiches sont
+    // construites après le chargement).
+    const hash = window.location.hash.slice(1);
+    if (/^ecole-[a-z0-9-]+$/.test(hash)) {
+      const target = document.getElementById(hash);
+      if (target) {
+        const details = target.querySelector("details");
+        if (details) details.open = true;
+        const goTo = () => target.scrollIntoView({ block: "start" });
+        requestAnimationFrame(goTo);
+        // Encore une fois au chargement complet : polices et introduction
+        // animée décalent la page entre-temps.
+        if (document.readyState !== "complete") {
+          window.addEventListener("load", () => window.setTimeout(goTo, 0), { once: true });
+        }
+      }
+    }
   }
 
   function applySchoolFilters() {
@@ -1326,10 +1394,26 @@
     html += `
       <h3 class="quiz-scores-title">${isEn ? "Breakdown of your answers" : "Répartition de tes réponses"}</h3>
       <div class="quiz-scores"></div>
-      <button class="btn" id="quiz-restart" type="button">${isEn ? "Retake the test" : "Refaire le test"}</button>
+      <div class="quiz-actions" id="quiz-actions">
+        <button class="btn" id="quiz-restart" type="button">${isEn ? "Retake the test" : "Refaire le test"}</button>
+      </div>
     `;
 
     resultsSection.innerHTML = html;
+
+    // Partage du résultat : le domaine seul, et l'adresse du test (pas les
+    // réponses, qui ne quittent jamais le navigateur).
+    const quizActions = document.getElementById("quiz-actions");
+    if (quizActions) {
+      const topName = isEn && topMeta.nameEn ? topMeta.nameEn : top;
+      quizActions.insertBefore(whatsappLink(
+        isEn
+          ? `According to WIYAO's orientation test, the field that suits me best is “${topName}”. Take the test too, it's free:`
+          : `D'après le test d'orientation de WIYAO, le domaine qui me correspond le plus est « ${topName} ». Fais le test toi aussi, c'est gratuit :`,
+        SITE_URL + "test-orientation.html",
+        isEn ? "Share my result on WhatsApp" : "Partager mon résultat sur WhatsApp"
+      ), quizActions.firstChild);
+    }
 
     const roleGrid = document.getElementById("quiz-role-grid");
     if (roleGrid) {

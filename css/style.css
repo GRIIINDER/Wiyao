@@ -4573,7 +4573,7 @@ main .hero > p:first-child {
   line-height: 1.45;
 }
 
-:is(main, .faq-layout) > .hero a:not(.btn-primary),
+:is(main, .faq-layout) > .hero a:not(.btn-primary, .btn),
 #roadmap-detail > :is(.breadcrumb, .roadmap-header) a {
   color: var(--rubrique-ink);
   text-decoration: underline;
@@ -5889,6 +5889,50 @@ main > .hero-legal ~ .about-section {
   color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 2px;
+}
+
+/* ── Partage sur WhatsApp (plan marketing, 2026-11-10) : bouton secondaire
+   blanc (introduction de Témoignages, fin d'une roadmap, résultat du test)
+   ou lien texte dans le détail d'une fiche école. */
+.hero .btn-share {
+  margin-top: 28px;
+}
+
+.roadmap-share {
+  margin: 48px 0 0;
+  text-align: center;
+}
+
+.roadmap-share p {
+  margin: 0 auto 16px;
+  max-width: 60ch;
+  font-size: 18px;
+}
+
+.quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.quiz-actions #quiz-restart {
+  margin: 0;
+}
+
+.school-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+@media print {
+  .roadmap-share,
+  .quiz-actions .btn-share {
+    display: none !important;
+  }
 }
 
 /* Réglage système « réduire les animations » : plus de mouvement décoratif

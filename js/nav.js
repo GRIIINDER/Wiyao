@@ -559,3 +559,26 @@
   });
   document.addEventListener("wiyao:langchange", schedule);
 })();
+
+// ---- Liens de partage WhatsApp écrits dans le HTML (plan marketing,
+// 2026-11-10 ; page Témoignages). Le message suit la langue affichée :
+// data-share-text est une clé de i18n.js, data-share-url l'adresse partagée.
+// Sans JavaScript, le message français écrit dans href reste valable. Rien
+// n'est collecté : c'est un simple lien wa.me.
+(function () {
+  function refresh(link) {
+    if (!window.wiyaoText) return;
+    const lang = document.documentElement.lang === "en" ? "en" : "fr";
+    const text = window.wiyaoText(link.dataset.shareText, lang);
+    if (text) link.href = "https://wa.me/?text=" + encodeURIComponent(text + "\n" + link.dataset.shareUrl);
+  }
+  function refreshAll() {
+    document.querySelectorAll("a[data-share-text][data-share-url]").forEach(refresh);
+  }
+  document.addEventListener("click", function (e) {
+    const link = e.target.closest && e.target.closest("a[data-share-text][data-share-url]");
+    if (link) refresh(link);
+  });
+  window.addEventListener("load", refreshAll);
+  document.addEventListener("wiyao:langchange", refreshAll);
+})();

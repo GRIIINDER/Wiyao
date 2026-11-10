@@ -379,6 +379,8 @@
       fr: 'Convaincs tes <span class="hero-accent">parents</span>',
       en: 'Convince your <span class="hero-accent">parents</span>',
     },
+    "share.temoignages.btn": { fr: "Partager avec tes parents sur WhatsApp", en: "Share with your parents on WhatsApp" },
+    "share.temoignages.text": { fr: "La tech, un vrai métier au Togo ? Chiffres sourcés, secteurs qui recrutent et parcours vérifiés de Togolais·es qui y ont fait carrière, sur WIYAO :", en: "Is tech a real career in Togo? Sourced figures, sectors that are hiring and verified stories of Togolese people who built a career in it, on WIYAO:" },
     "temoignages.hero.subtitle": { fr: "Les chiffres du numérique togolais et le parcours de Togolais qui t'ont précédé : de quoi répondre, arguments à l'appui, à l'éternel « et si tu faisais plutôt… ».", en: "The figures behind Togo's digital sector and the journeys of Togolese people who came before you: everything you need to answer, with evidence, the familiar \"why not do something else instead…\"." },
 
     "faq.hero.title": {
