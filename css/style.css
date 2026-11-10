@@ -5891,6 +5891,23 @@ main > .hero-legal ~ .about-section {
   text-decoration-thickness: 2px;
 }
 
+/* ── Liens dans le texte courant (2026-11-10, à la demande de l'utilisateur) :
+   ils avaient la couleur du texte et aucun soulignement, donc invisibles
+   (WCAG 1.4.1). Seuls les liens sans classe d'un paragraphe ou d'une liste
+   sont visés : boutons, cartes, sommaires et liens « site officiel » ont
+   leur propre style. --tk-primary suit le fond : vert sur blanc et dans les
+   cartes, couleur du texte de la bande sur une bande de couleur. */
+main :is(p, li, dd, td) a:not([class]) {
+  color: var(--tk-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main :is(p, li, dd, td) a:not([class]):hover {
+  text-decoration-thickness: 2px;
+}
+
 /* ── Partage sur WhatsApp (plan marketing, 2026-11-10) : bouton secondaire
    blanc (introduction de Témoignages, fin d'une roadmap, résultat du test)
    ou lien texte dans le détail d'une fiche école. */
