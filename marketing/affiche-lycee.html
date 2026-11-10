@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Affiche lycées - WIYAO</title>
+<!--
+  Affiche A4 pour les lycées (page 1) et déroulé d'une intervention de
+  10 minutes en terminale (page 2). Plan marketing, 2026-11-10.
+  Imprimer : marketing/affiche-lycee.pdf (A4, sans marges), produit par
+  Chrome sans interface depuis ce fichier. QR code : scripts/qr-svg.js,
+  relu automatiquement ; le scanner avec un téléphone avant d'imprimer.
+  Couleurs : les 4 du site (vert, jaune, rouge, blanc) et le vert nuit.
+-->
+<style>
+@font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; src: url("../fonts/bricolage-grotesque-variable-latin.woff2") format("woff2"); }
+@font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; src: url("../fonts/bricolage-grotesque-variable-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+1E00-1EFF; }
+@font-face { font-family: "Urbanist"; font-weight: 100 900; src: url("../fonts/urbanist-variable-latin.woff2") format("woff2"); }
+@font-face { font-family: "Urbanist"; font-weight: 100 900; src: url("../fonts/urbanist-variable-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+1E00-1EFF; }
+
+:root {
+  --green: #006a4e;
+  --yellow: #ffce00;
+  --red: #d21034;
+  --white: #ffffff;
+  --ink: #0b3a2c;
+  --muted: #2c5847;
+  --green-soft: #e8f3ee;
+  --display: "Bricolage Grotesque", "Urbanist", sans-serif;
+  --text: "Urbanist", sans-serif;
+}
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--green-soft); }
+body {
+  font-family: var(--text);
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  margin: 10mm auto;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+@media print {
+  html, body { background: var(--white); }
+  .page { margin: 0; page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+}
+
+/* ── Bandes ── */
+.band-top {
+  background: var(--green);
+  color: var(--white);
+  padding: 9mm 14mm 8mm;
+  border-bottom: 0.7mm solid var(--ink);
+}
+.wordmark {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 30pt;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+.tagline {
+  margin-top: 3mm;
+  font-weight: 600;
+  font-size: 13pt;
+}
+.band-bottom {
+  margin-top: auto;
+  background: var(--red);
+  color: var(--white);
+  padding: 5mm 14mm;
+  font-weight: 700;
+  font-size: 12pt;
+  text-align: center;
+  border-top: 0.7mm solid var(--ink);
+}
+
+/* ── Page 1 : affiche ── */
+.poster-body { padding: 11mm 14mm 0; }
+.headline {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 48pt;
+  line-height: 1.02;
+  text-transform: uppercase;
+  margin: 0;
+}
+.headline .hl {
+  display: inline-block;
+  margin-top: 2mm;
+  padding: 0 3mm;
+  background: var(--yellow);
+  border: 0.7mm solid var(--ink);
+  box-shadow: 2mm 2mm 0 var(--ink);
+}
+.lead {
+  margin: 7mm 0 0;
+  font-size: 16pt;
+  font-weight: 500;
+  line-height: 1.35;
+  max-width: 165mm;
+}
+.lead strong { font-weight: 800; }
+
+.scan {
+  display: flex;
+  gap: 10mm;
+  align-items: center;
+  margin-top: 10mm;
+}
+.qr {
+  flex: 0 0 84mm;
+  width: 84mm;
+  height: 84mm;
+  border: 0.7mm solid var(--ink);
+  box-shadow: 2.5mm 2.5mm 0 var(--ink);
+  background: var(--white);
+}
+.qr img { display: block; width: 100%; height: 100%; }
+.scan-text h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 22pt;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0 0 5mm;
+}
+.checks { list-style: none; margin: 0; padding: 0; }
+.checks li {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  font-size: 15pt;
+  font-weight: 700;
+  margin-bottom: 2.5mm;
+}
+.checks .box {
+  flex: 0 0 7mm;
+  width: 7mm;
+  height: 7mm;
+  background: var(--green);
+  border: 0.5mm solid var(--ink);
+  display: grid;
+  place-items: center;
+}
+.checks svg { width: 5mm; height: 5mm; }
+.url {
+  margin-top: 4mm;
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--muted);
+}
+.url b {
+  display: block;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 19pt;
+  color: var(--green);
+}
+
+.next-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 15pt;
+  text-transform: uppercase;
+  margin: 11mm 0 4mm;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 0.6mm solid var(--ink);
+}
+.card {
+  padding: 4.5mm 4mm 5mm;
+  border-right: 0.6mm solid var(--ink);
+}
+.card:last-child { border-right: 0; }
+.card .num {
+  display: inline-grid;
+  place-items: center;
+  width: 8mm;
+  height: 8mm;
+  border: 0.5mm solid var(--ink);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 13pt;
+  margin-bottom: 3mm;
+}
+.card:nth-child(1) .num { background: var(--green); color: var(--white); }
+.card:nth-child(2) .num { background: var(--yellow); color: var(--ink); }
+.card:nth-child(3) .num { background: var(--red); color: var(--white); }
+.card h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 13pt;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: 0 0 2mm;
+}
+.card p { margin: 0; font-size: 11pt; line-height: 1.35; color: var(--muted); font-weight: 500; }
+
+/* ── Page 2 : déroulé ── */
+.guide-body { padding: 8mm 14mm 0; }
+.guide-body h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 22pt;
+  line-height: 1.1;
+  margin: 0 0 3mm;
+}
+.guide-intro { margin: 0 0 4.5mm; font-size: 11.5pt; line-height: 1.4; color: var(--muted); max-width: 170mm; }
+.before {
+  border: 0.6mm solid var(--ink);
+  background: var(--green-soft);
+  padding: 3.5mm 5mm;
+  margin-bottom: 4.5mm;
+}
+.before h2, .steps h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 12.5pt;
+  text-transform: uppercase;
+  margin: 0 0 2mm;
+}
+.before ul { margin: 0; padding-left: 5mm; font-size: 10.5pt; line-height: 1.45; }
+.steps { list-style: none; margin: 0; padding: 0; }
+.step {
+  display: grid;
+  grid-template-columns: 24mm 1fr;
+  gap: 4mm;
+  padding: 2.3mm 0;
+  border-top: 0.4mm solid rgba(11, 58, 44, 0.28);
+}
+.step:first-child { border-top: 0; padding-top: 0; }
+.time {
+  align-self: start;
+  background: var(--yellow);
+  border: 0.5mm solid var(--ink);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 11pt;
+  text-align: center;
+  padding: 1.2mm 0;
+}
+.step h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 12pt;
+  margin: 0 0 1mm;
+}
+.step p { margin: 0; font-size: 10.5pt; line-height: 1.42; }
+.step p + p { margin-top: 1.2mm; }
+.say { font-weight: 600; }
+.guide-foot { margin: 3mm 0 0; font-size: 9.5pt; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- ═══ Page 1 : affiche ═══ -->
+<section class="page">
+  <header class="band-top">
+    <div class="wordmark">WIYAO</div>
+    <div class="tagline">Le guide des études et des métiers de la tech au Togo</div>
+  </header>
+
+  <div class="poster-body">
+    <h1 class="headline">Après le bac,<br><span class="hl">la tech ?</span></h1>
+    <p class="lead">Développement, data et IA, cybersécurité, design, réseaux, marketing digital… <strong>Quel domaine est fait pour toi ?</strong></p>
+
+    <div class="scan">
+      <div class="qr"><img src="qr-test-orientation.svg" alt="QR code vers le test d'orientation de WIYAO"></div>
+      <div class="scan-text">
+        <h2>Scanne et fais le test d'orientation</h2>
+        <ul class="checks">
+          <li><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Gratuit</li>
+          <li><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Sans compte</li>
+          <li><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>14 questions</li>
+        </ul>
+        <div class="url">ou va sur <b>wiyao.vercel.app</b></div>
+      </div>
+    </div>
+
+    <div class="next-title">Ensuite, sur WIYAO</div>
+    <div class="cards">
+      <div class="card">
+        <span class="num">1</span>
+        <h3>32 écoles comparées</h3>
+        <p>Filières, frais, admission et durée des études, école par école.</p>
+      </div>
+      <div class="card">
+        <span class="num">2</span>
+        <h3>Les dates clés</h3>
+        <p>Résultats du bac, inscriptions, concours et rentrée.</p>
+      </div>
+      <div class="card">
+        <span class="num">3</span>
+        <h3>Les bourses</h3>
+        <p>Bourse d'État, bourses des écoles et autres solutions vérifiées.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="band-bottom">Gratuit · sans compte · sans publicité · informations vérifiées et sourcées</footer>
+</section>
+
+<!-- ═══ Page 2 : déroulé de l'intervention ═══ -->
+<section class="page">
+  <header class="band-top">
+    <div class="wordmark">WIYAO</div>
+    <div class="tagline">Kit lycée : déroulé d'une intervention</div>
+  </header>
+
+  <div class="guide-body">
+    <h1>10 minutes en classe de terminale</h1>
+    <p class="guide-intro">De quoi présenter WIYAO devant une classe et faire passer le test d'orientation sur place. Les phrases en gras sont des exemples à dire avec tes propres mots.</p>
+
+    <div class="before">
+      <h2>Avant</h2>
+      <ul>
+        <li>Obtenir l'accord de la direction et du professeur, notamment pour l'usage des téléphones en classe.</li>
+        <li>Imprimer l'affiche (A4, ou A3 pour un tableau d'affichage) et scanner son QR code pour vérifier qu'il ouvre bien le test.</li>
+        <li>Prévoir un téléphone pour deux ou trois élèves si tout le monde n'en a pas.</li>
+      </ul>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <div class="time">0 – 1 min</div>
+        <div>
+          <h3>Accroche</h3>
+          <p class="say">« Qui sait déjà ce qu'il va faire après le bac ? Et qui hésite encore ? »</p>
+          <p>Puis en 30 secondes, pourquoi WIYAO existe : son fondateur, bachelier en 2017, a changé de spécialité et d'école faute d'informations comparables ; WIYAO rassemble ce qu'il aurait voulu savoir.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="time">1 – 2 min</div>
+        <div>
+          <h3>Ce qu'est WIYAO</h3>
+          <p>Un guide gratuit, sans compte et sans publicité : test d'orientation, comparateur de 32 écoles, dates clés, bourses, roadmaps métier, stages et emploi. Chaque information publiée a une source. Rien n'est collecté : les réponses au test restent sur le téléphone.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="time">2 – 7 min</div>
+        <div>
+          <h3>Le test d'orientation</h3>
+          <p>Chacun scanne le QR code et répond aux 14 questions, seul.</p>
+          <p class="say">« Il n'y a pas de bonne réponse : réponds ce que tu aimes vraiment, pas ce qu'on attend de toi. »</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="time">7 – 9 min</div>
+        <div>
+          <h3>Lire son résultat</h3>
+          <p>Le test indique un domaine, des métiers recommandés et des écoles qui correspondent au niveau, à la ville et au budget choisis. Si deux domaines sont proches, le résultat le signale : explorer les deux.</p>
+          <p class="say">« C'est un point de départ, pas un verdict : regarde la roadmap d'un métier avant de t'engager dans une école. »</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="time">9 – 10 min</div>
+        <div>
+          <h3>La suite</h3>
+          <p>Montrer le calendrier type (résultats du bac, inscriptions, concours, rentrée) et la page des bourses. Pour les parents qui doutent, la page « Convaincs tes parents » se partage sur WhatsApp en un geste. Laisser l'affiche au tableau ou au CDI.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="guide-foot">Les élèves ont d'autres questions (série de bac, BTS ou licence, études à l'étranger, ordinateur) ? Les réponses sont dans la FAQ du site : wiyao.vercel.app/faq.html.</p>
+  </div>
+
+  <footer class="band-bottom">wiyao.vercel.app · test d'orientation : wiyao.vercel.app/test-orientation.html</footer>
+</section>
+
+</body>
+</html>
