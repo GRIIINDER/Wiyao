@@ -93,7 +93,7 @@ const ROLES = {
         items: [
           { label: "IAI-Togo : licence pro informatique, formation continue", labelEn: "IAI-Togo: professional bachelor's in computer science, continuing education", level: "core", note: "Institut Africain d'Informatique, Lomé.", noteEn: "African Institute of Computer Science (IAI-Togo), Lomé.", resource: { label: "iai-togo.tg", labelEn: "iai-togo.tg", url: "https://new.iai-togo.tg/" } },
           { label: "ESGIS : licence Informatique Réseaux et Télécommunication", labelEn: "ESGIS: bachelor's in Computer Science, Networks and Telecommunications", level: "core" },
-          { label: "HETEC (HEST) : licence/master développement d'applications", labelEn: "HETEC (HEST): bachelor's/master's in application development", level: "core" },
+          { label: "HEST : BTS Développement d'application et master Ingénierie informatique mobile et web", labelEn: "HEST: BTS in Application Development and master's in Mobile and Web Computer Engineering", level: "core", resource: { label: "hest-edu.net - Formations", labelEn: "hest-edu.net - Programs (in French)", url: "https://www.hest-edu.net/formations" } },
           { label: "GDG Lomé et DevFest Lomé : meetups et conférence annuelle", labelEn: "GDG Lomé and DevFest Lomé: meetups and annual conference", level: "core", note: "Communauté Google Developer Groups, ateliers réguliers.", noteEn: "Google Developer Groups community, regular workshops.", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
           { label: "Djanta Tech Hub (Lomé) : espace de coworking ouvert à tous et ateliers pour les porteurs de projets tech", labelEn: "Djanta Tech Hub (Lomé): coworking space open to all and workshops for tech project founders", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
@@ -178,7 +178,7 @@ const ROLES = {
         items: [
           { label: "Centre Informatique de Calcul (CIC), Université de Lomé", labelEn: "Computing Center (CIC), University of Lomé", level: "core", note: "Licences pro réseaux/informatique, master sécurité réseaux.", noteEn: "Professional bachelor's in networks/computer science, master's in network security.", resource: { label: "univ-lome.tg", labelEn: "univ-lome.tg", url: "https://univ-lome.tg/course/informatique-et-systemes/" } },
           { label: "PyCon Togo : conférence nationale Python", labelEn: "PyCon Togo: national Python conference", level: "core", resource: { label: "pycontg.pytogo.org", labelEn: "pycontg.pytogo.org", url: "https://pycontg.pytogo.org/" } },
-          { label: "IAI-Togo et HETEC : formations backend et bases de données", labelEn: "IAI-Togo and HETEC: backend and database training", level: "option" }
+          { label: "IAI-Togo (Génie logiciel & systèmes d'information) et HEST (master Génie logiciel et informatique technique)", labelEn: "IAI-Togo (Software Engineering & Information Systems) and HEST (master's in Software Engineering and Technical Computing)", level: "option", resource: { label: "hest-edu.net - Formations", labelEn: "hest-edu.net - Programs (in French)", url: "https://www.hest-edu.net/formations" } }
         ]
       }
     ]
@@ -415,7 +415,7 @@ const ROLES = {
         items: [
           { label: "PyCon Togo : conférence nationale de la communauté Python", labelEn: "PyCon Togo: national conference of the Python community", level: "core", resource: { label: "pycontg.pytogo.org", labelEn: "pycontg.pytogo.org", url: "https://pycontg.pytogo.org/" } },
           { label: "Djanta Tech Hub : pré-incubation (3 mois) et incubation (6 mois) de startups tech et IA, assurées par CcHUB, en anglais", labelEn: "Djanta Tech Hub: pre-incubation (3 months) and incubation (6 months) for tech and AI startups, run by CcHUB, in English", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } },
-          { label: "HETEC : parcours intelligence artificielle", labelEn: "HETEC: artificial intelligence track", level: "option" }
+          { label: "HEST : licence Robotique et intelligence artificielle, master Big Data & Data Sciences", labelEn: "HEST: bachelor's in Robotics and Artificial Intelligence, master's in Big Data & Data Science", level: "option", resource: { label: "hest-edu.net - Formations", labelEn: "hest-edu.net - Programs (in French)", url: "https://www.hest-edu.net/formations" } }
         ]
       }
     ]
@@ -490,7 +490,7 @@ const ROLES = {
         title: "8. Écosystème togolais", titleEn: "8. Togolese ecosystem",
         items: [
           { label: "GDG Lomé : ateliers Android/Flutter", labelEn: "GDG Lomé: Android/Flutter workshops", level: "core", resource: { label: "gdg.community.dev/gdg-lome", labelEn: "gdg.community.dev/gdg-lome", url: "https://gdg.community.dev/gdg-lome/" } },
-          { label: "IAI-Togo et HETEC : bootcamps développement mobile", labelEn: "IAI-Togo and HETEC: mobile development bootcamps", level: "option" },
+          { label: "Lomé Digital School : bootcamp Développement web & mobile (12 semaines)", labelEn: "Lomé Digital School: Web & Mobile Development bootcamp (12 weeks)", level: "option", resource: { label: "lomedigitalschool.com", labelEn: "lomedigitalschool.com (in French)", url: "https://lomedigitalschool.com/" } },
           { label: "Djanta Tech Hub : pré-incubation (3 mois) et incubation (6 mois) de startups tech et IA, assurées par CcHUB, en anglais", labelEn: "Djanta Tech Hub: pre-incubation (3 months) and incubation (6 months) for tech and AI startups, run by CcHUB, in English", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
@@ -911,7 +911,7 @@ const ROLES = {
       {
         title: "7. Écosystème togolais", titleEn: "7. Togolese ecosystem",
         items: [
-          { label: "IAI-Togo, ESGIS et HETEC : bases en développement logiciel utiles au test", labelEn: "IAI-Togo, ESGIS and HETEC: software development basics useful for testing", level: "core" }
+          { label: "IAI-Togo, ESGIS et HEST : bases en développement logiciel utiles au test", labelEn: "IAI-Togo, ESGIS and HEST: software development fundamentals useful for testing", level: "core" }
         ]
       }
     ]
@@ -1206,7 +1206,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "HETEC : parcours technologies numériques et IA", labelEn: "HETEC: digital technologies and AI track", level: "core" },
+          { label: "HEST : BTS et licence Informatique industrielle, licences Mécatronique et robotique, Robotique et intelligence artificielle", labelEn: "HEST: BTS and bachelor's in Industrial Computing, bachelor's in Mechatronics and Robotics and in Robotics and Artificial Intelligence", level: "core", resource: { label: "hest-edu.net - Formations", labelEn: "hest-edu.net - Programs (in French)", url: "https://www.hest-edu.net/formations" } },
           { label: "Djanta Tech Hub : pré-incubation (3 mois) et incubation (6 mois) de startups tech et IA, assurées par CcHUB, en anglais", labelEn: "Djanta Tech Hub: pre-incubation (3 months) and incubation (6 months) for tech and AI startups, run by CcHUB, in English", level: "option", resource: { label: "djantatechhub.gouv.tg", labelEn: "djantatechhub.gouv.tg", url: "https://djantatechhub.gouv.tg/" } }
         ]
       }
@@ -1443,7 +1443,7 @@ const ROLES = {
       {
         title: "5. Écosystème togolais", titleEn: "5. Togolese ecosystem",
         items: [
-          { label: "IAI-Togo, ESGIS et HETEC : écoles employant des formateurs en informatique", labelEn: "IAI-Togo, ESGIS and HETEC: schools that employ computer science trainers", level: "core" },
+          { label: "IAI-Togo, ESGIS et HEST : écoles employant des formateurs en informatique", labelEn: "IAI-Togo, ESGIS and HEST: schools that employ computer science trainers", level: "core" },
           { label: "Programme national de formation en IA, programmation et anglais : gros besoin de formateurs à l'échelle nationale", labelEn: "National training program in AI, programming and English: a large nationwide need for trainers", level: "option", resource: { label: "numerique.gouv.tg", labelEn: "numerique.gouv.tg", url: "https://numerique.gouv.tg/projets/programme-national-de-formation-en-intelligence-artificielle-en-programmation-informatique-et-en-anglais" } }
         ]
       }
