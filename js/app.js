@@ -662,6 +662,17 @@
     return band;
   }
 
+  // Crée ou met à jour une balise du <head> : <link rel="key"> ou <meta name="key">.
+  function setHeadTag(tag, key, attrs) {
+    const selector = tag === "link" ? `link[rel="${key}"]` : `meta[name="${key}"]`;
+    let el = document.head.querySelector(selector);
+    if (!el) {
+      el = document.createElement(tag);
+      document.head.appendChild(el);
+    }
+    Object.keys(attrs).forEach((name) => el.setAttribute(name, attrs[name]));
+  }
+
   function renderRoadmap() {
     const container = document.getElementById("roadmap-detail");
     if (!container) return;
@@ -674,6 +685,7 @@
         : null;
 
     if (!rm) {
+      setHeadTag("meta", "robots", { name: "robots", content: "noindex" });
       container.innerHTML = currentLang() === "en"
         ? `<p>Roadmap not found. <a href="index.html">Back to home</a></p>`
         : `<p>Roadmap introuvable. <a href="index.html">Retour à l'accueil</a></p>`;
@@ -681,6 +693,15 @@
     }
 
     document.title = `${tField(rm, "title")} - WIYAO`;
+    // Référencement : chaque roadmap est une page à part entière pour Google
+    // (adresse canonique propre et description tirée de son sous-titre).
+    setHeadTag("link", "canonical", {
+      rel: "canonical",
+      href: "https://wiyao.vercel.app/roadmap.html?id=" + encodeURIComponent(id),
+    });
+    if (tField(rm, "subtitle")) {
+      setHeadTag("meta", "description", { name: "description", content: tField(rm, "subtitle") });
+    }
 
     const total = countItems(rm);
     let progress = loadProgress();

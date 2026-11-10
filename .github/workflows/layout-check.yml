@@ -5,6 +5,8 @@ name: Contrôle de mise en page
 # dans le premier écran avec le bandeau défilant visible, bouton pause du
 # bandeau jamais recouvert, aucun débordement horizontal sur mobile.
 # Aucune dépendance npm : voir scripts/check-layout.js.
+# Vérifie aussi que sitemap.xml liste toutes les pages et les 89 roadmaps
+# (scripts/build-sitemap.js --check).
 on:
   push:
     branches: [main]
@@ -15,6 +17,8 @@ on:
       - "fonts/**"
       - "sw.js"
       - "scripts/check-layout.js"
+      - "scripts/build-sitemap.js"
+      - "sitemap.xml"
       - ".github/workflows/layout-check.yml"
   pull_request:
     paths:
@@ -24,6 +28,8 @@ on:
       - "fonts/**"
       - "sw.js"
       - "scripts/check-layout.js"
+      - "scripts/build-sitemap.js"
+      - "sitemap.xml"
       - ".github/workflows/layout-check.yml"
   workflow_dispatch: {}
 
@@ -49,6 +55,9 @@ jobs:
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: "22"
+
+      - name: Vérifier que le plan du site est à jour
+        run: node scripts/build-sitemap.js --check
 
       - name: Vérifier la mise en page
         run: node scripts/check-layout.js
