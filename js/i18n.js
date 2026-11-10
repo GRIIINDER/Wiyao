@@ -41,11 +41,11 @@
   // Titres d'onglet, repérés par leur texte français (la 404 s'affiche à
   // n'importe quelle adresse). Celui d'une roadmap est posé par app.js.
   const TITLES = {
-    "WIYAO - Le guide qui accompagne ton parcours tech au Togo": "WIYAO - The guide that walks you through your tech path in Togo",
+    "WIYAO - Après le bac, ton guide des études et métiers tech au Togo": "WIYAO - After the Bac, your guide to tech studies and careers in Togo",
     "Roadmaps - WIYAO": "Roadmaps - WIYAO",
     "Test d'orientation - WIYAO": "Orientation test - WIYAO",
     "Écoles & universités - WIYAO": "Schools & universities - WIYAO",
-    "Calendrier des dates clés - WIYAO": "Key dates calendar - WIYAO",
+    "Après le bac : calendrier des dates clés - WIYAO": "After the Bac: key dates calendar - WIYAO",
     "Bourses & financement - WIYAO": "Scholarships & funding - WIYAO",
     "Stages & emploi - WIYAO": "Internships & jobs - WIYAO",
     "Écosystème tech togolais - WIYAO": "Togolese tech ecosystem - WIYAO",
@@ -160,6 +160,7 @@
     "marquee.search.actu": { fr: "Actualités", en: "News" },
     "marquee.search.temoin": { fr: "Témoignages", en: "Testimonials" },
     "marquee.search.faq": { fr: "FAQ", en: "FAQ" },
+    "journey.bac": { fr: "Tu viens d'avoir ton bac ? Résultats, inscriptions, concours et rentrée : les étapes dans l'ordre sont dans le <a href=\"calendrier.html#calendrier-type\">calendrier type</a>.", en: "Just got your Bac? Results, registrations, entrance exams and start of classes: the steps, in order, are in the <a href=\"calendrier.html#calendrier-type\">typical calendar</a>." },
     "hero.guide": { fr: "Première visite ? Découvre en trente secondes <a href=\"about.html\">ce qu'est WIYAO</a>.", en: "First visit? Discover <a href=\"about.html\">what WIYAO is</a> in thirty seconds." },
     "roadmap.print": { fr: "Imprimer / PDF", en: "Print / PDF" },
     "roadmap.reset": { fr: "Réinitialiser la progression", en: "Reset progress" },
@@ -379,6 +380,8 @@
       fr: 'Convaincs tes <span class="hero-accent">parents</span>',
       en: 'Convince your <span class="hero-accent">parents</span>',
     },
+    "share.calendrier.btn": { fr: "Partager sur WhatsApp", en: "Share on WhatsApp" },
+    "share.calendrier.text": { fr: "Tu viens d'avoir ton bac ? Résultats, inscriptions, concours et rentrée : les étapes dans l'ordre, et les dates école par école, sur WIYAO :", en: "Just got your Bac? Results, registrations, entrance exams and start of classes: the steps in order, plus the dates school by school, on WIYAO:" },
     "share.temoignages.btn": { fr: "Partager avec tes parents sur WhatsApp", en: "Share with your parents on WhatsApp" },
     "share.temoignages.text": { fr: "La tech, un vrai métier au Togo ? Chiffres sourcés, secteurs qui recrutent et parcours vérifiés de Togolais·es qui y ont fait carrière, sur WIYAO :", en: "Is tech a real career in Togo? Sourced figures, sectors that are hiring and verified stories of Togolese people who built a career in it, on WIYAO:" },
     "temoignages.hero.subtitle": { fr: "Les chiffres du numérique togolais et le parcours de Togolais qui t'ont précédé : de quoi répondre, arguments à l'appui, à l'éternel « et si tu faisais plutôt… ».", en: "The figures behind Togo's digital sector and the journeys of Togolese people who came before you: everything you need to answer, with evidence, the familiar \"why not do something else instead…\"." },

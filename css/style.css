@@ -5898,6 +5898,20 @@ main > .hero-legal ~ .about-section {
   margin-top: 28px;
 }
 
+/* Calendrier type, adresse à partager après le bac (calendrier.html#calendrier-type). */
+.calendrier-general-intro .btn-share {
+  margin-top: 20px;
+}
+
+/* Accueil : « Tu viens d'avoir ton bac ? » sous l'introduction du parcours
+   (pas dans le premier écran, qui doit laisser voir le bandeau défilant). */
+#parcours > .category-desc + .category-desc {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .roadmap-share {
   margin: 48px 0 0;
   text-align: center;
