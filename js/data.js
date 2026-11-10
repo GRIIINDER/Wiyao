@@ -4772,7 +4772,7 @@ const SCHOOLS = {
     filieresEn: ["Software Engineering", "Systems and Networks", "Multimedia", "Multimedia, Web Technology and Computer Graphics (work-study bachelor's)"],
     duree: "Cycle ITI / Licence Pro : 3 ans, avec stage en 2e et 3e années", dureeEn: "ITI cycle / Professional bachelor's: 3 years, with an internship in years 2 and 3",
     admission: "Concours d'entrée réservé aux BAC II séries C, D, E, F1 ou F2 : présélection sur dossier puis épreuves écrites de Mathématiques (coef. 6), Techniques d'expression (coef. 2) et Anglais (coef. 3).", admissionEn: "Entrance exam reserved for BAC II series C, D, E, F1 or F2: shortlisting on application, then written exams in Mathematics (weight 6), Communication skills (weight 2) and English (weight 3).",
-    frais: "Non communiqué publiquement : seuls les frais annexes sont connus (10 000 FCFA pour l'étude de dossier, concours : 15 000 FCFA/an, assurance : 1 000 FCFA/an). Contacte l'établissement pour le montant de la scolarité.", fraisEn: "Not made public: only the additional fees are known (10,000 FCFA for the application review, entrance exam: 15,000 FCFA/year, insurance: 1,000 FCFA/year). Contact the school for the tuition amount.",
+    frais: "Non communiqué publiquement : seuls les frais annexes sont connus (10 000 FCFA pour l'étude de dossier, concours : 15 000 FCFA/an, assurance : 1 000 FCFA/an). Contacte l'établissement pour le montant de la scolarité (vérifié le 10 novembre 2026).", fraisEn: "Not made public: only the additional fees are known (10,000 FCFA for the application review, entrance exam: 15,000 FCFA/year, insurance: 1,000 FCFA/year). Contact the school for the tuition amount (checked November 10, 2026).",
     site: "https://new.iai-togo.tg/officiel",
     description: "École inter-États d'enseignement supérieur en informatique, présente au Togo depuis 2002, référence historique de la formation informatique dans la sous-région.", descriptionEn: "Inter-state higher-education school in computer science, in Togo since 2002, the historic benchmark for computer science training in the sub-region.",
     datesCles: {
@@ -4863,7 +4863,7 @@ const SCHOOLS = {
     filieresEn: ["Computer and Network Maintenance", "Enterprise Local Network Administration", "Application Developer", "Analyst Programmer", "Software Engineering and Information and Communication Technologies (Master's)"],
     duree: "BT et Licence : 3 ans · Master : 2 ans", dureeEn: "BT and bachelor's: 3 years · Master's: 2 years",
     admission: "BEPC pour le BT · Bac ou BT pour la Licence · Licence Pro pour le Master", admissionEn: "BEPC for the BT · Bac or BT for the bachelor's · Professional bachelor's for the Master's",
-    frais: "Licence Pro (options informatique) : 385 000 FCFA/an (1re-2e année), 450 000 (3e année) + inscription 50 000 FCFA puis 20 000 FCFA/an (source : fiche officielle 2025-2026).", fraisEn: "Professional bachelor's (computer science options): 385,000 FCFA/year (years 1-2), 450,000 (year 3) + registration 50,000 FCFA then 20,000 FCFA/year (source: official 2025-2026 fee sheet).",
+    frais: "Licence Pro (options informatique) : 385 000 FCFA/an (1re-2e année), 450 000 (3e année) + inscription 50 000 FCFA puis 20 000 FCFA/an (source : fiche officielle 2025-2026 ; aucun tarif 2026-2027 publié sur formatec.tg au 10 novembre 2026).", fraisEn: "Professional bachelor's (computer science options): 385,000 FCFA/year (years 1-2), 450,000 (year 3) + registration 50,000 FCFA then 20,000 FCFA/year (source: official 2025-2026 fee sheet; no 2026-2027 rates published on formatec.tg as of November 10, 2026).",
     site: "https://formatec.tg/",
     description: "Institut technique et professionnel fondé en 1996, certifié ISO 9001 depuis 2015.", descriptionEn: "Technical and vocational institute founded in 1996, ISO 9001 certified since 2015.",
     datesCles: {
@@ -4933,7 +4933,7 @@ const SCHOOLS = {
     filieresEn: ["Artificial Intelligence and Big Data", "Computer Systems and Networks", "Software Engineering"],
     duree: "Licence : 3 ans (180 crédits) · Master : 2 ans", dureeEn: "Bachelor's: 3 years (180 credits) · Master's: 2 years",
     admission: "Bac ou équivalent pour l'entrée en L1 ; admission directe en L3 possible avec un BTS pertinent", admissionEn: "Bac or equivalent to enter L1; direct entry into L3 possible with a relevant BTS",
-    frais: "Licence : 35 000 FCFA d'inscription + 485 000 FCFA/an (460 000 en cours du soir) · Master : 50 000 + 650 000 FCFA/an. Paiement en 3 tranches ou 7 mensualités (source : defitech.tg).", fraisEn: "Bachelor's: 35,000 FCFA registration + 485,000 FCFA/year (460,000 for evening classes) · Master's: 50,000 + 650,000 FCFA/year. Payment in 3 installments or 7 monthly payments (source: defitech.tg).",
+    frais: "Licence : 35 000 FCFA d'inscription + 485 000 FCFA/an (460 000 en cours du soir) · Master : 50 000 + 650 000 FCFA/an. Paiement en 3 tranches ou 7 mensualités (source : defitech.tg, consulté le 10 novembre 2026, sans année indiquée).", fraisEn: "Bachelor's: 35,000 FCFA registration + 485,000 FCFA/year (460,000 for evening classes) · Master's: 50,000 + 650,000 FCFA/year. Payment in 3 installments or 7 monthly payments (source: defitech.tg, accessed November 10, 2026, no year stated).",
     site: "https://defitech.tg/",
     description: "« L'école des battants », plus de 20 ans d'expérience, convention avec l'Université de Lomé, forte orientation entrepreneuriat.", descriptionEn: "\"The school of fighters\", more than 20 years of experience, agreement with the University of Lomé, strong focus on entrepreneurship.",
     datesCles: {
@@ -5027,7 +5027,7 @@ const SCHOOLS = {
     filieresEn: ["Information Systems Administrator", "Artificial Intelligence & Big Data", "Digital Marketing & Social Media", "Banking, Finance & Digital", "Purchasing & Logistics"],
     duree: "Licence : 3 ans · Master : 2 ans", dureeEn: "Bachelor's: 3 years · Master's: 2 years",
     admission: "Sur dossier (relevés de Bac, diplômes, lettre de motivation, CV)", admissionEn: "On application (Bac transcripts, diplomas, cover letter, CV)",
-    frais: "Non communiqué publiquement : aucun tarif affiché sur le site officiel au moment de la recherche.", fraisEn: "Not made public: no prices shown on the official website at the time of research.",
+    frais: "Non communiqué publiquement : aucun tarif affiché sur le site officiel (vérifié le 10 novembre 2026).", fraisEn: "Not made public: no prices shown on the official website (checked November 10, 2026).",
     site: "https://ascencia-keyce-togo.fr/",
     description: "Le campus togolais du réseau français Collège de Paris a été rebaptisé Ascencia · Keyce Togo (rebranding confirmé 2026), membre du réseau IUGEE (6 écoles européennes présentes en Afrique). Diplômes présentés comme reconnus en Europe.", descriptionEn: "The Togolese campus of the French Paris College network (Collège de Paris) has been renamed Ascencia · Keyce Togo (rebranding confirmed in 2026), a member of the IUGEE network (6 European schools present in Africa). Degrees presented as recognized in Europe.",
     datesCles: {
@@ -5106,7 +5106,7 @@ const SCHOOLS = {
     filieresEn: ["Software Engineering", "Networks and Telecommunications", "Business Computing", "Web Design, Computer Graphics and Multimedia", "Computer Science and Telecommunications (Master's)"],
     duree: null,
     admission: "Formulaire de demande en ligne", admissionEn: "Online application form",
-    frais: "BTS : 35 000 FCFA d'inscription + 400 000 FCFA/an · Licence : 35 000 FCFA d'inscription + 450 000 FCFA/an (tarif unique, toutes spécialités et années confondues) · Master : 60 000 + 600 000 FCFA/an (source : iaectogo.com/licence/, 2026).", fraisEn: "BTS: 35,000 FCFA registration + 400,000 FCFA/year · Bachelor's: 35,000 FCFA registration + 450,000 FCFA/year (single rate, all specializations and years) · Master's: 60,000 + 600,000 FCFA/year (source: iaectogo.com/licence/, 2026).",
+    frais: "BTS : 35 000 FCFA d'inscription + 400 000 FCFA/an · Licence : 35 000 FCFA d'inscription + 450 000 FCFA/an (tarif unique, toutes spécialités et années confondues) · Master : 60 000 + 600 000 FCFA/an (source : pages BTS, Licence et Master d'iaectogo.com, consultées le 10 novembre 2026, sans année indiquée).", fraisEn: "BTS: 35,000 FCFA registration + 400,000 FCFA/year · Bachelor's: 35,000 FCFA registration + 450,000 FCFA/year (single rate, all specializations and years) · Master's: 60,000 + 600,000 FCFA/year (source: BTS, Bachelor's and Master's pages of iaectogo.com, accessed November 10, 2026, no year stated).",
     site: "https://iaectogo.com/",
     description: "Un des tout premiers établissements privés d'enseignement supérieur du Togo (1986), membre du Groupe BK-Université.", descriptionEn: "One of the very first private higher-education institutions in Togo (1986), a member of the BK University Group (Groupe BK-Université).",
     datesCles: {
@@ -5132,7 +5132,7 @@ const SCHOOLS = {
     admission: "Sur dossier et test de niveau selon la filière et le cycle visé", admissionEn: "On application and placement test depending on the program and level",
     site: "https://www.cifop-togo.org",
     description: "Centre de formation professionnelle fondé en 1992, seule école de ce comparatif présente hors de Lomé/Kara (campus à Sokodé et Bassar). Revendique 99% d'insertion professionnelle dans les 6 mois suivant le diplôme.", descriptionEn: "Vocational training center founded in 1992, the only school in this comparison present outside Lomé/Kara (campuses in Sokodé and Bassar). Claims 99% job placement within 6 months of graduating.",
-    frais: "Non communiqué publiquement : contacte l'établissement directement.", fraisEn: "Not made public: contact the school directly.",
+    frais: "Non communiqué publiquement : la page « Frais de scolarité » du site renvoie au secrétariat (vérifié le 10 novembre 2026). Contacte l'établissement directement.", fraisEn: "Not made public: the website's \"Tuition fees\" page refers you to the administrative office (checked November 10, 2026). Contact the school directly.",
     datesCles: {
       mode: "campagne",
       rentree: "6 octobre 2026 (Licence & BTS 1) · 15 septembre 2026 (BTS 2, BT) · 2-3 novembre 2026 (Master)", rentreeEn: "October 6, 2026 (Bachelor's & BTS year 1) · September 15, 2026 (BTS year 2, BT) · November 2-3, 2026 (Master's)",
@@ -5214,9 +5214,9 @@ const SCHOOLS = {
     filieresEn: ["Computer Maintenance (BTS)"],
     duree: "BTS : 2 ans (référence)", dureeEn: "BTS: 2 years (reference)",
     admission: "Non précisée publiquement : à confirmer directement", admissionEn: "Not stated publicly: to be confirmed directly",
-    frais: "Non communiqué publiquement.", fraisEn: "Not made public.",
-    site: "https://istm.tg/",
-    description: "Institut privé créé en 2010 (Agoè Assiyéyé), plus de 2000 diplômés, offre diversifiée du BTS au Master en gestion, droit, logistique, informatique et télécoms, stages garantis. Seule filière informatique confirmée : la maintenance informatique en BTS (Le Grand Frère, septembre 2025) ; la page Formations du site de l'institut n'en liste aucune. Renseigne-toi auprès de l'établissement.", descriptionEn: "Private institute created in 2010 (Agoè Assiyéyé), more than 2,000 graduates, a wide range of programs from BTS to Master's in management, law, logistics, computer science and telecoms, guaranteed internships. Only IT program confirmed: computer maintenance at BTS level (Le Grand Frère, September 2025); the Programs page of the institute's website lists none. Check with the institution.",
+    frais: "Non communiqué publiquement : le site les dit « abordables » sans donner de montant (vérifié le 10 novembre 2026).", fraisEn: "Not made public: the website calls them \"affordable\" without giving an amount (checked November 10, 2026).",
+    site: null,
+    description: "Institut privé créé en 2010 (Agoè Assiyéyé), plus de 2000 diplômés, offre diversifiée du BTS au Master en gestion, droit, logistique, informatique et télécoms, stages garantis. Seule filière informatique confirmée : la maintenance informatique en BTS (Le Grand Frère, septembre 2025) ; la page Formations du site de l'institut n'en liste aucune. Renseigne-toi auprès de l'établissement. Le site de l'institut n'est pas lié ici : sa page « Admission » affiche une page de jeux d'argent sans rapport avec l'école, avec des liens de connexion vers un autre site (constaté le 10 novembre 2026) ; n'y saisis aucune information.", descriptionEn: "Private institute created in 2010 (Agoè Assiyéyé), more than 2,000 graduates, a wide range of programs from BTS to Master's in management, law, logistics, computer science and telecoms, guaranteed internships. Only IT program confirmed: computer maintenance at BTS level (Le Grand Frère, September 2025); the Programs page of the institute's website lists none. Check with the institution. The institute's website is not linked here: its \"Admission\" page shows a gambling page unrelated to the school, with login links to another website (found on November 10, 2026); do not enter any information there.",
     datesCles: {
       mode: "inconnu",
       note: "Aucun calendrier publié en ligne : contacte l'établissement directement.", noteEn: "No calendar published online: contact the school directly."
@@ -5254,12 +5254,15 @@ const SCHOOLS = {
     filieresEn: ["Artificial Intelligence (bachelor's and master's, launched in 2025)"],
     duree: null,
     admission: "Non précisée publiquement : à confirmer directement", admissionEn: "Not stated publicly: to be confirmed directly",
-    frais: "Non communiqué publiquement.", fraisEn: "Not made public.",
+    frais: "Non communiqué publiquement (vérifié le 10 novembre 2026).", fraisEn: "Not made public (checked November 10, 2026).",
     site: "https://jumau-ita.com/",
     description: "Institut fondé en 2010, membre de l'International Association of Universities (IAU/UNESCO), a lancé des programmes en intelligence artificielle en 2025.", descriptionEn: "Institute founded in 2010, a member of the International Association of Universities (IAU/UNESCO), launched artificial intelligence programs in 2025.",
     datesCles: {
-      mode: "inconnu",
-      note: "Aucun calendrier publié en ligne : contacte l'établissement directement.", noteEn: "No calendar published online: contact the school directly."
+      mode: "campagne",
+      note: "Candidature sur dossier, en ligne ou au service des admissions ; examen d'entrée ou entretien selon le programme ; réponse sous 2 à 4 semaines (page Admission de jumau-ita.com, consultée le 10 novembre 2026, sans année indiquée).", noteEn: "Application on file, online or at the admissions office; entrance exam or interview depending on the program; answer within 2 to 4 weeks (Admission page of jumau-ita.com, accessed November 10, 2026, no year stated).",
+      ouverture: "Juin (session principale) ; février (session de mi-année, certains programmes seulement)", ouvertureEn: "June (main session); February (mid-year session, some programs only)",
+      cloture: "Septembre (session principale) ; mars (session de mi-année)", clotureEn: "September (main session); March (mid-year session)",
+      contact: "+228 90 06 45 00"
     }
   },
   "imast": {
@@ -5274,12 +5277,13 @@ const SCHOOLS = {
     filieresEn: ["Mathematics-Computer Science (Professional bachelor's)"],
     duree: null,
     admission: "Bac requis, dossier : cours du jour et du soir disponibles", admissionEn: "Bac required, application file: day and evening classes available",
-    frais: "Non communiqué publiquement.", fraisEn: "Not made public.",
+    frais: "Non communiqué publiquement (vérifié le 10 novembre 2026).", fraisEn: "Not made public (checked November 10, 2026).",
     site: "https://imast.tg/",
     description: "Institut privé à Agoè-Nyivé, propose aussi une licence en actuariat et des BTS en gestion, commerce et logistique.", descriptionEn: "Private institute in Agoè-Nyivé, also offers a bachelor's in actuarial science and BTS programs in management, trade and logistics.",
     datesCles: {
       mode: "inconnu",
-      note: "Aucun calendrier publié en ligne : contacte l'établissement directement.", noteEn: "No calendar published online: contact the school directly."
+      note: "Aucun calendrier publié : l'inscription se fait sur rendez-vous avec l'administration, qui t'oriente avant l'inscription (imast.tg, consulté le 10 novembre 2026).", noteEn: "No calendar published: you register by appointment with the administration, which advises you before you enroll (imast.tg, accessed November 10, 2026).",
+      contact: "imastagoe@gmail.com · +228 93 83 10 54"
     }
   },
   "ecole-de-finance": {
@@ -5319,7 +5323,7 @@ const SCHOOLS = {
     description: "Fondée en 2012, propose des filières en anglais (Faculty of ICT et Faculty of Sciences), programmes IA/robotique et informatique.", descriptionEn: "Founded in 2012, offers programs taught in English (Faculty of ICT and Faculty of Sciences), AI/robotics and computer science programs.",
     datesCles: {
       mode: "inconnu",
-      note: "Aucun calendrier publié en ligne : contacte l'établissement directement.", noteEn: "No calendar published online: contact the school directly."
+      note: "Admission sur dossier, « au mérite » (page « Admissions Requirement » de cugw.tg, consultée le 10 novembre 2026) ; aucun calendrier publié : contacte l'établissement.", noteEn: "Admission on file, \"on the basis of merit\" (\"Admissions Requirement\" page of cugw.tg, accessed November 10, 2026); no calendar published: contact the school."
     }
   },
   "hest": {
@@ -5362,7 +5366,8 @@ const SCHOOLS = {
     description: "Se présente comme la 1ère école supérieure d'économie numérique d'Afrique subsaharienne francophone, filière IA & Génie Logiciel en partenariat avec l'école d'ingénieurs ESTIA (Biarritz, France), présentiel et à distance.", descriptionEn: "Presents itself as the first school of digital economy in French-speaking sub-Saharan Africa, AI & Software Engineering program in partnership with the ESTIA engineering school (Biarritz, France), on-site and online.",
     datesCles: {
       mode: "inconnu",
-      note: "Aucun calendrier publié en ligne : contacte l'établissement directement.", noteEn: "No calendar published online: contact the school directly."
+      note: "Candidature en ligne sur escen.university/inscription (bulletins, relevé du BAC et pièce d'identité ; séries A, C, D, E, F1 à F4 et G1 à G3 acceptées) ; aucune date de campagne affichée au 10 novembre 2026.", noteEn: "Online application at escen.university/inscription (report cards, BAC transcript and ID; series A, C, D, E, F1 to F4 and G1 to G3 accepted); no application dates shown as of November 10, 2026.",
+      contact: "hello@escen.university · +228 98 01 27 27"
     }
   },
   "lucas": {
@@ -5404,12 +5409,15 @@ const SCHOOLS = {
     filieresEn: ["Cybersecurity", "Information Technology"],
     duree: null,
     admission: "Sur dossier (admission.knowbridge.com), traitement 2 à 4 semaines, 2 programmes maximum par candidature", admissionEn: "On application (admission.knowbridge.com), processed in 2 to 4 weeks, up to 2 programs per application",
-    frais: "Licence : 590 000 FCFA/an + 30 000 FCFA d'inscription + 10 000 FCFA de dossier · Master : 750 000 FCFA/an + 50 000 FCFA d'inscription + 20 000 FCFA de dossier. Paiement en 3 tranches (source : knowbridge.com/pages/fees).", fraisEn: "Bachelor's: 590,000 FCFA/year + 30,000 FCFA registration + 10,000 FCFA application fee · Master's: 750,000 FCFA/year + 50,000 FCFA registration + 20,000 FCFA application fee. Payment in 3 installments (source: knowbridge.com/pages/fees).",
+    frais: "Licence : 590 000 FCFA/an + 30 000 FCFA d'inscription + 10 000 FCFA de dossier · Master : 750 000 FCFA/an + 50 000 FCFA d'inscription + 20 000 FCFA de dossier. Paiement en 3 tranches (tarifs des filières Cybersécurité et Génie des TI ; source : knowbridge.com/pages/fees, consulté le 10 novembre 2026, sans année indiquée).", fraisEn: "Bachelor's: 590,000 FCFA/year + 30,000 FCFA registration + 10,000 FCFA application fee · Master's: 750,000 FCFA/year + 50,000 FCFA registration + 20,000 FCFA application fee. Payment in 3 installments (rates for the Cybersecurity and IT Engineering programs; source: knowbridge.com/pages/fees, accessed November 10, 2026, no year stated).",
     site: "https://www.knowbridge.com/",
     description: "Institut privé fondé à Sokodé, formations en présentiel, à distance et modules flexibles, combine cybersécurité, développement logiciel et intelligence artificielle ; a ouvert un second campus à Lomé (Djidjolé) en juillet 2026 (source : blog officiel knowbridge.com).", descriptionEn: "Private institute founded in Sokodé, on-site, online and flexible modules, combining cybersecurity, software development and artificial intelligence; opened a second campus in Lomé (Djidjolé) in July 2026 (source: official knowbridge.com blog).",
     datesCles: {
-      mode: "inconnu",
-      note: "Aucun calendrier publié en ligne : contacte l'établissement directement (admission.knowbridge.com).", noteEn: "No calendar published online: contact the school directly (admission.knowbridge.com)."
+      mode: "campagne",
+      note: "Admission sur concours pour 2026-2027 (Le Grand Frère, fiche mise à jour le 2 novembre 2026) ; dossier à déposer en ligne après création d'un compte (knowbridge.com/landings/forms). Pour les places encore ouvertes et le prochain calendrier, contacte le secrétariat.", noteEn: "Entrance exam for 2026-2027 (Le Grand Frère, profile updated November 2, 2026); application filed online after creating an account (knowbridge.com/landings/forms). For any places still open and the next calendar, contact the administrative office.",
+      concours: "25 avril et 2 mai 2026 (passés)", concoursEn: "April 25 and May 2, 2026 (past)",
+      anneeReference: "2026-2027",
+      aVerifier: true
     }
   },
   "bakpessi": {
