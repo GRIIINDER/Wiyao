@@ -5969,6 +5969,32 @@ main :is(p, li, dd, td) a:not([class]):hover {
   }
 }
 
+/* « Encore possible aujourd'hui » du Calendrier (2026-11-12) : bloc
+   jaune pâle en tête des dates par école, détaché de la liste. */
+.dates-row.dates-now {
+  margin-bottom: 32px;
+  background: var(--w-yellow-pale);
+}
+
+/* « Tu pars de zéro ? » d'une roadmap (champ debut, 2026-11-12) : encart
+   lisible avant l'étape 1, pas la petite note de l'en-tête. */
+#roadmap-detail .togo-notice.roadmap-start {
+  max-width: none;
+  margin: 40px 0 0;
+  padding: 20px 24px;
+  border: 2px solid var(--w-ink);
+  border-radius: 0;
+  background: var(--w-yellow-pale);
+  color: var(--w-ink);
+  font-size: 16px !important;
+  line-height: 1.55;
+}
+
+#roadmap-detail .roadmap-start p {
+  max-width: 65ch;
+  margin: 0;
+}
+
 /* Anglais choisi : la page reste masquée jusqu'à ce que i18n.js l'ait
    traduite (classe posée par js/lang-boot.js, retirée par i18n.js ou au
    bout de 3,5 s), au lieu d'afficher d'abord le français (2026-11-10). */

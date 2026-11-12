@@ -251,8 +251,8 @@
     },
     "calendrier.section2.title": { fr: "Dates par école", en: "Dates by school" },
     "calendrier.section2.desc": {
-      fr: "Écoles à campagne fixe d'abord, puis celles en admission continue, puis celles sans date publiée.",
-      en: "Fixed-intake schools first, then rolling admissions, then schools with no published date.",
+      fr: "D'abord ce qui reste possible aujourd'hui, puis les écoles avec une date à venir, celles à campagne fixe, celles en admission continue et celles sans date publiée.",
+      en: "First what is still possible today, then schools with an upcoming date, fixed-intake schools, rolling admissions and schools with no published date.",
     },
 
     "bourses.hero.title": {

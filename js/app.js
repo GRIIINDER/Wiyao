@@ -42,7 +42,9 @@
     [/^https:\/\/docs\.python\.org\/fr\//, "https://docs.python.org/"],
     [/^https:\/\/expressjs\.com\/fr\//, "https://expressjs.com/en/"],
     [/^https:\/\/www\.php\.net\/manual\/fr\//, "https://www.php.net/manual/en/"],
-    [/^https:\/\/fr\.khanacademy\.org\/math\/statistics-probability\//, "https://www.khanacademy.org/math/statistics-probability/"]
+    [/^https:\/\/fr\.khanacademy\.org\/math\/statistics-probability\//, "https://www.khanacademy.org/math/statistics-probability/"],
+    [/^https:\/\/fr\.react\.dev\//, "https://react.dev/"],
+    [/^https:\/\/fr\.wordpress\.org\/support\/$/, "https://wordpress.org/documentation/"]
   ];
 
   function localizeUrl(url) {
@@ -770,6 +772,19 @@
     container.appendChild(marquee);
     if (window.wiyaoMarquee) window.wiyaoMarquee(marquee);
 
+    // « Tu pars de zéro ? » (champ debut de data.js, 2026-11-12) : par où
+    // commencer et repère de durée sourcé, avant l'étape 1. Les étapes ne
+    // changent pas de place : la progression est enregistrée par position.
+    if (rm.debut) {
+      const start = document.createElement("div");
+      start.className = "togo-notice roadmap-start";
+      const src = rm.debutSource && safeUrl(rm.debutSource.url);
+      start.innerHTML = `<p>${escapeHtml(tField(rm, "debut"))}${
+        src ? ` <a href="${escapeHtml(src)}" target="_blank" rel="noopener noreferrer">${escapeHtml(tField(rm.debutSource, "label"))}</a>` : ""
+      }</p>`;
+      container.appendChild(start);
+    }
+
     function updateGlobal() {
       const done = (loadProgress().get(id) || []).length;
       const pct = total ? Math.round((done / total) * 100) : 0;
@@ -1117,7 +1132,14 @@
 
     const progressBar = document.getElementById("quiz-progress-bar");
     const progressLabel = document.getElementById("quiz-progress-label");
-    const total = quizFlow.length;
+    // Total annoncé dès le début (14) : avant, le compteur affichait « 1 / 8 »
+    // puis sautait à « 9 / 14 » quand les questions de métier et les
+    // questions pratiques s'ajoutaient (2026-11-12).
+    const roleCount = typeof ROLE_QUESTIONS !== "undefined"
+      ? Math.max(0, ...Object.values(ROLE_QUESTIONS).map((qs) => qs.length))
+      : 0;
+    const practicalCount = QUIZ_QUESTIONS.filter((x) => x.type !== "domain").length;
+    const total = quizFlow.length === quizDomainCount ? quizDomainCount + roleCount + practicalCount : quizFlow.length;
     const q = quizFlow[quizIndex];
 
     if (progressBar) {
@@ -1650,12 +1672,76 @@
     });
   }
 
-  function schoolDatesRank(school) {
+  // Dates complètes (« 18 décembre 2026 ») d'un champ français de data.js.
+  const FR_MONTHS_IDX = { janvier: 0, fevrier: 1, mars: 2, avril: 3, mai: 4, juin: 5, juillet: 6, aout: 7, septembre: 8, octobre: 9, novembre: 10, decembre: 11 };
+  function frenchDates(text) {
+    const t = String(text || "")
+      .replace(/(\d)(?:ᵉʳ|er)(?=\s)/g, "$1")
+      .normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    const re = /(\d{1,2})\s+(janvier|fevrier|mars|avril|mai|juin|juillet|aout|septembre|octobre|novembre|decembre)\s+(\d{4})/g;
+    const out = [];
+    let m;
+    while ((m = re.exec(t))) out.push(new Date(Number(m[3]), FR_MONTHS_IDX[m[2]], Number(m[1]), 23, 59));
+    return out;
+  }
+
+  // Dates d'école encore à venir (ouverture, clôture, concours, résultats).
+  function upcomingSchoolDates(from) {
+    const fields = [["ouverture", "Ouverture des candidatures", "Applications open"], ["cloture", "Clôture", "Deadline"], ["concours", "Concours", "Entrance exam"], ["resultats", "Résultats", "Results"]];
+    const items = [];
+    Object.keys(SCHOOLS).forEach((id) => {
+      const dc = SCHOOLS[id].datesCles;
+      if (!dc) return;
+      fields.forEach(([field, fr, en]) => {
+        frenchDates(dc[field]).filter((d) => d >= from).forEach((date) => items.push({ id, date, fr, en, check: !!dc.aVerifier }));
+      });
+    });
+    return items.sort((a, b) => a.date - b.date);
+  }
+
+  function schoolDatesRank(school, upcomingIds) {
     const dc = school.datesCles;
     if (dc && dc.urgent) return 0;
+    if (upcomingIds && upcomingIds.has(school)) return 0.5;
     if (dc && dc.mode === "campagne") return 1;
     if (dc && dc.mode === "continue") return 2;
     return 3;
+  }
+
+  // « Encore possible aujourd'hui » (2026-11-12, revue « dans la peau d'un
+  // bachelier ») : passé la rentrée, presque toutes les dates du calendrier
+  // sont dépassées ; ce bloc dit ce qui reste possible à la date du jour,
+  // d'après data.js, avant la liste école par école.
+  function buildDatesNow(isEn, upcoming, continuous) {
+    const today = new Date();
+    const fmt = (d) => d.toLocaleDateString(isEn ? "en-US" : "fr-FR", { day: "numeric", month: "long", year: "numeric" });
+    const link = (id) => `<a href="#dates-${encodeURIComponent(id)}">${escapeHtml(tField(SCHOOLS[id], "name"))}</a>`;
+    const colon = isEn ? ":" : " :";
+    // Chaque ligne tient dans un seul <span> : les <li> de .dates-list sont
+    // des boîtes flexibles, plusieurs enfants y restaient sur une seule
+    // ligne et débordaient de 1 000 px sur téléphone (contrôle de mise en
+    // page du 2026-11-12).
+    const lines = upcoming.map((u) =>
+      `<li><span><strong>${fmt(u.date)}${colon}</strong> ${isEn ? u.en : u.fr}, ${link(u.id)}${u.check ? (isEn ? " (to be confirmed: see its entry)" : " (à confirmer : voir sa fiche)") : ""}</span></li>`
+    );
+    if (!lines.length) {
+      lines.push(`<li><span>${isEn ? "No upcoming deadline is published by the schools in the comparison." : "Aucune date à venir n'est publiée par les écoles du comparateur."}</span></li>`);
+    }
+    if (continuous.length) {
+      lines.push(`<li><span><strong>${isEn ? "Rolling admission, no published deadline" : "Admission continue, sans date limite publiée"}${colon}</strong> ${continuous.map(link).join(", ")}</span></li>`);
+    }
+    const box = document.createElement("div");
+    box.className = "dates-row dates-now";
+    box.id = "maintenant";
+    box.innerHTML = `
+      <h3>${isEn ? "Still possible today" : "Encore possible aujourd'hui"} (${fmt(today)})</h3>
+      <ul class="dates-list">${lines.join("")}</ul>
+      <p class="dates-ref-note">${
+        isEn
+          ? "Rolling admission does not guarantee a place mid-year: call the school before traveling. For next year's intake, the typical calendar above gives the steps in order."
+          : "Une admission continue ne garantit pas une place en cours d'année : appelle l'école avant de te déplacer. Pour la rentrée suivante, le calendrier type ci-dessus donne les étapes dans l'ordre."
+      }</p>`;
+    return box;
   }
 
   function renderSchoolDates() {
@@ -1663,12 +1749,19 @@
     if (!container || typeof SCHOOLS === "undefined") return;
     const isEn = currentLang() === "en";
 
-    const ids = Object.keys(SCHOOLS).sort((a, b) => schoolDatesRank(SCHOOLS[a]) - schoolDatesRank(SCHOOLS[b]));
+    const startOfToday = new Date();
+    startOfToday.setHours(0, 0, 0, 0);
+    const upcoming = upcomingSchoolDates(startOfToday);
+    const upcomingSchools = new Set(upcoming.map((u) => SCHOOLS[u.id]));
+    const ids = Object.keys(SCHOOLS).sort((a, b) => schoolDatesRank(SCHOOLS[a], upcomingSchools) - schoolDatesRank(SCHOOLS[b], upcomingSchools));
+    const continuous = ids.filter((id) => SCHOOLS[id].datesCles && SCHOOLS[id].datesCles.mode === "continue");
+    container.appendChild(buildDatesNow(isEn, upcoming, continuous));
 
     ids.forEach((id) => {
       const school = SCHOOLS[id];
       const dc = school.datesCles;
       const row = document.createElement("div");
+      row.id = "dates-" + id;
       row.className = "dates-row" + (dc && dc.urgent ? " dates-row-urgent" : "");
 
       let bodyHtml = "";

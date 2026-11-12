@@ -15,6 +15,8 @@ const ROLES = {
     subtitle: "Du HTML au développement full-stack, un parcours progressif adossé aux ressources accessibles au Togo.",
     subtitleEn: "From HTML to full-stack development, a progressive path built on resources available in Togo.",
     icon: "globe",
+    debut: "Tu pars de zéro ? Commence par les étapes 2 (HTML) et 3 (CSS) : un navigateur et un éditeur de texte suffisent, et tu vois tout de suite ce que tu construis. Les outils de l'étape 1 (ligne de commande, Git) pourront attendre ta première page. Repère de durée : freeCodeCamp estime à environ 300 heures, pour un débutant, sa certification gratuite « Responsive Web Design » (HTML et CSS), soit environ quatre mois à deux heures et demie par jour.", debutEn: "Starting from scratch? Begin with steps 2 (HTML) and 3 (CSS): a browser and a text editor are enough, and you see what you build right away. The step 1 tools (command line, Git) can wait until your first page. Time benchmark: freeCodeCamp estimates its free \"Responsive Web Design\" certification (HTML and CSS) at about 300 hours for a beginner, roughly four months at two and a half hours a day.",
+    debutSource: { label: "freeCodeCamp (en anglais)", labelEn: "freeCodeCamp", url: "https://www.freecodecamp.org/news/responsive-web-design-certification-redesigned/" },
     sections: [
       {
         title: "1. Bases indispensables", titleEn: "1. Essential foundations",
@@ -22,7 +24,7 @@ const ROLES = {
           { label: "Fonctionnement d'Internet, HTTP/HTTPS, DNS", labelEn: "How the Internet works, HTTP/HTTPS, DNS", level: "core", resource: { label: "MDN - Comment fonctionne le web", labelEn: "MDN - How the web works", url: "https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web/How_the_Web_works" } },
           { label: "Ligne de commande (bash) et système de fichiers", labelEn: "Command line (bash) and file system", level: "core", resource: { label: "Voir roadmap compétence Linux", labelEn: "See the Linux skill roadmap", url: "roadmap.html?id=linux" } },
           { label: "Git et GitHub (branches, pull requests, résolution de conflits)", labelEn: "Git and GitHub (branches, pull requests, resolving conflicts)", level: "core", resource: { label: "Voir roadmap compétence Git & GitHub", labelEn: "See the Git & GitHub skill roadmap", url: "roadmap.html?id=git-github" } },
-          { label: "Éditeur de code : VS Code, extensions utiles", labelEn: "Code editor: VS Code, useful extensions", level: "core", resource: { label: "Documentation VS Code", labelEn: "VS Code documentation", url: "https://code.visualstudio.com/docs" } },
+          { label: "Éditeur de code : VS Code, extensions utiles", labelEn: "Code editor: VS Code, useful extensions", level: "core", resource: { label: "Documentation VS Code (en anglais)", labelEn: "VS Code documentation", url: "https://code.visualstudio.com/docs" } },
           { label: "Outils de développement du navigateur (DevTools) : inspecter, déboguer, mesurer les performances", labelEn: "Browser developer tools (DevTools): inspect, debug, measure performance", level: "core", resource: { label: "MDN - Qu'est-ce que sont les outils de développement ?", labelEn: "MDN - What are browser developer tools?", url: "https://developer.mozilla.org/fr/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools" } }
         ]
       },
@@ -38,9 +40,9 @@ const ROLES = {
         title: "3. CSS", titleEn: "3. CSS",
         items: [
           { label: "Box model, sélecteurs, spécificité", labelEn: "Box model, selectors, specificity", level: "core", resource: { label: "MDN - CSS", labelEn: "MDN - CSS", url: "https://developer.mozilla.org/fr/docs/Web/CSS" } },
-          { label: "Flexbox et Grid", labelEn: "Flexbox and Grid", level: "core", resource: { label: "CSS Tricks - Guide Flexbox/Grid", labelEn: "CSS Tricks - Flexbox/Grid guide", url: "https://css-tricks.com/snippets/css/a-guide-to-flexbox/" } },
+          { label: "Flexbox et Grid", labelEn: "Flexbox and Grid", level: "core", resource: { label: "MDN - Flexbox", labelEn: "MDN - Flexbox", url: "https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Flexbox" } },
           { label: "Responsive design (mobile-first, media queries)", labelEn: "Responsive design (mobile-first, media queries)", level: "core", resource: { label: "MDN - Responsive design", labelEn: "MDN - Responsive design", url: "https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Responsive_Design" } },
-          { label: "Sass/SCSS ou Tailwind CSS", labelEn: "Sass/SCSS or Tailwind CSS", level: "option", resource: { label: "Documentation Tailwind CSS", labelEn: "Tailwind CSS documentation", url: "https://tailwindcss.com/docs" } }
+          { label: "Sass/SCSS ou Tailwind CSS", labelEn: "Sass/SCSS or Tailwind CSS", level: "option", resource: { label: "Documentation Tailwind CSS (en anglais)", labelEn: "Tailwind CSS documentation", url: "https://tailwindcss.com/docs" } }
         ]
       },
       {
@@ -50,22 +52,22 @@ const ROLES = {
           { label: "DOM et gestion des événements", labelEn: "DOM and event handling", level: "core", resource: { label: "MDN - Manipulation du DOM", labelEn: "MDN - Manipulating the DOM", url: "https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model" } },
           { label: "ES6+ (arrow functions, destructuring, modules)", labelEn: "ES6+ (arrow functions, destructuring, modules)", level: "core" },
           { label: "Asynchrone : Promises, async/await, fetch API", labelEn: "Asynchronous code: Promises, async/await, fetch API", level: "core", resource: { label: "MDN - Fonctions asynchrones", labelEn: "MDN - Asynchronous JavaScript", url: "https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous" } },
-          { label: "TypeScript", labelEn: "TypeScript", level: "option", resource: { label: "Documentation TypeScript", labelEn: "TypeScript documentation", url: "https://www.typescriptlang.org/docs/" } }
+          { label: "TypeScript", labelEn: "TypeScript", level: "option", resource: { label: "Documentation TypeScript (en anglais)", labelEn: "TypeScript documentation", url: "https://www.typescriptlang.org/docs/" } }
         ]
       },
       {
         title: "5. Frontend avancé", titleEn: "5. Advanced frontend",
         items: [
-          { label: "Un framework : React, Vue ou Svelte (choisir un seul pour démarrer)", labelEn: "A framework: React, Vue or Svelte (pick just one to start)", level: "core", resource: { label: "React - Apprendre", labelEn: "React - Learn", url: "https://react.dev/learn" } },
+          { label: "Un framework : React, Vue ou Svelte (choisir un seul pour démarrer)", labelEn: "A framework: React, Vue or Svelte (pick just one to start)", level: "core", resource: { label: "React - Apprendre", labelEn: "React - Learn", url: "https://fr.react.dev/learn" } },
           { label: "Gestion d'état (Context API, Zustand, Redux)", labelEn: "State management (Context API, Zustand, Redux)", level: "option" },
           { label: "Routing côté client", labelEn: "Client-side routing", level: "core" },
-          { label: "Outils de build : Vite, bundlers", labelEn: "Build tools: Vite, bundlers", level: "core", resource: { label: "Documentation Vite", labelEn: "Vite documentation", url: "https://vite.dev/guide/" } }
+          { label: "Outils de build : Vite, bundlers", labelEn: "Build tools: Vite, bundlers", level: "core", resource: { label: "Documentation Vite (en anglais)", labelEn: "Vite documentation", url: "https://vite.dev/guide/" } }
         ]
       },
       {
         title: "6. Notions backend pour le full-stack", titleEn: "6. Backend basics for full-stack",
         items: [
-          { label: "Node.js et Express, ou équivalent", labelEn: "Node.js and Express, or equivalent", level: "core", resource: { label: "Documentation Node.js", labelEn: "Node.js documentation", url: "https://nodejs.org/fr/docs" } },
+          { label: "Node.js et Express, ou équivalent", labelEn: "Node.js and Express, or equivalent", level: "core", resource: { label: "Documentation Node.js (en anglais)", labelEn: "Node.js documentation", url: "https://nodejs.org/fr/docs" } },
           { label: "API REST, méthodes HTTP, codes de statut", labelEn: "REST APIs, HTTP methods, status codes", level: "core" },
           { label: "Bases de données SQL (PostgreSQL/MySQL) et NoSQL (MongoDB)", labelEn: "SQL databases (PostgreSQL/MySQL) and NoSQL (MongoDB)", level: "core", resource: { label: "Voir roadmap compétence SQL", labelEn: "See the SQL skill roadmap", url: "roadmap.html?id=sql" } },
           { label: "Authentification et sessions : JWT, OAuth", labelEn: "Authentication and sessions: JWT, OAuth", level: "core" },
@@ -84,8 +86,8 @@ const ROLES = {
       {
         title: "8. CMS et sites e-commerce", titleEn: "8. CMS and e-commerce sites",
         items: [
-          { label: "Systèmes de gestion de contenu (CMS) : WordPress, thèmes et plugins", labelEn: "Content management systems (CMS): WordPress, themes and plugins", level: "option", resource: { label: "Documentation WordPress", labelEn: "WordPress documentation", url: "https://wordpress.org/documentation/" } },
-          { label: "Boutique en ligne : WooCommerce ou Shopify, catalogue et paiement", labelEn: "Online store: WooCommerce or Shopify, catalog and payment", level: "option", resource: { label: "Documentation WooCommerce", labelEn: "WooCommerce documentation", url: "https://woocommerce.com/documentation/" } }
+          { label: "Systèmes de gestion de contenu (CMS) : WordPress, thèmes et plugins", labelEn: "Content management systems (CMS): WordPress, themes and plugins", level: "option", resource: { label: "Documentation WordPress", labelEn: "WordPress documentation", url: "https://fr.wordpress.org/support/" } },
+          { label: "Boutique en ligne : WooCommerce ou Shopify, catalogue et paiement", labelEn: "Online store: WooCommerce or Shopify, catalog and payment", level: "option", resource: { label: "Documentation WooCommerce (en anglais)", labelEn: "WooCommerce documentation", url: "https://woocommerce.com/documentation/" } }
         ]
       },
       {
@@ -115,7 +117,7 @@ const ROLES = {
       {
         title: "1. Choisir un langage", titleEn: "1. Choose a language",
         items: [
-          { label: "Node.js (JavaScript/TypeScript)", labelEn: "Node.js (JavaScript/TypeScript)", level: "core", resource: { label: "Documentation Node.js", labelEn: "Node.js documentation", url: "https://nodejs.org/fr/docs" } },
+          { label: "Node.js (JavaScript/TypeScript)", labelEn: "Node.js (JavaScript/TypeScript)", level: "core", resource: { label: "Documentation Node.js (en anglais)", labelEn: "Node.js documentation", url: "https://nodejs.org/fr/docs" } },
           { label: "Python (Django, FastAPI)", labelEn: "Python (Django, FastAPI)", level: "core", resource: { label: "Voir roadmap compétence Python", labelEn: "See the Python skill roadmap", url: "roadmap.html?id=python" } },
           { label: "PHP (Laravel)", labelEn: "PHP (Laravel)", level: "option", resource: { label: "Documentation Laravel", labelEn: "Laravel documentation", url: "https://laravel.com/docs" } },
           { label: "Java (Spring Boot) ou Go", labelEn: "Java (Spring Boot) or Go", level: "option" }
@@ -1696,7 +1698,7 @@ const ROLES = {
       {
         title: "1. Gestion de site", titleEn: "1. Site management",
         items: [
-          { label: "WordPress : installation, thèmes, plugins", labelEn: "WordPress: installation, themes, plugins", level: "core", resource: { label: "Documentation WordPress", labelEn: "WordPress documentation", url: "https://wordpress.org/documentation/" } },
+          { label: "WordPress : installation, thèmes, plugins", labelEn: "WordPress: installation, themes, plugins", level: "core", resource: { label: "Documentation WordPress", labelEn: "WordPress documentation", url: "https://fr.wordpress.org/support/" } },
           { label: "Mises à jour et maintenance courante", labelEn: "Updates and routine maintenance", level: "core" },
           { label: "Gestion multi-sites et environnements de test (staging)", labelEn: "Multisite management and test environments (staging)", level: "option" }
         ]
@@ -1744,7 +1746,7 @@ const ROLES = {
       {
         title: "1. Fondamentaux", titleEn: "1. Fundamentals",
         items: [
-          { label: "Plateformes e-commerce : Shopify, WooCommerce", labelEn: "E-commerce platforms: Shopify, WooCommerce", level: "core", resource: { label: "Documentation WooCommerce", labelEn: "WooCommerce documentation", url: "https://woocommerce.com/documentation/" } },
+          { label: "Plateformes e-commerce : Shopify, WooCommerce", labelEn: "E-commerce platforms: Shopify, WooCommerce", level: "core", resource: { label: "Documentation WooCommerce (en anglais)", labelEn: "WooCommerce documentation", url: "https://woocommerce.com/documentation/" } },
           { label: "Choix de plateforme selon le volume et le budget", labelEn: "Choosing a platform based on volume and budget", level: "option" }
         ]
       },
@@ -3725,7 +3727,7 @@ const SKILLS = {
         title: "4. Environnements et outillage", titleEn: "4. Environments and tooling",
         items: [
           { label: "JavaScript dans le navigateur (DOM, événements)", labelEn: "JavaScript in the browser (DOM, events)", level: "core" },
-          { label: "Node.js côté serveur", labelEn: "Node.js on the server", level: "core", resource: { label: "Documentation Node.js", labelEn: "Node.js documentation", url: "https://nodejs.org/fr/docs" } },
+          { label: "Node.js côté serveur", labelEn: "Node.js on the server", level: "core", resource: { label: "Documentation Node.js (en anglais)", labelEn: "Node.js documentation", url: "https://nodejs.org/fr/docs" } },
           { label: "Bundlers modernes (Vite, Webpack)", labelEn: "Modern bundlers (Vite, Webpack)", level: "option" },
           { label: "Tests unitaires (Jest, Vitest)", labelEn: "Unit tests (Jest, Vitest)", level: "option" }
         ]
@@ -3888,7 +3890,7 @@ const SKILLS = {
       {
         title: "2. Fondamentaux React", titleEn: "2. React fundamentals",
         items: [
-          { label: "Composants et JSX", labelEn: "Components and JSX", level: "core", resource: { label: "React - Apprendre", labelEn: "React - Learn", url: "https://react.dev/learn" } },
+          { label: "Composants et JSX", labelEn: "Components and JSX", level: "core", resource: { label: "React - Apprendre", labelEn: "React - Learn", url: "https://fr.react.dev/learn" } },
           { label: "Props et state", labelEn: "Props and state", level: "core" },
           { label: "Hooks : useState, useEffect, useRef", labelEn: "Hooks: useState, useEffect, useRef", level: "core" }
         ]
@@ -3970,7 +3972,7 @@ const SKILLS = {
       {
         title: "2. Fondamentaux", titleEn: "2. Fundamentals",
         items: [
-          { label: "Types de base, interfaces, types personnalisés", labelEn: "Basic types, interfaces, custom types", level: "core", resource: { label: "Documentation TypeScript", labelEn: "TypeScript documentation", url: "https://www.typescriptlang.org/docs/" } },
+          { label: "Types de base, interfaces, types personnalisés", labelEn: "Basic types, interfaces, custom types", level: "core", resource: { label: "Documentation TypeScript (en anglais)", labelEn: "TypeScript documentation", url: "https://www.typescriptlang.org/docs/" } },
           { label: "Fonctions typées, génériques", labelEn: "Typed functions, generics", level: "core" },
           { label: "Types union et intersection, enums", labelEn: "Union and intersection types, enums", level: "core" }
         ]
@@ -4010,7 +4012,7 @@ const SKILLS = {
       {
         title: "2. Fondamentaux", titleEn: "2. Fundamentals",
         items: [
-          { label: "Modules, npm/yarn, gestion de paquets", labelEn: "Modules, npm/yarn, package management", level: "core", resource: { label: "Documentation Node.js", labelEn: "Node.js documentation", url: "https://nodejs.org/fr/docs" } },
+          { label: "Modules, npm/yarn, gestion de paquets", labelEn: "Modules, npm/yarn, package management", level: "core", resource: { label: "Documentation Node.js (en anglais)", labelEn: "Node.js documentation", url: "https://nodejs.org/fr/docs" } },
           { label: "Système de fichiers et event loop", labelEn: "File system and the event loop", level: "core" }
         ]
       },
@@ -5008,11 +5010,13 @@ const SCHOOLS = {
     description: "2e université publique du Togo. Depuis juillet 2026, ses formations informatiques relèvent de l'École nationale polytechnique (ENP), campus de Kara : voir aussi la fiche de l'ENP (source : brochure de l'offre de formation 2026-2027 de l'université).", descriptionEn: "Togo's 2nd public university. Since July 2026, its computer science programs have been run by the National Polytechnic School (ENP), Kara campus: see also the ENP profile (source: the university's 2026-2027 program brochure).",
     datesCles: {
       mode: "campagne",
-      note: "Campagne annuelle via le service DAAS : préinscription en ligne sur le portail PAUL UK (etu.univkara.tg), paiement des droits par Mobile Money, puis dépôt du dossier complet au guichet de la DAAS (Campus Sud). Les appels à candidature des licences (dépôt du 18 août au 25 septembre 2026, prolongé au 9 octobre pour plusieurs licences) et des masters (jusqu'au 30 octobre 2026) sont clos. La page Admission indique « Fermée actuellement » pour les inscriptions 2026-2027 (consultée le 6 novembre 2026).", noteEn: "Annual application round through the DAAS office: online pre-registration on the PAUL UK portal (etu.univkara.tg), fees paid by Mobile Money, then the complete file submitted at the DAAS desk (South Campus). The calls for applications for bachelor's programs (submission from August 18 to September 25, 2026, extended to October 9 for several programs) and master's programs (until October 30, 2026) are closed. The Admission page shows \"Currently closed\" for 2026-2027 registration (accessed November 6, 2026).",
+      note: "Campagne annuelle via la DAAS : candidatures aux licences du 18 août au 25 septembre 2026 (prolongé au 9 octobre pour plusieurs licences) et aux masters jusqu'au 30 octobre 2026, puis préinscription en ligne sur le portail PAUL UK (etu.univkara.tg), paiement des droits par Mobile Money et dépôt du dossier complet au guichet de la DAAS (Campus Sud). Le 12 novembre 2026, le site de l'université se contredit : sa page Admission affiche à la fois « Inscription 2026-2027 : fermée actuellement » et une date limite de dépôt au 18 décembre 2026, et sa page d'accueil annonce des inscriptions jusqu'au 29 décembre. Appelle le service des inscriptions avant de te déplacer.", noteEn: "Annual application round through the DAAS office: applications to bachelor's programs from August 18 to September 25, 2026 (extended to October 9 for several programs) and to master's programs until October 30, 2026, then online pre-registration on the PAUL UK portal (etu.univkara.tg), fees paid by Mobile Money and the complete file submitted at the DAAS desk (South Campus). On November 12, 2026, the university's website contradicts itself: its Admission page shows both \"2026-2027 registration: currently closed\" and a file submission deadline of December 18, 2026, and its home page announces registration until December 29. Call the registration office before traveling.",
       ouverture: "15 septembre 2026, inscriptions 2026-2027 (univkara.tg)", ouvertureEn: "September 15, 2026, 2026-2027 registration (univkara.tg)",
-      cloture: "18 décembre 2026, date limite de dépôt du dossier selon la page Admission (la page d'accueil annonce des inscriptions jusqu'au 29 décembre : se fier à la date la plus proche)", clotureEn: "December 18, 2026, deadline to submit the file according to the Admission page (the home page announces registration until December 29: go by the earlier date)",
+      cloture: "18 décembre 2026, date limite de dépôt du dossier affichée sur la page Admission, qui indique en même temps l'inscription « fermée actuellement » (voir la note)", clotureEn: "December 18, 2026, file submission deadline shown on the Admission page, which at the same time shows registration as \"currently closed\" (see the note)",
       rentree: "21 septembre 2026, début des cours (univkara.tg)", rentreeEn: "September 21, 2026, start of classes (univkara.tg)",
-      anneeReference: "2026-2027"
+      anneeReference: "2026-2027",
+      aVerifier: true,
+      contact: "+228 26 68 52 28 (inscriptions, page d'accueil de univkara.tg)", contactEn: "+228 26 68 52 28 (registration, home page of univkara.tg)"
     }
   },
   "esa-togo": {
@@ -5507,10 +5511,10 @@ const QUIZ_QUESTIONS = [
     questionEn: "What attracts you most about tech?",
     options: [
       { label: "Construire des applications et des sites qui marchent bien", labelEn: "Building applications and websites that work well", domain: "Développement" },
-      { label: "Comprendre des chiffres, des tendances, entraîner des modèles", labelEn: "Understanding numbers and trends, training models", domain: "Data & IA" },
+      { label: "Comprendre des chiffres et des tendances, apprendre à un ordinateur à prévoir", labelEn: "Understanding numbers and trends, teaching a computer to predict", domain: "Data & IA" },
       { label: "Protéger des systèmes contre les attaques", labelEn: "Protecting systems against attacks", domain: "Sécurité" },
       { label: "Créer des interfaces belles et faciles à utiliser", labelEn: "Creating interfaces that are beautiful and easy to use", domain: "Produit & Design" },
-      { label: "Faire tourner des serveurs et des infrastructures fiables", labelEn: "Running reliable servers and infrastructure", domain: "Infrastructure & DevOps" },
+      { label: "Faire marcher sans panne les ordinateurs et les réseaux qui font vivre les sites et les applis", labelEn: "Keeping the computers and networks behind websites and apps running without breakdowns", domain: "Infrastructure & DevOps" },
       { label: "Faire connaître un produit ou une marque en ligne", labelEn: "Building awareness for a product or brand online", domain: "Marketing digital" },
       { label: "Organiser, planifier, piloter des équipes et des projets", labelEn: "Organizing, planning and steering teams and projects", domain: "Gestion & Management" }
     ]
@@ -5538,7 +5542,7 @@ const QUIZ_QUESTIONS = [
       { label: "Analyser des données pour comprendre pourquoi", labelEn: "Analyze data to understand why", domain: "Data & IA" },
       { label: "Chercher comment quelqu'un pourrait en abuser", labelEn: "Look for how someone could exploit it", domain: "Sécurité" },
       { label: "Repenser l'expérience pour que ça n'arrive plus", labelEn: "Rethink the experience so it doesn't happen again", domain: "Produit & Design" },
-      { label: "Vérifier si l'infrastructure tient la charge", labelEn: "Check whether the infrastructure can handle the load", domain: "Infrastructure & DevOps" },
+      { label: "Vérifier que les machines et le réseau tiennent le coup", labelEn: "Check that the machines and the network can cope", domain: "Infrastructure & DevOps" },
       { label: "Communiquer dessus pour rassurer tout le monde", labelEn: "Communicate about it to reassure everyone", domain: "Marketing digital" },
       { label: "Réunir les bonnes personnes pour trancher", labelEn: "Bring the right people together to decide", domain: "Gestion & Management" }
     ]
@@ -5552,7 +5556,7 @@ const QUIZ_QUESTIONS = [
       { label: "Entouré·e de tableaux de données et de graphiques", labelEn: "Surrounded by data tables and charts", domain: "Data & IA" },
       { label: "En veille permanente, à surveiller des menaces", labelEn: "On constant watch, monitoring for threats", domain: "Sécurité" },
       { label: "Avec des maquettes, des couleurs, du visuel", labelEn: "Working with mockups, colors, visuals", domain: "Produit & Design" },
-      { label: "En salle serveur ou sur des consoles cloud", labelEn: "In a server room or on cloud consoles", domain: "Infrastructure & DevOps" },
+      { label: "Au milieu des serveurs et des réseaux, sur place ou à distance", labelEn: "Among servers and networks, on site or remotely", domain: "Infrastructure & DevOps" },
       { label: "Sur les réseaux sociaux, au contact d'une audience", labelEn: "On social media, in touch with an audience", domain: "Marketing digital" },
       { label: "En réunion, à coordonner plusieurs personnes", labelEn: "In meetings, coordinating several people", domain: "Gestion & Management" }
     ]
@@ -5672,10 +5676,10 @@ const ROLE_QUESTIONS = {
       questionEn: "What kind of project excites you the most?",
       options: [
         { label: "Un site web ou une application que le grand public utilise", labelEn: "A website or app used by the general public", roles: ["web-dev", "mobile"] },
-        { label: "Ce qui fait tourner tout ça derrière : bases de données, API, règles métier", labelEn: "What runs behind the scenes: databases, APIs, business logic", roles: ["backend", "erp-crm"] },
-        { label: "Un jeu vidéo ou une expérience immersive en réalité virtuelle/augmentée", labelEn: "A video game or an immersive VR/AR experience", roles: ["game-developer", "ar-vr-developer"] },
-        { label: "Repérer les bugs et garantir la qualité avant la mise en production", labelEn: "Spotting bugs and ensuring quality before release", roles: ["qa-testeur"] },
-        { label: "L'architecture technique globale d'un système complexe, ou une application décentralisée (blockchain)", labelEn: "The overall technical architecture of a complex system, or a decentralized (blockchain) app", roles: ["architecte-logiciel", "blockchain-web3"] },
+        { label: "Ce qui fait marcher tout ça en coulisses : enregistrer les données, faire les calculs, faire communiquer les applis", labelEn: "What makes it all work behind the scenes: storing data, doing the calculations, making apps talk to each other", roles: ["backend", "erp-crm"] },
+        { label: "Un jeu vidéo, ou une expérience en réalité virtuelle (avec un casque) ou augmentée", labelEn: "A video game, or a virtual reality (headset) or augmented reality experience", roles: ["game-developer", "ar-vr-developer"] },
+        { label: "Repérer les bugs et vérifier que tout marche avant que le public s'en serve", labelEn: "Spotting bugs and checking that everything works before the public uses it", roles: ["qa-testeur"] },
+        { label: "Dessiner le plan d'ensemble d'un gros logiciel, ou une application sur la blockchain (la technologie des cryptomonnaies)", labelEn: "Drawing the overall plan of a large piece of software, or an app built on blockchain (the technology behind cryptocurrencies)", roles: ["architecte-logiciel", "blockchain-web3"] },
         { label: "Faire vivre et évoluer un site déjà en ligne, au quotidien", labelEn: "Keeping an existing website running and evolving, day to day", roles: ["webmaster"] }
       ]
     },
@@ -5686,9 +5690,9 @@ const ROLE_QUESTIONS = {
       options: [
         { label: "Construire des interfaces que les gens manipulent directement (web ou mobile)", labelEn: "Build interfaces people interact with directly (web or mobile)", roles: ["web-dev", "mobile"] },
         { label: "Travailler sur la logique et les données, sans forcément d'interface visuelle", labelEn: "Work on logic and data, without necessarily a visual interface", roles: ["backend", "erp-crm"] },
-        { label: "Explorer des technologies encore peu répandues (jeux, VR/AR, blockchain)", labelEn: "Explore technologies that are still uncommon (games, VR/AR, blockchain)", roles: ["game-developer", "ar-vr-developer", "blockchain-web3"] },
+        { label: "Explorer des technologies encore peu répandues (jeux, réalité virtuelle, blockchain)", labelEn: "Explore technologies that are still uncommon (games, virtual reality, blockchain)", roles: ["game-developer", "ar-vr-developer", "blockchain-web3"] },
         { label: "Être la personne rigoureuse qui traque ce qui ne marche pas", labelEn: "Be the meticulous person who hunts down what's broken", roles: ["qa-testeur"] },
-        { label: "Prendre les décisions techniques structurantes d'un projet", labelEn: "Make the structuring technical decisions on a project", roles: ["architecte-logiciel"] },
+        { label: "Prendre les grandes décisions techniques d'un projet", labelEn: "Make the big technical decisions on a project", roles: ["architecte-logiciel"] },
         { label: "Assurer la maintenance fiable d'un système existant plutôt que d'en créer un nouveau", labelEn: "Reliably maintain an existing system rather than build a new one", roles: ["webmaster"] }
       ]
     }
@@ -5699,9 +5703,9 @@ const ROLE_QUESTIONS = {
       question: "Ce qui t'intéresse le plus avec la donnée...",
       questionEn: "What interests you most about data...",
       options: [
-        { label: "Construire des modèles qui apprennent et font des prédictions (IA, machine learning)", labelEn: "Building models that learn and make predictions (AI, machine learning)", roles: ["data-ia"] },
+        { label: "Créer des programmes qui apprennent à partir d'exemples pour faire des prévisions (intelligence artificielle)", labelEn: "Creating programs that learn from examples to make predictions (artificial intelligence)", roles: ["data-ia"] },
         { label: "Transformer des chiffres en décisions claires pour une entreprise", labelEn: "Turning numbers into clear decisions for a business", roles: ["data-analyst"] },
-        { label: "Construire les pipelines qui collectent, nettoient et acheminent la donnée", labelEn: "Building the pipelines that collect, clean and move data", roles: ["data-engineer"] },
+        { label: "Organiser le circuit des données : les collecter, les nettoyer, les acheminer", labelEn: "Organizing the data flow: collecting, cleaning and moving data", roles: ["data-engineer"] },
         { label: "Garantir que les bases de données restent rapides, fiables et sécurisées", labelEn: "Ensuring databases stay fast, reliable and secure", roles: ["dba"] },
         { label: "Utiliser les maths et les statistiques pour des décisions financières", labelEn: "Using math and statistics for financial decisions", roles: ["quant-developer"] }
       ]
@@ -5711,11 +5715,11 @@ const ROLE_QUESTIONS = {
       question: "Ton style de travail avec les chiffres...",
       questionEn: "Your working style with numbers...",
       options: [
-        { label: "Expérimenter avec des algorithmes et de gros volumes de données non structurées", labelEn: "Experimenting with algorithms and large volumes of unstructured data", roles: ["data-ia"] },
+        { label: "Expérimenter des méthodes de calcul sur d'énormes quantités de données (textes, images…)", labelEn: "Experimenting with calculation methods on huge amounts of data (texts, images…)", roles: ["data-ia"] },
         { label: "Créer des tableaux de bord et raconter une histoire claire à partir des données", labelEn: "Building dashboards and telling a clear story from data", roles: ["data-analyst"] },
-        { label: "Une approche d'ingénierie : automatiser, industrialiser, fiabiliser des flux de données", labelEn: "An engineering approach: automating, industrializing, hardening data flows", roles: ["data-engineer"] },
-        { label: "Une approche très technique et minutieuse de l'administration de systèmes de données", labelEn: "A highly technical, meticulous approach to managing data systems", roles: ["dba"] },
-        { label: "Une approche mathématique et quantitative, orientée finance ou trading", labelEn: "A mathematical, quantitative approach, geared toward finance or trading", roles: ["quant-developer"] }
+        { label: "Une approche d'ingénieur : automatiser le circuit des données et le rendre fiable", labelEn: "An engineer's approach: automating the data flow and making it reliable", roles: ["data-engineer"] },
+        { label: "Une approche très technique et minutieuse : faire tourner et entretenir des bases de données", labelEn: "A highly technical, meticulous approach: running and maintaining databases", roles: ["dba"] },
+        { label: "Une approche mathématique, orientée finance ou Bourse", labelEn: "A mathematical approach, geared toward finance or the stock market", roles: ["quant-developer"] }
       ]
     }
   ],
@@ -5779,11 +5783,11 @@ const ROLE_QUESTIONS = {
       question: "Ce qui t'attire dans l'infrastructure...",
       questionEn: "What draws you to infrastructure...",
       options: [
-        { label: "Automatiser le déploiement et la fiabilité des applications dans le cloud", labelEn: "Automating deployment and reliability of cloud applications", roles: ["devops", "sre", "platform-engineer"] },
+        { label: "Automatiser la mise en ligne des applications et les garder en marche sur des serveurs à distance (le « cloud »)", labelEn: "Automating how apps go online and keeping them running on remote servers (the \"cloud\")", roles: ["devops", "sre", "platform-engineer"] },
         { label: "Aider directement des utilisateurs à résoudre leurs problèmes informatiques", labelEn: "Directly helping users solve their IT problems", roles: ["support-it"] },
         { label: "Administrer et sécuriser les serveurs et réseaux d'une organisation", labelEn: "Administering and securing an organization's servers and networks", roles: ["sysadmin", "reseaux-telecoms"] },
         { label: "Programmer des objets connectés, des systèmes embarqués ou des robots", labelEn: "Programming connected devices, embedded systems or robots", roles: ["iot-embarque", "robotique"] },
-        { label: "Superviser des systèmes industriels automatisés", labelEn: "Supervising automated industrial systems", roles: ["informatique-industrielle"] },
+        { label: "Surveiller les machines automatiques d'une usine", labelEn: "Monitoring a factory's automatic machines", roles: ["informatique-industrielle"] },
         { label: "Faire communiquer entre eux plusieurs systèmes ou logiciels différents", labelEn: "Making different systems or software work together", roles: ["integrateur-systemes", "salesforce-admin"] }
       ]
     },
@@ -5792,7 +5796,7 @@ const ROLE_QUESTIONS = {
       question: "Ton style de travail technique...",
       questionEn: "Your technical working style...",
       options: [
-        { label: "Écrire du code pour automatiser l'infrastructure (scripts, pipelines CI/CD)", labelEn: "Writing code to automate infrastructure (scripts, CI/CD pipelines)", roles: ["devops", "sre", "platform-engineer"] },
+        { label: "Écrire de petits programmes qui mettent en ligne et entretiennent les serveurs tout seuls", labelEn: "Writing small programs that put servers online and maintain them automatically", roles: ["devops", "sre", "platform-engineer"] },
         { label: "Un contact humain direct, patient et pédagogue", labelEn: "Direct, patient, teaching-oriented human contact", roles: ["support-it"] },
         { label: "Une rigueur réseau et système, au service de la sécurité", labelEn: "Network and systems rigor, in service of security", roles: ["sysadmin", "reseaux-telecoms"] },
         { label: "Un mélange d'électronique et de programmation", labelEn: "A mix of electronics and programming", roles: ["iot-embarque", "robotique", "informatique-industrielle"] },
@@ -5812,7 +5816,7 @@ const ROLE_QUESTIONS = {
         { label: "Faire le pont entre une entreprise tech et les développeurs qui l'utilisent", labelEn: "Bridging a tech company and the developers who use it", roles: ["devrel"] },
         { label: "Tester rapidement des idées pour faire décoller la croissance", labelEn: "Quickly testing ideas to accelerate growth", roles: ["growth-hacker"] },
         { label: "Raconter une histoire de marque à travers du contenu écrit ou vidéo", labelEn: "Telling a brand's story through written or video content", roles: ["content-strategist"] },
-        { label: "Optimiser des campagnes publicitaires pour un meilleur retour sur investissement", labelEn: "Optimizing ad campaigns for a better return on investment", roles: ["traffic-manager"] }
+        { label: "Régler des campagnes de publicité pour qu'elles rapportent plus qu'elles ne coûtent", labelEn: "Tuning ad campaigns so they bring in more than they cost", roles: ["traffic-manager"] }
       ]
     },
     {
@@ -5837,9 +5841,9 @@ const ROLE_QUESTIONS = {
         { label: "Transmettre des compétences numériques à d'autres", labelEn: "Passing on digital skills to others", roles: ["formateur-informatique"] },
         { label: "Accompagner une organisation dans sa transformation numérique", labelEn: "Guiding an organization through its digital transformation", roles: ["consultant-transfo-digitale"] },
         { label: "Piloter la stratégie et les ressources informatiques d'une organisation", labelEn: "Steering an organization's IT strategy and resources", roles: ["dsi-responsable-informatique", "cto"] },
-        { label: "Aligner les systèmes d'information avec la stratégie globale de l'entreprise", labelEn: "Aligning information systems with the company's overall strategy", roles: ["architecte-entreprise"] },
+        { label: "Faire en sorte que les outils informatiques servent la stratégie de l'entreprise", labelEn: "Making sure IT tools serve the company's strategy", roles: ["architecte-entreprise"] },
         { label: "Sécuriser juridiquement des projets numériques (contrats, données, propriété intellectuelle)", labelEn: "Providing legal security for digital projects (contracts, data, IP)", roles: ["juriste-it"] },
-        { label: "Faciliter le travail d'une équipe agile au quotidien", labelEn: "Facilitating an agile team's day-to-day work", roles: ["scrum-master"] }
+        { label: "Faciliter le travail de tous les jours d'une équipe de développeurs (méthode « agile »)", labelEn: "Facilitating a developer team's day-to-day work (\"agile\" method)", roles: ["scrum-master"] }
       ]
     },
     {
@@ -5850,7 +5854,7 @@ const ROLE_QUESTIONS = {
         { label: "Faire le lien technique entre un produit et les besoins d'un client", labelEn: "Making the technical link between a product and a client's needs", roles: ["solutions-engineer"] },
         { label: "Diriger une équipe d'ingénieurs et faire le pont technique/organisationnel", labelEn: "Leading a team of engineers and bridging the technical and organizational sides", roles: ["engineering-manager"] },
         { label: "Traduire des besoins métier en exigences compréhensibles pour les équipes techniques", labelEn: "Translating business needs into requirements technical teams can understand", roles: ["business-analyst-it"] },
-        { label: "Implémenter et configurer des logiciels de gestion d'entreprise (type SAP)", labelEn: "Implementing and configuring enterprise management software (like SAP)", roles: ["sap-consultant"] },
+        { label: "Installer et régler les logiciels de gestion d'une entreprise (comptabilité, stocks…, comme SAP)", labelEn: "Installing and setting up a company's management software (accounting, stock…, like SAP)", roles: ["sap-consultant"] },
         { label: "Coordonner plusieurs programmes techniques complexes en parallèle", labelEn: "Coordinating several complex technical programs in parallel", roles: ["technical-program-manager"] },
         { label: "Avant tout, la coordination et la logistique d'un projet", labelEn: "Above all, the coordination and logistics of a project", roles: ["project-manager"] }
       ]
