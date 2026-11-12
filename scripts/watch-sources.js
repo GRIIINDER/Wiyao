@@ -56,7 +56,8 @@ const SOURCES = [
   { name: "Agence Togo Digital : recrutements", kind: "page", url: "https://digital.gouv.tg/recrutements", link: /^https:\/\/digital\.gouv\.tg\/recrutements\/\d+\/details$/, titleAttr: "data-title" },
   { name: "Ministère de l'Enseignement supérieur", kind: "feed", url: "https://edusup.gouv.tg/feed/", filter: [TECH, BOURSE, EDU], on: "text" },
   { name: "Ministère de l'Éducation nationale", kind: "feed", url: "https://education.gouv.tg/feed/", filter: [TECH, BOURSE], on: "text" },
-  { name: "Campus Togo", kind: "feed", url: "https://www.campus-togo.com/feed/", filter: [TECH, BOURSE], on: "text", wpPages: 3 },
+  { name: "Campus Togo", kind: "feed", url: "https://www.campus-togo.com/feed/", filter: [TECH, BOURSE], on: "text", wpPages: 3,
+    quirk: "fausse alerte connue : injoignable depuis les serveurs de GitHub (« fetch failed »), alors que le flux répond normalement dans un navigateur et depuis Lomé (vérifié les 10 et 11 novembre 2026)" },
   { name: "Afri-carrières", kind: "feed", url: "https://afri-carrieres.com/feed/", filter: [TECH, BOURSE], on: "title", wpPages: 3 },
   { name: "EmploiTogo.info (offres tech)", kind: "feed", url: "https://www.emploitogo.info/feed/", filter: [TECH], on: "title", wpPages: 12 },
 ];
@@ -222,6 +223,41 @@ function frDate(d) {
   return d ? d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : "";
 }
 
+// ---- Actualités dont la date vient de passer (2026-11-11) ----
+// Une actualité annonce souvent un événement ou une échéance (« le 18
+// novembre », « candidatures jusqu'au… ») : une fois la date passée, son
+// texte doit passer au passé ou dire « clos ». Le rapport liste celles qui
+// ont franchi leur date depuis le relevé précédent, et celles qui la
+// franchiront dans les deux semaines. Rien n'est modifié sur le site.
+const FR_MONTHS = { janvier: 0, fevrier: 1, mars: 2, avril: 3, mai: 4, juin: 5, juillet: 6, aout: 7, septembre: 8, octobre: 9, novembre: 10, decembre: 11 };
+
+// Dernière date complète d'un texte (« Du 5 au 7 novembre 2026 » : le 7 ;
+// « 5-8 octobre 2026 » : le 8) ; un mois sans jour (« Début août 2026 »)
+// compte jusqu'à sa fin.
+function lastFrenchDate(text) {
+  const t = fold(text.replace(/(\d)(?:ᵉʳ|er)\b/g, "$1")); // « 1ᵉʳ octobre » → « 1 octobre »
+  let best = null;
+  const re = /(?:(\d{1,2})\s+)?(janvier|fevrier|mars|avril|mai|juin|juillet|aout|septembre|octobre|novembre|decembre)\s+(\d{4})/g;
+  for (const m of t.matchAll(re)) {
+    const month = FR_MONTHS[m[2]];
+    const year = Number(m[3]);
+    const day = m[1] ? Number(m[1]) : new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+    const d = new Date(Date.UTC(year, month, day, 23, 59));
+    if (!best || d > best) best = d;
+  }
+  return best;
+}
+
+function datedActualites() {
+  const html = fs.readFileSync(path.join(ROOT, "actualites.html"), "utf8");
+  const cards = html.split('<article class="card actu-card">').slice(1);
+  return cards.map((card) => {
+    const title = card.match(/class="actu-card-title"[^>]*>([\s\S]*?)<\/h3>/);
+    const date = card.match(/data-i18n-key="actu\.t\d+\.date">([\s\S]*?)<\/span>/);
+    return { title: title ? clean(title[1]) : "", dateText: date ? clean(date[1]) : "", end: date ? lastFrenchDate(clean(date[1])) : null };
+  }).filter((c) => c.title && c.end);
+}
+
 async function main() {
   const now = new Date();
   const cutoff = new Date(now.getTime() - WINDOW_DAYS * 864e5);
@@ -237,7 +273,7 @@ async function main() {
     try {
       items = await collect(source, cutoff);
     } catch (e) {
-      failures.push(`- ${md(source.name)} : ${md(e.message || String(e))} (${source.url})`);
+      failures.push(`- ${md(source.name)} : ${md(e.message || String(e))} (${source.url})${source.quirk ? ` _(${md(source.quirk)})_` : ""}`);
       console.log(`! ${source.name} : ${e.message}`);
       continue;
     }
@@ -263,6 +299,24 @@ async function main() {
 
   const keep = [...newPrints, ...seen.filter((p) => !newPrints.includes(p))].slice(0, MAX_SEEN);
   const firstRun = seen.length === 0;
+
+  const soon = new Date(now.getTime() + 14 * 864e5);
+  const actus = datedActualites();
+  const crossed = actus.filter((a) => a.end >= cutoff && a.end < now).sort((a, b) => a.end - b.end);
+  const upcoming = actus.filter((a) => a.end >= now && a.end <= soon).sort((a, b) => a.end - b.end);
+  const actuLine = (a) => `- [ ] ${md(a.title)} : ${md(a.dateText)}`;
+  const actuSection = [];
+  if (crossed.length) {
+    actuSection.push(`## Actualités à relire : date passée depuis le relevé précédent (${crossed.length})`, "",
+      "Sur https://wiyao.vercel.app/actualites.html : passer le texte au passé, ou indiquer « clos » pour une inscription ou une candidature.", "",
+      ...crossed.map(actuLine), "");
+  }
+  if (upcoming.length) {
+    actuSection.push(`## Actualités dont la date arrive dans les deux semaines (${upcoming.length})`, "",
+      "Rien à faire pour l'instant : elles seront à relire au relevé suivant leur date.", "",
+      ...upcoming.map(actuLine), "");
+  }
+  console.log(`Actualités : ${actus.length} datées, ${crossed.length} à relire, ${upcoming.length} à venir sous 14 jours`);
   const lines = [
     `# Veille WIYAO : ${frDate(now)}`,
     "",
@@ -272,6 +326,7 @@ async function main() {
       ? `**Premier relevé** : ${total} piste(s) de moins de ${WINDOW_DAYS} jours, et toutes celles des pages sans date.`
       : `**${total} nouvelle(s) piste(s)** depuis le relevé précédent.`,
     "",
+    ...actuSection,
     ...(sections.length ? sections.flatMap((s) => [s, ""]) : ["Aucune nouvelle piste cette semaine.", ""]),
   ];
   if (failures.length) {
@@ -288,7 +343,9 @@ async function main() {
     ""
   );
   fs.writeFileSync(REPORT, lines.join("\n"), "utf8");
-  fs.writeFileSync(path.join(ROOT, "watch-summary.txt"), `${total}\n`, "utf8");
+  // Phrase reprise telle quelle dans le commentaire hebdomadaire de l'issue.
+  const summary = `${total} nouvelle(s) piste(s)` + (crossed.length ? `, ${crossed.length} actualité(s) à relire (date passée)` : "");
+  fs.writeFileSync(path.join(ROOT, "watch-summary.txt"), `${summary}\n`, "utf8");
   console.log(`\n${total} piste(s), rapport écrit dans watch-report.md`);
 }
 
