@@ -984,7 +984,7 @@
     body.appendChild(meta);
 
     // Fiche compacte : le détail (durée, admission, frais, notes) s'ouvre au
-    // clic, pour parcourir et comparer les 32 écoles sans pavés de texte.
+    // clic, pour parcourir et comparer les 33 écoles sans pavés de texte.
     let detailsHtml = "";
     if (school.duree) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.duree", "Durée :", "Duration:")}</strong> ${escapeHtml(tField(school, "duree"))}</span>`;
     if (school.admission) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.admission", "Admission :", "Admission:")}</strong> ${escapeHtml(tField(school, "admission"))}</span>`;
@@ -1272,21 +1272,62 @@
 
         if (quizPractical.priorite && quizPractical.priorite !== "peu-importe") {
           let ok = false;
-          if (quizPractical.priorite === "agree") ok = school.agree === true;
+          // Une université publique délivre des diplômes nationaux : le
+          // badge « Agréé État » ne concerne que les écoles privées, elle
+          // ne doit pas apparaître « ✗ » sur ce critère (2026-11-12).
+          const isPublic = school.statut === "public";
+          if (quizPractical.priorite === "agree") ok = school.agree === true || isPublic;
           if (quizPractical.priorite === "pratique") ok = /pratique|stage/i.test(school.description);
           checks.push({
             ok,
             label: quizPractical.priorite === "agree"
-              ? (isEn ? "State-accredited degree" : "Diplôme agréé par l'État")
+              ? (isPublic
+                ? (isEn ? "National degree (public institution)" : "Diplôme national (établissement public)")
+                : (isEn ? "State-accredited degree" : "Diplôme agréé par l'État"))
               : (isEn ? "Hands-on training" : "Formation orientée pratique")
           });
         }
 
         const score = checks.filter((c) => c.ok).length;
-        return { id, school, checks, score };
+        // À égalité, l'école du statut demandé passe devant : « je dois
+        // viser le public » est une contrainte, pas une préférence.
+        const prefer = quizPractical.statut && quizPractical.statut !== "peu-importe" && school.statut === quizPractical.statut ? 1 : 0;
+        return { id, school, checks, score, prefer };
       })
-      .sort((a, b) => b.score - a.score)
+      .sort((a, b) => b.score - a.score || b.prefer - a.prefer)
       .slice(0, 5);
+  }
+
+  // Élève qui a répondu « je dois viser le public » : ce qui existe vraiment
+  // dans le public pour son domaine, et les voies sans frais de scolarité
+  // (2026-11-12, après la revue « dans la peau d'un bachelier »).
+  function publicPathNote(topDomain, topName, isEn) {
+    if (quizPractical.statut !== "public" || typeof SCHOOLS === "undefined") return "";
+    const keywords = (typeof DOMAIN_KEYWORDS !== "undefined" && DOMAIN_KEYWORDS[topDomain]) || [];
+    const publics = Object.keys(SCHOOLS).filter((id) => {
+      const s = SCHOOLS[id];
+      return (s.statut === "public" || s.statut === "inter-etats") &&
+        keywords.some((kw) => s.filieres.join(" ").toLowerCase().indexOf(kw) !== -1);
+    });
+    const noBts = !publics.some((id) => /bts|brevet de technicien/i.test(SCHOOLS[id].niveaux.join(" ")));
+    const links = publics
+      .map((id) => `<a href="ecoles.html#ecole-${encodeURIComponent(id)}">${escapeHtml(tField(SCHOOLS[id], "name"))}</a>`)
+      .join(", ");
+    const free = isEn
+      ? 'Meanwhile, or alongside, you can train with no tuition fees (Campus 42 Lomé, D-CLIC…): see <a href="bourses-financement.html#gratuit">Training without tuition fees</a>, and the <a href="bourses-financement.html#etat">state scholarship</a> once enrolled in a public university.'
+      : 'En attendant, ou en plus, tu peux te former sans frais de scolarité (Campus 42 Lomé, D-CLIC…) : vois <a href="bourses-financement.html#gratuit">Se former sans payer</a>, et la <a href="bourses-financement.html#etat">bourse d\'État</a> une fois inscrit·e dans une université publique.';
+    if (!publics.length) {
+      return `<p class="quiz-secondary">${
+        isEn
+          ? `No public school in the comparison offers a ${topName} program. ${free}`
+          : `Aucune école publique du comparateur ne propose de filière ${topName}. ${free}`
+      }</p>`;
+    }
+    return `<p class="quiz-secondary">${
+      isEn
+        ? `In the public sector${noBts ? ", the comparison has no BTS in this field, and" : ","} admission is selective (entrance exam or application review): ${links}. Check their conditions and the <a href="calendrier.html">dates</a>. ${free}`
+        : `Dans le public${noBts ? ", le comparateur ne compte aucun BTS dans ce domaine, et" : ","} l'admission est sélective (concours ou dossier) : ${links}. Vérifie leurs conditions et les <a href="calendrier.html">dates</a>. ${free}`
+    }</p>`;
   }
 
   function buildSchoolMatchCard(match) {
@@ -1380,6 +1421,7 @@
             ? "Based on your field and your answers about level, city and budget: every checked criterion is verified, not guessed."
             : "D'après ton domaine et tes réponses sur le niveau, la ville et le budget : chaque critère coché est vérifié, pas deviné."
         }</p>
+        ${publicPathNote(top, topLabel, isEn)}
         <div class="grid" id="quiz-school-grid"></div>
         <p class="quiz-secondary">
           <a href="ecoles.html">${isEn ? "See all schools →" : "Voir toutes les écoles →"}</a>

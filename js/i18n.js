@@ -209,8 +209,8 @@
     "journey.2.link": { fr: "Voir les roadmaps →", en: "See the roadmaps →" },
     "journey.3.title": { fr: "Choisis ton école", en: "Choose your school" },
     "journey.3.desc": {
-      fr: 'Compare 32 écoles et universités togolaises : filières, niveaux, admission, frais de scolarité, et les <a href="bourses-financement.html">bourses disponibles</a> pour les alléger.',
-      en: 'Compare 32 Togolese schools and universities: programs, levels, admission, tuition fees, and the <a href="bourses-financement.html">scholarships available</a> to ease them.',
+      fr: 'Compare 33 écoles et universités togolaises : filières, niveaux, admission, frais de scolarité, et les <a href="bourses-financement.html">bourses disponibles</a> pour les alléger.',
+      en: 'Compare 33 Togolese schools and universities: programs, levels, admission, tuition fees, and the <a href="bourses-financement.html">scholarships available</a> to ease them.',
     },
     "journey.3.link": { fr: "Comparer les écoles →", en: "Compare schools →" },
     "journey.4.title": { fr: "Vise les bonnes dates", en: "Aim for the right dates" },
@@ -236,7 +236,7 @@
       fr: 'Trouve l\'<span class="hero-accent">école</span> qu\'il te faut',
       en: 'Find the <span class="hero-accent">school</span> that\'s right for you',
     },
-    "ecoles.hero.subtitle": { fr: "32 écoles et universités togolaises qui forment à l'informatique et au numérique, présentées avec leurs filières, leurs niveaux d'études, leurs conditions d'admission et leurs frais, pour comparer en connaissance de cause.", en: "32 Togolese schools and universities that teach computing and digital technology, presented with their programs, levels of study, admission requirements and fees, so you can compare them with full knowledge." },
+    "ecoles.hero.subtitle": { fr: "33 écoles et universités togolaises qui forment à l'informatique et au numérique, présentées avec leurs filières, leurs niveaux d'études, leurs conditions d'admission et leurs frais, pour comparer en connaissance de cause.", en: "33 Togolese schools and universities that teach computing and digital technology, presented with their programs, levels of study, admission requirements and fees, so you can compare them with full knowledge." },
     "ecoles.hero.propose": { fr: "Une école togolaise manque à l'appel ? <a href=\"proposer.html\">Propose-la</a> : nous la vérifions avant de l'ajouter.", en: "Is a Togolese school missing? <a href=\"proposer.html\">Suggest it</a>: we verify it before adding it." },
 
     "calendrier.hero.title": {
@@ -1394,6 +1394,11 @@
       en: 'Free training in digital careers (web/mobile development, digital marketing, AI, data, and since July 2026 digital fabrication/FabLab) run by the International Organisation of La Francophonie (OIF): over 600 young Togolese trained since 2024. Details in the <a href="ecosysteme.html#hubs">Togolese ecosystem</a>.',
     },
     "bourses.s5.i4.h4": { fr: "Ressources en ligne gratuites", en: "Free online resources" },
+    "bourses.s5.i42.p": {
+      fr: "École de code gratuite et sans condition de diplôme, où l'on entre par une sélection intensive de quatre semaines (la « Piscine ») : sa présentation est sur la page Écosystème.",
+      en: "Free coding school with no diploma requirement, entered through an intensive four-week selection (the \"Piscine\"): its profile is on the Ecosystem page.",
+    },
+    "bourses.s5.i42.link": { fr: "Voir sa fiche (Écosystème)", en: "See its profile (Ecosystem)" },
     "bourses.s5.i4.p": { fr: "Les roadmaps WIYAO s'appuient largement sur des ressources gratuites (documentation officielle, cours en ligne) : de quoi apprendre l'essentiel d'un métier sans frais avant de choisir une école.", en: "WIYAO's roadmaps rely heavily on free resources (official documentation, online courses): enough to learn the essentials of a role at no cost before choosing a school." },
     "bourses.s5.i4.link": { fr: "Voir les roadmaps", en: "See the roadmaps" },
 
@@ -1579,6 +1584,7 @@
     "ecoles.lex.master": { fr: "Diplôme en 2 ans après la Licence (Bac+5).", en: "A 2-year degree after the Licence (Bac+5): the equivalent of a master's degree." },
     "ecoles.lex.bacplus": { fr: "Notation courante du niveau d'études : le chiffre indique le nombre d'années après le Bac (Bac+2 = BTS, Bac+3 = Licence, Bac+5 = Master ou diplôme d'ingénieur).", en: "Common shorthand for the level of study: the number shows how many years after the Bac (Bac+2 = BTS, Bac+3 = Licence, Bac+5 = Master's or engineering degree)." },
     "ecoles.lex.lmd": { fr: "Licence-Master-Doctorat : système d'organisation des études (en crédits et semestres) adopté par la plupart des universités togolaises et africaines francophones.", en: "Licence-Master-Doctorat (bachelor's-master's-doctorate): the system for organizing studies (in credits and semesters) adopted by most Togolese and French-speaking African universities." },
+    "ecoles.lex.cic": { fr: "Centre Informatique et de Calcul : centre de l'Université de Lomé qui propose deux licences professionnelles en informatique, sur concours.", en: "Centre Informatique et de Calcul (Computing and Calculation Center): a University of Lomé center offering two professional bachelor's programs in computing, through an entrance exam." },
     "ecoles.lex.cames": { fr: "Conseil Africain et Malgache pour l'Enseignement Supérieur : reconnaît et harmonise la valeur des diplômes entre pays membres.", en: "Conseil Africain et Malgache pour l'Enseignement Supérieur (African and Malagasy Council for Higher Education): recognizes and harmonizes the value of degrees across member countries." },
     "ecoles.lex.auf": { fr: "Agence Universitaire de la Francophonie : réseau international d'universités francophones ; en être membre facilite les échanges et la mobilité.", en: "Agence Universitaire de la Francophonie (Francophone University Association): an international network of French-speaking universities; membership makes exchanges and mobility easier." },
     "ecoles.lex.mesr": { fr: "Ministère de l'Enseignement Supérieur et de la Recherche (Togo) : autorité qui délivre les agréments d'État et publie la liste annuelle des établissements accrédités.", en: "Ministère de l'Enseignement Supérieur et de la Recherche (Togo's Ministry of Higher Education and Research): the authority that grants State accreditation and publishes the annual list of accredited institutions." },

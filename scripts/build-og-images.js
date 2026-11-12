@@ -33,7 +33,7 @@ const PAGES = [
   { file: "test-orientation", l1: "Pas sûr·e de ta voie ?", hl: "Test d'orientation", sub: "14 questions · gratuit · sans compte" },
   { file: "roadmaps", l1: "Choisis ta", hl: "roadmap", sub: "89 roadmaps : 60 métiers et 29 compétences tech" },
   { file: "roadmap", l1: "Ta roadmap,", hl: "étape par étape", sub: "Ce qu'il faut apprendre, dans l'ordre, avec des ressources et des écoles au Togo" },
-  { file: "ecoles", l1: "Trouve l'école", hl: "qu'il te faut", sub: "32 écoles et universités tech du Togo comparées" },
+  { file: "ecoles", l1: "Trouve l'école", hl: "qu'il te faut", sub: "33 écoles et universités tech du Togo comparées" },
   { file: "calendrier", l1: "Après le bac :", hl: "les dates clés", sub: "Résultats, inscriptions, concours et rentrée, école par école" },
   { file: "bourses-financement", l1: "Comment financer", hl: "tes études ?", sub: "Bourse d'État, bourses des écoles et autres solutions vérifiées" },
   { file: "stages-emploi", l1: "Et après", hl: "la formation ?", sub: "Où chercher un stage ou un premier emploi dans la tech au Togo" },

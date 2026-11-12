@@ -49,8 +49,8 @@
     },
     {
       keywords: ["ecole", "universite", "school", "university"],
-      fr: { text: "WIYAO compare 32 écoles et universités togolaises qui forment à l'informatique : filières, niveaux, admission et frais.", links: [{ label: "Comparer les écoles", url: "ecoles.html" }] },
-      en: { text: "WIYAO compares 32 Togolese schools and universities teaching computing: programs, levels, admission and fees.", links: [{ label: "Compare schools", url: "ecoles.html" }] }
+      fr: { text: "WIYAO compare 33 écoles et universités togolaises qui forment à l'informatique : filières, niveaux, admission et frais.", links: [{ label: "Comparer les écoles", url: "ecoles.html" }] },
+      en: { text: "WIYAO compares 33 Togolese schools and universities teaching computing: programs, levels, admission and fees.", links: [{ label: "Compare schools", url: "ecoles.html" }] }
     }
   ];
 
