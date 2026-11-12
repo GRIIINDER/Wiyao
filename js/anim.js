@@ -174,6 +174,62 @@
         });
       }
 
+      // Arrivée par lien (2026-11-12, à la demande de l'utilisateur) : un lien
+      // du sommaire, le bouton « haut de page », une adresse avec #… ou le
+      // retour en arrière font sauter la page vers une section, et l'on
+      // « tombait » sur un titre pâle qui glissait et des cartes encore
+      // invisibles. Le temps du saut, ce qui entre à l'écran s'affiche tout
+      // de suite ; le défilement à la main reste animé.
+      var jumping = false;
+      var jumpIdle = 0;
+      var jumpMax = 0;
+      var jumpFrame = 0;
+      function show(batch) {
+        batch.forEach(function (el) {
+          pending.delete(el);
+          io.unobserve(el);
+        });
+        gsap.killTweensOf(batch);
+        gsap.set(batch, { opacity: 1, x: 0, y: 0, scale: 1, clearProps: CLEAR });
+      }
+      function showReached() {
+        var vh = window.innerHeight;
+        var batch = Array.from(pending).filter(function (el) {
+          return isShown(el) && el.getBoundingClientRect().top < vh;
+        });
+        if (batch.length) show(batch);
+      }
+      function endJump() {
+        if (jumping) showReached();
+        jumping = false;
+        window.clearTimeout(jumpIdle);
+        window.clearTimeout(jumpMax);
+      }
+      function startJump() {
+        jumping = true;
+        window.clearTimeout(jumpIdle);
+        window.clearTimeout(jumpMax);
+        jumpIdle = window.setTimeout(endJump, 700); // cible déjà à l'écran : pas de défilement
+        jumpMax = window.setTimeout(endJump, 4000); // le plus long des défilements doux
+      }
+      function onJumpScroll() {
+        if (!jumping) return;
+        window.clearTimeout(jumpIdle);
+        jumpIdle = window.setTimeout(endJump, 250);
+        if (!jumpFrame) {
+          jumpFrame = window.requestAnimationFrame(function () {
+            jumpFrame = 0;
+            showReached();
+          });
+        }
+      }
+      function onJumpClick(e) {
+        var el = e.target.closest && e.target.closest("a[href], .back-to-top");
+        if (!el) return;
+        if (el.classList.contains("back-to-top")) return startJump();
+        if (el.hash && el.pathname === location.pathname && el.host === location.host) startJump();
+      }
+
       var io = new IntersectionObserver(function (entries) {
         var batch = entries
           .filter(function (e) { return e.isIntersecting; })
@@ -182,12 +238,26 @@
             return a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
           });
         if (!batch.length) return;
+        if (jumping) return show(batch);
         batch.forEach(function (el) { io.unobserve(el); });
         // Ce qui est déjà à l'écran au chargement suit l'introduction.
         reveal(batch, Date.now() - startedAt < 400 ? 0.35 : 0);
       }, { rootMargin: "0px 0px -40px 0px" });
       units.forEach(function (el) { io.observe(el); });
       observers.push(io);
+
+      listen(document, "click", onJumpClick, true);
+      listen(window, "hashchange", startJump);
+      listen(window, "popstate", startJump);
+      listen(window, "scroll", onJumpScroll, { passive: true });
+      cleanups.push(function () {
+        window.clearTimeout(jumpIdle);
+        window.clearTimeout(jumpMax);
+        if (jumpFrame) window.cancelAnimationFrame(jumpFrame);
+      });
+      // Page ouverte sur une adresse avec #… (ecoles.html#ecole-…,
+      // calendrier.html#calendrier-type) : même traitement.
+      if (location.hash) startJump();
 
       // Filet de sécurité : pendant le défilement, tout ce qui est déjà à
       // l'écran (ou dépassé) s'affiche, même si l'observateur l'a manqué.
@@ -200,8 +270,10 @@
           var batch = Array.from(pending).filter(function (el) {
             return isShown(el) && el.getBoundingClientRect().top < vh;
           });
+          if (!batch.length) return;
+          if (jumping) return show(batch);
           batch.forEach(function (el) { io.unobserve(el); });
-          if (batch.length) reveal(batch, 0);
+          reveal(batch, 0);
         }, 200);
       }
       listen(window, "scroll", catchUp, { passive: true });
