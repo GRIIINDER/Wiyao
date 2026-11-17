@@ -666,7 +666,7 @@
 
   // Partage sur WhatsApp (plan marketing, 2026-11-10) : un simple lien wa.me
   // qui ouvre WhatsApp avec un message prêt à envoyer. Rien n'est collecté.
-  const SITE_URL = "https://wiyao.vercel.app/";
+  const SITE_URL = "https://wiyao.app/";
   function whatsappLink(text, url, label, className) {
     const a = document.createElement("a");
     a.className = className || "btn btn-share";
@@ -1571,7 +1571,7 @@
   }
 
   // ---- Formulaires Contact et Proposer : envoi direct depuis la page ----
-  // Le message part vers la fonction /api/contact (Vercel), qui l'envoie
+  // Le message part vers /api/contact (Worker Cloudflare, worker/index.js), qui l'envoie
   // par e-mail à WIYAO via Resend. Si l'envoi échoue (service pas encore
   // configuré, réseau coupé), la page propose d'ouvrir la messagerie avec
   // le même message, comme avant le 2026-11-07.

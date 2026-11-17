@@ -91,7 +91,7 @@ body { background: #006a4e; color: #ffffff; font-family: "Urbanist", sans-serif;
   <div class="title" id="t">${page.l1 ? esc(page.l1) + "<br>" : ""}<span class="hl">${esc(page.hl)}</span></div>
   <p class="sub">${esc(page.sub)}</p>
 </div>
-<div class="bar">wiyao.vercel.app</div>
+<div class="bar">wiyao.app</div>
 <script>
   // Le titre rétrécit jusqu'à tenir sur la largeur et sur trois lignes au plus.
   document.fonts.ready.then(function () {

@@ -474,8 +474,8 @@
       en: "<li>Orientation</li><li>Choosing a domain, a track and a university</li><li>Career and skill roadmaps</li><li>Scholarships, internships and jobs</li><li>The local ecosystem worth knowing</li>",
     },
     "about.s1.p2.outro": {
-      fr: 'Le site est gratuit, utilisable sans inscription, et hébergé par Vercel : détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
-      en: 'The site is free, usable without registration, and hosted by Vercel: full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
+      fr: 'Le site est gratuit, utilisable sans inscription, et hébergé par Cloudflare : détails complets dans les <a href="mentions-legales.html">mentions légales</a> et la <a href="politique-confidentialite.html">politique de confidentialité</a>.',
+      en: 'The site is free, usable without registration, and hosted by Cloudflare: full details in the <a href="mentions-legales.html">legal notice</a> and the <a href="politique-confidentialite.html">privacy policy</a>.',
     },
     "about.s2.h2": { fr: "Roadmaps par métier", en: "Role-based roadmaps" },
     "about.s2.p.intro": {
@@ -519,8 +519,8 @@
     },
     "mentions.s2.h2": { fr: "Hébergement", en: "Hosting" },
     "mentions.s2.p": {
-      fr: 'Le site est hébergé par Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis : <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>.',
-      en: 'The site is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States: <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>.',
+      fr: 'Le site est hébergé par Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis : <a href="https://www.cloudflare.com" target="_blank" rel="noopener">cloudflare.com</a>.',
+      en: 'The site is hosted by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, United States: <a href="https://www.cloudflare.com" target="_blank" rel="noopener">cloudflare.com</a>.',
     },
     "mentions.s3.h2": { fr: "Propriété intellectuelle", en: "Intellectual property" },
     "mentions.s3.p": {
@@ -661,8 +661,8 @@
       en: 'Your progress on roadmaps is saved in your browser\'s local storage (localStorage). This data stays only on your device, is never sent to a server or to WIYAO, and you can erase it at any time via the "Reset progress" button on a roadmap, or by clearing your browser data.',
     },
     "conf.s2.p4": {
-      fr: "Si tu écris à WIYAO avec le formulaire de la page <a href=\"contact.html\">Contact</a> ou de la page <a href=\"proposer.html\">Proposer un contenu</a>, les informations que tu y saisis (nom, email, message ou proposition) sont envoyées par email à l'éditeur du site (voir les <a href=\"mentions-legales.html\">mentions légales</a>). Elles passent par une fonction d'envoi hébergée chez Vercel, l'hébergeur du site, puis par Resend, le service qui achemine l'email. WIYAO ne les enregistre dans aucune base de données et ne s'en sert que pour te répondre ou vérifier ta proposition.",
-      en: "If you write to WIYAO with the form on the <a href=\"contact.html\">Contact</a> page or the <a href=\"proposer.html\">Suggest content</a> page, the information you enter there (name, email, message or suggestion) is sent by email to the site's publisher (see the <a href=\"mentions-legales.html\">legal notice</a>). It goes through a sending function hosted by Vercel, the site's host, then through Resend, the service that delivers the email. WIYAO does not save it in any database and only uses it to reply to you or check your suggestion.",
+      fr: "Si tu écris à WIYAO avec le formulaire de la page <a href=\"contact.html\">Contact</a> ou de la page <a href=\"proposer.html\">Proposer un contenu</a>, les informations que tu y saisis (nom, email, message ou proposition) sont envoyées par email à l'éditeur du site (voir les <a href=\"mentions-legales.html\">mentions légales</a>). Elles passent par une fonction d'envoi hébergée chez Cloudflare, l'hébergeur du site, puis par Resend, le service qui achemine l'email. WIYAO ne les enregistre dans aucune base de données et ne s'en sert que pour te répondre ou vérifier ta proposition.",
+      en: "If you write to WIYAO with the form on the <a href=\"contact.html\">Contact</a> page or the <a href=\"proposer.html\">Suggest content</a> page, the information you enter there (name, email, message or suggestion) is sent by email to the site's publisher (see the <a href=\"mentions-legales.html\">legal notice</a>). It goes through a sending function hosted by Cloudflare, the site's host, then through Resend, the service that delivers the email. WIYAO does not save it in any database and only uses it to reply to you or check your suggestion.",
     },
     "conf.s3.h2": { fr: "3. Base légale du traitement", en: "3. Legal basis for processing" },
     "conf.s3.p": {
@@ -689,8 +689,8 @@
     },
     "conf.s6.h2": { fr: "6. Sécurité", en: "6. Security" },
     "conf.s6.p": {
-      fr: "WIYAO n'a pas de base de données : les messages des formulaires ne sont enregistrés nulle part sur le site, et leur contenu n'apparaît pas dans les journaux techniques de la fonction d'envoi. La connexion au site et l'envoi du formulaire sont chiffrés (HTTPS), via l'hébergeur Vercel.",
-      en: "WIYAO has no database: messages from the forms are not saved anywhere on the site, and their content does not appear in the technical logs of the sending function. The connection to the site and the sending of the form are encrypted (HTTPS), via the host Vercel.",
+      fr: "WIYAO n'a pas de base de données : les messages des formulaires ne sont enregistrés nulle part sur le site, et leur contenu n'apparaît pas dans les journaux techniques de la fonction d'envoi. La connexion au site et l'envoi du formulaire sont chiffrés (HTTPS), via l'hébergeur Cloudflare.",
+      en: "WIYAO has no database: messages from the forms are not saved anywhere on the site, and their content does not appear in the technical logs of the sending function. The connection to the site and the sending of the form are encrypted (HTTPS), via the host Cloudflare.",
     },
     "conf.s7.h2": { fr: "7. Mineurs", en: "7. Minors" },
     "conf.s7.p": {

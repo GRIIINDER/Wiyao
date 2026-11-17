@@ -9,8 +9,8 @@ Please report vulnerabilities **privately** — do not open a public GitHub issu
 ## Signalement / Reporting
 
 - Email : [wiya.info@gmail.com](mailto:wiya.info@gmail.com)
-- Formulaire : [https://wiyao.vercel.app/contact.html](https://wiyao.vercel.app/contact.html)
-- `security.txt` : [https://wiyao.vercel.app/.well-known/security.txt](https://wiyao.vercel.app/.well-known/security.txt)
+- Formulaire : [https://wiyao.app/contact.html](https://wiyao.app/contact.html)
+- `security.txt` : [https://wiyao.app/.well-known/security.txt](https://wiyao.app/.well-known/security.txt)
 
 Langues préférées / preferred languages : français, English.
 
@@ -22,7 +22,7 @@ Inclus si possible / please include if you can :
 
 ## Périmètre / Scope
 
-In scope : le site [wiyao.vercel.app](https://wiyao.vercel.app), le dépôt [GRIIINDER/Wiyao](https://github.com/GRIIINDER/Wiyao), les en-têtes HTTP (`vercel.json`), le service worker, et les workflows GitHub Actions.
+In scope : le site [wiyao.app](https://wiyao.app), le dépôt [GRIIINDER/Wiyao](https://github.com/GRIIINDER/Wiyao), les en-têtes HTTP (`vercel.json`), le service worker, et les workflows GitHub Actions.
 
 Hors périmètre / out of scope : les sites tiers liés depuis le contenu (écoles, bourses, employeurs), le phishing social, et les dénis de service volumétriques.
 

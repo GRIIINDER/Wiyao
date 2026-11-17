@@ -102,8 +102,8 @@ function collectAllUrls() {
     for (const u of extractUrls(readFile(jsFile))) urls.add(u);
   }
   // Domaines volontairement exclus : ressources du site lui-même, et
-  // wiyao.vercel.app (interne, pas la peine de se vérifier soi-même).
-  return [...urls].filter((u) => !u.includes("wiyao.vercel.app"));
+  // wiyao.app (interne, pas la peine de se vérifier soi-même).
+  return [...urls].filter((u) => !u.includes("wiyao.app"));
 }
 
 // ---- 3. Vérification HTTP d'une URL ----

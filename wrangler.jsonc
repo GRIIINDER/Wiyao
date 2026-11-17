@@ -6,6 +6,10 @@
   "name": "wiyao",
   "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
+  // Domaine du site (zone wiyao.app du même compte Cloudflare) : le
+  // déploiement crée l'enregistrement DNS et le certificat. L'adresse
+  // wiyao.<compte>.workers.dev reste active pour les tests.
+  "routes": [{ "pattern": "wiyao.app", "custom_domain": true }],
   "assets": {
     "directory": ".",
     "binding": "ASSETS",

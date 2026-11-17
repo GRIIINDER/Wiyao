@@ -1,0 +1,71 @@
+name: Déploiement Cloudflare
+
+# Publie le site sur Cloudflare (Worker « wiyao », domaine wiyao.app) à chaque
+# push sur main, avec `wrangler deploy` (configuration : wrangler.jsonc).
+# Pas d'étape de build : les fichiers sont publiés tels quels, l'outillage est
+# écarté par .assetsignore.
+#
+# Secrets du dépôt (Settings > Secrets and variables > Actions), réglés par le
+# propriétaire, jamais dans le dépôt :
+#   CLOUDFLARE_API_TOKEN   jeton API limité à « Workers Scripts : Edit » sur le
+#                          compte qui héberge le Worker (+ « Workers Routes :
+#                          Edit » et « Zone : Read » sur wiyao.app pour le
+#                          domaine)
+#   CLOUDFLARE_ACCOUNT_ID  identifiant de ce compte Cloudflare
+# Les secrets du Worker lui-même (RESEND_API_KEY, CONTACT_TO) restent dans le
+# tableau de bord Cloudflare : un déploiement ne les touche pas.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions: {}
+
+# Un déploiement à la fois, jamais interrompu en cours de route.
+concurrency:
+  group: deploy-cloudflare
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Publier sur Cloudflare
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: production
+      url: https://wiyao.app
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Vérifier que les secrets sont réglés
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          missing=""
+          [ -n "$CLOUDFLARE_API_TOKEN" ] || missing="$missing CLOUDFLARE_API_TOKEN"
+          [ -n "$CLOUDFLARE_ACCOUNT_ID" ] || missing="$missing CLOUDFLARE_ACCOUNT_ID"
+          if [ -n "$missing" ]; then
+            echo "::error::Secrets manquants :$missing (Settings > Secrets and variables > Actions)"
+            exit 1
+          fi
+
+      - name: Contrôle d'hygiène avant publication
+        run: node scripts/ci-security-hygiene.js
+
+      - name: Publier avec wrangler (version épinglée)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          WRANGLER_SEND_METRICS: "false"
+        run: npx --yes wrangler@4.163.0 deploy
