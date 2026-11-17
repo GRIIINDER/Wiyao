@@ -22,7 +22,7 @@ Inclus si possible / please include if you can :
 
 ## Périmètre / Scope
 
-In scope : le site [wiyao.app](https://wiyao.app), le dépôt [GRIIINDER/Wiyao](https://github.com/GRIIINDER/Wiyao), les en-têtes HTTP (`vercel.json`), le service worker, et les workflows GitHub Actions.
+In scope : le site [wiyao.app](https://wiyao.app), le dépôt [GRIIINDER/Wiyao](https://github.com/GRIIINDER/Wiyao), les en-têtes HTTP (`_headers` et le Worker `worker/index.js`), le service worker, et les workflows GitHub Actions.
 
 Hors périmètre / out of scope : les sites tiers liés depuis le contenu (écoles, bourses, employeurs), le phishing social, et les dénis de service volumétriques.
 
