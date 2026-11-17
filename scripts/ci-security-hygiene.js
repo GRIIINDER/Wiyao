@@ -91,6 +91,45 @@ try {
   errors.push(`Impossible de valider vercel.json : ${err.message}`);
 }
 
+// --- 3 bis. En-têtes de sécurité Cloudflare (`_headers`) -------------------
+// Mêmes exigences que vercel.json, et la même CSP tant que les deux existent
+// (sinon un hash de script en ligne mis à jour d'un seul côté bloquerait le
+// JSON-LD sur l'un des deux hébergeurs).
+try {
+  const headersFile = path.join(ROOT, "_headers");
+  if (!fs.existsSync(headersFile)) {
+    errors.push("Fichier _headers manquant (en-têtes de sécurité Cloudflare)");
+  } else {
+    const cf = new Map();
+    let inGlobalRule = false;
+    for (const raw of read(headersFile).split(/\r?\n/)) {
+      if (!raw.trim() || raw.trim().startsWith("#")) continue;
+      if (!/^\s/.test(raw)) {
+        inGlobalRule = raw.trim() === "/*";
+        continue;
+      }
+      const m = raw.trim().match(/^([A-Za-z0-9-]+):\s*(.+)$/);
+      if (inGlobalRule && m) cf.set(m[1].toLowerCase(), m[2].trim());
+    }
+    for (const name of [...requiredHeaders, "Cross-Origin-Opener-Policy", "Cross-Origin-Resource-Policy"]) {
+      if (!cf.has(name.toLowerCase())) errors.push(`_headers : en-tête manquant ${name} dans la règle /*`);
+    }
+    const cfCsp = cf.get("content-security-policy") || "";
+    if (/unsafe-eval/i.test(cfCsp)) errors.push("_headers : CSP contient 'unsafe-eval'");
+    const vercelFile = path.join(ROOT, "vercel.json");
+    if (fs.existsSync(vercelFile)) {
+      const vercelCsp = (JSON.parse(read(vercelFile)).headers || [])
+        .flatMap((entry) => entry.headers || [])
+        .find((h) => h.key === "Content-Security-Policy");
+      if (vercelCsp && vercelCsp.value !== cfCsp) {
+        errors.push("_headers et vercel.json : les deux CSP diffèrent (les garder identiques)");
+      }
+    }
+  }
+} catch (err) {
+  errors.push(`Impossible de valider _headers : ${err.message}`);
+}
+
 // --- 4. APIs JS dangereuses ------------------------------------------------
 const dangerous = [
   { re: /\beval\s*\(/, label: "eval(" },

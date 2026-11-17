@@ -1,0 +1,23 @@
+{
+  // Déploiement Cloudflare (Workers + fichiers statiques). Le site est servi
+  // tel quel depuis la racine du dépôt, sans étape de build ; `.assetsignore`
+  // écarte l'outillage (CI, scripts, Worker) des fichiers publiés.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wiyao",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    // Les liens, adresses canoniques, plan du site et service worker utilisent
+    // `page.html` : sans ceci, Cloudflare redirigerait /page.html vers /page.
+    "html_handling": "none",
+    "not_found_handling": "404-page",
+    // Le Worker ne tourne que pour le formulaire et pour « / » (avec
+    // html_handling "none", la racine ne sert plus index.html d'elle-même).
+    "run_worker_first": ["/api/*", "/"]
+  },
+  "observability": {
+    "enabled": true
+  }
+}

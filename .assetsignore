@@ -1,0 +1,30 @@
+# Fichiers jamais publiés sur le site (Cloudflare) : outillage, CI, code serveur.
+# Même rôle que .vercelignore, en plus strict.
+.git
+.github
+.claude
+.wrangler
+.dev.vars*
+node_modules
+scripts
+api
+worker
+openspec
+wrangler.jsonc
+vercel.json
+.vercelignore
+.gitignore
+.gitleaks.toml
+
+# Fichiers locaux ignorés par git (voir .gitignore) : un `wrangler deploy`
+# lancé depuis un poste les publierait sinon.
+credoahiafor.png
+.specify
+.agents
+skills-lock.json
+Wiyao
+freshness-report.md
+watch-report.md
+watch-summary.txt
+watch-previous.md
+watch-issue.txt

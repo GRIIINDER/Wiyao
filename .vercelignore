@@ -1,3 +1,9 @@
 # Fichiers de tooling interne (CI, scripts) : jamais servis sur le site public.
 .github
 scripts
+
+# Fichiers propres au déploiement Cloudflare
+worker
+wrangler.jsonc
+_headers
+.assetsignore
