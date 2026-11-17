@@ -2,7 +2,7 @@
 
 Le guide qui accompagne les bacheliers togolais qui se lancent dans la tech, à chaque étape : orientation, choix de domaine, de filière, d'université, roadmaps de carrière, bourses et stages/emploi.
 
-**Site en ligne :** [wiyao.vercel.app](https://wiyao.vercel.app)
+**Site en ligne :** [wiyao.app](https://wiyao.app)
 
 ## Le projet
 
@@ -18,12 +18,12 @@ Chaque fait publié (frais, dates, employeurs, statistiques) est vérifié aupr�
 
 ## Stack technique
 
-Site statique sans dépendance ni étape de build : HTML/CSS/JS vanilla, déployé sur [Vercel](https://vercel.com) via l'intégration GitHub (chaque push sur `main` déclenche un déploiement).
+Site statique sans dépendance ni étape de build : HTML/CSS/JS vanilla, publié sur [Cloudflare](https://www.cloudflare.com) (Worker `wiyao`, domaine wiyao.app) par le workflow `.github/workflows/deploy.yml` : chaque push sur `main` lance `wrangler deploy` (configuration `wrangler.jsonc`).
 
 - Progressive Web App installable (`manifest.json` + `sw.js`, cache stale-while-revalidate).
 - Bilingue FR/EN (`js/i18n.js`).
 - Thème clair/sombre.
-- Aucune base de données : le contenu vit dans `js/data.js` et la progression de l'utilisateur reste en local (`localStorage`). Seuls les formulaires Contact et Proposer envoient un message, par e-mail, via la fonction `api/contact.js` (Vercel + Resend, clé `RESEND_API_KEY` dans les réglages Vercel) — voir [politique-confidentialite.html](politique-confidentialite.html).
+- Aucune base de données : le contenu vit dans `js/data.js` et la progression de l'utilisateur reste en local (`localStorage`). Seuls les formulaires Contact et Proposer envoient un message, par e-mail, via le Worker `worker/index.js` (Cloudflare + Resend, secrets `RESEND_API_KEY` et `CONTACT_TO` dans le tableau de bord Cloudflare) — voir [politique-confidentialite.html](politique-confidentialite.html).
 
 Pour les conventions de développement (versioning des assets, discipline de vérification des faits, service worker), voir [CLAUDE.md](CLAUDE.md).
 
@@ -39,7 +39,7 @@ Puis ouvrir `http://localhost:8000`.
 
 ## Contribuer
 
-Une erreur, une école ou un événement manquant ? [Ouvre une issue](https://github.com/GRIIINDER/Wiyao/issues) ou passe par le [formulaire de contact](https://wiyao.vercel.app/contact.html) du site.
+Une erreur, une école ou un événement manquant ? [Ouvre une issue](https://github.com/GRIIINDER/Wiyao/issues) ou passe par le [formulaire de contact](https://wiyao.app/contact.html) du site.
 
 ## Licence
 

@@ -33,7 +33,7 @@ const MAX_BYTES = 3 * 1024 * 1024;
 const MAX_REDIRECTS = 5;
 const MAX_SEEN = 3000; // ~33 Ko de commentaire caché, sous la limite de 65 536 caractères d'une issue
 const HEADERS = {
-  "User-Agent": "Mozilla/5.0 (compatible; WiyaoWatch/1.0; +https://wiyao.vercel.app/about.html)",
+  "User-Agent": "Mozilla/5.0 (compatible; WiyaoWatch/1.0; +https://wiyao.app/about.html)",
   Accept: "application/rss+xml, application/atom+xml, application/xml, text/html;q=0.9, */*;q=0.8",
 };
 
@@ -308,7 +308,7 @@ async function main() {
   const actuSection = [];
   if (crossed.length) {
     actuSection.push(`## Actualités à relire : date passée depuis le relevé précédent (${crossed.length})`, "",
-      "Sur https://wiyao.vercel.app/actualites.html : passer le texte au passé, ou indiquer « clos » pour une inscription ou une candidature.", "",
+      "Sur https://wiyao.app/actualites.html : passer le texte au passé, ou indiquer « clos » pour une inscription ou une candidature.", "",
       ...crossed.map(actuLine), "");
   }
   if (upcoming.length) {

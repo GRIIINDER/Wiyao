@@ -16,7 +16,7 @@
  * redonner exactement le texte de départ. Sinon : code de sortie 1.
  * Scanner quand même le résultat avec un téléphone avant d'imprimer.
  *
- * Usage : node scripts/qr-svg.js "https://wiyao.vercel.app/test-orientation.html" > qr.svg
+ * Usage : node scripts/qr-svg.js "https://wiyao.app/test-orientation.html" > qr.svg
  * Options : --color=#0b3a2c (couleur des modules, vert nuit par défaut)
  */
 

@@ -24,7 +24,7 @@ const path = require("path");
 const vm = require("vm");
 
 const ROOT = path.resolve(__dirname, "..");
-const SITE = "https://wiyao.vercel.app/";
+const SITE = "https://wiyao.app/";
 
 // Ordre d'importance pour un bachelier ; toute page HTML absente de cette
 // liste (et de EXCLUDED) fait échouer le script, pour qu'une nouvelle page
