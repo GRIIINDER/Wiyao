@@ -37,10 +37,10 @@ python3 -m http.server 8000
 
 Puis ouvrir `http://localhost:8000`.
 
-## Contribuer
+## Signaler une erreur
 
-Une erreur, une école ou un événement manquant ? [Ouvre une issue](https://github.com/GRIIINDER/Wiyao/issues) ou passe par le [formulaire de contact](https://wiyao.app/contact.html) du site.
+Une erreur, une école ou un événement manquant ? Passe par le [formulaire de contact](https://wiyao.app/contact.html) ou la page [Proposer un contenu](https://wiyao.app/proposer.html) du site.
 
-## Licence
+## Droits
 
-[MIT](LICENSE)
+Code : tous droits réservés. Contenus rédigés par WIYAO : réutilisables à titre non commercial en citant la source (voir les [mentions légales](https://wiyao.app/mentions-legales.html)).

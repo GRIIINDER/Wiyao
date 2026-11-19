@@ -506,8 +506,8 @@
     },
     "mentions.s1.h2": { fr: "Éditeur du site", en: "Site publisher" },
     "mentions.s1.p1": {
-      fr: 'WIYAO est un projet communautaire indépendant, sans statut commercial, édité et maintenu à titre personnel par <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> (<a href="https://github.com/GRIIINDER" target="_blank" rel="noopener">GitHub</a>). Il n\'est affilié à aucune administration ni institution togolaise citée sur le site.',
-      en: 'WIYAO is an independent community project, with no commercial status, published and maintained personally by <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> (<a href="https://github.com/GRIIINDER" target="_blank" rel="noopener">GitHub</a>). It is not affiliated with any Togolese administration or institution mentioned on the site.',
+      fr: 'WIYAO est un projet communautaire indépendant, sans statut commercial, édité et maintenu à titre personnel par <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a>. Il n\'est affilié à aucune administration ni institution togolaise citée sur le site.',
+      en: 'WIYAO is an independent community project, with no commercial status, published and maintained personally by <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a>. It is not affiliated with any Togolese administration or institution mentioned on the site.',
     },
     "mentions.s1.p2": {
       fr: "Crédo Ahiafor en est également le directeur de la publication, au sens du Code de la presse et de la communication (loi n°2020-001).",
@@ -524,8 +524,8 @@
     },
     "mentions.s3.h2": { fr: "Propriété intellectuelle", en: "Intellectual property" },
     "mentions.s3.p": {
-      fr: 'Le code source du site est ouvert et consultable sur le <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">dépôt GitHub</a>. Les contenus (roadmaps, fiches écoles, guides) sont proposés à titre informatif et peuvent être réutilisés en citant la source.',
-      en: 'The site\'s source code is open and available on the <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">GitHub repository</a>. The content (roadmaps, school profiles, guides) is provided for informational purposes and may be reused with attribution.',
+      fr: 'Le code du site appartient à son éditeur : tous droits réservés. Les contenus rédigés par WIYAO (roadmaps, fiches écoles, guides, textes du site) sont proposés à titre informatif et peuvent être réutilisés à titre non commercial en citant la source.',
+      en: 'The site\'s code belongs to its publisher: all rights reserved. Content written by WIYAO (roadmaps, school profiles, guides, site text) is provided for informational purposes and may be reused for non-commercial purposes with attribution.',
     },
     "mentions.s4.h2": { fr: "Transactions électroniques", en: "Electronic transactions" },
     "mentions.s4.p": {
@@ -554,8 +554,8 @@
       en: "This privacy policy takes into account law n°2019-014 of October 29, 2019 on the protection of personal data, applicable in Togo.",
     },
     "conf.s1.p2": {
-      fr: 'WIYAO est un projet communautaire indépendant, édité et maintenu à titre personnel par <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> (<a href="https://github.com/GRIIINDER" target="_blank" rel="noopener">GitHub</a>) : voir les <a href="mentions-legales.html">mentions légales</a>. L\'accès et la navigation sur WIYAO sont volontaires et gratuits et confèrent automatiquement à la personne intéressée le statut de « Visiteur » (ci-après, « Visiteur », « vous »).',
-      en: 'WIYAO is an independent community project, published and maintained personally by <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> (<a href="https://github.com/GRIIINDER" target="_blank" rel="noopener">GitHub</a>): see the <a href="mentions-legales.html">legal notice</a>. Access to and browsing of WIYAO are voluntary and free, and automatically grant the person concerned the status of "Visitor" (hereinafter, "Visitor", "you").',
+      fr: 'WIYAO est un projet communautaire indépendant, édité et maintenu à titre personnel par <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> : voir les <a href="mentions-legales.html">mentions légales</a>. L\'accès et la navigation sur WIYAO sont volontaires et gratuits et confèrent automatiquement à la personne intéressée le statut de « Visiteur » (ci-après, « Visiteur », « vous »).',
+      en: 'WIYAO is an independent community project, published and maintained personally by <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a>: see the <a href="mentions-legales.html">legal notice</a>. Access to and browsing of WIYAO are voluntary and free, and automatically grant the person concerned the status of "Visitor" (hereinafter, "Visitor", "you").',
     },
     "conf.s1.p3": {
       fr: "Le site ne proposant ni compte, ni inscription, ni candidature en ligne, il n'existe pas de statut « Utilisateur » distinct : tout le monde navigue sur WIYAO en tant que Visiteur, y compris pour utiliser le test d'orientation ou suivre sa progression sur les roadmaps.",
@@ -704,8 +704,8 @@
     },
     "conf.s9.h2": { fr: "9. Liens externes", en: "9. External links" },
     "conf.s9.p": {
-      fr: "WIYAO renvoie vers des sites tiers (écoles, plateformes d'emploi, dépôt GitHub, réseaux communautaires...). Ces sites ont leurs propres règles de confidentialité, indépendantes de celles de WIYAO.",
-      en: "WIYAO links to third-party sites (schools, job platforms, GitHub repository, community networks...). These sites have their own privacy rules, independent of WIYAO's.",
+      fr: "WIYAO renvoie vers des sites tiers (écoles, plateformes d'emploi, réseaux communautaires...). Ces sites ont leurs propres règles de confidentialité, indépendantes de celles de WIYAO.",
+      en: "WIYAO links to third-party sites (schools, job platforms, community networks...). These sites have their own privacy rules, independent of WIYAO's.",
     },
     "conf.s10.h2": { fr: "10. Déclaration auprès de l'autorité togolaise (IPDCP)", en: "10. Declaration to the Togolese authority (IPDCP)" },
     "conf.s10.p": {
@@ -725,8 +725,8 @@
 
     "cgu.s1.h2": { fr: "1. Généralités", en: "1. General" },
     "cgu.s1.p1": {
-      fr: 'WIYAO est un projet communautaire indépendant, édité et maintenu à titre personnel par <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> (<a href="https://github.com/GRIIINDER" target="_blank" rel="noopener">GitHub</a>) : voir les <a href="mentions-legales.html">mentions légales</a> pour le détail sur l\'éditeur du site.',
-      en: 'WIYAO is an independent community project, published and maintained personally by <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> (<a href="https://github.com/GRIIINDER" target="_blank" rel="noopener">GitHub</a>): see the <a href="mentions-legales.html">legal notice</a> for details on the site publisher.',
+      fr: 'WIYAO est un projet communautaire indépendant, édité et maintenu à titre personnel par <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> : voir les <a href="mentions-legales.html">mentions légales</a> pour le détail sur l\'éditeur du site.',
+      en: 'WIYAO is an independent community project, published and maintained personally by <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a>: see the <a href="mentions-legales.html">legal notice</a> for details on the site publisher.',
     },
     "cgu.s1.p2": {
       fr: "L'accès et la navigation sur WIYAO sont volontaires, libres et gratuits, et confèrent automatiquement à la personne intéressée le statut de « Visiteur » (ci-après, « Visiteur », « vous »).",
@@ -809,8 +809,8 @@
     },
     "cgu.s5.h2": { fr: "5. Propriété intellectuelle", en: "5. Intellectual property" },
     "cgu.s5.p1": {
-      fr: 'Le code source de WIYAO est ouvert et consultable sur le <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">dépôt GitHub</a>. Les contenus rédigés par WIYAO (roadmaps, fiches écoles, guides, textes du site) sont proposés à titre informatif et peuvent être réutilisés à titre non commercial en citant la source.',
-      en: 'WIYAO\'s source code is open and available on the <a href="https://github.com/GRIIINDER/Wiyao" target="_blank" rel="noopener">GitHub repository</a>. Content written by WIYAO (roadmaps, school profiles, guides, site text) is provided for informational purposes and may be reused for non-commercial purposes with attribution.',
+      fr: 'Le code de WIYAO appartient à son éditeur : tous droits réservés. Les contenus rédigés par WIYAO (roadmaps, fiches écoles, guides, textes du site) sont proposés à titre informatif et peuvent être réutilisés à titre non commercial en citant la source.',
+      en: 'WIYAO\'s code belongs to its publisher: all rights reserved. Content written by WIYAO (roadmaps, school profiles, guides, site text) is provided for informational purposes and may be reused for non-commercial purposes with attribution.',
     },
     "cgu.s5.p2": {
       fr: "Les informations et documents tiers cités sur WIYAO (textes officiels, sites d'écoles, articles de presse, données d'organismes publics) restent la propriété de leurs auteurs ou éditeurs respectifs ; WIYAO n'en revendique aucun droit.",
@@ -855,8 +855,8 @@
     },
     "faq.c1.q5": { fr: "Qui a créé WIYAO ?", en: "Who created WIYAO?" },
     "faq.c1.a5": {
-      fr: 'Un projet communautaire indépendant, sans statut commercial, créé et maintenu à titre personnel par <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> (<a href="https://github.com/GRIIINDER" target="_blank" rel="noopener">GitHub</a>), né de son propre parcours de bachelier en 2017. Détails dans <a href="about.html">À propos &amp; méthodologie</a> et les <a href="mentions-legales.html">mentions légales</a>.',
-      en: 'An independent community project, with no commercial status, created and maintained personally by <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a> (<a href="https://github.com/GRIIINDER" target="_blank" rel="noopener">GitHub</a>), born from his own path as a Togolese high-school graduate in 2017. Details in <a href="about.html">About &amp; methodology</a> and the <a href="mentions-legales.html">legal notice</a>.',
+      fr: 'Un projet communautaire indépendant, sans statut commercial, créé et maintenu à titre personnel par <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a>, né de son propre parcours de bachelier en 2017. Détails dans <a href="about.html">À propos &amp; méthodologie</a> et les <a href="mentions-legales.html">mentions légales</a>.',
+      en: 'An independent community project, with no commercial status, created and maintained personally by <a href="https://www.linkedin.com/in/credoahiafor/" target="_blank" rel="noopener">Crédo Ahiafor</a>, born from his own path as a Togolese high-school graduate in 2017. Details in <a href="about.html">About &amp; methodology</a> and the <a href="mentions-legales.html">legal notice</a>.',
     },
     "faq.c1.q6": { fr: "Les informations du site sont-elles vérifiées ?", en: "Is the site's information verified?" },
     "faq.c1.a6": {
@@ -865,8 +865,8 @@
     },
     "faq.c1.q7": { fr: "Comment signaler une erreur ou proposer un ajout ?", en: "How do I report an error or suggest an addition?" },
     "faq.c1.a7": {
-      fr: 'Via le <a href="https://github.com/GRIIINDER/Wiyao/issues" target="_blank" rel="noopener">dépôt GitHub</a> ou par email à <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
-      en: 'Via the <a href="https://github.com/GRIIINDER/Wiyao/issues" target="_blank" rel="noopener">GitHub repository</a> or by email at <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
+      fr: 'Via la page <a href="contact.html">Contact</a> pour une erreur, la page <a href="proposer.html">Proposer un contenu</a> pour un ajout, ou par email à <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
+      en: 'Via the <a href="contact.html">Contact</a> page for an error, the <a href="proposer.html">Suggest content</a> page for an addition, or by email at <a href="mailto:wiya.info@gmail.com">wiya.info@gmail.com</a>.',
     },
     "faq.c1.q8": { fr: "WIYAO fonctionne hors connexion ?", en: "Does WIYAO work offline?" },
     "faq.c1.a8": {
