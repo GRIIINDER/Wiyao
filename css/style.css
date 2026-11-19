@@ -1976,6 +1976,19 @@ main .school-details summary * {
   font-weight: 600;
 }
 
+/* Coût total de la scolarité : comment le total est calculé, en plus petit
+   (14 px, dans l'échelle typographique : « main .school-total-note »). */
+.school-total-note {
+  display: block;
+  margin-top: 4px;
+}
+
+/* Lien vers les « 7 questions » : un paragraphe, pour être souligné comme
+   les autres liens du texte courant. */
+.school-details-body p.school-questions {
+  margin: 0;
+}
+
 .school-link {
   display: inline-block;
   margin-top: 10px;
@@ -3533,6 +3546,7 @@ main .portrait-source,
 main .portrait-source *,
 main .founder-links a,
 main .eco-subheading,
+main .school-total-note,
 main #parcours .journey-step a {
   font-size: 14px !important;
 }

@@ -1004,7 +1004,31 @@
     if (school.duree) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.duree", "Durée :", "Duration:")}</strong> ${escapeHtml(tField(school, "duree"))}</span>`;
     if (school.admission) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.admission", "Admission :", "Admission:")}</strong> ${escapeHtml(tField(school, "admission"))}</span>`;
     if (school.frais) detailsHtml += `<span><strong>${i18nLabel("ecoles.card.frais", "Frais :", "Fees:")}</strong> ${escapeHtml(tField(school, "frais"))}</span>`;
+    // Coût total de la scolarité (2026-11-19, revue « expert en éducation ») :
+    // calculé ici à partir des tarifs annuels publiés (champ scolarite, dont
+    // chaque montant figure dans « Frais »), jamais saisi à la main.
+    if (Array.isArray(school.scolarite) && school.scolarite.length) {
+      const enT = currentLang() === "en";
+      const fmt = (n) => n.toLocaleString(enT ? "en-US" : "fr-FR");
+      const parts = school.scolarite.map((lvl) => {
+        const total = lvl.parAn.reduce((a, b) => a + b, 0);
+        const same = lvl.parAn.every((y) => y === lvl.parAn[0]);
+        const detail = same ? `${lvl.parAn.length} × ${fmt(lvl.parAn[0])}` : lvl.parAn.map(fmt).join(" + ");
+        return enT
+          ? `${lvl.niveauEn} (${lvl.parAn.length} years): ${fmt(total)} FCFA (${detail})`
+          : `${lvl.niveau} (${lvl.parAn.length} ans) : ${fmt(total)} FCFA (${detail})`;
+      });
+      const how = enT
+        ? "WIYAO's calculation from the fees above: tuition only, excluding registration and other costs, at the rate published for each year."
+        : "Calcul WIYAO à partir des frais ci-dessus : scolarité seule, hors inscription et frais annexes, au tarif publié pour chaque année.";
+      const note = school.scolariteNote ? " " + tField(school, "scolariteNote") : "";
+      // Un niveau par ligne, pour comparer d'un coup d'œil.
+      detailsHtml += `<span class="school-total"><strong>${enT ? "Total tuition for the full program:" : "Coût total de la scolarité :"}</strong><br>${parts.map(escapeHtml).join("<br>")}<span class="school-total-note">${escapeHtml(how + note)}</span></span>`;
+    }
     if (school.agreeNote) detailsHtml += `<span>${icon("info")}${escapeHtml(tField(school, "agreeNote"))}</span>`;
+    // Les questions que la fiche ne peut pas trancher (section #questions
+    // d'ecoles.html, aussi depuis le résultat du test).
+    detailsHtml += `<p class="school-questions"><a href="ecoles.html#questions">${currentLang() === "en" ? "7 questions to ask this school before enrolling" : "7 questions à poser à l'école avant de t'inscrire"}</a></p>`;
     if (detailsHtml) {
       const details = document.createElement("details");
       details.className = "school-details";
@@ -1537,6 +1561,8 @@
           <a href="calendrier.html">${isEn ? "See application dates →" : "Voir les dates de candidature →"}</a>
           &nbsp;·&nbsp;
           <a href="bourses-financement.html">${isEn ? "See available scholarships →" : "Voir les bourses disponibles →"}</a>
+          &nbsp;·&nbsp;
+          <a href="ecoles.html#questions">${isEn ? "7 questions to ask a school →" : "7 questions à poser à une école →"}</a>
         </p>
       `;
     }
