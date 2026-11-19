@@ -30,7 +30,7 @@ const OUT = path.join(ROOT, "icons", "og");
 
 const PAGES = [
   { file: "index", l1: "Après le bac,", hl: "la tech ?", sub: "Ton guide des études et des métiers tech au Togo" },
-  { file: "test-orientation", l1: "Pas sûr·e de ta voie ?", hl: "Test d'orientation", sub: "14 questions · gratuit · sans compte" },
+  { file: "test-orientation", l1: "Pas sûr·e de ta voie ?", hl: "Test d'orientation", sub: "15 questions · gratuit · sans compte" },
   { file: "roadmaps", l1: "Choisis ta", hl: "roadmap", sub: "89 roadmaps : 60 métiers et 29 compétences tech" },
   { file: "roadmap", l1: "Ta roadmap,", hl: "étape par étape", sub: "Ce qu'il faut apprendre, dans l'ordre, avec des ressources et des écoles au Togo" },
   { file: "ecoles", l1: "Trouve l'école", hl: "qu'il te faut", sub: "33 écoles et universités tech du Togo comparées" },

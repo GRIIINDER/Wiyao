@@ -93,7 +93,7 @@
     "marquee.dom.infra": { fr: "Infrastructure &amp; DevOps", en: "Infrastructure &amp; DevOps" },
     "marquee.dom.marketing": { fr: "Marketing digital", en: "Digital Marketing" },
     "marquee.dom.gestion": { fr: "Gestion &amp; Management", en: "Management" },
-    "marquee.quiz.questions": { fr: "14 questions", en: "14 questions" },
+    "marquee.quiz.questions": { fr: "15 questions", en: "15 questions" },
     "marquee.quiz.domaine": { fr: "Ton domaine", en: "Your domain" },
     "marquee.quiz.metier": { fr: "Ton métier", en: "Your career" },
     "marquee.quiz.ecoles": { fr: "Tes écoles", en: "Your schools" },
@@ -197,8 +197,8 @@
     },
     "journey.1.title": { fr: "Découvre ton domaine", en: "Discover your field" },
     "journey.1.desc": {
-      fr: "Pas sûr·e de ta voie ? Le test d'orientation identifie en 14 questions le domaine tech, et le métier précis, qui te correspond.",
-      en: "Not sure which path? The orientation test identifies the tech field, and the specific role, that suits you in 14 questions.",
+      fr: "Pas sûr·e de ta voie ? Le test d'orientation identifie en 15 questions le domaine tech, et le métier précis, qui te correspond.",
+      en: "Not sure which path? The orientation test identifies the tech field, and the specific role, that suits you in 15 questions.",
     },
     "journey.1.link": { fr: "Faire le test d'orientation →", en: "Take the orientation test →" },
     "journey.2.title": { fr: "Suis ta roadmap", en: "Follow your roadmap" },
@@ -272,8 +272,8 @@
       fr: 'Pas sûr·e de ta <span class="hero-accent">voie</span> ?',
       en: 'Not sure about your <span class="hero-accent">path</span>?',
     },
-    "quiz.hero.subtitle": { fr: "En 14 questions, ce test identifie le domaine tech qui te correspond, puis le métier le plus cohérent avec tes réponses, et enfin les écoles togolaises adaptées à ton niveau, à ta ville et à ton budget : non pas une étiquette vague, mais un véritable point de départ.", en: "In 14 questions, this test identifies the tech field that suits you, then the role most consistent with your answers, and finally the Togolese schools matched to your level, city and budget: not a vague label, but a genuine starting point." },
-    "quiz.hero.faq": { fr: "Tu t'interroges sur la méthode d'orientation ? Consulte la <a href=\"faq.html#orientation\">FAQ orientation &amp; roadmaps</a>.", en: "Curious about how the orientation works? See the <a href=\"faq.html#orientation\">orientation &amp; roadmaps FAQ</a>." },
+    "quiz.hero.subtitle": { fr: "En 15 questions, ce test identifie le domaine tech qui te correspond, puis le métier le plus cohérent avec tes réponses, et enfin les écoles togolaises adaptées à ton niveau, à ta ville et à ton budget : non pas une étiquette vague, mais un véritable point de départ.", en: "In 15 questions, this test identifies the tech field that suits you, then the role most consistent with your answers, and finally the Togolese schools matched to your level, city and budget: not a vague label, but a genuine starting point." },
+    "quiz.hero.faq": { fr: "Tu t'interroges sur la méthode ? Lis <a href=\"about.html#methode-test\">comment marche le test</a> et la <a href=\"faq.html#orientation\">FAQ orientation &amp; roadmaps</a>.", en: "Curious about the method? Read <a href=\"about.html#methode-test\">how the test works</a> and the <a href=\"faq.html#orientation\">orientation &amp; roadmaps FAQ</a>." },
 
     "eco.hero.title": {
       fr: 'Écosystème tech <span class="hero-accent">togolais</span>',
@@ -495,6 +495,30 @@
       fr: 'Les 29 roadmaps par compétence suivent une taxonomie standard de l\'industrie (langages, frameworks, outils, pratiques), cohérente avec les référentiels internationaux du secteur, pour rester alignées avec les attentes du marché au-delà du seul contexte togolais.',
       en: 'The 29 skill-based roadmaps follow a standard industry taxonomy (languages, frameworks, tools, practices), consistent with international references in the field, to stay aligned with market expectations beyond the Togolese context alone.',
     },
+    "about.test.h2": {
+      fr: "Le test d'orientation : méthode et limites",
+      en: "The orientation test: method and limits",
+    },
+    "about.test.p1": {
+      fr: "Le test pose 15 questions. Les 8 premières décrivent des goûts ou des situations : chaque réponse donne un point à l'un des 7 domaines de la tech, et « Aucune de ces réponses ne me ressemble » n'en donne à aucun. Le domaine qui a le plus de points devient ton résultat ; si un autre domaine le suit à un point près, le résultat le signale. Si tu ne te reconnais dans aucune réponse, le test s'arrête là et t'invite à découvrir les 7 domaines.",
+      en: "The test asks 15 questions. The first 8 describe interests or situations: each answer gives one point to one of the 7 tech fields, and \"None of these sounds like me\" gives a point to none. The field with the most points becomes your result; if another field is just one point behind, the result says so. If none of the answers sounds like you, the test stops there and invites you to discover the 7 fields.",
+    },
+    "about.test.p2": {
+      fr: "Viennent ensuite 2 questions propres à ton domaine, qui classent ses métiers, puis 5 questions pratiques : série du bac, niveau d'études visé, ville, public ou privé, priorité. Elles ne changent pas ton domaine : elles servent à le relier aux écoles du comparateur, avec pour chaque école la liste des critères remplis (✓), non remplis (✗) ou inconnus (?).",
+      en: "Then come 2 questions specific to your field, which rank its roles, and 5 practical questions: bac series, target level of study, city, public or private, priority. They don't change your field: they link it to the schools in the comparison, showing for each school the criteria that are met (✓), not met (✗) or unknown (?).",
+    },
+    "about.test.p3": {
+      fr: "La série du bac sert seulement à écarter : une école qui publie les séries qu'elle accepte, sans la tienne, passe en fin de liste. Les autres gardent leur rang, que ta série y soit confirmée (✓) ou non publiée (?, « à demander ») : la plupart des écoles ne publient pas cette liste, et elles ne doivent pas être désavantagées pour autant. Ces séries viennent de ce que les écoles publient (pages d'admission, appels à candidatures).",
+      en: "The bac series is only used to rule out: a school that publishes the series it accepts, without yours, moves to the end of the list. The others keep their rank, whether your series is confirmed there (✓) or not published (?, \"ask\"): most schools don't publish this list, and they shouldn't be penalized for it. These series come from what the schools publish (admission pages, calls for applications).",
+    },
+    "about.test.p4": {
+      fr: "Ce que le test ne fait pas : ce n'est pas un test psychologique validé scientifiquement. Il n'a pas été étalonné sur des élèves togolais et ne mesure ni tes aptitudes ni tes notes. Une série acceptée ne garantit pas l'admission (notes, concours, places disponibles). Il ne remplace ni un conseiller d'orientation, ni un échange avec quelqu'un qui exerce le métier : prends-le comme un point de départ, puis vérifie auprès des écoles.",
+      en: "What the test doesn't do: it is not a scientifically validated psychological test. It hasn't been calibrated on Togolese students and measures neither your abilities nor your grades. An accepted series doesn't guarantee admission (grades, entrance exams, available places). It doesn't replace a guidance counselor or a conversation with someone who does the job: take it as a starting point, then check with the schools.",
+    },
+    "about.test.p5": {
+      fr: "Tes réponses restent dans ton navigateur : rien n'est enregistré ni envoyé, et elles disparaissent quand tu quittes la page.",
+      en: "Your answers stay in your browser: nothing is saved or sent, and they disappear when you leave the page.",
+    },
     "about.s4.h2": { fr: "Limites et mises à jour", en: "Limitations and updates" },
     "about.s4.p1": {
       fr: 'Le marché de l\'emploi et l\'écosystème tech togolais évoluent vite : certaines informations (contacts, programmes de formation, structures citées dans l\'<a href="ecosysteme.html">écosystème togolais</a>) peuvent changer. Vérifie toujours directement auprès des établissements et organismes concernés avant de t\'engager.',
@@ -618,7 +642,7 @@
     "legal.tab.terms": { fr: "Conditions d'utilisation", en: "Terms of use" },
     "legal.tab.about": { fr: "À propos", en: "About" },
     "hero.reassure.account": { fr: "Sans compte", en: "No account" },
-    "hero.reassure.questions": { fr: "14 questions", en: "14 questions" },
+    "hero.reassure.questions": { fr: "15 questions", en: "15 questions" },
     "ecoles.list.h2": { fr: "Liste des écoles", en: "List of schools" },
     "ecoles.filter.domaine": { fr: "Domaine", en: "Field" },
     "ecoles.filter.ville": { fr: "Ville", en: "City" },
@@ -887,8 +911,8 @@
     "faq.cat2.h2": { fr: "Sur l'orientation et les roadmaps", en: "About orientation and roadmaps" },
     "faq.c2.q1": { fr: "Je ne sais pas du tout quoi choisir, par où je commence ?", en: "I have no idea what to choose, where do I start?" },
     "faq.c2.a1": {
-      fr: 'Par le <a href="test-orientation.html">test d\'orientation</a> : 14 questions pour identifier le domaine tech qui te correspond, puis le métier précis et les écoles adaptés.',
-      en: 'With the <a href="test-orientation.html">orientation test</a>: 14 questions to identify the tech field that suits you, then the specific role and matching schools.',
+      fr: 'Par le <a href="test-orientation.html">test d\'orientation</a> : 15 questions pour identifier le domaine tech qui te correspond, puis le métier précis et les écoles adaptés.',
+      en: 'With the <a href="test-orientation.html">orientation test</a>: 15 questions to identify the tech field that suits you, then the specific role and matching schools.',
     },
     "faq.c2.q2": { fr: "Quelle est la différence entre roadmap « par métier » et « par compétence » ?", en: 'What\'s the difference between a "role" roadmap and a "skill" roadmap?' },
     "faq.c2.a2": {
@@ -902,8 +926,8 @@
     },
     "faq.c2.q4": { fr: "Le test d'orientation est-il fiable à 100 % ?", en: "Is the orientation test 100% reliable?" },
     "faq.c2.a4": {
-      fr: 'Non, et c\'est assumé : 14 questions ne peuvent pas connaître quelqu\'un parfaitement. Le résultat est un point de départ solide, pas un verdict définitif. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier et explore la roadmap correspondante avant de t\'engager dans une école.',
-      en: 'No, and that\'s by design: 14 questions can\'t know someone perfectly. The result is a solid starting point, not a final verdict. Cross-check it against a <a href="temoignages.html">real testimonial</a> from someone in the field and explore the matching roadmap before committing to a school.',
+      fr: 'Non, et c\'est assumé : 15 questions ne peuvent pas connaître quelqu\'un parfaitement. Le résultat est un point de départ, pas un verdict définitif : sa méthode et ses limites sont expliquées sur la page <a href="about.html#methode-test">À propos</a>. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier et explore la roadmap correspondante avant de t\'engager dans une école.',
+      en: 'No, and that\'s by design: 15 questions can\'t know someone perfectly. The result is a starting point, not a final verdict: its method and limits are explained on the <a href="about.html#methode-test">About</a> page. Cross-check it against a <a href="temoignages.html">real testimonial</a> from someone in the field and explore the matching roadmap before committing to a school.',
     },
     "faq.c2.q5": { fr: "Le métier suggéré par le test ne me plaît pas, que faire ?", en: "I don't like the role the test suggested, what should I do?" },
     "faq.c2.a5": {

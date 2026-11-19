@@ -5113,6 +5113,12 @@ main .faq-item summary {
   color: var(--tk-text-muted);
 }
 
+/* Critère que l'école ne publie pas (série acceptée) : « ? », ni vert ni barré. */
+.quiz-match-checklist .match-unknown {
+  background: var(--w-yellow-pale);
+  color: var(--w-ink);
+}
+
 @media (max-width: 600px) {
   .quiz-option {
     min-height: 56px;

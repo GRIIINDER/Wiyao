@@ -1114,12 +1114,13 @@
   // : une fois le domaine dominant connu : 2 questions spécifiques à ce domaine
   // qui affinent la recommandation vers un métier précis (au lieu des 3 premiers
   // métiers du domaine par ordre d'insertion), avant les questions pratiques
-  // (niveau, ville, budget, priorité). 14 questions au total, quel que soit le
-  // profil.
+  // (série du bac, niveau, ville, budget, priorité). 15 questions au total,
+  // quel que soit le profil ; 8 seulement si toutes les réponses de domaine
+  // sont « aucune de ces réponses » (aucun domaine ne ressort).
   let quizIndex = 0;
   let quizScores = {};
   let quizRoleScores = {};
-  let quizPractical = { niveau: null, ville: null, statut: null, priorite: null };
+  let quizPractical = { serie: null, niveau: null, ville: null, statut: null, priorite: null };
   let quizFlow = typeof QUIZ_QUESTIONS !== "undefined" ? QUIZ_QUESTIONS.filter((q) => q.type === "domain") : [];
   // Une entrée par question déjà répondue (indexée comme quizFlow), pour
   // pouvoir annuler une réponse quand on revient en arrière ou qu'on la change.
@@ -1216,10 +1217,18 @@
     // (Ce point ne se déclenche qu'une fois : un retour en arrière dans les
     // questions de domaine tronque quizFlow, voir goBackQuiz.)
     if (quizIndex === quizDomainCount && quizFlow.length === quizDomainCount) {
-      const leadingDomain = Object.keys(quizScores).sort((a, b) => (quizScores[b] || 0) - (quizScores[a] || 0))[0];
-      const roleQuestions = (typeof ROLE_QUESTIONS !== "undefined" && ROLE_QUESTIONS[leadingDomain]) || [];
-      const practicalQuestions = QUIZ_QUESTIONS.filter((q) => q.type !== "domain");
-      quizFlow = quizFlow.concat(roleQuestions, practicalQuestions);
+      // Seuls les vrais domaines comptent (« aucune de ces réponses » n'en
+      // est pas un) ; sans domaine qui ressort, pas de questions de métier.
+      const leadingDomain = Object.keys(quizScores)
+        .filter((d) => typeof DOMAINS !== "undefined" && DOMAINS[d] && quizScores[d] > 0)
+        .sort((a, b) => (quizScores[b] || 0) - (quizScores[a] || 0))[0];
+      // Aucun domaine ne ressort (que des « aucune ») : le test s'arrête
+      // là, les questions pratiques ne serviraient à rien sans domaine.
+      if (leadingDomain) {
+        const roleQuestions = (typeof ROLE_QUESTIONS !== "undefined" && ROLE_QUESTIONS[leadingDomain]) || [];
+        const practicalQuestions = QUIZ_QUESTIONS.filter((q) => q.type !== "domain");
+        quizFlow = quizFlow.concat(roleQuestions, practicalQuestions);
+      }
     }
 
     if (quizIndex >= quizFlow.length) {
@@ -1270,6 +1279,38 @@
           label: isEn ? `Program related to ${topName}` : `Filière liée à ${topName}`
         });
 
+        // Série du bac (2026-11-12, revue « expert en éducation ») : c'est
+        // souvent ce qui décide de l'admission. Trois cas : acceptée (✓),
+        // refusée (✗, l'école passe en fin de liste), ou non publiée (?,
+        // sans effet sur le classement). Une licence peut demander une série
+        // plus restreinte que le BTS de la même école (seriesLicence).
+        let blocked = 0;
+        const serie = quizPractical.serie;
+        if (serie && serie !== "autre") {
+          const wantsLicence = quizPractical.niveau === "licence" || quizPractical.niveau === "long";
+          const rule = (wantsLicence && school.seriesLicence) || school.series;
+          let ok = null;
+          if (rule) {
+            if (rule.ok === "toutes" || (Array.isArray(rule.ok) && rule.ok.indexOf(serie) !== -1)) ok = true;
+            else if (!(rule.incertain && rule.incertain.indexOf(serie) !== -1)) ok = false;
+          }
+          if (ok === false) blocked = 1;
+          // rank: false : la série ne fait qu'écarter (✗ en fin de liste) ;
+          // la compter comme un point avantagerait les seules écoles qui
+          // publient leurs séries face à celles qui ne le font pas.
+          checks.push({
+            rank: false,
+            ok,
+            label: ok === true
+              ? (isEn ? `Series ${serie} accepted` : `Série ${serie} acceptée`)
+              : ok === false
+                ? (isEn ? `Series ${serie} not accepted` : `Série ${serie} non acceptée`)
+                : rule
+                  ? (isEn ? `Series ${serie}: check with the school` : `Série ${serie} : à confirmer auprès de l'école`)
+                  : (isEn ? "Accepted series not published: ask" : "Séries acceptées non publiées : à demander")
+          });
+        }
+
         if (quizPractical.niveau && quizPractical.niveau !== "peu-importe") {
           const niveauText = school.niveaux.join(" ").toLowerCase();
           let ok = false;
@@ -1310,13 +1351,15 @@
           });
         }
 
-        const score = checks.filter((c) => c.ok).length;
+        const score = checks.filter((c) => c.ok === true && c.rank !== false).length;
         // À égalité, l'école du statut demandé passe devant : « je dois
         // viser le public » est une contrainte, pas une préférence.
         const prefer = quizPractical.statut && quizPractical.statut !== "peu-importe" && school.statut === quizPractical.statut ? 1 : 0;
-        return { id, school, checks, score, prefer };
+        return { id, school, checks, score, prefer, blocked };
       })
-      .sort((a, b) => b.score - a.score || b.prefer - a.prefer)
+      // Une école qui refuse la série de l'élève ne lui est jamais
+      // recommandée avant une école qui peut l'accepter.
+      .sort((a, b) => a.blocked - b.blocked || b.score - a.score || b.prefer - a.prefer)
       .slice(0, 5);
   }
 
@@ -1357,7 +1400,9 @@
     const checklist = document.createElement("div");
     checklist.className = "quiz-match-checklist";
     checklist.innerHTML = match.checks
-      .map((c) => `<span class="${c.ok ? "match-ok" : "match-no"}">${c.ok ? "✓" : "✗"} ${escapeHtml(c.label)}</span>`)
+      .map((c) => c.ok === null
+        ? `<span class="match-unknown">? ${escapeHtml(c.label)}</span>`
+        : `<span class="${c.ok ? "match-ok" : "match-no"}">${c.ok ? "✓" : "✗"} ${escapeHtml(c.label)}</span>`)
       .join("");
     card.insertBefore(checklist, card.firstChild);
     return card;
@@ -1379,12 +1424,16 @@
     const topScore = quizScores[top] || 0;
     const secondScore = second ? (quizScores[second] || 0) : 0;
     const isCloseCall = !!second && topScore > 0 && topScore - secondScore <= 1;
+    // « Aucune de ces réponses » à toutes les questions de domaine : aucun
+    // domaine ne ressort, donc ni métier ni école à recommander.
+    const noDomain = topScore === 0;
+    const noneCount = quizScores.aucune || 0;
 
     // Métiers du domaine dominant, classés par le score des questions de
     // deuxième niveau (voir ROLE_QUESTIONS) plutôt que par ordre d'insertion.
     // Les métiers jamais boostés (score 0) ne sont proposés que s'il n'y a pas
     // assez de métiers mieux notés pour remplir les 3 recommandations.
-    const matchingRoles = typeof ROLES !== "undefined"
+    const matchingRoles = typeof ROLES !== "undefined" && !noDomain
       ? Object.keys(ROLES)
           .filter((id) => ROLES[id].domain === top)
           .sort((a, b) => (quizRoleScores[b] || 0) - (quizRoleScores[a] || 0))
@@ -1399,19 +1448,56 @@
     const bestRoleIds = maxRoleScore > 0
       ? matchingRoles.filter((id) => (quizRoleScores[id] || 0) === maxRoleScore)
       : [];
-    const schoolMatches = computeSchoolMatches(top);
+    const schoolMatches = noDomain ? [] : computeSchoolMatches(top);
     const isEn = currentLang() === "en";
     const topLabel = escapeHtml(isEn && topMeta.nameEn ? topMeta.nameEn : top);
+    // Nombre de questions réellement posées (15 en général, 8 si aucun
+    // domaine ne ressort).
+    const asked = quizFlow.length;
+    const methodLink = isEn
+      ? ' How the test works, and its limits: <a href="about.html#methode-test">About</a>.'
+      : ' Comment fonctionne le test, et ses limites : <a href="about.html#methode-test">À propos</a>.';
 
     let html = `
       <p class="quiz-disclaimer">${
         isEn
-          ? 'This result is a starting point, not a verdict: 14 questions can\'t know you 100%. Compare it against a <a href="temoignages.html">real testimonial</a> from someone in the role, and try the roadmap before committing financially to a school.'
-          : 'Ce résultat est un point de départ, pas un verdict : 14 questions ne peuvent pas te connaître à 100 %. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu\'un du métier, et teste la roadmap avant de t\'engager financièrement dans une école.'
-      }</p>
+          ? `This result is a starting point, not a verdict: ${asked} questions can't know you 100%. Compare it against a <a href="temoignages.html">real testimonial</a> from someone in the role, and try the roadmap before committing financially to a school.`
+          : `Ce résultat est un point de départ, pas un verdict : ${asked} questions ne peuvent pas te connaître à 100 %. Confronte-le à un <a href="temoignages.html">témoignage réel</a> de quelqu'un du métier, et teste la roadmap avant de t'engager financièrement dans une école.`
+      }${methodLink}</p>
+    `;
+
+    if (noDomain) {
+      html = `
+        <h2>${isEn ? "No field stands out yet" : "Aucun domaine ne ressort pour l'instant"}</h2>
+        <p class="category-desc">${
+          isEn
+            ? 'None of the suggested answers sounded like you. That\'s not a failure: many students only discover tech after the bac. Read the description of the 7 fields on the <a href="roadmaps.html">Roadmaps</a> page, listen to <a href="temoignages.html">testimonials</a> from people in the field, then take the test again.'
+            : 'Tu ne t\'es reconnu·e dans aucune des réponses proposées. Ce n\'est pas un échec : beaucoup d\'élèves ne découvrent la tech qu\'après le bac. Lis la description des 7 domaines sur la page <a href="roadmaps.html">Roadmaps</a>, écoute des <a href="temoignages.html">témoignages</a> de gens du métier, puis refais le test.'
+        }${methodLink}</p>
+        <div class="quiz-actions" id="quiz-actions">
+          <button class="btn" id="quiz-restart" type="button">${isEn ? "Retake the test" : "Refaire le test"}</button>
+        </div>
+      `;
+      resultsSection.innerHTML = html;
+      const restart = document.getElementById("quiz-restart");
+      if (restart) restart.addEventListener("click", restartQuiz);
+      return;
+    }
+
+    html += `
       <h2>${isEn ? "Your profile:" : "Ton profil :"} ${domainIcon(top)}${topLabel}</h2>
       <p class="category-desc">${escapeHtml(tField(topMeta, "description"))}</p>
     `;
+
+    // La moitié des réponses de domaine ou plus à « aucune » : le résultat
+    // repose sur peu de réponses, on le dit.
+    if (noneCount * 2 >= quizDomainCount) {
+      html += `<p class="quiz-secondary">${
+        isEn
+          ? `You answered "none of these" to ${noneCount} of the ${quizDomainCount} questions about your interests: this result rests on few answers. Take it with extra caution, and also read about the other fields on the <a href="roadmaps.html">Roadmaps</a> page.`
+          : `Tu as répondu « aucune de ces réponses » à ${noneCount} des ${quizDomainCount} questions sur tes goûts : ce résultat repose sur peu de réponses. Prends-le avec encore plus de recul, et lis aussi la description des autres domaines sur la page <a href="roadmaps.html">Roadmaps</a>.`
+      }</p>`;
+    }
 
     if (matchingRoles.length) {
       html += `
@@ -1440,8 +1526,8 @@
         <h3 class="quiz-scores-title">${isEn ? "Schools recommended for you" : "Écoles recommandées pour toi"}</h3>
         <p class="category-desc" style="text-align:center;">${
           isEn
-            ? "Based on your field and your answers about level, city and budget: every checked criterion is verified, not guessed."
-            : "D'après ton domaine et tes réponses sur le niveau, la ville et le budget : chaque critère coché est vérifié, pas deviné."
+            ? "Based on your field and your answers about your bac series, level, city and budget: every checked criterion is verified, not guessed, and a “?” means the school doesn't publish the information. A school that doesn't accept your series comes last."
+            : "D'après ton domaine et tes réponses sur ta série, le niveau, la ville et le budget : chaque critère coché est vérifié, pas deviné, et un « ? » signale une information que l'école ne publie pas. Une école qui n'accepte pas ta série passe en dernier."
         }</p>
         ${publicPathNote(top, topLabel, isEn)}
         <div class="grid" id="quiz-school-grid"></div>
@@ -1525,7 +1611,7 @@
     quizIndex = 0;
     quizScores = {};
     quizRoleScores = {};
-    quizPractical = { niveau: null, ville: null, statut: null, priorite: null };
+    quizPractical = { serie: null, niveau: null, ville: null, statut: null, priorite: null };
     quizFlow = QUIZ_QUESTIONS.filter((q) => q.type === "domain");
     quizHistory = [];
     const quizSection = document.getElementById("quiz-section");

@@ -10,7 +10,7 @@ WIYAO n'est pas qu'un catalogue de roadmaps : c'est un guide qui suit le bacheli
 
 - **Roadmaps** — plus de 80 métiers et compétences tech, avec les ressources d'apprentissage et le suivi de progression.
 - **Écoles & universités** — comparateur des établissements togolais formant à l'informatique, filtrable par ville et statut.
-- **Test d'orientation** — 14 questions pour identifier un domaine puis un métier tech précis.
+- **Test d'orientation** — 15 questions pour identifier un domaine puis un métier tech précis.
 - **Calendrier** — dates clés d'inscription et de concours, école par école.
 - **Bourses & financement**, **Stages & emploi**, **Écosystème tech togolais** — communautés, hubs, institutions, cybersécurité, ressources francophones.
 

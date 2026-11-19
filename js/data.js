@@ -4749,6 +4749,7 @@ const SCHOOLS = {
     filieresEn: ["Artificial Intelligence", "Data Science", "Software Engineering", "Cybersecurity", "Web & Mobile Development", "Networks, Systems & Security", "Web Design, Computer Graphics and Multimedia", "Computer Science and Management"],
     duree: "Licence : 3 ans · Master : 2 ans", dureeEn: "Bachelor's: 3 years · Master's: 2 years",
     admission: "Sur étude de dossier ou sur concours (BAC II séries A4, C, D, E, F1/F2/F3, G2/G3 ou équivalent) ; Licence en informatique ou discipline connexe pour le Master.", admissionEn: "Based on an application review or an entrance exam (BAC II series A4, C, D, E, F1/F2/F3, G2/G3 or equivalent); a bachelor's in computer science or a related field for the Master's.",
+    series: { ok: ["A4", "C", "D", "E", "F1", "F2", "F3", "G2", "G3"] },
     frais: "Licence (3 ans, toutes filières) : 800 000 FCFA en 1re année · 900 000 en 2e · 1 000 000 en 3e, + inscription 50 000 FCFA en 1re année puis 30 000 FCFA, kit vestimentaire 50 000 FCFA, étude de dossier 10 000 FCFA (25 000 pour les non-Togolais) et concours facultatif 5 000 FCFA ; paiement en 3 fois (50 % à la rentrée d'octobre, 30 % au 31 janvier, 20 % au 30 avril). Master : 1 100 000 FCFA en M1 (hors mise à niveau) · 1 300 000 en M2, + inscription 100 000 FCFA puis 30 000 FCFA (source : page « Procédure d'inscription » d'ipnetuniversity.com, consultée le 6 novembre 2026, sans année indiquée).", fraisEn: "Bachelor's (3 years, all programs): 800,000 FCFA in year 1 · 900,000 in year 2 · 1,000,000 in year 3, + registration 50,000 FCFA in year 1 then 30,000 FCFA, uniform kit 50,000 FCFA, application review 10,000 FCFA (25,000 for non-Togolese students) and optional entrance exam 5,000 FCFA; payment in 3 installments (50% at the October start, 30% by January 31, 20% by April 30). Master's: 1,100,000 FCFA in M1 (excluding the bridging course) · 1,300,000 in M2, + registration 100,000 FCFA then 30,000 FCFA (source: \"Procédure d'inscription\" page on ipnetuniversity.com, accessed November 6, 2026, no year stated).",
     site: "https://ipnetuniversity.com",
     description: "Institut privé fondé en 2003, très orienté pratique (80+ partenariats entreprises tech), élu « université la plus innovante du Togo » en 2022.", descriptionEn: "Private institute founded in 2003, strongly hands-on (80+ partnerships with tech companies), named \"most innovative university in Togo\" in 2022.",
@@ -4774,6 +4775,7 @@ const SCHOOLS = {
     filieresEn: ["Software Engineering", "Systems and Networks", "Multimedia", "Multimedia, Web Technology and Computer Graphics (work-study bachelor's)"],
     duree: "Cycle ITI / Licence Pro : 3 ans, avec stage en 2e et 3e années", dureeEn: "ITI cycle / Professional bachelor's: 3 years, with an internship in years 2 and 3",
     admission: "Concours d'entrée réservé aux BAC II séries C, D, E, F1 ou F2 : présélection sur dossier puis épreuves écrites de Mathématiques (coef. 6), Techniques d'expression (coef. 2) et Anglais (coef. 3).", admissionEn: "Entrance exam reserved for BAC II series C, D, E, F1 or F2: shortlisting on application, then written exams in Mathematics (weight 6), Communication skills (weight 2) and English (weight 3).",
+    series: { ok: ["C", "D", "E", "F1", "F2"] },
     frais: "Non communiqué publiquement : seuls les frais annexes sont connus (10 000 FCFA pour l'étude de dossier, concours : 15 000 FCFA/an, assurance : 1 000 FCFA/an). Contacte l'établissement pour le montant de la scolarité (vérifié le 10 novembre 2026).", fraisEn: "Not made public: only the additional fees are known (10,000 FCFA for the application review, entrance exam: 15,000 FCFA/year, insurance: 1,000 FCFA/year). Contact the school for the tuition amount (checked November 10, 2026).",
     site: "https://new.iai-togo.tg/officiel",
     description: "École inter-États d'enseignement supérieur en informatique, présente au Togo depuis 2002, référence historique de la formation informatique dans la sous-région.", descriptionEn: "Inter-state higher-education school in computer science, in Togo since 2002, the historic benchmark for computer science training in the sub-region.",
@@ -4798,6 +4800,7 @@ const SCHOOLS = {
     filieresEn: ["Business Computing (BTS)", "Telecommunications (BTS)", "Application Development / Software Engineering", "Computer Systems and Networks", "Computer Security", "Artificial Intelligence and Big Data", "Software Architecture (Master's)", "Systems, Networks and Security (Master's)", "Mechatronics", "Digital Marketing"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans après la Licence", dureeEn: "BTS: 2 years · Bachelor's: 3 years · Master's: 2 years after the bachelor's",
     admission: "Ouvert à tous les bacheliers en 1ère année ; dossier + entretien pour une admission directe en cours de cursus", admissionEn: "Open to all high-school graduates in year 1; application + interview for direct entry later in the program",
+    series: { ok: "toutes" },
     frais: "Non communiqué publiquement : l'école renvoie explicitement au secrétariat local pour les tarifs. (Un document non officiel daté de 2021 circule en ligne mais n'est pas fiable pour l'année en cours.)", fraisEn: "Not made public: the school explicitly refers students to the local office for fees. (An unofficial document dated 2021 circulates online but is not reliable for the current year.)",
     site: "https://www.esgis.org/",
     description: "École privée accréditée CAMES, présente au Togo, au Bénin et au Gabon, plus de 20 000 étudiants formés en 30 ans.", descriptionEn: "Private school accredited by CAMES, present in Togo, Benin and Gabon, more than 20,000 students trained in 30 years.",
@@ -4888,6 +4891,7 @@ const SCHOOLS = {
     filieresEn: ["Application Development", "Mathematics and Computer Science", "Computer Networks and Telecommunications", "Cybersecurity", "Big Data", "Artificial Intelligence", "Software Engineering"],
     duree: "Licence : 3 ans · Cycle ingénieur : 5 ans", dureeEn: "Bachelor's: 3 years · Engineering cycle: 5 years",
     admission: "Bac séries C, D, E ou F (ou équivalent) ; sélection sur dossier — notes de mathématiques (2ⁿᵈᵉ, 1ʳᵉ, Tˡᵉ, Bac) et niveau d'anglais, avec audition ou entretien possible.", admissionEn: "Bac series C, D, E or F (or equivalent); selection on application — mathematics grades (Seconde, Première, Terminale, Bac) and English level, with a possible audition or interview.",
+    series: { ok: ["C", "D", "E", "F1", "F2", "F3", "F4"] },
     frais: "Tarifs 2026-2027 « Jubilé 20 ans » (remise réservée aux 1ʳᵉˢ années) : Licence 595 000 FCFA en L1 puis 758 000 FCFA en L2-L3 ; cycle ingénieur / Master 858 000 FCFA la 1ʳᵉ année puis 958 000 FCFA. Frais d'étude de dossier : 8 000 FCFA (licence) ou 12 000 FCFA (master/ingénieur). Bourse « Étoile Scientifique » (200 000 FCFA/an, étudiantes en informatique) et réduction « même parent » (50 000 FCFA/an) non cumulables : une étudiante en filière scientifique paie 558 000 FCFA/an sur tout le cycle licence (source : ucao-uut.tg/admissions).", fraisEn: "2026-2027 \"20th Jubilee\" fees (discount reserved for first-year students): bachelor's 595,000 FCFA in L1, then 758,000 FCFA in L2-L3; engineering cycle / master's 858,000 FCFA in year 1, then 958,000 FCFA. Application review fee: 8,000 FCFA (bachelor's) or 12,000 FCFA (master's/engineering). \"Scientific Star\" (Étoile Scientifique) scholarship (200,000 FCFA/year, female computer science students) and \"same parent\" discount (50,000 FCFA/year), not combinable: a female student in a science program pays 558,000 FCFA/year throughout the bachelor's cycle (source: ucao-uut.tg/admissions).",
     site: "https://ucao-uut.tg/formation-recherche/formations/institut-ecole/dgi/",
     description: "Université catholique reconnue par l'État togolais et le CAMES. Le Département de Génie Informatique (DGI) relève de l'École Supérieure d'Ingénieurs, créée en 2024, et a succédé à l'ISTIN (fondé en 2007) ; la formation vise le diplôme d'ingénieur avec équivalence Master Recherche, dans le respect des normes du CAMES et de la Commission des Titres d'Ingénieur (CTI). Le 2ᵉ cycle ingénieur et les masters se déroulent en cours du soir (13 h – 21 h 30).", descriptionEn: "Catholic university recognized by the Togolese State and CAMES. The Computer Engineering Department (DGI) belongs to the School of Engineering, created in 2024, and succeeded ISTIN (founded in 2007); the program leads to an engineering degree equivalent to a research master's, in line with the standards of CAMES and the Engineering Degree Commission (CTI). The 2nd engineering cycle and master's programs run as evening classes (1:00 pm – 9:30 pm).",
@@ -5005,6 +5009,7 @@ const SCHOOLS = {
     filieresEn: ["Computer Security and Cybersecurity (ENP, Kara campus)", "Web and Mobile Development (ENP, Kara campus)", "Software Engineering (ENP, Kara campus)"],
     duree: "Licences en 3 ans, avec stage professionnel et soutenance en fin de cycle", dureeEn: "Bachelor's programs in 3 years, with a professional internship and a final defense",
     admission: "Bac C, D ou E (session récente), sélection sur dossier", admissionEn: "Bac C, D or E (recent session), selection on application",
+    series: { ok: ["C", "D", "E"] },
     frais: "Master : de 176 500 FCFA/an (recherche, étudiants togolais/UEMOA) à plus d'1 000 000 FCFA (professionnel, étranger) : arrêté officiel 2026-2027. Licence non communiquée publiquement. Bourses d'État, prix d'excellence et bourses de mobilité internationale : détail sur la page Bourses.", fraisEn: "Master's: from 176,500 FCFA/year (research track, Togolese/WAEMU students) to over 1,000,000 FCFA (professional track, foreign students): official 2026-2027 decree. Bachelor's fees not made public. State scholarships, excellence awards and international mobility scholarships: details on the Scholarships page.",
     site: "https://univkara.tg/",
     description: "2e université publique du Togo. Depuis juillet 2026, ses formations informatiques relèvent de l'École nationale polytechnique (ENP), campus de Kara : voir aussi la fiche de l'ENP (source : brochure de l'offre de formation 2026-2027 de l'université).", descriptionEn: "Togo's 2nd public university. Since July 2026, its computer science programs have been run by the National Polytechnic School (ENP), Kara campus: see also the ENP profile (source: the university's 2026-2027 program brochure).",
@@ -5104,6 +5109,7 @@ const SCHOOLS = {
     filieresEn: ["Computer Science and Systems (engineer, Lomé)", "Artificial Intelligence and Big Data (engineer, Lomé)", "Computer Security and Cybersecurity (engineer, Kara)", "Software Engineering (senior technician, Lomé and Kara)", "Computer Systems and Networks (senior technician, Lomé)"],
     duree: "Ingénieur : 5 ans (2 ans de classes préparatoires + 3 ans de spécialité) · Technicien supérieur : 3 ans", dureeEn: "Engineer: 5 years (2 preparatory years + 3 years of specialization) · Senior technician: 3 years",
     admission: "Concours en trois étapes : présélection sur dossier, épreuve écrite (mathématiques, sciences physiques, test psychotechnique) sur le campus choisi, puis classement par ordre de mérite. Parcours ingénieur : bac C, D ou E ; parcours technicien supérieur : bac C, D, E, F1, F2, F3, F4 ou TI. Pour le concours 2026, bac obtenu en 2025 ou 2026. Frais de dossier : 10 000 FCFA.", admissionEn: "Three-step entrance exam: shortlisting on application, a written exam (mathematics, physical sciences, psychotechnical test) on the chosen campus, then ranking by merit. Engineer track: Bac C, D or E; senior technician track: Bac C, D, E, F1, F2, F3, F4 or TI. For the 2026 exam, Bac obtained in 2025 or 2026. Application fee: 10,000 FCFA.",
+    series: { ok: ["C", "D", "E"], incertain: ["F1", "F2", "F3", "F4"] },
     frais: "Pas encore publiés pour l'ENP. Repère : à l'ex-EPL (arrêté de juillet 2022), la Licence coûtait 404 000 FCFA/an pour un étudiant togolais (514 000 pour un salarié, 754 000 hors zone UEMOA) et le parcours ingénieur 604 000 FCFA/an (794 000 pour un salarié) ; les 20 % premiers au concours ne payaient que les frais pédagogiques (50 000 FCFA en Licence, 90 000 en ingénieur). Demande les tarifs à l'ENP avant de t'inscrire.", fraisEn: "Not yet published for the ENP. For reference: at the former EPL (July 2022 decree), the bachelor's cost 404,000 FCFA/year for a Togolese student (514,000 for an employee, 754,000 outside the WAEMU zone) and the engineering track 604,000 FCFA/year (794,000 for an employee); the top 20% in the entrance exam paid only the tuition fees (50,000 FCFA for the bachelor's, 90,000 for the engineering track). Ask the ENP for its fees before enrolling.",
     site: "https://www.enp.tg/",
     description: "École publique d'ingénieurs qui a succédé en juillet 2026 à l'École Polytechnique de Lomé (EPL) : ingénieurs (Bac+5) et techniciens supérieurs (Bac+3) en génie civil, électrique, mécanique et énergétique, en informatique, en intelligence artificielle et en logistique, sur deux campus, à Lomé (site du Lycée scientifique) et à Kara (campus nord de l'Université de Kara).", descriptionEn: "Public engineering school that succeeded the Lomé Polytechnic School (EPL) in July 2026: engineers (Bac+5) and senior technicians (Bac+3) in civil, electrical, mechanical and energy engineering, computer science, artificial intelligence and logistics, on two campuses, in Lomé (Lycée scientifique site) and in Kara (north campus of the University of Kara).",
@@ -5181,6 +5187,7 @@ const SCHOOLS = {
     filieresEn: ["Computer Science"],
     duree: "Licence LMD : 3 ans", dureeEn: "LMD bachelor's: 3 years",
     admission: "Bacheliers scientifiques et étudiants en réorientation, concours d'entrée (10 000 FCFA)", admissionEn: "Science high-school graduates and students changing direction, entrance exam (10,000 FCFA)",
+    series: { ok: ["C", "D", "E"], incertain: ["F1", "F2", "F3", "F4"] },
     site: "https://www.ifnti.com/",
     description: "Institut associatif fondé en 2009 à Sokodé, entièrement dédié à l'informatique (licence LMD), encadrement par des enseignants de niveau ingénieur, groupes de 24 étudiants maximum.", descriptionEn: "Non-profit institute founded in 2009 in Sokodé, entirely dedicated to computer science (LMD bachelor's), taught by engineer-level instructors, groups of at most 24 students.",
     frais: "Aucun tarif affiché sur le site officiel (vérifié le 6 novembre 2026). Dernier montant public trouvé : 590 000 FCFA/an + 30 000 FCFA d'inscription (Edunews, 2022), sans doute plus à jour : confirme auprès de l'institut.", fraisEn: "No prices shown on the official website (checked November 6, 2026). Last public figure found: 590,000 FCFA/year + 30,000 FCFA registration (Edunews, 2022), probably out of date: check with the institute.",
@@ -5262,6 +5269,7 @@ const SCHOOLS = {
     filieresEn: ["IT programs to be confirmed with the school"],
     duree: "BT : 3 ans · BTS : 2 ans", dureeEn: "BT: 3 years · BTS: 2 years",
     admission: "Bac série C, D, G2, G3, ou BT Comptabilité/Commerce", admissionEn: "Bac series C, D, G2, G3, or BT in Accounting/Commerce",
+    series: { ok: ["C", "D", "G2", "G3"] },
     frais: "Non communiqué publiquement.", fraisEn: "Not made public.",
     site: "https://www.facebook.com/isseckouvahey/",
     description: "École privée en sciences économiques et commerciales fondée en 2006, convention avec IPAC-France (Bachelor/MBA), cours du jour et du soir. Filières informatiques non vérifiables en ligne au 10 novembre 2026 (certificat de sécurité du site expiré) : renseigne-toi auprès de l'établissement avant de t'inscrire.", descriptionEn: "Private school of economics and business founded in 2006, agreement with IPAC-France (Bachelor/MBA), day and evening classes. IT programs could not be verified online as of November 10, 2026 (the website's security certificate has expired): check with the institution before enrolling.",
@@ -5366,6 +5374,8 @@ const SCHOOLS = {
     filieresEn: ["Computer Systems and Networks", "Application Development", "Computer Maintenance", "Industrial Computing", "Robotics and Artificial Intelligence", "Cybersecurity", "UX/UI Design (Master's)", "Software Engineering", "Mobile and Web Computer Engineering"],
     duree: "BTS : 2 ans · Licence : 3 ans · Master : 2 ans", dureeEn: "BTS: 2 years · Bachelor's: 3 years · Master's: 2 years",
     admission: "BTS : Bac toutes séries · Licence : Bac série scientifique ou équivalent · Master : Licence en sciences et technologies ou équivalent", admissionEn: "BTS: Bac, any series · Bachelor's: science Bac or equivalent · Master's: bachelor's in science and technology or equivalent",
+    series: { ok: "toutes" },
+    seriesLicence: { ok: ["C", "D", "E"], incertain: ["F1", "F2", "F3", "F4"] },
     frais: "Tarifs officiels 2026-2027, par an : BTS 325 000 FCFA + 25 000 d'inscription + 60 000 de tenues · Licence 575 000 FCFA + 25 000 d'inscription + 60 000 de tenues · Master 950 000 FCFA + 50 000 d'inscription (non remboursable). Paiement en 5 ou 6 versements, le premier à l'admission, à la banque. Ordinateur portable obligatoire (ou 300 000 FCFA pour un neuf remis par l'école). Réductions pour les premiers inscrits et les nouveaux bacheliers : voir la page Bourses (source : hest-edu.net/inscription, consulté le 6 novembre 2026).", fraisEn: "Official 2026-2027 fees, per year: BTS 325,000 FCFA + 25,000 registration + 60,000 for uniforms · Bachelor's 575,000 FCFA + 25,000 registration + 60,000 for uniforms · Master's 950,000 FCFA + 50,000 registration (non-refundable). Payment in 5 or 6 installments, the first one at admission, at the bank. A laptop is mandatory (or 300,000 FCFA for a new one provided by the school). Discounts for the first enrollees and new high-school graduates: see the Scholarships page (source: hest-edu.net/inscription, accessed November 6, 2026).",
     site: "https://www.hest-edu.net/",
     description: "Une des offres informatique les plus complètes du comparatif (BTS à Master), à Tokoin Wuiti, propose aussi économie/gestion et sciences de l'information et de la communication.", descriptionEn: "One of the most complete computer science offerings in this comparison (BTS to Master's), in Tokoin Wuiti, also offers economics/management and information and communication sciences.",
@@ -5388,7 +5398,8 @@ const SCHOOLS = {
     filieres: ["Intelligence Artificielle & Génie Logiciel"],
     filieresEn: ["Artificial Intelligence & Software Engineering"],
     duree: "Licence Pro : 3 ans (180 crédits, 6 semestres, système LMD)", dureeEn: "Professional bachelor's: 3 years (180 credits, 6 semesters, LMD system)",
-    admission: "Non précisée publiquement : à confirmer directement", admissionEn: "Not stated publicly: to be confirmed directly",
+    admission: "Candidature en ligne sur escen.university/inscription : séries A, C, D, E, F1 à F4 et G1 à G3 acceptées, avec bulletins, relevé du BAC et pièce d'identité (page Inscription, consultée le 10 novembre 2026)", admissionEn: "Online application at escen.university/inscription: series A, C, D, E, F1 to F4 and G1 to G3 accepted, with report cards, BAC transcript and ID (Inscription page, accessed November 10, 2026)",
+    series: { ok: ["A4", "C", "D", "E", "F1", "F2", "F3", "F4", "G1", "G2", "G3"] },
     frais: "Non communiqué sur le site officiel (vérifié le 6 novembre 2026) : contacte l'école directement.", fraisEn: "Not published on the official website (checked November 6, 2026): contact the school directly.",
     site: "https://escen.university/",
     description: "Se présente comme la 1ère école supérieure d'économie numérique d'Afrique subsaharienne francophone, filière IA & Génie Logiciel en partenariat avec l'école d'ingénieurs ESTIA (Biarritz, France), présentiel et à distance.", descriptionEn: "Presents itself as the first school of digital economy in French-speaking sub-Saharan Africa, AI & Software Engineering program in partnership with the ESTIA engineering school (Biarritz, France), on-site and online.",
@@ -5516,7 +5527,8 @@ const QUIZ_QUESTIONS = [
       { label: "Créer des interfaces belles et faciles à utiliser", labelEn: "Creating interfaces that are beautiful and easy to use", domain: "Produit & Design" },
       { label: "Faire marcher sans panne les ordinateurs et les réseaux qui font vivre les sites et les applis", labelEn: "Keeping the computers and networks behind websites and apps running without breakdowns", domain: "Infrastructure & DevOps" },
       { label: "Faire connaître un produit ou une marque en ligne", labelEn: "Building awareness for a product or brand online", domain: "Marketing digital" },
-      { label: "Organiser, planifier, piloter des équipes et des projets", labelEn: "Organizing, planning and steering teams and projects", domain: "Gestion & Management" }
+      { label: "Organiser, planifier, piloter des équipes et des projets", labelEn: "Organizing, planning and steering teams and projects", domain: "Gestion & Management" },
+      { label: "Aucune de ces réponses ne me ressemble", labelEn: "None of these sounds like me", value: "aucune" }
     ]
   },
   {
@@ -5530,7 +5542,8 @@ const QUIZ_QUESTIONS = [
       { label: "Les affiches et la décoration", labelEn: "The posters and decorations", domain: "Produit & Design" },
       { label: "La sono, l'électricité, tout ce qui doit tenir toute la soirée", labelEn: "The sound system, the power, everything that has to hold up all night", domain: "Infrastructure & DevOps" },
       { label: "La promo sur les réseaux sociaux pour faire venir du monde", labelEn: "The social media promo to bring people in", domain: "Marketing digital" },
-      { label: "La coordination des équipes et du budget", labelEn: "Coordinating the teams and the budget", domain: "Gestion & Management" }
+      { label: "La coordination des équipes et du budget", labelEn: "Coordinating the teams and the budget", domain: "Gestion & Management" },
+      { label: "Aucune de ces réponses ne me ressemble", labelEn: "None of these sounds like me", value: "aucune" }
     ]
   },
   {
@@ -5544,7 +5557,8 @@ const QUIZ_QUESTIONS = [
       { label: "Repenser l'expérience pour que ça n'arrive plus", labelEn: "Rethink the experience so it doesn't happen again", domain: "Produit & Design" },
       { label: "Vérifier que les machines et le réseau tiennent le coup", labelEn: "Check that the machines and the network can cope", domain: "Infrastructure & DevOps" },
       { label: "Communiquer dessus pour rassurer tout le monde", labelEn: "Communicate about it to reassure everyone", domain: "Marketing digital" },
-      { label: "Réunir les bonnes personnes pour trancher", labelEn: "Bring the right people together to decide", domain: "Gestion & Management" }
+      { label: "Réunir les bonnes personnes pour trancher", labelEn: "Bring the right people together to decide", domain: "Gestion & Management" },
+      { label: "Aucune de ces réponses ne me ressemble", labelEn: "None of these sounds like me", value: "aucune" }
     ]
   },
   {
@@ -5558,7 +5572,8 @@ const QUIZ_QUESTIONS = [
       { label: "Avec des maquettes, des couleurs, du visuel", labelEn: "Working with mockups, colors, visuals", domain: "Produit & Design" },
       { label: "Au milieu des serveurs et des réseaux, sur place ou à distance", labelEn: "Among servers and networks, on site or remotely", domain: "Infrastructure & DevOps" },
       { label: "Sur les réseaux sociaux, au contact d'une audience", labelEn: "On social media, in touch with an audience", domain: "Marketing digital" },
-      { label: "En réunion, à coordonner plusieurs personnes", labelEn: "In meetings, coordinating several people", domain: "Gestion & Management" }
+      { label: "En réunion, à coordonner plusieurs personnes", labelEn: "In meetings, coordinating several people", domain: "Gestion & Management" },
+      { label: "Aucune de ces réponses ne me ressemble", labelEn: "None of these sounds like me", value: "aucune" }
     ]
   },
   {
@@ -5572,7 +5587,8 @@ const QUIZ_QUESTIONS = [
       { label: "Une interface confuse et pénible à utiliser", labelEn: "An interface that's confusing and painful to use", domain: "Produit & Design" },
       { label: "Un serveur qui tombe en panne au mauvais moment", labelEn: "A server that goes down at the worst possible time", domain: "Infrastructure & DevOps" },
       { label: "Une campagne qui rate complètement sa cible", labelEn: "A campaign that completely misses its target", domain: "Marketing digital" },
-      { label: "Un projet lancé sans plan clair", labelEn: "A project launched without a clear plan", domain: "Gestion & Management" }
+      { label: "Un projet lancé sans plan clair", labelEn: "A project launched without a clear plan", domain: "Gestion & Management" },
+      { label: "Aucune de ces réponses ne me ressemble", labelEn: "None of these sounds like me", value: "aucune" }
     ]
   },
   {
@@ -5586,7 +5602,8 @@ const QUIZ_QUESTIONS = [
       { label: "Redessiner l'appli d'une marque que tu utilises", labelEn: "Redesign the app of a brand you use", domain: "Produit & Design" },
       { label: "Bidouiller les réglages de ton téléphone ou de ta box internet pour mieux comprendre comment ça marche", labelEn: "Tinker with your phone or internet router settings to understand how they really work", domain: "Infrastructure & DevOps" },
       { label: "Créer du contenu et faire grandir une page", labelEn: "Create content and grow a page", domain: "Marketing digital" },
-      { label: "Organiser un événement ou un club", labelEn: "Organize an event or a club", domain: "Gestion & Management" }
+      { label: "Organiser un événement ou un club", labelEn: "Organize an event or a club", domain: "Gestion & Management" },
+      { label: "Aucune de ces réponses ne me ressemble", labelEn: "None of these sounds like me", value: "aucune" }
     ]
   },
   {
@@ -5600,7 +5617,8 @@ const QUIZ_QUESTIONS = [
       { label: "Arts plastiques et créativité visuelle", labelEn: "Visual arts and visual creativity", domain: "Produit & Design" },
       { label: "Sciences physiques et systèmes", labelEn: "Physics and systems", domain: "Infrastructure & DevOps" },
       { label: "Communication et langues", labelEn: "Communication and languages", domain: "Marketing digital" },
-      { label: "Économie et gestion", labelEn: "Economics and management", domain: "Gestion & Management" }
+      { label: "Économie et gestion", labelEn: "Economics and management", domain: "Gestion & Management" },
+      { label: "Aucune de ces réponses ne me ressemble", labelEn: "None of these sounds like me", value: "aucune" }
     ]
   },
   {
@@ -5614,7 +5632,27 @@ const QUIZ_QUESTIONS = [
       { label: "Celui ou celle qui soigne la présentation", labelEn: "The one who takes care of the presentation", domain: "Produit & Design" },
       { label: "Celui ou celle qui s'assure que tout tourne techniquement", labelEn: "The one who makes sure everything runs technically", domain: "Infrastructure & DevOps" },
       { label: "Celui ou celle qui présente et « vend » le projet", labelEn: "The one who presents and \"sells\" the project", domain: "Marketing digital" },
-      { label: "Celui ou celle qui coordonne l'équipe", labelEn: "The one who coordinates the team", domain: "Gestion & Management" }
+      { label: "Celui ou celle qui coordonne l'équipe", labelEn: "The one who coordinates the team", domain: "Gestion & Management" },
+      { label: "Aucune de ces réponses ne me ressemble", labelEn: "None of these sounds like me", value: "aucune" }
+    ]
+  },
+  {
+    type: "serie",
+    question: "Quelle est la série de ton bac (ou celle que tu prépares) ?",
+    questionEn: "What is your bac series (or the one you are preparing)?",
+    options: [
+      { label: "Série A4", labelEn: "Series A4", value: "A4" },
+      { label: "Série C", labelEn: "Series C", value: "C" },
+      { label: "Série D", labelEn: "Series D", value: "D" },
+      { label: "Série E", labelEn: "Series E", value: "E" },
+      { label: "Série F1", labelEn: "Series F1", value: "F1" },
+      { label: "Série F2", labelEn: "Series F2", value: "F2" },
+      { label: "Série F3", labelEn: "Series F3", value: "F3" },
+      { label: "Série F4", labelEn: "Series F4", value: "F4" },
+      { label: "Série G1", labelEn: "Series G1", value: "G1" },
+      { label: "Série G2", labelEn: "Series G2", value: "G2" },
+      { label: "Série G3", labelEn: "Series G3", value: "G3" },
+      { label: "Une autre série, ou je n'ai pas encore mon bac", labelEn: "Another series, or I don't have my bac yet", value: "autre" }
     ]
   },
   {
