@@ -805,6 +805,17 @@
       titleEl.textContent = tField(section, "title");
       sectionEl.appendChild(titleEl);
 
+      // Roadmaps « Débutant » devenues parcours (2026-11-19, revue « expert
+      // en éducation ») : ce que l'élève saura faire à la fin de l'étape
+      // (objectif), puis un premier projet après la liste (projet). Ce sont
+      // des champs de la section : aucune ligne ne bouge.
+      if (section.objectif) {
+        const goal = document.createElement("p");
+        goal.className = "section-goal";
+        goal.innerHTML = `<strong>${isEn ? "Goal:" : "Objectif :"}</strong> ${escapeHtml(tField(section, "objectif"))}`;
+        sectionEl.appendChild(goal);
+      }
+
       const list = document.createElement("div");
       list.className = "item-list";
 
@@ -871,6 +882,14 @@
       });
 
       sectionEl.appendChild(list);
+
+      if (section.projet) {
+        const project = document.createElement("div");
+        project.className = "section-project";
+        project.innerHTML = `<p><strong>${isEn ? "Your project for this step:" : "Ton projet pour cette étape :"}</strong> ${escapeHtml(tField(section, "projet"))}</p>`;
+        sectionEl.appendChild(project);
+      }
+
       track.appendChild(sectionEl);
     });
 

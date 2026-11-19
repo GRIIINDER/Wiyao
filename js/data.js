@@ -646,9 +646,13 @@ const ROLES = {
     subtitle: "Transformer des données brutes en analyses claires qui éclairent la prise de décision.",
     subtitleEn: "Turning raw data into clear analyses that inform decision-making.",
     icon: "trending-up",
+    debut: "Tu pars de zéro ? Suis les étapes dans l'ordre : un tableur (étape 2) suffit pour tes premières analyses, avant le SQL et Python. Un ordinateur et un tableur gratuit (LibreOffice Calc ou Google Sheets) suffisent pour commencer. Repère de durée : Google estime son certificat Data Analytics à environ 6 mois, à raison de 10 heures par semaine.", debutEn: "Starting from scratch? Follow the steps in order: a spreadsheet (step 2) is enough for your first analyses, before SQL and Python. A computer and a free spreadsheet (LibreOffice Calc or Google Sheets) are enough to start. Time benchmark: Google estimates its Data Analytics certificate at about 6 months, at 10 hours a week.",
+    debutSource: { label: "Google Data Analytics, Coursera (en anglais)", labelEn: "Google Data Analytics, Coursera", url: "https://www.coursera.org/professional-certificates/google-data-analytics" },
     sections: [
       {
         title: "1. Fondamentaux de l'analyse de données", titleEn: "1. Data analysis fundamentals",
+        objectif: "Tu sauras dire quel type d'analyse demande une question, et décrire le chemin de la donnée brute jusqu'à la décision.", objectifEn: "You'll be able to tell which type of analysis a question calls for, and describe the path from raw data to a decision.",
+        projet: "Prends trois questions de ta vie de tous les jours (par exemple : combien je dépense en transport chaque mois ?) et range chacune parmi les 4 types d'analyse, avec les données qu'il faudrait collecter.", projetEn: "Take three questions from your daily life (for example: how much do I spend on transport each month?) and file each one under one of the 4 types of analysis, with the data you would need to collect.",
         items: [
           { label: "Les 4 types d'analyse : descriptive (que s'est-il passé), diagnostique (pourquoi), prédictive (que va-t-il se passer), prescriptive (que faire)", labelEn: "The 4 types of analysis: descriptive (what happened), diagnostic (why), predictive (what will happen), prescriptive (what to do)", level: "core", resource: { label: "EPSI - Les méthodes d'analyse de données", labelEn: "EPSI - Data analysis methods (in French)", url: "https://www.epsi.fr/actualites/donnees-methodes-analyse" } },
           { label: "Cycle de vie de la donnée : collecte, nettoyage, exploration, analyse, visualisation, communication", labelEn: "Data life cycle: collection, cleaning, exploration, analysis, visualization, communication", level: "core", resource: { label: "IBM - Data lifecycle management", labelEn: "IBM - Data lifecycle management", url: "https://www.ibm.com/think/topics/data-lifecycle-management" } }
@@ -656,6 +660,8 @@ const ROLES = {
       },
       {
         title: "2. Tableurs", titleEn: "2. Spreadsheets",
+        objectif: "Tu sauras nettoyer un tableau, croiser deux listes avec une formule et résumer des centaines de lignes avec un tableau croisé dynamique.", objectifEn: "You'll be able to clean a table, match two lists with a formula and summarize hundreds of rows with a pivot table.",
+        projet: "Note tes dépenses pendant un mois dans un tableur, puis fais un tableau croisé dynamique par catégorie et par semaine.", projetEn: "Record your expenses for a month in a spreadsheet, then build a pivot table by category and by week.",
         items: [
           { label: "Formules avancées (RECHERCHEV/RECHERCHEX, INDEX/EQUIV, SI imbriqués)", labelEn: "Advanced formulas (VLOOKUP/XLOOKUP, INDEX/MATCH, nested IFs)", level: "core", resource: { label: "Aide Google Docs - RECHERCHEV (VLOOKUP)", labelEn: "Google Docs Help - VLOOKUP", url: "https://support.google.com/docs/answer/3093318?hl=fr" } },
           { label: "Tableaux croisés dynamiques (TCD) et mise en forme conditionnelle", labelEn: "Pivot tables and conditional formatting", level: "core", resource: { label: "Aide Google Docs - Tableaux croisés dynamiques", labelEn: "Google Docs Help - Pivot tables", url: "https://support.google.com/docs/answer/1272900?hl=fr&co=GENIE.Platform%3DDesktop" } },
@@ -664,6 +670,8 @@ const ROLES = {
       },
       {
         title: "3. SQL", titleEn: "3. SQL",
+        objectif: "Tu sauras interroger une base de données pour en sortir des chiffres, en reliant plusieurs tables.", objectifEn: "You'll be able to query a database to get figures out of it, joining several tables.",
+        projet: "Avec SQLite (gratuit), crée une petite base « élèves, matières, notes » avec des données inventées, puis écris les requêtes qui donnent la moyenne par matière et le meilleur élève de chaque classe.", projetEn: "With SQLite (free), create a small \"students, subjects, grades\" database with made-up data, then write the queries that give the average per subject and the top student in each class.",
         items: [
           { label: "Requêtes de base : SELECT, WHERE, ORDER BY, agrégations (COUNT, SUM, AVG)", labelEn: "Basic queries: SELECT, WHERE, ORDER BY, aggregations (COUNT, SUM, AVG)", level: "core", resource: { label: "Voir roadmap compétence SQL", labelEn: "See the SQL skill roadmap", url: "roadmap.html?id=sql" } },
           { label: "Jointures (JOIN) entre plusieurs tables", labelEn: "Joins (JOIN) across multiple tables", level: "core", resource: { label: "W3Schools - SQL JOIN", labelEn: "W3Schools - SQL JOIN", url: "https://www.w3schools.com/sql/sql_join.asp" } },
@@ -673,6 +681,8 @@ const ROLES = {
       },
       {
         title: "4. Programmation pour la donnée", titleEn: "4. Programming for data",
+        objectif: "Tu sauras charger un fichier de données dans Python, puis le trier, le filtrer et le résumer avec Pandas.", objectifEn: "You'll be able to load a data file into Python, then sort, filter and summarize it with Pandas.",
+        projet: "Refais en Python, avec Pandas, l'analyse de tes dépenses de l'étape 2 : les mêmes chiffres, mais en quelques lignes de code que tu peux relancer chaque mois.", projetEn: "Redo your step 2 expense analysis in Python with Pandas: the same figures, but in a few lines of code you can rerun every month.",
         items: [
           { label: "Python : bases du langage", labelEn: "Python: language basics", level: "core", resource: { label: "Voir roadmap compétence Python", labelEn: "See the Python skill roadmap", url: "roadmap.html?id=python" } },
           { label: "Pandas : manipulation de tableaux de données (DataFrames)", labelEn: "Pandas: working with data tables (DataFrames)", level: "core", resource: { label: "Documentation Pandas", labelEn: "Pandas documentation", url: "https://pandas.pydata.org/docs/" } },
@@ -682,6 +692,8 @@ const ROLES = {
       },
       {
         title: "5. Nettoyage et préparation des données", titleEn: "5. Data cleaning and preparation",
+        objectif: "Tu sauras repérer et corriger les doublons, les trous et les valeurs absurdes avant de calculer quoi que ce soit.", objectifEn: "You'll be able to spot and fix duplicates, gaps and absurd values before calculating anything.",
+        projet: "Télécharge un jeu de données public (par exemple sur Kaggle), liste tous ses défauts, puis écris le script (ou le carnet Jupyter) qui en produit une version propre.", projetEn: "Download a public dataset (for example from Kaggle), list all its flaws, then write the script (or Jupyter notebook) that produces a clean version of it.",
         items: [
           { label: "Traitement des valeurs manquantes et des doublons", labelEn: "Handling missing values and duplicates", level: "core", resource: { label: "Documentation Pandas - Valeurs manquantes", labelEn: "Pandas documentation - Missing values", url: "https://pandas.pydata.org/docs/user_guide/missing_data.html" } },
           { label: "Détection des valeurs aberrantes (outliers)", labelEn: "Outlier detection", level: "core", resource: { label: "Mr. Mint - Les valeurs aberrantes (outliers)", labelEn: "Mr. Mint - Outliers (in French)", url: "https://mrmint.fr/outliers-machine-learning" } },
@@ -690,6 +702,8 @@ const ROLES = {
       },
       {
         title: "6. Visualisation et Business Intelligence", titleEn: "6. Visualization and Business Intelligence",
+        objectif: "Tu sauras choisir le graphique qui répond à la question posée et construire un tableau de bord simple.", objectifEn: "You'll be able to choose the chart that answers the question asked and build a simple dashboard.",
+        projet: "Avec Looker Studio ou Power BI, construis un tableau de bord de 3 graphiques sur ton jeu de données nettoyé, chacun avec un titre qui dit ce qu'il montre.", projetEn: "With Looker Studio or Power BI, build a 3-chart dashboard on your cleaned dataset, each with a title that says what it shows.",
         items: [
           { label: "Power BI ou Tableau", labelEn: "Power BI or Tableau", level: "core", resource: { label: "Documentation Power BI", labelEn: "Power BI documentation", url: "https://learn.microsoft.com/power-bi/" } },
           { label: "Choisir le bon graphique (barres, lignes, nuages de points, histogrammes) selon le message à transmettre", labelEn: "Choosing the right chart (bars, lines, scatter plots, histograms) for the message you want to convey", level: "core", resource: { label: "Tableau - Choisir le bon type de graphique", labelEn: "Tableau - Choosing the right chart type", url: "https://help.tableau.com/current/pro/desktop/fr-fr/what_chart_example.htm" } },
@@ -699,6 +713,8 @@ const ROLES = {
       },
       {
         title: "7. Statistiques appliquées", titleEn: "7. Applied statistics",
+        objectif: "Tu sauras résumer une série de chiffres (moyenne, médiane, écart-type) et dire si deux variables évoluent ensemble.", objectifEn: "You'll be able to summarize a series of numbers (mean, median, standard deviation) and tell whether two variables move together.",
+        projet: "Sur ton jeu de données, calcule les statistiques de deux colonnes et leur corrélation, puis explique en trois phrases pourquoi une corrélation ne prouve pas une cause.", projetEn: "On your dataset, calculate the statistics of two columns and their correlation, then explain in three sentences why a correlation doesn't prove a cause.",
         items: [
           { label: "Statistiques descriptives : moyenne, médiane, écart-type, distribution", labelEn: "Descriptive statistics: mean, median, standard deviation, distribution", level: "core", resource: { label: "Khan Academy - Moyenne, médiane et mode", labelEn: "Khan Academy - Mean, median and mode (in French)", url: "https://fr.khanacademy.org/math/be-4eme-secondaire2/x213a6fc6f6c9e122:statistiques/x213a6fc6f6c9e122:parametres-de-position/a/mean-median-and-mode-review" } },
           { label: "Corrélation entre variables", labelEn: "Correlation between variables", level: "core", resource: { label: "OpenClassrooms - Analyser la corrélation entre deux variables", labelEn: "OpenClassrooms - Analyzing the correlation between two variables (in French)", url: "https://openclassrooms.com/fr/courses/7410486-nettoyez-et-analysez-votre-jeu-de-donnees/7428368-analysez-la-correlation-entre-deux-variables-quantitatives" } },
@@ -708,6 +724,8 @@ const ROLES = {
       },
       {
         title: "8. Communication des résultats", titleEn: "8. Communicating results",
+        objectif: "Tu sauras présenter une analyse à quelqu'un qui ne connaît rien aux données, en partant de sa question.", objectifEn: "You'll be able to present an analysis to someone who knows nothing about data, starting from their question.",
+        projet: "Présente ton projet complet en 5 diapositives à un proche : sa question, ce que disent les données, ce que tu recommandes. Mets ensuite le tout en ligne, sur GitHub ou dans un portfolio : ce sera ta première preuve de travail.", projetEn: "Present your complete project in 5 slides to someone close to you: their question, what the data says, what you recommend. Then put it all online, on GitHub or in a portfolio: it will be your first proof of work.",
         items: [
           { label: "Storytelling avec les données : construire un récit, pas juste un graphique", labelEn: "Data storytelling: building a narrative, not just a chart", level: "core", resource: { label: "Ostraca - Guide du data storytelling", labelEn: "Ostraca - Data storytelling guide (in French)", url: "https://blog.ostraca.fr/blog/guide-data-storytelling-exemple-avec-donnees/" } },
           { label: "Concevoir un tableau de bord (dashboard) lisible pour un public non technique", labelEn: "Designing a dashboard that a non-technical audience can read", level: "core", resource: { label: "Tableau - 10 bonnes pratiques pour les tableaux de bord", labelEn: "Tableau - 10 dashboard best practices", url: "https://www.tableau.com/fr-fr/learn/whitepapers/10-best-practices-building-effective-dashboards" } }
@@ -740,9 +758,13 @@ const ROLES = {
     subtitle: "Assister les utilisateurs et maintenir le parc informatique : la première ligne qui garde une organisation opérationnelle.",
     subtitleEn: "Supporting users and maintaining IT equipment: the front line that keeps an organization running.",
     icon: "monitor",
+    debut: "Tu pars de zéro ? Commence avec l'ordinateur que tu as sous la main : installer un système, régler un réseau Wi-Fi, comprendre pourquoi une imprimante ne répond pas. C'est la matière des étapes 1 à 3. Repère de durée : Google estime son certificat IT Support à environ 6 mois, à raison de 10 heures par semaine.", debutEn: "Starting from scratch? Start with the computer you have at hand: installing a system, setting up a Wi-Fi network, understanding why a printer doesn't respond. That's what steps 1 to 3 are about. Time benchmark: Google estimates its IT Support certificate at about 6 months, at 10 hours a week.",
+    debutSource: { label: "Google IT Support, Coursera (en anglais)", labelEn: "Google IT Support, Coursera", url: "https://www.coursera.org/professional-certificates/google-it-support" },
     sections: [
       {
         title: "1. Systèmes", titleEn: "1. Systems",
+        objectif: "Tu sauras installer et configurer un poste de travail sous Windows ou Linux, du démarrage aux comptes utilisateurs.", objectifEn: "You'll be able to install and configure a workstation running Windows or Linux, from startup to user accounts.",
+        projet: "Installe Linux dans une machine virtuelle (VirtualBox, gratuit) ou sur un vieil ordinateur, crée deux comptes, et écris chaque étape comme une procédure qu'un collègue pourrait suivre.", projetEn: "Install Linux in a virtual machine (VirtualBox, free) or on an old computer, create two accounts, and write each step down as a procedure a colleague could follow.",
         items: [
           { label: "Bases Windows, macOS et Linux", labelEn: "Windows, macOS and Linux basics", level: "core" },
           { label: "Installation et configuration de postes", labelEn: "Workstation installation and configuration", level: "core" }
@@ -750,12 +772,16 @@ const ROLES = {
       },
       {
         title: "2. Réseaux", titleEn: "2. Networking",
+        objectif: "Tu sauras expliquer comment un ordinateur obtient son adresse et accède à Internet, et trouver où ça coince.", objectifEn: "You'll be able to explain how a computer gets its address and reaches the Internet, and find where it gets stuck.",
+        projet: "Dessine le réseau de ta maison ou de ton école (box, appareils, adresses IP), puis teste-le avec les commandes ipconfig (ou ip a sous Linux) et ping.", projetEn: "Draw your home or school network (router, devices, IP addresses), then test it with the ipconfig (or ip a on Linux) and ping commands.",
         items: [
           { label: "Notions réseau de base", labelEn: "Networking basics", level: "core", resource: { label: "Voir roadmap compétence Réseaux", labelEn: "See the Networking skill roadmap", url: "roadmap.html?id=reseaux" } }
         ]
       },
       {
         title: "3. Diagnostic et support", titleEn: "3. Troubleshooting and support",
+        objectif: "Tu sauras traiter une panne avec méthode : questions à l'utilisateur, hypothèses, test, solution, et trace écrite dans un ticket.", objectifEn: "You'll be able to handle a breakdown methodically: questions to the user, hypotheses, testing, solution, and a written record in a ticket.",
+        projet: "Aide trois personnes de ton entourage avec un problème informatique et rédige pour chacun un ticket : symptôme, cause trouvée, solution, temps passé.", projetEn: "Help three people around you with a computer problem and write a ticket for each: symptom, cause found, solution, time spent.",
         items: [
           { label: "Méthodologie de résolution de problèmes", labelEn: "Problem-solving methodology", level: "core" },
           { label: "Gestion de tickets (ITSM) : outils comme Zendesk, Freshdesk", labelEn: "Ticket management (ITSM): tools such as Zendesk, Freshdesk", level: "core" },
@@ -765,6 +791,8 @@ const ROLES = {
       },
       {
         title: "4. Administration", titleEn: "4. Administration",
+        objectif: "Tu sauras créer et gérer des comptes et des droits pour plusieurs utilisateurs, et tenir l'inventaire d'un parc.", objectifEn: "You'll be able to create and manage accounts and permissions for several users, and keep an inventory of a set of devices.",
+        projet: "Fais dans un tableur l'inventaire du matériel informatique d'une association, d'une école ou de ta famille : appareil, système, âge, problèmes connus.", projetEn: "Make a spreadsheet inventory of the IT equipment of an association, a school or your family: device, system, age, known issues.",
         items: [
           { label: "Active Directory, gestion des comptes", labelEn: "Active Directory, account management", level: "core" },
           { label: "Gestion de parc informatique et des périphériques (imprimantes, etc.)", labelEn: "Managing IT equipment and peripherals (printers, etc.)", level: "core" },
@@ -773,6 +801,8 @@ const ROLES = {
       },
       {
         title: "5. Sécurité de base", titleEn: "5. Security basics",
+        objectif: "Tu sauras repérer un message d'hameçonnage et expliquer les gestes simples qui protègent un ordinateur et un compte.", objectifEn: "You'll be able to spot a phishing message and explain the simple habits that protect a computer and an account.",
+        projet: "Prépare une fiche d'une page « 5 gestes pour protéger ton ordinateur et ton compte » et présente-la à ta famille ou à ta classe.", projetEn: "Prepare a one-page sheet \"5 habits to protect your computer and your account\" and present it to your family or your class.",
         items: [
           { label: "Sensibilisation aux bonnes pratiques", labelEn: "Awareness of good practices", level: "core" }
         ]
@@ -861,9 +891,13 @@ const ROLES = {
     subtitle: "Garantir, par des tests rigoureux, la qualité et la fiabilité d'un logiciel avant sa mise en production.",
     subtitleEn: "Ensuring software quality and reliability before release, through rigorous testing.",
     icon: "check-square",
+    debut: "Tu pars de zéro ? Pas besoin de savoir coder pour commencer : les tests manuels (étape 3) s'apprennent sur n'importe quelle application. L'automatisation viendra ensuite. Repère de durée : pour la certification ISTQB Foundation Level, une formation accréditée doit compter au moins 1 135 minutes de cours, soit près de 19 heures.", debutEn: "Starting from scratch? You don't need to code to begin: manual testing (step 3) can be learned on any application. Automation comes later. Time benchmark: for the ISTQB Foundation Level certification, an accredited course must include at least 1,135 minutes of instruction, nearly 19 hours.",
+    debutSource: { label: "ISTQB (en anglais)", labelEn: "ISTQB", url: "https://istqb.org/istqb-releases-certified-tester-foundation-level-v4-0-ctfl/" },
     sections: [
       {
         title: "1. Fondamentaux du test", titleEn: "1. Testing fundamentals",
+        objectif: "Tu sauras situer un test dans la vie d'un logiciel et distinguer vérification et validation.", objectifEn: "You'll be able to place a test in a software's life cycle and tell verification from validation.",
+        projet: "Choisis une appli que tu utilises (mobile money, réseau social, banque) et donne un exemple de test unitaire, d'intégration, système et d'acceptation qu'on pourrait y faire.", projetEn: "Choose an app you use (mobile money, social network, bank) and give an example of a unit, integration, system and acceptance test that could be run on it.",
         items: [
           { label: "Types de tests : unitaire, intégration, système, acceptation", labelEn: "Types of tests: unit, integration, system, acceptance", level: "core" },
           { label: "Cycle de vie du test logiciel, vérification vs validation", labelEn: "Software testing life cycle, verification vs validation", level: "core" },
@@ -872,6 +906,8 @@ const ROLES = {
       },
       {
         title: "2. Techniques de test", titleEn: "2. Testing techniques",
+        objectif: "Tu sauras choisir le bon type de test selon le risque : fumée, régression, exploratoire, recette.", objectifEn: "You'll be able to choose the right type of test according to the risk: smoke, regression, exploratory, acceptance.",
+        projet: "Pendant 30 minutes, essaie de faire échouer un formulaire d'inscription (champs vides, caractères spéciaux, texte très long) et note tout ce qui te surprend. Fais-le sur un site de démonstration prévu pour s'entraîner ou sur ton propre projet, jamais sur un vrai service.", projetEn: "For 30 minutes, try to make a sign-up form fail (empty fields, special characters, very long text) and note everything that surprises you. Do it on a demo site meant for practice or on your own project, never on a real service.",
         items: [
           { label: "Tests fonctionnels vs non-fonctionnels", labelEn: "Functional vs non-functional testing", level: "core" },
           { label: "Fumée (smoke), régression, exploratoire, recette utilisateur (UAT)", labelEn: "Smoke, regression, exploratory, user acceptance testing (UAT)", level: "core" },
@@ -881,6 +917,8 @@ const ROLES = {
       },
       {
         title: "3. Tests manuels", titleEn: "3. Manual testing",
+        objectif: "Tu sauras écrire un cas de test qu'un autre peut rejouer, et un rapport d'anomalie qu'un développeur peut corriger sans te poser de questions.", objectifEn: "You'll be able to write a test case someone else can replay, and a bug report a developer can fix without asking you questions.",
+        projet: "Rédige 10 cas de test pour la recherche d'un site de démonstration, rejoue-les, et écris un rapport complet (étapes, résultat attendu, résultat obtenu, capture d'écran) pour chaque problème trouvé.", projetEn: "Write 10 test cases for the search function of a demo site, replay them, and write a complete report (steps, expected result, actual result, screenshot) for each problem found.",
         items: [
           { label: "Rédaction de cas et scénarios de test", labelEn: "Writing test cases and scenarios", level: "core" },
           { label: "Rapport et suivi des anomalies", labelEn: "Bug reporting and tracking", level: "core" }
@@ -888,6 +926,8 @@ const ROLES = {
       },
       {
         title: "4. Tests automatisés", titleEn: "4. Automated testing",
+        objectif: "Tu sauras automatiser un scénario de test dans un navigateur et vérifier les réponses d'une API.", objectifEn: "You'll be able to automate a test scenario in a browser and check an API's responses.",
+        projet: "Automatise avec Selenium ou Playwright 3 de tes cas de test manuels, et teste une API publique gratuite avec Postman.", projetEn: "Automate 3 of your manual test cases with Selenium or Playwright, and test a free public API with Postman.",
         items: [
           { label: "Selenium", labelEn: "Selenium", level: "core", resource: { label: "Documentation Selenium", labelEn: "Selenium documentation", url: "https://www.selenium.dev/documentation/" } },
           { label: "Cypress ou Playwright", labelEn: "Cypress or Playwright", level: "option", resource: { label: "Documentation Playwright", labelEn: "Playwright documentation", url: "https://playwright.dev/docs/intro" } },
@@ -897,6 +937,8 @@ const ROLES = {
       },
       {
         title: "5. Méthodologie", titleEn: "5. Methodology",
+        objectif: "Tu sauras expliquer où se place le test dans un sprint et comment une équipe Agile évite les régressions.", objectifEn: "You'll be able to explain where testing fits in a sprint and how an Agile team avoids regressions.",
+        projet: "Écris le plan de test d'un sprint imaginaire de deux semaines pour une petite appli : ce qu'on teste, quand, qui, et ce qu'on rejoue avant chaque mise en ligne.", projetEn: "Write the test plan for an imaginary two-week sprint for a small app: what is tested, when, by whom, and what is replayed before each release.",
         items: [
           { label: "Tests dans un cycle Agile/Scrum, tests de régression", labelEn: "Testing in an Agile/Scrum cycle, regression testing", level: "core" },
           { label: "TDD (Test-Driven Development) et BDD (Behavior-Driven Development)", labelEn: "TDD (Test-Driven Development) and BDD (Behavior-Driven Development)", level: "option" },
@@ -905,6 +947,8 @@ const ROLES = {
       },
       {
         title: "6. Outils", titleEn: "6. Tools",
+        objectif: "Tu sauras suivre des anomalies dans un outil comme Jira et lire l'état des tests d'un projet.", objectifEn: "You'll be able to track bugs in a tool like Jira and read a project's test status.",
+        projet: "Crée un projet gratuit dans Jira ou Trello, saisis-y les anomalies trouvées aux étapes précédentes avec leur priorité, et fais-les avancer jusqu'à « corrigée ».", projetEn: "Create a free project in Jira or Trello, log the bugs found in the previous steps with their priority, and move them along to \"fixed\".",
         items: [
           { label: "Jira ou TestRail pour le suivi", labelEn: "Jira or TestRail for tracking", level: "core" },
           { label: "Intégration des tests dans un pipeline CI/CD", labelEn: "Integrating tests into a CI/CD pipeline", level: "option" }
@@ -1290,9 +1334,13 @@ const ROLES = {
     subtitle: "Développer la présence et l'audience d'une marque en ligne, en conjuguant stratégie, contenus et mesure des résultats.",
     subtitleEn: "Growing a brand's online presence and audience by combining strategy, content and performance measurement.",
     icon: "megaphone",
+    debut: "Tu pars de zéro ? Commence par les fondamentaux (étape 1) et un vrai terrain d'essai : la page d'un commerce de ton quartier, d'une association ou de ton propre projet. Ne dépense rien en publicité avant de savoir lire tes chiffres (étape 3). Repère de durée : Google estime son certificat Digital Marketing & E-commerce à environ 6 mois, à raison de 10 heures par semaine.", debutEn: "Starting from scratch? Begin with the fundamentals (step 1) and a real testing ground: the page of a shop in your neighborhood, an association or your own project. Don't spend anything on ads before you can read your numbers (step 3). Time benchmark: Google estimates its Digital Marketing & E-commerce certificate at about 6 months, at 10 hours a week.",
+    debutSource: { label: "Google Digital Marketing & E-commerce, Coursera (en anglais)", labelEn: "Google Digital Marketing & E-commerce, Coursera", url: "https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce" },
     sections: [
       {
         title: "1. Fondamentaux", titleEn: "1. Fundamentals",
+        objectif: "Tu sauras expliquer comment un client passe de « je ne vous connais pas » à « j'achète », et comment on se fait trouver sur Google.", objectifEn: "You'll be able to explain how a customer goes from \"I don't know you\" to \"I'm buying\", and how to get found on Google.",
+        projet: "Choisis un commerce de ton quartier et dessine son tunnel : comment les gens le découvrent, ce qui les fait hésiter, ce qui les fait revenir. Propose trois recherches qu'un client taperait sur Google pour le trouver.", projetEn: "Choose a shop in your neighborhood and draw its funnel: how people discover it, what makes them hesitate, what brings them back. Suggest three searches a customer would type on Google to find it.",
         items: [
           { label: "SEO (référencement naturel) : recherche de mots-clés, on-page/off-page", labelEn: "SEO (search engine optimization): keyword research, on-page/off-page", level: "core" },
           { label: "SEM et stratégie de contenu", labelEn: "SEM and content strategy", level: "core" },
@@ -1302,6 +1350,8 @@ const ROLES = {
       },
       {
         title: "2. Publicité en ligne", titleEn: "2. Online advertising",
+        objectif: "Tu sauras construire une campagne publicitaire : objectif, public visé, message, budget.", objectifEn: "You'll be able to build an ad campaign: goal, target audience, message, budget.",
+        projet: "Prépare, sans la lancer, une campagne Meta Ads pour ce commerce : objectif, public (âge, ville, centres d'intérêt), deux versions du message et un petit budget de test.", projetEn: "Prepare, without launching it, a Meta Ads campaign for this shop: goal, audience (age, city, interests), two versions of the message and a small test budget.",
         items: [
           { label: "Meta Ads", labelEn: "Meta Ads", level: "core", resource: { label: "Meta Business Help Center", labelEn: "Meta Business Help Center", url: "https://www.facebook.com/business/help" } },
           { label: "Google Ads", labelEn: "Google Ads", level: "core", resource: { label: "Centre d'aide Google Ads", labelEn: "Google Ads Help Center", url: "https://support.google.com/google-ads" } },
@@ -1311,6 +1361,8 @@ const ROLES = {
       },
       {
         title: "3. Analytics", titleEn: "3. Analytics",
+        objectif: "Tu sauras lire les chiffres d'un site ou d'une page, et dire ce qui marche et ce qui ne marche pas.", objectifEn: "You'll be able to read the figures of a website or page, and say what works and what doesn't.",
+        projet: "Explore le compte de démonstration gratuit de Google Analytics et réponds à trois questions : d'où viennent les visiteurs, quelles pages ils lisent, où ils quittent le site.", projetEn: "Explore Google Analytics' free demo account and answer three questions: where visitors come from, which pages they read, where they leave the site.",
         items: [
           { label: "Google Analytics, tableaux de bord de performance", labelEn: "Google Analytics, performance dashboards", level: "core", resource: { label: "Centre d'aide Google Analytics", labelEn: "Google Analytics Help Center", url: "https://support.google.com/analytics" } },
           { label: "Outils SEO (SEMrush, Ahrefs, Google Search Console)", labelEn: "SEO tools (SEMrush, Ahrefs, Google Search Console)", level: "option" }
@@ -1318,6 +1370,8 @@ const ROLES = {
       },
       {
         title: "4. Email marketing", titleEn: "4. Email marketing",
+        objectif: "Tu sauras construire une liste d'abonnés avec leur accord et leur envoyer des messages adaptés.", objectifEn: "You'll be able to build a subscriber list with their consent and send them tailored messages.",
+        projet: "Avec l'offre gratuite d'un outil comme Brevo ou Mailchimp, crée la lettre d'information d'un club ou d'une association : un formulaire d'inscription et un premier envoi.", projetEn: "With the free plan of a tool like Brevo or Mailchimp, create the newsletter of a club or an association: a sign-up form and a first mailing.",
         items: [
           { label: "Campagnes et automatisation", labelEn: "Campaigns and automation", level: "option" },
           { label: "Segmentation de liste et personnalisation des envois", labelEn: "List segmentation and personalized sends", level: "option" },
@@ -1326,6 +1380,8 @@ const ROLES = {
       },
       {
         title: "5. Influence et affiliation", titleEn: "5. Influencer and affiliate marketing",
+        objectif: "Tu sauras choisir un créateur de contenu adapté à une marque et mesurer ce que la collaboration a rapporté.", objectifEn: "You'll be able to choose a content creator suited to a brand and measure what the collaboration brought in.",
+        projet: "Repère trois créateurs, même petits, qui parlent au public de ton commerce, compare leur audience et leurs réactions, et rédige la proposition de collaboration que tu leur enverrais.", projetEn: "Find three creators, even small ones, who speak to your shop's audience, compare their audience and engagement, and write the collaboration proposal you would send them.",
         items: [
           { label: "Collaboration avec des micro-influenceurs locaux", labelEn: "Working with local micro-influencers", level: "option" },
           { label: "Marketing d'affiliation", labelEn: "Affiliate marketing", level: "option" }
@@ -1350,9 +1406,13 @@ const ROLES = {
     subtitle: "Animer et faire grandir une communauté de marque sur les réseaux sociaux, avec méthode et constance.",
     subtitleEn: "Nurturing and growing a brand community on social media, with method and consistency.",
     icon: "message",
+    debut: "Tu pars de zéro ? Entraîne-toi sur une vraie communauté, même modeste : le club de ton lycée, une association, un petit commerce. Un téléphone suffit pour les étapes 1 à 3. Repère de durée : Meta annonce environ 5 mois pour son certificat Social Media Marketing.", debutEn: "Starting from scratch? Practice on a real community, even a small one: your school club, an association, a small shop. A phone is enough for steps 1 to 3. Time benchmark: Meta announces about 5 months for its Social Media Marketing certificate.",
+    debutSource: { label: "Meta Social Media Marketing, Coursera (en anglais)", labelEn: "Meta Social Media Marketing, Coursera", url: "https://www.coursera.org/professional-certificates/facebook-social-media-marketing" },
     sections: [
       {
         title: "1. Stratégie de contenu", titleEn: "1. Content strategy",
+        objectif: "Tu sauras définir ce qu'une page publie, pour qui et à quel rythme, et produire des visuels et des vidéos courtes.", objectifEn: "You'll be able to define what a page publishes, for whom and how often, and produce visuals and short videos.",
+        projet: "Pour le club de ton lycée ou une association, écris une ligne éditoriale d'une page et un calendrier de publications sur un mois, puis crée trois visuels avec Canva et une vidéo courte avec CapCut.", projetEn: "For your school club or an association, write a one-page editorial line and a one-month posting calendar, then create three visuals with Canva and a short video with CapCut.",
         items: [
           { label: "Ligne éditoriale, calendrier de publication", labelEn: "Editorial line, publishing calendar", level: "core" },
           { label: "Création de visuels et vidéos courtes (Canva, CapCut)", labelEn: "Creating visuals and short videos (Canva, CapCut)", level: "core" }
@@ -1360,6 +1420,8 @@ const ROLES = {
       },
       {
         title: "2. Gestion des réseaux sociaux", titleEn: "2. Social media management",
+        objectif: "Tu sauras adapter un même message à Facebook, Instagram, LinkedIn et TikTok, chacun avec ses codes.", objectifEn: "You'll be able to adapt the same message to Facebook, Instagram, LinkedIn and TikTok, each with its own codes.",
+        projet: "Prends une même annonce (un événement, une offre) et rédige-la pour ces quatre réseaux, en changeant le ton, la longueur et le format.", projetEn: "Take one announcement (an event, an offer) and write it for these four networks, changing the tone, length and format.",
         items: [
           { label: "Facebook, Instagram, LinkedIn, TikTok", labelEn: "Facebook, Instagram, LinkedIn, TikTok", level: "core" },
           { label: "Outils de planification (Meta Business Suite, Buffer, Hootsuite)", labelEn: "Scheduling tools (Meta Business Suite, Buffer, Hootsuite)", level: "option" },
@@ -1368,6 +1430,8 @@ const ROLES = {
       },
       {
         title: "3. Animation de communauté", titleEn: "3. Community management",
+        objectif: "Tu sauras répondre aux commentaires, calmer une discussion qui dérape et préparer la réponse à une polémique.", objectifEn: "You'll be able to reply to comments, calm a discussion that gets out of hand and prepare the response to a controversy.",
+        projet: "Écris la charte de modération de ta page (ce qui est accepté, ce qui est supprimé, comment on répond) et trois réponses types : à une question, à une plainte, à une insulte.", projetEn: "Write your page's moderation charter (what is accepted, what is removed, how to respond) and three standard replies: to a question, to a complaint, to an insult.",
         items: [
           { label: "Modération, gestion de crise", labelEn: "Moderation, crisis management", level: "core" },
           { label: "Charte de communauté et bonnes pratiques de modération", labelEn: "Community charter and moderation best practices", level: "option" },
@@ -1376,6 +1440,8 @@ const ROLES = {
       },
       {
         title: "4. Analyse de performance", titleEn: "4. Performance analysis",
+        objectif: "Tu sauras lire les statistiques d'une page et dire quels contenus marchent le mieux, et pourquoi.", objectifEn: "You'll be able to read a page's statistics and say which content works best, and why.",
+        projet: "Après un mois de publications, fais le bilan de ta page : portée, taux d'interaction, meilleur et pire contenu, et ce que tu changes le mois suivant.", projetEn: "After a month of posts, review your page: reach, engagement rate, best and worst content, and what you'll change the following month.",
         items: [
           { label: "Indicateurs d'engagement (portée, taux d'interaction)", labelEn: "Engagement metrics (reach, interaction rate)", level: "core" },
           { label: "Reporting mensuel et ajustement de la stratégie selon les résultats", labelEn: "Monthly reporting and adjusting the strategy based on results", level: "option" }
@@ -1383,6 +1449,8 @@ const ROLES = {
       },
       {
         title: "5. Publicité et budget", titleEn: "5. Advertising and budget",
+        objectif: "Tu sauras quand payer pour mettre une publication en avant, auprès de quel public et avec quel budget.", objectifEn: "You'll be able to decide when to pay to promote a post, to which audience and with what budget.",
+        projet: "Choisis ta meilleure publication du mois et prépare, sans la lancer, sa mise en avant payante : public, durée, budget, et le résultat que tu en attends.", projetEn: "Choose your best post of the month and prepare, without launching it, its paid promotion: audience, duration, budget, and the result you expect.",
         items: [
           { label: "Bases des publicités payantes (Meta Ads, TikTok Ads)", labelEn: "Paid advertising basics (Meta Ads, TikTok Ads)", level: "option" },
           { label: "Gestion d'un budget de contenu sponsorisé (boost de publications)", labelEn: "Managing a sponsored content budget (boosting posts)", level: "option" }
@@ -1643,9 +1711,13 @@ const ROLES = {
     subtitle: "Créer les visuels et supports qui donnent à une marque son identité et sa force de communication.",
     subtitleEn: "Creating the visuals and materials that give a brand its identity and communicative power.",
     icon: "image",
+    debut: "Tu pars de zéro ? Exerce ton œil avant l'outil : couleurs, typographie et composition (étape 1) s'apprennent en refaisant des affiches que tu vois dans la rue. Canva, ou les logiciels gratuits GIMP et Inkscape, suffisent avant Photoshop et Illustrator. Repère de durée : CalArts (une école d'art californienne) estime sa spécialisation Graphic Design à environ 2 mois, à raison de 10 heures par semaine.", debutEn: "Starting from scratch? Train your eye before the tool: colors, typography and layout (step 1) can be learned by redoing posters you see in the street. Canva, or the free GIMP and Inkscape software, are enough before Photoshop and Illustrator. Time benchmark: CalArts (an art school in California) estimates its Graphic Design specialization at about 2 months, at 10 hours a week.",
+    debutSource: { label: "CalArts Graphic Design, Coursera (en anglais)", labelEn: "CalArts Graphic Design, Coursera", url: "https://www.coursera.org/specializations/graphic-design" },
     sections: [
       {
         title: "1. Fondamentaux du design graphique", titleEn: "1. Graphic design fundamentals",
+        objectif: "Tu sauras expliquer pourquoi un visuel se lit bien ou mal, et préparer un fichier pour l'écran ou pour l'imprimeur.", objectifEn: "You'll be able to explain why a visual reads well or badly, and prepare a file for the screen or for the printer.",
+        projet: "Prends trois affiches vues dans ta ville, analyse ce qui marche et ce qui ne marche pas (couleurs, textes, hiérarchie), puis refais la moins réussie.", projetEn: "Take three posters you've seen in your city, analyze what works and what doesn't (colors, text, hierarchy), then redo the weakest one.",
         items: [
           { label: "Théorie des couleurs, typographie, composition", labelEn: "Color theory, typography, composition", level: "core" },
           { label: "Modes colorimétriques (RVB/CMJN) et résolution (DPI)", labelEn: "Color modes (RGB/CMYK) and resolution (DPI)", level: "core" }
@@ -1653,6 +1725,8 @@ const ROLES = {
       },
       {
         title: "2. Outils", titleEn: "2. Tools",
+        objectif: "Tu sauras retoucher une photo et dessiner un logo vectoriel qui reste net à toutes les tailles.", objectifEn: "You'll be able to retouch a photo and draw a vector logo that stays sharp at any size.",
+        projet: "Redessine en vectoriel (Illustrator ou Inkscape) le logo d'un commerce de ton quartier, pour t'exercer, puis retouche une photo de sa devanture (Photoshop ou GIMP).", projetEn: "Redraw the logo of a shop in your neighborhood in vector format (Illustrator or Inkscape), as practice, then retouch a photo of its storefront (Photoshop or GIMP).",
         items: [
           { label: "Adobe Photoshop et Illustrator", labelEn: "Adobe Photoshop and Illustrator", level: "core" },
           { label: "Canva pour la production rapide", labelEn: "Canva for quick production", level: "option" },
@@ -1661,6 +1735,8 @@ const ROLES = {
       },
       {
         title: "3. Production", titleEn: "3. Production",
+        objectif: "Tu sauras créer une identité visuelle complète et livrer des fichiers prêts pour l'imprimeur, avec fond perdu.", objectifEn: "You'll be able to create a complete visual identity and deliver print-ready files, with bleed.",
+        projet: "Crée l'identité visuelle d'une marque imaginaire (logo, couleurs, typographies), puis décline-la en flyer prêt à imprimer et en trois visuels pour les réseaux sociaux. Ce sera la première pièce de ton portfolio.", projetEn: "Create the visual identity of an imaginary brand (logo, colors, typefaces), then adapt it into a print-ready flyer and three social media visuals. It will be the first piece of your portfolio.",
         items: [
           { label: "Identité visuelle, logos, chartes graphiques", labelEn: "Visual identity, logos, brand guidelines", level: "core" },
           { label: "Supports imprimés : flyers, roll-ups, affiches (gestion du fond perdu)", labelEn: "Print materials: flyers, roll-up banners, posters (handling bleed)", level: "core" },
@@ -1670,6 +1746,8 @@ const ROLES = {
       },
       {
         title: "4. Vidéo et montage", titleEn: "4. Video and editing",
+        objectif: "Tu sauras monter une vidéo courte et animer un logo ou un texte simple.", objectifEn: "You'll be able to edit a short video and animate a logo or a simple text.",
+        projet: "Fais une vidéo de 30 secondes qui présente la marque de l'étape 3, avec son logo animé au début.", projetEn: "Make a 30-second video presenting the brand from step 3, with its logo animated at the start.",
         items: [
           { label: "Montage vidéo de base pour supports digitaux", labelEn: "Basic video editing for digital media", level: "option" },
           { label: "Motion design simple (After Effects, Canva)", labelEn: "Simple motion design (After Effects, Canva)", level: "option" }
@@ -1694,9 +1772,13 @@ const ROLES = {
     subtitle: "Gérer et maintenir un site web au quotidien, pour qu'il reste fiable, rapide et à jour.",
     subtitleEn: "Managing and maintaining a website day to day, so it stays reliable, fast and up to date.",
     icon: "sliders",
+    debut: "Tu pars de zéro ? Installe WordPress sur ton ordinateur (avec un outil gratuit comme Local) et fais tes essais sans risque : c'est l'étape 1. Les bases de HTML et CSS (étape 3) viendront quand tu voudras retoucher un thème. Repère de durée : le cours gratuit « Beginner WordPress User » de Learn WordPress est estimé à 4 heures.", debutEn: "Starting from scratch? Install WordPress on your computer (with a free tool like Local) and experiment without risk: that's step 1. The basics of HTML and CSS (step 3) will come when you want to tweak a theme. Time benchmark: the free \"Beginner WordPress User\" course on Learn WordPress is estimated at 4 hours.",
+    debutSource: { label: "Learn WordPress (en anglais)", labelEn: "Learn WordPress", url: "https://learn.wordpress.org/course/beginner-wordpress-user/" },
     sections: [
       {
         title: "1. Gestion de site", titleEn: "1. Site management",
+        objectif: "Tu sauras installer WordPress, choisir un thème et des extensions, et faire les mises à jour sans casser le site.", objectifEn: "You'll be able to install WordPress, choose a theme and plugins, and run updates without breaking the site.",
+        projet: "Installe WordPress sur ton ordinateur, crée le site d'une association imaginaire avec 4 pages (accueil, activités, actualités, contact) et fais toutes les mises à jour proposées.", projetEn: "Install WordPress on your computer, create the website of an imaginary association with 4 pages (home, activities, news, contact) and run all the suggested updates.",
         items: [
           { label: "WordPress : installation, thèmes, plugins", labelEn: "WordPress: installation, themes, plugins", level: "core", resource: { label: "Documentation WordPress", labelEn: "WordPress documentation", url: "https://fr.wordpress.org/support/" } },
           { label: "Mises à jour et maintenance courante", labelEn: "Updates and routine maintenance", level: "core" },
@@ -1705,6 +1787,8 @@ const ROLES = {
       },
       {
         title: "2. Contenu", titleEn: "2. Content",
+        objectif: "Tu sauras publier des contenus que Google trouve, et suivre le nombre de visiteurs.", objectifEn: "You'll be able to publish content that Google finds, and track the number of visitors.",
+        projet: "Écris et publie trois articles sur ce site, chacun avec un titre, une description et des images allégées, puis liste ce que tu réglerais dans Google Search Console une fois le site en ligne.", projetEn: "Write and publish three articles on this site, each with a title, a description and compressed images, then list what you would set up in Google Search Console once the site is online.",
         items: [
           { label: "Rédaction et publication de contenu web", labelEn: "Writing and publishing web content", level: "core" },
           { label: "Bases SEO pour le référencement", labelEn: "SEO basics for search rankings", level: "core" },
@@ -1714,6 +1798,8 @@ const ROLES = {
       },
       {
         title: "3. Technique de base", titleEn: "3. Technical basics",
+        objectif: "Tu sauras retoucher du HTML et du CSS, mettre un site en HTTPS, le sauvegarder et le remettre en marche après une panne.", objectifEn: "You'll be able to tweak HTML and CSS, move a site to HTTPS, back it up and get it running again after a breakdown.",
+        projet: "Fais une sauvegarde complète de ton site, casse-le volontairement (en désactivant une extension ou en modifiant un fichier), puis restaure-le à partir de la sauvegarde en notant chaque étape.", projetEn: "Make a full backup of your site, break it on purpose (by disabling a plugin or editing a file), then restore it from the backup, writing down each step.",
         items: [
           { label: "HTML/CSS de base pour les ajustements", labelEn: "Basic HTML/CSS for adjustments", level: "core", resource: { label: "Voir roadmap compétence JavaScript", labelEn: "See the JavaScript skill roadmap", url: "roadmap.html?id=javascript" } },
           { label: "Certificat SSL/HTTPS et nom de domaine", labelEn: "SSL/HTTPS certificate and domain name", level: "core" },
@@ -2230,9 +2316,12 @@ const ROLES = {
     subtitle: "Écrire les textes d'interface qui guident, rassurent et facilitent chaque action de l'utilisateur.",
     subtitleEn: "Writing the interface text that guides, reassures and eases every user action.",
     icon: "edit",
+    debut: "Tu pars de zéro ? Commence par observer : note les boutons, messages d'erreur et notifications des applis que tu utilises, et réécris ceux que tu trouves confus. C'est déjà le travail des étapes 1 et 2.", debutEn: "Starting from scratch? Start by observing: note the buttons, error messages and notifications in the apps you use, and rewrite the ones you find confusing. That's already the work of steps 1 and 2.",
     sections: [
       {
         title: "1. Fondamentaux", titleEn: "1. Fundamentals",
+        objectif: "Tu sauras écrire court, clair et dans le ton d'une marque.", objectifEn: "You'll be able to write short, clear text in a brand's voice.",
+        projet: "Réécris en langage clair un texte administratif que tu trouves compliqué (un formulaire, un règlement), en gardant toutes les informations utiles.", projetEn: "Rewrite in plain language an administrative text you find complicated (a form, a set of rules), keeping all the useful information.",
         items: [
           { label: "Principes de clarté et de concision", labelEn: "Principles of clarity and concision", level: "core" },
           { label: "Ton et voix de marque", labelEn: "Brand tone and voice", level: "core" },
@@ -2241,6 +2330,8 @@ const ROLES = {
       },
       {
         title: "2. Microcopy", titleEn: "2. Microcopy",
+        objectif: "Tu sauras écrire le texte d'un bouton, d'un message d'erreur ou d'un écran vide qui aide l'utilisateur à avancer.", objectifEn: "You'll be able to write the text of a button, an error message or an empty screen that helps the user move forward.",
+        projet: "Choisis une appli que tu utilises et réécris 10 de ses textes (boutons, erreurs, écrans vides), en expliquant pour chacun ce que tu as amélioré.", projetEn: "Choose an app you use and rewrite 10 of its texts (buttons, errors, empty screens), explaining for each one what you improved.",
         items: [
           { label: "Boutons, messages d'erreur, états vides", labelEn: "Buttons, error messages, empty states", level: "core" },
           { label: "Textes de confirmation et d'onboarding", labelEn: "Confirmation and onboarding copy", level: "core" },
@@ -2249,6 +2340,8 @@ const ROLES = {
       },
       {
         title: "3. Systèmes de contenu", titleEn: "3. Content systems",
+        objectif: "Tu sauras rédiger un guide de style que toute une équipe peut suivre.", objectifEn: "You'll be able to write a style guide that a whole team can follow.",
+        projet: "Rédige le guide de style d'une appli imaginaire : ton, mots à utiliser et à éviter, règles pour les boutons et les messages d'erreur, avec des exemples.", projetEn: "Write the style guide of an imaginary app: tone, words to use and avoid, rules for buttons and error messages, with examples.",
         items: [
           { label: "Guide de style et content design system", labelEn: "Style guide and content design system", level: "core" },
           { label: "Cohérence terminologique dans un glossaire produit", labelEn: "Consistent terminology in a product glossary", level: "option" },
@@ -2257,6 +2350,8 @@ const ROLES = {
       },
       {
         title: "4. Tests et accessibilité", titleEn: "4. Testing and accessibility",
+        objectif: "Tu sauras vérifier qu'un texte est compris par de vrais utilisateurs, y compris avec un lecteur d'écran.", objectifEn: "You'll be able to check that a text is understood by real users, including with a screen reader.",
+        projet: "Fais lire tes textes de l'étape 2 à cinq personnes et note où elles hésitent, puis écoute-les avec le lecteur d'écran de ton téléphone (TalkBack ou VoiceOver).", projetEn: "Have five people read your step 2 texts and note where they hesitate, then listen to them with your phone's screen reader (TalkBack or VoiceOver).",
         items: [
           { label: "Tests utilisateurs de contenu", labelEn: "Content user testing", level: "option" },
           { label: "Accessibilité du contenu (lecteurs d'écran, lisibilité)", labelEn: "Content accessibility (screen readers, readability)", level: "option" },
@@ -2434,9 +2529,13 @@ const ROLES = {
     subtitle: "Documenter produits et systèmes avec clarté et précision, pour les rendre accessibles à tous leurs utilisateurs.",
     subtitleEn: "Documenting products and systems clearly and precisely, to make them accessible to all their users.",
     icon: "file-text",
+    debut: "Tu pars de zéro ? Choisis un outil que tu connais bien (une appli, un logiciel, une démarche) et explique-le par écrit à quelqu'un qui ne le connaît pas : c'est l'étape 1. Repère de durée : les cours gratuits Technical Writing One et Two de Google comptent environ 2 heures et 1 h 30 de travail préparatoire.", debutEn: "Starting from scratch? Pick a tool you know well (an app, a piece of software, a procedure) and explain it in writing to someone who doesn't know it: that's step 1. Time benchmark: Google's free Technical Writing One and Two courses take about 2 hours and 1.5 hours of pre-class work.",
+    debutSource: { label: "Google Technical Writing (en anglais)", labelEn: "Google Technical Writing", url: "https://developers.google.com/tech-writing/overview" },
     sections: [
       {
         title: "1. Fondamentaux", titleEn: "1. Fundamentals",
+        objectif: "Tu sauras expliquer simplement un sujet technique, avec une structure qui guide le lecteur.", objectifEn: "You'll be able to explain a technical subject simply, with a structure that guides the reader.",
+        projet: "Explique en une page comment fonctionne un service que tout le monde utilise (le mobile money, le Wi-Fi) à quelqu'un qui n'y connaît rien, puis fais-la relire et corrige ce qui n'a pas été compris.", projetEn: "Explain on one page how a service everyone uses works (mobile money, Wi-Fi) to someone who knows nothing about it, then have it read and fix whatever wasn't understood.",
         items: [
           { label: "Clarté, structure, vulgarisation technique", labelEn: "Clarity, structure, explaining technical topics simply", level: "core" },
           { label: "Compréhension de base du produit documenté (code, API)", labelEn: "Basic understanding of the documented product (code, APIs)", level: "core" }
@@ -2444,6 +2543,8 @@ const ROLES = {
       },
       {
         title: "2. Types de documentation", titleEn: "2. Types of documentation",
+        objectif: "Tu sauras écrire un guide utilisateur, un tutoriel et la documentation d'une API.", objectifEn: "You'll be able to write a user guide, a tutorial and API documentation.",
+        projet: "Écris le tutoriel pas à pas d'une tâche concrète (créer un compte, installer un logiciel) avec des captures d'écran, puis documente une API publique gratuite : ce qu'elle fait, une requête, la réponse.", projetEn: "Write the step-by-step tutorial of a concrete task (creating an account, installing software) with screenshots, then document a free public API: what it does, a request, the response.",
         items: [
           { label: "Documentation développeur (API, SDK)", labelEn: "Developer documentation (APIs, SDKs)", level: "core" },
           { label: "Spécifications OpenAPI/Swagger pour documenter des API REST", labelEn: "OpenAPI/Swagger specifications to document REST APIs", level: "option" },
@@ -2453,6 +2554,8 @@ const ROLES = {
       },
       {
         title: "3. Outils", titleEn: "3. Tools",
+        objectif: "Tu sauras écrire en Markdown et publier une documentation avec un générateur comme MkDocs ou Docusaurus.", objectifEn: "You'll be able to write in Markdown and publish documentation with a generator like MkDocs or Docusaurus.",
+        projet: "Passe tes textes des étapes précédentes en Markdown et fais-en un petit site de documentation avec MkDocs, d'abord sur ton ordinateur, puis en ligne.", projetEn: "Convert your texts from the previous steps to Markdown and turn them into a small documentation site with MkDocs, first on your computer, then online.",
         items: [
           { label: "Markdown, générateurs de documentation statique (Docusaurus, MkDocs)", labelEn: "Markdown, static documentation generators (Docusaurus, MkDocs)", level: "core" },
           { label: "Outils de gestion de version (Git)", labelEn: "Version control tools (Git)", level: "option", resource: { label: "Voir roadmap compétence Git & GitHub", labelEn: "See the Git & GitHub skill roadmap", url: "roadmap.html?id=git-github" } },
@@ -2462,6 +2565,8 @@ const ROLES = {
       },
       {
         title: "4. Collaboration", titleEn: "4. Collaboration",
+        objectif: "Tu sauras recueillir l'information auprès des développeurs et tenir une documentation à jour au fil des versions.", objectifEn: "You'll be able to gather information from developers and keep documentation up to date across versions.",
+        projet: "Choisis sur GitHub un petit projet ouvert aux contributions dont la documentation est incomplète, et propose une amélioration : correction, exemple ou page manquante.", projetEn: "Pick a small project on GitHub that accepts contributions and whose documentation is incomplete, and propose an improvement: a fix, an example or a missing page.",
         items: [
           { label: "Travail avec les équipes produit et ingénierie", labelEn: "Working with product and engineering teams", level: "core" },
           { label: "Docs-as-code : documentation versionnée avec le code source", labelEn: "Docs-as-code: documentation versioned with the source code", level: "option" }
@@ -3383,9 +3488,12 @@ const ROLES = {
     subtitle: "Définir sur le long terme la stratégie de contenu d'une marque, au service de ses objectifs et de son public.",
     subtitleEn: "Defining a brand's long-term content strategy, in service of its goals and its audience.",
     icon: "book",
+    debut: "Tu pars de zéro ? Prends un site ou une page que tu connais (ton lycée, une association, un commerce) et fais-en l'audit : ce qui est publié, pour qui, et ce qui manque. C'est l'étape 1, et elle ne demande aucun outil payant.", debutEn: "Starting from scratch? Take a website or page you know (your school, an association, a shop) and audit it: what is published, for whom, and what is missing. That's step 1, and it requires no paid tools.",
     sections: [
       {
         title: "1. Stratégie", titleEn: "1. Strategy",
+        objectif: "Tu sauras faire le point sur des contenus existants et définir pour qui on écrit, et sur quels thèmes.", objectifEn: "You'll be able to take stock of existing content and define who you're writing for, and on which topics.",
+        projet: "Fais l'audit des 20 dernières publications d'une page (association, commerce, média) : thème, format, réactions, et ce qui manque à son public.", projetEn: "Audit the last 20 posts of a page (association, shop, media outlet): topic, format, reactions, and what its audience is missing.",
         items: [
           { label: "Audit de contenu existant et analyse concurrentielle", labelEn: "Existing content audit and competitive analysis", level: "core" },
           { label: "Ligne éditoriale et piliers de contenu", labelEn: "Editorial line and content pillars", level: "core" },
@@ -3395,6 +3503,8 @@ const ROLES = {
       },
       {
         title: "2. Production", titleEn: "2. Production",
+        objectif: "Tu sauras organiser la production de contenus sur plusieurs canaux sans perdre la cohérence.", objectifEn: "You'll be able to organize content production across several channels without losing consistency.",
+        projet: "À partir de ton audit, construis un calendrier éditorial d'un mois (Notion ou Trello) et décline un même sujet en article, en vidéo courte et en lettre d'information.", projetEn: "From your audit, build a one-month editorial calendar (Notion or Trello) and turn one topic into an article, a short video and a newsletter.",
         items: [
           { label: "Calendrier éditorial multi-canal (outils : Notion, Trello)", labelEn: "Multichannel editorial calendar (tools: Notion, Trello)", level: "core" },
           { label: "Réadaptation de contenu entre formats (repurposing : blog, vidéo, newsletter)", labelEn: "Repurposing content across formats (blog, video, newsletter)", level: "option" },
@@ -3403,6 +3513,8 @@ const ROLES = {
       },
       {
         title: "3. SEO et distribution", titleEn: "3. SEO and distribution",
+        objectif: "Tu sauras écrire pour être trouvé sur Google et diffuser un contenu là où se trouve son public.", objectifEn: "You'll be able to write to be found on Google and distribute content where its audience is.",
+        projet: "Choisis une question que se pose le public de ta page, trouve les mots qu'il tape sur Google, et écris l'article qui y répond le mieux, avec son plan de diffusion.", projetEn: "Pick a question your page's audience asks, find the words they type on Google, and write the article that answers it best, with its distribution plan.",
         items: [
           { label: "Optimisation SEO du contenu", labelEn: "SEO optimization of content", level: "core" },
           { label: "Recherche de mots-clés et intention de recherche", labelEn: "Keyword research and search intent", level: "option" },
@@ -3411,6 +3523,8 @@ const ROLES = {
       },
       {
         title: "4. Mesure", titleEn: "4. Measurement",
+        objectif: "Tu sauras mesurer ce qu'un contenu rapporte, et décider quoi garder, mettre à jour ou retirer.", objectifEn: "You'll be able to measure what a piece of content brings in, and decide what to keep, update or remove.",
+        projet: "Un mois plus tard, mesure les résultats de ton calendrier (vues, partages, clics) et décide pour chaque contenu : on garde, on met à jour ou on retire.", projetEn: "A month later, measure your calendar's results (views, shares, clicks) and decide for each piece of content: keep, update or remove.",
         items: [
           { label: "Analyse de performance du contenu (trafic, engagement, conversions)", labelEn: "Content performance analysis (traffic, engagement, conversions)", level: "core" },
           { label: "Audit de contenu récurrent (mise à jour ou retrait du contenu obsolète)", labelEn: "Recurring content audits (updating or removing outdated content)", level: "option" }

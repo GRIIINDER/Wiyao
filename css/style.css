@@ -6015,6 +6015,28 @@ main :is(p, li, dd, td) a:not([class]):hover {
   margin: 0;
 }
 
+/* Roadmap devenue parcours (2026-11-19) : objectif de l'étape sous son
+   titre, premier projet après la liste, dans le même encadré jaune pâle
+   que « Tu pars de zéro ? ». */
+#roadmap-detail .section-goal {
+  max-width: 65ch;
+  margin: 0 0 16px;
+  color: var(--w-ink);
+}
+
+#roadmap-detail .section-project {
+  margin-top: 16px;
+  padding: 16px 20px;
+  border: 2px solid var(--w-ink);
+  background: var(--w-yellow-pale);
+  color: var(--w-ink);
+}
+
+#roadmap-detail .section-project p {
+  max-width: 65ch;
+  margin: 0;
+}
+
 /* Anglais choisi : la page reste masquée jusqu'à ce que i18n.js l'ait
    traduite (classe posée par js/lang-boot.js, retirée par i18n.js ou au
    bout de 3,5 s), au lieu d'afficher d'abord le français (2026-11-10). */
